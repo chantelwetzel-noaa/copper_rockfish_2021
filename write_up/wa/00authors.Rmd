@@ -1,0 +1,43 @@
+---
+author:
+  - name: Chantel R. Wetzel
+    code: 1
+    first: C
+    middle: R
+    family: Wetzel
+  - name: Brian J. Langseth
+    code: 1
+    first: B
+    middle: J
+    family: Langseth
+  - name: Jason M. Cope
+    code: 1
+    first: J
+    middle: M
+    family: Cope
+  - name: Tien-Shui Tsou
+    code: 2
+    first: T
+    middle: ''
+    family: Tsou
+  - name: Kristen E. Hinton
+    code: 2
+    first: K
+    middle: E
+    family: Hinton
+author_list: Wetzel, C.R., B.J. Langseth, J.M. Cope, T. Tsou, K.E. Hinton
+affiliation:
+  - code: 1
+    address: Northwest Fisheries Science Center, U.S. Department of Commerce, National
+      Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
+      Montlake Boulevard East, Seattle, Washington 98112
+  - code: 2
+    address: Washington Department of Fish and Wildlife, 600 Capital Way North, Olympia,
+      Washington 98501
+address:
+  - ^1^Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic
+    and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake
+    Boulevard East, Seattle, Washington 98112
+  - ^2^Washington Department of Fish and Wildlife, 600 Capital Way North, Olympia,
+    Washington 98501
+---

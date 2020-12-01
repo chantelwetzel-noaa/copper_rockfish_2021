@@ -1,0 +1,88 @@
+```{r executive, echo = FALSE}
+executive <- list()
+executive[["stock"]] <- paste0("This assessment reports the status of ",
+  spp, " (_", spp.sci, "_) off the ", coast, 
+  " coast using data through xxxx.")
+```
+# Executive Summary{-}
+## Stock{-}
+`r executive[["stock"]]`
+
+The years is `r endyr`
+
+## Landings{-}
+Replace text.
+
+```{r}
+tab = read.csv(file.path(mod_loc, "tables", "a_Catches_ES.csv"))
+tab = tab[,1:3]
+colnames(tab) = c("Year", "Recreational (mt)", "Commercial (mt)")
+
+
+options(kableExtra.latex.load_packages = FALSE)
+library(kableExtra)
+
+kableExtra::kbl(tab, caption = "Catches!", digits = c(0, 0, 2, 2), label = 'test', align = 'l', booktabs = T) %>%
+	kableExtra::kable_styling(latex_options = c('hold_position'), font_size = 11) #%>%   
+	#column_spec(2, width = "2em")                   
+
+```
+Alterantive formatting using function format_table:
+
+```{r}
+tab = read.csv(file.path(mod_loc, "tables", "a_Catches_ES.csv"))
+col_names = c("Year", "Recreational (mt)", "Commercial (mt)", "Total Mortality")
+
+table_format(x = as.data.frame(tab),
+			caption = 'Formatted catches',
+			label = 'mortality',
+			digits = c(0,0,2,2),
+			longtable = FALSE,
+			col_names = col_names,
+			align = c('r','c','c','c'))
+```
+
+
+Does this work Table \ref{tab:test} vs. Table \ref{tab:mortality}?
+
+
+
+## Data and Assessment{-}
+Replace text.
+
+## Stock Biomass{-}
+Replace text.
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, "tables", "b_SSB_ES.csv"))
+col_names = c("Year", "Spawning Output", "CI", "Depletion", "CI")
+
+table_format(x = tab,
+			caption = 'Estimated spawning output and relative stock status (depletion) and the 95 percent confidence intervals (CI).',
+			label = 'ssb',
+			longtable = FALSE,
+			col_names = col_names,
+			align = c('r','c','c','c','c'))
+
+```
+
+## Recruitment{-}
+Replace text.
+
+## Exploitation Status{-}
+Replace text.
+
+## Reference Points{-}
+Replace text.
+
+## Management Performance{-}
+Replace text.
+
+## Unresolved Problems and Major Uncertainties{-}
+Replace text.
+
+## Decision Table{-}
+Replace text.
+
+## Research and Data Needs{-}
+Replace text.
