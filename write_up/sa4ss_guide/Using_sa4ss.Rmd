@@ -1,0 +1,107 @@
+
+---
+title: "sa4ss"
+author: "Chantel Wetzel"
+date: "`r Sys.Date()`"
+output: pdf_document
+vignette: >
+  %\VignetteIndexEntry{sa4ss}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Getting Started
+Want to create an assessment document using **sa4ss**? 
+
+Load up the package available on github (https://github.com/nwfsc-assess/sa4ss):
+
+```r
+remotes::install_github("nwfsc-assess/sa4ss")
+library(sa4ss)
+```
+
+Now that the package is installed in R, let's create a document.  
+
+## Step 1
+
+Set the working directory. The document template will be created in the defined location.
+
+```r
+setwd("C:/Assessments/2021/copper_rockfish_2021/write_up/wa")
+
+```
+
+## Step 2
+
+Call the draft function to create a general document with species, authors, and title created:
+
+```r
+sa4ss::draft(authors = c("Chantel R. Wetzel", 
+                         "Brian J. Langseth", 
+                         "Jason M. Cope", 
+                         "Theresa Tsou",
+                         "Kristen E. Hinton"),
+  			 species = "Copper Rockfish",
+  			 latin = "Sebastes caurinus",
+  			 coast = "Washington US West",
+  			 type = c("sa"),
+  			 create_dir = FALSE,
+  			 edit = FALSE)
+```
+
+The above example will  automatically populates a document for copper rockfish with the above authors and their associated affiliation.  **sa4ss* has a list of common authors and their affiliations already set-up. In order for authors to be found in the available list and their affiliation the names need to be entered exactly as expected here: https://github.com/nwfsc-assess/sa4ss/blob/master/data-raw/authors.csv.
+
+## Step 3
+
+Create an Rdata object based upon the base model.  The base model can be located anywhere on your machine. 
+
+```r
+sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/base")
+```
+
+This will create an Rdata object called 00mod.Rdata in your working directory.
+
+## Step 4
+
+Render the pdf document based on the draft template created:
+
+```r
+bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
+
+```
+
+This will create build the pdf document which will be save directly in the working directory.  However, one may prefer to have the pdf saved in a specific folder.  One default approach is the call the render_book function without specifying the output_dir which will put the pdf document in a separate folder in the working directory. 
+
+```r
+bookdown::render_book("00a.Rmd", clean = FALSE)
+
+```
+
+# Editing the Document
+A number of documents in the specified directory should not be available.  These documents correspond to different sections required by the Groundfish Terms of Reference. 
+
+When editing make sure to render the document on a regular basis by using either of the above calls to **bookdown::render_book()**. This will allow users to identify errors quickly.
+
+
+# Tips & Tricks
+If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done:
+
+```r
+# Directory where the document is being rendered:
+wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/wa"
+
+# Directory where general text is available
+other_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+
+#\input{../general_text/data_m.tex}
+
+```
+
+
