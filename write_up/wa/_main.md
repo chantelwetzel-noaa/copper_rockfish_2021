@@ -60,7 +60,7 @@ address:
 <!--chapter:end:00authors.Rmd-->
 
 ---
-title: Copper Rockfish (_Sebastes caurinus_) along the US West coast in 2020
+title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast in 2020
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -82,61 +82,34 @@ The years is 2020
 ## Landings{-}
 Replace text.
 
-\begin{table}[!h]
 
-\caption{(\#tab:test)Catches!}
+\begin{table}[H]
+
+\caption{(\#tab:mortality)Removals by fleet for the last 10 years.}
 \centering
-\fontsize{11}{13}\selectfont
-\begin{tabular}[t]{lll}
-\toprule
-Year & Recreational (mt) & Commercial (mt)\\
-\midrule
-2009 & 2,731.91 & 0.00\\
-2010 & 2,132.14 & 0.00\\
-2011 & 2,641.62 & 0.00\\
-2012 & 1,759.56 & 0.00\\
-2013 & 2,561.77 & 0.00\\
-\addlinespace
-2014 & 2,343.20 & 0.00\\
-2015 & 1,318.84 & 0.00\\
-2016 & 1,853.86 & 0.00\\
-2017 & 1,293.98 & 0.01\\
-2018 & 3,024.60 & 0.00\\
-\addlinespace
-2019 & 4,273.52 & 0.00\\
-2020 & 0.00 & 0.00\\
-\bottomrule
-\end{tabular}
-\end{table}
-Alterantive formatting using function format_table:
-
-\begin{table}[!h]
-
-\caption{(\#tab:mortality)Formatted catches}
-\centering
-\begin{tabular}[t]{rccc}
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
 \toprule
 Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \midrule
-2,009 & 2,732 & 0.00 & 2,731.91\\
-2,010 & 2,132 & 0.00 & 2,132.14\\
-2,011 & 2,642 & 0.00 & 2,641.62\\
-2,012 & 1,760 & 0.00 & 1,759.56\\
-2,013 & 2,562 & 0.00 & 2,561.77\\
-2,014 & 2,343 & 0.00 & 2,343.20\\
-2,015 & 1,319 & 0.00 & 1,318.84\\
-2,016 & 1,854 & 0.00 & 1,853.86\\
-2,017 & 1,294 & 0.01 & 1,293.99\\
-2,018 & 3,025 & 0.00 & 3,024.60\\
-2,019 & 4,274 & 0.00 & 4,273.52\\
-2,020 & 0 & 0.00 & 0.00\\
+2009 & 2732 & 0.00 & 2731.91\\
+2010 & 2132 & 0.00 & 2132.14\\
+2011 & 2642 & 0.00 & 2641.62\\
+2012 & 1760 & 0.00 & 1759.56\\
+2013 & 2562 & 0.00 & 2561.77\\
+2014 & 2343 & 0.00 & 2343.20\\
+2015 & 1319 & 0.00 & 1318.84\\
+2016 & 1854 & 0.00 & 1853.86\\
+2017 & 1294 & 0.01 & 1293.99\\
+2018 & 3025 & 0.00 & 3024.60\\
+2019 & 4274 & 0.00 & 4273.52\\
+2020 & 0 & 0.00 & 0.00\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-
-Does this work Table \ref{tab:test} vs. Table \ref{tab:mortality}?
-
+Here is a reference to the catches (Table \ref{tab:mortality})
 
 
 ## Data and Assessment{-}
@@ -145,27 +118,29 @@ Replace text.
 ## Stock Biomass{-}
 Replace text.
 
-\begin{table}[!h]
+\begin{table}[H]
 
-\caption{(\#tab:ssb)Estimated spawning output and relative stock status (depletion) and the 95 percent confidence intervals (CI).}
+\caption{(\#tab:ssb)Estimated spawning output and the fraction unfished and the 95 percent confidence intervals.}
 \centering
-\begin{tabular}[t]{rcccc}
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
 \toprule
-Year & Spawning Output & CI & Depletion & CI\\
+Year & Spawning Output & Lower Interval & Upper Interval & Fraction Unfished & Lower Interval & Upper Interval\\
 \midrule
-2009 & 3,786 & 3,786–3,786 & 45.1 & 45.1–45.1\\
-2010 & 3,738 & 3,738–3,738 & 44.5 & 44.5–44.5\\
-2011 & 3,756 & 3,756–3,756 & 44.7 & 44.7–44.7\\
-2012 & 3,726 & 3,726–3,726 & 44.4 & 44.4–44.4\\
-2013 & 3,786 & 3,786–3,786 & 45.1 & 45.1–45.1\\
-2014 & 3,766 & 3,766–3,766 & 44.9 & 44.9–44.9\\
-2015 & 3,767 & 3,767–3,767 & 44.9 & 44.9–44.9\\
-2016 & 3,872 & 3,872–3,872 & 46.1 & 46.1–46.1\\
-2017 & 3,922 & 3,922–3,922 & 46.7 & 46.7–46.7\\
-2018 & 4,029 & 4,029–4,029 & 48.0 & 48.0–48.0\\
-2019 & 3,956 & 3,956–3,956 & 47.1 & 47.1–47.1\\
-2020 & 3,750 & 3,750–3,750 & 44.7 & 44.7–44.7\\
-2021 & 3,979 & 3,979–3,979 & 47.4 & 47.4–47.4\\
+2009 & 3786 & 3786 & 3786 & 0.451 & 0.451 & 0.451\\
+2010 & 3738 & 3738 & 3738 & 0.445 & 0.445 & 0.445\\
+2011 & 3756 & 3756 & 3756 & 0.447 & 0.447 & 0.447\\
+2012 & 3726 & 3726 & 3726 & 0.444 & 0.444 & 0.444\\
+2013 & 3786 & 3786 & 3786 & 0.451 & 0.451 & 0.451\\
+2014 & 3766 & 3766 & 3766 & 0.449 & 0.449 & 0.449\\
+2015 & 3767 & 3767 & 3767 & 0.449 & 0.449 & 0.449\\
+2016 & 3872 & 3872 & 3872 & 0.461 & 0.461 & 0.461\\
+2017 & 3922 & 3922 & 3922 & 0.467 & 0.467 & 0.467\\
+2018 & 4029 & 4029 & 4029 & 0.480 & 0.480 & 0.480\\
+2019 & 3956 & 3956 & 3956 & 0.471 & 0.471 & 0.471\\
+2020 & 3750 & 3750 & 3750 & 0.447 & 0.447 & 0.447\\
+2021 & 3979 & 3979 & 3979 & 0.474 & 0.474 & 0.474\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -173,19 +148,161 @@ Year & Spawning Output & CI & Depletion & CI\\
 ## Recruitment{-}
 Replace text.
 
+\begin{table}[H]
+
+\caption{(\#tab:recr)Estimated recruitment and recruitment deviations (recruit devs.) and the 95 percent confidence intervals.}
+\centering
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
+\toprule
+Year & Recruitment & Lower Interval & Upper Interval & Recruit Devs. & Lower Interval & Upper Interval\\
+\midrule
+2009 & 7760 & 7760 & 7760 & 0 & 0 & 0\\
+2010 & 7741 & 7741 & 7741 & 0 & 0 & 0\\
+2011 & 7748 & 7748 & 7748 & 0 & 0 & 0\\
+2012 & 7736 & 7736 & 7736 & 0 & 0 & 0\\
+2013 & 7760 & 7760 & 7760 & 0 & 0 & 0\\
+2014 & 7752 & 7752 & 7752 & 0 & 0 & 0\\
+2015 & 7753 & 7753 & 7753 & 0 & 0 & 0\\
+2016 & 7793 & 7793 & 7793 & 0 & 0 & 0\\
+2017 & 7812 & 7812 & 7812 & 0 & 0 & 0\\
+2018 & 7851 & 7851 & 7851 & 0 & 0 & 0\\
+2019 & 7825 & 7825 & 7825 & 0 & 0 & 0\\
+2020 & 7746 & 7746 & 7746 & 0 & 0 & 0\\
+2021 & 7833 & 7833 & 7833 & 0 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 ## Exploitation Status{-}
 Replace text.
+
+\begin{table}[H]
+
+\caption{(\#tab:expliot)Estimated 1-SPR in percent and the exploitation rate (Exploit. Rate) and the 95 percent confidence intervals.}
+\centering
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
+\toprule
+Year & 1-SPR & Lower Interval & Upper Interval & Exploit. Rate & Lower Interval & Upper Interval\\
+\midrule
+2009 & 54.5 & 54.5 & 54.5 & 0.067 & 0.067 & 0.067\\
+2010 & 47.5 & 47.5 & 47.5 & 0.053 & 0.053 & 0.053\\
+2011 & 53.6 & 53.6 & 53.6 & 0.065 & 0.065 & 0.065\\
+2012 & 42.0 & 42.0 & 42.0 & 0.043 & 0.043 & 0.043\\
+2013 & 52.4 & 52.4 & 52.4 & 0.062 & 0.062 & 0.062\\
+2014 & 49.9 & 49.9 & 49.9 & 0.057 & 0.057 & 0.057\\
+2015 & 34.1 & 34.1 & 34.1 & 0.032 & 0.032 & 0.032\\
+2016 & 42.5 & 42.5 & 42.5 & 0.044 & 0.044 & 0.044\\
+2017 & 32.8 & 32.8 & 32.8 & 0.031 & 0.031 & 0.031\\
+2018 & 55.7 & 55.7 & 55.7 & 0.070 & 0.070 & 0.070\\
+2019 & 66.5 & 66.5 & 66.5 & 0.101 & 0.101 & 0.101\\
+2020 & 0.0 & 0.0 & 0.0 & 0.000 & 0.000 & 0.000\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 ## Reference Points{-}
 Replace text.
 
+\begin{table}[H]
+
+\caption{(\#tab:ref)Reference points}
+\centering
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{>{\raggedleft\arraybackslash}p{6cm}>{\raggedleft\arraybackslash}p{2cm}>{\raggedleft\arraybackslash}p{2cm}c}
+\toprule
+Metric & Estimate & Lower Inteval & Upper Interval\\
+\midrule
+Unfished Spawning Output & 8395.78 & 8395.78 & 8395.78\\
+Unfished Age 3+ Biomass (mt) & 80028.40 & 80028.40 & 80028.40\\
+Unfished Recruitment (R0) & 8678.67 & 8678.67 & 8678.67\\
+Spawning Output (2021) & 3978.78 & 3978.78 & 3978.78\\
+Fraction Unfished (2021) & 0.47 & 0.47 & 0.47\\
+Reference Points Based SB40 Percent & NA & NA & NA\\
+Proxy Spawning Output(SB40 Percent & 3358.31 & 3358.31 & 3358.31\\
+SPR Resulting in SB40 Percent & 0.46 & 0.46 & 0.46\\
+Exploitation Rate Resulting in SB40 Percent & 0.07 & 0.07 & 0.07\\
+Yield with SPR Based On SB40 Percent (mt) & 2451.87 & 2451.87 & 2451.87\\
+Reference Points Based on SPR Proxy for MSY & NA & NA & NA\\
+Proxy Spawning Output (SPR50) & 3745.81 & 3745.81 & 3745.81\\
+SPR50 & 50.00 & NA & NA\\
+Exploitation Rate Corresponding to SPR50 & 0.06 & 0.06 & 0.06\\
+Yield with SPR50 at SB SPR (mt) & 2336.95 & 2336.95 & 2336.95\\
+Reference Points Based on Estimated MSY Values & NA & NA & NA\\
+Spawning Output at MSY (SB MSY) & 2259.48 & 2259.48 & 2259.48\\
+SPR MSY & 0.34 & 0.34 & 0.34\\
+Exploitation Rate Corresponding to SPR MSY & 0.10 & 0.10 & 0.10\\
+MSY (mt) & 2616.45 & 2616.45 & 2616.45\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 ## Management Performance{-}
 Replace text.
+
+\begin{table}[H]
+
+\caption{(\#tab:manage)The OFL, ABC, ACL, and Landings for the last 10 years.}
+\centering
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}}
+\toprule
+Years & OFL & ABC & ACL & Landings\\
+\midrule
+2009 & fill in & fill in & fill in & 2,731.91\\
+2010 & fill in & fill in & fill in & 2,132.14\\
+2011 & fill in & fill in & fill in & 2,641.62\\
+2012 & fill in & fill in & fill in & 1,759.56\\
+2013 & fill in & fill in & fill in & 2,561.77\\
+2014 & fill in & fill in & fill in & 2,343.20\\
+2015 & fill in & fill in & fill in & 1,318.84\\
+2016 & fill in & fill in & fill in & 1,853.86\\
+2017 & fill in & fill in & fill in & 1,293.99\\
+2018 & fill in & fill in & fill in & 3,024.60\\
+2019 & fill in & fill in & fill in & 4,273.52\\
+2020 & fill in & fill in & fill in & 0.00\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 ## Unresolved Problems and Major Uncertainties{-}
 Replace text.
 
 ## Decision Table{-}
+Add the projection table
+
+\begin{table}[H]
+
+\caption{(\#tab:project)Projections}
+\centering
+\fontsize{10}{12}\selectfont
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}}
+\toprule
+Year & OFL & ABC & 3+ Biomass & Spawning Output & Fraction Unfished\\
+\midrule
+2021 & 2464.1 & 60.1 & 42774.5 & 3978.8 & 0.474\\
+2022 & 2595.7 & 60.4 & 44920.2 & 4208.4 & 0.501\\
+2023 & 2724.0 & 2724.0 & 46987.6 & 4440.5 & 0.529\\
+2024 & 2688.4 & 2688.4 & 46401.4 & 4394.1 & 0.523\\
+2025 & 2651.9 & 2651.9 & 45839.6 & 4341.6 & 0.517\\
+2026 & 2617.4 & 2617.4 & 45324.6 & 4286.0 & 0.510\\
+2027 & 2586.6 & 2586.6 & 44855.2 & 4231.5 & 0.504\\
+2028 & 2559.8 & 2559.8 & 44433.3 & 4181.2 & 0.498\\
+2029 & 2536.5 & 2536.5 & 44056.3 & 4136.3 & 0.493\\
+2030 & 2516.3 & 2516.3 & 43720.3 & 4096.7 & 0.488\\
+2031 & 2498.6 & 2498.6 & 43420.5 & 4061.8 & 0.484\\
+2032 & 2482.9 & 2482.9 & 43152.7 & 4030.8 & 0.480\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 Replace text.
 
 ## Research and Data Needs{-}
@@ -272,6 +389,10 @@ as well as variance associated with selecting a relatively small number (approxi
 ## Biological Data
 
 ### Natural Mortality
+
+Hamel [-@hamel_method_2015] 
+
+\input{../general_text/data_m.tex}
 
 
 ### Maturation and Fecundity

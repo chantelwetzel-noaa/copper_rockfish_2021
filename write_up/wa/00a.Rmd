@@ -11,7 +11,7 @@ papersize: a4
 
 ```{r opts, include = FALSE}
 # I added the cache = TRUE to try to speed up but not sure if this is right
-knitr::opts_chunk$set(cache = TRUE, echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 knitr::knit_hooks$set(plot = function(x,options) {
       base = knitr::opts_knit$get('base.url')
       if (is.null(base)) base = ''

@@ -2,6 +2,10 @@
 
 ### Natural Mortality
 
+Hamel [-@hamel_method_2015] 
+
+\input{../general_text/data_m.Rmd}
+
 
 ### Maturation and Fecundity
 

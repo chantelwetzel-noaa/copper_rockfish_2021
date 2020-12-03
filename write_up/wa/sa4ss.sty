@@ -33,6 +33,8 @@
 \RequirePackage{setspace}
 \setstretch{1.05}
 
+% floating
+\RequirePackage{float}
 
 
 % links - dark blue
@@ -59,8 +61,11 @@
 
 % We want bibliographies as starred sections within articles.
 % 
+%\RequirePackage[backend=biber]{biblatex}
 \RequirePackage[sectionbib,round]{natbib}
-\bibliographystyle{abbrvnat}
+\bibliographystyle{abbrvnat} 
+
+%\addbibresource{sa4ss.bib}
 
 % Equations, figures and tables are counted within articles, but we do
 % not show the article number. For equations it becomes a bit messy to avoid

@@ -1,0 +1,38 @@
+
+detach("package:sa4ss", unload = TRUE)
+remotes::install_github("nwfsc-assess/sa4ss")
+library(sa4ss)
+
+
+# Specify the directory for the document
+setwd("C:/Assessments/2021/copper_rockfish_2021/write_up/wa")
+
+# Create the needed items to generate the "right" template that would be based on the inputs here:
+sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cope", "Theresa Tsou", "Kristen E. Hinton"),
+  			 species = "Copper Rockfish",
+  			 latin = "Sebastes caurinus",
+  			 coast = "Washington US West",
+  			 type = c("sa"),
+  			 create_dir = FALSE,
+  			 edit = FALSE)
+
+# Create a model Rdata object
+#read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/0.01_init_model_updated_catches")
+load("00mod.Rdata")
+
+# If there is an error in the build - this file will need to be removed before next render
+if(file.exists("_main.Rmd")){
+	file.remove("_main.Rmd")
+}
+
+# Render the pdf
+# Put the pdf in the folder where compiled
+bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
+
+
+# Put the pdf in a seperate folder called "_book"
+bookdown::render_book("00a.Rmd", clean = FALSE)
+
+
+# Use to only render a specific section which can be quicker
+bookdown::preview_chapter("01executive.Rmd", preview = TRUE, clean = FALSE)
