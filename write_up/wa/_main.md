@@ -392,7 +392,7 @@ as well as variance associated with selecting a relatively small number (approxi
 
 Hamel [-@hamel_method_2015] 
 
-\input{../general_text/data_m.tex}
+\input{../general_text/data_m.Rmd}
 
 
 ### Maturation and Fecundity

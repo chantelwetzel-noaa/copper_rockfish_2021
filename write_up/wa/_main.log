@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.11.30)  3 DEC 2020 10:55
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.11.30)  3 DEC 2020 11:11
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1509,10 +1509,9 @@ Package babel Info: \l@newzealand = using hyphenrules for english
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-e
 nglish/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
-))
-No file _main.aux.
-
+)) (./_main.aux)
 \openout1 = _main.aux
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
 LaTeX Font Info:    ... okay on input line 100.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
@@ -1625,6 +1624,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 100.
 LaTeX Info: Redefining \pageref on input line 100.
 LaTeX Info: Redefining \nameref on input line 100.
+(./_main.out) (./_main.out)
 \@outlinefile=\write6
 
 \openout6 = _main.out
@@ -2029,64 +2029,95 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 \openout5 = _main.upa
 {c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updm
-ap/pdftex.map}]
+ap/pdftex.map}] [2
 
-LaTeX Warning: Reference `LastPage' on page ii undefined on input line 141.
+] (./_main.toc [3
 
-[2
-
-]
+])
 \tf@toc=\write7
 
 \openout7 = _main.toc
-[3
-
-]
+[4] (./_main.lof)
 \tf@lof=\write8
 
 \openout8 = _main.lof
+(./_main.lot)
 \tf@lot=\write9
 
 \openout9 = _main.lot
-[4
+[5
 
 ]
 \cslhangindent=\skip99
-
-LaTeX Warning: Reference `tab:mortality' on page i undefined on input line 252.
-
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 [1
 
 
 ]
+Package marginnote Info: Using workaround for absolute page number on input line
+ 282.
+
 warning  (pdf backend): ignoring duplicate destination with the name 'page.ii'
 [2]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.iii'
 [3]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.iv'
-[4] [5] [6] [1]
+[4]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.v'
+[5] [6] [1] [2] (../general_text/data_m.Rmd [3]) [4] [5] [6]
+<data-plot.png, id=590, 469.755pt x 361.35pt>
+File: data-plot.png Graphic file (type png)
+<use data-plot.png>
+Package luatex.def Info: data-plot.png  used on input line 1007.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[7] [8<./data-plot.png>] 
+AED: lastpage setting LastPage
+[9
 
-LaTeX Warning: Reference `fig:data-plot' on page 2 undefined on input line 655.
-
-[2] (../general_text/data_m.Rmd
-! Missing $ inserted.
-<inserted text> 
-$
-l.3 Hamel [-@hamel_
-                 method_2015]  refined and published a method for combining ...
+]
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
+nc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
+nc/se-utf32be.def
+File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
+) (./_main.aux)
+Package rerunfilecheck Info: File `_main.out' has not changed.
+(rerunfilecheck)             Checksum: E56B0A1CA543F74500C2B1E873D36316;11736.
+=====>589
+=====>606)
 
 Here is how much of LuaTeX's memory you used:
- 42672 strings out of 479005
+ 43204 strings out of 479005
  125197,1648299 words of node,token memory allocated
- 16081 words of node memory still in use:
-   36 hlist, 1 vlist, 2 rule, 1 mark, 104 disc, 9 local_par, 2 dir, 263 glue, 75
- kern, 30 penalty, 10 margin_kern, 1214 glyph, 1328 attribute, 78 glue_spec, 243
- attribute_list, 1 temp, 9 write, 6 pdf_dest nodes
-   avail lists: 1:1,2:1933,3:911,4:52,5:174,6:404,7:5571,8:474,9:2784,10:12,11:1
-02
- 60153 multiletter control sequences out of 65536+600000
- 101 fonts using 17194323 bytes
- 122i,11n,125p,1035b,473s stack positions out of 5000i,500n,10000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 760 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 30 attribute, 78 gl
+ue_spec, 17 attribute_list, 6 write, 1 close, 5 pdf_action nodes
+   avail lists: 1:1,2:3473,3:944,4:128,5:434,6:413,7:7043,8:873,9:2896,10:18,11:
+405
+ 60536 multiletter control sequences out of 65536+600000
+ 102 fonts using 17286755 bytes
+ 122i,12n,125p,1524b,477s stack positions out of 5000i,500n,10000p,200000b,200000s
+<c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
+c/lm/lmroman6-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf
+-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Chantel.Wetze
+l/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-m
+ath.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/openty
+pe/public/lm/lmromanslant10-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming
+/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/Users/Chante
+l.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-b
+old.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/openty
+pe/public/lm/lmroman10-italic.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/Users/Chantel.We
+tzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regul
+ar.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentyp
+e/public/lm/lmroman12-italic.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
+Output written on _main.pdf (20 pages, 3293764 bytes).
+
+PDF statistics: 694 PDF objects out of 1000 (max. 8388607)
+ 158 named destinations out of 1000 (max. 131072)
+ 1033 words of extra memory for PDF output out of 10000 (max. 100000000)
+
