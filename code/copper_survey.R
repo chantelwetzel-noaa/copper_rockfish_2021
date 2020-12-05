@@ -59,7 +59,7 @@ biomass.nwfsc = Biomass.fn(dir = file.path(dir, "survey", "wcgbts"),
 PlotBio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = biomass.nwfsc, main = "NWFSC WCGBTS", dopng = TRUE)
 
 len = bio
-len.bins = seq(10, 54, 2)
+len.bins = len_bin = seq(10, 54, 2)
 
 # Calculate the effN
 n = GetN.fn(dir = file.path(dir, "survey", "wcgbts"), dat = len, type = "length", 
@@ -99,7 +99,6 @@ lines(b[b$Sex == "M", "Year"], b[b$Sex == "M", "Length"][,"100%"], lty = 2, col 
 lines(b[b$Sex == "F", "Year"], b[b$Sex == "F", "Length"][,"25%"], lty = 2, col = 'red')
 lines(b[b$Sex == "M", "Year"], b[b$Sex == "M", "Length"][,"25%"], lty = 2, col = 'blue')
 
-sub_hkl[sub_hkl$Sex == "F", "Length"]
 
 sub_hkl$Length_cm = sub_hkl$Length
 
@@ -119,6 +118,41 @@ PlotFreqData.fn(dir = file.path(dir, "data", "survey"),
 PlotSexRatio.fn(dir = file.path(dir, "survey"), 
                 dat = sub_hkl, data.type = "length", 
                 dopng = TRUE, main = "NWFSC HKL")
+
+
+# Split the CCA and non-CCA data 
+cca_hkl = sub_hkl[sub_hkl$Areas == "CCA", ]
+table(cca_hkl$Year, cca_hkl$Sex)
+
+non_cca_hkl = sub_hkl[sub_hkl$Areas == "non_CCA", ]
+table(non_cca_hkl$Year, non_cca_hkl$Sex)
+
+non_cca_lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "survey"), 
+                       datL = non_cca_hkl, lgthBins = len_bin,
+                       sex = 3, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "survey", "forSS", "Survey_notExpanded_Length_comp_Sex_3_bin=10-54.csv"), 
+      to= file.path(dir, "data", "survey", "forSS", "sca_hkl_nonCCA_Length_comp_Sex_3_bin=10-54.csv")) 
+file.rename(from = file.path(dir, "data", "survey", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
+      to= file.path(dir, "data", "survey", "forSS", "sca_hkl_nonCCA_Length_comp_Sex_0_bin=10-54.csv")) 
+
+PlotFreqData.fn(dir = file.path(dir, "data", "survey"), 
+    dat = non_cca_lfs$comps, ylim=c(0, max(len_bin) + 4), 
+    main = "Non CCA NWFSC HKL", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+PlotSexRatio.fn(dir = file.path(dir, "data", "survey"), 
+                dat = non_cca_hkl, data.type = "length", 
+                dopng = TRUE, main = "Non CCA NWFSC HKL")
+
+
+cca_lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "survey"), 
+                       datL = cca_hkl, lgthBins = len_bin,
+                       sex = 3, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "survey", "forSS", "Survey_notExpanded_Length_comp_Sex_3_bin=10-54.csv"), 
+      to= file.path(dir, "data", "survey", "forSS", "sca_hkl_CCA_Length_comp_Sex_3_bin=10-54.csv")) 
+file.rename(from = file.path(dir, "data", "survey", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
+      to= file.path(dir, "data", "survey", "forSS", "sca_hkl_CCA_Length_comp_Sex_0_bin=10-54.csv")) 
 
 
 
