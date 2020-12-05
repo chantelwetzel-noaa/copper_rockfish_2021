@@ -86,3 +86,168 @@ plot(len, all$parameters[7, "Value"]*len^all$parameters[8, "Value"], type = 'l',
 lines(len, growth$parameters[7, "Value"]*len^growth$parameters[8, "Value"], lwd = 2, lty = 2, col = 'red')
 legend("topleft", bty = 'n', legend = c("2021 - LW", "Adjust LW to Match"), lwd = 2, lty = c(1,2), col = c('black', 'red'))
 dev.off()
+
+
+
+########################################################################
+#
+########################################################################
+
+wd = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_bridge"
+
+base = SS_output(file.path(wd, "1.0_single_sex_growth"))
+depl = SS_output(file.path(wd, "2.0_remove_depl"))
+
+modelnames <- c("Match XDB-SRA", "-Remove Depletion Survey")
+mysummary <- SSsummarize(list(base,  depl))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:4,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+# Biology
+m = SS_output(file.path(wd, "3.1_bio_m"))
+growth = SS_output(file.path(wd, "3.2_bio_growth"))
+mat = SS_output(file.path(wd, "3.3_bio_mat"))
+fecund = SS_output(file.path(wd, "3.4_bio_fecund"))
+two_sex = SS_output(file.path(wd, "3.5_bio_2_sex"))
+
+modelnames <- c("Match XDB-SRA", "-Remove Depletion Survey", 
+				"Bio - M",
+				"Bio - Growth (F)",
+				"Bio - Maturity", 
+				"Bio - Fecundity",
+				"Bio - 2 Sex")
+mysummary <- SSsummarize(list(base,  
+							  depl,
+							  m,
+							  growth,
+							  mat,
+							  fecund,
+							  two_sex))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:4,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+# Stock - Recruit
+bh = SS_output(file.path(wd, "4.1_srr_h"))
+modelnames <- c("Match XDB-SRA", 
+				"Remove Depletion Survey", 
+				"Biology",
+				"Beverton-Holt SS")
+mysummary <- SSsummarize(list(base,  
+							  depl,
+							  two_sex, 
+							  bh))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:4,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"), 
+				  pdf = TRUE)
+
+# Catches
+catch = SS_output(file.path(wd, "5.1_catches"))
+modelnames <- c("Match XDB-SRA", 
+				"- Remove Depletion Survey", 
+				"+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches")
+mysummary <- SSsummarize(list(base,  
+							  depl,
+							  two_sex, 
+							  bh,
+							  catch))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:4,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"), 
+				  pdf = TRUE)
+
+# Lengths
+# add the recreational lengths to fleet 1 in the bridge model - ignoring commercial lengths for now.
+rec_len = SS_output(file.path(wd, "6.1_data_lengths"))
+
+modelnames <- c(#"Match XDB-SRA", 
+				#"- Remove Depletion Survey", 
+				"+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches",
+				"+ Rec. Lengths")
+mysummary <- SSsummarize(list(#base,  
+							  #depl,
+							  two_sex, 
+							  bh,
+							  catch,
+							  rec_len))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:4,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"), 
+				  pdf = TRUE)
+
+# Remove Indices
+no_indices = SS_output(file.path(wd, "7.1_indices_remove"))
+
+modelnames <- c("Match XDB-SRA", 
+				"- Remove Depletion Survey", 
+				"+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches",
+				"+ Rec. Lengths",
+				"- Remove Indices")
+mysummary <- SSsummarize(list(base,  
+							  depl,
+							  two_sex, 
+							  bh,
+							  catch,
+							  rec_len,
+							  no_indices))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:12,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"), 
+				  pdf = TRUE)
+
+# fleets
+hkl = SS_output(file.path(wd, "8.0_fleets_add_hkl"))
+comm = SS_output(file.path(wd, "8.1_fleets_add_hkl_com"))
+
+modelnames <- c(#"Match XDB-SRA", 
+				#"- Remove Depletion Survey", 
+				"+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches",
+				"+ Rec. Lengths",
+				"- Remove Indices",
+				"+ Hook & Line",
+				"+ Split Out Commercial")
+mysummary <- SSsummarize(list(#base,  
+							  #depl,
+							  two_sex, 
+							  bh,
+							  catch,
+							  rec_len,
+							  no_indices,
+							  hkl,
+							  comm))
+
+SSplotComparisons(mysummary, 
+				  subplots = 1:12,
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"), 
+				  pdf = TRUE)
+
+
+
+
+
+
