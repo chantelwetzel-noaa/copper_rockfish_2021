@@ -2,9 +2,11 @@
 
 ### Natural Mortality
 
-Hamel [-@hamel_method_2015] 
 
-\input{../general_text/data_m.Rmd}
+```{r, echo=FALSE, results='asis'}
+res <- knitr::knit_child('C:/Assessments/2021/copper_rockfish_2021/write_up/general_text/data_m.Rmd', quiet = TRUE)
+cat(res, sep = '\n')
+```
 
 
 ### Maturation and Fecundity

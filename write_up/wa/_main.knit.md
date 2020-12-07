@@ -82,6 +82,7 @@ The years is 2020
 ## Landings{-}
 Replace text.
 
+Table \ref{tab:ssb}.
 
 \begin{table}[H]
 
@@ -341,6 +342,7 @@ Replace text.
 <!--chapter:end:11introduction.Rmd-->
 
 # Data
+
 A description of each data source is provided below (Figure \ref{fig:data-plot}).
 
 <!--chapter:end:20data.Rmd-->
@@ -352,6 +354,10 @@ A description of each data source is provided below (Figure \ref{fig:data-plot})
 ## Fishery-Independent Data
 
 <!--chapter:end:21s-.Rmd-->
+
+### NWFSC Slope
+
+<!--chapter:end:21s-nwfsc_slope.Rmd-->
 
 ### \acrlong{s-tri}
 
@@ -375,6 +381,10 @@ In 2004, the final year of the \gls{s-tri} series, the \gls{nwfsc} \gls{fram} co
 
 <!--chapter:end:21s-tri.RMd-->
 
+### NWFSC Slope
+
+<!--chapter:end:21s-u_nwfsc_slope.Rmd-->
+
 ### \acrlong{s-wcgbt}
 
 The \Gls{s-wcgbt} is based on a random-grid design;
@@ -390,9 +400,17 @@ as well as variance associated with selecting a relatively small number (approxi
 
 ### Natural Mortality
 
-Hamel [-@hamel_method_2015] 
 
-\input{../general_text/data_m.Rmd}
+
+Hamel [-@hamel_method_2015] developed a method for combining meta-analytic approaches relating the $M$ rate to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on $M$. In that same issue of *ICES Journal of Marine Science*, Then et al. (XXX) provided an updated data set of estimates of $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A^{-0.916}_{max}$. The approach of basing $M$ priors on maximum age alone was one that was already being used for West Coast rockfish assessments. However, in fitting the alternative model forms relating $M$ to $A_{\text{max}}$, Then et al. (XXX) did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of $M$ to $A_{\text{max}}$. Therefore, it would be reasonable to fit all models under a log transformation. This was not done. Re-evaluating the data used in Then et al. (XXX) by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space Hamel XXX), the point estimate for $M$ is:
+
+\begin{centering}
+
+$M=\frac{5.4}{A_{\text{max}}}$
+
+\end{centering}
+
+The above is also the median of the prior. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 per year  The maximum age was selected based on available age data from all West Coast data sources.  The oldest aged rockfish was XXX years, captured off the coast of XXX  in XXX.  However, age data are subject to ageing error which could impact this estimate of longevity.  The selection of 50 years was based on the range of other ages available with multiple observations of fish between XXX and XXX years of age and literature examining the longevity of `spp`.  
 
 
 ### Maturation and Fecundity
@@ -501,12 +519,128 @@ Here are all the mad props!
 
 # Tables
 
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{r>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\caption{(\#tab:allmortality)Removals by fleet for all model years.}\\
+\toprule
+Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:allmortality)Removals by fleet for all model years. \textit{(continued)}}\\
+\toprule
+Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1933 & 0.00 & 0.00 & 0.00\\
+1934 & 0.00 & 0.00 & 0.00\\
+1935 & 15.93 & 0.00 & 15.93\\
+1936 & 50.99 & 0.00 & 50.99\\
+1937 & 84.45 & 0.00 & 84.45\\
+1938 & 119.49 & 0.00 & 119.49\\
+1939 & 152.92 & 0.00 & 152.92\\
+1940 & 187.92 & 0.00 & 187.92\\
+1941 & 221.29 & 0.00 & 221.29\\
+1942 & 256.22 & 0.00 & 256.22\\
+1943 & 289.52 & 0.00 & 289.52\\
+1944 & 324.36 & 0.00 & 324.36\\
+1945 & 357.56 & 0.00 & 357.56\\
+1946 & 390.70 & 0.00 & 390.70\\
+1947 & 425.36 & 0.00 & 425.36\\
+1948 & 458.37 & 0.00 & 458.37\\
+1949 & 492.90 & 0.00 & 492.90\\
+1950 & 525.77 & 0.00 & 525.77\\
+1951 & 560.14 & 0.00 & 560.14\\
+1952 & 592.86 & 0.00 & 592.86\\
+1953 & 627.08 & 0.00 & 627.08\\
+1954 & 659.63 & 0.00 & 659.63\\
+1955 & 693.68 & 0.00 & 693.68\\
+1956 & 726.06 & 0.00 & 726.06\\
+1957 & 758.36 & 0.00 & 758.36\\
+1958 & 792.14 & 0.00 & 792.14\\
+1959 & 824.25 & 0.00 & 824.25\\
+1960 & 857.85 & 0.00 & 857.85\\
+1961 & 889.78 & 0.00 & 889.78\\
+1962 & 923.18 & 0.00 & 923.18\\
+1963 & 954.92 & 0.00 & 954.92\\
+1964 & 988.13 & 0.00 & 988.13\\
+1965 & 1019.68 & 0.00 & 1019.68\\
+1966 & 1052.68 & 0.00 & 1052.68\\
+1967 & 1082.48 & 0.00 & 1082.48\\
+1968 & 1115.28 & 0.00 & 1115.28\\
+1969 & 1147.98 & 0.00 & 1147.98\\
+1970 & 1179.02 & 0.00 & 1179.02\\
+1971 & 1211.51 & 0.00 & 1211.51\\
+1972 & 1242.34 & 0.00 & 1242.34\\
+1973 & 1274.61 & 0.00 & 1274.61\\
+1974 & 1305.23 & 0.00 & 1305.23\\
+1975 & 1335.74 & 0.00 & 1335.74\\
+1976 & 965.21 & 0.00 & 965.21\\
+1977 & 594.35 & 0.00 & 594.35\\
+1978 & 1103.78 & 0.00 & 1103.78\\
+1979 & 1468.23 & 0.00 & 1468.23\\
+1980 & 863.21 & 0.00 & 863.21\\
+1981 & 1919.81 & 0.00 & 1919.81\\
+1982 & 2014.78 & 0.00 & 2014.78\\
+1983 & 1229.42 & 0.00 & 1229.42\\
+1984 & 1951.63 & 0.00 & 1951.63\\
+1985 & 1681.33 & 0.20 & 1681.53\\
+1986 & 2026.98 & 0.19 & 2027.17\\
+1987 & 2435.16 & 0.93 & 2436.09\\
+1988 & 2273.74 & 0.25 & 2273.99\\
+1989 & 2308.58 & 0.00 & 2308.58\\
+1990 & 2947.83 & 0.03 & 2947.86\\
+1991 & 2163.85 & 0.00 & 2163.85\\
+1992 & 3507.92 & 0.00 & 3507.92\\
+1993 & 2736.86 & 0.01 & 2736.87\\
+1994 & 1908.93 & 0.00 & 1908.93\\
+1995 & 2458.39 & 0.00 & 2458.39\\
+1996 & 2848.46 & 0.00 & 2848.46\\
+1997 & 2699.30 & 0.00 & 2699.30\\
+1998 & 2753.32 & 0.00 & 2753.32\\
+1999 & 2793.68 & 0.00 & 2793.68\\
+2000 & 2919.71 & 0.00 & 2919.71\\
+2001 & 2945.16 & 0.00 & 2945.16\\
+2002 & 1897.13 & 0.00 & 1897.13\\
+2003 & 2244.10 & 0.00 & 2244.10\\
+2004 & 2208.98 & 0.00 & 2208.98\\
+2005 & 6184.02 & 0.00 & 6184.02\\
+2006 & 2869.38 & 0.00 & 2869.38\\
+2007 & 2892.66 & 0.00 & 2892.66\\
+2008 & 3039.41 & 0.00 & 3039.41\\
+2009 & 2731.91 & 0.00 & 2731.91\\
+2010 & 2132.14 & 0.00 & 2132.14\\
+2011 & 2641.62 & 0.00 & 2641.62\\
+2012 & 1759.56 & 0.00 & 1759.56\\
+2013 & 2561.77 & 0.00 & 2561.77\\
+2014 & 2343.20 & 0.00 & 2343.20\\
+2015 & 1318.84 & 0.00 & 1318.84\\
+2016 & 1853.86 & 0.00 & 1853.86\\
+2017 & 1293.98 & 0.01 & 1293.99\\
+2018 & 3024.60 & 0.00 & 3024.60\\
+2019 & 4273.52 & 0.00 & 4273.52\\
+2020 & 0.00 & 0.00 & 0.00\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
 
 <!--chapter:end:52tables.Rmd-->
 
 # Figures
 
 ![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=100% height=100% alt="Summary of data sources used in the base model"}
+
+![Estimated time-series of total biomass for Copper Rockfish.\label{fig:total_bio}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time-series of total biomass."}
+
+
+
+![Test figure.\label{fig:test}](N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts7_Spawning_output.png){width=100% height=100% alt="Test figure."}
 
 <!--chapter:end:53figures.Rmd-->
 

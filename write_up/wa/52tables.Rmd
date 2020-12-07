@@ -1,2 +1,15 @@
 # Tables
 
+```{r}
+tab = read.csv(file.path(mod_loc, "tables", "_Catches_All_Years.csv"))
+col_names = c("Year", "Recreational (mt)", "Commercial (mt)", "Total Mortality")
+
+table_format(x = tab,
+			caption = 'Removals by fleet for all model years.',
+			label = 'allmortality',
+			digits = c(0, 2, 2,2),
+			longtable = TRUE,
+			col_names = col_names,
+			align = c('r','c','c','c'))
+```
+

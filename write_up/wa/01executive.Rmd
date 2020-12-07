@@ -13,6 +13,7 @@ The years is `r endyr`
 ## Landings{-}
 Replace text.
 
+Table \ref{tab:ssb}.
 
 ```{r}
 tab = read.csv(file.path(mod_loc, "tables", "a_Catches_ES.csv"))
