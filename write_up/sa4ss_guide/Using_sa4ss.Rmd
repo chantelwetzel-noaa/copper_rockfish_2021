@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 # Getting Started
 Want to create an assessment document using **sa4ss**? 
 
-Load up the package available on github (https://github.com/nwfsc-assess/sa4ss):
+Load up the package available on [github](https://github.com/nwfsc-assess/sa4ss):
 
 ```r
 remotes::install_github("nwfsc-assess/sa4ss")
@@ -87,21 +87,39 @@ bookdown::render_book("00a.Rmd", clean = FALSE)
 # Editing the Document
 A number of documents in the specified directory should not be available.  These documents correspond to different sections required by the Groundfish Terms of Reference. 
 
-When editing make sure to render the document on a regular basis by using either of the above calls to **bookdown::render_book()**. This will allow users to identify errors quickly.
+When editing make sure to render the document on a regular basis by using either of the above calls to:
 
-If the document rendered correctly the user should see that "Output created: _main.pdf" followed by miscallaneous other warnings in the R terminal.  
+```r
+bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
+```
+This will allow users to identify errors quickly.  If the document rendered correctly the user should see that "Output created: _main.pdf" followed by miscallaneous other warnings in the R terminal.  
 
 # Error in Rendering
 
 If you see an error and the document fails to render you will want to:
 
 1. Open the _main.tex file, read the error message in the R terminal, and navigate to that line in the _main.tex file.  
-2. Correct the error.
+2. Correct the error in the Rmd files.
 3. Delete the _main.Rmd file in the folder.
-4. Rerun the render line of code: **bookdown::render_book()**. 
+4. Rerun the render line of code:
 
+```r
+bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
+```
+
+
+# Updating the Base Model
+If the base model changes, the user will need to rerun the **read_model** function to load in the output from the new model run and locate and/or create figures and tables
+
+
+```r
+sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/new_base")
+```
+
+This will create a new model output file which will replace the old file and be used to update the document to the new model the next time the document is rendered. 
 
 # Tips & Tricks
+
 If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done by creating separate folder for sections of text that will be shared across documents. Text should be included in a file with an Rmd extension and can be called using a code chunk with the **knit_child** command in the **knitr** package:
 
 
@@ -112,6 +130,5 @@ res <- knitr::knit_child(other_loc, quiet = TRUE)
 cat(res, sep = '\n')
 
 ```
-
 
 
