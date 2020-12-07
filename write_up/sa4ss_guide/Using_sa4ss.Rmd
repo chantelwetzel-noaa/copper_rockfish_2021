@@ -89,19 +89,29 @@ A number of documents in the specified directory should not be available.  These
 
 When editing make sure to render the document on a regular basis by using either of the above calls to **bookdown::render_book()**. This will allow users to identify errors quickly.
 
+If the document rendered correctly the user should see that "Output created: _main.pdf" followed by miscallaneous other warnings in the R terminal.  
+
+# Error in Rendering
+
+If you see an error and the document fails to render you will want to:
+
+1. Open the _main.tex file, read the error message in the R terminal, and navigate to that line in the _main.tex file.  
+2. Correct the error.
+3. Delete the _main.Rmd file in the folder.
+4. Rerun the render line of code: **bookdown::render_book()**. 
+
 
 # Tips & Tricks
-If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done:
+If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done by creating separate folder for sections of text that will be shared across documents. Text should be included in a file with an Rmd extension and can be called using a code chunk with the **knit_child** command in the **knitr** package:
 
-```r
-# Directory where the document is being rendered:
-wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/wa"
 
-# Directory where general text is available
-other_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+```{r}
 
-#\input{../general_text/data_m.tex}
+other_loc = file.path('folder', 'child_example.Rmd')
+res <- knitr::knit_child(other_loc, quiet = TRUE)
+cat(res, sep = '\n')
 
 ```
+
 
 
