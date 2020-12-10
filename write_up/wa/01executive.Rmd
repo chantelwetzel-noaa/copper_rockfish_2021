@@ -54,6 +54,10 @@ table_format(x = tab,
 
 ```
 
+Alternative table based on latex file: 
+
+\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/b_SSB_ES.tex}
+
 ## Recruitment{-}
 Replace text.
 
@@ -148,3 +152,5 @@ Replace text.
 
 ## Research and Data Needs{-}
 Replace text.
+
+
