@@ -157,7 +157,7 @@ or_rec_catch$total_mt[which(or_rec_catch$Year < 2001)] = or_rec_disc_rate * or_r
 #----------------------------------------------------------------------------------------------------
 wa_rec_catch = wa_rec[, c("Year", "Total.removal_.")]
 colnames(wa_rec_catch) = c("Year", 'Total')
-
+wa_rec_catch[,"Total.removal_."] = wa_rec_catch[,"Total.removal_."] / 1000
 
 #################################################################################################################
 # Evaluate the commercial landings
@@ -289,20 +289,20 @@ write.csv(all_com, file = file.path(dir, "commercial_catch_by_state.csv"))
 # Year, Season, Fleet, Catch, Catch SE
 #################################################################################################################
 
-south_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"south"]), 2), 0.05),
-						cbind(as.numeric(all_rec_ca$year), 1, 2, round(as.numeric(all_rec_ca$catch_s), 2), 0.05))
+south_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"south"]), 2), 0.01),
+						cbind(as.numeric(all_rec_ca$year), 1, 2, round(as.numeric(all_rec_ca$catch_s), 2), 0.01))
 colnames(south_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
-north_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"north"]), 2), 0.05),
-						cbind(as.numeric(all_rec_ca$year), 1, 2, round(as.numeric(all_rec_ca$catch_n), 2), 0.05))
+north_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"north"]), 2), 0.01),
+						cbind(as.numeric(all_rec_ca$year), 1, 2, round(as.numeric(all_rec_ca$catch_n), 2), 0.01))
 colnames(north_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
-oregon_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"or"]), 2), 0.05),
-						 cbind(as.numeric(or_rec_catch$Year), 1, 2, round(as.numeric(or_rec_catch$total_mt), 2), 0.05))
+oregon_catch_ss = rbind( cbind(as.numeric(all_com[,"year"]), 1, 1, round(as.numeric(all_com[,"or"]), 2), 0.01),
+						 cbind(as.numeric(or_rec_catch$Year), 1, 2, round(as.numeric(or_rec_catch$total_mt), 2), 0.01))
 colnames(oregon_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
-washington_catch_ss = rbind( cbind(as.numeric(wa_rec_catch$Year), 1, 1, as.numeric(wa_rec_catch$Total), 0.05),
-						 cbind(as.numeric(all_com[which(all_com[,'wa'] > 0), "year"]), 1, 2, as.numeric(all_com[which(all_com[,'wa']> 0), "wa"]), 0.05) )
+washington_catch_ss = rbind( cbind(as.numeric(wa_rec_catch$Year), 1, 1, as.numeric(wa_rec_catch$Total), 0.01),
+						 cbind(as.numeric(all_com[which(all_com[,'wa'] > 0), "year"]), 1, 2, as.numeric(all_com[which(all_com[,'wa']> 0), "wa"]), 0.01) )
 colnames(washington_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
 write.csv(south_catch_ss, file = file.path(dir, "forSS", "south_ca_catches_for_ss.csv"), row.names = FALSE)
