@@ -1,0 +1,9 @@
+## Basic Information
+`r executive[["stock"]]` `r spp` is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  `r spp` have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
+
+## Life History
+Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). `r spp` live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any West Coast groundfish (XX add reference XX).  
+
+## Ecosystem Considerations
+Replace text.
+
