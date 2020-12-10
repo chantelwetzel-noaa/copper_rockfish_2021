@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.6)  10 DEC 2020 11:29
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.6)  10 DEC 2020 14:24
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1513,6 +1513,9 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 LaTeX Warning: Label `tab:allmortality' multiply defined.
 
+
+LaTeX Warning: Label `tab:allmortality' multiply defined.
+
 )
 \openout1 = _main.aux
 
@@ -2037,11 +2040,11 @@ ap/pdftex.map}] [2
 
 ] (./_main.toc [3
 
-] [4])
+])
 \tf@toc=\write7
 
 \openout7 = _main.toc
-[5] (./_main.lof)
+[4] (./_main.lof)
 \tf@lof=\write8
 
 \openout8 = _main.lof
@@ -2049,7 +2052,7 @@ ap/pdftex.map}] [2
 \tf@lot=\write9
 
 \openout9 = _main.lot
-[6
+[5
 
 ]
 \cslhangindent=\skip99
@@ -2059,6 +2062,11 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 
 
 ]
+Package marginnote Info: Using workaround for absolute page number on input line
+ 292.
+
+(c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/b_SSB
+_ES.tex)
 warning  (pdf backend): ignoring duplicate destination with the name 'page.ii'
 [2]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.iii'
@@ -2066,40 +2074,104 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.iii'
 warning  (pdf backend): ignoring duplicate destination with the name 'page.iv'
 [4]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.v'
-[5]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.vi'
-[6] [1] [2] [3] [4] [5] [6] [7] [8] [9]
-<data-plot.png, id=688, 469.755pt x 361.35pt>
+[5] [6] [1] [2] [3] [4] [5] [6] [7] [8] [9]
+(c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/TimeS
+eries.tex
+Overfull \hbox (0.63622pt too wide) in paragraph at lines 7--7
+ \TU/lmr/m/n/10 Biomass 
+ []
+
+
+Overfull \hbox (0.63622pt too wide) in paragraph at lines 7--7
+ \TU/lmr/m/n/10 Biomass 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 4--9
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (0.63622pt too wide) in paragraph at lines 12--12
+ \TU/lmr/m/n/10 Biomass 
+ []
+
+
+Overfull \hbox (0.63622pt too wide) in paragraph at lines 12--12
+ \TU/lmr/m/n/10 Biomass 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 9--14
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 14--16
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 16--18
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 18--39
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 39--59
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 59--79
+ [][][][][][][][][] 
+ []
+
+[10]
+Overfull \hbox (7.39053pt too wide) in alignment at lines 79--99
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 99--117
+ [][][][][][][][][] 
+ []
+
+[11])
+<data-plot.png, id=649, 469.755pt x 361.35pt>
 File: data-plot.png Graphic file (type png)
 <use data-plot.png>
-Package luatex.def Info: data-plot.png  used on input line 1216.
+Package luatex.def Info: data-plot.png  used on input line 1183.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[10]
 <N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/
-0.0_init_model/plots/ts1_Total_biomass_(mt).png, id=695, 469.755pt x 361.35pt>
+0.0_init_model/plots/ts1_Total_biomass_(mt).png, id=651, 469.755pt x 361.35pt>
 File: N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/model
 s/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png Graphic file (type png)
 <use N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models
 /wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>
 Package luatex.def Info: N://Assessments/CurrentAssessments/DataModerate_2021/co
 pper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png  used on
- input line 1226.
+ input line 1193.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spa
-wning_output.png, id=697, 469.755pt x 361.35pt>
+wning_output.png, id=653, 469.755pt x 361.35pt>
 File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts
 7_Spawning_output.png Graphic file (type png)
 <use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7
 _Spawning_output.png>
 Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
-init_model/plots/ts7_Spawning_output.png  used on input line 1236.
+init_model/plots/ts7_Spawning_output.png  used on input line 1203.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[11<./data-plot.png>] [12<n:/Assessments/CurrentAssessments/DataModerate_2021/co
-pper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>] [13<c:
-/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spawni
-ng_output.png>] 
+[12] [13<./data-plot.png>] [14<n:/Assessments/CurrentAssessments/DataModerate_20
+21/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>] 
+[15<c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_
+Spawning_output.png>] 
 AED: lastpage setting LastPage
-[14
+[16
 
 ]
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
@@ -2111,24 +2183,28 @@ nc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 ) (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 623C4FB3B30E8FE4374961D9B8023649;12712.
+(rerunfilecheck)             Checksum: 858A4BB707CF98C72FD67FDE64517C21;11616.
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>694
-=====>696
-=====>713)
+=====>647
+=====>648
+=====>650
+=====>652
+=====>674
+tagpdf: WARN! MC45 has no kids
+tagpdf: WARN! MC45 has no kids)
 
 Here is how much of LuaTeX's memory you used:
- 43384 strings out of 478903
- 125197,1648299 words of node,token memory allocated
- 772 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 32 attribute, 78 gl
-ue_spec, 18 attribute_list, 6 write, 1 close, 6 pdf_action nodes
-   avail lists: 1:1,2:3846,3:944,4:136,5:485,6:412,7:7020,8:1195,9:2974,10:12,11
-:434
- 60789 multiletter control sequences out of 65536+600000
- 101 fonts using 16788975 bytes
+ 43364 strings out of 478903
+ 195637,1648299 words of node,token memory allocated
+ 784 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 34 attribute, 78 gl
+ue_spec, 19 attribute_list, 6 write, 1 close, 7 pdf_action nodes
+   avail lists: 1:1,2:6163,3:1957,4:124,5:429,6:949,7:12967,8:1147,9:6272,10:12,
+11:431
+ 60763 multiletter control sequences out of 65536+600000
+ 101 fonts using 16788899 bytes
  122i,12n,125p,3118b,580s stack positions out of 5000i,500n,10000p,200000b,200000s
 <c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmmono10-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf
@@ -2147,9 +2223,9 @@ r.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
 X/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Chantel.Wet
 zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regula
 r.otf>
-Output written on _main.pdf (26 pages, 9226078 bytes).
+Output written on _main.pdf (27 pages, 9225826 bytes).
 
-PDF statistics: 815 PDF objects out of 1000 (max. 8388607)
- 180 named destinations out of 1000 (max. 131072)
- 1273 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 774 PDF objects out of 1000 (max. 8388607)
+ 168 named destinations out of 1000 (max. 131072)
+ 1187 words of extra memory for PDF output out of 10000 (max. 100000000)
 

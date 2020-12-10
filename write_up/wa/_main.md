@@ -60,7 +60,7 @@ address:
 <!--chapter:end:00authors.Rmd-->
 
 ---
-title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast in 2020
+title: Status of copper rockfish (_Sebastes caurinus_) along the Washigton US West coast in 2020
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -68,6 +68,8 @@ title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast i
 \pagebreak
 \pagenumbering{roman}
 \setcounter{page}{1}
+\setcounter{figure}{0}
+\setcounter{table}{0}
 \renewcommand{\thetable}{\roman{table}}
 \renewcommand{\thefigure}{\roman{figure}}
 
@@ -77,7 +79,7 @@ title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast i
 
 # Executive Summary{-}
 ## Stock{-}
-This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through 2020.
+This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020.
 
 The years is 2020
 
@@ -147,6 +149,10 @@ Year & Spawning Output & Lower Interval & Upper Interval & Fraction Unfished & L
 \bottomrule
 \end{tabular}
 \end{table}
+
+Alternative table based on latex file: 
+
+\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/b_SSB_ES.tex}
 
 ## Recruitment{-}
 Replace text.
@@ -311,6 +317,8 @@ Replace text.
 ## Research and Data Needs{-}
 Replace text.
 
+
+
 <!--chapter:end:01executive.Rmd-->
 
 \pagebreak
@@ -319,6 +327,8 @@ Replace text.
 \setcounter{page}{1}
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
 
 <!--chapter:end:10a.Rmd-->
 
@@ -326,21 +336,12 @@ Replace text.
 
 
 ## Basic Information
-This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. Copper Rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  Copper Rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
+This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  copper rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
 
 ## Life History
-Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). `r spp' live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any west coast groundfish (XX add reference XX).  
+Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). copper rockfish live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any West Coast groundfish (XX add reference XX).  
 
 ## Ecosystem Considerations
-Replace text.
-
-## Historical and Current Fishery Information
-Replace text.
-
-## Summary of Management History and Performance
-Replace text.
-
-## Foreign Fisheries
 Replace text.
 
 ## Historical and Current Fishery Information
@@ -368,48 +369,9 @@ A description of each data source is provided below (Figure \ref{fig:data-plot})
 
 ## Fishery-Independent Data
 
+There were no fishery-independent data sources available for copper rockfish off the Washington coast to be considered for this assessment.
+
 <!--chapter:end:21s-.Rmd-->
-
-### NWFSC Slope
-
-<!--chapter:end:21s-nwfsc_slope.Rmd-->
-
-### \acrlong{s-tri}
-
-The \gls{s-tri} was first conducted by the \gls{afsc} in 1977, and the survey continued until 2004 [@weinberg_2001_2002].
-Its basic design was a series of equally-spaced east-to-west transects across the continential shelf from which searches for tows in a specific depth range were initiated.
-The survey design changed slightly over time.
-In general, all of the surveys were conducted in the mid summer through early fall.
-The 1977 survey was conducted from early July through late September.
-The surveys from 1980 through 1989 were conducted from mid-July to late September.
-The 1992 survey was conducted from mid July through early October.
-The 1995 survey was conducted from early June through late August.
-The 1998 survey was conducted from early June through early August.
-Finally, the 2001 and 2004 surveys were conducted from May to July.
-
-Haul depths ranged from 91-457 m during the 1977 survey with no hauls shallower than 91 m.
-Due to haul performance issues and truncated sampling with respect to depth, the data from 1977 were omitted from this analysis.
-The surveys in 1980, 1983, and 1986 covered the US West Coast south to 36.8\textdegree N latitude and a depth range of 55-366 m.
-The surveys in 1989 and 1992 covered the same depth range but extended the southern range to 34.5\textdegree N (near Point Conception).
-From 1995 through 2004, the surveys covered the depth range 55-500 m and surveyed south to 34.5\textdegree N.
-In 2004, the final year of the \gls{s-tri} series, the \gls{nwfsc} \gls{fram} conducted the survey following similar protocols to earlier years.
-
-<!--chapter:end:21s-tri.RMd-->
-
-### NWFSC Slope
-
-<!--chapter:end:21s-u_nwfsc_slope.Rmd-->
-
-### \acrlong{s-wcgbt}
-
-The \Gls{s-wcgbt} is based on a random-grid design;
-covering the coastal waters from a depth of 55-1,280 m [@bradburn_2003_2011].
-This design generally uses four industry-chartered vessels per year assigned to a roughly equal number of randomly selected grid cells and divided into two 'passes' of the coast.
-Two vessels fish from north to south during each pass between late May to early October.
-This design therefore incorporates both vessel-to-vessel differences in catchability,
-as well as variance associated with selecting a relatively small number (approximately 700) of possible cells from a very large set of possible cells spread from the Mexican to the Canadian borders.
-
-<!--chapter:end:21s-wcgbts.Rmd-->
 
 ## Biological Data
 
@@ -436,17 +398,33 @@ Maturity-at-length based on the work of Hannah XXX which estimated the 50% size-
 
 This assessment assumed a logistic maturity-at-length curve based on analysis of XXX fish maturity samples collected from the NWFSC WCGBT and NWFSC Hook & Line surveys.  The new maturity-at-length curve is based on the estimate of functional maturity, an approach that classifies rockfish maturity with developing oocytes as mature or immature based on the proportion of vitellogenin in the cytoplasm and the measured frequency of atretic cells (Melissa Head, personal communication, NWFSC, NOAA).  The 50% size-at-maturity was estimated at XX cm with maturity asymptoting to 1.0 for larger fish (Figure ADD FIGURE).  
 
-The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for Copper Rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure ADD FIGURE.
-
+The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for copper rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure ADD FIGURE.
 
 ### Sex Ratio
+
+
+There was limited sex specific observations by length or age for all biological data sources. The sex ratio of young fish was assumed to be 1:1. 
 
 
 ### Length-Weight Relationship
 
 
+The length-weight relationship for copper rockfish was estimated outside the model using all coastwide biological data available from fishery-independent data sources, where the female weight-at-length in grams was estimated at 9.56e-06$L$^3.19^ and males at 1.08e-05$L$^3.15^ where $L$ is length in cm (Figures ADD FIGURE).
+
 ### Growth (Length-at-Age)
 
+
+The length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019. Figure ADD FIGURE shows the lengths and ages for all years as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
+
+\begin{centering}
+
+Females $L_{\infty}$ = 49.6 cm; $k$ = 0.152
+
+Males $L_{\infty}$ = 47.8 cm; $k$ = 0.182
+
+\end{centering}
+
+These values were fixed within the base model for male and female copper rockfish.
 
 ### Ageing Precision and Bias
 
@@ -651,13 +629,15 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \endgroup{}
 
 
+\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/TimeSeries.tex}
+
 <!--chapter:end:52tables.Rmd-->
 
 # Figures
 
 ![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=100% height=100% alt="Summary of data sources used in the base model"}
 
-![Estimated time-series of total biomass for Copper Rockfish.\label{fig:total_bio}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time-series of total biomass."}
+![Estimated time-series of total biomass for copper rockfish.\label{fig:total_bio}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time-series of total biomass."}
 
 
 

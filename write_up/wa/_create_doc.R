@@ -11,7 +11,7 @@ setwd("C:/Assessments/2021/copper_rockfish_2021/write_up/wa")
 
 # Create the needed items to generate the "right" template that would be based on the inputs here:
 sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cope", "Theresa Tsou", "Kristen E. Hinton"),
-  			 species = "Copper Rockfish",
+  			 species = "copper rockfish",
   			 latin = "Sebastes caurinus",
   			 coast = "Washington US West",
   			 type = c("sa"),
