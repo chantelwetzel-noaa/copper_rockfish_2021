@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.6)  6 DEC 2020 16:29
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.6)  10 DEC 2020 11:29
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1513,9 +1513,6 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 LaTeX Warning: Label `tab:allmortality' multiply defined.
 
-
-LaTeX Warning: Label `tab:allmortality' multiply defined.
-
 )
 \openout1 = _main.aux
 
@@ -2071,38 +2068,38 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.iv'
 warning  (pdf backend): ignoring duplicate destination with the name 'page.v'
 [5]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.vi'
-[6] [1] [2] [3] [4] [5] [6] [7] [8]
-<data-plot.png, id=645, 469.755pt x 361.35pt>
+[6] [1] [2] [3] [4] [5] [6] [7] [8] [9]
+<data-plot.png, id=688, 469.755pt x 361.35pt>
 File: data-plot.png Graphic file (type png)
 <use data-plot.png>
-Package luatex.def Info: data-plot.png  used on input line 1147.
+Package luatex.def Info: data-plot.png  used on input line 1216.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[10]
 <N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/
-0.0_init_model/plots/ts1_Total_biomass_(mt).png, id=647, 469.755pt x 361.35pt>
+0.0_init_model/plots/ts1_Total_biomass_(mt).png, id=695, 469.755pt x 361.35pt>
 File: N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/model
 s/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png Graphic file (type png)
 <use N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models
 /wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>
 Package luatex.def Info: N://Assessments/CurrentAssessments/DataModerate_2021/co
 pper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png  used on
- input line 1157.
+ input line 1226.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0
-.0_init_model/plots/ts7_Spawning_output.png, id=649, 469.755pt x 361.35pt>
-File: N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models
-/wa/0.0_init_model/plots/ts7_Spawning_output.png Graphic file (type png)
-<use N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/
-wa/0.0_init_model/plots/ts7_Spawning_output.png>
-Package luatex.def Info: N:/Assessments/CurrentAssessments/DataModerate_2021/cop
-per_rockfish/models/wa/0.0_init_model/plots/ts7_Spawning_output.png  used on inp
-ut line 1167.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spa
+wning_output.png, id=697, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts
+7_Spawning_output.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7
+_Spawning_output.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/ts7_Spawning_output.png  used on input line 1236.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[9] [10<./data-plot.png>] [11<n:/Assessments/CurrentAssessments/DataModerate_202
-1/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>] [
-12<n:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa
-/0.0_init_model/plots/ts7_Spawning_output.png>] 
+[11<./data-plot.png>] [12<n:/Assessments/CurrentAssessments/DataModerate_2021/co
+pper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>] [13<c:
+/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spawni
+ng_output.png>] 
 AED: lastpage setting LastPage
-[13
+[14
 
 ]
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
@@ -2114,27 +2111,25 @@ nc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 ) (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 4906C80C55BD16959CEBA93116DE7B2C;11988.
+(rerunfilecheck)             Checksum: 623C4FB3B30E8FE4374961D9B8023649;12712.
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>643
-=====>644
-=====>646
-=====>648
-=====>671)
+=====>694
+=====>696
+=====>713)
 
 Here is how much of LuaTeX's memory you used:
- 43307 strings out of 478903
+ 43384 strings out of 478903
  125197,1648299 words of node,token memory allocated
- 760 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 30 attribute, 78 gl
-ue_spec, 17 attribute_list, 6 write, 1 close, 5 pdf_action nodes
-   avail lists: 1:2,2:3855,3:944,4:128,5:456,6:413,7:7043,8:1035,9:2934,10:14,11
-:408
- 60723 multiletter control sequences out of 65536+600000
- 101 fonts using 16788899 bytes
- 122i,12n,125p,2748b,580s stack positions out of 5000i,500n,10000p,200000b,200000s
+ 772 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 32 attribute, 78 gl
+ue_spec, 18 attribute_list, 6 write, 1 close, 6 pdf_action nodes
+   avail lists: 1:1,2:3846,3:944,4:136,5:485,6:412,7:7020,8:1195,9:2974,10:12,11
+:434
+ 60789 multiletter control sequences out of 65536+600000
+ 101 fonts using 16788975 bytes
+ 122i,12n,125p,3118b,580s stack positions out of 5000i,500n,10000p,200000b,200000s
 <c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmmono10-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf
 -dist/fonts/opentype/public/lm/lmroman6-regular.otf><c:/Users/Chantel.Wetzel/App
@@ -2152,9 +2147,9 @@ r.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
 X/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Chantel.Wet
 zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regula
 r.otf>
-Output written on _main.pdf (25 pages, 9178766 bytes).
+Output written on _main.pdf (26 pages, 9226078 bytes).
 
-PDF statistics: 766 PDF objects out of 1000 (max. 8388607)
- 169 named destinations out of 1000 (max. 131072)
- 1149 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 815 PDF objects out of 1000 (max. 8388607)
+ 180 named destinations out of 1000 (max. 131072)
+ 1273 words of extra memory for PDF output out of 10000 (max. 100000000)
 

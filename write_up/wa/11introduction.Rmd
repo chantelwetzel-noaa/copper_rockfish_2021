@@ -1,12 +1,9 @@
 # Introduction
-## Basic Information
-`r executive[["stock"]]`
 
-## Life History
-Replace text.
-
-## Ecosystem Considerations
-Replace text.
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'1_intro_life_history_fishery_info.Rmd')
+read_child(filein)
+```
 
 ## Historical and Current Fishery Information
 Replace text.

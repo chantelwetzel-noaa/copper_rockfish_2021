@@ -2,14 +2,19 @@
 
 ### Natural Mortality
 
-
 ```{r, echo=FALSE, results='asis'}
-res <- knitr::knit_child('C:/Assessments/2021/copper_rockfish_2021/write_up/general_text/data_m.Rmd', quiet = TRUE)
-cat(res, sep = '\n')
+#filein = file.path('..', 'general_text', 'data_m.Rmd')
+filein = file.path(general_wd,'data_m.Rmd')
+read_child(filein)
 ```
 
 
 ### Maturation and Fecundity
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_fecund_mat.Rmd')
+read_child(filein)
+```
 
 
 ### Sex Ratio

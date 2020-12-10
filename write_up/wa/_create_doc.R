@@ -1,8 +1,10 @@
 
 detach("package:sa4ss", unload = TRUE)
+
 remotes::install_github("nwfsc-assess/sa4ss")
 library(sa4ss)
 
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
 # Specify the directory for the document
 setwd("C:/Assessments/2021/copper_rockfish_2021/write_up/wa")
@@ -17,7 +19,9 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
   			 edit = FALSE)
 
 # Create a model Rdata object
-#read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/0.01_init_model_updated_catches")
+sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs",
+				  create_plots = FALSE, verbose = TRUE)
+
 load("00mod.Rdata")
 
 # If there is an error in the build - this file will need to be removed before next render

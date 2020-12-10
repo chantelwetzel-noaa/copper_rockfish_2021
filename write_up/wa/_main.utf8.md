@@ -68,6 +68,8 @@ title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast i
 \pagebreak
 \pagenumbering{roman}
 \setcounter{page}{1}
+\renewcommand{\thetable}{\roman{table}}
+\renewcommand{\thefigure}{\roman{figure}}
 
 
 <!--chapter:end:01a.Rmd-->
@@ -75,7 +77,7 @@ title: Copper Rockfish (_Sebastes caurinus_) along the Washigton US West coast i
 
 # Executive Summary{-}
 ## Stock{-}
-This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through xxxx.
+This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through 2020.
 
 The years is 2020
 
@@ -94,18 +96,18 @@ Table \ref{tab:ssb}.
 \toprule
 Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \midrule
-2009 & 2732 & 0.00 & 2731.91\\
-2010 & 2132 & 0.00 & 2132.14\\
-2011 & 2642 & 0.00 & 2641.62\\
-2012 & 1760 & 0.00 & 1759.56\\
-2013 & 2562 & 0.00 & 2561.77\\
-2014 & 2343 & 0.00 & 2343.20\\
-2015 & 1319 & 0.00 & 1318.84\\
-2016 & 1854 & 0.00 & 1853.86\\
-2017 & 1294 & 0.01 & 1293.99\\
-2018 & 3025 & 0.00 & 3024.60\\
-2019 & 4274 & 0.00 & 4273.52\\
-2020 & 0 & 0.00 & 0.00\\
+2009 & 3 & 0.00 & 2.72\\
+2010 & 2 & 0.00 & 2.13\\
+2011 & 3 & 0.00 & 2.63\\
+2012 & 2 & 0.00 & 1.75\\
+2013 & 3 & 0.00 & 2.55\\
+2014 & 2 & 0.00 & 2.34\\
+2015 & 1 & 0.00 & 1.32\\
+2016 & 2 & 0.00 & 1.85\\
+2017 & 1 & 0.01 & 1.30\\
+2018 & 3 & 0.00 & 3.02\\
+2019 & 4 & 0.00 & 4.27\\
+2020 & 3 & 0.00 & 2.77\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -129,19 +131,19 @@ Replace text.
 \toprule
 Year & Spawning Output & Lower Interval & Upper Interval & Fraction Unfished & Lower Interval & Upper Interval\\
 \midrule
-2009 & 3786 & 3786 & 3786 & 0.451 & 0.451 & 0.451\\
-2010 & 3738 & 3738 & 3738 & 0.445 & 0.445 & 0.445\\
-2011 & 3756 & 3756 & 3756 & 0.447 & 0.447 & 0.447\\
-2012 & 3726 & 3726 & 3726 & 0.444 & 0.444 & 0.444\\
-2013 & 3786 & 3786 & 3786 & 0.451 & 0.451 & 0.451\\
-2014 & 3766 & 3766 & 3766 & 0.449 & 0.449 & 0.449\\
-2015 & 3767 & 3767 & 3767 & 0.449 & 0.449 & 0.449\\
-2016 & 3872 & 3872 & 3872 & 0.461 & 0.461 & 0.461\\
-2017 & 3922 & 3922 & 3922 & 0.467 & 0.467 & 0.467\\
-2018 & 4029 & 4029 & 4029 & 0.480 & 0.480 & 0.480\\
-2019 & 3956 & 3956 & 3956 & 0.471 & 0.471 & 0.471\\
-2020 & 3750 & 3750 & 3750 & 0.447 & 0.447 & 0.447\\
-2021 & 3979 & 3979 & 3979 & 0.474 & 0.474 & 0.474\\
+2009 & 3 & 3 & 3 & 0.393 & 0.393 & 0.393\\
+2010 & 3 & 3 & 3 & 0.387 & 0.387 & 0.387\\
+2011 & 3 & 3 & 3 & 0.389 & 0.389 & 0.389\\
+2012 & 3 & 3 & 3 & 0.386 & 0.386 & 0.386\\
+2013 & 3 & 3 & 3 & 0.393 & 0.393 & 0.393\\
+2014 & 3 & 3 & 3 & 0.391 & 0.391 & 0.391\\
+2015 & 3 & 3 & 3 & 0.391 & 0.391 & 0.391\\
+2016 & 3 & 3 & 3 & 0.404 & 0.404 & 0.404\\
+2017 & 3 & 3 & 3 & 0.411 & 0.411 & 0.411\\
+2018 & 3 & 3 & 3 & 0.424 & 0.424 & 0.424\\
+2019 & 3 & 3 & 3 & 0.415 & 0.415 & 0.415\\
+2020 & 3 & 3 & 3 & 0.388 & 0.388 & 0.388\\
+2021 & 3 & 3 & 3 & 0.381 & 0.381 & 0.381\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -159,19 +161,19 @@ Replace text.
 \toprule
 Year & Recruitment & Lower Interval & Upper Interval & Recruit Devs. & Lower Interval & Upper Interval\\
 \midrule
-2009 & 7760 & 7760 & 7760 & 0 & 0 & 0\\
-2010 & 7741 & 7741 & 7741 & 0 & 0 & 0\\
-2011 & 7748 & 7748 & 7748 & 0 & 0 & 0\\
-2012 & 7736 & 7736 & 7736 & 0 & 0 & 0\\
-2013 & 7760 & 7760 & 7760 & 0 & 0 & 0\\
-2014 & 7752 & 7752 & 7752 & 0 & 0 & 0\\
-2015 & 7753 & 7753 & 7753 & 0 & 0 & 0\\
-2016 & 7793 & 7793 & 7793 & 0 & 0 & 0\\
-2017 & 7812 & 7812 & 7812 & 0 & 0 & 0\\
-2018 & 7851 & 7851 & 7851 & 0 & 0 & 0\\
-2019 & 7825 & 7825 & 7825 & 0 & 0 & 0\\
-2020 & 7746 & 7746 & 7746 & 0 & 0 & 0\\
-2021 & 7833 & 7833 & 7833 & 0 & 0 & 0\\
+2009 & 7 & 7 & 7 & 0 & 0 & 0\\
+2010 & 7 & 7 & 7 & 0 & 0 & 0\\
+2011 & 7 & 7 & 7 & 0 & 0 & 0\\
+2012 & 7 & 7 & 7 & 0 & 0 & 0\\
+2013 & 7 & 7 & 7 & 0 & 0 & 0\\
+2014 & 7 & 7 & 7 & 0 & 0 & 0\\
+2015 & 7 & 7 & 7 & 0 & 0 & 0\\
+2016 & 7 & 7 & 7 & 0 & 0 & 0\\
+2017 & 7 & 7 & 7 & 0 & 0 & 0\\
+2018 & 7 & 7 & 7 & 0 & 0 & 0\\
+2019 & 7 & 7 & 7 & 0 & 0 & 0\\
+2020 & 7 & 7 & 7 & 0 & 0 & 0\\
+2021 & 7 & 7 & 7 & 0 & 0 & 0\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -189,18 +191,18 @@ Replace text.
 \toprule
 Year & 1-SPR & Lower Interval & Upper Interval & Exploit. Rate & Lower Interval & Upper Interval\\
 \midrule
-2009 & 54.5 & 54.5 & 54.5 & 0.067 & 0.067 & 0.067\\
-2010 & 47.5 & 47.5 & 47.5 & 0.053 & 0.053 & 0.053\\
-2011 & 53.6 & 53.6 & 53.6 & 0.065 & 0.065 & 0.065\\
-2012 & 42.0 & 42.0 & 42.0 & 0.043 & 0.043 & 0.043\\
-2013 & 52.4 & 52.4 & 52.4 & 0.062 & 0.062 & 0.062\\
-2014 & 49.9 & 49.9 & 49.9 & 0.057 & 0.057 & 0.057\\
-2015 & 34.1 & 34.1 & 34.1 & 0.032 & 0.032 & 0.032\\
-2016 & 42.5 & 42.5 & 42.5 & 0.044 & 0.044 & 0.044\\
-2017 & 32.8 & 32.8 & 32.8 & 0.031 & 0.031 & 0.031\\
-2018 & 55.7 & 55.7 & 55.7 & 0.070 & 0.070 & 0.070\\
-2019 & 66.5 & 66.5 & 66.5 & 0.101 & 0.101 & 0.101\\
-2020 & 0.0 & 0.0 & 0.0 & 0.000 & 0.000 & 0.000\\
+2009 & 60.0 & 60.0 & 60.0 & 0.081 & 0.081 & 0.081\\
+2010 & 53.1 & 53.1 & 53.1 & 0.064 & 0.064 & 0.064\\
+2011 & 59.1 & 59.1 & 59.1 & 0.079 & 0.079 & 0.079\\
+2012 & 47.5 & 47.5 & 47.5 & 0.053 & 0.053 & 0.053\\
+2013 & 58.0 & 58.0 & 58.0 & 0.076 & 0.076 & 0.076\\
+2014 & 55.5 & 55.5 & 55.5 & 0.070 & 0.070 & 0.070\\
+2015 & 39.3 & 39.3 & 39.3 & 0.039 & 0.039 & 0.039\\
+2016 & 47.9 & 47.9 & 47.9 & 0.054 & 0.054 & 0.054\\
+2017 & 37.8 & 37.8 & 37.8 & 0.038 & 0.038 & 0.038\\
+2018 & 61.0 & 61.0 & 61.0 & 0.085 & 0.085 & 0.085\\
+2019 & 71.2 & 71.2 & 71.2 & 0.122 & 0.122 & 0.122\\
+2020 & 60.8 & 60.8 & 60.8 & 0.084 & 0.084 & 0.084\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -218,26 +220,26 @@ Replace text.
 \toprule
 Metric & Estimate & Lower Inteval & Upper Interval\\
 \midrule
-Unfished Spawning Output & 8395.78 & 8395.78 & 8395.78\\
-Unfished Age 3+ Biomass (mt) & 80028.40 & 80028.40 & 80028.40\\
-Unfished Recruitment (R0) & 8678.67 & 8678.67 & 8678.67\\
-Spawning Output (2021) & 3978.78 & 3978.78 & 3978.78\\
-Fraction Unfished (2021) & 0.47 & 0.47 & 0.47\\
+Unfished Spawning Output & 7.63 & 7.63 & 7.63\\
+Unfished Age 3+ Biomass (mt) & 72.84 & 72.84 & 72.84\\
+Unfished Recruitment (R0) & 7.90 & 7.90 & 7.90\\
+Spawning Output (2021) & 2.91 & 2.91 & 2.91\\
+Fraction Unfished (2021) & 0.38 & 0.38 & 0.38\\
 Reference Points Based SB40 Percent & NA & NA & NA\\
-Proxy Spawning Output(SB40 Percent & 3358.31 & 3358.31 & 3358.31\\
+Proxy Spawning Output(SB40 Percent & 3.05 & 3.05 & 3.05\\
 SPR Resulting in SB40 Percent & 0.46 & 0.46 & 0.46\\
 Exploitation Rate Resulting in SB40 Percent & 0.07 & 0.07 & 0.07\\
-Yield with SPR Based On SB40 Percent (mt) & 2451.87 & 2451.87 & 2451.87\\
+Yield with SPR Based On SB40 Percent (mt) & 2.27 & 2.27 & 2.27\\
 Reference Points Based on SPR Proxy for MSY & NA & NA & NA\\
-Proxy Spawning Output (SPR50) & 3745.81 & 3745.81 & 3745.81\\
+Proxy Spawning Output (SPR50) & 3.41 & 3.41 & 3.41\\
 SPR50 & 50.00 & NA & NA\\
 Exploitation Rate Corresponding to SPR50 & 0.06 & 0.06 & 0.06\\
-Yield with SPR50 at SB SPR (mt) & 2336.95 & 2336.95 & 2336.95\\
+Yield with SPR50 at SB SPR (mt) & 2.16 & 2.16 & 2.16\\
 Reference Points Based on Estimated MSY Values & NA & NA & NA\\
-Spawning Output at MSY (SB MSY) & 2259.48 & 2259.48 & 2259.48\\
+Spawning Output at MSY (SB MSY) & 2.07 & 2.07 & 2.07\\
 SPR MSY & 0.34 & 0.34 & 0.34\\
 Exploitation Rate Corresponding to SPR MSY & 0.10 & 0.10 & 0.10\\
-MSY (mt) & 2616.45 & 2616.45 & 2616.45\\
+MSY (mt) & 2.42 & 2.42 & 2.42\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -253,20 +255,20 @@ Replace text.
 \fontsize{10}{12}\selectfont
 \begin{tabular}[t]{r>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}}
 \toprule
-Years & OFL & ABC & ACL & Landings\\
+Year & OFL & ABC & ACL & Catch\\
 \midrule
-2009 & fill in & fill in & fill in & 2,731.91\\
-2010 & fill in & fill in & fill in & 2,132.14\\
-2011 & fill in & fill in & fill in & 2,641.62\\
-2012 & fill in & fill in & fill in & 1,759.56\\
-2013 & fill in & fill in & fill in & 2,561.77\\
-2014 & fill in & fill in & fill in & 2,343.20\\
-2015 & fill in & fill in & fill in & 1,318.84\\
-2016 & fill in & fill in & fill in & 1,853.86\\
-2017 & fill in & fill in & fill in & 1,293.99\\
-2018 & fill in & fill in & fill in & 3,024.60\\
-2019 & fill in & fill in & fill in & 4,273.52\\
-2020 & fill in & fill in & fill in & 0.00\\
+2009 & fill in & fill in & fill in & 2.73\\
+2010 & fill in & fill in & fill in & 2.13\\
+2011 & fill in & fill in & fill in & 2.63\\
+2012 & fill in & fill in & fill in & 1.75\\
+2013 & fill in & fill in & fill in & 2.55\\
+2014 & fill in & fill in & fill in & 2.34\\
+2015 & fill in & fill in & fill in & 1.32\\
+2016 & fill in & fill in & fill in & 1.85\\
+2017 & fill in & fill in & fill in & 1.30\\
+2018 & fill in & fill in & fill in & 3.02\\
+2019 & fill in & fill in & fill in & 4.27\\
+2020 & fill in & fill in & fill in & 2.77\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -288,18 +290,18 @@ Add the projection table
 \toprule
 Year & OFL & ABC & 3+ Biomass & Spawning Output & Fraction Unfished\\
 \midrule
-2021 & 2464.1 & 60.1 & 42774.5 & 3978.8 & 0.474\\
-2022 & 2595.7 & 60.4 & 44920.2 & 4208.4 & 0.501\\
-2023 & 2724.0 & 2724.0 & 46987.6 & 4440.5 & 0.529\\
-2024 & 2688.4 & 2688.4 & 46401.4 & 4394.1 & 0.523\\
-2025 & 2651.9 & 2651.9 & 45839.6 & 4341.6 & 0.517\\
-2026 & 2617.4 & 2617.4 & 45324.6 & 4286.0 & 0.510\\
-2027 & 2586.6 & 2586.6 & 44855.2 & 4231.5 & 0.504\\
-2028 & 2559.8 & 2559.8 & 44433.3 & 4181.2 & 0.498\\
-2029 & 2536.5 & 2536.5 & 44056.3 & 4136.3 & 0.493\\
-2030 & 2516.3 & 2516.3 & 43720.3 & 4096.7 & 0.488\\
-2031 & 2498.6 & 2498.6 & 43420.5 & 4061.8 & 0.484\\
-2032 & 2482.9 & 2482.9 & 43152.7 & 4030.8 & 0.480\\
+2021 & 1.9 & 1.4 & 32.5 & 2.9 & 0.381\\
+2022 & 1.9 & 1.4 & 33.5 & 3.0 & 0.392\\
+2023 & 2.0 & 2.0 & 34.4 & 3.1 & 0.405\\
+2024 & 2.0 & 2.0 & 34.6 & 3.1 & 0.409\\
+2025 & 2.0 & 2.0 & 34.9 & 3.2 & 0.413\\
+2026 & 2.0 & 2.1 & 35.1 & 3.2 & 0.417\\
+2027 & 2.1 & 2.1 & 35.3 & 3.2 & 0.420\\
+2028 & 2.1 & 2.1 & 35.5 & 3.2 & 0.423\\
+2029 & 2.1 & 2.1 & 35.6 & 3.2 & 0.425\\
+2030 & 2.1 & 2.1 & 35.8 & 3.3 & 0.427\\
+2031 & 2.1 & 2.1 & 35.9 & 3.3 & 0.429\\
+2032 & 2.1 & 2.1 & 36.0 & 3.3 & 0.431\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -321,13 +323,24 @@ Replace text.
 <!--chapter:end:10a.Rmd-->
 
 # Introduction
+
+
 ## Basic Information
-This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through xxxx.
+This assessment reports the status of Copper Rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. Copper Rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  Copper Rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
 
 ## Life History
-Replace text.
+Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). `r spp' live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any west coast groundfish (XX add reference XX).  
 
 ## Ecosystem Considerations
+Replace text.
+
+## Historical and Current Fishery Information
+Replace text.
+
+## Summary of Management History and Performance
+Replace text.
+
+## Foreign Fisheries
 Replace text.
 
 ## Historical and Current Fishery Information
@@ -348,6 +361,8 @@ A description of each data source is provided below (Figure \ref{fig:data-plot})
 <!--chapter:end:20data.Rmd-->
 
 ## Fishery-Dependent Data
+
+[@ralston_documentation_2010]
 
 <!--chapter:end:21f-.Rmd-->
 
@@ -401,8 +416,7 @@ as well as variance associated with selecting a relatively small number (approxi
 ### Natural Mortality
 
 
-
-Hamel [-@hamel_method_2015] developed a method for combining meta-analytic approaches relating the $M$ rate to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on $M$. In that same issue of *ICES Journal of Marine Science*, Then et al. (XXX) provided an updated data set of estimates of $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A^{-0.916}_{max}$. The approach of basing $M$ priors on maximum age alone was one that was already being used for West Coast rockfish assessments. However, in fitting the alternative model forms relating $M$ to $A_{\text{max}}$, Then et al. (XXX) did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of $M$ to $A_{\text{max}}$. Therefore, it would be reasonable to fit all models under a log transformation. This was not done. Re-evaluating the data used in Then et al. (XXX) by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space Hamel XXX), the point estimate for $M$ is:
+Hamel [-@hamel_method_2015] developed a method for combining meta-analytic approaches relating the $M$ rate to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on $M$. In that same issue of *ICES Journal of Marine Science*, Then et al. [-@then_evaluating_2015-1] provided an updated data set of estimates of $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A^{-0.916}_{max}$. The approach of basing $M$ priors on maximum age alone was one that was already being used for West Coast rockfish assessments. However, in fitting the alternative model forms relating $M$ to $A_{\text{max}}$, Then et al. [-@then_evaluating_2015-1] did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of $M$ to $A_{\text{max}}$. Therefore, it would be reasonable to fit all models under a log transformation. This was not done. Re-evaluating the data used in Then et al. [-@then_evaluating_2015-1] by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space Hamel [-@hamel_method_2015]), the point estimate for $M$ is:
 
 \begin{centering}
 
@@ -410,10 +424,19 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 \end{centering}
 
-The above is also the median of the prior. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 per year  The maximum age was selected based on available age data from all West Coast data sources.  The oldest aged rockfish was XXX years, captured off the coast of XXX  in XXX.  However, age data are subject to ageing error which could impact this estimate of longevity.  The selection of 50 years was based on the range of other ages available with multiple observations of fish between XXX and XXX years of age and literature examining the longevity of `spp`.  
+The above is also the median of the prior. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 per year  The maximum age was selected based on available age data from all West Coast data sources and literature values.  The oldest aged rockfish was 51 years with two observations, off the coast of Washington and Oregon in 2019.  However, age data are subject to ageing error which could impact this estimate of longevity.  The selection of 50 years was based on the range of other ages available with multiple observations of fish between 44 and 51 years of age and literature examining the longevity of `spp` [@love_milton_probably_1996].  
 
 
 ### Maturation and Fecundity
+
+
+NEED TO UPDATE WHEN MELISSA IS DONE
+
+Maturity-at-length based on the work of Hannah XXX which estimated the 50% size-at-maturity of 34.83 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure ADD FIGURE).
+
+This assessment assumed a logistic maturity-at-length curve based on analysis of XXX fish maturity samples collected from the NWFSC WCGBT and NWFSC Hook & Line surveys.  The new maturity-at-length curve is based on the estimate of functional maturity, an approach that classifies rockfish maturity with developing oocytes as mature or immature based on the proportion of vitellogenin in the cytoplasm and the measured frequency of atretic cells (Melissa Head, personal communication, NWFSC, NOAA).  The 50% size-at-maturity was estimated at XX cm with maturity asymptoting to 1.0 for larger fish (Figure ADD FIGURE).  
+
+The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for Copper Rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure ADD FIGURE.
 
 
 ### Sex Ratio
@@ -537,94 +560,92 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \endfoot
 \bottomrule
 \endlastfoot
-1933 & 0.00 & 0.00 & 0.00\\
-1934 & 0.00 & 0.00 & 0.00\\
-1935 & 15.93 & 0.00 & 15.93\\
-1936 & 50.99 & 0.00 & 50.99\\
-1937 & 84.45 & 0.00 & 84.45\\
-1938 & 119.49 & 0.00 & 119.49\\
-1939 & 152.92 & 0.00 & 152.92\\
-1940 & 187.92 & 0.00 & 187.92\\
-1941 & 221.29 & 0.00 & 221.29\\
-1942 & 256.22 & 0.00 & 256.22\\
-1943 & 289.52 & 0.00 & 289.52\\
-1944 & 324.36 & 0.00 & 324.36\\
-1945 & 357.56 & 0.00 & 357.56\\
-1946 & 390.70 & 0.00 & 390.70\\
-1947 & 425.36 & 0.00 & 425.36\\
-1948 & 458.37 & 0.00 & 458.37\\
-1949 & 492.90 & 0.00 & 492.90\\
-1950 & 525.77 & 0.00 & 525.77\\
-1951 & 560.14 & 0.00 & 560.14\\
-1952 & 592.86 & 0.00 & 592.86\\
-1953 & 627.08 & 0.00 & 627.08\\
-1954 & 659.63 & 0.00 & 659.63\\
-1955 & 693.68 & 0.00 & 693.68\\
-1956 & 726.06 & 0.00 & 726.06\\
-1957 & 758.36 & 0.00 & 758.36\\
-1958 & 792.14 & 0.00 & 792.14\\
-1959 & 824.25 & 0.00 & 824.25\\
-1960 & 857.85 & 0.00 & 857.85\\
-1961 & 889.78 & 0.00 & 889.78\\
-1962 & 923.18 & 0.00 & 923.18\\
-1963 & 954.92 & 0.00 & 954.92\\
-1964 & 988.13 & 0.00 & 988.13\\
-1965 & 1019.68 & 0.00 & 1019.68\\
-1966 & 1052.68 & 0.00 & 1052.68\\
-1967 & 1082.48 & 0.00 & 1082.48\\
-1968 & 1115.28 & 0.00 & 1115.28\\
-1969 & 1147.98 & 0.00 & 1147.98\\
-1970 & 1179.02 & 0.00 & 1179.02\\
-1971 & 1211.51 & 0.00 & 1211.51\\
-1972 & 1242.34 & 0.00 & 1242.34\\
-1973 & 1274.61 & 0.00 & 1274.61\\
-1974 & 1305.23 & 0.00 & 1305.23\\
-1975 & 1335.74 & 0.00 & 1335.74\\
-1976 & 965.21 & 0.00 & 965.21\\
-1977 & 594.35 & 0.00 & 594.35\\
-1978 & 1103.78 & 0.00 & 1103.78\\
-1979 & 1468.23 & 0.00 & 1468.23\\
-1980 & 863.21 & 0.00 & 863.21\\
-1981 & 1919.81 & 0.00 & 1919.81\\
-1982 & 2014.78 & 0.00 & 2014.78\\
-1983 & 1229.42 & 0.00 & 1229.42\\
-1984 & 1951.63 & 0.00 & 1951.63\\
-1985 & 1681.33 & 0.20 & 1681.53\\
-1986 & 2026.98 & 0.19 & 2027.17\\
-1987 & 2435.16 & 0.93 & 2436.09\\
-1988 & 2273.74 & 0.25 & 2273.99\\
-1989 & 2308.58 & 0.00 & 2308.58\\
-1990 & 2947.83 & 0.03 & 2947.86\\
-1991 & 2163.85 & 0.00 & 2163.85\\
-1992 & 3507.92 & 0.00 & 3507.92\\
-1993 & 2736.86 & 0.01 & 2736.87\\
-1994 & 1908.93 & 0.00 & 1908.93\\
-1995 & 2458.39 & 0.00 & 2458.39\\
-1996 & 2848.46 & 0.00 & 2848.46\\
-1997 & 2699.30 & 0.00 & 2699.30\\
-1998 & 2753.32 & 0.00 & 2753.32\\
-1999 & 2793.68 & 0.00 & 2793.68\\
-2000 & 2919.71 & 0.00 & 2919.71\\
-2001 & 2945.16 & 0.00 & 2945.16\\
-2002 & 1897.13 & 0.00 & 1897.13\\
-2003 & 2244.10 & 0.00 & 2244.10\\
-2004 & 2208.98 & 0.00 & 2208.98\\
-2005 & 6184.02 & 0.00 & 6184.02\\
-2006 & 2869.38 & 0.00 & 2869.38\\
-2007 & 2892.66 & 0.00 & 2892.66\\
-2008 & 3039.41 & 0.00 & 3039.41\\
-2009 & 2731.91 & 0.00 & 2731.91\\
-2010 & 2132.14 & 0.00 & 2132.14\\
-2011 & 2641.62 & 0.00 & 2641.62\\
-2012 & 1759.56 & 0.00 & 1759.56\\
-2013 & 2561.77 & 0.00 & 2561.77\\
-2014 & 2343.20 & 0.00 & 2343.20\\
-2015 & 1318.84 & 0.00 & 1318.84\\
-2016 & 1853.86 & 0.00 & 1853.86\\
-2017 & 1293.98 & 0.01 & 1293.99\\
-2018 & 3024.60 & 0.00 & 3024.60\\
-2019 & 4273.52 & 0.00 & 4273.52\\
-2020 & 0.00 & 0.00 & 0.00\\*
+1935 & 0.02 & 0.00 & 0.02\\
+1936 & 0.05 & 0.00 & 0.05\\
+1937 & 0.09 & 0.00 & 0.09\\
+1938 & 0.12 & 0.00 & 0.12\\
+1939 & 0.16 & 0.00 & 0.16\\
+1940 & 0.19 & 0.00 & 0.19\\
+1941 & 0.23 & 0.00 & 0.23\\
+1942 & 0.26 & 0.00 & 0.26\\
+1943 & 0.30 & 0.00 & 0.30\\
+1944 & 0.33 & 0.00 & 0.33\\
+1945 & 0.37 & 0.00 & 0.37\\
+1946 & 0.40 & 0.00 & 0.40\\
+1947 & 0.44 & 0.00 & 0.44\\
+1948 & 0.47 & 0.00 & 0.47\\
+1949 & 0.51 & 0.00 & 0.51\\
+1950 & 0.54 & 0.00 & 0.54\\
+1951 & 0.58 & 0.00 & 0.58\\
+1952 & 0.61 & 0.00 & 0.61\\
+1953 & 0.64 & 0.00 & 0.64\\
+1954 & 0.68 & 0.00 & 0.68\\
+1955 & 0.71 & 0.00 & 0.71\\
+1956 & 0.75 & 0.00 & 0.75\\
+1957 & 0.78 & 0.00 & 0.78\\
+1958 & 0.81 & 0.00 & 0.81\\
+1959 & 0.85 & 0.00 & 0.85\\
+1960 & 0.88 & 0.00 & 0.88\\
+1961 & 0.91 & 0.00 & 0.91\\
+1962 & 0.95 & 0.00 & 0.95\\
+1963 & 0.98 & 0.00 & 0.98\\
+1964 & 1.01 & 0.00 & 1.01\\
+1965 & 1.05 & 0.00 & 1.05\\
+1966 & 1.08 & 0.00 & 1.08\\
+1967 & 1.11 & 0.00 & 1.11\\
+1968 & 1.14 & 0.00 & 1.14\\
+1969 & 1.18 & 0.00 & 1.18\\
+1970 & 1.21 & 0.00 & 1.21\\
+1971 & 1.24 & 0.00 & 1.24\\
+1972 & 1.27 & 0.00 & 1.27\\
+1973 & 1.31 & 0.00 & 1.31\\
+1974 & 1.34 & 0.00 & 1.34\\
+1975 & 1.37 & 0.00 & 1.37\\
+1976 & 0.99 & 0.00 & 0.99\\
+1977 & 0.61 & 0.00 & 0.61\\
+1978 & 1.13 & 0.00 & 1.13\\
+1979 & 1.50 & 0.00 & 1.50\\
+1980 & 0.88 & 0.00 & 0.88\\
+1981 & 1.96 & 0.00 & 1.96\\
+1982 & 2.06 & 0.00 & 2.06\\
+1983 & 1.26 & 0.00 & 1.26\\
+1984 & 2.00 & 0.00 & 2.00\\
+1985 & 1.72 & 0.20 & 1.92\\
+1986 & 2.07 & 0.19 & 2.26\\
+1987 & 2.48 & 0.93 & 3.42\\
+1988 & 2.31 & 0.25 & 2.56\\
+1989 & 2.34 & 0.00 & 2.34\\
+1990 & 2.99 & 0.03 & 3.02\\
+1991 & 2.19 & 0.00 & 2.19\\
+1992 & 3.55 & 0.00 & 3.55\\
+1993 & 2.77 & 0.01 & 2.78\\
+1994 & 1.93 & 0.00 & 1.93\\
+1995 & 2.48 & 0.00 & 2.48\\
+1996 & 2.87 & 0.00 & 2.87\\
+1997 & 2.72 & 0.00 & 2.72\\
+1998 & 2.77 & 0.00 & 2.77\\
+1999 & 2.81 & 0.00 & 2.81\\
+2000 & 2.94 & 0.00 & 2.94\\
+2001 & 2.96 & 0.00 & 2.96\\
+2002 & 1.91 & 0.00 & 1.91\\
+2003 & 2.25 & 0.00 & 2.25\\
+2004 & 2.22 & 0.00 & 2.22\\
+2005 & 6.20 & 0.00 & 6.20\\
+2006 & 2.87 & 0.00 & 2.87\\
+2007 & 2.89 & 0.00 & 2.89\\
+2008 & 3.04 & 0.00 & 3.04\\
+2009 & 2.72 & 0.00 & 2.72\\
+2010 & 2.13 & 0.00 & 2.13\\
+2011 & 2.63 & 0.00 & 2.63\\
+2012 & 1.75 & 0.00 & 1.75\\
+2013 & 2.55 & 0.00 & 2.55\\
+2014 & 2.34 & 0.00 & 2.34\\
+2015 & 1.32 & 0.00 & 1.32\\
+2016 & 1.85 & 0.00 & 1.85\\
+2017 & 1.29 & 0.01 & 1.30\\
+2018 & 3.02 & 0.00 & 3.02\\
+2019 & 4.27 & 0.00 & 4.27\\
+2020 & 2.77 & 0.00 & 2.77\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -640,7 +661,7 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 
 
 
-![Test figure.\label{fig:test}](N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts7_Spawning_output.png){width=100% height=100% alt="Test figure."}
+![Test figure.\label{fig:test}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spawning_output.png){width=100% height=100% alt="Test figure."}
 
 <!--chapter:end:53figures.Rmd-->
 

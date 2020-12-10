@@ -2,7 +2,9 @@
 executive <- list()
 executive[["stock"]] <- paste0("This assessment reports the status of ",
   spp, " (_", spp.sci, "_) off the ", coast, 
-  " coast using data through xxxx.")
+  " coast using data through 2020.")
+
+general_wd <-  'C:/Assessments/2021/copper_rockfish_2021/write_up/general_text'
 ```
 # Executive Summary{-}
 ## Stock{-}
