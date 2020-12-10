@@ -13,3 +13,5 @@ table_format(x = tab,
 			align = c('r','c','c','c'))
 ```
 
+
+\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/TimeSeries.tex}
