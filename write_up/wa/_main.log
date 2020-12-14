@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.6)  10 DEC 2020 14:24
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.14)  14 DEC 2020 06:37
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -76,7 +76,7 @@ Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
 Lua module: luaotfload-tounicode 2020-09-02 3.15 luaotfload submodule / tounicod
 e
 Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
-. L3 programming layer <2020-12-03> xparse <2020-03-03>
+. L3 programming layer <2020-12-07> xparse <2020-03-03>
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/arti
 cle.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -516,27 +516,27 @@ Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype.sty
-Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
 \MT@toks=\toks29
 \MT@count=\count271
-LaTeX Info: Redefining \textls on input line 790.
+LaTeX Info: Redefining \textls on input line 788.
 \MT@outer@kern=\dimen199
-LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
 \MT@listname@count=\count272
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype-luatex.def
-File: microtype-luatex.def 2019/11/18 v2.7d Definitions specific to luatex (RS)
+File: microtype-luatex.def 2020/12/07 v2.8 Definitions specific to luatex (RS)
 Module microtype Info: overwriting function `keepligature' on input line 59
-LaTeX Info: Redefining \lsstyle on input line 695.
-LaTeX Info: Redefining \lslig on input line 695.
+LaTeX Info: Redefining \lsstyle on input line 706.
+LaTeX Info: Redefining \lslig on input line 706.
 \MT@outer@space=\skip66
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype.cfg
-File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+File: microtype.cfg 2020/12/07 v2.8 microtype main configuration file (RS)
 ))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/he
 lvet.sty
@@ -983,7 +983,7 @@ Package zref Info: New property: PCPDFOBJID on input line 2736.
 gpdf.sty
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/
 expl3.sty
-Package: expl3 2020-12-03 L3 programming layer (loader) 
+Package: expl3 2020-12-07 L3 programming layer (loader) 
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend
 /l3backend-luatex.def
@@ -1605,7 +1605,7 @@ Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: Using default expansion set `alltext-nott'.
 LaTeX Info: Redefining \showhyphens on input line 100.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
@@ -2056,25 +2056,13 @@ ap/pdftex.map}] [2
 
 ]
 \cslhangindent=\skip99
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 [1
 
 
 ]
 Package marginnote Info: Using workaround for absolute page number on input line
- 292.
-
-(c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/b_SSB
-_ES.tex)
-warning  (pdf backend): ignoring duplicate destination with the name 'page.ii'
-[2]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.iii'
-[3]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.iv'
-[4]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.v'
-[5] [6] [1] [2] [3] [4] [5] [6] [7] [8] [9]
+ 263.
+[2] [3] [4] [5] [6] [7] [8] [9]
 (c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/TimeS
 eries.tex
 Overfull \hbox (0.63622pt too wide) in paragraph at lines 7--7
@@ -2142,36 +2130,80 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 99--117
  []
 
 [11])
-<data-plot.png, id=649, 469.755pt x 361.35pt>
-File: data-plot.png Graphic file (type png)
-<use data-plot.png>
-Package luatex.def Info: data-plot.png  used on input line 1183.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/data_pl
+ot.png, id=499, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/da
+ta_plot.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/dat
+a_plot.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/data_plot.png  used on input line 787.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/
-0.0_init_model/plots/ts1_Total_biomass_(mt).png, id=651, 469.755pt x 361.35pt>
-File: N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/model
-s/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png Graphic file (type png)
-<use N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models
-/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>
-Package luatex.def Info: N://Assessments/CurrentAssessments/DataModerate_2021/co
-pper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png  used on
- input line 1193.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio1_si
+zeatage.png, id=501, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bi
+o1_sizeatage.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio
+1_sizeatage.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/bio1_sizeatage.png  used on input line 797.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio5_we
+ightatsize.png, id=503, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bi
+o5_weightatsize.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio
+5_weightatsize.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/bio5_weightatsize.png  used on input line 807.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio6_ma
+turity.png, id=505, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bi
+o6_maturity.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio
+6_maturity.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/bio6_maturity.png  used on input line 817.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio9_fe
+cundity_len.png, id=507, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bi
+o9_fecundity_len.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio
+9_fecundity_len.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/bio9_fecundity_len.png  used on input line 827.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/sel01_m
+ultiple_fleets_length1.png, id=509, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/se
+l01_multiple_fleets_length1.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/sel
+01_multiple_fleets_length1.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
+init_model/plots/sel01_multiple_fleets_length1.png  used on input line 837.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spa
-wning_output.png, id=653, 469.755pt x 361.35pt>
+wning_output.png, id=511, 469.755pt x 361.35pt>
 File: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts
 7_Spawning_output.png Graphic file (type png)
 <use C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7
 _Spawning_output.png>
 Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_
-init_model/plots/ts7_Spawning_output.png  used on input line 1203.
+init_model/plots/ts7_Spawning_output.png  used on input line 845.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[12] [13<./data-plot.png>] [14<n:/Assessments/CurrentAssessments/DataModerate_20
-21/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png>] 
-[15<c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_
-Spawning_output.png>] 
+[12] [13<c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots
+/data_plot.png>] [14<c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init
+_model/plots/bio1_sizeatage.png>] [15<c:/Assessments/2021/copper_rockfish_2021/m
+odels/wa/0.0_init_model/plots/bio5_weightatsize.png>] [16<c:/Assessments/2021/co
+pper_rockfish_2021/models/wa/0.0_init_model/plots/bio6_maturity.png>] [17<c:/Ass
+essments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio9_fecundity
+_len.png>] [18<c:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model
+/plots/sel01_multiple_fleets_length1.png>] [19<c:/Assessments/2021/copper_rockfi
+sh_2021/models/wa/0.0_init_model/plots/ts7_Spawning_output.png>] 
 AED: lastpage setting LastPage
-[16
+[20
 
 ]
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
@@ -2183,29 +2215,33 @@ nc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 ) (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 858A4BB707CF98C72FD67FDE64517C21;11616.
+(rerunfilecheck)             Checksum: 713F6F7AC9FABEC3A99AEEAFD2E33EF9;9435.
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>647
-=====>648
-=====>650
-=====>652
-=====>674
-tagpdf: WARN! MC45 has no kids
-tagpdf: WARN! MC45 has no kids)
+=====>497
+=====>498
+=====>500
+=====>502
+=====>504
+=====>506
+=====>508
+=====>510
+=====>553
+tagpdf: WARN! MC17 has no kids
+tagpdf: WARN! MC17 has no kids)
 
 Here is how much of LuaTeX's memory you used:
- 43364 strings out of 478903
- 195637,1648299 words of node,token memory allocated
- 784 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 34 attribute, 78 gl
-ue_spec, 19 attribute_list, 6 write, 1 close, 7 pdf_action nodes
-   avail lists: 1:1,2:6163,3:1957,4:124,5:429,6:949,7:12967,8:1147,9:6272,10:12,
-11:431
- 60763 multiletter control sequences out of 65536+600000
+ 43272 strings out of 478903
+ 195640,1648299 words of node,token memory allocated
+ 736 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 26 attribute, 78 gl
+ue_spec, 15 attribute_list, 6 write, 1 close, 3 pdf_action nodes
+   avail lists: 1:2,2:5993,3:1925,4:124,5:427,6:933,7:12788,8:951,9:6178,10:16,1
+1:431
+ 60684 multiletter control sequences out of 65536+600000
  101 fonts using 16788899 bytes
- 122i,12n,125p,3118b,580s stack positions out of 5000i,500n,10000p,200000b,200000s
+ 122i,12n,125p,3118b,581s stack positions out of 5000i,500n,10000p,200000b,200000s
 <c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmmono10-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf
 -dist/fonts/opentype/public/lm/lmroman6-regular.otf><c:/Users/Chantel.Wetzel/App
@@ -2223,9 +2259,9 @@ r.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
 X/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Chantel.Wet
 zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regula
 r.otf>
-Output written on _main.pdf (27 pages, 9225826 bytes).
+Output written on _main.pdf (25 pages, 20860837 bytes).
 
-PDF statistics: 774 PDF objects out of 1000 (max. 8388607)
- 168 named destinations out of 1000 (max. 131072)
- 1187 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 652 PDF objects out of 1000 (max. 8388607)
+ 138 named destinations out of 1000 (max. 131072)
+ 950 words of extra memory for PDF output out of 10000 (max. 100000000)
 

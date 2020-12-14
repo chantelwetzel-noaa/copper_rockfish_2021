@@ -38,4 +38,3 @@ filein = file.path(general_wd,'data_length_age.Rmd')
 read_child(filein)
 ```
 
-### Ageing Precision and Bias

@@ -68,258 +68,11 @@ title: Status of copper rockfish (_Sebastes caurinus_) along the Washigton US We
 \pagebreak
 \pagenumbering{roman}
 \setcounter{page}{1}
-\setcounter{figure}{0}
-\setcounter{table}{0}
 \renewcommand{\thetable}{\roman{table}}
 \renewcommand{\thefigure}{\roman{figure}}
 
 
 <!--chapter:end:01a.Rmd-->
-
-
-# Executive Summary{-}
-## Stock{-}
-This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020.
-
-The years is 2020
-
-## Landings{-}
-Replace text.
-
-Table \ref{tab:ssb}.
-
-\begin{table}[H]
-
-\caption{(\#tab:mortality)Removals by fleet for the last 10 years.}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
-\toprule
-Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
-\midrule
-2009 & 3 & 0.00 & 2.72\\
-2010 & 2 & 0.00 & 2.13\\
-2011 & 3 & 0.00 & 2.63\\
-2012 & 2 & 0.00 & 1.75\\
-2013 & 3 & 0.00 & 2.55\\
-2014 & 2 & 0.00 & 2.34\\
-2015 & 1 & 0.00 & 1.32\\
-2016 & 2 & 0.00 & 1.85\\
-2017 & 1 & 0.01 & 1.30\\
-2018 & 3 & 0.00 & 3.02\\
-2019 & 4 & 0.00 & 4.27\\
-2020 & 3 & 0.00 & 2.77\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Here is a reference to the catches (Table \ref{tab:mortality})
-
-
-## Data and Assessment{-}
-Replace text.
-
-## Stock Biomass{-}
-Replace text.
-
-\begin{table}[H]
-
-\caption{(\#tab:ssb)Estimated spawning output and the fraction unfished and the 95 percent confidence intervals.}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
-\toprule
-Year & Spawning Output & Lower Interval & Upper Interval & Fraction Unfished & Lower Interval & Upper Interval\\
-\midrule
-2009 & 3 & 3 & 3 & 0.393 & 0.393 & 0.393\\
-2010 & 3 & 3 & 3 & 0.387 & 0.387 & 0.387\\
-2011 & 3 & 3 & 3 & 0.389 & 0.389 & 0.389\\
-2012 & 3 & 3 & 3 & 0.386 & 0.386 & 0.386\\
-2013 & 3 & 3 & 3 & 0.393 & 0.393 & 0.393\\
-2014 & 3 & 3 & 3 & 0.391 & 0.391 & 0.391\\
-2015 & 3 & 3 & 3 & 0.391 & 0.391 & 0.391\\
-2016 & 3 & 3 & 3 & 0.404 & 0.404 & 0.404\\
-2017 & 3 & 3 & 3 & 0.411 & 0.411 & 0.411\\
-2018 & 3 & 3 & 3 & 0.424 & 0.424 & 0.424\\
-2019 & 3 & 3 & 3 & 0.415 & 0.415 & 0.415\\
-2020 & 3 & 3 & 3 & 0.388 & 0.388 & 0.388\\
-2021 & 3 & 3 & 3 & 0.381 & 0.381 & 0.381\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Alternative table based on latex file: 
-
-\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/b_SSB_ES.tex}
-
-## Recruitment{-}
-Replace text.
-
-\begin{table}[H]
-
-\caption{(\#tab:recr)Estimated recruitment and recruitment deviations (recruit devs.) and the 95 percent confidence intervals.}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
-\toprule
-Year & Recruitment & Lower Interval & Upper Interval & Recruit Devs. & Lower Interval & Upper Interval\\
-\midrule
-2009 & 7 & 7 & 7 & 0 & 0 & 0\\
-2010 & 7 & 7 & 7 & 0 & 0 & 0\\
-2011 & 7 & 7 & 7 & 0 & 0 & 0\\
-2012 & 7 & 7 & 7 & 0 & 0 & 0\\
-2013 & 7 & 7 & 7 & 0 & 0 & 0\\
-2014 & 7 & 7 & 7 & 0 & 0 & 0\\
-2015 & 7 & 7 & 7 & 0 & 0 & 0\\
-2016 & 7 & 7 & 7 & 0 & 0 & 0\\
-2017 & 7 & 7 & 7 & 0 & 0 & 0\\
-2018 & 7 & 7 & 7 & 0 & 0 & 0\\
-2019 & 7 & 7 & 7 & 0 & 0 & 0\\
-2020 & 7 & 7 & 7 & 0 & 0 & 0\\
-2021 & 7 & 7 & 7 & 0 & 0 & 0\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-## Exploitation Status{-}
-Replace text.
-
-\begin{table}[H]
-
-\caption{(\#tab:expliot)Estimated 1-SPR in percent and the exploitation rate (Exploit. Rate) and the 95 percent confidence intervals.}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}>{\centering\arraybackslash}p{1.57cm}}
-\toprule
-Year & 1-SPR & Lower Interval & Upper Interval & Exploit. Rate & Lower Interval & Upper Interval\\
-\midrule
-2009 & 60.0 & 60.0 & 60.0 & 0.081 & 0.081 & 0.081\\
-2010 & 53.1 & 53.1 & 53.1 & 0.064 & 0.064 & 0.064\\
-2011 & 59.1 & 59.1 & 59.1 & 0.079 & 0.079 & 0.079\\
-2012 & 47.5 & 47.5 & 47.5 & 0.053 & 0.053 & 0.053\\
-2013 & 58.0 & 58.0 & 58.0 & 0.076 & 0.076 & 0.076\\
-2014 & 55.5 & 55.5 & 55.5 & 0.070 & 0.070 & 0.070\\
-2015 & 39.3 & 39.3 & 39.3 & 0.039 & 0.039 & 0.039\\
-2016 & 47.9 & 47.9 & 47.9 & 0.054 & 0.054 & 0.054\\
-2017 & 37.8 & 37.8 & 37.8 & 0.038 & 0.038 & 0.038\\
-2018 & 61.0 & 61.0 & 61.0 & 0.085 & 0.085 & 0.085\\
-2019 & 71.2 & 71.2 & 71.2 & 0.122 & 0.122 & 0.122\\
-2020 & 60.8 & 60.8 & 60.8 & 0.084 & 0.084 & 0.084\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-## Reference Points{-}
-Replace text.
-
-\begin{table}[H]
-
-\caption{(\#tab:ref)Reference points}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{>{\raggedleft\arraybackslash}p{6cm}>{\raggedleft\arraybackslash}p{2cm}>{\raggedleft\arraybackslash}p{2cm}c}
-\toprule
-Metric & Estimate & Lower Inteval & Upper Interval\\
-\midrule
-Unfished Spawning Output & 7.63 & 7.63 & 7.63\\
-Unfished Age 3+ Biomass (mt) & 72.84 & 72.84 & 72.84\\
-Unfished Recruitment (R0) & 7.90 & 7.90 & 7.90\\
-Spawning Output (2021) & 2.91 & 2.91 & 2.91\\
-Fraction Unfished (2021) & 0.38 & 0.38 & 0.38\\
-Reference Points Based SB40 Percent & NA & NA & NA\\
-Proxy Spawning Output(SB40 Percent & 3.05 & 3.05 & 3.05\\
-SPR Resulting in SB40 Percent & 0.46 & 0.46 & 0.46\\
-Exploitation Rate Resulting in SB40 Percent & 0.07 & 0.07 & 0.07\\
-Yield with SPR Based On SB40 Percent (mt) & 2.27 & 2.27 & 2.27\\
-Reference Points Based on SPR Proxy for MSY & NA & NA & NA\\
-Proxy Spawning Output (SPR50) & 3.41 & 3.41 & 3.41\\
-SPR50 & 50.00 & NA & NA\\
-Exploitation Rate Corresponding to SPR50 & 0.06 & 0.06 & 0.06\\
-Yield with SPR50 at SB SPR (mt) & 2.16 & 2.16 & 2.16\\
-Reference Points Based on Estimated MSY Values & NA & NA & NA\\
-Spawning Output at MSY (SB MSY) & 2.07 & 2.07 & 2.07\\
-SPR MSY & 0.34 & 0.34 & 0.34\\
-Exploitation Rate Corresponding to SPR MSY & 0.10 & 0.10 & 0.10\\
-MSY (mt) & 2.42 & 2.42 & 2.42\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-## Management Performance{-}
-Replace text.
-
-\begin{table}[H]
-
-\caption{(\#tab:manage)The OFL, ABC, ACL, and Landings for the last 10 years.}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}>{\centering\arraybackslash}p{2.2cm}}
-\toprule
-Year & OFL & ABC & ACL & Catch\\
-\midrule
-2009 & fill in & fill in & fill in & 2.73\\
-2010 & fill in & fill in & fill in & 2.13\\
-2011 & fill in & fill in & fill in & 2.63\\
-2012 & fill in & fill in & fill in & 1.75\\
-2013 & fill in & fill in & fill in & 2.55\\
-2014 & fill in & fill in & fill in & 2.34\\
-2015 & fill in & fill in & fill in & 1.32\\
-2016 & fill in & fill in & fill in & 1.85\\
-2017 & fill in & fill in & fill in & 1.30\\
-2018 & fill in & fill in & fill in & 3.02\\
-2019 & fill in & fill in & fill in & 4.27\\
-2020 & fill in & fill in & fill in & 2.77\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-
-## Unresolved Problems and Major Uncertainties{-}
-Replace text.
-
-## Decision Table{-}
-Add the projection table
-
-\begin{table}[H]
-
-\caption{(\#tab:project)Projections}
-\centering
-\fontsize{10}{12}\selectfont
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{r>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}>{\centering\arraybackslash}p{1.83cm}}
-\toprule
-Year & OFL & ABC & 3+ Biomass & Spawning Output & Fraction Unfished\\
-\midrule
-2021 & 1.9 & 1.4 & 32.5 & 2.9 & 0.381\\
-2022 & 1.9 & 1.4 & 33.5 & 3.0 & 0.392\\
-2023 & 2.0 & 2.0 & 34.4 & 3.1 & 0.405\\
-2024 & 2.0 & 2.0 & 34.6 & 3.1 & 0.409\\
-2025 & 2.0 & 2.0 & 34.9 & 3.2 & 0.413\\
-2026 & 2.0 & 2.1 & 35.1 & 3.2 & 0.417\\
-2027 & 2.1 & 2.1 & 35.3 & 3.2 & 0.420\\
-2028 & 2.1 & 2.1 & 35.5 & 3.2 & 0.423\\
-2029 & 2.1 & 2.1 & 35.6 & 3.2 & 0.425\\
-2030 & 2.1 & 2.1 & 35.8 & 3.3 & 0.427\\
-2031 & 2.1 & 2.1 & 35.9 & 3.3 & 0.429\\
-2032 & 2.1 & 2.1 & 36.0 & 3.3 & 0.431\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Replace text.
-
-## Research and Data Needs{-}
-Replace text.
-
-
-
-<!--chapter:end:01executive.Rmd-->
 
 \pagebreak
 \setlength{\parskip}{5mm plus1mm minus1mm}
@@ -336,7 +89,7 @@ Replace text.
 
 
 ## Basic Information
-This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  copper rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
+This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. Copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  Copper rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
 
 ## Life History
 Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). copper rockfish live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any West Coast groundfish (XX add reference XX).  
@@ -426,13 +179,8 @@ Males $L_{\infty}$ = 47.8 cm; $k$ = 0.182
 
 These values were fixed within the base model for male and female copper rockfish.
 
-### Ageing Precision and Bias
 
 <!--chapter:end:22biology.Rmd-->
-
-## Environmental and Ecosystem Data
-
-<!--chapter:end:23enviro.Rmd-->
 
 # Assessment Model
 
@@ -515,6 +263,8 @@ Describe all diagnostics
 
 # Acknowledgments
 Here are all the mad props!
+
+Merit McCrea, Gerry Richter, Louis Zimm, Daniel Platt
 
 <!--chapter:end:41acknowledgments.Rmd-->
 
@@ -635,13 +385,88 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 
 # Figures
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=100% height=100% alt="Summary of data sources used in the base model"}
 
-![Estimated time-series of total biomass for copper rockfish.\label{fig:total_bio}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/0.0_init_model/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time-series of total biomass."}
+<!-- ====================================================================== -->  
+<!-- ****************** Catches Used in the Model ************************* --> 
+<!-- ====================================================================== -->  
 
+
+
+<!-- ====================================================================== --> 
+<!-- ******************* Data Used in the Model *************************** --> 
+<!-- ====================================================================== --> 
+
+
+![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+
+
+<!-- ====================================================================== -->
+<!-- **************** Recreational Length Samples    ********************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- *************************     Biology     **************************** --> 
+<!-- ====================================================================== -->
+
+
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-at-age}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+
+
+![Weight at length by sex.\label{fig:weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight at length by sex."}
+
+
+![Maturity at length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio6_maturity.png){width=100% height=100% alt="Maturity at length."}
+
+
+![Fecundity at a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity at a function of length."}
+
+<!-- ====================================================================== -->
+<!-- *********************   Estimated SSB   ****************************** --> 
+<!-- ====================================================================== -->
+
+<!-- ====================================================================== -->
+<!-- *********************    Selectivity            ********************** --> 
+<!-- ====================================================================== -->
+
+
+![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
+
+<!-- ====================================================================== -->
+<!-- *********************   Recruitment     ****************************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- ****************** Fit to the Length Data **************************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- ******************      Time Series       **************************** --> 
+<!-- ====================================================================== -->
 
 
 ![Test figure.\label{fig:test}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spawning_output.png){width=100% height=100% alt="Test figure."}
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- ******************       Sensitivity     ***************************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- ******************     Retrospectives    ***************************** --> 
+<!-- ====================================================================== -->
+
+
+
+<!-- ====================================================================== -->
+<!-- ******************      Likelihoods      ***************************** --> 
+<!-- ====================================================================== -->
 
 <!--chapter:end:53figures.Rmd-->
 

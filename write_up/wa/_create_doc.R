@@ -24,11 +24,13 @@ sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/wa/
 
 load("00mod.Rdata")
 
+SSexecutivesummary(replist = model, format = FALSE)
+es_table_tex(mod_loc = mod_loc, table_folder = 'tables')
+
 # If there is an error in the build - this file will need to be removed before next render
 if(file.exists("_main.Rmd")){
 	file.remove("_main.Rmd")
 }
-
 # Render the pdf
 # Put the pdf in the folder where compiled
 bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
