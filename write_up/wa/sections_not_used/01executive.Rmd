@@ -97,6 +97,7 @@ Replace text.
 
 ```{r, results = 'asis'}
 library(dplyr)
+
 tab = read.csv(file.path(mod_loc, "tables", "e_ReferencePoints_ES.csv"))
 col_names = c("Metric", "Estimate", "Lower Inteval", "Upper Interval")
 tab = data.frame(tab)
