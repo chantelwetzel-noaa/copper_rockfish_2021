@@ -39,8 +39,9 @@ ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ] # remove records without a county
 ca_mrfss$STATE_NAME = "CA"
 spc = c(59, 73, 37, 111, 83)
 npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
+
 ca_mrfss_data = rename_mrfss(data = ca_mrfss,
-							 len_col = "T_LEN",
+							 len_col = "LNGTH",
 							 area_grouping = list(spc, npc), 
 							 area_names = c("south_pt_concep", "north_pt_concep"), 
 							 area_column_name = "CNTY", 
