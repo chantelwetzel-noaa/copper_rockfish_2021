@@ -11,14 +11,14 @@ devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/dataModerate_2021")
 source("C:/Users/Chantel.Wetzel/Documents/GitHub/survey_summary_package/R/plot_cpue.R")
 #source("C:/Assessments/2020/survey_summary/code_package/functions/plot_cpue.R")
 
-dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/"
+dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
 
 
 ############################################################################################
 #	Load the Survey Data
 ############################################################################################
 
-hkl = read.csv(file.path(dir, "data", "survey", "qryGrandUnifiedThru2019_06182020.csv"))
+hkl = read.csv(file.path(dir, "survey", "qryGrandUnifiedThru2019_06182020.csv"))
 sub_hkl = hkl[hkl$COMNAME == 'Copper Rockfish', ]
 sub_hkl = rename_hook_and_line(data = sub_hkl, survey_name = "nwfsc_hkl")
 
@@ -28,57 +28,144 @@ load(file.path(dir, "survey", "wcgbts", "Bio_All_NWFSC.Combo_2020-08-14.rda"))
 catch = Out
 bio = Data
 
+# Split the data North and South of Pt. Conception
+south_catch = catch[catch$Latitude_dd < 34.5, ]
+south_bio = bio[bio$Latitude_dd < 34.5, ]
+north_catch = catch[catch$Latitude_dd >= 34.5, ]
+north_bio = bio[bio$Latitude_dd >= 34.5, ]
+
 plot_cpue_fn(dir = file.path(dir, "survey", "wcgbts", "plots"), 
-			 name = "Copper rockfish", 
-			 catch = catch, bio = bio, 
+			 name = "Copper rockfish - North", 
+			 catch = north_catch, bio = north_bio, 
 			 plot = 1:3, n = 20000)
 
+plot_cpue_fn(dir = file.path(dir, "survey", "wcgbts", "plots"), 
+       name = "Copper rockfish- South", 
+       catch = south_catch, bio = south_bio, 
+       plot = 1:3, n = 20000)
+
 # Start with the NWFSC WCGBTS data
-strata = CreateStrataDF.fn(names=c("shallow_s", "mid_s", "shallow_n", "mid_n"), 
-                           depths.shallow = c( 55, 100, 55, 100),
-                           depths.deep    = c(100, 183, 100, 183),
-                           lats.south     = c(32.5, 32.5, 36.0, 36.0),
-                           lats.north     = c(36.0, 36.0, 42.0, 42.0))
+strata_north = CreateStrataDF.fn(names=c("shallow"), 
+                           depths.shallow = c(  55),
+                           depths.deep    = c( 183),
+                           lats.south     = c(34.5),
+                           lats.north     = c(42.0))
+
+strata_south = CreateStrataDF.fn(names=c("shallow"), 
+                           depths.shallow = c( 55),
+                           depths.deep    = c(183),
+                           lats.south     = c(32.5),
+                           lats.north     = c(34.5))
+
+num.strata = CheckStrata.fn(dir = file.path(dir, "survey", "wcgbts"), 
+							dat = north_catch, 
+							strat.vars = c("Depth_m","Latitude_dd"), 
+							strat.df = strata_north, 
+              printfolder = "forSS",  
+							verbose = TRUE)
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "strata_observations.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "north_strata_observations.csv"))
 
 
 num.strata = CheckStrata.fn(dir = file.path(dir, "survey", "wcgbts"), 
-							dat = catch, 
-							strat.vars = c("Depth_m","Latitude_dd"), 
-							strat.df = strata, 
+              dat = south_catch, 
+              strat.vars = c("Depth_m","Latitude_dd"), 
+              strat.df = strata_south, 
               printfolder = "forSS",  
-							verbose = TRUE)
+              verbose = TRUE)
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "strata_observations.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "south_strata_observations.csv"))
 
 # Calculate the design based index
 biomass.nwfsc = Biomass.fn(dir = file.path(dir, "survey", "wcgbts"), 
-						   dat = catch,  
-						   strat.df = strata, 
+						   dat = north_catch,  
+						   strat.df = strata_north, 
 						   printfolder = "forSS", 
 						   outputMedian = T) 
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "design_based_indices.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "north_design_based_indices.csv"))
+
 
 # Plot the biomass index
-PlotBio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = biomass.nwfsc, main = "NWFSC WCGBTS", dopng = TRUE)
+PlotBio.fn(dir = file.path(dir, "survey", "wcgbts"), 
+    dat = biomass.nwfsc, main = "NWFSC WCGBTS - North", dopng = TRUE)
 
-len = bio
+# Calculate the design based index
+biomass.nwfsc = Biomass.fn(dir = file.path(dir, "survey", "wcgbts"), 
+               dat = south_catch,  
+               strat.df = strata_south, 
+               printfolder = "forSS", 
+               outputMedian = T) 
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "design_based_indices.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "south_design_based_indices.csv"))
+
+
+# Plot the biomass index
+PlotBio.fn(dir = file.path(dir, "survey", "wcgbts"), 
+    dat = biomass.nwfsc, main = "NWFSC WCGBTS - South", dopng = TRUE)
+
+
+###################################################################################
+south_len = south_bio
+north_len = north_bio
 len.bins = len_bin = seq(10, 54, 2)
 
 # Calculate the effN
-n = GetN.fn(dir = file.path(dir, "survey", "wcgbts"), dat = len, type = "length", 
+n = GetN.fn(dir = file.path(dir, "survey", "wcgbts"), dat = south_len, type = "length", 
             species = "others", printfolder = "forSS")
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "length_SampleSize.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "south_length_SampleSize.csv"))
 
-# This version assigns unsexed fish to a sex - but may not want to do it that way
-# See below for alternative versions
+
+# This version assigns unsexed fish to a sex 
+# Going to do this since all small fish are unsexed
 LFs <- SurveyLFs.fn(dir = file.path(dir, "survey", "wcgbts"), 
-					          datL = len, datTows = catch,  
-                    strat.df = strata, lgthBins = len.bins, sex = 3, 
+					          datL = south_len, datTows = south_catch,  
+                    strat.df = strata_south, lgthBins = len.bins, sex = 3, 
                     month = 7, fleet = 3, 
-                    sexRatioStage = 2, sexRatioUnsexed = 0.5, maxSizeUnsexed = 16, 
+                    sexRatioStage = 2, sexRatioUnsexed = 0.5, maxSizeUnsexed = 20, 
                     nSamps = n)
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "Survey_Sex3_Bins_10_54_LengthComps.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "south_Survey_Sex3_Bins_10_54_LengthComps.csv"))
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "Survey_Sex3_Bins_-999_54_LengthComps.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "south_Survey_Sex3_Bins_-999_54_LengthComps.csv"))
 
 PlotFreqData.fn(dir = file.path(dir, "survey", "wcgbts"), 
 	              dat = LFs, ylim=c(0, max(len.bins) + 4), inch = 0.10,
-                main = "NWFSC WCGBTS", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+                main = "NWFSC WCGBTS - South ", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
-PlotSexRatio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = len, data.type = "length", dopng = TRUE, main = "NWFSC WCGBTS")
+PlotSexRatio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = south_len, data.type = "length", dopng = TRUE, main = "NWFSC WCGBTS - South")
+
+# Northern Lengths
+# Calculate the effN
+n = GetN.fn(dir = file.path(dir, "survey", "wcgbts"), dat = north_len, type = "length", 
+            species = "others", printfolder = "forSS")
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "length_SampleSize.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "north_length_SampleSize.csv"))
+
+# Errors on 2011 - removing the single record
+# rm = which(north_len$Year == 2011)
+# north_len[-rm, ]
+# Not enough observations to apply sex ratio
+LFs <- SurveyLFs.fn(dir = file.path(dir, "survey", "wcgbts"), 
+                    datL = north_len, datTows = north_catch,  
+                    strat.df = strata_north, lgthBins = len.bins, sex = 3, 
+                    month = 7, fleet = 3, 
+                    sexRatioStage = 1, sexRatioUnsexed = 0.5, maxSizeUnsexed = 20,
+                    nSamps = n)
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "Survey_Sex3_Bins_10_54_LengthComps.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "north_Survey_Sex3_Bins_10_54_LengthComps.csv"))
+file.rename(file.path(dir, "survey", "wcgbts", "forSS", "Survey_Sex3_Bins_-999_54_LengthComps.csv"),
+            file.path(dir, "survey", "wcgbts", "forSS", "north_Survey_Sex3_Bins_-999_54_LengthComps.csv"))
+
+LFs = read.csv(file.path(dir, "survey", "wcgbts", "forSS", "north_Survey_Sex3_Bins_10_54_LengthComps.csv"))
+PlotFreqData.fn(dir = file.path(dir, "survey", "wcgbts"), 
+                dat = LFs, ylim=c(0, max(len.bins) + 4), inch = 0.10,
+                main = "NWFSC WCGBTS - North ", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+PlotSexRatio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = north_len, data.type = "length", dopng = TRUE, main = "NWFSC WCGBTS - North")
+
+
 
 #####################################################################################
 #
