@@ -92,7 +92,23 @@ When editing make sure to render the document on a regular basis by using either
 ```r
 bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
 ```
+
 This will allow users to identify errors quickly.  If the document rendered correctly the user should see that "Output created: _main.pdf" followed by miscallaneous other warnings in the R terminal.  
+
+# Returning to the Document
+
+If you are returning to edit your document at a later point, you will not need to redo steps 1-3 above.  To begin working on your document again you should:
+
+1. Open an new R terminal.
+2. Load of the package **library(sa4ss)**.
+3. Set the working directory to where your document is located.
+4. Open Rmd files and start editing your document. To render the book at any point in this process you just need to run the following call:
+
+ ```r
+bookdown::render_book("00a.Rmd", clean = FALSE)
+
+``` 
+
 
 # Error in Rendering
 
@@ -107,8 +123,8 @@ If you see an error and the document fails to render you will want to:
 bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
 ```
 
-
 # Updating the Base Model
+
 If the base model changes, the user will need to rerun the **read_model** function to load in the output from the new model run and locate and/or create figures and tables
 
 
@@ -120,6 +136,7 @@ This will create a new model output file which will replace the old file and be 
 
 # Tips & Tricks
 
+## Share Text Across Documents
 If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done by creating separate folder for sections of text that will be shared across documents. Text should be included in a file with an Rmd extension and can be called using a code chunk with the **knit_child** command in the **knitr** package:
 
 
@@ -131,4 +148,32 @@ cat(res, sep = '\n')
 
 ```
 
+## Add Figures from **r4ss**
+
+There are a number of ways to add figures to the document, either in the executive summary or figures sections.  The first approach is to directly specify where the document is located, add a figure caption and alternative text caption (for accessibility), and specific a figure label which allows the user to reference the figure in the document. In the below example the figure (data-plot.png) is located in the same directory as the Rmd files being rendered. 
+
+```{r, eval = FALSE}
+# This is the text that is placed in the document:
+
+![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png)
+{width=100% height=100% alt="Summary of data sources used in the base model"}
+
+```
+
+![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=100% height=100% alt="Summary of data sources used in the base model"}
+
+Alternatively, the figure you want to include may be located in a folder outside the folder that you are rendering the document within.  To do this easily a function has been added to the **sa4ss** package that allows users to do this. 
+
+```{r, eval = FALSE}
+# The add_figure function has the user specific the figure and its location to be used. 
+add_figure(
+filein = file.path(mod_loc, "plots", "data_plot.png"), 
+caption = "Summary of data sources used in the base model",
+label = 'data-plot')
+
+```
+
+The above function, **add_figure**, contained in the **sa4ss** package will set the alternative text equal to the caption unless specifically specified by the user. 
+
+Both examples above allow the user to reference the figure in the text using ```{r, eval = FALSE} \ref{fig:data-plot}``` which will look like this: Figure \ref{fig:data-plot}.
 
