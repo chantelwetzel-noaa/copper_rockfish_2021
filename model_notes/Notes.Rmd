@@ -4,10 +4,6 @@ title: "Data Moderate 2021 Model Notes for Copper Rockfish, Quillback Rockfish, 
 author: "Chantel Wetzel"
 date: "`r Sys.Date()`"
 output: pdf_document
-vignette: >
-  %\VignetteIndexEntry{sa4ss}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
@@ -23,29 +19,44 @@ knitr::opts_chunk$set(
 ## Copper rockfish
 
 ### South of Pt. Conception
+- Examining model "7.1_data_rec_len_add_trawl" which has Linf and maturity fixed at coastwide values.
 - Changing Linf and Maturity strongly impacts how pessimistic stock status is.
 - Recreational selectivity being estimated as selecting small fish, less that the 50% maturity size, and dome shaped.  The dome is exploratory and may be pinned to be asymptotic later.
 - The bump up in the time series around 2015 is due to recruitment with a series of positive devs from 2008-2014. Without rec devs the fits to the lengths really degrades and over-estimates the mean length by year. 
-- HKL index fairly noisey or/and uninformative
+- HKL index fairly noisy or/and uninformative
 - This model is applying francis data weighting
 - The trawl survey is just there and data are not fit well.
 
 
 ### North of Pt. Conception
+- Examing model "5.1_data_rec_len_trawl_survey"
 - Blocked commercial selectivity shifting to smaller fish in recent years (2009+). The change in mean length was not able to be explained fully due to strong recruitment.
-- Really clear evidence of a stron ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone. 
+- Really clear evidence of a strong ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone. 
 - DM data weighting
 
 ### Oregon
+- Examining model "2.4_recdevs_early_est_p1_only_block"
 - Recreational selectivity blocked periods: start - 1999 and 2000 - end.
-
+- Released fish - I had not initially included these lengths (I think I looked at the CA released lengths which were really small) but adding these few lengths in as a ghost fleet show that they are not really different from the retained fish (when there are more than a few samples in a year). We should talk with Ali more about why an angler would release a fish on a trip. 
+- There does not seem to be enough information to estimate rec devs however without devs the stock is estimated unfished with a large R0 and with devs on estimated in the precautionary zone with a much more reasonable R0.
 
 ### Washington
-- While allowing domed-selectivity therer is likely little impact of this and will likely be pinned asymptotic.
+- Looking at a model without rec devs "5.1.1_selex_cv_fixed"
+- While allowing domed-selectivity there is likely little impact of this and will likely be pinned asymptotic.
 - Estimating rec devs vs. not results in fairly dramatic model differences.  The rec devs are likely being driven entirely by the catches rather than information in the lengths. When estimating rec devs there are some very large series of recruitment around 2000 and then all negative for the years after. There is a trade-off between recruitment and selectivity where: No devs -> left shifted selectivity, Rec devs -> right shifted selectivity
 - Apply francis data weighting.
 
+
+## Quillback rockfish
+
+### California
+
+### Oregon
+
+### Washington
+
 ## Squarespot rockfish
+
 - Max age set at 34 based on 95% quantile of ages
 - Tried restricting rec dev estimates to only the recent years based on some estimates in early years that look uninformed. The challenge of estimation here appears to be that we don't see small incoming fish (likely because they are small even when "grown"), however, the does appear to be a change in the population based on the hkl index and a slight change in mean length between 2016-2018. Without rec devs the model estimates a fairly unfished stock up until recent years where catches have spiked which does not fit the hkl index (flat line).
 - NWFSC HKL index shows a sharp increase between 2015-2018
