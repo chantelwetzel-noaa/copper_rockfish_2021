@@ -1,0 +1,55 @@
+
+---
+title: "Data Moderate 2021 Model Notes for Copper Rockfish, Quillback Rockfish, and Squarespot Rockfish"
+author: "Chantel Wetzel"
+date: "`r Sys.Date()`"
+output: pdf_document
+vignette: >
+  %\VignetteIndexEntry{sa4ss}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Model Meeting 12.17.2020
+
+## Copper rockfish
+
+### South of Pt. Conception
+- Changing Linf and Maturity strongly impacts how pessimistic stock status is.
+- Recreational selectivity being estimated as selecting small fish, less that the 50% maturity size, and dome shaped.  The dome is exploratory and may be pinned to be asymptotic later.
+- The bump up in the time series around 2015 is due to recruitment with a series of positive devs from 2008-2014. Without rec devs the fits to the lengths really degrades and over-estimates the mean length by year. 
+- HKL index fairly noisey or/and uninformative
+- This model is applying francis data weighting
+- The trawl survey is just there and data are not fit well.
+
+
+### North of Pt. Conception
+- Blocked commercial selectivity shifting to smaller fish in recent years (2009+). The change in mean length was not able to be explained fully due to strong recruitment.
+- Really clear evidence of a stron ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone. 
+- DM data weighting
+
+### Oregon
+- Recreational selectivity blocked periods: start - 1999 and 2000 - end.
+
+
+### Washington
+- While allowing domed-selectivity therer is likely little impact of this and will likely be pinned asymptotic.
+- Estimating rec devs vs. not results in fairly dramatic model differences.  The rec devs are likely being driven entirely by the catches rather than information in the lengths. When estimating rec devs there are some very large series of recruitment around 2000 and then all negative for the years after. There is a trade-off between recruitment and selectivity where: No devs -> left shifted selectivity, Rec devs -> right shifted selectivity
+- Apply francis data weighting.
+
+## Squarespot rockfish
+- Max age set at 34 based on 95% quantile of ages
+- Tried restricting rec dev estimates to only the recent years based on some estimates in early years that look uninformed. The challenge of estimation here appears to be that we don't see small incoming fish (likely because they are small even when "grown"), however, the does appear to be a change in the population based on the hkl index and a slight change in mean length between 2016-2018. Without rec devs the model estimates a fairly unfished stock up until recent years where catches have spiked which does not fit the hkl index (flat line).
+- NWFSC HKL index shows a sharp increase between 2015-2018
+- Francis weighting applied so far (not re-weighted with the most recent runs).
+- No rec devs: R0 = 6.6, SB0 = 40.9, Depl 2021 = 0.65, Catch spr = 20.8 mt
+- Only recent devs: R0 = 5.5, SB0 = 13.1, Depl 2021 = 4.8, Catch spr = 6.9 mt
+
