@@ -112,3 +112,9 @@ SS_plots(base)
 model = "4.1_bio_linf_w_blocks"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
+
+# Move forward with the "4.1_bio_linf_w_blocks" model
+# Replace recreational lengths with fork lengths and remove
+# the trawl survey data which was incorrectly split by latitude. 
+base = SS_output(file.path(wd, model))
+SS_plots(base)

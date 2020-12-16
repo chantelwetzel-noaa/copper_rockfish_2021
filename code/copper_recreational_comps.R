@@ -124,7 +124,11 @@ remove = which(out$Length > 65 | out$Length < 8)
 out = out[-remove, ]
 
 # Remove the released for the rest of the summaries for now:
+released = out[which(out$Data_Type == "RELEASED"), ]
+
 out = out[out$Data_Type %in% c("RETAINED", NA), ]
+
+
 
 
 
@@ -185,6 +189,17 @@ PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"),
     main = "OR Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 
+or_rel = released[which(released$State == "OR"), ]
+or_rel$Length_cm = or_rel$Length
+or_rel$Sex = "U"
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       datL = or_rel, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "released_or_rec_notExpanded_Length_comp_Sex_0_bin=10-54.csv")) 
+
+
 ############################################################################################
 #	North of Pt. Conception - California recreational length data
 ############################################################################################
@@ -206,6 +221,17 @@ file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey
 PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"), 
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
     main = "CA N. Pt. Conception Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+
+rel = released[which(released$State_Area == "north_pt_concep"), ]
+rel$Length_cm = rel$Length
+rel$Sex = "U"
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       datL = rel, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "released_nca_rec_notExpanded_Length_comp_Sex_0_bin=10-54.csv")) 
 
 ############################################################################################
 #	South of Pt. Conception - California recreational length data
@@ -229,6 +255,15 @@ PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"),
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
     main = "CA S. Pt. Conception Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
+rel = released[which(released$State_Area == "south_pt_concep"), ]
+rel$Length_cm = rel$Length
+rel$Sex = "U"
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       datL = rel, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "released_sca_rec_notExpanded_Length_comp_Sex_0_bin=10-54.csv")) 
 
 
 
