@@ -1,7 +1,7 @@
 # Tables
 
 ```{r}
-tab = read.csv(file.path(mod_loc, "tables", "_Catches_All_Years.csv"))
+tab = read.csv(file.path(mod_loc, "tables", "Catches_All_Years.csv"))
 col_names = c("Year", "Recreational (mt)", "Commercial (mt)", "Total Mortality")
 
 table_format(x = tab,

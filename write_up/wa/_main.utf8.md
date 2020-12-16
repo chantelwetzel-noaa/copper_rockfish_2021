@@ -74,6 +74,9 @@ title: Status of copper rockfish (_Sebastes caurinus_) along the Washigton US We
 
 <!--chapter:end:01a.Rmd-->
 
+
+<!--chapter:end:01executive.Rmd-->
+
 \pagebreak
 \setlength{\parskip}{5mm plus1mm minus1mm}
 \pagenumbering{arabic}
@@ -290,90 +293,90 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \endlastfoot
 1935 & 0.02 & 0.00 & 0.02\\
 1936 & 0.05 & 0.00 & 0.05\\
-1937 & 0.09 & 0.00 & 0.09\\
+1937 & 0.08 & 0.00 & 0.08\\
 1938 & 0.12 & 0.00 & 0.12\\
-1939 & 0.16 & 0.00 & 0.16\\
+1939 & 0.15 & 0.00 & 0.15\\
 1940 & 0.19 & 0.00 & 0.19\\
-1941 & 0.23 & 0.00 & 0.23\\
-1942 & 0.26 & 0.00 & 0.26\\
-1943 & 0.30 & 0.00 & 0.30\\
-1944 & 0.33 & 0.00 & 0.33\\
-1945 & 0.37 & 0.00 & 0.37\\
-1946 & 0.40 & 0.00 & 0.40\\
-1947 & 0.44 & 0.00 & 0.44\\
-1948 & 0.47 & 0.00 & 0.47\\
-1949 & 0.51 & 0.00 & 0.51\\
-1950 & 0.54 & 0.00 & 0.54\\
-1951 & 0.58 & 0.00 & 0.58\\
-1952 & 0.61 & 0.00 & 0.61\\
-1953 & 0.64 & 0.00 & 0.64\\
-1954 & 0.68 & 0.00 & 0.68\\
-1955 & 0.71 & 0.00 & 0.71\\
-1956 & 0.75 & 0.00 & 0.75\\
-1957 & 0.78 & 0.00 & 0.78\\
-1958 & 0.81 & 0.00 & 0.81\\
-1959 & 0.85 & 0.00 & 0.85\\
-1960 & 0.88 & 0.00 & 0.88\\
-1961 & 0.91 & 0.00 & 0.91\\
-1962 & 0.95 & 0.00 & 0.95\\
-1963 & 0.98 & 0.00 & 0.98\\
-1964 & 1.01 & 0.00 & 1.01\\
-1965 & 1.05 & 0.00 & 1.05\\
-1966 & 1.08 & 0.00 & 1.08\\
-1967 & 1.11 & 0.00 & 1.11\\
-1968 & 1.14 & 0.00 & 1.14\\
-1969 & 1.18 & 0.00 & 1.18\\
-1970 & 1.21 & 0.00 & 1.21\\
-1971 & 1.24 & 0.00 & 1.24\\
-1972 & 1.27 & 0.00 & 1.27\\
-1973 & 1.31 & 0.00 & 1.31\\
-1974 & 1.34 & 0.00 & 1.34\\
-1975 & 1.37 & 0.00 & 1.37\\
-1976 & 0.99 & 0.00 & 0.99\\
-1977 & 0.61 & 0.00 & 0.61\\
-1978 & 1.13 & 0.00 & 1.13\\
-1979 & 1.50 & 0.00 & 1.50\\
-1980 & 0.88 & 0.00 & 0.88\\
-1981 & 1.96 & 0.00 & 1.96\\
-1982 & 2.06 & 0.00 & 2.06\\
-1983 & 1.26 & 0.00 & 1.26\\
-1984 & 2.00 & 0.00 & 2.00\\
-1985 & 1.72 & 0.20 & 1.92\\
-1986 & 2.07 & 0.19 & 2.26\\
-1987 & 2.48 & 0.93 & 3.42\\
-1988 & 2.31 & 0.25 & 2.56\\
-1989 & 2.34 & 0.00 & 2.34\\
-1990 & 2.99 & 0.03 & 3.02\\
-1991 & 2.19 & 0.00 & 2.19\\
-1992 & 3.55 & 0.00 & 3.55\\
-1993 & 2.77 & 0.01 & 2.78\\
-1994 & 1.93 & 0.00 & 1.93\\
-1995 & 2.48 & 0.00 & 2.48\\
-1996 & 2.87 & 0.00 & 2.87\\
-1997 & 2.72 & 0.00 & 2.72\\
-1998 & 2.77 & 0.00 & 2.77\\
-1999 & 2.81 & 0.00 & 2.81\\
-2000 & 2.94 & 0.00 & 2.94\\
-2001 & 2.96 & 0.00 & 2.96\\
-2002 & 1.91 & 0.00 & 1.91\\
-2003 & 2.25 & 0.00 & 2.25\\
-2004 & 2.22 & 0.00 & 2.22\\
-2005 & 6.20 & 0.00 & 6.20\\
-2006 & 2.87 & 0.00 & 2.87\\
-2007 & 2.89 & 0.00 & 2.89\\
-2008 & 3.04 & 0.00 & 3.04\\
-2009 & 2.72 & 0.00 & 2.72\\
-2010 & 2.13 & 0.00 & 2.13\\
-2011 & 2.63 & 0.00 & 2.63\\
-2012 & 1.75 & 0.00 & 1.75\\
-2013 & 2.55 & 0.00 & 2.55\\
-2014 & 2.34 & 0.00 & 2.34\\
-2015 & 1.32 & 0.00 & 1.32\\
-2016 & 1.85 & 0.00 & 1.85\\
-2017 & 1.29 & 0.01 & 1.30\\
-2018 & 3.02 & 0.00 & 3.02\\
-2019 & 4.27 & 0.00 & 4.27\\
-2020 & 2.77 & 0.00 & 2.77\\*
+1941 & 0.22 & 0.00 & 0.22\\
+1942 & 0.25 & 0.00 & 0.25\\
+1943 & 0.29 & 0.00 & 0.29\\
+1944 & 0.32 & 0.00 & 0.32\\
+1945 & 0.36 & 0.00 & 0.36\\
+1946 & 0.39 & 0.00 & 0.39\\
+1947 & 0.42 & 0.00 & 0.42\\
+1948 & 0.45 & 0.00 & 0.45\\
+1949 & 0.49 & 0.00 & 0.49\\
+1950 & 0.52 & 0.00 & 0.52\\
+1951 & 0.56 & 0.00 & 0.56\\
+1952 & 0.59 & 0.00 & 0.59\\
+1953 & 0.62 & 0.00 & 0.62\\
+1954 & 0.65 & 0.00 & 0.65\\
+1955 & 0.69 & 0.00 & 0.69\\
+1956 & 0.72 & 0.00 & 0.72\\
+1957 & 0.75 & 0.00 & 0.75\\
+1958 & 0.78 & 0.00 & 0.78\\
+1959 & 0.82 & 0.00 & 0.82\\
+1960 & 0.85 & 0.00 & 0.85\\
+1961 & 0.88 & 0.00 & 0.88\\
+1962 & 0.91 & 0.00 & 0.91\\
+1963 & 0.94 & 0.00 & 0.94\\
+1964 & 0.98 & 0.00 & 0.98\\
+1965 & 1.01 & 0.00 & 1.01\\
+1966 & 1.04 & 0.00 & 1.04\\
+1967 & 1.07 & 0.00 & 1.07\\
+1968 & 1.10 & 0.00 & 1.10\\
+1969 & 1.13 & 0.00 & 1.13\\
+1970 & 1.16 & 0.00 & 1.16\\
+1971 & 1.19 & 0.00 & 1.19\\
+1972 & 1.22 & 0.00 & 1.22\\
+1973 & 1.25 & 0.00 & 1.25\\
+1974 & 1.27 & 0.00 & 1.27\\
+1975 & 1.30 & 0.00 & 1.30\\
+1976 & 0.94 & 0.00 & 0.94\\
+1977 & 0.58 & 0.00 & 0.58\\
+1978 & 1.07 & 0.00 & 1.07\\
+1979 & 1.42 & 0.00 & 1.42\\
+1980 & 0.83 & 0.00 & 0.83\\
+1981 & 1.85 & 0.00 & 1.85\\
+1982 & 1.94 & 0.00 & 1.94\\
+1983 & 1.18 & 0.00 & 1.18\\
+1984 & 1.87 & 0.00 & 1.87\\
+1985 & 1.61 & 0.20 & 1.80\\
+1986 & 1.93 & 0.19 & 2.12\\
+1987 & 2.31 & 0.93 & 3.25\\
+1988 & 2.14 & 0.25 & 2.39\\
+1989 & 2.15 & 0.00 & 2.15\\
+1990 & 2.71 & 0.03 & 2.74\\
+1991 & 1.94 & 0.00 & 1.94\\
+1992 & 3.02 & 0.00 & 3.02\\
+1993 & 2.18 & 0.01 & 2.19\\
+1994 & 1.38 & 0.00 & 1.38\\
+1995 & 1.67 & 0.00 & 1.67\\
+1996 & 1.91 & 0.00 & 1.91\\
+1997 & 1.83 & 0.00 & 1.83\\
+1998 & 1.89 & 0.00 & 1.89\\
+1999 & 1.94 & 0.00 & 1.94\\
+2000 & 2.08 & 0.00 & 2.08\\
+2001 & 2.18 & 0.00 & 2.18\\
+2002 & 1.48 & 0.00 & 1.48\\
+2003 & 1.86 & 0.00 & 1.86\\
+2004 & 1.91 & 0.00 & 1.92\\
+2005 & 5.58 & 0.00 & 5.58\\
+2006 & 2.68 & 0.00 & 2.68\\
+2007 & 2.75 & 0.00 & 2.75\\
+2008 & 2.94 & 0.00 & 2.94\\
+2009 & 2.74 & 0.00 & 2.74\\
+2010 & 2.24 & 0.00 & 2.24\\
+2011 & 2.90 & 0.00 & 2.90\\
+2012 & 2.01 & 0.00 & 2.01\\
+2013 & 3.01 & 0.00 & 3.01\\
+2014 & 2.81 & 0.00 & 2.81\\
+2015 & 1.58 & 0.00 & 1.58\\
+2016 & 2.20 & 0.00 & 2.20\\
+2017 & 1.50 & 0.01 & 1.51\\
+2018 & 3.39 & 0.00 & 3.39\\
+2019 & 4.55 & 0.00 & 4.55\\
+2020 & 2.69 & 0.00 & 2.69\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -390,6 +393,7 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ****************** Catches Used in the Model ************************* --> 
 <!-- ====================================================================== -->  
 
+![Catches by year for the recreational and commercial fleets in the model.\label{fig:catch}](figs/catches_wa.png){width=100% height=100% alt="Catches by year for the recreational and commercial fleets in the model"}
 
 
 <!-- ====================================================================== --> 
@@ -397,7 +401,7 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== --> 
 
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
 
 
 <!-- ====================================================================== -->
@@ -410,16 +414,16 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-at-age}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-at-age}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
 
 
-![Weight at length by sex.\label{fig:weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight at length by sex."}
+![Weight at length by sex.\label{fig:weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight at length by sex."}
 
 
-![Maturity at length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio6_maturity.png){width=100% height=100% alt="Maturity at length."}
+![Maturity at length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio6_maturity.png){width=100% height=100% alt="Maturity at length."}
 
 
-![Fecundity at a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity at a function of length."}
+![Fecundity at a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity at a function of length."}
 
 <!-- ====================================================================== -->
 <!-- *********************   Estimated SSB   ****************************** --> 
@@ -430,7 +434,7 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 
 
-![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
+![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
 
 <!-- ====================================================================== -->
 <!-- *********************   Recruitment     ****************************** --> 
@@ -447,7 +451,8 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 
 
-![Test figure.\label{fig:test}](C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/plots/ts7_Spawning_output.png){width=100% height=100% alt="Test figure."}
+![Estimate time series of spawning output..\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts7_Spawning_output.png){width=100% height=100% alt="Estimate time series of spawning output.."}
+
 <!-- ====================================================================== -->
 <!-- ******************    Reference Points    **************************** --> 
 <!-- ====================================================================== -->
