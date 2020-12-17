@@ -34,9 +34,9 @@ To Do
 - Email Gerry
 
 
-![R0 profile for CA South copper rockfish.\label{fig:r0-sca}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/R0_profile_ca_s_pt_c.png){width=50% height=50%}
+![R0 profile for CA South copper rockfish.\label{fig:r0-sca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/R0_profile_ca_s_pt_c.png){width=50% height=50%}
 
-![Parameter profile for CA South copper rockfish.\label{fig:para-sca}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+![Parameter profile for CA South copper rockfish.\label{fig:para-sca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
 
 \pagebreak
@@ -50,9 +50,9 @@ To Do
 To Do 
 - Shorten the rec devs time series.
 
-![R0 profile for CA North copper rockfish.\label{fig:r0-nca}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/R0_profile_ca_n_pt_c.png){width=50% height=50%}
+![R0 profile for CA North copper rockfish.\label{fig:r0-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/R0_profile_ca_n_pt_c.png){width=50% height=50%}
 
-![Parameter profile for California North copper rockfish.\label{fig:para-nca}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+![Parameter profile for California North copper rockfish.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
 \pagebreak
 
@@ -67,10 +67,10 @@ To Do
 - Add age data and see how the recruitment changes.
 - Check log(R0) black rockfish, china - central ~4.5, china north ~3.5, and blue rockfish.
 
-![R0 profile for Oregon copper rockfish.\label{fig:r0-or}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/R0_profile_or.png){width=50% height=50%}
+![R0 profile for Oregon copper rockfish.\label{fig:r0-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/R0_profile_or.png){width=50% height=50%}
 
 
-![Parameter profile for Oregon copper rockfish.\label{fig:para-or}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+![Parameter profile for Oregon copper rockfish.\label{fig:para-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
 \pagebreak
 
@@ -80,9 +80,9 @@ To Do
 - Estimating rec devs vs. not results in fairly dramatic model differences.  The rec devs are likely being driven entirely by the catches rather than information in the lengths. When estimating rec devs there are some very large series of recruitment around 2000 and then all negative for the years after. There is a trade-off between recruitment and selectivity where: No devs -> left shifted selectivity, Rec devs -> right shifted selectivity
 - Apply francis data weighting.
 
-![R0 profile for Washington copper rockfish.\label{fig:r0-wa}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/R0_profile_wa.png){width=50% height=50%}
+![R0 profile for Washington copper rockfish.\label{fig:r0-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/R0_profile_wa.png){width=50% height=50%}
 
-![Parameter profile for Washington copper rockfish.\label{fig:para-wa}](N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+![Parameter profile for Washington copper rockfish.\label{fig:para-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
 \pagebreak
 
