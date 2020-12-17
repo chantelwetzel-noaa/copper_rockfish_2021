@@ -112,9 +112,18 @@ SS_plots(base)
 model = "4.1_bio_linf_w_blocks"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
+# NLL = 1142.22 (fleet 2 len like = 838.055)
+
 
 # Move forward with the "4.1_bio_linf_w_blocks" model
 # Replace recreational lengths with fork lengths and remove
 # the trawl survey data which was incorrectly split by latitude. 
+model = "5.1_data_rec_len_trawl_survey"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
+# NLL = 1163.06 (fleet 2 len like = 859.287 so a worse fit...) 
+# fleet 3 selex peak para on the upper bound
+
+
+
+

@@ -110,7 +110,17 @@ model = "6.5_dw_francis_no_recdevs_est_L2"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 # NLL = 408.771, R0 = 5.65, depl 2021 = 0.12
-# L2 (f) = 44.67, L2 (m) = 41.7 weirdly small 
+# L2 (f) = 44.67, L2 (m) = 41.7 weirdly small
+
+# Major Data Update
+# 1. Replace the recreational lengths to fork lengths from total lengths
+# 2. Add NWFSC WCGBTS data
+# Move forward with model = "6.2_dw_francis" 
+model = "7.1_data_rec_len_add_trawl"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# Initially I allowed the NWFSC WCGBTS to be domed but the model estimated asymtotic selex.
+# The model is very poorly fitting the WCGBTS data.
 
 
 ##########################################################

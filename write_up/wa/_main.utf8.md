@@ -75,6 +75,7 @@ title: Status of copper rockfish (_Sebastes caurinus_) along the Washigton US We
 <!--chapter:end:01a.Rmd-->
 
 
+
 <!--chapter:end:01executive.Rmd-->
 
 \pagebreak
@@ -402,6 +403,24 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 
 
 ![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+
+<!-- ====================================================================== --> 
+<!-- ***********************    Biology         *************************** --> 
+<!-- ====================================================================== --> 
+
+
+
+![Survey length-at-weight data with sex specific estimated fits..\label{fig:len-weight}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Sex.png){width=100% height=100% alt="Survey length-at-weight data with sex specific estimated fits.."}
+
+
+![Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys..\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png){width=100% height=100% alt="Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.."}
+
+
+![Length-at-age data from the with sex specific estimated growth..\label{fig:len-age}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png){width=100% height=100% alt="Length-at-age data from the with sex specific estimated growth.."}
+
+
+![Observed length-at-age by data source..\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png){width=100% height=100% alt="Observed length-at-age by data source.."}
+
 
 
 <!-- ====================================================================== -->

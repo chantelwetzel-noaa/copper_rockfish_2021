@@ -94,6 +94,11 @@ SS_plots(base)
 # Stock status just below threshold
 # Either can have large rec devs in the 90s or selectivity
 
+# Remove block
+model = "5.1.1_selex_cv_fixed"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
 
 # Try adding early selectivity block 1935-1999 & domed in both periods
 model = "5.2_selex_block_and_dome"
