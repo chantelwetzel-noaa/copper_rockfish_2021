@@ -77,6 +77,15 @@ or_recfin_len_data = rename_recfin(data = or_recfin_len,
 					      		   mode_column_name = "RecFIN.Mode.Name" )
 or_recfin_len_data$Source = "RecFIN_MRFSS"
 
+or_recfin_age = read.csv(file.path(dir, "data", "recreational_comps", "Oregon", "copper_recfin_bio_age_2005_2019.csv"))
+or_recfin_age_data = rename_recfin(data = or_recfin_age, 
+								   area_grouping = list("ODFW"), 
+								   area_names = c("OR"), 
+								   area_column_name = "SAMPLING_AGENCY_NAME",
+								   mode_grouping = list( c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS")),
+					      		   mode_names = c("rec_boat"),
+					      		   mode_column_name = "RECFIN_MODE_NAME" )
+or_recfin_age_data$Source = "RecFIN_MRFSS"
 
 # Washington Recreational
 # According to Theresa WA lengths are all FL
@@ -101,6 +110,7 @@ input[[2]] = ca_mrfss_data
 input[[3]] = or_mrfss_data
 input[[4]] = or_recfin_len_data
 input[[5]] = wa_recfin_data
+
 
 ############################################################################################
 #	Create data frame with all the input data
@@ -130,17 +140,27 @@ out = out[out$Data_Type %in% c("RETAINED", NA), ]
 
 
 
-
-
-
-
-
 ############################################################################################
 #	Washington recreational length data
 ############################################################################################
 
+
 wa = out[which(out$State == "WA"), ]
 wa$Length_cm = wa$Length
+
+# create a table of the samples available by year
+wa$Trawl_id = 1:nrow(wa)
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = wa, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "wa_samples.csv"), row.names = FALSE)
+
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = wa, 
+	type = "age", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "age_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "wa_age_samples.csv"), row.names = FALSE)
+
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
                        datL = wa, lgthBins = len_bin,
@@ -159,7 +179,14 @@ PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"),
     dat = lfs$comps, ylim=c(0, max(len_bin)), 
     main = "WA Recreational - Sexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
-
+age_bins = 1:50
+afs = UnexpandedAFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       datA = wa, ageBins = age_bins,
+                       sex = 3,  partition = 0, fleet = 1, month = 1)
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=1-50.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "wa_rec_notExpanded_Age_comp_Sex_0_bin=1-50.csv")) 
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Age_comp_Sex_3_bin=1-50.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "wa_rec_notExpanded_Age_comp_Sex_3_bin=1-50.csv")) 
 
 
 
@@ -169,6 +196,23 @@ PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"),
 
 or = out[which(out$State == "OR"), ]
 or$Length_cm = or$Length
+or$Trawl_id = 1:nrow(or)
+
+# create a table of the samples available by year
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = or, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "or_samples.csv"), row.names = FALSE)
+
+or_age = or_recfin_age_data
+or_age$Trawl_id = or_age$SAMPLE_ID
+or_age$Length_cm = or_age$Length
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = or_age, 
+	type = "age", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "age_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "or_age_samples.csv"), row.names = FALSE)
+
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
                        datL = or, lgthBins = len_bin,
@@ -198,6 +242,17 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"),
 
 file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
 			to= file.path(dir, "data", "recreational_comps", "forSS", "released_or_rec_notExpanded_Length_comp_Sex_0_bin=10-54.csv")) 
+
+afs = UnexpandedAFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       datA = or_age, ageBins = age_bins,
+                       sex = 3, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Age_comp_Sex_3_bin=1-50.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "or_rec_notExpanded_Age_comp_Sex_3_bin=1-50.csv")) 
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=1-50.csv"), 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "or_rec_notExpanded_Age_comp_Sex_0_bin=1-50.csv")) 
+
+
 
 
 ############################################################################################
