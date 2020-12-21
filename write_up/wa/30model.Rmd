@@ -1,2 +1,21 @@
 # Assessment Model
 
+## Summary of Previous Assessments 
+
+`r Spp` was last assesseed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA) a data-moderate approach which incorporated catch and index data with prior on select parameters (natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity). `r Spp` was assessed as two separated stocks, the area South of Pt. Conception off the California coast and the area North of Pt. Conception to the Washington Canada border. The 2013 assessment estimated the stock South of Pt. Conception at 75% of unfished spawning output North of Pt. Conception at 48% of unfished spawning output. 
+
+
+## Model Structure and Assumptions
+
+
+
+### Modeling Platform and Structure
+
+Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version XXX, along with R version 4.0.1 were used to investigate and plot model fits. 
+
+
+### Model Parameters
+Describe estimated vs. fixed parameters, priors
+
+### Key Assumptions and Structural Choices
+
