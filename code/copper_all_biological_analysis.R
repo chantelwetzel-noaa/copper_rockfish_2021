@@ -346,13 +346,38 @@ write.csv(data_sum$area_fleet_source_year, file = file.path(dir, "data", "biolog
 #	Sex Ratio by Age or Length
 ############################################################################################
 
-a_by_sex = table(out$Age, out$Sex)
-ratio = a_by_sex[,1] / (a_by_sex[,1] + a_by_sex[,2])
-plot(ratio); abline(h = 0.50)
 
-l_by_sex = table(out$Length, out$Sex)
-ratio = l_by_sex[,1] / (l_by_sex[,1] + l_by_sex[,2])
-plot(as.numeric(rownames(l_by_sex)), ratio); abline(h = 0.50)
+temp = table(out$round_length, out$Sex)
+ratioF = temp[,"F"] / (temp[,"M"] + temp[,"F"])
+nobs = temp[,"F"] + temp[,"M"]
+
+pngfun(wd = file.path(dir, "data", "biology", "plots"), file = "Length_fraction_female.png", w = 7, h = 7, pt = 12)
+par(mfrow = c(1,1))
+plot(x = names(ratioF), y = ratioF, type="l", col="red", 
+	xlab = "Length (cm)", ylab="Fraction female")
+abline(h = 0.50, col = "grey", lty = 2, lwd = 2)
+symbols(x = names(ratioF), y = ratioF, circles = nobs, 
+	inches = 0.1, fg="red", bg = rgb(1,0,0, alpha=0.5), add=T)
+dev.off()
+
+temp = table(out$Age, out$Sex)
+ratioF = temp[,"F"] / (temp[,"M"] + temp[,"F"])
+nobs = temp[,"F"] + temp[,"M"]
+
+pngfun(wd = file.path(dir, "data", "biology", "plots"), file = "Age_fraction_female.png", w = 7, h = 7, pt = 12)
+par(mfrow = c(1,1))
+plot(x = names(ratioF), y = ratioF, type="l", col="red", xlim = c(0, 50),
+	xlab = "Age", ylab="Fraction female")
+abline(h = 0.50, col = "grey", lty = 2, lwd = 2)
+symbols(x = names(ratioF), y = ratioF, circles = nobs, 
+	inches = 0.1, fg="red", bg = rgb(1,0,0, alpha=0.5), add=T)
+dev.off()
+
+age_tmp = out[which(!is.na(out$Age)), ]
+age_tmp$source_state = paste0(age_tmp$State,"_",age_tmp$Source)
+tbl = table(age_tmp$Year, age_tmp$source_state)
+write.csv(tbl, file = file.path(dir, "data", "biology", "age_samples_by_state_source.csv"),
+		  row.names = FALSE)
 
 ############################################################################################
 #	Quickly look at the commercial samples by gear to see if the amount of data for each
