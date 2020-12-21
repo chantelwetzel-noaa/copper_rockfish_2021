@@ -1,4 +1,4 @@
-The length-at-age was estimated for male and female `r spp` using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019. Figure ADD FIGURE shows the lengths and ages for all years as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
+The length-at-age was estimated for male and female `r spp` using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
 
 \begin{centering}
 

@@ -1,0 +1,59 @@
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Weight_Source.png"), 
+caption = "Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys",
+label = 'len-weight-survey')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Weight_Sex.png"), 
+caption = "Survey length-at-weight data with sex specific estimated fits",
+label = 'len-weight')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Data_Length_Age_by_Sex.png"), 
+caption = "Observed length-at-age by data source",
+label = 'len-age-data')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Age_by_Sex.png"), 
+caption = "Length-at-age data from the with sex specific estimated growth",
+label = 'len-age')
+```	
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
+caption = "Maturity as a function of  length",
+label = 'maturity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
+caption = "Fecundity as a function of length",
+label = 'fecundity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "Length_fraction_female.png"), 
+caption = "Fraction female by length across all available data sources",
+label = 'len-sex-ratio')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "Age_fraction_female.png"), 
+caption = "Fraction female by age across all available data sources",
+label = 'age-sex-ratio')
+```
