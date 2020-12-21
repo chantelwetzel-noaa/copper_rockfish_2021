@@ -19,85 +19,41 @@ caption = "Summary of data sources used in the base model",
 label = 'data-plot')
 ```	
 
-<!-- ====================================================================== --> 
-<!-- ***********************    Biology         *************************** --> 
-<!-- ====================================================================== --> 
-```{r}
-# Should move this in the init section
-data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots"
 
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_fig_loc, "doc_Length_Weight_Sex.png"), 
-caption = "Survey length-at-weight data with sex specific estimated fits.",
-label = 'len-weight')
-```	
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_fig_loc, "doc_Length_Weight_Source.png"), 
-caption = "Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.",
-label = 'len-weight-survey')
-```	
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_fig_loc, "doc_Length_Age_by_Sex.png"), 
-caption = "Length-at-age data from the with sex specific estimated growth.",
-label = 'len-age')
-```	
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_fig_loc, "doc_Data_Length_Age_by_Sex.png"), 
-caption = "Observed length-at-age by data source.",
-label = 'len-age-data')
-```	
-
+<!-- ====================================================================== -->
+<!-- ****************   Commercial Length Samples    ********************** --> 
+<!-- ====================================================================== -->
 
 
 <!-- ====================================================================== -->
 <!-- **************** Recreational Length Samples    ********************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt1mkt0_page2.png"), 
+caption = "Length composition data from the recreational fleet",
+label = 'wa-len-data')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_WA_Recreational.png"), 
+caption = "Mean length for recreational fleet with 95 percent confidence intervals",
+label = 'mean-len-data')
+```
+
 
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
-caption = "Length at age in the beginning of the year in the ending year of the model",
-label = 'len-at-age')
-```
+```{r, echo=FALSE, results='asis'}
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio5_weightatsize.png"), 
-caption = "Weight at length by sex",
-label = 'weight')
-```
+filein = file.path(general_wd,'figures_biology.Rmd')
+read_child(filein)
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
-caption = "Maturity at length",
-label = 'maturity')
 ```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
-caption = "Fecundity at a function of length",
-label = 'fecundity')
-```
-
-<!-- ====================================================================== -->
-<!-- *********************   Estimated SSB   ****************************** --> 
-<!-- ====================================================================== -->
 
 <!-- ====================================================================== -->
 <!-- *********************    Selectivity            ********************** --> 
@@ -114,11 +70,46 @@ label = 'selex')
 <!-- *********************   Recruitment     ****************************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
+caption = "Estimated time series of age-0 recruits (1000s)",
+label = 'recruits')
+```
+
 
 <!-- ====================================================================== -->
 <!-- ****************** Fit to the Length Data **************************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
+caption = "Length at age in the beginning of the year in the ending year of the model",
+label = 'len-age-ss')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
+caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+label = 'rec-pearson')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_WA_Recreational.png"), 
+caption = "Mean length for recreational with 95 percent confidence intervals based on current samples sizes",
+label = 'rec-mean-len-fit')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
+caption = "Aggregated length comps over all years",
+label = 'agg-len-fit')
+```
 
 <!-- ====================================================================== -->
 <!-- ******************      Time Series       **************************** --> 
@@ -126,14 +117,24 @@ label = 'selex')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "ts7_Spawning_output.png"), 
-caption = "Estimate time series of spawning output.",
+filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
+caption = "Estimated time series of spawning output",
 label = 'ssb')
 ```
 
-<!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
+caption = "Estimated time series of total biomass",
+label = 'tot-bio')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
+caption = "Estimated time series of fraction of unfished spawning output",
+label = 'depl')
+```
 
 
 <!-- ====================================================================== -->
@@ -150,3 +151,25 @@ label = 'ssb')
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
+
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```
