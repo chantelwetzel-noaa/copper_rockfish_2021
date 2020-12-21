@@ -125,5 +125,9 @@ SS_plots(base)
 # fleet 3 selex peak para on the upper bound
 
 
+model = "5.2_data_rec_len_trawl_survey_nodevs"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
 
 

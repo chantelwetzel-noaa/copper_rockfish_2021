@@ -121,6 +121,45 @@ base = SS_output(file.path(wd, model))
 SS_plots(base)
 # Initially I allowed the NWFSC WCGBTS to be domed but the model estimated asymtotic selex.
 # The model is very poorly fitting the WCGBTS data.
+# NLL = 292.344
+
+# Allow more rec selex parameters to be estimated starting from a steep dome. 
+# Estimate most of the parameters and then fix some (est p1, p3, p6)
+model = "7.2_data_selex_rec_dome"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# Slightly steeper dome estimated, but little change in the NLL
+# The depl does not change greatly ending ~6% (vs. 4.% above) 
+# NLL = 293.7, rec length like = 103.3
+
+# Allow more com selex parameters to be estimated starting from a steep dome. 
+# Estimate most of the parameters and then fix some (est p1, p3, p6)
+model = "7.3_data_selex_com_est"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL 290.3, improve in the fit to the commercial length data (-3 LL)
+# R0 = 5.5, depl 2021 = 0.07
+# The commercial shifts left-ward and has a dome in selex
+
+# Allow more hkl selex parameters to be estimated 
+# Estimate most of the parameters and then fix some (est p1, p3, p6)
+model = "7.4_data_selex_hkl"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 289.95, R0 = 5.5
+
+# Allow more trawl survey selex parameters to be estimated 
+# Estimate most of the parameters and then fix some (est p1, p3, p6)
+model = "7.5_data_selex_wcgbts"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 289.95
+
+# Re-data-weight
+model = "8.1_dw_MI"
+base = SS_output(file.path(wd, model))
+
+
 
 
 ##########################################################
