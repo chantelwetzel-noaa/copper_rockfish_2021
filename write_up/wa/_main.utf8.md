@@ -145,33 +145,15 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 The above is also the median of the prior. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 per year  The maximum age was selected based on available age data from all West Coast data sources and literature values.  The oldest aged rockfish was 51 years with two observations, off the coast of Washington and Oregon in 2019.  However, age data are subject to ageing error which could impact this estimate of longevity.  The selection of 50 years was based on the range of other ages available with multiple observations of fish between 44 and 51 years of age and literature examining the longevity of `spp` [@love_milton_probably_1996].  
 
-
-### Maturation and Fecundity
-
-
-NEED TO UPDATE WHEN MELISSA IS DONE
-
-Maturity-at-length based on the work of Hannah XXX which estimated the 50% size-at-maturity of 34.83 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure ADD FIGURE).
-
-This assessment assumed a logistic maturity-at-length curve based on analysis of XXX fish maturity samples collected from the NWFSC WCGBT and NWFSC Hook & Line surveys.  The new maturity-at-length curve is based on the estimate of functional maturity, an approach that classifies rockfish maturity with developing oocytes as mature or immature based on the proportion of vitellogenin in the cytoplasm and the measured frequency of atretic cells (Melissa Head, personal communication, NWFSC, NOAA).  The 50% size-at-maturity was estimated at XX cm with maturity asymptoting to 1.0 for larger fish (Figure ADD FIGURE).  
-
-The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for copper rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure ADD FIGURE.
-
-### Sex Ratio
-
-
-There was limited sex specific observations by length or age for all biological data sources. The sex ratio of young fish was assumed to be 1:1. 
-
-
 ### Length-Weight Relationship
 
 
-The length-weight relationship for copper rockfish was estimated outside the model using all coastwide biological data available from fishery-independent data sources, where the female weight-at-length in grams was estimated at 9.56e-06$L$^3.19^ and males at 1.08e-05$L$^3.15^ where $L$ is length in cm (Figures ADD FIGURE).
+The length-weight relationship for copper rockfish was estimated outside the model using all coastwide biological data available from fishery-independent data sources (Figure \ref{fig:len-weight-survey}). The estimated length-weight for female fish was 9.56e-06$L$^3.19^ and males at 1.08e-05$L$^3.15^ where $L$ is length in cm (Figures \ref{fig:len-weight}).
 
 ### Growth (Length-at-Age)
 
 
-The length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019. Figure ADD FIGURE shows the lengths and ages for all years as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
+The length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
 
 \begin{centering}
 
@@ -183,35 +165,34 @@ Males $L_{\infty}$ = 47.8 cm; $k$ = 0.182
 
 These values were fixed within the base model for male and female copper rockfish.
 
+### Maturation and Fecundity
+
+
+Maturity-at-length based on the work of Hannah [-@hannah_length_2014] which estimated the 50% size-at-maturity of 34.83 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}).  
+
+The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for copper rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+
+### Sex Ratio
+
+
+There was limited sex specific observations by length or age for all biological data sources (Figures \ref{fig:len-sex-ratio} and \ref{fig:age-sex-ratio}). The sex ratio of young fish was assumed to be 1:1. 
 
 <!--chapter:end:22biology.Rmd-->
 
 # Assessment Model
 
+## Summary of Previous Assessments 
 
-<!--chapter:end:30model.Rmd-->
+Copper rockfish was last assesseed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA) a data-moderate approach which incorporated catch and index data with prior on select parameters (natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity). Copper rockfish was assessed as two separated stocks, the area South of Pt. Conception off the California coast and the area North of Pt. Conception to the Washington Canada border. The 2013 assessment estimated the stock South of Pt. Conception at 75% of unfished spawning output North of Pt. Conception at 48% of unfished spawning output. 
 
-## Summary of Previous Assessments and Reviews
-
-
-### History of Modeling Approaches (not required for an update assessment)
-
-
-### Most Recent STAR Panel and SSC Recommendations (not required for an update assessment)
-
-
-### Response to Groundfish Subcommittee Requests (not required in draft)
-
-<!--chapter:end:31summary.Rmd-->
 
 ## Model Structure and Assumptions
 
 
-### Model Changes from the Last Assessment (not required for an update assessment)
-
 
 ### Modeling Platform and Structure
-General model specifications (e.g., executable version, model structure, definition of fleets and areas)
+
+Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version XXX, along with R version 4.0.1 were used to investigate and plot model fits. 
 
 
 ### Model Parameters
@@ -219,7 +200,8 @@ Describe estimated vs. fixed parameters, priors
 
 ### Key Assumptions and Structural Choices
 
-<!--chapter:end:32structure.Rmd-->
+
+<!--chapter:end:30model.Rmd-->
 
 ## Base Model Results
 
@@ -381,9 +363,100 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 \end{longtable}
 \endgroup{}
 \endgroup{}
+\newpage
+
+<!-- ======================================================= -->
+<!-- ***************       Data      *********************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex}
+
+\newpage
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_age_samples.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ***********   Model Parameters     ******************** --> 
+<!-- ======================================================= -->
 
 
-\input{C:/Assessments/2021/copper_rockfish_2021/models/wa/0.0_init_model/tables/TimeSeries.tex}
+\begingroup\fontsize{9}{11}\selectfont
+
+\begin{landscape}\begingroup\fontsize{9}{11}\selectfont
+
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{6cm}lllll>{\raggedright\arraybackslash}p{4cm}}
+\caption{(\#tab:params)List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).}\\
+\toprule
+Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:params)List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD). \textit{(continued)}}\\
+\toprule
+Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+NatM p 1 Fem GP 1 & 0.1080000 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
+L at Amin Fem GP 1 & 15.7000000 & -2 & (3, 25) & NA & NA & None\\
+L at Amax Fem GP 1 & 49.6000000 & -2 & (35, 60) & NA & NA & None\\
+VonBert K Fem GP 1 & 0.1520000 & -2 & (0.03, 0.3) & NA & NA & None\\
+CV young Fem GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
+CV old Fem GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
+Wtlen 1 Fem GP 1 & 0.0000096 & -9 & (0, 0.1) & NA & NA & None\\
+Wtlen 2 Fem GP 1 & 3.1900000 & -9 & (2, 4) & NA & NA & None\\
+Mat50% Fem GP 1 & 34.8260000 & -9 & (10, 60) & NA & NA & None\\
+Mat slope Fem GP 1 & -0.6000000 & -9 & (-1, 0) & NA & NA & None\\
+Eggs scalar Fem GP 1 & 0.0000003 & -9 & (-3, 3) & NA & NA & None\\
+Eggs exp len Fem GP 1 & 3.6790000 & -9 & (-3, 3) & NA & NA & None\\
+NatM p 1 Mal GP 1 & 0.1080000 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
+L at Amin Mal GP 1 & 13.9000000 & -2 & (3, 25) & NA & NA & None\\
+L at Amax Mal GP 1 & 47.8000000 & -2 & (35, 60) & NA & NA & None\\
+VonBert K Mal GP 1 & 0.1820000 & -2 & (0.03, 0.3) & NA & NA & None\\
+CV young Mal GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
+CV old Mal GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
+Wtlen 1 Mal GP 1 & 0.0000108 & -9 & (0, 0.1) & NA & NA & None\\
+Wtlen 2 Mal GP 1 & 3.1500000 & -9 & (2, 4) & NA & NA & None\\
+FracFemale GP 1 & 0.5000000 & -9 & (0.01, 0.99) & NA & NA & None\\
+SR LN(R0) & 1.5627300 & 1 & (1, 20) & OK & 0.150831 & None\\
+SR BH steep & 0.7200000 & -7 & (0.22, 1) & NA & NA & Normal (0.72, 0.09)\\
+SR sigmaR & 0.9000000 & -99 & (0.15, 1) & NA & NA & None\\
+SR regime & 0.0000000 & -99 & (-2, 2) & NA & NA & None\\
+SR autocorr & 0.0000000 & -99 & (0, 0) & NA & NA & None\\
+Early InitAge 1 & -0.0184066 & 5 & (-5, 5) & act & 0.892105 & dev (NA, NA)\\
+Size DblN peak WA Recreational(1) & 39.9812000 & 2 & (15, 50) & OK & 1.165670 & None\\
+Size DblN top logit WA Recreational(1) & -1.4692600 & -2 & (-7, 7) & NA & NA & None\\
+Size DblN ascend se WA Recreational(1) & 3.9245300 & 3 & (-10, 10) & OK & 0.167349 & None\\
+Size DblN descend se WA Recreational(1) & 6.0000000 & -4 & (-10, 10) & NA & NA & None\\
+Size DblN start logit WA Recreational(1) & -20.0000000 & -9 & (-20, 30) & NA & NA & None\\
+Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.711800 & None\\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\endgroup{}
+
+
+<!-- ======================================================= -->
+<!-- ***********       Time Series      ******************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/TimeSeries.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ********  Reference Points & Management *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
 
 <!--chapter:end:52tables.Rmd-->
 
@@ -404,23 +477,10 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 
 ![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
 
-<!-- ====================================================================== --> 
-<!-- ***********************    Biology         *************************** --> 
-<!-- ====================================================================== --> 
 
-
-
-![Survey length-at-weight data with sex specific estimated fits..\label{fig:len-weight}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Sex.png){width=100% height=100% alt="Survey length-at-weight data with sex specific estimated fits.."}
-
-
-![Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys..\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png){width=100% height=100% alt="Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.."}
-
-
-![Length-at-age data from the with sex specific estimated growth..\label{fig:len-age}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png){width=100% height=100% alt="Length-at-age data from the with sex specific estimated growth.."}
-
-
-![Observed length-at-age by data source..\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png){width=100% height=100% alt="Observed length-at-age by data source.."}
-
+<!-- ====================================================================== -->
+<!-- ****************   Commercial Length Samples    ********************** --> 
+<!-- ====================================================================== -->
 
 
 <!-- ====================================================================== -->
@@ -428,25 +488,41 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 
 
+![Length composition data from the recreational fleet.\label{fig:wa-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="Length composition data from the recreational fleet."}
+
+
+![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
+
+
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-at-age}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+![Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png){width=100% height=100% alt="Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys."}
 
 
-![Weight at length by sex.\label{fig:weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight at length by sex."}
+![Survey length-at-weight data with sex specific estimated fits.\label{fig:len-weight}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Sex.png){width=100% height=100% alt="Survey length-at-weight data with sex specific estimated fits."}
 
 
-![Maturity at length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio6_maturity.png){width=100% height=100% alt="Maturity at length."}
+
+![Observed length-at-age by data source.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png){width=100% height=100% alt="Observed length-at-age by data source."}
 
 
-![Fecundity at a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity at a function of length."}
+![Length-at-age data from the with sex specific estimated growth.\label{fig:len-age}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png){width=100% height=100% alt="Length-at-age data from the with sex specific estimated growth."}
 
-<!-- ====================================================================== -->
-<!-- *********************   Estimated SSB   ****************************** --> 
-<!-- ====================================================================== -->
+
+
+![Maturity as a function of  length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio6_maturity.png){width=100% height=100% alt="Maturity as a function of  length."}
+
+
+![Fecundity as a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
+
+
+![Fraction female by length across all available data sources.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="Fraction female by length across all available data sources."}
+
+
+![Fraction female by age across all available data sources.\label{fig:age-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png){width=100% height=100% alt="Fraction female by age across all available data sources."}
 
 <!-- ====================================================================== -->
 <!-- *********************    Selectivity            ********************** --> 
@@ -460,21 +536,38 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 
 
+![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="Estimated time series of age-0 recruits (1000s)."}
+
+
 <!-- ====================================================================== -->
 <!-- ****************** Fit to the Length Data **************************** --> 
 <!-- ====================================================================== -->
 
+
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+
+
+
+![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+
+
+![Mean length for recreational with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational with 95 percent confidence intervals based on current samples sizes."}
+
+
+![Aggregated length comps over all years.\label{fig:agg-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years."}
 
 <!-- ====================================================================== -->
 <!-- ******************      Time Series       **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Estimate time series of spawning output..\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts7_Spawning_output.png){width=100% height=100% alt="Estimate time series of spawning output.."}
+![Estimated time series of spawning output.\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of spawning output."}
 
-<!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
+
+![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time series of total biomass."}
+
+
+![Estimated time series of fraction of unfished spawning output.\label{fig:depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of fraction of unfished spawning output."}
 
 
 <!-- ====================================================================== -->
@@ -491,6 +584,21 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
+
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+
+![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
+
+
+![Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72."}
 
 <!--chapter:end:53figures.Rmd-->
 
