@@ -7,10 +7,12 @@ read_child(filein)
 ```
 
 ## Historical and Current Fishery Information
-Replace text.
+Off the coast of Washington `r spp` is primarily caught in the recreational/sport fishery with very little mortaltiy from commercial fishing. `r Spp` has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of selected years with high (2005) or low catches (2015). 
 
 ## Summary of Management History and Performance
-Replace text.
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'1_intro_management.Rmd')
+read_child(filein)
+```
 
-## Foreign Fisheries
-Replace text.
