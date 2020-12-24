@@ -93,22 +93,27 @@ title: Status of copper rockfish (_Sebastes caurinus_) along the Washigton US We
 
 
 ## Basic Information
-This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. Copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.  They occur mostly on low relief or sand-rock interfaces.  Copper rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
+
+This assessment reports the status of copper rockfish (_Sebastes caurinus_) off the US West coast using data through 2020. Copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.   Copper rockfish have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
 
 ## Life History
-Genetic work has revealed significant differences between Puget Sound and coastal stocks, but not among the coastal stocks (XXX Buonaccorsi et al. 2002). copper rockfish live at least 50 years (XX add reference XX) and have the highest vulnerability (V = 2.27) of any West Coast groundfish (XX add reference XX).  
+
+Copper rockfish are commonly found in waters less than 130 meters in depth in nearshore kelp forests and rocky habitat [@love_milton_probably_1996]. The diets of copper rockfish consist primarily of crustaceans, mollusks, and fish [@lea_biological_1999; @bizzarro_diet_2017-1]. The body coloring or copper rockfish varies across the coast with northern fish often exibiting dark brown to olive  with southern fish exibiting yellow to olive-pink variations in color [@miller_guide_1972] which initially led to them being designated as two seperate species (*caurinus* and *vexillaris*). 
+
+Numerous genetic studies have been performed looking for genetic variation in copper rockfish with variable outcomes. Genetic work has revealed significant differences between Puget Sound and coastal stocks of copper rockfish [@dick_replicate_2014]. Stocks along the West Coast have not been deteremined to be genetically distinct populations but significant population sub-division has been detected along the indicating limited oceanographic exchange among geographically proximate locations [@buonaccorsi_population_2002; @johansson_influence_2008]. A specific study examining copper rockfish populations off the coast of Santa Barbara and Monterey California identified a genetic break between the north and south with moderate differentiation [@sivasundar_life_2010].
+
+Copper rockfish is a relatively long-lived rockfish and have been estimated to live at least 50 years [@love_milton_probably_1996]. Copper rockfish was determined to have the highest vulnerability (V = 2.27) of any West Coast groundfish based on recent productivity susceptibility analaysis [@cope_approach_2011].  
 
 ## Ecosystem Considerations
 Replace text.
 
 ## Historical and Current Fishery Information
-Replace text.
+Off the coast of Washington copper rockfish is primarily caught in the recreational/sport fishery with very little mortaltiy from commercial fishing. Copper rockfish has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of selected years with high (2005) or low catches (2015). 
 
 ## Summary of Management History and Performance
-Replace text.
 
-## Foreign Fisheries
-Replace text.
+Copper rockfish is managed by the Pacific Fishery Management Council (PFMC) using annual catch limits (ACLs) and overfished limits (OFLS) split North and South of N. 40$^\circ$ 10' Lat. N. off the West Coast. Copper rockfish was most recently assessed in 2013 as two stocks, one South of Pt. Conception in California and North to the Washington/Canadian border.  The 2013 assessed estimated both areas to be above the management target of 40% of unfished conditions with the southern area being assessed at 75% and the northern population at 48%. The OFLs and the ACLs from each assessed area were modified to match the management boundery of North and South of N. 40$^\circ$ 10' Lat. N.
+
 
 <!--chapter:end:11introduction.Rmd-->
 
@@ -157,9 +162,9 @@ The length-at-age was estimated for male and female copper rockfish using data c
 
 \begin{centering}
 
-Females $L_{\infty}$ = 49.6 cm; $k$ = 0.152
+Females $L_{\infty}$ = 49.7 cm; $k$ = 0.151
 
-Males $L_{\infty}$ = 47.8 cm; $k$ = 0.182
+Males $L_{\infty}$ = 48.1 cm; $k$ = 0.178
 
 \end{centering}
 
@@ -185,36 +190,89 @@ There was limited sex specific observations by length or age for all biological 
 
 Copper rockfish was last assesseed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA) a data-moderate approach which incorporated catch and index data with prior on select parameters (natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity). Copper rockfish was assessed as two separated stocks, the area South of Pt. Conception off the California coast and the area North of Pt. Conception to the Washington Canada border. The 2013 assessment estimated the stock South of Pt. Conception at 75% of unfished spawning output North of Pt. Conception at 48% of unfished spawning output. 
 
+### Bridging Analysis
+
+A direct bridging analysis was not conducted because the previous assessment was structured to include the area from North of Pt. Conception to the Washington/Canadian border.  
+
 
 ## Model Structure and Assumptions
 
-
+The Washington copper rockfish area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in 1935. Selectivity was specified using the double normal parameterization within SS for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated.  The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve.  Recruitment was specified to be deterministic due to limited composition data. 
 
 ### Modeling Platform and Structure
 
-Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version XXX, along with R version 4.0.1 were used to investigate and plot model fits. 
+Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+
+### Priors
 
 
-### Model Parameters
-Describe estimated vs. fixed parameters, priors
+A prior distribution was developed for natural mortality ($M$) using the Hamel [-@hamel_method_2015] meta-analytic approach with  an assumed maximum age of 50 years. The prior assumed a lognormal distribution for natural mortality. The lognormal prior has a median of 0.108 and a standard error of 0.438. 
 
-### Key Assumptions and Structural Choices
+The prior for steepness ($h$) assumed a beta distribution with $\mu$=0.72 and $\sigma$=0.15.  
+The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absense of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
+
+### Data Weighting
+
+Length compositions from the recreational fleet were fit in the model. In the absense of index or or commercial composition data, no data weighting was performed in the base model. Sensitivities were performed using the three data weighting approaches that are commonly applied for West Coast groundfish stock assessments; Francis method [@francis_data_2011], McAllister and Ianelli method (also known as Harmonic Mean weighting) [@mcallister_bayesian_1997], and the Dirichlet method [@thorson_model-based_2017].
+
+
+### Estimated and Fixed Parameters
+
+There were 3 estimated parameters in the base model. These included one parameter for $R_0$ and 2 parameters for selectivity (Table \ref{tab:params}).
+
+Fixed parameters in the model were as follows. Steepness was fixed at  the mean of the prior. Natural mortality was fixed at 0.108 yr^-1^ for females and males, which is the median of the prior. The standard deviation of recruitment deviates was fixed at 0 and recruitment was assumed deterministic. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations described above in Section \ref{length-weight-relationship}. The length-at-age was fixed at sex-specific externally estimated values described above in Section \ref{growth-length-at-age}.
+
+Dome-shaped selectivity was explored for the recreational fleet. Older and larger copper rockfish may be found deeper waters and may move into areas that limit their availability to fishing gear. However, limited support for dome-shaped selectivity for the recreational fleet was found and the selectivity was fixed to be asmptotic.  The commercial selectivity was set equal to the recreational selectivity due to a lack of composition data to support fleet specific estimation. 
+
+## Model Selection and Evaluation
+
+The base assessment model for copper rockfish was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of copper rockfish off the Washington coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+
 
 
 <!--chapter:end:30model.Rmd-->
 
 ## Base Model Results
 
+The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:params} and the likelihood components are shown in Table [XX add table xx]. Estimates of derived reference points and approximate 95 percent asymptotic confidence intervals are shown in Table \ref{tab:referenceES}. Estimates of stock size and status over time are shown in Table \ref{tab:timeseries}. 
+
+### Convergence
+
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found (Table XXX). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian.  
+
 
 ### Parameter Estimates
 
+Selectivity curves were estimated for the recreational fleet.  The estimated selectivity for the recreational fleet is shown in Figure \ref{fig:selex}.  Selectivities were fixed to be asymptotic, reaching maximum selectivity for fish between 35 and 40 cm.  The selectivity for the commercial fleet was assumed to be equal to the recreational fleet selectivity.
+
+ADD R0 parameter estimates
+
+
 ### Fits to the Data
+
+Figure \ref{fig:rec-pearson}
+Figure \ref{fig:rec-mean-len-fit}
+Figure \ref{fig:agg-len-fit}
+
 
 ### Population Trajectory
 
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model generally showed a slow decline over the timeseries with the spawning output stabilizing in recent years. 
+
+The 2020 spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output ( Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is limited. The standard deviation of the log of the spawning output in 2020 is 0.11.
+
+The stock-recruit curve resulting from a value of steepness fixed at  is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment is shown in  Figure \ref{fig:recruits}
+
+
 ### Reference Points
 
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2019). Sustainable total yields  were  mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40% of the unfished spawning output ($SB_{40\%}$) was  millions of eggs. 
 
+UPDATE -- The recent catches (landings plus discards) have been below the point estimate of potential long-term yields calculated using an $SPR_{50\%}$ reference point and the population has been increasing sharply over the last 15 years.
+
+The 2020 spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has bounced above and blow the harvest rate limit ($SPR_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). 
+
+Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
 
 <!--chapter:end:33results.Rmd-->
 
@@ -281,85 +339,85 @@ Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
 1939 & 0.15 & 0.00 & 0.15\\
 1940 & 0.19 & 0.00 & 0.19\\
 1941 & 0.22 & 0.00 & 0.22\\
-1942 & 0.25 & 0.00 & 0.25\\
+1942 & 0.26 & 0.00 & 0.26\\
 1943 & 0.29 & 0.00 & 0.29\\
 1944 & 0.32 & 0.00 & 0.32\\
 1945 & 0.36 & 0.00 & 0.36\\
 1946 & 0.39 & 0.00 & 0.39\\
-1947 & 0.42 & 0.00 & 0.42\\
-1948 & 0.45 & 0.00 & 0.45\\
+1947 & 0.43 & 0.00 & 0.43\\
+1948 & 0.46 & 0.00 & 0.46\\
 1949 & 0.49 & 0.00 & 0.49\\
-1950 & 0.52 & 0.00 & 0.52\\
+1950 & 0.53 & 0.00 & 0.53\\
 1951 & 0.56 & 0.00 & 0.56\\
 1952 & 0.59 & 0.00 & 0.59\\
-1953 & 0.62 & 0.00 & 0.62\\
-1954 & 0.65 & 0.00 & 0.65\\
+1953 & 0.63 & 0.00 & 0.63\\
+1954 & 0.66 & 0.00 & 0.66\\
 1955 & 0.69 & 0.00 & 0.69\\
-1956 & 0.72 & 0.00 & 0.72\\
-1957 & 0.75 & 0.00 & 0.75\\
-1958 & 0.78 & 0.00 & 0.78\\
+1956 & 0.73 & 0.00 & 0.73\\
+1957 & 0.76 & 0.00 & 0.76\\
+1958 & 0.79 & 0.00 & 0.79\\
 1959 & 0.82 & 0.00 & 0.82\\
-1960 & 0.85 & 0.00 & 0.85\\
-1961 & 0.88 & 0.00 & 0.88\\
-1962 & 0.91 & 0.00 & 0.91\\
-1963 & 0.94 & 0.00 & 0.94\\
-1964 & 0.98 & 0.00 & 0.98\\
-1965 & 1.01 & 0.00 & 1.01\\
-1966 & 1.04 & 0.00 & 1.04\\
-1967 & 1.07 & 0.00 & 1.07\\
-1968 & 1.10 & 0.00 & 1.10\\
-1969 & 1.13 & 0.00 & 1.13\\
-1970 & 1.16 & 0.00 & 1.16\\
-1971 & 1.19 & 0.00 & 1.19\\
-1972 & 1.22 & 0.00 & 1.22\\
-1973 & 1.25 & 0.00 & 1.25\\
-1974 & 1.27 & 0.00 & 1.27\\
-1975 & 1.30 & 0.00 & 1.30\\
-1976 & 0.94 & 0.00 & 0.94\\
-1977 & 0.58 & 0.00 & 0.58\\
-1978 & 1.07 & 0.00 & 1.07\\
-1979 & 1.42 & 0.00 & 1.42\\
-1980 & 0.83 & 0.00 & 0.83\\
-1981 & 1.85 & 0.00 & 1.85\\
-1982 & 1.94 & 0.00 & 1.94\\
-1983 & 1.18 & 0.00 & 1.18\\
-1984 & 1.87 & 0.00 & 1.87\\
-1985 & 1.61 & 0.20 & 1.80\\
-1986 & 1.93 & 0.19 & 2.12\\
-1987 & 2.31 & 0.93 & 3.25\\
-1988 & 2.14 & 0.25 & 2.39\\
-1989 & 2.15 & 0.00 & 2.15\\
-1990 & 2.71 & 0.03 & 2.74\\
-1991 & 1.94 & 0.00 & 1.94\\
-1992 & 3.02 & 0.00 & 3.02\\
-1993 & 2.18 & 0.01 & 2.19\\
-1994 & 1.38 & 0.00 & 1.38\\
-1995 & 1.67 & 0.00 & 1.67\\
-1996 & 1.91 & 0.00 & 1.91\\
-1997 & 1.83 & 0.00 & 1.83\\
-1998 & 1.89 & 0.00 & 1.89\\
-1999 & 1.94 & 0.00 & 1.94\\
-2000 & 2.08 & 0.00 & 2.08\\
-2001 & 2.18 & 0.00 & 2.18\\
-2002 & 1.48 & 0.00 & 1.48\\
-2003 & 1.86 & 0.00 & 1.86\\
-2004 & 1.91 & 0.00 & 1.92\\
-2005 & 5.58 & 0.00 & 5.58\\
-2006 & 2.68 & 0.00 & 2.68\\
-2007 & 2.75 & 0.00 & 2.75\\
-2008 & 2.94 & 0.00 & 2.94\\
-2009 & 2.74 & 0.00 & 2.74\\
-2010 & 2.24 & 0.00 & 2.24\\
-2011 & 2.90 & 0.00 & 2.90\\
-2012 & 2.01 & 0.00 & 2.01\\
-2013 & 3.01 & 0.00 & 3.01\\
-2014 & 2.81 & 0.00 & 2.81\\
-2015 & 1.58 & 0.00 & 1.58\\
-2016 & 2.20 & 0.00 & 2.20\\
-2017 & 1.50 & 0.01 & 1.51\\
-2018 & 3.39 & 0.00 & 3.39\\
-2019 & 4.55 & 0.00 & 4.55\\
-2020 & 2.69 & 0.00 & 2.69\\*
+1960 & 0.86 & 0.00 & 0.86\\
+1961 & 0.89 & 0.00 & 0.89\\
+1962 & 0.92 & 0.00 & 0.92\\
+1963 & 0.95 & 0.00 & 0.95\\
+1964 & 0.99 & 0.00 & 0.99\\
+1965 & 1.02 & 0.00 & 1.02\\
+1966 & 1.05 & 0.00 & 1.05\\
+1967 & 1.08 & 0.00 & 1.08\\
+1968 & 1.11 & 0.00 & 1.11\\
+1969 & 1.15 & 0.00 & 1.15\\
+1970 & 1.18 & 0.00 & 1.18\\
+1971 & 1.21 & 0.00 & 1.21\\
+1972 & 1.24 & 0.00 & 1.24\\
+1973 & 1.27 & 0.00 & 1.27\\
+1974 & 1.30 & 0.00 & 1.30\\
+1975 & 1.33 & 0.00 & 1.33\\
+1976 & 0.96 & 0.00 & 0.96\\
+1977 & 0.59 & 0.00 & 0.59\\
+1978 & 1.10 & 0.00 & 1.10\\
+1979 & 1.47 & 0.00 & 1.47\\
+1980 & 0.86 & 0.00 & 0.86\\
+1981 & 1.92 & 0.00 & 1.92\\
+1982 & 2.01 & 0.00 & 2.01\\
+1983 & 1.23 & 0.00 & 1.23\\
+1984 & 1.95 & 0.00 & 1.95\\
+1985 & 1.68 & 0.20 & 1.88\\
+1986 & 2.02 & 0.19 & 2.21\\
+1987 & 2.43 & 0.93 & 3.36\\
+1988 & 2.27 & 0.25 & 2.51\\
+1989 & 2.30 & 0.00 & 2.30\\
+1990 & 2.93 & 0.03 & 2.96\\
+1991 & 2.15 & 0.00 & 2.15\\
+1992 & 3.49 & 0.00 & 3.49\\
+1993 & 2.72 & 0.01 & 2.73\\
+1994 & 1.90 & 0.00 & 1.90\\
+1995 & 2.44 & 0.00 & 2.44\\
+1996 & 2.83 & 0.00 & 2.83\\
+1997 & 2.68 & 0.00 & 2.68\\
+1998 & 2.74 & 0.00 & 2.74\\
+1999 & 2.78 & 0.00 & 2.78\\
+2000 & 2.91 & 0.00 & 2.91\\
+2001 & 2.93 & 0.00 & 2.93\\
+2002 & 1.89 & 0.00 & 1.89\\
+2003 & 2.23 & 0.00 & 2.23\\
+2004 & 2.20 & 0.00 & 2.20\\
+2005 & 6.16 & 0.00 & 6.16\\
+2006 & 2.86 & 0.00 & 2.86\\
+2007 & 2.88 & 0.00 & 2.88\\
+2008 & 3.03 & 0.00 & 3.03\\
+2009 & 2.72 & 0.00 & 2.72\\
+2010 & 2.12 & 0.00 & 2.12\\
+2011 & 2.63 & 0.00 & 2.63\\
+2012 & 1.75 & 0.00 & 1.75\\
+2013 & 2.55 & 0.00 & 2.55\\
+2014 & 2.34 & 0.00 & 2.34\\
+2015 & 1.31 & 0.00 & 1.31\\
+2016 & 1.85 & 0.00 & 1.85\\
+2017 & 1.29 & 0.01 & 1.30\\
+2018 & 3.02 & 0.00 & 3.02\\
+2019 & 4.26 & 0.00 & 4.26\\
+2020 & 2.76 & 0.00 & 2.76\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -401,39 +459,38 @@ Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
 \endfoot
 \bottomrule
 \endlastfoot
-NatM p 1 Fem GP 1 & 0.1080000 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
-L at Amin Fem GP 1 & 15.7000000 & -2 & (3, 25) & NA & NA & None\\
-L at Amax Fem GP 1 & 49.6000000 & -2 & (35, 60) & NA & NA & None\\
-VonBert K Fem GP 1 & 0.1520000 & -2 & (0.03, 0.3) & NA & NA & None\\
-CV young Fem GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
-CV old Fem GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
-Wtlen 1 Fem GP 1 & 0.0000096 & -9 & (0, 0.1) & NA & NA & None\\
-Wtlen 2 Fem GP 1 & 3.1900000 & -9 & (2, 4) & NA & NA & None\\
-Mat50% Fem GP 1 & 34.8260000 & -9 & (10, 60) & NA & NA & None\\
-Mat slope Fem GP 1 & -0.6000000 & -9 & (-1, 0) & NA & NA & None\\
-Eggs scalar Fem GP 1 & 0.0000003 & -9 & (-3, 3) & NA & NA & None\\
-Eggs exp len Fem GP 1 & 3.6790000 & -9 & (-3, 3) & NA & NA & None\\
-NatM p 1 Mal GP 1 & 0.1080000 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
-L at Amin Mal GP 1 & 13.9000000 & -2 & (3, 25) & NA & NA & None\\
-L at Amax Mal GP 1 & 47.8000000 & -2 & (35, 60) & NA & NA & None\\
-VonBert K Mal GP 1 & 0.1820000 & -2 & (0.03, 0.3) & NA & NA & None\\
-CV young Mal GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
-CV old Mal GP 1 & 0.1000000 & -2 & (0.01, 0.3) & NA & NA & None\\
-Wtlen 1 Mal GP 1 & 0.0000108 & -9 & (0, 0.1) & NA & NA & None\\
-Wtlen 2 Mal GP 1 & 3.1500000 & -9 & (2, 4) & NA & NA & None\\
-FracFemale GP 1 & 0.5000000 & -9 & (0.01, 0.99) & NA & NA & None\\
-SR LN(R0) & 1.5627300 & 1 & (1, 20) & OK & 0.150831 & None\\
-SR BH steep & 0.7200000 & -7 & (0.22, 1) & NA & NA & Normal (0.72, 0.09)\\
-SR sigmaR & 0.9000000 & -99 & (0.15, 1) & NA & NA & None\\
-SR regime & 0.0000000 & -99 & (-2, 2) & NA & NA & None\\
-SR autocorr & 0.0000000 & -99 & (0, 0) & NA & NA & None\\
-Early InitAge 1 & -0.0184066 & 5 & (-5, 5) & act & 0.892105 & dev (NA, NA)\\
-Size DblN peak WA Recreational(1) & 39.9812000 & 2 & (15, 50) & OK & 1.165670 & None\\
-Size DblN top logit WA Recreational(1) & -1.4692600 & -2 & (-7, 7) & NA & NA & None\\
-Size DblN ascend se WA Recreational(1) & 3.9245300 & 3 & (-10, 10) & OK & 0.167349 & None\\
-Size DblN descend se WA Recreational(1) & 6.0000000 & -4 & (-10, 10) & NA & NA & None\\
-Size DblN start logit WA Recreational(1) & -20.0000000 & -9 & (-20, 30) & NA & NA & None\\
-Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.711800 & None\\*
+NatM p 1 Fem GP 1 & 0.108 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
+L at Amin Fem GP 1 & 16.600 & -2 & (3, 25) & NA & NA & None\\
+L at Amax Fem GP 1 & 49.700 & -2 & (35, 60) & NA & NA & None\\
+VonBert K Fem GP 1 & 0.151 & -2 & (0.03, 0.3) & NA & NA & None\\
+CV young Fem GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
+CV old Fem GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
+Wtlen 1 Fem GP 1 & 0.000 & -9 & (0, 0.1) & NA & NA & None\\
+Wtlen 2 Fem GP 1 & 3.190 & -9 & (2, 4) & NA & NA & None\\
+Mat50% Fem GP 1 & 34.830 & -9 & (10, 60) & NA & NA & None\\
+Mat slope Fem GP 1 & -0.600 & -9 & (-1, 0) & NA & NA & None\\
+Eggs scalar Fem GP 1 & 0.000 & -9 & (-3, 3) & NA & NA & None\\
+Eggs exp len Fem GP 1 & 3.679 & -9 & (-3, 3) & NA & NA & None\\
+NatM p 1 Mal GP 1 & 0.108 & -2 & (0.05, 0.4) & NA & NA & Log Norm (-2.2256, 0.48)\\
+L at Amin Mal GP 1 & 14.900 & -2 & (3, 25) & NA & NA & None\\
+L at Amax Mal GP 1 & 48.100 & -2 & (35, 60) & NA & NA & None\\
+VonBert K Mal GP 1 & 0.178 & -2 & (0.03, 0.3) & NA & NA & None\\
+CV young Mal GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
+CV old Mal GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
+Wtlen 1 Mal GP 1 & 0.000 & -9 & (0, 0.1) & NA & NA & None\\
+Wtlen 2 Mal GP 1 & 3.150 & -9 & (2, 4) & NA & NA & None\\
+FracFemale GP 1 & 0.500 & -9 & (0.01, 0.99) & NA & NA & None\\
+SR LN(R0) & 2.170 & 1 & (1, 20) & OK & 0.0497768 & None\\
+SR BH steep & 0.720 & -7 & (0.22, 1) & NA & NA & Normal (0.72, 0.09)\\
+SR sigmaR & 0.900 & -99 & (0.15, 1) & NA & NA & None\\
+SR regime & 0.000 & -99 & (-2, 2) & NA & NA & None\\
+SR autocorr & 0.000 & -99 & (0, 0) & NA & NA & None\\
+Size DblN peak WA Recreational(1) & 38.113 & 1 & (15, 50) & OK & 0.4906010 & None\\
+Size DblN top logit WA Recreational(1) & -0.505 & -2 & (-7, 7) & NA & NA & None\\
+Size DblN ascend se WA Recreational(1) & 3.801 & 3 & (-10, 10) & OK & 0.1022150 & None\\
+Size DblN descend se WA Recreational(1) & -0.413 & -4 & (-10, 10) & NA & NA & None\\
+Size DblN start logit WA Recreational(1) & -20.000 & -9 & (-20, 30) & NA & NA & None\\
+Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & None\\*
 \end{longtable}
 \endgroup{}
 \end{landscape}
@@ -475,7 +532,7 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 <!-- ====================================================================== --> 
 
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
 
 
 <!-- ====================================================================== -->
@@ -488,10 +545,10 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 <!-- ====================================================================== -->
 
 
-![Length composition data from the recreational fleet.\label{fig:wa-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="Length composition data from the recreational fleet."}
+![Length composition data from the recreational fleet.\label{fig:wa-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="Length composition data from the recreational fleet."}
 
 
-![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
+![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
 
 
 <!-- ====================================================================== -->
@@ -513,10 +570,10 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 
 
 
-![Maturity as a function of  length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio6_maturity.png){width=100% height=100% alt="Maturity as a function of  length."}
+![Maturity as a function of  length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_maturity.png){width=100% height=100% alt="Maturity as a function of  length."}
 
 
-![Fecundity as a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
+![Fecundity as a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
 
 
 ![Fraction female by length across all available data sources.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="Fraction female by length across all available data sources."}
@@ -529,14 +586,14 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 <!-- ====================================================================== -->
 
 
-![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
+![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
 
 <!-- ====================================================================== -->
 <!-- *********************   Recruitment     ****************************** --> 
 <!-- ====================================================================== -->
 
 
-![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="Estimated time series of age-0 recruits (1000s)."}
+![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="Estimated time series of age-0 recruits (1000s)."}
 
 
 <!-- ====================================================================== -->
@@ -544,30 +601,33 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 <!-- ====================================================================== -->
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
 
 
 
-![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
 
 
-![Mean length for recreational with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational with 95 percent confidence intervals based on current samples sizes."}
+![Mean length for recreational with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational with 95 percent confidence intervals based on current samples sizes."}
 
 
-![Aggregated length comps over all years.\label{fig:agg-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years."}
+![Aggregated length comps over all years.\label{fig:agg-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years."}
 
 <!-- ====================================================================== -->
 <!-- ******************      Time Series       **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Estimated time series of spawning output.\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of spawning output."}
+![Estimated time series of spawning output.\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of spawning output."}
 
 
-![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time series of total biomass."}
+![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time series of total biomass."}
 
 
-![Estimated time series of fraction of unfished spawning output.\label{fig:depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of fraction of unfished spawning output."}
+![Estimated time series of fraction of unfished spawning output.\label{fig:depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of fraction of unfished spawning output."}
+
+
+![Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.png){width=100% height=100% alt="Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years."}
 
 
 <!-- ====================================================================== -->
@@ -593,11 +653,11 @@ Size DblN end logit WA Recreational(1) & -9.2687300 & 3 & (-10, 10) & OK & 17.71
 
 
 
-![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
+![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
 
 
 ![Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
 fishery selectivity and with steepness fixed at 0.72."}
 
 <!--chapter:end:53figures.Rmd-->

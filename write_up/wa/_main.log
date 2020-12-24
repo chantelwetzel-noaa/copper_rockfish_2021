@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.21)  21 DEC 2020 08:07
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.21)  24 DEC 2020 12:11
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2075,13 +2075,13 @@ ap/pdftex.map}] [2
 [1
 
 
-] [2] [3] [4] [5] [6] [7] [8] [9]
+] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex
-) [10]
+) [14]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_age_samples
-.tex) [11] [12
+.tex) [15] [16
 
-] [13]
+] [17]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/TimeSeries.tex
 
 Overfull \hbox (0.63622pt too wide) in paragraph at lines 7--7
@@ -2143,14 +2143,14 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 79--99
  [][][][][][][][][] 
  []
 
-[14
+[18
 
 ]
 Overfull \hbox (7.39053pt too wide) in alignment at lines 99--117
  [][][][][][][][][] 
  []
 
-[15]) [16]
+[19]) [20]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoi
 nts_ES.tex
 Overfull \hbox (41.71796pt too wide) in alignment at lines 4--9
@@ -2182,67 +2182,64 @@ Overfull \hbox (41.71796pt too wide) in alignment at lines 39--39
  [][][][] 
  []
 
-) [17]
+) [21]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_
 ES.tex)
-<figs/catches_wa.png, id=566, 505.89pt x 505.89pt>
+<figs/catches_wa.png, id=676, 505.89pt x 505.89pt>
 File: figs/catches_wa.png Graphic file (type png)
 <use figs/catches_wa.png>
-Package luatex.def Info: figs/catches_wa.png  used on input line 827.
+Package luatex.def Info: figs/catches_wa.png  used on input line 974.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/data_plot.png, id=568, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/data_plot.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/data_plot.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/data_plot.png  used on input line 837.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plot.png
+, id=678, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plo
+t.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plot
+.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/data_plot.png  used on input line 984.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/comp_lendat_bubflt1mkt0_page2.png, id=570, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/comp_lendat_bubflt1mkt0_page2.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/comp_lendat_bubflt1mkt0_page2.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/comp_lendat_bubflt1mkt0_page2.png  used on input line 8
-47.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_b
+ubflt1mkt0_page2.png, id=680, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+dat_bubflt1mkt0_page2.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lend
+at_bubflt1mkt0_page2.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/comp_lendat_bubflt1mkt0_page2.png  used on input line 994.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/comp_lendat_data_weighting_TA1.8_WA_Recreational.png, id=572, 469.755pt x 361.3
-5pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png Graphic file (type pn
-g)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png  u
-sed on input line 857.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_d
+ata_weighting_TA1.8_WA_Recreational.png, id=682, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+dat_data_weighting_TA1.8_WA_Recreational.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lend
+at_data_weighting_TA1.8_WA_Recreational.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png  used on input l
+ine 1004.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Weight_Source.png, id=574, 505.89pt x 505.89pt>
+/data/biology/plots/doc_Length_Weight_Source.png, id=684, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/doc_Length_Weight_Source.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/doc_Length_Weight_Source.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png  used o
-n input line 867.
+n input line 1014.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Weight_Sex.png, id=576, 505.89pt x 505.89pt>
+/data/biology/plots/doc_Length_Weight_Sex.png, id=686, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/doc_Length_Weight_Sex.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/doc_Length_Weight_Sex.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Sex.png  used on i
-nput line 877.
+nput line 1024.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Data_Length_Age_by_Sex.png, id=578, 867.24pt x 505.89pt>
+/data/biology/plots/doc_Data_Length_Age_by_Sex.png, id=688, 867.24pt x 505.89pt>
 
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png Graphic file (type png)
@@ -2250,211 +2247,209 @@ kfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png Graphic file (type png)
 fish/data/biology/plots/doc_Data_Length_Age_by_Sex.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png  used
- on input line 887.
+ on input line 1034.
 (luatex.def)             Requested size: 398.33977pt x 232.36485pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Age_by_Sex.png, id=580, 867.24pt x 505.89pt>
+/data/biology/plots/doc_Length_Age_by_Sex.png, id=690, 867.24pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/doc_Length_Age_by_Sex.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/doc_Length_Age_by_Sex.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png  used on i
-nput line 897.
+nput line 1044.
 (luatex.def)             Requested size: 398.33977pt x 232.36485pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/bio6_maturity.png, id=582, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/bio6_maturity.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/bio6_maturity.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/bio6_maturity.png  used on input line 907.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_maturity
+.png, id=692, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_mat
+urity.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_matu
+rity.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/bio6_maturity.png  used on input line 1054.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/bio9_fecundity_len.png, id=584, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/bio9_fecundity_len.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/bio9_fecundity_len.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/bio9_fecundity_len.png  used on input line 917.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fecundit
+y_len.png, id=694, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fec
+undity_len.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fecu
+ndity_len.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/bio9_fecundity_len.png  used on input line 1064.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/Length_fraction_female.png, id=586, 505.89pt x 505.89pt>
+/data/biology/plots/Length_fraction_female.png, id=696, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/Length_fraction_female.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/Length_fraction_female.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png  used on 
-input line 927.
+input line 1074.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/Age_fraction_female.png, id=588, 505.89pt x 505.89pt>
+/data/biology/plots/Age_fraction_female.png, id=698, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/Age_fraction_female.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/Age_fraction_female.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png  used on inp
-ut line 937.
+ut line 1084.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/sel01_multiple_fleets_length1.png, id=590, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/sel01_multiple_fleets_length1.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/sel01_multiple_fleets_length1.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/sel01_multiple_fleets_length1.png  used on input line 9
-47.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_multipl
+e_fleets_length1.png, id=700, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_mu
+ltiple_fleets_length1.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_mul
+tiple_fleets_length1.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/sel01_multiple_fleets_length1.png  used on input line 1094.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png, id=592, 469.755pt
- x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png Graphic file 
-(type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_interval
-s.png  used on input line 957.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-0_re
+cruits_(1000s)_with_95_asymptotic_intervals.png, id=702, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age
+-0_recruits_(1000s)_with_95_asymptotic_intervals.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-
+0_recruits_(1000s)_with_95_asymptotic_intervals.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png  used on
+ input line 1104.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/bio1_sizeatage.png, id=594, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/bio1_sizeatage.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/bio1_sizeatage.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/bio1_sizeatage.png  used on input line 967.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_sizeatag
+e.png, id=704, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_siz
+eatage.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_size
+atage.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/bio1_sizeatage.png  used on input line 1114.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/comp_lenfit_residsflt1mkt0_page2.png, id=596, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/comp_lenfit_residsflt1mkt0_page2.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/comp_lenfit_residsflt1mkt0_page2.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/comp_lenfit_residsflt1mkt0_page2.png  used on input lin
-e 977.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_r
+esidsflt1mkt0_page2.png, id=706, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+fit_residsflt1mkt0_page2.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+it_residsflt1mkt0_page2.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/comp_lenfit_residsflt1mkt0_page2.png  used on input line 1124.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png, id=598, 469.755pt x 361.3
-5pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png Graphic file (type pn
-g)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png  u
-sed on input line 987.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_d
+ata_weighting_TA1.8_WA_Recreational.png, id=708, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+fit_data_weighting_TA1.8_WA_Recreational.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+it_data_weighting_TA1.8_WA_Recreational.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png  used on input l
+ine 1134.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/comp_lenfit__aggregated_across_time.png, id=600, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/comp_lenfit__aggregated_across_time.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/comp_lenfit__aggregated_across_time.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/comp_lenfit__aggregated_across_time.png  used on input 
-line 997.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit__
+aggregated_across_time.png, id=710, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+fit__aggregated_across_time.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+it__aggregated_across_time.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/comp_lenfit__aggregated_across_time.png  used on input line 1144.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png, id=602, 469.755
-pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png Graphic fil
-e (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/ts7_Spawning_output_with_95_asymptotic_intervals_interv
-als.png  used on input line 1007.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/ts1_Total_biomass_(mt).png, id=604, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/ts1_Total_biomass_(mt).png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/ts1_Total_biomass_(mt).png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/ts1_Total_biomass_(mt).png  used on input line 1017.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png, id=606, 46
-9.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png Graphi
-c file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_i
-ntervals.png  used on input line 1027.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/SPR2_minusSPRseries.png, id=608, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/SPR2_minusSPRseries.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/SPR2_minusSPRseries.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/SPR2_minusSPRseries.png  used on input line 1037.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots
-/yield2_yield_curve_with_refpoints.png, id=610, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/
-plots/yield2_yield_curve_with_refpoints.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/p
-lots/yield2_yield_curve_with_refpoints.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_
-selex_dome_recdevs/plots/yield2_yield_curve_with_refpoints.png  used on input li
-ne 1047.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[18] [19<./figs/catches_wa.png>] [20<c:/Assessments/2021/copper_rockfish_2021/mo
-dels/wa/5.4_selex_dome_recdevs/plots/data_plot.png>] [21<c:/Assessments/2021/cop
-per_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lendat_bubflt1mkt0
-_page2.png>] [22<c:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_do
-me_recdevs/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png>] [23<//nw
-cfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data
-/biology/plots/doc_Length_Weight_Source.png>] [24<//nwcfile/FRAM/Assessments/Cur
-rentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_
-Weight_Sex.png>] [25<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_
-2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png><//nwcfil
-e/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/bio
-logy/plots/doc_Length_Age_by_Sex.png>] [26<c:/Assessments/2021/copper_rockfish_2
-021/models/wa/5.4_selex_dome_recdevs/plots/bio6_maturity.png>] [27<c:/Assessment
-s/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio9_fecundit
-y_len.png>] [28<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/
-copper_rockfish/data/biology/plots/Length_fraction_female.png>] [29<//nwcfile/FR
-AM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology
-/plots/Age_fraction_female.png>] [30<c:/Assessments/2021/copper_rockfish_2021/mo
-dels/wa/5.4_selex_dome_recdevs/plots/sel01_multiple_fleets_length1.png>] [31<c:/
-Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts1
-1_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png>] [32<c:/Assessments/2
-021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/bio1_sizeatage.p
-ng>] [33<c:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recde
-vs/plots/comp_lenfit_residsflt1mkt0_page2.png>] [34<c:/Assessments/2021/copper_r
-ockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/comp_lenfit_data_weighting_T
-A1.8_WA_Recreational.png>] [35<c:/Assessments/2021/copper_rockfish_2021/models/w
-a/5.4_selex_dome_recdevs/plots/comp_lenfit__aggregated_across_time.png>] [36<c:/
-Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts7
-_Spawning_output_with_95_asymptotic_intervals_intervals.png>] [37<c:/Assessments
-/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs/plots/ts1_Total_biom
-ass_(mt).png>] [38<c:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_
-dome_recdevs/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_interva
-ls.png>] [39<c:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_r
-ecdevs/plots/SPR2_minusSPRseries.png>] [40<c:/Assessments/2021/copper_rockfish_2
-021/models/wa/5.4_selex_dome_recdevs/plots/yield2_yield_curve_with_refpoints.png
->] 
-AED: lastpage setting LastPage
-[41
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawning_
+output_with_95_asymptotic_intervals_intervals.png, id=712, 469.755pt x 361.35pt>
 
-]
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spaw
+ning_output_with_95_asymptotic_intervals_intervals.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawn
+ing_output_with_95_asymptotic_intervals_intervals.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png  used 
+on input line 1154.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total_bio
+mass_(mt).png, id=714, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Tota
+l_biomass_(mt).png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total
+_biomass_(mt).png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/ts1_Total_biomass_(mt).png  used on input line 1164.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fraction_
+of_unfished_with_95_asymptotic_intervals_intervals.png, id=716, 469.755pt x 361.
+35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Frac
+tion_of_unfished_with_95_asymptotic_intervals_intervals.png Graphic file (type p
+ng)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fract
+ion_of_unfished_with_95_asymptotic_intervals_intervals.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png  
+used on input line 1174.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.png,
+ id=718, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve
+.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.
+png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/SR_curve.png  used on input line 1184.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minusSPR
+series.png, id=720, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_min
+usSPRseries.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minu
+sSPRseries.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/SPR2_minusSPRseries.png  used on input line 1194.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yield_
+curve_with_refpoints.png, id=722, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_y
+ield_curve_with_refpoints.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yi
+eld_curve_with_refpoints.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+base/plots/yield2_yield_curve_with_refpoints.png  used on input line 1204.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[22] [23<./figs/catches_wa.png>] [24<c:/Assessments/2021/copper_rockfish_2021/mo
+dels/wa/7.0_base/plots/data_plot.png>] [25<c:/Assessments/2021/copper_rockfish_2
+021/models/wa/7.0_base/plots/comp_lendat_bubflt1mkt0_page2.png>] [26<c:/Assessme
+nts/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_data_weightin
+g_TA1.8_WA_Recreational.png>] [27<//nwcfile/FRAM/Assessments/CurrentAssessments/
+DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.pn
+g>] [28<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_r
+ockfish/data/biology/plots/doc_Length_Weight_Sex.png>] [29<//nwcfile/FRAM/Assess
+ments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/do
+c_Data_Length_Age_by_Sex.png><//nwcfile/FRAM/Assessments/CurrentAssessments/Data
+Moderate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png>] [3
+0<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_maturit
+y.png>] [31<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bi
+o9_fecundity_len.png>] [32<//nwcfile/FRAM/Assessments/CurrentAssessments/DataMod
+erate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png>] [33</
+/nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/d
+ata/biology/plots/Age_fraction_female.png>] [34<c:/Assessments/2021/copper_rockf
+ish_2021/models/wa/7.0_base/plots/sel01_multiple_fleets_length1.png>] [35<c:/Ass
+essments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-0_recruits_
+(1000s)_with_95_asymptotic_intervals.png>] [36<c:/Assessments/2021/copper_rockfi
+sh_2021/models/wa/7.0_base/plots/bio1_sizeatage.png>] [37<c:/Assessments/2021/co
+pper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_residsflt1mkt0_page2.png
+>] [38<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_le
+nfit_data_weighting_TA1.8_WA_Recreational.png>] [39<c:/Assessments/2021/copper_r
+ockfish_2021/models/wa/7.0_base/plots/comp_lenfit__aggregated_across_time.png>]
+[40<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawni
+ng_output_with_95_asymptotic_intervals_intervals.png>] [41<c:/Assessments/2021/c
+opper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total_biomass_(mt).png>] [42<c:
+/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fraction_of_
+unfished_with_95_asymptotic_intervals_intervals.png>] [43<c:/Assessments/2021/co
+pper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.png>] [44<c:/Assessments/20
+21/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minusSPRseries.png>] [45<c
+:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yield_cu
+rve_with_refpoints.png>] [46
+
+] 
+AED: lastpage setting LastPage
+[47]
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
 nc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -2464,45 +2459,46 @@ nc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 ) (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 4316139353B78023E5A5D0575CBCE1C5;7443.
+(rerunfilecheck)             Checksum: E41A0BA584DD6ED6F3CFB201CD0660BB;7838.
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>564
-=====>565
-=====>567
-=====>569
-=====>571
-=====>573
-=====>575
-=====>581
-=====>583
-=====>585
-=====>587
-=====>589
-=====>591
-=====>593
-=====>595
-=====>597
-=====>599
-=====>601
-=====>603
-=====>605
-=====>607
-=====>609
-=====>726
-tagpdf: WARN! MC17 has no kids
-tagpdf: WARN! MC17 has no kids)
+=====>674
+=====>675
+=====>677
+=====>679
+=====>681
+=====>683
+=====>685
+=====>691
+=====>693
+=====>695
+=====>697
+=====>699
+=====>701
+=====>703
+=====>705
+=====>707
+=====>709
+=====>711
+=====>713
+=====>715
+=====>717
+=====>719
+=====>721
+=====>841
+tagpdf: WARN! MC27 has no kids
+tagpdf: WARN! MC27 has no kids)
 
 Here is how much of LuaTeX's memory you used:
- 43660 strings out of 478902
+ 43849 strings out of 478902
  244550,1648299 words of node,token memory allocated
- 820 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 40 attribute, 78 gl
-ue_spec, 22 attribute_list, 6 write, 1 close, 10 pdf_action nodes
-   avail lists: 1:1,2:7061,3:2074,4:131,5:481,6:1004,7:13663,8:1071,9:6669,10:16
-,11:425
- 60881 multiletter control sequences out of 65536+600000
+ 868 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 48 attribute, 78 gl
+ue_spec, 26 attribute_list, 6 write, 1 close, 14 pdf_action nodes
+   avail lists: 1:1,2:7052,3:2074,4:128,5:481,6:1001,7:13663,8:1464,9:6671,10:16
+,11:445
+ 61040 multiletter control sequences out of 65536+600000
  102 fonts using 16881103 bytes
  122i,12n,125p,3118b,615s stack positions out of 5000i,500n,10000p,200000b,200000s
 <c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
@@ -2523,9 +2519,9 @@ c.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
 zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic
 .otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/
 public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (47 pages, 68555910 bytes).
+Output written on _main.pdf (53 pages, 63399577 bytes).
 
-PDF statistics: 836 PDF objects out of 1000 (max. 8388607)
- 176 named destinations out of 1000 (max. 131072)
- 983 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 979 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 131072)
+ 1252 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,12 +1,41 @@
 ## Base Model Results
 
+The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:params} and the likelihood components are shown in Table [XX add table xx]. Estimates of derived reference points and approximate 95 percent asymptotic confidence intervals are shown in Table \ref{tab:referenceES}. Estimates of stock size and status over time are shown in Table \ref{tab:timeseries}. 
+
+### Convergence
+
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found (Table XXX). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian.  
+
 
 ### Parameter Estimates
 
+Selectivity curves were estimated for the recreational fleet.  The estimated selectivity for the recreational fleet is shown in Figure \ref{fig:selex}.  Selectivities were fixed to be asymptotic, reaching maximum selectivity for fish between 35 and 40 cm.  The selectivity for the commercial fleet was assumed to be equal to the recreational fleet selectivity.
+
+ADD R0 parameter estimates
+
+
 ### Fits to the Data
+
+Figure \ref{fig:rec-pearson}
+Figure \ref{fig:rec-mean-len-fit}
+Figure \ref{fig:agg-len-fit}
+
 
 ### Population Trajectory
 
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model generally showed a slow decline over the timeseries with the spawning output stabilizing in recent years. 
+
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (`r print(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)` Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is limited. The standard deviation of the log of the spawning output in `r endyr` is `r round(model$Pstar_sigma, 2)`.
+
+The stock-recruit curve resulting from a value of steepness fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)` is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment is shown in  Figure \ref{fig:recruits}
+
+
 ### Reference Points
 
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr - 1`). Sustainable total yields  were `r print(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 3)` mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40% of the unfished spawning output ($SB_{40\%}$) was `r print(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 3)` millions of eggs. 
 
+UPDATE -- The recent catches (landings plus discards) have been below the point estimate of potential long-term yields calculated using an $SPR_{50\%}$ reference point and the population has been increasing sharply over the last 15 years.
+
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has bounced above and blow the harvest rate limit ($SPR_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). 
+
+Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.

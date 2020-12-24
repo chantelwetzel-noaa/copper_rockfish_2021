@@ -5,7 +5,6 @@ library(r4ss)
 wd = "C:/Assessments/2021/copper_rockfish_2021/models/wa"
 
 model = "0.0_init_model"
-
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
@@ -204,8 +203,9 @@ francis = SS_output(file.path(wd, model))
 SS_plots(francis)
 
 modelnames <- c("Base", "Dirichlet", "MI", "Francis")
-mysummary <- SSsummarize(list(base,  dirichlet, mi, francis))
+mysummary  <- SSsummarize(list(base,  dirichlet, mi, francis))
 SSplotComparisons(mysummary, 
+				  filenameprefix = "7.0_data_weighting_",
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
