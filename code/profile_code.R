@@ -117,6 +117,21 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+
+mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
+base_name = "5.0_dw_francis"
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)"),
+							low =  c(0.40, 0.25, -1),
+							high = c(0.40, 1.0,  2),
+							step_size = c(0.005, 0.05, 0.25),
+							param_space = c('multiplier', 'real', 'relative'))
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("jitter", "profile", "retro"),
+							  profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
 load(file.path(mydir, paste0(base_name, "_SR_LN(R0)"), "SR_LN(R0)_profile_output.Rdata"))
 
 pngfun(wd = file.path(mydir, "2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)"), 
@@ -163,9 +178,23 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+mydir = "C:/Assessments/2021/copper_rockfish_2021/models/wa"
+base_name = "7.0_base"
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)"),
+							low =  c(0.40, 0.25, -1),
+							high = c(0.40, 1.0,  2),
+							step_size = c(0.005, 0.05, 0.25),
+							param_space = c('multiplier', 'real', 'relative'))
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("jitter", "profile", "retro"),
+							  profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
 load(file.path(mydir, paste0(base_name, "_SR_LN(R0)"), "SR_LN(R0)_profile_output.Rdata"))
 
-pngfun(wd = file.path(mydir, "5.1.1_selex_cv_fixed_profile_SR_LN(R0)"), 
+pngfun(wd = file.path(mydir, base_name), 
 	   file = "R0_profile_wa.png", w = 12, h = 7)
 par(mfrow=c(1,2))
 SSplotProfile(summaryoutput = profile_output$profilesummary, 
@@ -175,7 +204,6 @@ SSplotProfile(summaryoutput = profile_output$profilesummary,
               ymax = 20)
 abline(h = 1.92, lty = 2, col='red')
 
-
 PinerPlot (summaryoutput = profile_output$profilesummary, 
 		   plot = TRUE, print = FALSE, component = "Length_like",
            main = "Length-composition likelihoods", 
@@ -184,8 +212,6 @@ PinerPlot (summaryoutput = profile_output$profilesummary,
            ylab = "Change in -log-likelihood", 
            legendloc = "topright", 
            ymax = 20)
-
-
 dev.off()
 
 
