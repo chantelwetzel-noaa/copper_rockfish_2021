@@ -34,6 +34,7 @@ table_format(x = tab,
 ```{r, results = 'asis'}
 
 mod_params = model$parameters[-c(grep('Dev',model$parameters$Label),
+                                 grep('Early', model$parameters$Label),
 								 grep('Fore',model$parameters$Label),	
 								 grep('Impl',model$parameters$Label)),
                                 (names(model$parameters) %in%
@@ -41,7 +42,7 @@ mod_params = model$parameters[-c(grep('Dev',model$parameters$Label),
                                   "Max","Status","Parm_StDev",
                                   "Pr_type","Prior","Pr_SD"))] 
 
-mod_params[,'Value'] = as.numeric(mod_params[,'Value'])                                  
+mod_params[,'Value'] = round(as.numeric(mod_params[,'Value']),3)                                 
 
 # Combine bounds into one column
 mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
