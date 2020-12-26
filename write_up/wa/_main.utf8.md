@@ -277,17 +277,56 @@ Table \ref{tab:referenceES} shows the full suite of estimated reference points f
 <!--chapter:end:33results.Rmd-->
 
 ## Model Diagnostics
-Describe all diagnostics
 
 ### Convergence
 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found (Table XXX). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+
 ### Sensitivity Analyses
+
+A number of sensitivity analyses were conducted.  The majoirty of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
+
+\begin{enumerate}
+
+  \item Fix natural mortality for female fish 10% lower at a value of 0.097 per year.
+  
+  \item Fix natural mortality for female fish 10% higher at a value of 0.119 per year.
+  
+  \item Fix maximum length for female fish 5% lower at a value of 47.2 cm.
+
+  \item Fix maximum length for female fish 5% higher at a value of 52.2 cm.
+    
+  \item Estimate annual recruitment deviations. 
+  
+  \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table XX. 
+
+  \item Data weighting according to the Francis method using the weighting values shown in Table XX. 
+  
+  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table XX. 
+  
+\end{enumerate}
+
+Likelihood values and estimates of key parameters from each sensitivity are available in Table XX.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XX and XX.
+
 
 ### Retrospective Analysis
 
+A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020 (Figures \ref{fig:retro-ssb} and \ref{fig:reto-depl}). 
+
 ### Likelihood Profiles
 
+Likelihood profiles were conducted for $R_0$, steepness, maximum length, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
+
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of 2.17 (Figure \ref{fig:r0-ssb}, \ref{fig:r0-depl}, \ref{fig:r0-profile}). 
+
+For steepness, the negative log-likelihood supported values at the upper bound of 1.0 (Figure \ref{fig:h-profile}).  ADD TEXT ABOUT SUPPORT Figure \ref{fig:h-ssb} and Figure \ref{fig:h-depl}
+
+MAXIMUM LENGTH PROFILE
+
+NATURAL MORTALITY PROFILE Figure \ref{fig:m-profile} and Figure \ref{fig:m-ssb} and Figure \ref{fig:m-depl}
+
 ### Unresolved Problems and Major Uncertainties
+
 
 <!--chapter:end:34diagnostics.Rmd-->
 
@@ -640,11 +679,41 @@ Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & Non
 <!-- ====================================================================== -->
 
 
+![Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.\label{fig:retro-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially."}
+
+
+![Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially.\label{fig:retro-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially."}
 
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
 
+
+![Change in the negative log-likelihood across a range of log(R0) values.\label{fig:r0-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="Change in the negative log-likelihood across a range of log(R0) values."}
+
+
+![Change in the estimate of spawning output across a range of log(R0) values.\label{fig:r0-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of log(R0) values."}
+
+
+![Change in the estimate of fraction unfished across a range of log(R0) values.\label{fig:r0-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of log(R0) values."}
+
+
+![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of steepness values."}
+
+
+![Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of steepness values."}
+
+
+![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values."}
+
+
+![Change in the negative log-likelihood across a range of female natural mortality values.\label{fig:m-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female natural mortality values."}
+
+
+![Change in the estimate of spawning output across a range of female natural mortality values.\label{fig:m-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of female natural mortality values."}
+
+
+![Change in the estimate of fraction unfished across a range of female natural values.\label{fig:m-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female natural values."}
 
 
 <!-- ====================================================================== -->
