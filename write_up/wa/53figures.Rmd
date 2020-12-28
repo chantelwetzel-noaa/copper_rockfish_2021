@@ -148,6 +148,22 @@ label = 'bh-curve')
 <!-- ******************       Sensitivity     ***************************** --> 
 <!-- ====================================================================== -->
 
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
+nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl')
+```
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 
@@ -187,3 +203,6 @@ caption = "Equilibrium yield curve for the base case model. Values are based on 
 fishery selectivity and with steepness fixed at 0.72",
 label = 'yield')
 ```
+
+
+\newpage
