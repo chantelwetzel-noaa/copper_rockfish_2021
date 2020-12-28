@@ -12,59 +12,58 @@ library(r4ss)
 # Washington 
 ###################################################################
 area = "wa"
-base_model = 
+base_model = "7.0_base"
 
-wd = file.path("C:/Assessments/2021/coper_rockfish_2021/models", 
+wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
 setwd(wd)
-
-out.dir = paste0(wd, "/tables")
+out.dir = wd
 
 base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
            area, base_model)
 
 model.list <- c(paste0(base_model, "_low_m"),  #1     
                 paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_low_lmax"), #3
-                paste0(base_model, "_high_lmax"), #4
-				        paste0(base_model, "_mi"), #5
-                paste0(base_model, "_dirichlet"),  #6
-                paste0(base_model, "_sss")) #7
+                paste0(base_model, "_platoons"), #3
+                paste0(base_model, "_linf_hi"), #4
+                paste0(base_model, "_recdevs"), #5
+				        paste0(base_model, "_francis"), #6
+                paste0(base_model, "_mi"), #7
+                paste0(base_model, "_dirichlet"))#,  #8
+                #paste0(base_model, "_sss")) #9
 
 out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
-sens_1  = SS_output( paste0(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
-sens_2  = SS_output( paste0(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
-sens_3  = SS_output( paste0(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_4  = SS_output( paste0(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_5  = SS_output( paste0(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_6  = SS_output( paste0(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_7  = SS_output( paste0(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_8  = SS_output( paste0(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
                 "Low M", 
                 "High M", 
-                "Low Linf",
+                "Platoons",
                 "High Linf",
                 "Estimate Rec. Devs.",
+                "Francis Data Weighting",
                 "MI Data Weighting",
-                "Dirichlet Data Weighting",
-                "SSS") 
+                "Dirichlet Data Weighting") 
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
-                  plotdir = getwd(), 
+                  plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  subplot = c(2,4), 
+                  filenameprefix = paste0(base_model, "_"),
+                  subplot = c(2,4,10,12), 
                   print = TRUE, 
                   pdf = FALSE)
-
-file.rename(paste0(getwd(),"/compare4_Bratio_uncertainty.png"), paste0(getwd(),"/plots/depl_sens.png"))
-file.rename(paste0(getwd(),"/compare2_spawnbio_uncertainty.png"), paste0(getwd(),"/plots/ssb_sens.png"))
 
 ###################################################################################
 # Create a Table of Results
@@ -130,4 +129,16 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = paste0(out.dir, "/Sensitivities.csv"))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_sensitivities.csv")))
+
+t = table_format(x = out,
+      caption = 'Sensitivities relative to the base model.',
+      label = 'sensitivities',
+      longtable = TRUE,
+      font_size = 9,
+      digits = 3,
+      landscape = TRUE,
+      col_names = modelnames)
+
+kableExtra::save_kable(t,
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sensitivities.tex")
