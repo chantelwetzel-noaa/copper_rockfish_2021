@@ -1,4 +1,4 @@
-The length-at-age was estimated for male and female `r spp` using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
+The length-at-age was estimated for male and female `r spp` using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Table \ref{tab:len-at-age-samps} and Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
 
 \begin{centering}
 
@@ -8,5 +8,5 @@ Males $L_{\infty}$ = `r round(model$MGparmAdj$L_at_Amax_Mal_GP_1[1], 1)` cm; $k$
 
 \end{centering}
 
-These values were fixed within the base model for male and female `r spp`.
+These values were fixed within the base model for male and female `r spp`. In contrast, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for `r spp` (although not directly used by XDB-SRA), were from Lea [-@lea_biological_1999]. The $L_{\infty}$ from the Lea study were quite a bit larger for both sexes than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. However, the data presented in Lea [-@lea_biological_1999] reflected fish sampled off the coast of California and showed very few fish sampled that were greater than 12 years of age.   
 
