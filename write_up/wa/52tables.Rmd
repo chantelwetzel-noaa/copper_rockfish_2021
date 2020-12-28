@@ -1,22 +1,36 @@
 # Tables
 
-```{r}
-tab = read.csv(file.path(mod_loc, "tables", "Catches_All_Years.csv"))
-col_names = c("Year", "Recreational (mt)", "Commercial (mt)", "Total Mortality")
+<!-- ======================================================= -->
+<!-- ***************    Catches      *********************** --> 
+<!-- ======================================================= -->
 
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/Catches_All_Years.tex}
+
+\newpage
+
+
+```{r}
+tab = data.frame(Year = model$catch[model$catch$Fleet == 1, "Yr"],
+                    Numbers = model$catch[model$catch$Fleet == 1, "Obs"] * 1000,
+                    MT = model$catch[model$catch$Fleet == 1, "kill_bio"])
+col_names = c("Year", "Numbers of Fish", "Metric Tons")
 table_format(x = tab,
-			caption = 'Removals by fleet for all model years.',
-			label = 'allmortality',
-			digits = c(0, 2, 2,2),
+			caption = 'Input numbers of fish removals converted to metric tons (mt) within the model.',
+			label = 'nums-mt',
 			longtable = TRUE,
-			col_names = col_names,
-			align = c('r','c','c','c'))
+            digits = c(0, 0, 2),
+			col_names = col_names)
 ```
 \newpage
+
 
 <!-- ======================================================= -->
 <!-- ***************       Data      *********************** --> 
 <!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/len_at_age_data.tex}
+
+\newpage
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex}
 
@@ -97,6 +111,14 @@ table_format(x = mod_params,
 \newpage
 
 <!-- ======================================================= -->
+<!-- ****************     Sensitivities      *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sensitivities.tex}
+
+\newpage
+
+<!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
@@ -105,3 +127,5 @@ table_format(x = mod_params,
 \newpage
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
+
+\newpage
