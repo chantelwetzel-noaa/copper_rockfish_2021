@@ -10,13 +10,13 @@ A number of sensitivity analyses were conducted.  The majoirty of the sensitivit
 
 \begin{enumerate}
 
-  \item Fix natural mortality for female fish 10 percent lower at a value of 0.097 per year.
+  \item Fix natural mortality 10 percent lower at a value of 0.097 per year for both sexes.
   
-  \item Fix natural mortality for female fish 10 percent higher at a value of 0.119 per year.
-  
-  \item Fix maximum length for female fish 5 percent lower at a value of 47.2 cm.
+  \item Fix natural mortality 10 percent higher at a value of 0.119 per year for both sexes.
 
-  \item Fix maximum length for female fish 5 percent higher at a value of 52.2 cm.
+  \item Fix $L_{\infty}$ 5 percent higher at a value of 52.2 cm for females and 50.5 for males. 
+
+  \item Assume platoons within Stock Synthesis where there are 5 platoons consisting of slower, average, and faster growing fish assumed.
     
   \item Estimate annual recruitment deviations. 
   
@@ -28,7 +28,9 @@ A number of sensitivity analyses were conducted.  The majoirty of the sensitivit
   
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table XX.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XX and XX.
+Likelihood values and estimates of key parameters from each sensitivity are available in Table {tab:sensitivities}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
+
+A sensitivity of assuming a lower $L_{\infty}$ was also conducted but not presented here. Assuming the $L_{\infty}$ to be lower than the input value resulted in a dramatic and unrealistic shift in stock scale. 
 
 
 ### Retrospective Analysis
