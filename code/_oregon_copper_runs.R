@@ -169,6 +169,9 @@ model = "5.2_dw_dirichlet"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 # R0 blows up 18.96 and commercial dirichlet hits upper bound
+# Updated input nsamp to be equal to total fish sampled.
+# This brings down the R0 = 2.65, ln(theta) = 2.93, depl 2021 = 0.49
+
 
 
 # MI DW & SigmaR = 0.60
@@ -199,11 +202,14 @@ francis = SS_output(file.path(wd, model))
 model = "5.1_dw_mi"
 mi = SS_output(file.path(wd, model))
 
+model = "5.2_dw_dirichlet"
+dirichlet = SS_output(file.path(wd, model))
+
 model = "5.3_dw_francis_use_ages"
 ages = SS_output(file.path(wd, model))
 
-modelnames <- c("SigmaR = 0.60", "SigmaR = 0.90", "Francis", "MI", "Francis w/ Ages")
-mysummary  <- SSsummarize(list(sigma60, sigma90, francis, mi, ages))
+modelnames <- c("SigmaR = 0.60", "SigmaR = 0.90", "Francis", "MI", "Dirichlet","Francis w/ Ages")
+mysummary  <- SSsummarize(list(sigma60, sigma90, francis, mi, dirichlet, ages))
 SSplotComparisons(mysummary, 
 				  filenameprefix = "4.1_5.0_sensitivities",
 				  legendlabels = modelnames, 
