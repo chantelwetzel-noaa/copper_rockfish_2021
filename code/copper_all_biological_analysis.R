@@ -160,6 +160,15 @@ input[[9]] = or_mrfss_data
 out = create_data_frame(data_list = input)
 
 out$round_length = round(out$Length,0)
+
+###############################################################
+# Create age sample table
+###############################################################
+tmp = out[which(!is.na(out$Age)), ]
+tmp$source_state = paste0(tmp$State, "_", tmp$Source)
+n = table(tmp$Year, tmp$source_state)
+write.csv(n, file = file.path(dir, "data", "biology", "len_at_age_data.csv"))
+
 ############################################################################################
 # Evaluate the data with ages,lengths, and weights - look for unusual data points that should 
 # be removed from the data set
