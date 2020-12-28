@@ -2,7 +2,9 @@
 
 ### Recreational / Sport Data
 
-ADD TABLE OF INPUT NUMBERS
+Table \ref{tab:allcatches} and Table \ref{tab:nums-mt}
 
 
 ### Commercial Data
+
+Table \ref{tab:allcatches}

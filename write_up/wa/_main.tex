@@ -294,9 +294,29 @@ A description of each data source is provided below (Figure \ref{fig:data-plot})
 
 \leavevmode\tagmcend\tagstructend
 
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{recreational-sport-data}{%
+\subsubsection{Recreational / Sport Data}\label{recreational-sport-data}}
+
+\leavevmode\tagmcend\tagstructend
+
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Ralston et al. 2010)\leavevmode\tagmcend\tagstructend}
+Table \ref{tab:allcatches} and Table \ref{tab:nums-mt}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{commercial-data}{%
+\subsubsection{Commercial Data}\label{commercial-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Table \ref{tab:allcatches}
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -367,7 +387,7 @@ The length-weight relationship for copper rockfish was estimated outside the mod
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
+The length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington that were collected from 1998-2019 (Table \ref{tab:len-at-age-samps} and Figure \ref{fig:len-age-data}). Figure \ref{fig:len-age} shows the lengths and ages for all years by data source as well as predicted von Bertalanffy fits to the data. Females grow larger than males and sex-specific growth parameters were estimated at the following values:
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -381,7 +401,7 @@ Males $L_{\infty}$ = 48.1 cm; $k$ = 0.178
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-These values were fixed within the base model for male and female copper rockfish.
+These values were fixed within the base model for male and female copper rockfish. In contrast, the length-at-age values cited in the 2013 data-moderate assessment {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope et al. 2013)\leavevmode\tagmcend\tagstructend} for copper rockfish (although not directly used by XDB-SRA), were from Lea {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(1999)\leavevmode\tagmcend\tagstructend}. The {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} from the Lea study were quite a bit larger for both sexes than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. However, the data presented in Lea {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(1999)\leavevmode\tagmcend\tagstructend} reflected fish sampled off the coast of California and showed very few fish sampled that were greater than 12 years of age.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -562,19 +582,6 @@ The base model parameter estimates along with approximate asymptotic standard er
 
 \tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
 
-\hypertarget{convergence}{%
-\subsubsection{Convergence}\label{convergence}}
-
-\leavevmode\tagmcend\tagstructend
-
-\tagstructbegin{tag=P}\tagmcbegin{tag=P}
-
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5\%. This was repeated 100 times and a better minimum was not found (Table XXX). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian.
-
-\leavevmode\tagmcend\tagstructend\par
-
-\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
-
 \hypertarget{parameter-estimates}{%
 \subsubsection{Parameter Estimates}\label{parameter-estimates}}
 
@@ -670,8 +677,8 @@ Table \ref{tab:referenceES} shows the full suite of estimated reference points f
 
 \tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
 
-\hypertarget{convergence-1}{%
-\subsubsection{Convergence}\label{convergence-1}}
+\hypertarget{convergence}{%
+\subsubsection{Convergence}\label{convergence}}
 
 \leavevmode\tagmcend\tagstructend
 
@@ -696,13 +703,13 @@ A number of sensitivity analyses were conducted. The majoirty of the sensitiviti
 
 \begin{enumerate}
 
-  \item Fix natural mortality for female fish 10% lower at a value of 0.097 per year.
+  \item Fix natural mortality 10 percent lower at a value of 0.097 per year for both sexes.
   
-  \item Fix natural mortality for female fish 10% higher at a value of 0.119 per year.
-  
-  \item Fix maximum length for female fish 5% lower at a value of 47.2 cm.
+  \item Fix natural mortality 10 percent higher at a value of 0.119 per year for both sexes.
 
-  \item Fix maximum length for female fish 5% higher at a value of 52.2 cm.
+  \item Fix $L_{\infty}$ 5 percent higher at a value of 52.2 cm for females and 50.5 for males. 
+
+  \item Assume platoons within Stock Synthesis where there are 5 platoons consisting of slower, average, and faster growing fish assumed.
     
   \item Estimate annual recruitment deviations. 
   
@@ -716,7 +723,13 @@ A number of sensitivity analyses were conducted. The majoirty of the sensitiviti
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table XX. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XX and XX.
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \{tab:sensitivities\}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A sensitivity of assuming a lower {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} was also conducted but not presented here. Assuming the {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} to be lower than the input value resulted in a dramatic and unrealistic shift in stock scale.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -729,7 +742,7 @@ Likelihood values and estimates of key parameters from each sensitivity are avai
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020 (Figures \ref{fig:retro-ssb} and \ref{fig:reto-depl}).
+A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was consistent with the base model when recent year's data were removed up until 4 and 5 years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). Removing this amount of data resulted in a downward shift in stock scale and status.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -838,6 +851,8 @@ Merit McCrea, Gerry Richter, Louis Zimm, Daniel Platt
 
 \leavevmode\tagmcend\tagstructend\par
 
+\newpage
+
 \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
 
 \hypertarget{tables}{%
@@ -845,113 +860,122 @@ Merit McCrea, Gerry Richter, Louis Zimm, Daniel Platt
 
 \leavevmode\tagmcend\tagstructend
 
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/Catches_All_Years.tex}
+
+\newpage
+
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{r>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
-\caption{\label{tab:allmortality}Removals by fleet for all model years.}\\
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\caption{\label{tab:nums-mt}Input numbers of fish removals converted to metric tons (mt) within the model.}\\
 \toprule
-Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
+Year & Numbers of Fish & Metric Tons\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:allmortality}Removals by fleet for all model years. \textit{(continued)}}\\
+\caption[]{\label{tab:nums-mt}Input numbers of fish removals converted to metric tons (mt) within the model. \textit{(continued)}}\\
 \toprule
-Year & Recreational (mt) & Commercial (mt) & Total Mortality\\
+Year & Numbers of Fish & Metric Tons\\
 \midrule
 \endhead
 
 \endfoot
 \bottomrule
 \endlastfoot
-1935 & 0.02 & 0.00 & 0.02\\
-1936 & 0.05 & 0.00 & 0.05\\
-1937 & 0.08 & 0.00 & 0.08\\
-1938 & 0.12 & 0.00 & 0.12\\
-1939 & 0.15 & 0.00 & 0.15\\
-1940 & 0.19 & 0.00 & 0.19\\
-1941 & 0.22 & 0.00 & 0.22\\
-1942 & 0.26 & 0.00 & 0.26\\
-1943 & 0.29 & 0.00 & 0.29\\
-1944 & 0.32 & 0.00 & 0.32\\
-1945 & 0.36 & 0.00 & 0.36\\
-1946 & 0.39 & 0.00 & 0.39\\
-1947 & 0.43 & 0.00 & 0.43\\
-1948 & 0.46 & 0.00 & 0.46\\
-1949 & 0.49 & 0.00 & 0.49\\
-1950 & 0.53 & 0.00 & 0.53\\
-1951 & 0.56 & 0.00 & 0.56\\
-1952 & 0.59 & 0.00 & 0.59\\
-1953 & 0.63 & 0.00 & 0.63\\
-1954 & 0.66 & 0.00 & 0.66\\
-1955 & 0.69 & 0.00 & 0.69\\
-1956 & 0.73 & 0.00 & 0.73\\
-1957 & 0.76 & 0.00 & 0.76\\
-1958 & 0.79 & 0.00 & 0.79\\
-1959 & 0.82 & 0.00 & 0.82\\
-1960 & 0.86 & 0.00 & 0.86\\
-1961 & 0.89 & 0.00 & 0.89\\
-1962 & 0.92 & 0.00 & 0.92\\
-1963 & 0.95 & 0.00 & 0.95\\
-1964 & 0.99 & 0.00 & 0.99\\
-1965 & 1.02 & 0.00 & 1.02\\
-1966 & 1.05 & 0.00 & 1.05\\
-1967 & 1.08 & 0.00 & 1.08\\
-1968 & 1.11 & 0.00 & 1.11\\
-1969 & 1.15 & 0.00 & 1.15\\
-1970 & 1.18 & 0.00 & 1.18\\
-1971 & 1.21 & 0.00 & 1.21\\
-1972 & 1.24 & 0.00 & 1.24\\
-1973 & 1.27 & 0.00 & 1.27\\
-1974 & 1.30 & 0.00 & 1.30\\
-1975 & 1.33 & 0.00 & 1.33\\
-1976 & 0.96 & 0.00 & 0.96\\
-1977 & 0.59 & 0.00 & 0.59\\
-1978 & 1.10 & 0.00 & 1.10\\
-1979 & 1.47 & 0.00 & 1.47\\
-1980 & 0.86 & 0.00 & 0.86\\
-1981 & 1.92 & 0.00 & 1.92\\
-1982 & 2.01 & 0.00 & 2.01\\
-1983 & 1.23 & 0.00 & 1.23\\
-1984 & 1.95 & 0.00 & 1.95\\
-1985 & 1.68 & 0.20 & 1.88\\
-1986 & 2.02 & 0.19 & 2.21\\
-1987 & 2.43 & 0.93 & 3.36\\
-1988 & 2.27 & 0.25 & 2.51\\
-1989 & 2.30 & 0.00 & 2.30\\
-1990 & 2.93 & 0.03 & 2.96\\
-1991 & 2.15 & 0.00 & 2.15\\
-1992 & 3.49 & 0.00 & 3.49\\
-1993 & 2.72 & 0.01 & 2.73\\
-1994 & 1.90 & 0.00 & 1.90\\
-1995 & 2.44 & 0.00 & 2.44\\
-1996 & 2.83 & 0.00 & 2.83\\
-1997 & 2.68 & 0.00 & 2.68\\
-1998 & 2.74 & 0.00 & 2.74\\
-1999 & 2.78 & 0.00 & 2.78\\
-2000 & 2.91 & 0.00 & 2.91\\
-2001 & 2.93 & 0.00 & 2.93\\
-2002 & 1.89 & 0.00 & 1.89\\
-2003 & 2.23 & 0.00 & 2.23\\
-2004 & 2.20 & 0.00 & 2.20\\
-2005 & 6.16 & 0.00 & 6.16\\
-2006 & 2.86 & 0.00 & 2.86\\
-2007 & 2.88 & 0.00 & 2.88\\
-2008 & 3.03 & 0.00 & 3.03\\
-2009 & 2.72 & 0.00 & 2.72\\
-2010 & 2.12 & 0.00 & 2.12\\
-2011 & 2.63 & 0.00 & 2.63\\
-2012 & 1.75 & 0.00 & 1.75\\
-2013 & 2.55 & 0.00 & 2.55\\
-2014 & 2.34 & 0.00 & 2.34\\
-2015 & 1.31 & 0.00 & 1.31\\
-2016 & 1.85 & 0.00 & 1.85\\
-2017 & 1.29 & 0.01 & 1.30\\
-2018 & 3.02 & 0.00 & 3.02\\
-2019 & 4.26 & 0.00 & 4.26\\
-2020 & 2.76 & 0.00 & 2.76\\*
+1934 & 0 & 0.00\\
+1935 & 10 & 0.02\\
+1936 & 32 & 0.05\\
+1937 & 53 & 0.08\\
+1938 & 75 & 0.12\\
+1939 & 96 & 0.15\\
+1940 & 118 & 0.19\\
+1941 & 139 & 0.22\\
+1942 & 161 & 0.26\\
+1943 & 182 & 0.29\\
+1944 & 204 & 0.32\\
+1945 & 225 & 0.36\\
+1946 & 246 & 0.39\\
+1947 & 268 & 0.43\\
+1948 & 289 & 0.46\\
+1949 & 311 & 0.49\\
+1950 & 332 & 0.53\\
+1951 & 354 & 0.56\\
+1952 & 375 & 0.59\\
+1953 & 397 & 0.63\\
+1954 & 418 & 0.66\\
+1955 & 440 & 0.69\\
+1956 & 461 & 0.73\\
+1957 & 482 & 0.76\\
+1958 & 504 & 0.79\\
+1959 & 525 & 0.82\\
+1960 & 547 & 0.86\\
+1961 & 568 & 0.89\\
+1962 & 590 & 0.92\\
+1963 & 611 & 0.95\\
+1964 & 633 & 0.99\\
+1965 & 654 & 1.02\\
+1966 & 676 & 1.05\\
+1967 & 696 & 1.08\\
+1968 & 718 & 1.11\\
+1969 & 740 & 1.15\\
+1970 & 761 & 1.18\\
+1971 & 783 & 1.21\\
+1972 & 804 & 1.24\\
+1973 & 826 & 1.27\\
+1974 & 847 & 1.30\\
+1975 & 868 & 1.33\\
+1976 & 628 & 0.96\\
+1977 & 387 & 0.59\\
+1978 & 719 & 1.10\\
+1979 & 957 & 1.47\\
+1980 & 563 & 0.86\\
+1981 & 1253 & 1.92\\
+1982 & 1317 & 2.01\\
+1983 & 805 & 1.23\\
+1984 & 1280 & 1.95\\
+1985 & 1105 & 1.68\\
+1986 & 1335 & 2.02\\
+1987 & 1608 & 2.43\\
+1988 & 1506 & 2.27\\
+1989 & 1534 & 2.30\\
+1990 & 1966 & 2.93\\
+1991 & 1449 & 2.15\\
+1992 & 2359 & 3.49\\
+1993 & 1850 & 2.72\\
+1994 & 1296 & 1.90\\
+1995 & 1675 & 2.44\\
+1996 & 1948 & 2.83\\
+1997 & 1853 & 2.68\\
+1998 & 1897 & 2.74\\
+1999 & 1932 & 2.78\\
+2000 & 2027 & 2.91\\
+2001 & 2053 & 2.93\\
+2002 & 1327 & 1.89\\
+2003 & 1573 & 2.23\\
+2004 & 1551 & 2.20\\
+2005 & 4359 & 6.16\\
+2006 & 2038 & 2.86\\
+2007 & 2066 & 2.88\\
+2008 & 2183 & 3.03\\
+2009 & 1972 & 2.72\\
+2010 & 1544 & 2.12\\
+2011 & 1916 & 2.63\\
+2012 & 1277 & 1.75\\
+2013 & 1858 & 2.55\\
+2014 & 1699 & 2.34\\
+2015 & 955 & 1.31\\
+2016 & 1339 & 1.85\\
+2017 & 932 & 1.29\\
+2018 & 2173 & 3.02\\
+2019 & 3073 & 4.26\\
+2020 & 2000 & 2.76\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
+\newpage
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/len_at_age_data.tex}
+
 \newpage
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex}
@@ -1022,11 +1046,17 @@ Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & Non
 
 \newpage
 
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sensitivities.tex}
+
+\newpage
+
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
 
 \newpage
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
+
+\newpage
 
 \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
 
@@ -1255,6 +1285,26 @@ Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & Non
 
 \tagmcend\tagstructend
 
+\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output by sensitivity.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.0_base_compare2_spawnbio_uncertainty.png}
+\caption{Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated fraction unfished by sensitivity.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.0_base_compare4_Bratio_uncertainty.png}
+\caption{Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
 \tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
@@ -1385,6 +1435,35 @@ Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & Non
 
 \tagmcend\tagstructend
 
+\newpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{appendix-a.-detailed-fit-to-length-composition-data}{%
+\section{Appendix A. Detailed Fit to Length Composition Data}\label{appendix-a.-detailed-fit-to-length-composition-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_flt1mkt0_page1.png}
+\caption{Length comps, whole catch, WA\_Recreational (plot 1 of 2).`N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt1mkt0_page1}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Length comps, whole catch, WA_Recreational (plot 2 of 2).}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_flt1mkt0_page2.png}
+\caption{Length comps, whole catch, WA\_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}}
+\end{figure}
+
+\tagmcend\tagstructend
+
 \clearpage
 
 \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
@@ -1437,9 +1516,6 @@ McAllister, M. K., and J. N. Ianelli. 1997. ``Bayesian Stock Assessment Using Ca
 
 \leavevmode\hypertarget{ref-miller_guide_1972}{}%
 Miller, Daniel J, and Robert N Lea. 1972. ``Guide to Coastal Marine Fishes of California.'' Fish Bulletin 157. State of California Department of Fish; Game Bureau of Marine Fisheries.
-
-\leavevmode\hypertarget{ref-ralston_documentation_2010}{}%
-Ralston, Stephen, Don E. Pearson, John C. Field, and Meisha Key. 2010. ``Documentation of the California Catch Reconstruction Project.'' US Department of Commerce, National Oceanic; Atmospheric Adminstration, National Marine.
 
 \leavevmode\hypertarget{ref-sivasundar_life_2010}{}%
 Sivasundar, Arjun, and Stephen R. Palumbi. 2010. ``Life History, Ecology and the Biogeography of Strong Genetic Breaks Among 15 Species of Pacific Rockfish, Sebastes.'' \emph{Marine Biology} 157 (7): 1433--52. \url{https://doi.org/10.1007/s00227-010-1419-3}.
