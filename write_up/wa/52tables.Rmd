@@ -41,6 +41,41 @@ table_format(x = tab,
 \newpage
 
 <!-- ======================================================= -->
+<!-- ***************    Biology      *********************** --> 
+<!-- ======================================================= -->
+
+```{r, results = 'asis'}
+
+ests = 
+matrix(c(c("Female", "L1", round(model$MGparmAdj$L_at_Amin_Fem_GP_1[1], 1), "External Estimate"),
+c("", "L2",round(model$MGparmAdj$L_at_Amax_Fem_GP_1[1], 1), "External Estimate"),
+c("", "k", round(model$MGparmAdj$VonBert_K_Fem_GP_1[1], 3), "External Estimate"),
+c("", "alpha", format(model$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE), "External Estimate"),
+c("", "beta", round(model$MGparmAdj$Wtlen_2_Fem[1],2), "External Estimate"),
+c("", "length at 50% maturity", round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1],2), "Hannah 2014"),
+c("", "maturity slope", round(model$MGparmAdj$Mat_slope_Fem_GP_1[1], 2), "Hannah 2014"),
+c("", "eggs scalar", format(model$MGparmAdj$Eggs_scalar_Fem[1], scientific = TRUE), "Dick et al. 2017"),
+c("", "eggs exponent", round(model$MGparmAdj$Eggs_exp_len_Fem[1], 2), "Dick et al. 2017"),
+c("Male", "L1", round(model$MGparmAdj$L_at_Amin_Mal_GP_1[1], 1), "External Estimate"),
+c("", "L2", round(model$MGparmAdj$L_at_Amax_Mal_GP_1[1], 1), "External Estimate"),
+c("", "k",  round(model$MGparmAdj$VonBert_K_Mal_GP_1[1], 3), "External Estimate"),
+c("", "alpha", format(model$MGparmAdj$Wtlen_1_Mal[1], scientific = TRUE), "External Estimate"),
+c("", "beta", round(model$MGparmAdj$Wtlen_2_Mal[1],2), "External Estimate")), ncol = 4, byrow = TRUE)
+
+col_names = c("Sex", "Parameter", "Value", "Source")
+
+#table_format(x = ests,
+             #caption = "List of biological parameters by sex and source.",
+             #label = "bio-params",
+             #align = "l",
+             #col_names = c("Sex", "Parameter", "Value", "Source"),            
+             #longtable = TRUE)
+
+```
+
+\newpage
+
+<!-- ======================================================= -->
 <!-- ***********   Model Parameters     ******************** --> 
 <!-- ======================================================= -->
 
@@ -71,6 +106,7 @@ mod_params[mod_params$Label == "Eggs_scalar_Fem",3] = format(as.numeric(mod_para
 mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3]), 4)
 mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3]), 3)
 mod_params[mod_params$Label == "CV_old_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "CV_old_Mal_GP_1",3]), 3)
+
 # Remove the max, prior and prior sd columns
 drops = c('Max', 'Prior', 'Pr_type', 'Pr_SD', 'Num')
 mod_params = mod_params[, !(names(mod_params) %in% drops)]
