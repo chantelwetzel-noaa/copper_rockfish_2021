@@ -129,5 +129,102 @@ model = "5.2_data_rec_len_trawl_survey_nodevs"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
+# Moving forward with 5.1 estimate recdevs
+# Let's see if we can improve the selectivity estimates and fits
+model = "6.1_selex_est_com"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL 1133.5, R0 = 6.21, depl = 0.74
+# Commercial length LL = 264.6 (5.1 294.7), Rec = 859.5 (5.1 859.3)
+# Based on improved fit keep recent dome and fix block to asymptotic
 
+# Fix block p1, fix block p6 to asymptotic, and fix p2 in the non-blocked period 
+# at the estimated value, still estimate p2 in the block 
+model = "6.2_selex_com_fix_based_on_ests"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1135.32, Commercial length LL = 266.65
 
+# Estimate rec selex parameters
+model = "6.3_selex_est_rec"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1060, rec length LL = 778.9 (80 unit improvement over 6.1)
+# R0 = 6.3, depl 2021 = 0.91
+# Wants to be domed after 50 cm but given the commercial is domed 
+# going to fix asmptotic, however, the entire reduction in NLL was
+# due to the dome (no dome NLL = 1135.31): fixed asymptotic depl = 0.73
+
+# Adjust rec devs - start the main period laer
+model = "7.1_recdev_start_later"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1134.8, R0 = 6.24, depl 2021 = 0.52
+
+# Turn off early devs and only estimate starting in the main period
+model = "7.2_recdev_turn_off_early"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1207, R0 = 6.22, depl 2021 = 0.54
+# Looks like the dip in early devs is being driven by the larger fish 
+# being selected by the rec fleet at the start of data (poor recruitment =
+# larger mean length expectations).
+
+# No early devs and start main in 1985
+model = "7.3_recdev_turn_off_early_start_later_hessian"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1249, R0 = 6.18, depl = 0.45
+# Starting later and turning off early devs really helps dampen the extreme
+# low and high devs.  Still 3 high devs 2007-2009 but all around or 
+# less than 1.0 now.
+# Turning off early devs results in very little model uncertainty (0.07) 
+
+# Apply the bias adjust from above and estimate the hessian
+model = "7.4_recdev_hessian_bias_adj"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1252.6
+
+#################################################
+model = "7.4_recdev_hessian_bias_adj"
+dirichlet = SS_output(file.path(wd, model))
+model = "7.1_recdev_start_later"
+base = SS_output(file.path(wd, model))
+modelnames <- c("No Early Devs", "Estimate Early Devs")
+mysummary  <- SSsummarize(list(dirichlet, base))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.0_recdevs_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+######################################################
+
+# Data Weighting - Francis
+model = "8.1_dw_francis"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# Com Len = 0.4885, Rec Len = 0.0318, Survey = 0.2788
+# R0 = 6.19, depl 2021 = 0.43 
+
+# Data Weighting - MI
+model = "8.2_dw_mi"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# R0 = 6.18, depl 2021 = 0.426
+# Com Len = 0.208, Rec Len = 0.110, Survye = 0.715
+
+################################################
+model = "7.4_recdev_hessian_bias_adj"
+dirichlet = SS_output(file.path(wd, model))
+model = "8.1_dw_francis"
+francis = SS_output(file.path(wd, model))
+model = "8.2_dw_mi"
+mi = SS_output(file.path(wd, model))
+modelnames <- c("Dirichlet", "MI", "Francis")
+mysummary  <- SSsummarize(list(dirichlet, mi, francis))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "8.0_data_weighting_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
