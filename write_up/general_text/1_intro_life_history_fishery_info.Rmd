@@ -1,6 +1,6 @@
 ## Basic Information
 
-`r executive[["stock"]]` `r Spp` is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.   `r Spp` have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
+This assessment reports the status of `r spp` (*Sebastes caurinus*) off the U.S. West Coast using data through 2020. `r Spp` is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.   `r Spp` have historically been a part of both commercial (mainly in the live-fish fishery) and recreational fisheries throughout its range.  
 
 ## Life History
 
