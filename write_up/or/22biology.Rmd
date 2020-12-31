@@ -1,18 +1,35 @@
 ## Biological Data
 
-### Natural Mortality
 
-
-### Maturation and Fecundity
-
-
-### Sex Ratio
-
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_m.Rmd')
+read_child(filein)
+```
 
 ### Length-Weight Relationship
 
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_length_weight.Rmd')
+read_child(filein)
+```
 
 ### Growth (Length-at-Age)
 
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_length_age.Rmd')
+read_child(filein)
+```
 
-### Ageing Precision and Bias
+### Maturation and Fecundity
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_fecund_mat.Rmd')
+read_child(filein)
+```
+
+### Sex Ratio
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'data_sex_ratio.Rmd')
+read_child(filein)
+```
