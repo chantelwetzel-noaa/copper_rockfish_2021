@@ -228,3 +228,27 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+################################################
+
+# Try removing the rec years 1981-86 and turn on early devs
+model = "8.3_dw_francis_rm_rec_lens_add_early_devs"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 190.9, R0 = 6.2, depl 2021 = 0.40
+
+#####################################################################
+model = "8.1_dw_francis"
+base = SS_output(file.path(wd, model))
+model = "8.3_dw_francis_rm_rec_lens_add_early_devs"
+rm_data = SS_output(file.path(wd, model))
+model = "8.4_dw_francis_early_devs"
+early_devs = SS_output(file.path(wd, model))
+modelnames <- c("No Early Devs", "Early Devs", "Early Devs -Data")
+mysummary  <- SSsummarize(list(base, early_devs, rm_data))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "8.0_early_devs_vs_rm_data",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+

@@ -158,7 +158,31 @@ SS_plots(base)
 # Re-data-weight
 model = "8.1_dw_MI"
 base = SS_output(file.path(wd, model))
+SS_plots(base)
+# R0 = 5.53, depl 2021 = 0.075, string of + recdevs from 2008-2013
 
+model = "8.2_dw_francis"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# R0 = 5.51, depl 2021 = 0.247, string of + recdevs from 2008-2013
+# There is a big difference between the model results for the francis and MI
+# data weighting. MI results in a much higher stock status (around 0.25) vs.
+# francis which has the stock very depleted (~0.07). The MI approach puts much more
+# weight on the hkl and trawl survey data and the hkl data weight is likely driving
+# these differences. 
+
+
+# Apply bias adjust and start main devs later in 1985
+model = "8.3_dw_francis_recdev_main_later"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 305.3, R0 = 5.55, depl 2021 = 0.062
+# Still getting those low recdevs and the high recdevs are marginally lower.
+
+# Do rec dev bias adjustment and address the string of positive recs
+# 	- I think the dip in rec devs at the start is due to large commercial lengths 
+#	  at the start of the data (1983 -89, and 1993ish)
+# Revisit dome shape vs. asymptotic selex for comm & rec
 
 
 

@@ -246,8 +246,70 @@ SSplotComparisons(mysummary,
 				  plotdir = file.path(wd, "_plots"), 
 				  pdf = TRUE)
 
+########################################################
+# Create Plots for Document
+#########################################################
 
+wd = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_bridge"
 
+base = SS_output(file.path(wd, "1.0_single_sex_growth"))
+depl = SS_output(file.path(wd, "2.0_remove_depl"))
+two_sex = SS_output(file.path(wd, "3.5_bio_2_sex"))
+bh = SS_output(file.path(wd, "4.1_srr_h"))
+catch = SS_output(file.path(wd, "5.1_catches"))
+rec_len = SS_output(file.path(wd, "6.1_data_lengths"))
+no_indices = SS_output(file.path(wd, "7.1_indices_remove"))
+hkl = SS_output(file.path(wd, "8.0_fleets_add_hkl"))
+comm = SS_output(file.path(wd, "8.1_fleets_add_hkl_com"))
 
+modelnames <- c("Match XDB-SRA", 
+				"- Remove Depletion Survey", 
+				"+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches",
+				"+ Rec. Lengths",
+				"- Remove Indices",
+				"+ Hook & Line",
+				"+ Split Out Commercial")
+mysummary <- SSsummarize(list(base,  
+							  depl,
+							  two_sex, 
+							  bh,
+							  catch,
+							  rec_len,
+							  no_indices,
+							  hkl,
+							  comm))
+
+SSplotComparisons(mysummary, 
+				  subplots = c(1,3),
+				  legendlabels = modelnames, 
+				  filenameprefix = "bridge_all_",
+				  plotdir = file.path(wd, "_plots"), 
+				  print = TRUE, 
+				  pdf = FALSE)
+
+modelnames <- c("+ Biology",
+				"+ Beverton-Holt SS",
+				"+ Updated Catches",
+				"+ Rec. Lengths",
+				"- Remove Indices",
+				"+ Hook & Line",
+				"+ Split Out Commercial")
+mysummary <- SSsummarize(list(two_sex, 
+							  bh,
+							  catch,
+							  rec_len,
+							  no_indices,
+							  hkl,
+							  comm))
+
+SSplotComparisons(mysummary, 
+				  subplots = c(1,3),
+				  legendlabels = modelnames, 
+				  filenameprefix = "bridge_subset_",
+				  plotdir = file.path(wd, "_plots"), 
+				  print = TRUE, 
+				  pdf = FALSE)
 
 

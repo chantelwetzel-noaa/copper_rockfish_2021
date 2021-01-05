@@ -187,6 +187,8 @@ SS_plots(base)
 #	- Francis with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units
 #	- There seems to be some tension between commercial and rec lengths in terms of R0 which dw highlights
 
+# Proposed Base Model: 5.5_dw_francis_sigmar_60 
+
 #===========================================
 # Sensitivities
 #===========================================
