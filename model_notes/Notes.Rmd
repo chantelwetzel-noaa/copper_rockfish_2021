@@ -123,18 +123,66 @@ To Do
 
 # Model Meeting 1.4.2020
 
-
 ## Copper rockfish
 
 ### South of Pt. Conception
 
+- The recreational data and the NWFSC Hook and Line data seem to represent seperate sections of the population. The area of the survey is a location that likely gets little recreational fishing due to travel time from shore.  The recreational data indicates a very depleted stock, while the survey data indicates a "healthy" stock. 
+    - Put more weight on survey data and less on recreational data (MI) with dome shaped selectivity ~ 25%.
+    - Put more weight on survey data and less on recreational data (MI) with asymptotic selectivity ~8%.
+    - Put more weight on recreational data and less on survey data (francis) with dome shaped selectivity ~8%.
+    - Put more weigth on recreational data and less on survey data (francis) with asymptotic shaped selectivity ~3%.
+- Early commercial lengths mean lengths are a fair amount greater than expected.  These years have limited sample sizes (1983 - 1994, 9 years total). 
+
+- To Do:
+	- If we think HKL is not representative of the population then we should not be using it to be representative.
+	- If we assume that the HKL is representative of the population, how do we get the recreational flee and the survey to agree.  Profile across the p6 parameter determine where they depart. Create two seperate models 1) hook & line only and 2) recreational only. How severe does the dome shape need to be for the recreational model match the hkl model? Running the rec model only will the easier one. Questions to ask 1) what does the rec devs look like without hkl data?    
+
+
 ### North of Pt. Conception
+
+- "Base" model (9.0_base)
+- Block in recreational selectivity with a right shifted peak through 2008. Both periods are asymptotic. 
+- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early recreational length (1983-1986, 4 years total). The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity. 
+
+- To Do 
+	- Block in early recreational selectivity based on the currently removed data. 
+	- Do additional explorations to understand the influence of the commercial data. Could do the lamdbad to reduce the influence of these data. Also, look at fixing late block to match early block and/or look at the selectivity for the unblocked model. 
+
+![Parameter profile for Linf for copper rockfish California North.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/9.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+
+![Parameter profile for Linf for copper rockfish California North.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/9.0_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
+
+\clearpage
 
 ### Oregon
 
+- "Base" model (5.5_dw_francis_sigmar_60)
+- Block on recreational selectivity with asymptotic selectivity through 1999 with domed selectivity in the period after 1999.
+- Estimate recruitment deviations with the main period starting in 1980.
+- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MIdata weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods. 
+- There seems to be some tension between commercial and rec lengths in terms of R0 which data weighting highlights.
+
+![Parameter profile for R0 for copper rockfish Oregon.\label{fig:r0-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+![Parameter profile for Linf for copper rockfish Oregon.\label{fig:linf-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
+
+\clearpage
+
 ### Washington
 
+- "Base" model (7.0_base) estimates asymptotic recreational selectivity with commercial selectivity mirrored. Recruitment is assumed deterministic due to limited data but a sensitivity is performed.  Estimated parameters R0, selectivity peak, and selectivity ascending slope. 
+
+![Parameter profile for R0 for copper rockfish Washington.\label{fig:r0-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/7.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+![Parameter profile for Linf for copper rockfish Washington.\label{fig:linf-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/7.0_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
+
+
 ## Squarespot rockfish
+
+- Model "2.5_rec_devs_sigmaR60"
+- Need to explore rec dev periods.  All rec devs are being estimated as part of the "main" period.
 
 ## Quillback rockfish
 
@@ -145,10 +193,14 @@ Code including a description of what models mean available at [https://github.co
 ### California
 - Surprisingly recdevs are not connected to catch as much as I thought
 - [compare_catch_rec.R](https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/blob/master/code/compare_catch_rec.R) is a simple function that plots catches with recruits with option for offset and catches aren't as connected
+
 ![simple model with recdevs estimated.\label{fig:catch-rec-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_0_0_recdevs/compare_catch_rec.png){width=50% height=50%}
+
 - Better to use rdevs instead of recruits?
 - Using a 7-yr moving average of catches also doesn't affect model like I thought it would
-[Comparing raw and smoothed catch.\label{fig:comparedevs-ca}]](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_catch_smoother_SSplotComparisons_recdevs_Page_10.png){width=50% height=50%}. 
+
+![Comparing raw and smoothed catch.\label{fig:comparedevs-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_catch_smoother_SSplotComparisons_recdevs_Page_10.png){width=50% height=50%}
+
 - Can see the [catch comparisons](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_1_0_smoothCatch/just model files//Calcs_smoothCatch.xls)
 
 
@@ -157,15 +209,23 @@ Code including a description of what models mean available at [https://github.co
 ### Washington
 
 A few things to discuss
+
 1. Rec bias adjustment - Do you iterate with SS_fitbiasramp()? There is some osciallation with 116 models
+
 2. Rec devs - General tips on when to start? Whether to include early rec devs at all? 
+
 ![Comparing influence of rec devs and sigmaR.\label{fig:rec-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/3_rec_SSplotComparisons_31-Dec-2020_15.03_Page_15.png){width=50% height=50%}
 
 3. Sigma R - WA models do run high. Estimating is unreasonable in my opinion (keeps hitting whatever bound is set. Ive gone up to 1.2). Higher sigmaR reduces rec magnitude (reduces R0). Right now Im going with 0.9 but no real basis for choice. 
+
 4. Dome shaped selectivity - Just allow estimation of p6? For me effect is not large (dome is at higher high lengths - and actually above my data bins). Washington didn't have obvious choice. 
+
 5. Ages - I added ages into my WA model. Then reweighted. Results are very odd. Thoughts on keeping ages
+
 - Ages only for 1998, 1999, 2000
+
 - Add lots of early meaningful recdevs
+
 - Weighting removes any information on mean length but fits age comps much better
 See "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plot" for comparison plots
 
