@@ -1,0 +1,156 @@
+
+---
+title: "Data Moderate 2021 Model Notes for Copper Rockfish, Quillback Rockfish, and Squarespot Rockfish"
+author: "Chantel Wetzel"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  fig.pos = "!H",
+  out.extra = "",
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Model Meeting 12.17.2020
+
+## Copper rockfish
+
+### South of Pt. Conception
+- Examining model "7.1_data_rec_len_add_trawl" which has Linf and maturity fixed at coastwide values.
+- Changing Linf and Maturity strongly impacts how pessimistic stock status is.
+- Recreational selectivity being estimated as selecting small fish, less that the 50% maturity size, and dome shaped.  The dome is exploratory and may be pinned to be asymptotic later.
+- The bump up in the time series around 2015 is due to recruitment with a series of positive devs from 2008-2014. Without rec devs the fits to the lengths really degrades and over-estimates the mean length by year. 
+- HKL index fairly noisy or/and uninformative but the length data from this fleet are showing that the larger fish are out there. 
+- This model is applying francis data weighting
+- The trawl survey is just there and data are not fit well.
+
+To Do
+- Explore starting from a more drastic rec dome to see if estimation changes.
+- Email Gerry
+
+
+![R0 profile for CA South copper rockfish.\label{fig:r0-sca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/R0_profile_ca_s_pt_c.png){width=50% height=50%}
+
+![Parameter profile for CA South copper rockfish.\label{fig:para-sca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/7.1_data_rec_len_add_trawl_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+
+\pagebreak
+
+### North of Pt. Conception
+- Examing model "5.1_data_rec_len_trawl_survey"
+- Blocked commercial selectivity shifting to smaller fish in recent years (2009+). The change in mean length was not able to be explained fully due to strong recruitment.
+- Really clear evidence of a strong ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone. 
+- DM data weighting
+
+To Do 
+- Shorten the rec devs time series.
+
+![R0 profile for CA North copper rockfish.\label{fig:r0-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/R0_profile_ca_n_pt_c.png){width=50% height=50%}
+
+![Parameter profile for California North copper rockfish.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+\pagebreak
+
+### Oregon
+- Examining model "2.4_recdevs_early_est_p1_only_block"
+- Recreational selectivity blocked periods: start - 1999 and 2000 - end.
+- Released fish - I had not initially included these lengths (I think I looked at the CA released lengths which were really small) but adding these few lengths in as a ghost fleet show that they are not really different from the retained fish (when there are more than a few samples in a year). We should talk with Ali more about why an angler would release a fish on a trip. 
+- There does not seem to be enough information to estimate rec devs however without devs the stock is estimated unfished with a large R0 and with devs on estimated in the precautionary zone with a much more reasonable R0.
+
+To Do
+- Remove block for the current model.
+- Add age data and see how the recruitment changes.
+- Check log(R0) black rockfish, china - central ~4.5, china north ~3.5, and blue rockfish.
+
+![R0 profile for Oregon copper rockfish.\label{fig:r0-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/R0_profile_or.png){width=50% height=50%}
+
+
+![Parameter profile for Oregon copper rockfish.\label{fig:para-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+\pagebreak
+
+### Washington
+- Looking at a model without rec devs "5.1.1_selex_cv_fixed"
+- While allowing domed-selectivity there is likely little impact of this and will likely be pinned asymptotic.
+- Estimating rec devs vs. not results in fairly dramatic model differences.  The rec devs are likely being driven entirely by the catches rather than information in the lengths. When estimating rec devs there are some very large series of recruitment around 2000 and then all negative for the years after. There is a trade-off between recruitment and selectivity where: No devs -> left shifted selectivity, Rec devs -> right shifted selectivity
+- Apply francis data weighting.
+
+![R0 profile for Washington copper rockfish.\label{fig:r0-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/R0_profile_wa.png){width=50% height=50%}
+
+![Parameter profile for Washington copper rockfish.\label{fig:para-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/5.1.1_selex_cv_fixed_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+\pagebreak
+
+## Quillback rockfish
+
+### California
+- Period of high recruitment in the 1990s followed by a dip in recent years.  These patterns appear to be really driven by the catch.  
+- Possible sensitivity - apply a smoother through the catch time series and evaluate what the model does to recruitment. In theory, the removals should be similar applying a smoother but would allow you to possibly decouple recruitment and catches.
+
+
+### Oregon
+- Seeing really large recruitment around 1997 and again possibly around 2013 which are supported by the length data.
+
+### Washington
+
+- Recruitment devs appear to be tracking catches with catches spiking in select years. 
+- Francis and MI data weighting has been explored so far, but not DM yet.
+- The recruitment deviations are likely also being driven by an increase in mean lengths in recent years which the model is explaining by having a string of negative recruitments. 
+
+
+## Squarespot rockfish
+- Examining model "2.4_rec_devs_2010"
+- Max age set at 34 based on 95% quantile of ages
+- Tried restricting rec dev estimates to only the recent years based on some estimates in early years that look uninformed. The challenge of estimation here appears to be that we don't see small incoming fish (likely because they are small even when "grown"), however, the does appear to be a change in the population based on the hkl index and a slight change in mean length between 2016-2018. Without rec devs the model estimates a fairly unfished stock up until recent years where catches have spiked which does not fit the hkl index (flat line).
+- NWFSC HKL index shows a sharp increase between 2015-2018
+- Francis weighting applied so far (not re-weighted with the most recent runs).
+- No rec devs: R0 = 6.6, SB0 = 40.9, Depl 2021 = 0.65, Catch spr = 20.8 mt
+- Only recent devs: R0 = 5.5, SB0 = 13.1, Depl 2021 = 4.8, Catch spr = 6.9 mt
+
+To Do
+- Double or triple the lambda on the composition data. 
+- Try the DM
+- Change the min max rec devs allowed in the ctl
+- Reduce sigma R back to 0.60.
+
+
+
+# Model Meeting 1.5.2021
+
+## Copper rockfish
+
+### South of Pt. Conception
+
+
+### North of Pt. Conception
+
+- "Base" model (9.0_base)
+- Block in recreational selectivity with a right shifted peak through 2008. Both periods are asymptotic. 
+- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early commercial length data which had poor sample sizes.  The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity. 
+
+- To Do - block in early commercial selectivity based on the currently removed data. 
+
+![Parameter profile for Linf for California North copper rockfish.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/8.1_dw_francis_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+
+\clearpage
+
+### Oregon
+
+- "Base" model (5.5_dw_francis_sigmar_60)
+- Block on recreational selectivity with asymptotic selectivity through 1999 with domed selectivity in the period after 1999.
+- Estimate recruitment deviations with the main period starting in 1980.
+- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MI data weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods. 
+- There seems to be some tension between commercial and rec lengths in terms of R0 which data weighting highlights.
+
+![Parameter profile for Linf for Oregon copper rockfish.\label{fig:para-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+
+\clearpage
+
+### Washington
+
+- "Base" model (7.0_base) estimates asymptotic recreational selectivity with commercial selectivity mirrored. Recruitment is assumed deterministic due to limited data but a sensitivity is performed.  Estimated parameters R0, selectivity peak, and selectivity ascending slope. 
