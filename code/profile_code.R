@@ -1,6 +1,6 @@
 
-#devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/nwfscDiag")
-library(nwfscDiag)
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/nwfscDiag")
+#library(nwfscDiag)
 
 #######################################################################################################
 # South of Pt. Conception
@@ -22,36 +22,6 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-pngfun(wd = file.path(mydir, paste0(base_name, "_profile_SR_LN(R0)")), 
-	   file = "R0_profile_ca_s_pt_c.png",
-	   w = 7, h = 12)
-par(mfrow=c(3,1))
-SSplotProfile(summaryoutput = profile_output$profilesummary, 
-			  main = "Changes in total likelihood", 
-			  profile.string = "R0", 
-              profile.label = "R0", 
-              ymax = 40)
-abline(h = 1.92, lty = 2, col='red')
-
-
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-		   plot = TRUE, print = FALSE, component = "Length_like",
-           main = "Length-composition likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 20)
-
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-		   plot = TRUE, print = FALSE, component = "Surv_like",
-           main = "Survey likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 10)
-dev.off()
 
 
 #######################################################################################################
@@ -61,39 +31,32 @@ dev.off()
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c"
 base_name = "5.1_data_rec_len_trawl_survey"
 
-get = get_settings_profile( parameters =  c("SR_LN(R0)"),
-							low =  c(-2),
-							high = c(2),
-							step_size = c(0.25),
-							param_space = c('relative'))
+base_name = "8.1_dw_francis"
 
 
+#get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
+#							low =  c(0.09, 0.30, -1.0, -5),
+#							high = c(0.13, 1.0,  2, 5),
+#							step_size = c(0.005, 0.10, 0.25, 0.50),
+#							param_space = c('real', 'real', 'relative', 'relative'))
+
+get = get_settings_profile( parameters =  c( "SR_BH_steep",  "L_at_Amax_Fem_GP_1"),
+							low =  c(0.30, -5),
+							high = c(1.0,   5),
+							step_size = c(0.10, 1),
+							param_space = c('real', 'relative'))
+
+#model_settings = get_settings(settings = list(base_name = base_name,
+#							  run = c("jitter", "profile", "retro"),
+#							  profile_details = get ))
+#
 model_settings = get_settings(settings = list(base_name = base_name,
-											  run = c("profile"),
-											  profile_details = get ))
+							  run = c("profile"),
+							  profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-pngfun(wd = file.path(mydir, paste0(base_name, "_profile_SR_LN(R0)")), 
-	   file = "R0_profile_ca_n_pt_c.png",
-	   w = 12, h = 7)
-par(mfrow=c(1,2))
-SSplotProfile(summaryoutput = profile_output$profilesummary, 
-			  main = "Changes in total likelihood", 
-			  profile.string = "R0", 
-              profile.label = "R0", 
-              ymax = 40)
-abline(h = 1.92, lty = 2, col='red')
 
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-		   plot = TRUE, print = FALSE, component = "Length_like",
-           main = "Length-composition likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 20)
-dev.off()
 
 
 
@@ -103,59 +66,33 @@ dev.off()
 
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
 base_name = "2.4_recdevs_early_est_p1_only_block"
+base_name = "5.0_dw_francis"
+base_name = "5.5_dw_francis_sigmar_60"
 
-get = get_settings_profile( parameters =  c("SR_LN(R0)"),
-							low =  c(-1),
-							high = c(1),
-							step_size = c(0.1),
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)"),
+							low =  c(0.09, 0.30, -0.50),
+							high = c(0.13, 1.0,  2),
+							step_size = c(0.005, 0.10, 0.25),
+							param_space = c('real', 'real', 'relative'))
+
+get = get_settings_profile( parameters =  c( "L_at_Amax_Fem_GP_1"),
+							low =  c(-5),
+							high = c(5),
+							step_size = c(1),
 							param_space = c('relative'))
 
-
 model_settings = get_settings(settings = list(base_name = base_name,
-											  run = c("profile"),
-											  profile_details = get ))
+							  run = c("profile"),
+							  profile_details = get ))
 
-run_diagnostics(mydir = mydir, model_settings = model_settings)
-
-
-mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
-base_name = "5.0_dw_francis"
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)"),
-							low =  c(0.40, 0.25, -1),
-							high = c(0.40, 1.0,  2),
-							step_size = c(0.005, 0.05, 0.25),
-							param_space = c('multiplier', 'real', 'relative'))
 model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("jitter", "profile", "retro"),
 							  profile_details = get ))
+
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
-
-load(file.path(mydir, paste0(base_name, "_SR_LN(R0)"), "SR_LN(R0)_profile_output.Rdata"))
-
-pngfun(wd = file.path(mydir, "2.4_recdevs_early_est_p1_only_block_profile_SR_LN(R0)"), 
-	   file = "R0_profile_or.png", 
-	   w = 12, h = 7)
-par(mfrow=c(1,2))
-SSplotProfile(summaryoutput = profile_output$profilesummary, 
-			  main = "Changes in total likelihood", 
-			  profile.string = "R0", 
-              profile.label = "R0", 
-              ymax = 20)
-abline(h = 1.92, lty = 2, col='red')
-
-
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-		   plot = TRUE, print = FALSE, component = "Length_like",
-           main = "Length-composition likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 20)
-
-dev.off()
 
 
 #######################################################################################################
@@ -164,56 +101,27 @@ dev.off()
 
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/wa"
 base_name = "5.1.1_selex_cv_fixed"
-
-get = get_settings_profile( parameters =  c("SR_LN(R0)"),
-							low =  c(-1),
-							high = c(1),
-							step_size = c(0.1),
-							param_space = c('relative'))
-
-
-model_settings = get_settings(settings = list(base_name = base_name,
-											  run = c("profile"),
-											  profile_details = get ))
-
-run_diagnostics(mydir = mydir, model_settings = model_settings)
-
-mydir = "C:/Assessments/2021/copper_rockfish_2021/models/wa"
 base_name = "7.0_base"
+
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)"),
 							low =  c(0.40, 0.25, -1),
 							high = c(0.40, 1.0,  2),
 							step_size = c(0.005, 0.05, 0.25),
 							param_space = c('multiplier', 'real', 'relative'))
+
+get = get_settings_profile( parameters =  c( "SR_BH_steep",  "L_at_Amax_Fem_GP_1"),
+							low =  c(0.30, -5),
+							high = c(1.0,   5),
+							step_size = c(0.10, 1),
+							param_space = c('real', 'relative'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("profile"),
+							  profile_details = get ))
+
 model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("jitter", "profile", "retro"),
 							  profile_details = get ))
 run_diagnostics(mydir = mydir, model_settings = model_settings)
-
-
-
-load(file.path(mydir, paste0(base_name, "_SR_LN(R0)"), "SR_LN(R0)_profile_output.Rdata"))
-
-pngfun(wd = file.path(mydir, base_name), 
-	   file = "R0_profile_wa.png", w = 12, h = 7)
-par(mfrow=c(1,2))
-SSplotProfile(summaryoutput = profile_output$profilesummary, 
-			  main = "Changes in total likelihood", 
-			  profile.string = "R0", 
-              profile.label = "R0", 
-              ymax = 20)
-abline(h = 1.92, lty = 2, col='red')
-
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-		   plot = TRUE, print = FALSE, component = "Length_like",
-           main = "Length-composition likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 20)
-dev.off()
-
-
 
 
