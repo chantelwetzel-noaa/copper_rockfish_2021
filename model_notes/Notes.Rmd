@@ -118,3 +118,56 @@ To Do
 - Change the min max rec devs allowed in the ctl
 - Reduce sigma R back to 0.60.
 
+
+\pagebreak
+
+# Model Meeting 1.4.2020
+
+
+## Copper rockfish
+
+### South of Pt. Conception
+
+### North of Pt. Conception
+
+### Oregon
+
+### Washington
+
+## Squarespot rockfish
+
+## Quillback rockfish
+
+Models available at 
+"//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa"
+Code including a description of what models mean available at [https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/tree/master/code](https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/tree/master/code)
+
+### California
+- Surprisingly recdevs are not connected to catch as much as I thought
+- [compare_catch_rec.R](https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/blob/master/code/compare_catch_rec.R) is a simple function that plots catches with recruits with option for offset and catches aren't as connected
+![simple model with recdevs estimated.\label{fig:catch-rec-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_0_0_recdevs/compare_catch_rec.png){width=50% height=50%}
+- Better to use rdevs instead of recruits?
+- Using a 7-yr moving average of catches also doesn't affect model like I thought it would
+[Comparing raw and smoothed catch.\label{fig:comparedevs-ca}]](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_catch_smoother_SSplotComparisons_recdevs_Page_10.png){width=50% height=50%}. 
+- Can see the [catch comparisons](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/1_1_0_smoothCatch/just model files//Calcs_smoothCatch.xls)
+
+
+### Oregon
+
+### Washington
+
+A few things to discuss
+1. Rec bias adjustment - Do you iterate with SS_fitbiasramp()? There is some osciallation with 116 models
+2. Rec devs - General tips on when to start? Whether to include early rec devs at all? 
+![Comparing influence of rec devs and sigmaR.\label{fig:rec-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/3_rec_SSplotComparisons_31-Dec-2020_15.03_Page_15.png){width=50% height=50%}
+
+3. Sigma R - WA models do run high. Estimating is unreasonable in my opinion (keeps hitting whatever bound is set. Ive gone up to 1.2). Higher sigmaR reduces rec magnitude (reduces R0). Right now Im going with 0.9 but no real basis for choice. 
+4. Dome shaped selectivity - Just allow estimation of p6? For me effect is not large (dome is at higher high lengths - and actually above my data bins). Washington didn't have obvious choice. 
+5. Ages - I added ages into my WA model. Then reweighted. Results are very odd. Thoughts on keeping ages
+- Ages only for 1998, 1999, 2000
+- Add lots of early meaningful recdevs
+- Weighting removes any information on mean length but fits age comps much better
+See "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plot" for comparison plots
+
+
+
