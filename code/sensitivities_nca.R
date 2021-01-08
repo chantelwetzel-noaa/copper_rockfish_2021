@@ -11,7 +11,7 @@ library(r4ss)
 ###################################################################
 # North of Pt Conception
 ###################################################################
-area = "n_ca_pt_c"
+area = "ca_n_pt_c"
 base_model = "9.0_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
@@ -22,48 +22,31 @@ out.dir = wd
 base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
            area, base_model)
 
-model.list <- c(paste0(base_model, "_low_m"),  #1     
-                paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_platoons"), #3
-                paste0(base_model, "_linf_hi"), #4
-                paste0(base_model, "_recdevs"), #5
-				        paste0(base_model, "_francis"), #6
-                paste0(base_model, "_mi"), #7
-                paste0(base_model, "_dirichlet"))#,  #8
-                #paste0(base_model, "_sss")) #9
+model.list <- c(paste0(base_model, "_asymptotic_selex"),  #1     
+                paste0(base_model, "_asymptotic_selex_no_blocks"), #2
+                paste0(base_model, "_no_early_devs"))
 
 out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
 sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
 sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
 sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
-                "Low M", 
-                "High M", 
-                "Platoons",
-                "High Linf",
-                "Estimate Rec. Devs.",
-                "Francis Data Weighting",
-                "MI Data Weighting",
-                "Dirichlet Data Weighting") 
+                "Commercial Asymptotic Selctivity", 
+                "Commercial Asymptotic Selctivity - No Blocks", 
+                "No Early Devs") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7, sens_8))
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
                   filenameprefix = paste0(base_model, "_"),
-                  subplot = c(2,4,10,12), 
-                  print = TRUE, 
-                  pdf = FALSE)
+                  #subplot = c(2,4,10,12), 
+                  #print = TRUE, 
+                  pdf = TRUE)
 
 ###################################################################################
 # Create a Table of Results
