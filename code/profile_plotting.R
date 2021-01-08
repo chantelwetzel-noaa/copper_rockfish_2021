@@ -80,7 +80,7 @@ dev.off()
 
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
 base_name = "2.4_recdevs_early_est_p1_only_block"
-base_name = "5.0_dw_francis"
+base_name = "5.0_dw_francis_sigmar_60"
 
 load(file.path(mydir, paste0(base_name, "_SR_LN(R0)"), "SR_LN(R0)_profile_output.Rdata"))
 
