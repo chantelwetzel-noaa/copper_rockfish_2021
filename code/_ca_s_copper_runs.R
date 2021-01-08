@@ -2,6 +2,7 @@
 # Copper South California Model Runs
 
 library(r4ss)
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
 wd = "N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c"
 wd = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c"
@@ -161,6 +162,18 @@ base = SS_output(file.path(wd, model))
 SS_plots(base)
 # R0 = 5.53, depl 2021 = 0.075, string of + recdevs from 2008-2013
 
+model = "8.1.1_dw_MI_selex_asymptotic"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "8.1.2_dw_MI_selex_asymptotic_rm_data"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "8.1.3_dw_MI_selex_dome_rm_data"
+base = SS_output(file.path(wd,  model))
+SS_plots(base)
+
 model = "8.2_dw_francis"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
@@ -179,6 +192,258 @@ SS_plots(base)
 # NLL = 305.3, R0 = 5.55, depl 2021 = 0.062
 # Still getting those low recdevs and the high recdevs are marginally lower.
 
+# Fix selex asymptotic for the commercial & rec fleets
+model = "8.4_dw_francis_recdev_main_later_selex_asymptotic"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 322.1, R0 = 5.55, depl 2021 = 0.024
+# This results in all early devs being estimated as negative values.
+
+# Turn off early devs and fix selex asymptotic for the commercial & rec fleets
+model = "8.5_dw_francis_recdev_no_early_selex_asymptotic"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 329.7, R0 = 5.32, depl 2021 = 0.022
+
+# Remove the early commercial data with limited samples sizes
+model = "8.6_dw_francis_recdev_main_later_selex_asymptotic_rm_data"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 301.2, R0 = 5.6, depl 2021 = 0.024
+
+# DW: I think the MI does a better job of finding the balence between hkl and 
+# rec data. 
+# Selex: It looks like the rec fleet may be best modeled
+# with dome shaped selectivity. Need to explore whether that is appropriate
+# for commercial data.  
+# RecDevs: Try to eliminat the early dip in devs and evaluate how the early 
+# commercial higher mean lengths impacts the estimates.
+
+# Recreational Domed - Commercial Asymptotic
+model = "9.0_selex_rec_dome_com_asymptotic"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 557.5, R0 = 5.6, depl 2021 = 0.14
+# Both Fleets Domed: NLL = 540.1, R0 = 5.6, depl 2021 = 0.22
+# Based on the fits going to keep the domed selectivity
+
+model = "9.1_selex_domed"
+base = SS_output(file.path(wd, model))
+
+# Push the main rec dev period later
+model = "9.2_recdev_main_later"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 538.3, R0 = 5.6, depl 2021 = 0.19
+# The devs look ok. The big difference in fits between francis and MI
+# where francis fit the aggregated  comps better by shifting both the
+# rec and commercial selex rightward: Com P1 = 36.6, Rec P1 = 31.4 vs.
+# MI Com P1 = 34.2, Rec P1 = 29.8. In the MI model having the peak to the
+# left results in the decline in the dome occuring earlier (more unavaialbe
+# bio) which results in a more opptomistic stock size. 
+
+# Given the importance of selectivity - let's re-evaluate the parameters
+# using the MI data weights
+model = "9.3_selex_rec_est_all"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 533.7, R0 = 5.68, depl 2021 = 0.285
+# P1 shifted right by <1 cm to 30.5 with steeper dome
+
+model = "9.4_selex_com_est_all"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 522.7, R0 = 5.75, depl 2021 = 0.460
+# Com P1 shifts right by ~1cm to 34.6 with a steeper dome (width similar)
+
+# MI Weights 1.129, 0.036, 0.653
+# Francis 0.7177*current, 1.84*current, 0.582*current
+
+# Franics
+model = "9.5.0_dw_francis"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 431.2, R0 = 6.03, depl 2021 = 0.664
+# The domes are fairly steep and result in a much improved stock status
+
+# Francis & Asymptotic Recreational Selectivity
+model = "9.5.1_dw_francis_rec_asym"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 524.8, R0 = 5.4, depl 2021 = 0.082 
+# New francis dw: com = 1.544*current rec = 1.1933*current, hkl ~ same
+
+# Francis & Asymptotic Commercial Selectivity
+model = "9.5.2_dw_francis_com_asym"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 497.9, R0 = 5.7, depl 2021 = 0.24
+
+# Francis Domed Selectivity for Both paras from 8.0 model
+model = "9.5.3_dw_francis_dome_para_8.0"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 491.5, R0 = 5.6, depl 2021 = 0.22
+
+# Francis Domed Selectivity for both fleets paras from 8.0 model
+# Revert to early start of estimating main devs to evaluate the impact
+# of changing the start year to 1985 in the above models.
+model = "9.5.4_dw_francis_dome_para_recdev"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 491, R0 = 5.5, depl 2021 = 0.25
+
+# With early devs starting in 1975 - add back in the removed com lengths
+model = "9.5.5_dw_francis_dome_para_recdev_add_com_data"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 528, R0 = 5.5, depl 2021 = 0.30
+# Adding these few years with limited samples have a disproportionate
+# impact on the model results
+
+# Build off of 9.53: Francis Domed Selectivity for Both paras from 8.0 model
+# Main recdev period start 1985, rm early com data
+# Estimate the descending limb for both fleets
+model = "9.5.6_dw_francis_dome_para_8.0_selex_est_desc"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 463, R0 = 6.05, depl 2021 = 0.672
+
+model = "9.5.8_dw_francis_dome_para_8.0_selex_est_desc_rec_only_rm_hkl"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# R0 = 5.5, depl 2021 = 0.07
+# Removing the hkl data not only greatly impacts the status, but also
+# results in wider dome selectivity which are slightly right shifts. 
+
+model = "9.5.9_dw_francis_dome_para_8.0_selex_fix_selex_w_hkl"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 230.6, R0 = 5.54, depl = 0.094 (asymptotic fixed)
+# NLL = 215.9, R0 = 5.49, depl = 0.104 (all hkl selex para estimated - sharp dome to 0.50)
+
+model = "9.5.11_dw_francis_dome_est_p1p3"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "9.5.12_dw_francis_dome_est_p1p3p6"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "9.5.13_dw_francis_dome_est_p1p3p4p6"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+# MI
+model = "9.6.0_dw_mi"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 545.3, R0 = 5.84, depl 2021 = 0.545
+
+# MI & Asymptotic Recreational Selectivity
+model = "9.6.1_dw_mi_rec_asym"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 580.3, R0 = 5.4, depl 2021 = 0.125 
+
+# MI & Asymptotic Commercial Selectivity
+model = "9.6.2_dw_mi_com_asym"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 586.1, R0 = 5.7, depl 2021 = 0.16
+# Forcing the commercial asymptotic results in a distinct change in 
+# the recreational selectivity (wider and less domed)
+
+model = "9.7_dw_dirichlet"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 562.8, R0 = 5.83, depl 2021 = 0.53
+# Full weight being give to the commercial and the rec fleet
+# com = 0.992, rec = 0.993, hkl = 0.987
+
+
+# Moving forward in dome shaped selectivity for both fleets
+# with wider shape. 9.5.12_dw_francis_dome_est_p1p3p6
+model = "10.0.0_dw_francis_dome"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 278, R0 = 5.6, depl 2021 = 0.066
+
+model = "10.0.1_dw_francis_9.5.0_selex"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "10.0.2_dw_francis_9.5.0_selex_fix"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "10.1_dw_mi"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 317, R0 = 5.5, depl 2021 = 0.065
+
+model = "10.2_dw_dirichlet"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 1047, R0 = 5.6, depl 2021 = 0.069
+
+#############################################################
+# Sensitivity 
+
+# Remove the HKL & WCGBTS data
+model = "8.6_dw_francis_recdev_rm_hkl"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+# R0 = 5.51, depl 2021 = 0.0007
+
+# Emphasize the hkl data
+# Use HKL Data & Set the Rec Lambda = 0.01
+model = "8.6_dw_francis_recdev_lambda_rec"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+
+model = "8.1.3_dw_MI_selex_dome_rm_data"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+
+model = "8.1.3_dw_MI_lambda_rec"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+
+model = "8.6_dw_francis_no_devs_lambda_rec"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+
+# How Domed does the rec fleet need to be to look like hkl only model
+model = "8.6_dw_francis_recdev_rm_hkl_rec_dome"
+base = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base)
+
+
+model = "8.1.0_dw_MI"
+mi = SS_output(file.path(wd,  model))
+model = "8.1.0_nodevs"
+base_nodevs = SS_output(file.path(wd, "_sensitivities", model))
+model = "8.1.0_nodevs_rm_hkl"
+no_hkl = SS_output(file.path(wd, "_sensitivities", model))
+model = "8.1.0_nodevs_lambda_rec"
+no_rec = SS_output(file.path(wd, "_sensitivities", model))
+modelnames <- c("8.1.0 MI with Domed Selex",
+				"No Rec Devs", 
+				"No Rec Devs & No HKL Data",
+				"No Rec Devs & DW Rec Data")
+mysummary <- SSsummarize(list(mi, base_nodevs, no_hkl, no_rec))
+
+SSplotComparisons(mysummary, 
+				  filenameprefix = "8.1.0_norecdevs_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+				  pdf = TRUE)
+
+#############################################################
+
+# Items applied in the north model to be tested here:
+#	- commercial blocked (1916 - 2008)
 # Do rec dev bias adjustment and address the string of positive recs
 # 	- I think the dip in rec devs at the start is due to large commercial lengths 
 #	  at the start of the data (1983 -89, and 1993ish)

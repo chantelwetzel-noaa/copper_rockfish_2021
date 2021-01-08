@@ -250,5 +250,14 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+################################################
+
+# Estimate early devs
+# Remove early years of recreational length data
+# Fix commercial selectivity to be asympotic in recent years (did not change estimates)
+model = "9.0_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+# NLL = 206.3, R0 = 6.2, depl 2021 = 0.40
 
 

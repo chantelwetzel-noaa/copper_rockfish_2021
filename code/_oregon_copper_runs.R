@@ -173,9 +173,8 @@ SS_plots(base)
 # This brings down the R0 = 2.65, ln(theta) = 2.93, depl 2021 = 0.49
 
 
-
 # MI DW & SigmaR = 0.60
-model = "5.3_dw_mi_sigmar_60"
+model = "5.5_dw_mi_sigmar_60"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 # NLL = 295.98, R0 = 4.78, depl 2021 = 0.905
@@ -188,6 +187,10 @@ SS_plots(base)
 #	- There seems to be some tension between commercial and rec lengths in terms of R0 which dw highlights
 
 # Proposed Base Model: 5.5_dw_francis_sigmar_60 
+model = "5.5_dw_francis_sigmar_60"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
 
 #===========================================
 # Sensitivities
