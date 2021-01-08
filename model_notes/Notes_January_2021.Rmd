@@ -118,7 +118,7 @@ To Do
 - Change the min max rec devs allowed in the ctl
 - Reduce sigma R back to 0.60.
 
-
+\clearpage
 
 # Model Meeting 1.5.2021
 
@@ -126,16 +126,32 @@ To Do
 
 ### South of Pt. Conception
 
+- The recreational data and the NWFSC Hook and Line data seem to represent seperate sections of the population. The area of the survey is a location that likely gets little recreational fishing due to travel time from shore.  The recreational data indicates a very depleted stock, while the survey data indicates a "healthy" stock. 
+    - Put more weight on survey data and less on recreational data (MI) with dome shaped selectivity ~ 25%.
+    - Put more weight on survey data and less on recreational data (MI) with asymptotic selectivity ~8%.
+    - Put more weight on recreational data and less on survey data (francis) with dome shaped selectivity ~8%.
+    - Put more weigth on recreational data and less on survey data (francis) with asymptotic shaped selectivity ~3%.
+- Early commercial lengths mean lengths are a fair amount greater than expected.  These years have limited sample sizes (1983 - 1994, 9 years total). 
+
+- To Do:
+	- If we think HKL is not representative of the population then we should not be using it to be representative.
+	- If we assume that the HKL is representative of the population, how do we get the recreational flee and the survey to agree.  Profile across the p6 parameter determine where they depart. Create two seperate models 1) hook & line only and 2) recreational only. How severe does the dome shape need to be for the recreational model match the hkl model? Running the rec model only will the easier one. Questions to ask 1) what does the rec devs look like without hkl data?    
+
 
 ### North of Pt. Conception
 
 - "Base" model (9.0_base)
 - Block in recreational selectivity with a right shifted peak through 2008. Both periods are asymptotic. 
-- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early commercial length data which had poor sample sizes.  The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity. 
+- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early recreational length (1983-1986, 4 years total). The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity. 
 
-- To Do - block in early commercial selectivity based on the currently removed data. 
+- To Do 
+	- Block in early recreational selectivity based on the currently removed data. 
+	- Do additional explorations to understand the influence of the commercial data. Could do the lamdbad to reduce the influence of these data. Also, look at fixing late block to match early block and/or look at the selectivity for the unblocked model. 
 
-![Parameter profile for Linf for California North copper rockfish.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/8.1_dw_francis_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+![Parameter profile for Linf for copper rockfish California North.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/9.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+
+![Parameter profile for Linf for copper rockfish California North.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/9.0_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
 
 \clearpage
 
@@ -144,13 +160,33 @@ To Do
 - "Base" model (5.5_dw_francis_sigmar_60)
 - Block on recreational selectivity with asymptotic selectivity through 1999 with domed selectivity in the period after 1999.
 - Estimate recruitment deviations with the main period starting in 1980.
-- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MI data weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods. 
+- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MIdata weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods. 
 - There seems to be some tension between commercial and rec lengths in terms of R0 which data weighting highlights.
 
-![Parameter profile for Linf for Oregon copper rockfish.\label{fig:para-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+![Parameter profile for R0 for copper rockfish Oregon.\label{fig:r0-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+![Parameter profile for Linf for copper rockfish Oregon.\label{fig:linf-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
 
 \clearpage
 
 ### Washington
 
 - "Base" model (7.0_base) estimates asymptotic recreational selectivity with commercial selectivity mirrored. Recruitment is assumed deterministic due to limited data but a sensitivity is performed.  Estimated parameters R0, selectivity peak, and selectivity ascending slope. 
+
+![Parameter profile for R0 for copper rockfish Washington.\label{fig:r0-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/7.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
+
+![Parameter profile for Linf for copper rockfish Washington.\label{fig:linf-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/7.0_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=75% height=75%}
+
+
+## Squarespot Rockfish
+
+- Model "2.5_rec_devs_sigmaR60"
+- Need to explore rec dev periods.  All rec devs are being estimated as part of the "main" period.
+
+## Quillback Rockfish
+
+### California
+
+### Oregon
+
+### Washington
