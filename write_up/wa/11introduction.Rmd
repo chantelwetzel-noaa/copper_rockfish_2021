@@ -7,7 +7,10 @@ read_child(filein)
 ```
 
 ## Historical and Current Fishery Information
-Off the coast of Washington `r spp` is primarily caught in the recreational/sport fishery with very little mortaltiy from commercial fishing. `r Spp` has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of selected years with high (2005) or low catches (2015). 
+Off the coast of Washington `r spp` is primarily caught in the recreational/sport fishery with very little mortaltiy from commercial fishing. `r Spp` has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of selected years with high (2005) or low catches (2015). `r Spp` is landed as part of the live fish fisheries in other areas of the West Coast (e.g.,  Oregon and California), however, there is no live fish fishery off the coast of Washigton. 
+
+The primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` are associated with in comparison to the southern coast of Washington is primarily soft and sandy substrate.  The stock off the Washington coast was assessed as a separate stock from other populations off the West Coast based on the likely limited flow of fish between Washington and Oregon given the substrate seperation, `r spp` biology, and the different exploitation patterns by state.   
+
 
 ## Summary of Management History and Performance
 ```{r, echo=FALSE, results='asis'}
