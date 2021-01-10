@@ -30,7 +30,9 @@ sens_list = c("no_recdevs", #1
               "add_com_data", #6
               "add_com_data_main_devs_earlier", #7
               "rm_hkl", #8
-              "dw_rec_data") #9
+              "dw_rec_data", #9
+              "no_recdevs_est_rec_selex", #10
+              "no_extra_sd_hkl") #11
 
 model.list <- paste0(base_model, "_", sens_list)
 
@@ -50,14 +52,17 @@ sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose =
 sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_9  = SS_output( file.path(wd, model.list[9]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_10 = SS_output( file.path(wd, model.list[10]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_11 = SS_output( file.path(wd, model.list[11]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
                 "No Rec. Devs.", 
+                "No Rec. Devs. & Re-est Rec. Selex",
                 "Start Main Devs. Earlier", 
                 "Add Early Comm. Data",
                 "Add Early Comm. Data & Main Devs. Earlier") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_6, sens_7))
+x <- SSsummarize(list(base, sens_1, sens_10, sens_2, sens_6, sens_7))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
@@ -71,9 +76,10 @@ modelnames <- c("Base Model",
                  "MI DW",
                  "Rec Length Lambda = 0.1",
                  "HKL Domed",
+                 "No Extra SD HKL Index",
                  "Remove HKL Data") 
 
-x <- SSsummarize(list(base, sens_3, sens_4, sens_9, sens_5, sens_8))
+x <- SSsummarize(list(base, sens_3, sens_4, sens_9, sens_5, sens_11, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
