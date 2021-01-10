@@ -10,6 +10,3 @@ Numerous genetic studies have been performed looking for genetic variation in `r
 
 `r Spp` is a relatively long-lived rockfish and have been estimated to live at least 50 years [@love_milton_probably_1996]. `r Spp` was determined to have the highest vulnerability (V = 2.27) of any West Coast groundfish based on recent productivity susceptibility analaysis [@cope_approach_2011].  
 
-## Ecosystem Considerations
-Replace text.
-
