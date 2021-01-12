@@ -60,3 +60,24 @@ filein = file.path(paste0(mod_loc, "_profile_NatM_p_1_Fem_GP_1"),  "NatM_p_1_Fem
 caption = "Change in the estimate of fraction unfished across a range of female natural values",
 label = 'm-depl')
 ```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_L_at_Amax_Fem_GP_1"),  "piner_panel_L_at_Amax_Fem_GP_1.png"), 
+caption = "Change in the negative log-likelihood across a range of female maximum length value",
+label = 'linf-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
+caption = "Change in the estimate of spawning output across a range of female maximum length values",
+label = 'linf-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png"), 
+caption = "Change in the estimate of fraction unfished across a range of female maximum length values",
+label = 'linf-depl')
+```
