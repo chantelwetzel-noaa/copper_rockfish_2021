@@ -2,10 +2,9 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found (Table XXX). The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
 
 ### Sensitivity Analyses
-
 A number of sensitivity analyses were conducted.  The majoirty of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
@@ -20,34 +19,34 @@ A number of sensitivity analyses were conducted.  The majoirty of the sensitivit
     
   \item Estimate annual recruitment deviations. 
   
-  \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table XX. 
+  \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table \ref{tab:dw}. 
 
-  \item Data weighting according to the Francis method using the weighting values shown in Table XX. 
+  \item Data weighting according to the Francis method using the weighting values shown in Table \ref{tab:dw}. 
   
-  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table XX. 
+  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dw}. 
   
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table {tab:sensitivities}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
 
-A sensitivity of assuming a lower $L_{\infty}$ was also conducted but not presented here. Assuming the $L_{\infty}$ to be lower than the input value resulted in a dramatic and unrealistic shift in stock scale. 
+A sensitivity of assuming a lower $L_{\infty}$ was also conducted but not presented here. Assuming the $L_{\infty}$ to be lower than the input value resulted in a dramatic and unrealistic shift in stock scale upwards resulted in an unfished population status.. 
 
 
 ### Retrospective Analysis
-
 A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was consistent with the base model when recent year's data were removed up until 4 and 5 years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). Removing this amount of data resulted in a downward shift in stock scale and status.
 
 ### Likelihood Profiles
 
 Likelihood profiles were conducted for $R_0$, steepness, maximum length, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
-In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-ssb}, \ref{fig:r0-depl}, \ref{fig:r0-profile}). 
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). Increasing the $R_0$, relative to the value estimated, results in an increase in stock scale and status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
 
-For steepness, the negative log-likelihood supported values at the upper bound of 1.0 (Figure \ref{fig:h-profile}).  ADD TEXT ABOUT SUPPORT Figure \ref{fig:h-ssb} and Figure \ref{fig:h-depl}
+For steepness, the negative log-likelihood supported values at the upper bound of 1.0 (Figure \ref{fig:h-profile}).  Assuming higher or lower steepness values impacted the estimated unfished spawning output but had less impact on the final spawning output (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between around the minumum threshold (0.25) to above the management target depending upon assuming a lower or higher steepness value (Figure \ref{fig:h-depl}).
 
-MAXIMUM LENGTH PROFILE
+The negative log-likelihood profile across female natural mortatliy supported values greated than the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimate stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output and resulted in stock statuses within the management precautionary zone (between 0.25 - 0.40) and above (Figure \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
 
-NATURAL MORTALITY PROFILE Figure \ref{fig:m-profile} and Figure \ref{fig:m-ssb} and Figure \ref{fig:m-depl}
+A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 46 and 47 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
+
 
 ### Unresolved Problems and Major Uncertainties
 

@@ -155,6 +155,20 @@ table_format(x = mod_params,
 
 \newpage
 
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
+col_names = c('Method',
+              'Recreational Lengths')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods.",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+\newpage
+
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->

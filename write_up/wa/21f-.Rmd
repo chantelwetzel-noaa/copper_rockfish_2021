@@ -7,4 +7,5 @@ Table \ref{tab:allcatches} and Table \ref{tab:nums-mt}
 
 ### Commercial Data
 
-Table \ref{tab:allcatches}
+There is very limited commercial fishery removals of `r spp` off the Washington coast (Table \ref{tab:allcatches}). Across all model years there were less than 2 mt removed by the commerical fishery. The commercial catches were provide directly by WDFW. Given the limited observed removals by the commercial fleet historical discards were assumed to be nominal and were not accounted for in the model.  In recent years, post-2002, the coastwide discards observed by the West Coast Groundfish Observer Program (WCGOP) were attributed to each state based on the proportion of commercial removals by state.  The commercial discards attributed to Washington were relatively minor (less than 0.02 mt total since 2002).  There were no length data available for `r spp` in PacFIN for use in this assessment.  
+
