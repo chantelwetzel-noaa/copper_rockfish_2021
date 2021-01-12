@@ -4,14 +4,16 @@
 ########################################################
 
 library(r4ss)
+library(sa4ss)
 #devtools::install_github("r4ss/r4ss", ref = "development")
 #devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
+
 ###################################################################
-# North of Pt Conception
+# Oregon 
 ###################################################################
-area = "ca_n_pt_c"
-base_model = "9.0_base"
+area = "or"
+base_model = "6.0_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -26,12 +28,12 @@ model.list <- c(paste0(base_model, "_low_m"),  #1
                 paste0(base_model, "_platoons"), #3
                 paste0(base_model, "_linf_hi"), #4
                 paste0(base_model, "_no_recdevs"), #5
-                paste0(base_model, "_asymptotic_selex_no_blocks"), #6
+                paste0(base_model, "_no_dome"), #6
                 paste0(base_model, "_mi"), #7
-                paste0(base_model, "_dirichlet")) #8
+                paste0(base_model, "_dirichlet"))#,  #8
                 #paste0(base_model, "_sss")) #9
 
-out.list = NULL   
+out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
 sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
 sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
@@ -45,15 +47,15 @@ sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose =
 modelnames <- c("Base Model",
                 "Low M", 
                 "High M", 
-                "Platoons",
+                #"Platoons",
                 "High Linf",
-                "No Rec. Devs.",
-                "No Selectivity Block",
-                "MI Data Weighting",
-                "Dirichlet Data Weighting") 
+                #"No Rec. Devs.",
+                "No Domed Selex",
+                "MI Data Weighting")
+                #"Dirichlet Data Weighting") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7, sens_8))
+x <- SSsummarize(list(base, sens_1, sens_2, sens_4, #sens_5, 
+                 sens_6, sens_7))#, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
@@ -71,6 +73,19 @@ SSplotComparisons(x, endyrvec = 2021,
 ii = 1:length(modelnames)
 n = length(modelnames)
 out<- matrix(NA, 24, max(ii))
+
+modelnames <- c("Base Model",
+                "Low M", 
+                "High M", 
+                "Platoons",
+                "High Linf",
+                "No Rec. Devs.",
+                "No Domed Selex",
+                "MI Data Weighting",
+                "Dirichlet Data Weighting") 
+
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
+                 sens_6, sens_7, sens_8))
 
 out = rbind(
             as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
@@ -140,4 +155,4 @@ t = table_format(x = out,
       col_names = modelnames)
 
 kableExtra::save_kable(t,
-file = file.path("C:/Assessments/2021/copper_rockfish_2021/write_up/n_ca/tex_tables/sensitivities.tex"))
+file = file.path("C:/Assessments/2021/copper_rockfish_2021/write_up", area, "tex_tables/sensitivities.tex"))

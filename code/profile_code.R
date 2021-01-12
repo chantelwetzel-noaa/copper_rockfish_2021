@@ -11,14 +11,14 @@ base_name = "7.1_data_rec_len_add_trawl"
 base_name = "10.0_base"
 base_name = "10.1_base_nodevs_jason"
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
-							low =  c(0.09, 0.30, -1.0, 45),
-							high = c(0.13, 1.0,  2, 55),
-							step_size = c(0.005, 0.10, 0.25, 1),
-							param_space = c('real', 'real', 'relative', 'real'))
+get = get_settings_profile( parameters =  c("L_at_Amax_Fem_GP_1", "SR_LN(R0)"),
+							low =  c(45, -1),
+							high = c(55, 2),
+							step_size = c( 1, 0.25),
+							param_space = c('real','relative'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-											  run = c("profile", "retro", "jitter"),
+											  run = c("profile", "jitter"),
 											  profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
