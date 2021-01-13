@@ -25,7 +25,7 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 model_settings = get_settings(settings = list(base_name = base_name,
 											  run ="jitter",
-											  jitter_fraction = 0.25))
+											  jitter_fraction = 0.10))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
