@@ -26,6 +26,7 @@ sa4ss::read_model(
 
 load("00mod.Rdata")
 
+source("C:/Users/Chantel.Wetzel/Documents/GitHub/sa4ss/R/es_table_tex.R")
 SSexecutivesummary(replist = model, format = FALSE)
 es_table_tex(dir = mod_loc, table_folder = 'tables')
 es_table_tex(dir = file.path(getwd(), 'tables'), 
