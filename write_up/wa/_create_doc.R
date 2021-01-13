@@ -19,15 +19,23 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
   			 edit = FALSE)
 
 # Create a model Rdata object
-sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/wa/5.4_selex_dome_recdevs",
-				  create_plots = FALSE, 
+sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base",
+				  create_plots = TRUE, 
 				  save_loc = file.path(getwd(), "tex_tables"),
 				  verbose = TRUE)
 
 load("00mod.Rdata")
 
+# Executive Summary Tables
 SSexecutivesummary(replist = model, format = FALSE)
-es_table_tex(mod_loc = mod_loc, table_folder = 'tables')
+es_table_tex(dir = mod_loc, 
+            save_loc = file.path(getwd(), "tex_tables"), 
+            csv_name = "table_labels.csv")
+
+# Read and create tex files for tables listed in "table" folder in the doc
+es_table_tex(dir = file.path(getwd(), 'tables'), 
+            save_loc = file.path(getwd(), "tex_tables"), 
+            csv_name = "all_tables.csv")
 
 # If there is an error in the build - this file will need to be removed before next render
 if(file.exists("_main.Rmd")){
