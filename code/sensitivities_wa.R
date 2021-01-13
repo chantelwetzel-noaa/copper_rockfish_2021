@@ -49,9 +49,9 @@ modelnames <- c("Base Model",
                 "Platoons",
                 "High Linf",
                 "Estimate Rec. Devs.",
-                "Francis Data Weighting",
-                "MI Data Weighting",
-                "Dirichlet Data Weighting") 
+                "Francis DW",
+                "MI DW",
+                "DM DW") 
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))
@@ -71,13 +71,13 @@ SSplotComparisons(x, endyrvec = 2021,
 
 ii = 1:length(modelnames)
 n = length(modelnames)
-out<- matrix(NA, 24, max(ii))
+out<- matrix(NA, 22, max(ii))
 
 out = rbind(
             as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
-            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
-            as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
             as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
@@ -103,9 +103,9 @@ out = rbind(
 out = as.data.frame(out)
 colnames(out) = modelnames
 rownames(out) = c("Total Likelihood",
-                  "Survey Likelihood",
+                  #"Survey Likelihood",
                   "Length Likelihood",
-                  "Age Likelihood",
+                  #"Age Likelihood",
                   "Recruitment Likelihood",
                   "Forecast Recruitment Likelihood",
                   "Parameter Priors Likelihood",
