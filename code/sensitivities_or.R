@@ -25,13 +25,14 @@ base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
 
 model.list <- c(paste0(base_model, "_low_m"),  #1     
                 paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_platoons"), #3
-                paste0(base_model, "_linf_hi"), #4
-                paste0(base_model, "_no_recdevs"), #5
-                paste0(base_model, "_no_dome"), #6
+                paste0(base_model, "_linf_hi"), #3
+                paste0(base_model, "_no_recdevs"), #4
+                paste0(base_model, "_no_dome"), #5
+                paste0(base_model, "_no_dome_block"), #6
                 paste0(base_model, "_mi"), #7
                 paste0(base_model, "_dirichlet"))#,  #8
                 #paste0(base_model, "_sss")) #9
+#paste0(base_model, "_platoons"), #3
 
 out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -47,14 +48,14 @@ sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose =
 modelnames <- c("Base Model",
                 "Low M", 
                 "High M", 
-                #"Platoons",
-                "High Linf",
+                "High Linf", #3
                 #"No Rec. Devs.",
-                "No Domed Selex",
+                "No Domed Selectivity", #5
+                "No Domed & No Block Selectivity", #6
                 "MI Data Weighting")
                 #"Dirichlet Data Weighting") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_4, #sens_5, 
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_5, 
                  sens_6, sens_7))#, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
@@ -70,28 +71,28 @@ SSplotComparisons(x, endyrvec = 2021,
 # Create a Table of Results
 ###################################################################################
 
-ii = 1:length(modelnames)
-n = length(modelnames)
-out<- matrix(NA, 24, max(ii))
-
 modelnames <- c("Base Model",
-                "Low M", 
-                "High M", 
-                "Platoons",
-                "High Linf",
-                "No Rec. Devs.",
-                "No Domed Selex",
-                "MI Data Weighting",
-                "Dirichlet Data Weighting") 
+                "Low M", #1
+                "High M", #2
+                "High Linf", #3
+                "No Rec. Devs.", #4
+                "No Domed Sel.", #5
+                "No Domed, No Block Sel.", #6
+                "MI D.W.",
+                "Dirichlet D.W.") 
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))
 
+ii = 1:length(modelnames)
+n = length(modelnames)
+out<- matrix(NA, 22, max(ii))
+
 out = rbind(
             as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
-            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
-            as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
             as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
@@ -117,9 +118,9 @@ out = rbind(
 out = as.data.frame(out)
 colnames(out) = modelnames
 rownames(out) = c("Total Likelihood",
-                  "Survey Likelihood",
+                  #"Survey Likelihood",
                   "Length Likelihood",
-                  "Age Likelihood",
+                  #"Age Likelihood",
                   "Recruitment Likelihood",
                   "Forecast Recruitment Likelihood",
                   "Parameter Priors Likelihood",

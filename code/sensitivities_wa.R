@@ -4,8 +4,9 @@
 ########################################################
 
 library(r4ss)
+library(sa4ss)
 #devtools::install_github("r4ss/r4ss", ref = "development")
-#devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
 
 ###################################################################
@@ -24,7 +25,8 @@ base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
 
 model.list <- c(paste0(base_model, "_low_m"),  #1     
                 paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_platoons"), #3
+                paste0(base_model, "_dome"), #3
+                #paste0(base_model, "_platoons"), #3
                 paste0(base_model, "_linf_hi"), #4
                 paste0(base_model, "_recdevs"), #5
 				        paste0(base_model, "_francis"), #6
@@ -46,14 +48,14 @@ sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose =
 modelnames <- c("Base Model",
                 "Low M", 
                 "High M", 
-                "Platoons",
+                #"Domed Selectivity",
                 "High Linf",
                 "Estimate Rec. Devs.",
-                "Francis DW",
-                "MI DW",
-                "DM DW") 
+                "Francis Data Weight",
+                "MI Data Weight",
+                "DM Data Weight") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
+x <- SSsummarize(list(base, sens_1, sens_2, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
@@ -68,6 +70,18 @@ SSplotComparisons(x, endyrvec = 2021,
 ###################################################################################
 # Create a Table of Results
 ###################################################################################
+modelnames <- c("Base Model",
+                "Low M", 
+                "High M", 
+                "Domed Selectivity",
+                "High Linf",
+                "Estimate Rec. Devs.",
+                "Francis Data Weight",
+                "MI Data Weight",
+                "DM Data Weight") 
+
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
+                 sens_6, sens_7, sens_8))
 
 ii = 1:length(modelnames)
 n = length(modelnames)

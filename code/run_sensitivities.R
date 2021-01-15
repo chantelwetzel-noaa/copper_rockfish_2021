@@ -9,8 +9,8 @@
 library(r4ss)
 wd = "C:/Assessments/2021/copper_rockfish_2021/models"
 
-area = "ca_n_pt_c" #"or"
-base.model = "9.0_base" #"6.0_base"
+area = "or"
+base.model = "6.0_base"
 sens.folder = "_sensitivities"
 indir = file.path(wd, area, sens.folder)
 nm = area
