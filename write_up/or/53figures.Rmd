@@ -79,7 +79,8 @@ read_child(filein)
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"), 
+#filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"), 
+filein = file.path(getwd(), "figs", "selectivity.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
@@ -187,6 +188,23 @@ label = 'bh-curve')
 <!-- ******************       Sensitivity     ***************************** --> 
 <!-- ====================================================================== -->
 
+
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
+nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl')
+```
 
 
 <!-- ====================================================================== -->

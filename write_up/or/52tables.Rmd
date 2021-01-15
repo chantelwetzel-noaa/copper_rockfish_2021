@@ -52,7 +52,24 @@
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
 
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/or/tex_tables/sensitivities.tex}
 
+\newpage
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
+
+col_names = c('Method',
+			  'Commercial Lengths',
+              'Recreational Lengths')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods.",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+\newpage
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
