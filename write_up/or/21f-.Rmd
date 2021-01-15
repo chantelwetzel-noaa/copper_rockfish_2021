@@ -1,1 +1,17 @@
 ## Fishery-Dependent Data
+
+### Commercial Fishery
+
+Table \ref{tab:com-len-samps}
+
+Figure \ref{com-len-data}
+
+Figure \ref{mean-com-len-data}
+
+### Recreational Fishery
+
+Table \ref{tab:len-samps}
+
+Figure \ref{rec-len-data}
+
+Figure \ref{mean-rec-len-data}

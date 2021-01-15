@@ -7,7 +7,10 @@ read_child(filein)
 ```
 
 ## Historical and Current Fishery Information
-Replace text.
+
+Off the coast of Oregon `r spp` is primarily caught in by both commercial and recreational fisheries. The landings from the commercial fishery were minimal until the mid-1980s. Currently, `r spp` is landed as part of both the live and dead commercial fishery off the coast of Oregon. The recreational fishery off the coast of Oregon begun in 1979 and removals from the recreational fleet has increased across time. 
+
+The stock off the Oregon coast was assessed as a separate stock from other populations off the West Coast based on fairly sedentary nature of `r spp` which likely limits flow of fish between California and Washington. The substrate of the southern Washington coast is typically sandy bottom, which creates a natural seperation between the Oregon and Washington populations. Additionally, the exploitation history and magnitude of removals off the Oregon coast has been dramatically lower than removals off the California coast.    
 
 
 ## Summary of Management History and Performance
