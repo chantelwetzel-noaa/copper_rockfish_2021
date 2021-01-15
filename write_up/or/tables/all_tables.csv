@@ -2,3 +2,4 @@ caption,altcaption,label,filename,loc
 Summary of the recreational length samples used in the stock assessment.,NA,len-samps,or_samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/recreational_comps/forSS
 Summary of the recreational age samples. These ages were not directly used in the stock assessment.,NA,age-samps,or_age_samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/recreational_comps/forSS
 Summary of the number of samples by year and source used to estimate length-at-age parameters.,NA,len-at-age-samps,len_at_age_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology
+Summary of the commercial length samples by number of trips and lengths by sex per year. ,NA,com-len-samps,OR_Com_Samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/commercial_comps/forSS
