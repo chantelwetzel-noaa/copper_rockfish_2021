@@ -121,7 +121,7 @@ To Do
 
 \pagebreak
 
-# Model Meeting 1.4.2020
+# Model Meeting 1.5.2020
 
 ## Copper rockfish
 
@@ -230,4 +230,47 @@ A few things to discuss
 See "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plot" for comparison plots
 
 
+# Model Meeting 1.21.2020
 
+## Quillback rockfish
+
+### Washington
+
+- "Base" model (6_0_base)
+- Base does not have recdevs for a number of reasons. 
+- Model suggests population is low. A bit surprising given relatively low fishing pressure. High age, and possibly
+limited habitat could cause such a condition so its possible. 
+- Recdevs high early, low recent: driven lack of small fish and increasing mean size in later years and . Selectivity is right shifted too.
+- Very similar to copper patters in sel, recdevs, comps
+- Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
+- Getting warnings "warning: poor convergence in Fmsy, final dy/dy2= -0.0014869" How big of issue?
+- Jitter shows 3/100 runs are way off, 2/100 slightly off 
+- Choice of data weighting makes a difference. Interesting to think of when have such limited data to weight.
+![Base model comparisons.\label{fig:Comparebases-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/8_baseComparisons_SSplotComparisons_19-Jan-2021_10.16_Page_04.png){width=50% height=50%}
+
+
+Profiles:
+![R0 profiles.\label{fig:R0profile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
+![R0 panel.\label{fig:R0panel-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+![Steepness profiles.\label{fig:R0profile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=50% height=50%}
+![L at age max profiles.\label{fig:Linfprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+![M profiles.\label{fig:Mprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
+
+
+### Oregon
+
+- "Base" model (3_0_base)
+- Include recdevs, include block starting at 1999
+- Very strong recruitment pulses driven by comps. 2012 pulse driven by most recent years, in both rec and comm. Other pulses evident in compositions across years. Recent pulse "saves" population (i.e. removing 2017-2020 comps cause population to decline)
+- Given strong recruitment, population turns around dramatically. Is this reasonable for a population living to 90?
+- Pretty consistent trends across explorations with expection of domed-selectivity. Also, no support for dome in early selex block.
+- Included ages as ghost fleet, and fitting. Model with ages compares reasonably. Suggests some support of length data by ages. 
+- Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
+ - Like washington, getting "warning: poor convergence in Fmsy, final dy/dy2= -0.00150056". Is this a concern?
+![Model exploration comparisons.\label{fig:Compareexplore-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/plots/3_explore_SSplotComparisons_19-Jan-2021_11.18_Page_04.png){width=50% height=50%}
+Profiles:
+
+
+
+### California
