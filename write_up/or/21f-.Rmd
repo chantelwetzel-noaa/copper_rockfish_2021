@@ -2,16 +2,39 @@
 
 ### Commercial Fishery
 
+State description of recreational removal data --- To be provided by Ali.
+
+Figure \ref{fig:catch}
+
+The input catches in the model represent total removals: landings plus discards.  Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated to state and area based on the total observed landings observed by WCGOP. The historical commercial discard mortality used to adjust the landings data to account for total removals was calculated based on the average coastwide discard rates from WCGOP of 4.4 percent. 
+
 Table \ref{tab:com-len-samps}
 
-Figure \ref{com-len-data}
+Figure \ref{fig:com-len-data}
 
-Figure \ref{mean-com-len-data}
+Figure \ref{fig:mean-com-len-data}
+
+The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication, IPHC):
+
+\begin{centering}
+
+Input effN = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
+
+Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
+
+\end{centering}
+
 
 ### Recreational Fishery
 
+State description of recreational removal data --- To be provided by Ali.
+
+The removals in RecFIN used from 2001-2020 represent total removals consisting of both landings and estimated discard mortality. The removals for 1999 and prior were obtained from the Oregon Department of Fish and Wildlife Sport Reconstruction. No recreational discarding was assumed for these years because the bag limits during this period were not thought to be low enough (15 fish bag limit) to induce the likelihood of appreciable discarding of `r spp`.
+
 Table \ref{tab:len-samps}
 
-Figure \ref{rec-len-data}
+Figure \ref{fig:rec-len-data}
 
-Figure \ref{mean-rec-len-data}
+Figure \ref{fig:mean-rec-len-data}
+
+The input sample sizes were calculated equal to the number of length samples available by year. 

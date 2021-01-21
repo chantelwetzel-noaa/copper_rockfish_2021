@@ -1,18 +1,6 @@
 \clearpage
 # Figures
 
-<!-- ====================================================================== -->  
-<!-- ****************** Catches Used in the Model ************************* --> 
-<!-- ====================================================================== -->  
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
-caption = "Catches by fleet used in the base model",
-label = 'catch')
-```	
-
-
 
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
@@ -24,6 +12,18 @@ filein = file.path(mod_loc, "plots", "data_plot.png"),
 caption = "Summary of data sources used in the base model",
 label = 'data-plot')
 ```	
+
+<!-- ====================================================================== -->  
+<!-- ****************** Catches Used in the Model ************************* --> 
+<!-- ====================================================================== -->  
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
+caption = "Catches by fleet used in the base model",
+label = 'catch')
+```	
+
 
 <!-- ====================================================================== -->
 <!-- ****************   Commercial Length Samples    ********************** --> 
@@ -79,43 +79,17 @@ read_child(filein)
 
 ```{r, results = 'asis'}
 add_figure(
-#filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"), 
 filein = file.path(getwd(), "figs", "selectivity.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
-
-<!-- ====================================================================== -->
-<!-- *********************   Recruitment     ****************************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated time series of age-0 recruits (1000s)",
-label = 'recruits')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated time series of recruitment deviations",
-label = 'rec-devs')
-```
-
 
 
 <!-- ====================================================================== -->
 <!-- ****************** Fit to the Length Data **************************** --> 
 <!-- ====================================================================== -->
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
-caption = "Length at age in the beginning of the year in the ending year of the model",
-label = 'len-age-ss')
-```
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
@@ -178,9 +152,52 @@ label = 'depl')
 
 ```{r, results = 'asis'}
 add_figure(
+filein = file.path(getwd(), "figs", "unavailable_biomass.png"),
+caption = "Proportion of biomass unavailable due to selectivity for small and large fish.",
+label = 'unavail-bio')
+```
+
+```{r, results = 'asis'}
+add_figure(
 filein = file.path(mod_loc, "plots", "SR_curve.png"), 
 caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
 label = 'bh-curve')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
+caption = "Estimated time series of age-0 recruits (1000s)",
+label = 'recruits')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
+caption = "Estimated time series of recruitment deviations",
+label = 'rec-devs')
+```
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
 ```
 
 
@@ -206,16 +223,6 @@ caption = "Change in estimated fraction unfished by sensitivity",
 label = 'sens-depl')
 ```
 
-
-<!-- ====================================================================== -->
-<!-- ******************     Retrospectives    ***************************** --> 
-<!-- ====================================================================== -->
-
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'figures_retro.Rmd')
-read_child(filein)
-```
-
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
@@ -225,25 +232,13 @@ filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
 
-
 <!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
+<!-- ******************     Retrospectives    ***************************** --> 
 <!-- ====================================================================== -->
 
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
-caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_retro.Rmd')
+read_child(filein)
 ```
 
 

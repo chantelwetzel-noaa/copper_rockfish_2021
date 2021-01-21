@@ -12,13 +12,3 @@ The decision table uncertainty axes and catch levels to be determined later.
 filein = file.path(general_wd,'management_uncertainty.Rmd')
 read_child(filein)
 ```
-
-## Research and Data Needs
-
-The abiltiy to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
-
-\begin{itemize}
-
-	\item Create list of items
-
-\end{itemize}
