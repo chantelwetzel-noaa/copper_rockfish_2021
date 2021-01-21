@@ -102,9 +102,23 @@ model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("jitter", "profile", "retro"),
 							  profile_details = get ))
 
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+							low =  c(-0.70),
+							high = c(1.2),
+							step_size = c(0.20),
+							param_space = c('relative'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("profile"),
+							  profile_details = get ))
+
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+rerun_profile_vals(mydir = file.path(mydir, base_name),
+					para_name = "L_at_Amax_Fem_GP_1",
+					run_num = 6:8,
+					data_file_nm = "2021_or_copper.dat")
 
 
 #######################################################################################################
