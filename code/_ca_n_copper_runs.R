@@ -260,4 +260,13 @@ base = SS_output(file.path(wd, model))
 SS_plots(base)
 # NLL = 206.3, R0 = 6.2, depl 2021 = 0.40
 
+model = "9.1_base_pop_bins"
+pop_bins = SS_output(file.path(wd, model))
 
+modelnames <- c("Base", "Pop Bins")
+mysummary  <- SSsummarize(list(base, pop_bins))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "9.0_population_bins",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

@@ -229,6 +229,28 @@ SSplotComparisons(mysummary,
 # Platoons
 # Use age data
 
+# Proposed Base Model: 6.0
+model = "6.0_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "6.1_base_max_bin"
+bin = SS_output(file.path(wd, model))
+SS_plots(bin)
+
+# The minor difference may be due to slightly differ commercial 
+# data processing so take model 6.1 and revert to 54 max lbind
+model = "6.2_base_bin_54"
+bin54 = SS_output(file.path(wd, model))
+# Yes - the difference is due to minor updates in the PacFIN.Utilites package
+modelnames <- c("Base", "Max Data Bin", "Bin = 54")
+mysummary  <- SSsummarize(list(base, bin, bin54))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.0_max_data_bin",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
 
 
 
