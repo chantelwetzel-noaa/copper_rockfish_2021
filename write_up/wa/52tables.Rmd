@@ -144,11 +144,26 @@ table_format(x = mod_params,
 
 \include{tex_tables/likelihoods.tex}
 
+
+
 <!-- ======================================================= -->
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/TimeSeries.tex}
+
+\newpage
+
+
+<!-- ======================================================= -->
+<!-- ********  Reference Points & Management *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
 
 \newpage
 
@@ -171,17 +186,5 @@ table_format(x = tab,
              align = 'l',
              col_names = col_names)
 ```
-
-\newpage
-
-<!-- ======================================================= -->
-<!-- ********  Reference Points & Management *************** --> 
-<!-- ======================================================= -->
-
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
-
-\newpage
-
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
 
 \newpage

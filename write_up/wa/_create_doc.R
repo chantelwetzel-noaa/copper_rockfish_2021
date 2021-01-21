@@ -27,6 +27,7 @@ sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/wa/
 load("00mod.Rdata")
 
 # Executive Summary Tables
+source("C:/Users/Chantel.Wetzel/Documents/GitHub/sa4ss/R/es_table_tex.R")
 SSexecutivesummary(replist = model, format = FALSE)
 es_table_tex(dir = mod_loc, 
             save_loc = file.path(getwd(), "tex_tables"), 

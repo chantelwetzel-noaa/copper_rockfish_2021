@@ -2,7 +2,7 @@
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated ACL for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:projectionES}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (26 percent) for Washington state provided by the PFMC Groundfish Management Team (GMT). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:projectionES}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (26 percent) for Washington state provided by the PFMC Groundfish Management Team (GMT). 
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -15,7 +15,7 @@ read_child(filein)
 
 ## Research and Data Needs
 
-The abiltiy to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
+The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
 
 \begin{itemize}
 
