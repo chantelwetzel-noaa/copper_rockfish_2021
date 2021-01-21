@@ -8,5 +8,7 @@ Males $L_{\infty}$ = `r round(model$MGparmAdj$L_at_Amax_Mal_GP_1[1], 1)` cm; $k$
 
 \end{centering}
 
-These values were fixed within the base model for male and female `r spp`. In contrast, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for `r spp` (although not directly used by XDB-SRA), were from Lea [-@lea_biological_1999]. The $L_{\infty}$ from the Lea study were quite a bit larger for both sexes than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. However, the data presented in Lea [-@lea_biological_1999] reflected fish sampled off the coast of California and showed very few fish sampled that were greater than 12 years of age.   
+These values were fixed within the base model for male and female `r spp`. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10. The length-at-age curve with the CV around length-at-age by sex is shown in Figure \ref{fig:len-age-ss}.
+
+In contrast, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for `r spp` (although not directly used by XDB-SRA), were from Lea [-@lea_biological_1999]. The $L_{\infty}$ from the Lea study were quite a bit larger for both sexes than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. However, the data presented in Lea [-@lea_biological_1999] reflected fish sampled off the coast of California and showed very few fish sampled that were greater than 12 years of age.   
 

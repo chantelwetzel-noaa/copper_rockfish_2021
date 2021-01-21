@@ -29,6 +29,12 @@ caption = "Length-at-age data from the with sex specific estimated growth",
 label = 'len-age')
 ```	
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
+caption = "Length at age in the beginning of the year in the ending year of the model",
+label = 'len-age-ss')
+```
 
 ```{r, results = 'asis'}
 add_figure(
