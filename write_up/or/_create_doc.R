@@ -19,8 +19,8 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 
 # Create a model Rdata object
 sa4ss::read_model(
-          		  mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/5.0_dw_francis",
-				  create_plots = FALSE, 
+          		  mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/6.0_base",
+				  create_plots = TRUE, 
 				  save_loc = file.path(getwd(), "tex_tables"),
 				  verbose = TRUE)
 
@@ -28,7 +28,11 @@ load("00mod.Rdata")
 
 source("C:/Users/Chantel.Wetzel/Documents/GitHub/sa4ss/R/es_table_tex.R")
 SSexecutivesummary(replist = model, format = FALSE)
-es_table_tex(dir = mod_loc, table_folder = 'tables')
+es_table_tex(dir = mod_loc, 
+            save_loc = file.path(getwd(), "tex_tables"), 
+            csv_name = "table_labels.csv")
+
+# Read and create tex files for tables listed in "table" folder in the doc
 es_table_tex(dir = file.path(getwd(), 'tables'), 
             save_loc = file.path(getwd(), "tex_tables"), 
             csv_name = "all_tables.csv")
@@ -38,6 +42,12 @@ if(file.exists("_main.Rmd")){
 }
 # Render the pdf
 bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
+
+
+# To do list:
+# Redo the Linf profile
+
+
 
 #bookdown::render_book("00a.Rmd", clean = FALSE)
 

@@ -27,6 +27,6 @@ pngfun(wd = savedir, file = "selectivity.png", w = 7, h = 7, pt = 12)
 	grid()
 dev.off()
 
-pngfun(wd = savedir, 'unavailable_biomass.png')
+pngfun(wd = savedir, 'unavailable_biomass.png', w = 10, h = 7)
 	SSunavailableSpawningOutput(model, plot=TRUE)
 dev.off()
