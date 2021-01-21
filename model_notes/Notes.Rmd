@@ -240,14 +240,13 @@ See "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_R
 - Base does not have recdevs for a number of reasons. 
 - Model suggests population is low. A bit surprising given relatively low fishing pressure. High age, and possibly
 limited habitat could cause such a condition so its possible. 
-- Recdevs high early, low recent: driven lack of small fish and increasing mean size in later years and . Selectivity is right shifted too.
+- Recdevs high early, low recent: driven by lack of small fish and increasing mean size in later years. Selectivity is right shifted too.
 - Very similar to copper patters in sel, recdevs, comps
 - Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
 - Getting warnings "warning: poor convergence in Fmsy, final dy/dy2= -0.0014869" How big of issue?
 - Jitter shows 3/100 runs are way off, 2/100 slightly off 
 - Choice of data weighting makes a difference. Interesting to think of when have such limited data to weight.
 ![Base model comparisons.\label{fig:Comparebases-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/8_baseComparisons_SSplotComparisons_19-Jan-2021_10.16_Page_04.png){width=50% height=50%}
-
 
 Profiles:
 ![R0 profiles.\label{fig:R0profile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
@@ -261,16 +260,42 @@ Profiles:
 ### Oregon
 
 - "Base" model (3_0_base)
-- Include recdevs, include block starting at 1999
-- Very strong recruitment pulses driven by comps. 2012 pulse driven by most recent years, in both rec and comm. Other pulses evident in compositions across years. Recent pulse "saves" population (i.e. removing 2017-2020 comps cause population to decline)
-- Given strong recruitment, population turns around dramatically. Is this reasonable for a population living to 90?
-- Pretty consistent trends across explorations with expection of domed-selectivity. Also, no support for dome in early selex block.
-- Included ages as ghost fleet, and fitting. Model with ages compares reasonably. Suggests some support of length data by ages. 
-- Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
- - Like washington, getting "warning: poor convergence in Fmsy, final dy/dy2= -0.00150056". Is this a concern?
+- Includes recdevs, includes block starting at 1999
+- Very strong recruitment pulses driven by comps. 2012 pulse driven by most recent years, in both rec and comm. Other pulses evident in compositions across years. 2012 pulse "saves" population (i.e. removing 2017-2020 comps cause population to decline) seen below and in retro plot 
 ![Model exploration comparisons.\label{fig:Compareexplore-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/plots/3_explore_SSplotComparisons_19-Jan-2021_11.18_Page_04.png){width=50% height=50%}
-Profiles:
+![Retro patter.\label{fig:Retro-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_retro/compare3_Bratio.png){width=50% height=50%}
 
+- Given strong recruitment in 1990s, population turns around dramatically. Is this reasonable for a population living to 90?
+- Pretty consistent trends across explorations with exception of domed-selectivity. No support for dome in early selex block.
+![Model exploration comparisons.\label{fig:Compareexplore-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/plots/2_selex_SSplotComparisons_14-Jan-2021_16.03_Page_04.png){width=50% height=50%}
+
+- Included ages as ghost fleet, and in fitting. Model with ages fit compares reasonably. Suggests some support of length data results with ages. Base model doesn't include fits to ages. 
+- Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
+Sigma R = 0.6 Comm NLL 369.766  Rec NLL 760.781  Total NLL 1174.04 
+Sigma R = 0.9 Comm NLL 366.859  Rec NLL 746.623  Total NLL 1146.49
+- Like washington, getting "warning: poor convergence in Fmsy, final dy/dy2= -0.00150056". Is this a concern?
+- Jitter show 13/100 runs with poorer likelihoods (5 much poorer)
+
+Profiles:
+![R0 profiles.\label{fig:R0profile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
+![R0 panel.\label{fig:R0panel-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+
+![Steepness profiles.\label{fig:R0profile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=50% height=50%}
+![L at age max profiles.\label{fig:Linfprofile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+![M profiles.\label{fig:Mprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
 
 
 ### California
+
+- "Base" model (4_0_base)
+- Include recdevs but decision similar to WA model. Period of high recdevs followed by period of low. 
+- Recent peak in recdevs sustains population.
+![Retro pattern.\label{fig:Retro-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_retro/compare3_Bratio.png){width=50% height=50%}
+- Model iterpreting catches to be supported by higher 90s recdevs, and rightward shifting comps later to reflect period of low recdevs (and period of lower catches). 
+- Commercial comps have information in recdevs (due to when excluding them, comm selex shifts far left)
+- Similar patterns in comps as for WA with residual pattern.
+- Blocking selex doesn't really change much plus no currently known reason for it. Some oddities with high mean length in
+1993-1995, otherwise patterns are reasonable.
+- Much more left shifted selectivity curve for recreational fishery than in other states
+
+Profiles:
