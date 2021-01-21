@@ -6,7 +6,8 @@
 #
 ##################################################################################################
 
-devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/PacFIN.Utilities")
+#devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/PacFIN.Utilities")
+library(PacFIN.Utilities)
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/HandyCode")
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/dataModerate_2021")
 library(ggplot2)
@@ -47,10 +48,14 @@ table(pacfin$FISH_LENGTH_TYPE)
 table(pacfin$SOURCE_AGID, pacfin$SAMPLE_QUALITY)
 table(pacfin$SAMPLE_TYPE,pacfin$SOURCE_AGID)
 
-Pdata = cleanPacFIN(Pdata = pacfin, 
+keep = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT","PS")
+tmp = pacfin[pacfin$INPFC_AREA %in% keep, ]
+
+Pdata = cleanPacFIN(Pdata = tmp, 
 					keep_length_type = c("", "A", "F", "U", "T", NA),
 					keep_missing_lengths = FALSE,
-					keep_INPFC = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT","PS"))
+					keep_INPFC = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT","PS"),
+					verbose = TRUE)
 
 #  Removal Report
 #  
