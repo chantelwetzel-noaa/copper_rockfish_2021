@@ -24,8 +24,8 @@ knitr::opts_chunk$set(
 - Examining model "7.1_data_rec_len_add_trawl" which has Linf and maturity fixed at coastwide values.
 - Changing Linf and Maturity strongly impacts how pessimistic stock status is.
 - Recreational selectivity being estimated as selecting small fish, less that the 50% maturity size, and dome shaped.  The dome is exploratory and may be pinned to be asymptotic later.
-- The bump up in the time series around 2015 is due to recruitment with a series of positive devs from 2008-2014. Without rec devs the fits to the lengths really degrades and over-estimates the mean length by year. 
-- HKL index fairly noisy or/and uninformative but the length data from this fleet are showing that the larger fish are out there. 
+- The bump up in the time series around 2015 is due to recruitment with a series of positive devs from 2008-2014. Without rec devs the fits to the lengths really degrades and over-estimates the mean length by year.
+- HKL index fairly noisy or/and uninformative but the length data from this fleet are showing that the larger fish are out there.
 - This model is applying francis data weighting
 - The trawl survey is just there and data are not fit well.
 
@@ -44,10 +44,10 @@ To Do
 ### North of Pt. Conception
 - Examing model "5.1_data_rec_len_trawl_survey"
 - Blocked commercial selectivity shifting to smaller fish in recent years (2009+). The change in mean length was not able to be explained fully due to strong recruitment.
-- Really clear evidence of a strong ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone. 
+- Really clear evidence of a strong ~2008 recruitment and without devs poor mean length fits and residual patterns. However, the size of the rec dev in ~2008 is resulting in a strong uptick of the stock (above target) and without in the precautionary zone.
 - DM data weighting
 
-To Do 
+To Do
 - Shorten the rec devs time series.
 
 ![R0 profile for CA North copper rockfish.\label{fig:r0-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/5.1_data_rec_len_trawl_survey_profile_SR_LN(R0)/R0_profile_ca_n_pt_c.png){width=50% height=50%}
@@ -59,7 +59,7 @@ To Do
 ### Oregon
 - Examining model "2.4_recdevs_early_est_p1_only_block"
 - Recreational selectivity blocked periods: start - 1999 and 2000 - end.
-- Released fish - I had not initially included these lengths (I think I looked at the CA released lengths which were really small) but adding these few lengths in as a ghost fleet show that they are not really different from the retained fish (when there are more than a few samples in a year). We should talk with Ali more about why an angler would release a fish on a trip. 
+- Released fish - I had not initially included these lengths (I think I looked at the CA released lengths which were really small) but adding these few lengths in as a ghost fleet show that they are not really different from the retained fish (when there are more than a few samples in a year). We should talk with Ali more about why an angler would release a fish on a trip.
 - There does not seem to be enough information to estimate rec devs however without devs the stock is estimated unfished with a large R0 and with devs on estimated in the precautionary zone with a much more reasonable R0.
 
 To Do
@@ -86,21 +86,21 @@ To Do
 
 \pagebreak
 
-## Quillback rockfish
+<!-- ## Quillback rockfish -->
 
-### California
-- Period of high recruitment in the 1990s followed by a dip in recent years.  These patterns appear to be really driven by the catch.  
-- Possible sensitivity - apply a smoother through the catch time series and evaluate what the model does to recruitment. In theory, the removals should be similar applying a smoother but would allow you to possibly decouple recruitment and catches.
+<!-- ### California -->
+<!-- - Period of high recruitment in the 1990s followed by a dip in recent years.  These patterns appear to be really driven by the catch.   -->
+<!-- - Possible sensitivity - apply a smoother through the catch time series and evaluate what the model does to recruitment. In theory, the removals should be similar applying a smoother but would allow you to possibly decouple recruitment and catches. -->
 
 
-### Oregon
-- Seeing really large recruitment around 1997 and again possibly around 2013 which are supported by the length data.
+<!-- ### Oregon -->
+<!-- - Seeing really large recruitment around 1997 and again possibly around 2013 which are supported by the length data. -->
 
-### Washington
+<!-- ### Washington -->
 
-- Recruitment devs appear to be tracking catches with catches spiking in select years. 
-- Francis and MI data weighting has been explored so far, but not DM yet.
-- The recruitment deviations are likely also being driven by an increase in mean lengths in recent years which the model is explaining by having a string of negative recruitments. 
+<!-- - Recruitment devs appear to be tracking catches with catches spiking in select years.  -->
+<!-- - Francis and MI data weighting has been explored so far, but not DM yet. -->
+<!-- - The recruitment deviations are likely also being driven by an increase in mean lengths in recent years which the model is explaining by having a string of negative recruitments.  -->
 
 
 ## Squarespot rockfish
@@ -113,7 +113,7 @@ To Do
 - Only recent devs: R0 = 5.5, SB0 = 13.1, Depl 2021 = 4.8, Catch spr = 6.9 mt
 
 To Do
-- Double or triple the lambda on the composition data. 
+- Double or triple the lambda on the composition data.
 - Try the DM
 - Change the min max rec devs allowed in the ctl
 - Reduce sigma R back to 0.60.
@@ -127,27 +127,27 @@ To Do
 
 ### South of Pt. Conception
 
-- The recreational data and the NWFSC Hook and Line data seem to represent seperate sections of the population. The area of the survey is a location that likely gets little recreational fishing due to travel time from shore.  The recreational data indicates a very depleted stock, while the survey data indicates a "healthy" stock. 
+- The recreational data and the NWFSC Hook and Line data seem to represent seperate sections of the population. The area of the survey is a location that likely gets little recreational fishing due to travel time from shore.  The recreational data indicates a very depleted stock, while the survey data indicates a "healthy" stock.
     - Put more weight on survey data and less on recreational data (MI) with dome shaped selectivity ~ 25%.
     - Put more weight on survey data and less on recreational data (MI) with asymptotic selectivity ~8%.
     - Put more weight on recreational data and less on survey data (francis) with dome shaped selectivity ~8%.
     - Put more weigth on recreational data and less on survey data (francis) with asymptotic shaped selectivity ~3%.
-- Early commercial lengths mean lengths are a fair amount greater than expected.  These years have limited sample sizes (1983 - 1994, 9 years total). 
+- Early commercial lengths mean lengths are a fair amount greater than expected.  These years have limited sample sizes (1983 - 1994, 9 years total).
 
 - To Do:
 	- If we think HKL is not representative of the population then we should not be using it to be representative.
-	- If we assume that the HKL is representative of the population, how do we get the recreational flee and the survey to agree.  Profile across the p6 parameter determine where they depart. Create two seperate models 1) hook & line only and 2) recreational only. How severe does the dome shape need to be for the recreational model match the hkl model? Running the rec model only will the easier one. Questions to ask 1) what does the rec devs look like without hkl data?    
+	- If we assume that the HKL is representative of the population, how do we get the recreational flee and the survey to agree.  Profile across the p6 parameter determine where they depart. Create two seperate models 1) hook & line only and 2) recreational only. How severe does the dome shape need to be for the recreational model match the hkl model? Running the rec model only will the easier one. Questions to ask 1) what does the rec devs look like without hkl data?
 
 
 ### North of Pt. Conception
 
 - "Base" model (9.0_base)
-- Block in recreational selectivity with a right shifted peak through 2008. Both periods are asymptotic. 
-- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early recreational length (1983-1986, 4 years total). The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity. 
+- Block in recreational selectivity with a right shifted peak through 2008. Both periods are asymptotic.
+- Recruitment deviations estimated.  Considerable adjustment in the main vs. early start years was needed due to a series of negative rec devs at the start of the initial main years which resulted in even higher positive rec devs later on.  The key was removing the early recreational length (1983-1986, 4 years total). The fish observed during this period were greater than all other years which led to the model estimated recruitment failures preceeding the start of the data.  An alternative if these data are to be believed would be to implement a block in selectivity.
 
-- To Do 
-	- Block in early recreational selectivity based on the currently removed data. 
-	- Do additional explorations to understand the influence of the commercial data. Could do the lamdbad to reduce the influence of these data. Also, look at fixing late block to match early block and/or look at the selectivity for the unblocked model. 
+- To Do
+	- Block in early recreational selectivity based on the currently removed data.
+	- Do additional explorations to understand the influence of the commercial data. Could do the lamdbad to reduce the influence of these data. Also, look at fixing late block to match early block and/or look at the selectivity for the unblocked model.
 
 ![Parameter profile for Linf for copper rockfish California North.\label{fig:para-nca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c/9.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
 
@@ -161,7 +161,7 @@ To Do
 - "Base" model (5.5_dw_francis_sigmar_60)
 - Block on recreational selectivity with asymptotic selectivity through 1999 with domed selectivity in the period after 1999.
 - Estimate recruitment deviations with the main period starting in 1980.
-- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MIdata weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods. 
+- Francis data weighting with sigma R = 0.90 vs. sigma R = 0.60 are similar but better NLL with sigma R = 0.90 by ~ 3 units. In contrast the MIdata weightin under the two sigma R assumptions results in very different model results. Dirichlet data weighting is dramatically different relative to the other two methods.
 - There seems to be some tension between commercial and rec lengths in terms of R0 which data weighting highlights.
 
 ![Parameter profile for R0 for copper rockfish Oregon.\label{fig:r0-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or/5.5_dw_francis_sigmar_60_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
@@ -172,7 +172,7 @@ To Do
 
 ### Washington
 
-- "Base" model (7.0_base) estimates asymptotic recreational selectivity with commercial selectivity mirrored. Recruitment is assumed deterministic due to limited data but a sensitivity is performed.  Estimated parameters R0, selectivity peak, and selectivity ascending slope. 
+- "Base" model (7.0_base) estimates asymptotic recreational selectivity with commercial selectivity mirrored. Recruitment is assumed deterministic due to limited data but a sensitivity is performed.  Estimated parameters R0, selectivity peak, and selectivity ascending slope.
 
 ![Parameter profile for R0 for copper rockfish Washington.\label{fig:r0-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/wa/7.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=75% height=75%}
 
@@ -186,7 +186,7 @@ To Do
 
 ## Quillback rockfish
 
-Models available at 
+Models available at
 "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa"
 Code including a description of what models mean available at [https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/tree/master/code](https://github.com/brianlangseth-NOAA/quillback_rockfish_2021/tree/master/code)
 
@@ -212,13 +212,13 @@ A few things to discuss
 
 1. Rec bias adjustment - Do you iterate with SS_fitbiasramp()? There is some osciallation with 116 models
 
-2. Rec devs - General tips on when to start? Whether to include early rec devs at all? 
+2. Rec devs - General tips on when to start? Whether to include early rec devs at all?
 
 ![Comparing influence of rec devs and sigmaR.\label{fig:rec-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/3_rec_SSplotComparisons_31-Dec-2020_15.03_Page_15.png){width=50% height=50%}
 
-3. Sigma R - WA models do run high. Estimating is unreasonable in my opinion (keeps hitting whatever bound is set. Ive gone up to 1.2). Higher sigmaR reduces rec magnitude (reduces R0). Right now Im going with 0.9 but no real basis for choice. 
+3. Sigma R - WA models do run high. Estimating is unreasonable in my opinion (keeps hitting whatever bound is set. Ive gone up to 1.2). Higher sigmaR reduces rec magnitude (reduces R0). Right now Im going with 0.9 but no real basis for choice.
 
-4. Dome shaped selectivity - Just allow estimation of p6? For me effect is not large (dome is at higher high lengths - and actually above my data bins). Washington didn't have obvious choice. 
+4. Dome shaped selectivity - Just allow estimation of p6? For me effect is not large (dome is at higher high lengths - and actually above my data bins). Washington didn't have obvious choice.
 
 5. Ages - I added ages into my WA model. Then reweighted. Results are very odd. Thoughts on keeping ages
 
@@ -245,10 +245,12 @@ limited habitat could cause such a condition so its possible.
 - Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
 - Getting warnings "warning: poor convergence in Fmsy, final dy/dy2= -0.0014869" How big of issue?
 - Jitter shows 3/100 runs are way off, 2/100 slightly off 
-- Choice of data weighting makes a difference. Interesting to think of when have such limited data to weight.
+- Choice of data weighting makes moderate difference. Interesting to think of when have such limited data to weight.
+
 ![Base model comparisons.\label{fig:Comparebases-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/plots/8_baseComparisons_SSplotComparisons_19-Jan-2021_10.16_Page_04.png){width=50% height=50%}
 
 Profiles:
+
 ![R0 profiles.\label{fig:R0profile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
 ![R0 panel.\label{fig:R0panel-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
@@ -256,6 +258,7 @@ Profiles:
 ![L at age max profiles.\label{fig:Linfprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
 ![M profiles.\label{fig:Mprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/wa/6_0_1_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
 
+\pagebreak
 
 ### Oregon
 
@@ -266,24 +269,39 @@ Profiles:
 ![Retro patter.\label{fig:Retro-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_retro/compare3_Bratio.png){width=50% height=50%}
 
 - Given strong recruitment in 1990s, population turns around dramatically. Is this reasonable for a population living to 90?
-- Pretty consistent trends across explorations with exception of domed-selectivity. No support for dome in early selex block.
+- Pretty consistent trends across explorations with exception of domed-selectivity. No support for dome in early selex block (model will estimate asymptotic). No suggestion of dome selex though. 
 ![Model exploration comparisons.\label{fig:Compareexplore-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/plots/2_selex_SSplotComparisons_14-Jan-2021_16.03_Page_04.png){width=50% height=50%}
 
 - Included ages as ghost fleet, and in fitting. Model with ages fit compares reasonably. Suggests some support of length data results with ages. Base model doesn't include fits to ages. 
 - Continued evidence for sigmaR = 0.9 but not doing. Only reason is that it "seems" large. Where to explore what is reasonable?
+
 Sigma R = 0.6 Comm NLL 369.766  Rec NLL 760.781  Total NLL 1174.04 
+
 Sigma R = 0.9 Comm NLL 366.859  Rec NLL 746.623  Total NLL 1146.49
+
 - Like washington, getting "warning: poor convergence in Fmsy, final dy/dy2= -0.00150056". Is this a concern?
 - Jitter show 13/100 runs with poorer likelihoods (5 much poorer)
+- Francis and MI have similar moderate data weighting effects. DM draws down the model the most. A little odd since weights are more dramatic for Francis and MI than DM. DM estimates lower R0 and some recdev differences.
+
+Francis Comm = 0.15, rec = 0.22
+
+MI Comm = 0.177, rec = 0.027
+
+DM (fish) theta/(1+theta) Comm = 0.638, rec = 0.522
+
+![Data weighting comparisons.\label{fig:CompareDW-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/plots/4_dataweighting_SSplotComparisons_21-Jan-2021_10.31_Page_04.png){width=50% height=50%}
+ 
+
 
 Profiles:
+
 ![R0 profiles.\label{fig:R0profile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
 ![R0 panel.\label{fig:R0panel-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
 
 ![Steepness profiles.\label{fig:R0profile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=50% height=50%}
 ![L at age max profiles.\label{fig:Linfprofile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
-![M profiles.\label{fig:Mprofile-wa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
-
+![M profiles.\label{fig:Mprofile-or}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/or/3_0_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
+\pagebreak
 
 ### California
 
@@ -292,10 +310,38 @@ Profiles:
 - Recent peak in recdevs sustains population.
 ![Retro pattern.\label{fig:Retro-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_retro/compare3_Bratio.png){width=50% height=50%}
 - Model iterpreting catches to be supported by higher 90s recdevs, and rightward shifting comps later to reflect period of low recdevs (and period of lower catches). 
-- Commercial comps have information in recdevs (due to when excluding them, comm selex shifts far left)
+- Commercial comps have information for recdevs (due to when excluding them, comm selex shifts far left). One of the reasons to include in this model but not in WA model (other reason is bias adj pattern in "better")
 - Similar patterns in comps as for WA with residual pattern.
 - Blocking selex doesn't really change much plus no currently known reason for it. Some oddities with high mean length in
 1993-1995, otherwise patterns are reasonable.
-- Much more left shifted selectivity curve for recreational fishery than in other states
+- Much more left shifted selectivity curve for recreational fishery than in other states. Evidence of domed selex?
+- Data weighting effect is moderate. Very near boundaries of targets/limits
+Francis Comm = 0.17, rec = 0.11
+
+MI Comm = 0.073, rec = 0.16
+
+DM (fish) theta/(1+theta) Comm = 0.844, rec = 0.578
+
+![Data weighting comparisons.\label{fig:CompareDW-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/plots/4_dataweighting_SSplotComparisons_21-Jan-2021_11.10_Page_04.png){width=50% height=50%}
 
 Profiles:
+![R0 profiles.\label{fig:R0profile-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=50% height=50%}
+![R0 panel.\label{fig:R0panel-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_profile_SR_LN(R0)/parameter_panel_SR_LN(R0).png){width=50% height=50%}
+![Steepness profiles.\label{fig:R0profile-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=50% height=50%}
+![L at age max profiles.\label{fig:Linfprofile-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=50% height=50%}
+![M profiles.\label{fig:Mprofile-ca}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/ca/4_0_baseR0profile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=50% height=50%}
+Notes:
+WA
+-Check projected catches compared to recdevs vs no recdevs to assess where scale is 
+-Check data weighting for model with recdevs to see scale
+-Perhaps do a SSS model for washington - would need depletion for a year. Jason says its easy to do
+-Way to resolve sigmaR is does it creep? Does it improve fits things?
+-Reinstall profiling package to resolved yaxis and better see the minimum
+-Estimate M and Linf, since those with K are confounded. Profile K too. To address the profiles saying
+Linf of 42 is best fitting
+OR
+-2015-2016 couldn't retain copper and quillback so dont have lengths
+CA
+-Run profiles on data weighting model.
+-Check what is going on with data weighting since R0 estimates for base more similar to that for DM than to MI or francis
+
