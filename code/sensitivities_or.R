@@ -157,3 +157,68 @@ t = table_format(x = out,
 
 kableExtra::save_kable(t,
 file = file.path("C:/Assessments/2021/copper_rockfish_2021/write_up", area, "tex_tables/sensitivities.tex"))
+
+
+
+###########################################################################
+# Selectivity Only Explorations
+###########################################################################
+
+###################################################################
+# Oregon 
+###################################################################
+area = "or"
+base_model = "6.0_base"
+
+wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
+          area, "_sensitivities")
+setwd(wd)
+out.dir = wd
+
+base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
+           area, base_model)
+
+model.list <- c(#paste0(base_model, "_no_blocks"),  #1     
+                paste0(base_model, "_no_dome"), #2
+                paste0(base_model, "_no_dome_block"), #3
+                paste0(base_model, "_no_blocks_dome_rm_data_1999"), #4
+                paste0(base_model, "_no_blocks_rm_data_1999"),
+                paste0(base_model, "_no_blocks_dome_rm_data_1999_no_recdevs")) #5
+
+
+out.list = NULL 
+base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
+sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_6  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
+
+modelnames <- c("Base Model",
+                #"Remove Rec. Block", 
+                "Rec. Asymptotic",
+                "Remove Rec. Block & Asymptotic", 
+                "Remove Rec. Block & Early Lengths", #3
+                "Remove Rec. Block, Dome, & Early Lengths",
+                "Remove Rec. Block, Dome, Lengths, RecDevs")
+
+x <- SSsummarize(list(base, sens_2, sens_3, sens_5, sens_4, sens_6))
+
+#SSplotComparisons(x, endyrvec = 2021, 
+#                  legendlabels = modelnames, 
+#                  plotdir = file.path(getwd(), '_plots'), 
+#                  legendloc = c(0.01,0.75), 
+#                  filenameprefix = paste0(base_model, "_selex_"),
+#                  print = FALSE, 
+#                  pdf = TRUE)
+
+SSplotComparisons(x, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  plotdir = file.path(getwd(), '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = paste0(base_model, "_selex_"),
+                  subplot = c(2,4,10,12), 
+                  print = TRUE, 
+                  pdf = FALSE)

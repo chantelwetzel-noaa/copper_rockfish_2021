@@ -23,12 +23,11 @@ base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
 
 model.list <- c(paste0(base_model, "_low_m"),  #1     
                 paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_platoons"), #3
-                paste0(base_model, "_linf_hi"), #4
-                paste0(base_model, "_no_recdevs"), #5
-                paste0(base_model, "_asymptotic_selex_no_blocks"), #6
-                paste0(base_model, "_mi"), #7
-                paste0(base_model, "_dirichlet")) #8
+                paste0(base_model, "_linf_hi"), #3
+                paste0(base_model, "_no_recdevs"), #4
+                paste0(base_model, "_asymptotic_selex_no_blocks"), #5
+                paste0(base_model, "_mi"), #6
+                paste0(base_model, "_dirichlet")) #7
                 #paste0(base_model, "_sss")) #9
 
 out.list = NULL   
@@ -40,20 +39,19 @@ sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose =
 sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
                 "Low M", 
                 "High M", 
-                "Platoons",
                 "High Linf",
                 "No Rec. Devs.",
                 "No Selectivity Block",
-                "MI Data Weighting",
-                "Dirichlet Data Weighting") 
+                "MI D.W.",
+                "Dirichlet D.W.") 
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7, sens_8))
+                 sens_6, sens_7))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
