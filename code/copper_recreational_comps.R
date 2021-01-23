@@ -64,7 +64,7 @@ or_mrfss_data = rename_mrfss(data = or_mrfss,
 					      	 mode_names = c("rec_shore", "rec_boat"),
 					      	 mode_column_name = "MRFSS_MODE_FX" )
 
-or_recfin_len = read.csv(file.path(dir, "data", "recreational_comps", "Oregon", "copper_recfin_bio_lw_2001_2020.csv"), skip = 22)
+or_recfin_len = read.csv(file.path(dir, "data", "recreational_comps", "oregon", "copper_recfin_bio_lw_2001_2020.csv"), skip = 22)
 # Ali recommends using fork length rather than total length
 # remove the fish lengths that were sampled for age as well
 # or_recfin_len = or_recfin_len[or_recfin_len$Source.Code %in% c("BIO", "CPFV"), ]
@@ -198,6 +198,12 @@ or = out[which(out$State == "OR"), ]
 or$Length_cm = or$Length
 or$Trawl_id = 1:nrow(or)
 
+or$block = ifelse(or$Year < 2000, "1980.1999", "2000.2020")
+ggplot(or, aes(Length_cm, fill = block, color = block)) +
+	facet_wrap(facets = c("block")) +
+	geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+
 # create a table of the samples available by year
 GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = or, type = "length", species = 'others')
 n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
@@ -262,6 +268,15 @@ file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey
 nca = out[which(out$State_Areas == "north_pt_concep"), ]
 nca$Length_cm = nca$Length
 
+# create a table of the samples available by year
+nca$Length_cm = nca$Length
+nca$Trawl_id = 1:nrow(nca)
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = nca, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "n_ca_rec_len_samples.csv"), row.names = FALSE)
+
+
 # There are only 10 fish sexed - change them to unsexed
 nca$Sex = "U"
 
@@ -294,6 +309,15 @@ file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey
 
 sca = out[which(out$State_Areas == "south_pt_concep"), ]
 sca$Length_cm = sca$Length
+
+# create a table of the samples available by year
+sca$Length_cm = sca$Length
+sca$Trawl_id = 1:nrow(sca)
+GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = sca, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "s_ca_rec_len_samples.csv"), row.names = FALSE)
+
 
 # There are only 2 fish sexed - change them to unsexed
 sca$Sex = "U"
