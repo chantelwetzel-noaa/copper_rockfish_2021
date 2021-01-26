@@ -1,4 +1,359 @@
 \clearpage
 # Figures
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=100% height=100% alt="Summary of data sources used in the base model"}
+
+<!-- ====================================================================== --> 
+<!-- ******************* Data Used in the Model *************************** --> 
+<!-- ====================================================================== --> 
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "data_plot.png"), 
+caption = "Summary of data sources used in the base model",
+label = 'data-plot')
+```	
+
+<!-- ====================================================================== -->  
+<!-- ****************** Catches Used in the Model ************************* --> 
+<!-- ====================================================================== -->  
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
+caption = "Catches by fleet used in the base model",
+label = 'catch')
+```	
+
+
+<!-- ====================================================================== -->
+<!-- ****************   Commercial Length Samples    ********************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt1mkt0_page2.png"), 
+caption = "Length composition data from the commercial fleet",
+label = 'com-len-data')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_CA_S_Commercial.png"), 
+caption = "Mean length for commercial fleet with 95 percent confidence intervals",
+label = 'mean-com-len-data')
+```
+
+<!-- ====================================================================== -->
+<!-- **************** Recreational Length Samples    ********************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page3.png"), 
+caption = "Length composition data from the recreational fleet",
+label = 'rec-len-data')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_CA_S_Recreational.png"), 
+caption = "Mean length for recreational fleet with 95 percent confidence intervals",
+label = 'mean-rec-len-data')
+```
+
+<!-- ====================================================================== -->
+<!-- ************** NWFSC HKL Index & Length Sample  ********************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt3mkt0.png"), 
+caption = "Length composition data from the NWFSC Hook and Line fleet",
+label = 'hkl-len-data')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_NWFSC_HKL.png"), 
+caption = "Mean length for NWFSC Hook and Line fleet with 95 percent confidence intervals",
+label = 'mean-hkl-len-data')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "index1_cpuedata_NWFSC_HKL.png"), 
+caption = "Index of abundance for the NWFSC Hook and Line survey. Lines indicate 95 percent uncertainty interval around index values based on the model assumption of lognormal error. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter",
+label = 'hkl-index')
+```
+
+
+<!-- ====================================================================== -->
+<!-- *************************     Biology     **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Weight_Source.png"), 
+caption = "Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys",
+label = 'len-weight-survey')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Weight_Sex.png"), 
+caption = "Survey length-at-weight data with sex specific estimated fits",
+label = 'len-weight')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Data_Length_Age_by_Sex.png"), 
+caption = "Observed length-at-age by data source",
+label = 'len-age-data')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_Length_Age_by_Sex.png"), 
+caption = "Length-at-age data from the with sex specific estimated growth",
+label = 'len-age')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
+caption = "Length at age in the beginning of the year in the ending year of the model",
+label = 'len-age-ss')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
+caption = "Maturity as a function of  length",
+label = 'maturity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
+caption = "Fecundity as a function of length",
+label = 'fecundity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "Length_fraction_female.png"), 
+caption = "Fraction female by length across all available data sources",
+label = 'len-sex-ratio')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "Age_fraction_female.png"), 
+caption = "Fraction female by age across all available data sources",
+label = 'age-sex-ratio')
+```
+<!-- ====================================================================== -->
+<!-- *********************  Model Bridging          ********************** --> 
+<!-- ====================================================================== -->
+
+
+
+<!-- ====================================================================== -->
+<!-- *********************    Selectivity            ********************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
+caption = "Selectivity at length by fleet",
+label = 'selex')
+```
+
+
+<!-- ====================================================================== -->
+<!-- *********************    Recruitment            ********************** --> 
+<!-- ====================================================================== -->
+
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
+caption = "Estimated time series of age-0 recruits (1000s)",
+label = 'recruits')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
+caption = "Estimated time series of recruitment deviations",
+label = 'rec-devs')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SR_curve.png"), 
+caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
+label = 'bh-curve')
+```
+
+
+<!-- ====================================================================== -->
+<!-- ****************** Fit to the Length Data **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
+caption = "Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+label = 'com-pearson')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Commercial.png"), 
+caption = "Mean length for commercial lengths with 95 percent confidence intervals based on current samples sizes",
+label = 'com-mean-len-fit')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page3.png"), 
+caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+label = 'rec-pearson')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Recreational.png"), 
+caption = "Mean length for recreational lengths with 95 percent confidence intervals based on current samples sizes",
+label = 'rec-mean-len-fit')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt3mkt0.png"), 
+caption = "Pearson residuals for NWFSC Hook and Line survey. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+label = 'hkl-pearson')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_NWFSC_HKL.png"), 
+caption = "Mean length for recreational lengths with 95 percent confidence intervals based on current samples sizes",
+label = 'hkl-mean-len-fit')
+```
+
+
+```{r, results = 'asis'}
+
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"),
+caption = "Aggregated length comps over all years",
+label = 'agg-len-fit')
+```
+
+<!-- ====================================================================== -->
+<!-- **************      NWFSC HKL Index Fit         ********************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+
+add_figure(
+filein = file.path(mod_loc, "plots", "index2_cpuefit_NWFSC_HKL.png"),
+caption = "Fit to index data for the NWFSC Hook and Line survey",
+label = 'index-fit')
+```
+
+<!-- ====================================================================== -->
+<!-- ******************      Time Series       **************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
+caption = "Estimated time series of spawning output",
+label = 'ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
+caption = "Estimated time series of total biomass",
+label = 'tot-bio')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
+caption = "Estimated time series of fraction of unfished spawning output",
+label = 'depl')
+```
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```
+
+
+<!-- ====================================================================== -->
+<!-- ******************       Sensitivity     ***************************** --> 
+<!-- ====================================================================== -->
+  
+```{r, echo=FALSE, results='asis'}
+#sens_wd = file.path(substr(mod_loc, 1, 57), "_sensitivities", "_plots")
+#nm = paste0(substr(mod_loc, 59, 99), "_compare2_spawnbio_uncertainty.png")
+#add_figure(
+#filein = file.path(sens_wd, nm),
+#caption = "Change in estimated spawning output by sensitivity",
+#label = 'sens-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+#nm = paste0(substr(mod_loc, 59, 99), "_compare4_Bratio_uncertainty.png")
+#add_figure(
+#filein = file.path(sens_wd, nm),
+#caption = "Change in estimated fraction unfished by sensitivity",
+#label = 'sens-depl')
+```
+
+<!-- ====================================================================== -->
+<!-- ******************      Likelihoods      ***************************** --> 
+<!-- ====================================================================== -->
+
+
+<!-- ====================================================================== -->
+<!-- ******************     Retrospectives    ***************************** --> 
+<!-- ====================================================================== -->
+  
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_retro.Rmd')
+read_child(filein)
+```
+
+
+\newpage

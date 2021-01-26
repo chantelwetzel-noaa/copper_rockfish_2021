@@ -1,2 +1,45 @@
 # Assessment Model
 
+## Summary of Previous Assessments 
+
+`r Spp` was last assessed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA) a data-moderate approach which incorporated catch and index data with prior on select parameters (natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity). `r Spp` was assessed as two separated stocks, the area South of Pt. Conception off the California coast and the area North of Pt. Conception to the Washington Canada border. The 2013 assessment estimated the stock South of Pt. Conception at 75% of unfished spawning output North of Pt. Conception at 48% of unfished spawning output. 
+
+### Bridging Analysis
+
+
+
+
+## Model Structure and Assumptions
+
+The South of Pt. Conception `r spp` area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fishings fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr` and one survey fleet, `r hkl`.  Selectivity was specified for all fleets in the model using the double normal parameterization within SS. The selectivity for the commercial and recreational fleets was fixed to be asymptotic and the `r hkl` selectivity was allowed to estimate dome-shape. Annual recruitment deviations were estimated. 
+
+### Modeling Platform and Structure
+
+Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+
+### Priors
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'model_priors.Rmd')
+read_child(filein)
+```  
+
+### Data Weighting
+
+Length composition data for the comercial fishery started with a sample size determined from the equation listed in Sections \ref{commercial-fishery}. The input sample size for the recreational fishery and `r hkl` length composition data were set equal to the number of length samples by year.   
+
+The base  model was weighted using the "Francis method", which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examing the difference in weighting using McAllister-Ianelli Harmonic Mean Weighting[-@mcallister_bayesian_1997] and the Dirichlet Multinomial Weighting [-@thorson_model-based_2017].
+
+### Estimated and Fixed Parameters
+
+There were XXX estimated parameters in the base model. These included one parameter for $R_0$, X parameters for selectivity and time blocking of the fleets, 105 recruitment deviations, and 12 forecast recruitment deviations (Table \ref{tab:params}).
+
+Fixed parameters in the model were as follows. Steepness was fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`. A sensitivity analysis and a likelihood profile were performed for steepness. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, which is the median of the prior.  The standard deviation of recruitment deviates was fixed at `r print(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Growth, maturity-at-length, and length-at-weight was fixed as described above in Section \ref{data}. 
+
+Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. After explorations, there was little support for dome-shaped selectivity for the commercial and recreational fleet, however, the fit to the `r hkl` length compositions were best with a limited dome in selectivity for the largest sizes. 
+
+
+## Model Selection and Evaluation
+
+The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.

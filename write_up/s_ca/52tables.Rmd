@@ -1,3 +1,140 @@
 \clearpage
 # Tables
 
+<!-- ======================================================= -->
+<!-- ***************    Catches      *********************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/Catches_All_Years.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ***************       Data      *********************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/CA_S_Samples.tex}
+
+\newpage
+
+
+\include{tex_tables/s_ca_rec_len_samples.tex}
+
+\newpage
+
+\include{tex_tables/sca_hkl_length_SampleSize.tex}
+
+\newpage
+
+\include{tex_tables/south_length_SampleSize.tex}
+
+
+<!-- ======================================================= -->
+<!-- ***************    Biology      *********************** --> 
+<!-- ======================================================= -->
+
+\newpage
+
+\include{tex_tables/len_at_age_data.tex}
+
+
+<!-- ======================================================= -->
+<!-- ***********   Model Parameters     ******************** --> 
+<!-- ======================================================= -->
+
+
+```{r, results = 'asis'}
+mod_params = model$parameters[-c(grep('Impl',model$parameters$Label),
+							     grep('Fore',model$parameters$Label)),
+                                (names(model$parameters) %in%
+                                c("Num","Label","Value","Phase","Min",
+                                  "Max","Status","Parm_StDev",
+                                  "Pr_type","Prior","Pr_SD"))] 
+mod_params[,'Value'] = round(as.numeric(mod_params[,'Value']),3)                                 
+# Combine bounds into one column
+mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
+# Combine prior info to one column
+mod_params$PR_type = ifelse(mod_params$Pr_type == 'No_prior' , 'None', paste(mod_params$Pr_type,' (', mod_params$Prior,  ', ', mod_params$Pr_SD, ')', sep = ''))
+# Set long value to scientific notation
+mod_params[mod_params$Label == "Wtlen_1_Fem",3] = format(mod_params[mod_params$Label == "Wtlen_1_Fem",3], scientific = TRUE)
+mod_params[mod_params$Label == "Wtlen_1_Mal",3] = format(as.numeric(mod_params[mod_params$Label == "Wtlen_1_Mal",3]), scientific = TRUE)
+mod_params[mod_params$Label == "Eggs_scalar_Fem",3] = format(as.numeric(mod_params[mod_params$Label == "Eggs_scalar_Fem",3]), scientific = TRUE)
+mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "L_at_Amax_Mal_GP_1",3]), 4)
+mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "VonBert_K_Mal_GP_1",3]), 3)
+mod_params[mod_params$Label == "CV_old_Mal_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "CV_old_Mal_GP_1",3]), 3)
+# Remove the max, prior and prior sd columns
+drops = c('Max', 'Prior', 'Pr_type', 'Pr_SD', 'Num')
+mod_params = mod_params[, !(names(mod_params) %in% drops)]
+rownames(mod_params) = c()
+mod_params[,"Label"] = gsub("\\_", " ", mod_params[,"Label"])
+mod_params[,"PR_type"] = gsub("\\_", " ", mod_params[,"PR_type"])
+# Add column names
+col_names = c('Parameter',
+                         'Value',
+                         'Phase',
+                         'Bounds',
+                         'Status',
+                         'SD',
+                         'Prior (Exp.Val, SD)')
+table_format(x = mod_params,
+             caption = "List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).",
+             label = "params",
+             align = 'l',
+             col_names = col_names,
+             longtable = TRUE,
+             font_size = 9,
+             landscape = TRUE,
+             custom_width = TRUE,
+             col_to_adjust = c(1,7), 
+             width = c("6cm", "4cm"))                         
+```
+
+<!-- ======================================================= -->
+<!-- ***********    Like Contributions  ******************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/likelihoods.tex}
+
+
+<!-- ======================================================= -->
+<!-- ***********       Time Series      ******************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/TimeSeries.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ****************     Sensitivities      *************** --> 
+<!-- ======================================================= -->
+
+
+
+\newpage
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
+col_names = c('Method',
+			  'Commercial Lengths',
+              'Recreational Lengths',
+			  'NWFSC Hook and Line')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods.",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ********  Reference Points & Management *************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+\include{tex_tables/g_Projections_ES.tex}
+
+\newpage

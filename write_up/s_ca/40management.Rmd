@@ -1,11 +1,16 @@
 # Management 
 
-## Reference Points
-
-## Unresolved Problems and Major Uncertainties
-
 ## Harvest Projections and Decision Tables
+
+A ten year projection of the base model with catches equal to the estimated ACL for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:projectionES}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) DESCRIBE ALLOCATION ASSUMPTIONS 
+
+PFMC Groundfish Management Team (GMT). 
+
+The decision table uncertainty axes and catch levels to be determined later.
 
 ## Evaluation of Scientific Uncertainty
 
-## Research and Data Needs
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'management_uncertainty.Rmd')
+read_child(filein)
+```
