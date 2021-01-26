@@ -387,6 +387,14 @@ base = SS_output(file.path(wd, model))
 SS_plots(base)
 # NLL = 1047, R0 = 5.6, depl 2021 = 0.069
 
+
+
+# Updated 10.0 base model with all sites index and updated maturity data
+model = "10.3_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+
 #############################################################
 # Sensitivity 
 

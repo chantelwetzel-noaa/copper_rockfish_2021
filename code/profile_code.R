@@ -76,9 +76,22 @@ model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("profile"),
 							  profile_details = get ))
 
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("jitter", "retro")))
+
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+							low =  c(0.10),
+							high = c(0.20),
+							step_size = c(0.01),
+							param_space = c('real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("profile"),
+							  profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
 
@@ -120,6 +133,18 @@ rerun_profile_vals(mydir = file.path(mydir, base_name),
 					run_num = 6:8,
 					data_file_nm = "2021_or_copper.dat")
 
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+							low =  c(0.10),
+							high = c(0.20),
+							step_size = c(0.01),
+							param_space = c('real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("profile"),
+							  profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
 
 #######################################################################################################
 # Washington
@@ -152,3 +177,13 @@ model_settings = get_settings(settings = list(base_name = base_name,
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+							low =  c(0.10),
+							high = c(0.20),
+							step_size = c(0.01),
+							param_space = c('real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							  run = c("profile"),
+							  profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
