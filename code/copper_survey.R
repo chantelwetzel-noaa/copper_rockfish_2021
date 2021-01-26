@@ -172,6 +172,10 @@ PlotSexRatio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = north_len, data.
 # NWFSC Hook & Line Data
 #
 #####################################################################################
+sub_hkl$Trawl_id = sub_hkl$Set.ID
+sub_hkl$Length_cm = sub_hkl$Length
+n = GetN.fn(dir = dir, dat = sub_hkl, type = "length", species = "others", printfolder = "forSS")
+
 a = table(sub_hkl$Year, sub_hkl$Sex)
 plot(2004:2019, a[,"F"] / (a[,"F"] + a[,"M"]), ylim = c(0,1), type = 'b')
 abline(h = 0.50, col = 'red', lty = 2)
