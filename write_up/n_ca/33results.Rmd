@@ -4,7 +4,9 @@ The base model parameter estimates along with approximate asymptotic standard er
 
 ### Parameter Estimates
 
-Estimated parameter values are provided in Table \ref{tab:params}. The model estimated 113 total parameters: $R_0$, 6 selectivity parameters, and 106 parameters for annual recruitment deviations.  The $R_0$ was estimated at `r round(model$parameters[model$parameters$Label == 'SR_LN(R0)', 'Value'], 2)`. The selectivity curves for the commercial and recreational fleet is shown in Figure \ref{fig:selex}. 
+Estimated parameter values are provided in Table \ref{tab:params}. The $R_0$ was estimated at `r round(model$parameters[model$parameters$Label == 'SR_LN(R0)', 'Value'], 2)`. The selectivity curves for the commercial and recreational fleet is shown in Figure \ref{fig:selex}. The commercial selectivity was estimated in two blocks 1916 - 2008 and 2009 - 2020. The block in selectivity was aimed to capture the shift in observations of smaller fish in recent years (Figure \ref{fig:com-len-data}). The early block estimated a gradual slope in selectivity across lengths with selectivity reaching 1.0 at the largest sizes with the parameter hitting the upper bound of 55 cm.  To reduce problems in convergence the final model fixed this parameter at just below the upper bound at 54.99 cm. The more recent commercial selectivity shifted leftward resulting in increased selectivity of smaller fish.  This shift in selectivity may be driven by market changes in the live fish fishery which favors plate sized fish. Selectivity in the recreational fishery was assumed constant across the modeled period with maximum selectivity occuring for fish of 31.5 cm and greater. 
+
+The estimated annual recruitment and recruitment deviations are shown in  Figures \ref{fig:recruits} and \ref{fig:rec-devs}. A peak in recruitment occured in 2008 with 2009 and 2010 alse being estimated to be well above average. While there could have been three above average recruitments occuring in subsequent years, alternatively there may have been a single year with high recruitment which the data is unable to assign to a single year due to the variability in length data.  The stock-recruit curve resulting from a value of steepness fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)` is shown in Figure \ref{fig:bh-curve}. 
 
 ### Fits to the Data
 
@@ -32,7 +34,7 @@ Figure \ref{fig:tot-bio}.
 
 The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (`r round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)`, Figure \ref{fig:depl}).   
 
-The stock-recruit curve resulting from a value of steepness fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)` is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment and recruitment deviations are shown in  Figures \ref{fig:recruits} and \ref{fig:rec-devs}. 
+ 
 
 ### Reference Points
 

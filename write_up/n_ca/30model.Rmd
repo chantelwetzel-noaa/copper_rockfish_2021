@@ -33,7 +33,7 @@ The base  model was weighted using the "Francis method", which was based on equa
 
 ### Estimated and Fixed Parameters
 
-There were XXX estimated parameters in the base model. These included one parameter for $R_0$, 6 parameters for selectivity and time blocking of the fleets, 94 recruitment deviations, and 12 forecast recruitment deviations (Table \ref{tab:params}).
+There were 124 estimated parameters in the base model. These included one parameter for $R_0$, 6 parameters for selectivity and time blocking of the fleets, 105 recruitment deviations, and 12 forecast recruitment deviations (Table \ref{tab:params}).
 
 Fixed parameters in the model were as follows. Steepness was fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`. A sensitivity analysis and a likelihood profile were performed for steepness. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, which is the median of the prior.  The standard deviation of recruitment deviates was fixed at `r print(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Growth, maturity-at-length, and length-at-weight was fixed as described above in Section \ref{data}. 
 

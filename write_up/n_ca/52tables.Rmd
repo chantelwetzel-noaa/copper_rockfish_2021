@@ -20,9 +20,6 @@
 
 \include{tex_tables/n_ca_rec_len_samples.tex}
 
-\newpage
-
-\include{tex_tables/len_at_age_data.tex}
 
 \newpage
 
@@ -33,8 +30,9 @@
 <!-- ***************    Biology      *********************** --> 
 <!-- ======================================================= -->
 
+\newpage
 
-
+\include{tex_tables/len_at_age_data.tex}
 
 
 <!-- ======================================================= -->

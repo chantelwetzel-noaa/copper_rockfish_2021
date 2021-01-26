@@ -2,11 +2,7 @@
 
 ### \acrlong{s-wcgbt}
 
-The \Gls{s-wcgbt} is based on a random-grid design;
-covering the coastal waters from a depth of 55-1,280 m [@bradburn_2003_2011].
-This design generally uses four industry-chartered vessels per year assigned to a roughly equal number of randomly selected grid cells and divided into two 'passes' of the coast.
-Two vessels fish from north to south during each pass between late May to early October.
-This design therefore incorporates both vessel-to-vessel differences in catchability,
+The \Gls{s-wcgbt} is based on a random-grid design; covering the coastal waters from a depth of 55-1,280 m [@bradburn_2003_2011]. This design generally uses four industry-chartered vessels per year assigned to a roughly equal number of randomly selected grid cells and divided into two 'passes' of the coast. Two vessels fish from north to south during each pass between late May to early October. This design therefore incorporates both vessel-to-vessel differences in catchability,
 as well as variance associated with selecting a relatively small number (approximately 700) of possible cells from a very large set of possible cells spread from the Mexican to the Canadian borders.
 
 The observations of `r spp` by the \Gls{s-wcgbt} are limited.  The number of tows where `r spp` were observed in California waters North of Pt. Conception are shown in Table \ref{tab:wcgbts-len}.  The limited number of tows by year within this area prevented the calculation of an index of abundance for `r spp`. With limited observations and in the absence of an index of abundance to link these data to, the data set was not used in the base model.
