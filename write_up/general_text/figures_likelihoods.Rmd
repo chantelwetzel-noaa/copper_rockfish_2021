@@ -64,7 +64,7 @@ label = 'm-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "_profile_L_at_Amax_Fem_GP_1"),  "piner_panel_L_at_Amax_Fem_GP_1.png"), 
-caption = "Change in the negative log-likelihood across a range of female maximum length value",
+caption = "Change in the negative log-likelihood across a range of female maximum length values",
 label = 'linf-profile')
 ```
 
@@ -81,3 +81,4 @@ filein = file.path(paste0(mod_loc, "_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_F
 caption = "Change in the estimate of fraction unfished across a range of female maximum length values",
 label = 'linf-depl')
 ```
+
