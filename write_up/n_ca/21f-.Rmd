@@ -14,7 +14,7 @@ Commercial fishery landings from 1981-2020 were pulled from the PacFIN database,
 
 The quantity of length samples from the commercial fishery were low until 1991 (Table \ref{tab:com-len-samps}).  Length samples were the greatest during the 1990s and since 2002 the number of lengths samples by year have been relatively low. The sizes observed from 1978 - 2007 was relatively broad ranging from approximately 25 - 54 cm (Figure \ref{fig:com-len-data}). Since approximately 2008 the frequency of sizes observed shifted to smaller lengths around 30 cm while still observing larger individuals. This shift in observed sizes is also reflected in the mean lengths observed by year (Figure \ref{fig:mean-com-len-data}) which could be do to shifts in fishey behavior and or changes in the population demographics (e.g., incoming strong recruitments). 
 
-The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication, IPHC) based on a combination of trips and fish sampled:
+The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication) based on a combination of trips and fish sampled:
 
 \begin{centering}
 
