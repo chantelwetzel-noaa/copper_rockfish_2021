@@ -18,8 +18,8 @@ get = get_settings_profile( parameters =  c("L_at_Amax_Fem_GP_1", "SR_LN(R0)"),
 							param_space = c('real','relative'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-											  run = c("profile", "jitter"),
-											  profile_details = get ))
+											  run = c("retro"),
+											  retro_yrs = -1:-15))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
