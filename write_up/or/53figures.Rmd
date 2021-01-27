@@ -208,7 +208,7 @@ label = 'yield')
 
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_para_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -216,11 +216,37 @@ label = 'sens-ssb')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_para_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
 label = 'sens-depl')
+```
+
+
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
+nm = paste0(substr(mod_loc, 52, 99), "_selex_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-selex-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 52, 99), "_selex_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-selex-depl')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 52, 99), "_selex_compare12_recdevs_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated annual recruitment deviation",
+label = 'sens-selex-recdev')
 ```
 
 <!-- ====================================================================== -->
@@ -231,6 +257,7 @@ label = 'sens-depl')
 filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
+
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

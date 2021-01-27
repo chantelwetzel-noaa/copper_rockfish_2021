@@ -119,9 +119,10 @@ table_format(x = mod_params,
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
 
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/or/tex_tables/sensitivities.tex}
+\include{tex_tables/sensitivities1.tex}
 
 \newpage
+
 
 ```{r, results = 'asis'}
 tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
@@ -137,6 +138,14 @@ table_format(x = tab,
 ```
 
 \newpage
+
+
+\include{tex_tables/sensitivities2.tex}
+
+\newpage
+
+
+
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
