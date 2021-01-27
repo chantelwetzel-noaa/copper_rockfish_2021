@@ -3,6 +3,7 @@ library(HandyCode)
 library(MCMCglmm)
 
 wd = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/_bridge"
+wd = "C://Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_bridge"
 xdb = read.csv(file.path(wd, "copper_south_xdbsra_2013_posteriors.csv"))
 
 getmode <- function(v) {
