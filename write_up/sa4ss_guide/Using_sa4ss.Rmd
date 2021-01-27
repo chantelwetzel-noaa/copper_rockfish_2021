@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 )
 
 library(sa4ss)
+load("C:/Assessments/2021/copper_rockfish_2021/write_up/or/00mod.Rdata")
+Spp = 'Copper rockfish'
 ```
 
 # Getting Started
@@ -182,23 +184,24 @@ label = 'data-plot')
 
 ```
 
-The above function, **add_figure**, contained in the **sa4ss** package will set the alternative text equal to the caption unless specifically specified by the user. 
+The above function, **sa4ss::add_figure**, will set the alternative text equal to the caption unless specifically specified by the user. 
 
-Both examples above allow the user to reference the figure in the text using ```{r, eval = FALSE} \ref{fig:data-plot}``` which will look like this: Figure \ref{fig:data-plot}.
+Both examples above allow the user to reference the figure in the text inline by:
 
-## Add Tables to the Document
+```{r, eval = FALSE} 
 
-There are a few options to add tables to the document. Rmarkdown allows users to create tables directly using **R** code blocks but users can also load existing tex table files. The **sa4ss::read_model** and the **sa4ss::es_table_tex** both creates tex files from csv files.   
+\ref{fig:data-plot}
 
-If you have created tex table files they can be added to your document using the include command in LaTex:
+``` 
 
-```{r, eval = FALSE}
+which will look like this: Figure \ref{fig:data-plot}.
 
-\include{tex_tables/Catches_All_Years.tex}
 
-```
+## Adding Tables to the Document
 
-The above command will load model catches based on a tex table created by the **sa4ss::read_model** function which internally calls the **r4ss::SSexecutivesummary**  and **sa4ss::es_table_tex** functions. 
+There are two commonly used options to add tables to the document: 1)  create tables directly using **R** code blocks or 2) users can also load existing tex table files. 
+
+### Option 1: Using Code Chunks Directly
 
 Another option for creating a table in a **sa4ss** document is to use a snippet of **R** code.  The below example reads in an existing csv and creates the needed format for *sa4ss**:
 
@@ -232,6 +235,65 @@ sa4ss::table_format(x = tab,
              col_names = col_names)
 ```
 
+**R** code chunks can also create tables from **R** objects that are loading in the work space. One item that will be loaded into your work session is a Rdata object with the output from **r4ss::SS_output** for your model. This Rdata object is created using the **sa4ss::read_model** function (see "Updating the Base Model" section above for infomation).  
+
+```{r, eval = FALSE}
+
+like = cbind(rownames(model$likelihoods_used),  model$likelihoods_used$values)
+like[,1] = gsub("\\_", " ", like[,1])
+colnames(like) = c("Label", "Total")
+
+  
+sa4ss::table_format(x = like,
+             caption = "Likelihoods in the model",
+             label = "likelihood",
+             align = 'l')
+```
+
+The above when executed in the document will create the following table:
+
+```{r, echo = FALSE, eval = TRUE}
+
+like = cbind(rownames(model$likelihoods_used),  model$likelihoods_used$values)
+like[,1] = gsub("\\_", " ", like[,1])
+colnames(like) = c("Label", "Total")
+
+  
+sa4ss::table_format(x = like,
+             caption = "Likelihoods in the model",
+             label = "likelihood",
+             align = 'l')
+```
+
+### Option 2: Using Tex Files
+
+The **sa4ss::read_model** will automatically create tex files from csv files created from the **r4ss::SSexecutivesummary** function and save those tex files wher you specify.  The following example tells to function to read the base model (specified by mod_loc), create the **r4ss::SS_plots** from the model, create the **r4ss::SSexecutivesummary** tables and save the converted tex files in the directory specified by save_loc. The working directory should already be set to the location of your assessment document you are building.
+
+```{r, eval = FALSE}
+sa4ss::read_model(mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/new_base",
+                 	create_plots = TRUE, 
+				          save_loc = file.path(getwd(), "tex_tables"),
+				          verbose = TRUE))
+```
+
+Once the tex files have been created they can be sourced into your assessment document using the **include** command in LaTex:
+
+```{r, eval = FALSE}
+
+\include{tex_tables/Catches_All_Years.tex}
+
+```
+
+Users often need to add tables describing data or other items that are not included in the suite of tables created by the **r4ss::SSexecutivesummary** function. One example would be a table of the number of trips and lengths sampled per year for a fleet in your model. Users could to this via Option 1 described above or they could create a tex file for the existing csv containing the needed information.  To do this, you will need to create a master csv file that is specifies specific attributes for the various csv files you would like to include in your document. The master csv file will need to have these specific columns with the exact name and order as: "caption",	"altcaption" "label",	"filename", "loc".  In the "caption" column you will type out the table caption, "altcaption" is the text for the altervatve 508 compliance caption (a value of NA will default to use the caption), "label" is the way the table will be referenced in the document, "filename" is the name of csv file to read, and "loc" is the location of the csv file. Once this master csv file is created you can create tex files for all items using the **sa4ss::es_table_tex** function:
+
+```{r, eval = FALSE}
+es_table_tex(dir = file.path(getwd(), 'tables'), 
+            save_loc = file.path(getwd(), "tex_tables"), 
+            csv_name = "all_tables.csv")
+
+```
+
+where dir specifies the location of the master csv file, the save_loc is where the newly created tex files will be saved, and csv_name is the name of the master csv file.
 
 ## Referencing Figures and Tables
 
@@ -251,4 +313,72 @@ The data weights applied in the base model are shown in Table \ref{tab:dw}.
 
 The data used in the model are shown in Figure \ref{fig:data-plot}.
 
+## Create or Load Specific R Objects
 
+This can be done in any of the Rmd document files, however, I typically prefer to do this is a specific location to keep things organized.  The "00a.Rmd" file already has an **R** code chuck where some standard variables are set.  I like to add items here that I will then use across other files:
+
+```{r, eval = FALSE}
+
+####  Standard Items Defined by sa4ss
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::knit_hooks$set(plot = function(x,options) {
+      base = knitr::opts_knit$get('base.url')
+      if (is.null(base)) base = ''
+      alt = ifelse (is.null(options$alt),"",options$alt)
+      cap = ifelse (is.null(options$caption),"",options$caption)
+      if (alt != ""){
+        sprintf('![%s](%s%s "%s")', cap, base, x, alt)
+      } else {
+        sprintf('![%s](%s%s)', cap, base, x)  
+        }
+  })
+
+load("00opts.Rdata")
+
+# I create the species name in a way I like to use throughout the docuemnt
+spp = 'copper rockfish'
+Spp = 'Copper rockfish'
+
+# Here is a specific location where many of my exploratory 
+# figures are located that I want to include
+data_fig_loc = 
+"C://Assessments/2021/copper_rockfish_2021/data/biology/plots"
+
+# Here is where your model information created by the sa4ss::read_model 
+# function is loaded into the workspace 
+if(file.exists("00mod.Rdata")){
+  load("00mod.Rdata")
+} else {
+  print("Model output not being read. Please run the read_model() function.")
+}
+
+```
+
+
+## Text and R Objects Inline
+
+I will often use items defined in the "00a.Rmd" file when writing in my document.
+
+```{r, eval = FALSE}
+
+`r Spp` range along the U.S. West Coast ranging into the Canadian waters.
+```
+
+which will appear in the text as:
+
+
+`r Spp` range along the U.S. West Coast ranging into the Canadian waters.
+
+
+This can be really handy for incorporating model estimates into text descriptions.
+
+```{r, eval = FALSE}
+
+The base model assumed a steepness value of 
+`r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`.
+```
+
+which will appear in the text as:
+
+
+The base model assumed a steepness value of `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`.
