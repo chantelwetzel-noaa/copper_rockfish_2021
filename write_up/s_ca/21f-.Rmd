@@ -14,7 +14,7 @@ Length data for the commercial fleet were available starting in 1983 (Table \ref
 
 The majority of lengths observed by the commercial fleet were between approximately 25 - 45 cm (Figure \ref{fig:com-len-data}) with relatively low observations of fish larger than 45 cm (detailed length compositions by year can be found in [Appendix A](#append_a)). The mean length observed by year ranged between 32 - 39 cm (Figure \ref{fig:mean-com-len-data}). The mean length across commercial lengths was the smallest in 2014 (around 32 cm) and has generally incrementally in the subsequent years.
 
-The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication, IPHC) based on a combination of trips and fish sampled:
+The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication) based on a combination of trips and fish sampled:
 
 \begin{centering}
 
