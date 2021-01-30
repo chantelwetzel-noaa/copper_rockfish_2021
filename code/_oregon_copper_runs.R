@@ -1,6 +1,7 @@
 # Copper Oregon Model Runs
 
 library(r4ss)
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
 wd = "N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/or"
 wd = "C:/Assessments/2021/copper_rockfish_2021/models/or"
@@ -251,7 +252,33 @@ SSplotComparisons(mysummary,
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
 
+model = "6.3_base"
+new_base = SS_output(file.path(wd, model))
+SS_plots(base)
 
+model = "_sensitivities/6.0_base_no_blocks_rm_data_1999"
+unweighted = SS_output(file.path(wd, model))
 
+model = "6.3_base - Copy"
+alt = SS_output(file.path(wd, model))
+SS_plots(base)
+modelnames <- c("Base", "Bias Ramp")
+mysummary  <- SSsummarize(list(base, alt))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.3_bias_adjust",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
 
+modelnames <- c("New Base", "Old Base", "Unweight Sens.")
+mysummary  <- SSsummarize(list(new_base, base, unweighted))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.0_vs_6.3_base",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "6.4_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
 

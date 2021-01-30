@@ -89,7 +89,7 @@ or_recfin_age_data$Source = "RecFIN_MRFSS"
 
 # Washington Recreational
 # According to Theresa WA lengths are all FL
-wa_recfin = read.csv(file.path(dir, "data", "recreational_comps",  "wa_rec_bds_copper.csv"))
+wa_recfin = read.csv(file.path(dir, "data", "recreational_comps",  "wa_rec_bds_copper_final.csv"))
 wa_recfin = rename_wa_recfin( data = wa_recfin)
 wa_recfin_data = rename_recfin(data = wa_recfin, 
 						  area_grouping = list(unique(wa_recfin$RECFIN_PORT_NAME)), 
@@ -143,7 +143,6 @@ out = out[out$Data_Type %in% c("RETAINED", NA), ]
 ############################################################################################
 #	Washington recreational length data
 ############################################################################################
-
 
 wa = out[which(out$State == "WA"), ]
 wa$Length_cm = wa$Length
