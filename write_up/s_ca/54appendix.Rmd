@@ -37,7 +37,7 @@ for (a in plot.vec){
 }
 ```
 
-## Detailed Fit to Commercial 'Ghost' Fleet Length Data 
+## Implied Fit to Commercial 'Ghost' Fleet Length Data 
 
 
 ```{r, results='asis'}

@@ -6,8 +6,27 @@
 
 ### Bridging Analysis
 
+A bridging analysis was done to replicate the results from XDB-SRA.  XDB-SRA is a delay-difference model that uses a production function to define biomass and dynamics of a stock. XDB-SRA does not explicitly parameterize weight-at-length or length-at-age. The bridge SS model assumed a structure similar to XDB-SRA: single-sex, deterministic recruitment, knife-edged selectivity equal to 50 percent maturity-at-length. The growth in the bridge SS model was based on the biology values provided in the 2013 assessment for copper rockfish [@cope_data-moderate_2013], although the XDB-SRA does not explicitily define growth. The SS model used the data from the XDB-SRA model: catches and indices, the median parameter values from XDB-SRA:  depletion in the year 2000 and natural mortality, and productivity (parameterized via the 3-parameter Ricker Power stock-recruitment function). The SS model replicated the stock status time series from XDB-SRA, but the SS model resulted in a lower stock size time series compared to XDB-SRA (Figure \ref{fig:bridge-1}, red line).  This mis-match in scale alone implied a difference in the implied growth (all mature biomass assumed equal) within XD-SRA versus the weight-at-length parametization for SS. The female weight-at-length was adjusted within SS to produce a stock trajectory that matched in scale the results from XDB-SRA (Figure \ref{fig:bridge-1} and \ref{fig:bridge-growth}).
 
+Once the matching SS structure was identified, the parameterization of the model was updated in a step-wise fashion by the following steps:
 
+\begin{enumerate}
+	\item Remove the depletion "survey" for the year 2000.
+	\item Update all biology to match those applied in the base model (natural mortality, length-weigth, length-at-age, fecundity, and maturity).
+	\item Switch to a Beverton-Holt stock-recruitment relationship with a steepness value of 0.72, the value in the base model.
+	\item Update catches through 2012, lumped into a single fleet.
+	\item Add all lengths to the model through 2012, lumped into a single fleet. Allow for asymptotic selectivity estimation using the double normal selectivity parameterization. 
+	\item Remove the indices of abundance (fishery dependent - CPFV, CDFW Observer Program) from the XDB-SRA 2013 model.
+	\item Add in the NWFSC Hook and Line index of abundance, length data, and fleet specific selectivity curve.
+	\item Separate catches and lengths into the fleet structure assumed in the base model. Allow for fleet specific selecitivy estimation.  
+	\item Turn on annual recruitment deviations.
+\end{enumerate}     
+
+Removing the depletion survey resulted in a shift upward in scale and stock status in 2013 (Figures \ref{fig:bridge-ssb} and \ref{fig:bridge-depl}). Updating the biology included changing the fecundity assumption from it being equal to spawning biomass to in terms of eggs and body size (spawning output). Figure \ref{fig:bridge-ssb-2} shows only the time series in terms of spawning output for ease of visability. The comparable quantity, stock status, was more pessimistic relative to the 2013 XDB-SRA model (Figure \ref{fig:bridge-depl}). All subsequent changes or additions to the 2013 model resulted in a more pessimistic view of the stock (Figure \ref{fig:bridge-depl}). The largest changes resulted when the length composition data was added and the 2013 fishery-dependent indices removed.  
+
+The fishery-dependent indices used in the 2013 `r spp` south model were variable but generally had a slight increasing trend (see Figure 69 [@@cope_data-moderate_2013]). An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity estimating year independent estimates of selectivity and spawner-per-recruit effort on the recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 25 cm with full selection between 31 - 32 cm in 2012 (Figure \ref{fig:lbspr}) where the 50 percent length-at-maturity is `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm south of Pt. Conception. 
+
+The bridge model was modified to determine the base model by extending the catches, the index of abundance, and fishery and survey lengths to 2020 along with updating and or changeing model assumptions based upon fits to the data.  
 
 ## Model Structure and Assumptions
 

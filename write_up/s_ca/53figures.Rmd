@@ -160,7 +160,49 @@ label = 'age-sex-ratio')
 <!-- *********************  Model Bridging          ********************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_bridge/_plots"
+add_figure(
+filein = file.path(loc, "Initial_Bridge.png"), 
+caption = "Comparison between SS bridge model and the results from the 2013 XDB-SRA model",
+label = 'bridge-1')
+```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(loc, "Growth.png"), 
+caption = "Adjustment to SS female weight-at-length curve to create a match in stock scale to XDB-SRA",
+label = 'bridge-growth')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(loc, "1_bridge_all_compare1_spawnbio.png"), 
+caption = "The time series of spawning biomass (or output) for updates to the 2013 model",
+label = 'bridge-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(loc, "1_bridge_all_compare3_Bratio.png"), 
+caption = "The time series of fraction unfished for updates to the 2013 model",
+label = 'bridge-depl')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(loc, "1_bridge_subset_compare1_spawnbio.png"), 
+caption = "The time series of spawning output for the subset of bridge models with the updated fecundity relationship",
+label = 'bridge-ssb-2')
+```
+```{r, results = 'asis'}
+lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
+add_figure(
+filein = file.path(lbspr, "Copper_South_LBSPR.png"), 
+caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
+label = 'lbspr')
+```
+\newpage
 
 <!-- ====================================================================== -->
 <!-- *********************    Selectivity            ********************** --> 
