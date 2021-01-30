@@ -49,14 +49,14 @@ label = 'mean-com-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page3.png"), 
+filein = file.path(getwd(), "figs", "comp_lendat_bubflt2mkt0_page3.png"), 
 caption = "Length composition data from the recreational fleet",
 label = 'rec-len-data')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_OR_Recreational.png"), 
+filein = file.path(getwd(), "figs", "comp_lendat_data_weighting_TA1.8_OR_Recreational.png"), 
 caption = "Mean length for recreational fleet with 95 percent confidence intervals",
 label = 'mean-rec-len-data')
 ```
@@ -79,7 +79,7 @@ read_child(filein)
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figs", "selectivity.png"),
+filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
@@ -106,7 +106,7 @@ label = 'com-mean-len-fit')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page3.png"), 
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page2.png"), 
 caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'rec-pearson')
 ```
@@ -179,6 +179,12 @@ caption = "Estimated time series of recruitment deviations",
 label = 'rec-devs')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(getwd(), "figs", "recruit_fit_bias_adjust.png"),
+caption = "Recruitment bias adjustment applied in the base model",
+label = 'bias-adj')
+```
 
 <!-- ====================================================================== -->
 <!-- ******************    Reference Points    **************************** --> 
@@ -208,7 +214,7 @@ label = 'yield')
 
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 52, 99), "_para_compare2_spawnbio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -216,37 +222,19 @@ label = 'sens-ssb')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_para_compare4_Bratio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
 label = 'sens-depl')
 ```
 
-
 ```{r, echo=FALSE, results='asis'}
-sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 52, 99), "_selex_compare2_spawnbio_uncertainty.png")
-add_figure(
-filein = file.path(sens_wd, nm),
-caption = "Change in estimated spawning output by sensitivity",
-label = 'sens-selex-ssb')
-```
-
-```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_selex_compare4_Bratio_uncertainty.png")
-add_figure(
-filein = file.path(sens_wd, nm),
-caption = "Change in estimated fraction unfished by sensitivity",
-label = 'sens-selex-depl')
-```
-
-```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_selex_compare12_recdevs_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_compare12_recdevs_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated annual recruitment deviation",
-label = 'sens-selex-recdev')
+label = 'sens-recdev')
 ```
 
 <!-- ====================================================================== -->
@@ -257,7 +245,6 @@ label = 'sens-selex-recdev')
 filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
-
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

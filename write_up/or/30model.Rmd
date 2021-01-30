@@ -11,7 +11,7 @@ A direct bridging analysis was not conducted because the previous assessment was
 
 ## Model Structure and Assumptions
 
-The Oregon `r spp` area was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity was specified to be asymptotic using the double normal parameterization within SS for the commercial fleet. The ascending slope and size of maximum selectivity parameters were estimated for the commercial fleet.  The recreational fleet also used a double normal parameterization with two selectivity shapes estimated for the period of `r startyr` to 1999 and 2000 to `r endyr`. The selectivity in the early period was fixed asymptotic and the selectivity in the final period was allowed to estimate reduced selectivity for the largest fish (i.e., allowed to be dome-shaped).  Annual recruitment deviations were estimated within the base model. 
+The Oregon `r spp` area was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity was specified to be asymptotic using the double normal parameterization within SS for the commercial fleet. The ascending slope and size of maximum selectivity parameters were estimated for the commercial fleet.  The recreational fleet also used a double normal parameterization but was allowed to estimate reduced selectivity for the largest fish (i.e., allowed to be dome-shaped).  Annual recruitment deviations were estimated within the base model. 
 
 ### Modeling Platform and Structure
 

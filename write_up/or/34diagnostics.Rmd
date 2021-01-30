@@ -2,7 +2,7 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10%. This was repeated 100 times with 24 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
 
 
 ### Sensitivity Analyses
@@ -10,14 +10,6 @@ Proper convergence was determined by starting the minimization process from disp
 A number of sensitivity analyses were conducted.  The majority of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
-
-  \item Fix natural mortality 10 percent lower at a value of 0.097 per year for both sexes.
-  
-  \item Fix natural mortality 10 percent higher at a value of 0.119 per year for both sexes. 
-
-  \item Estimate $L_{\infty}$ for females and males.
-
-  \item Estimate $L_{\infty}$ and $k$ for females and males.
    
   \item Deterministic recruitment from the stock recruitment curve. 
 
@@ -25,22 +17,21 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
   
   \item Data weighting according to the Dirichlet Multinomial method where the estimated parameters are shown in Table \ref{tab:dw}. 
 
-  \item Fix recreational selectivity from 2000 - 2020 to be asymptotic. 
+  \item Estimate $L_{\infty}$ for both sexes.
 
-  \item Estimate a single selectivity curve for the recreational fleet that is fixed to be asymptotic. 
+  \item Estimate the coefficient of variation for older fishes for both sexes.
 
-  \item Remove block in recreational selectivity and remove length data prior to 2000. Selectivity is allowed to be dome-shaped. 
+  \item Fix recreational selectivity from to be asymptotic. 
 
-  \item Remove block in recreational selectivity, fix selectivity to be asymptotic, and remove length data prior to 2000.   
+  \item Apply a block in recreational selectivity with asymptotic selectivity from 1979-1999 and dome-shaped selectivity for 2000-2020. 
 
-  \item Remove block in recreational selectivity, fix selectivity to be asymptotic, remove length data prior to 2000, and turn of annual recruitment deviations.   
+  \item Use all recreational length data and estimate two selectivity blocks: 1979-1999 shallow asymptotic selectivity curve (higher selection of smaller fish) and 2000-2020 estimate dome-shaped selectivity.   
   
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities-1} and \ref{tab:sensitivities-2}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb}, \ref{fig:sens-depl}, \ref{fig:sens-selex-ssb}, and \ref{fig:sens-selex-depl}.
+Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
 
-The largest change from the base model resulted in the sensitivities that examined alternative selectivity assumptions for the recreational fleet.  Fixing the final selectivity (years 2000-2010) to be asymptotic in this fleet resulted in a more pessimistic estimate in the final years stock size and relative status. In comparison to the base model, the estimates from this sensitivity were generally more extreme; lower log($R_0$), more extreme positive recruitment deviations, and a more variable time series (higher highs and lower lows). Fixing selectivity to by asymptotic and estimating a single selectivity pattern across all years for the recreational fleet also estimated a lower stock size with the stock being more depleted in the final model year. 
-
+The largest change from the base model resulted in the sensitivity that assumed asymptotic selecitivity for the recreational fleet which resulted in a reduction in the scale and status of the stock. Data weighting with the McAllister-Ianelli (MI) resulted in a similar stock trajectory to the base model, however, the Diricthlet-Multinomial (DM) increased the variability in the stock trajectory (higher high and lower low) with a final stock status less depleted than the base model. Estimating single life history parameters, $L_{infty}$ or the CV at older ages, were generally similar to the base model although estimating $L_{infty}$ estimated a more pesimistic final stock status.
 
 ### Likelihood Profiles
 
@@ -54,7 +45,7 @@ The negative log-likelihood profile across female natural mortatliy supported va
 
 A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 48 and 50 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
-A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.13 and 0.17. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
+A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.13 and 0.17. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figure \ref{fig:k-ssb} and XXX).
 
 
 ### Retrospective Analysis

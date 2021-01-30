@@ -4,6 +4,7 @@
 
 State description of recreational removal data --- To be provided by Ali. 
 
+
 The input catches in the model represent total removals: landings plus discards.  Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated to state and area based on the total observed landings observed by WCGOP. The historical commercial discard mortality used to adjust the landings data to account for total removals was calculated based on the average coastwide discard rates from WCGOP of 4.4 percent. 
 
 The commercial removals of `r spp` were relatively small prior to 1961, the first year the removals were greater than 0.50 mt (Figure \ref{fig:catch}). Since 2000, the commercial removals on average are approximately one third of the total removals.
@@ -25,10 +26,16 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 State description of recreational removal data --- To be provided by Ali.
 
-The removals in RecFIN used from 2001-2020 represent total removals consisting of both landings and estimated discard mortality. The removals for 1999 and prior were obtained from the Oregon Department of Fish and Wildlife Sport Reconstruction. No recreational discarding was assumed for these years because the bag limits (15 fish bag limit) are thought to not have been restrictive to induce the likelihood of appreciable size based discarding of `r spp`.
+The removals in RecFIN used from 2001-2020 represent total removals consisting of both landings and estimated discard mortality. The removals for 2000 and prior were obtained from the Oregon Department of Fish and Wildlife Sport Reconstruction. No recreational discarding was assumed for these years because the bag limits (15 fish bag limit) are thought to not have been restrictive to induce the likelihood of appreciable size based discarding of `r spp`.
 
 The first year of recreational removals in the model was 1979 and the recreational removals increased to be the main source of exploitation of `r spp` in Oregon waters (Figure \ref{fig:catch}). Since 2000, the recreational removals have increased by year, except for 2015 2016 which regulated retention. The recreational removals peaked in 2018 with a total of 9.38 mt.  
 
-Length compositions for the recreational fleet were available from 1980 - 2020 (Table \ref{tab:len-samps}). The number of length observations by year were relatively small prior to 2000 compared to years after. Additionally, the length observations from 1980 to approximately 1999 occur over a larger size range compared to 2000 and after (Figure \ref{fig:rec-len-data}). The mean length by year in the recreational data was generally smaller and more variable prior to 2000, after which the mean lengths observed by year became relatively stable with tight 95 percent confidence intervals (Figure \ref{fig:mean-rec-len-data}).
+Length compositions for the recreational fleet were available from 1980 - 2020 (Table \ref{tab:len-samps}). The number of length observations by year were relatively small prior to 2000 compared to years after. 
+
+ADD JUSTIFICATION FOR THE REMOVAL OF LENGTH DATA PRIOR TO 2000
+
+Additionally, the length observations from 1980 to approximately 1999 occur over a larger size range compared to 2000 and after (Figure \ref{fig:rec-len-data}). 
+
+The mean length by year in the recreational data was generally smaller and more variable prior to 2000, after which the mean lengths observed by year became relatively stable with tight 95 percent confidence intervals (Figure \ref{fig:mean-rec-len-data}).
 
 The input sample sizes for the recreational length data were calculated equal to the number of length samples available by year. 

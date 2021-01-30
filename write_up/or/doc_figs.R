@@ -1,6 +1,6 @@
 savedir = "C:/Assessments/2021/copper_rockfish_2021/write_up/or/figs"
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
-base_name = "6.0_base"
+base_name = "6.4_base"
 model = SS_output(file.path(mydir, base_name))
 
 library(HandyCode)
@@ -30,3 +30,7 @@ dev.off()
 pngfun(wd = savedir, 'unavailable_biomass.png', w = 10, h = 7)
 	SSunavailableSpawningOutput(model, plot=TRUE)
 dev.off()
+
+SS_fitbiasramp (model,  method="BFGS", twoplots=FALSE,
+           transform=FALSE, print=TRUE, plotdir=savedir ,shownew=FALSE,
+           pwidth=6.5, pheight=5.0, punits="in", ptsize=10, res=300, cex.main=1)
