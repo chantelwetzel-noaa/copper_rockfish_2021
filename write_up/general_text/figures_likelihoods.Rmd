@@ -82,3 +82,25 @@ caption = "Change in the estimate of fraction unfished across a range of female 
 label = 'linf-depl')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_VonBert_K_Fem_GP_1"),  "piner_panel_VonBert_K_Fem_GP_1.png"), 
+caption = "Change in the negative log-likelihood across a range of female k values",
+label = 'k-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
+caption = "Change in the estimate of spawning output across a range of female k values",
+label = 'k-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png"), 
+caption = "Change in the estimate of fraction unfished across a range of female k values",
+label = 'k-depl')
+```
+
+
