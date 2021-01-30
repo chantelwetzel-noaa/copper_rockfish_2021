@@ -18,4 +18,4 @@ general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
-
+The OFL and ACLs for `r spp` North of 40$^\circ$ 10' Lat. N. management area, the state/specific ACL allocation (49 percent for Washington, Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.

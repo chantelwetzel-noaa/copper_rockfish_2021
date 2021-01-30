@@ -25,6 +25,32 @@ table_format(x = tab,
 \newpage
 
 
+```{r, results = 'asis'}
+yrs = hist = 2011:2020
+nfleets = 2
+catch = dead = total.dead = 0
+for (i in 1:nfleets){
+  name = paste0("retain(B):_",i)
+  input.catch = model$timeseries[model$timeseries$Yr %in% yrs, name]
+  catch = cbind(catch, input.catch)
+}
+total.catch <- round(apply(catch, 1, sum),2)
+
+man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
+man = man[man$Year %in% yrs, ]
+out = cbind(man, round(man$ACL * 0.26, 2), total.catch)
+
+col_names = c("Year", "OFL", "ACL", "WA ACL", "WA Removals")
+
+table_format(x = out,
+             caption = "The OFL and ACL for north nearshore, the ACL allocated to Washington, and the total removals.",
+             label = "ofl",
+             align = 'l',
+             col_names = col_names)
+
+```
+
+
 <!-- ======================================================= -->
 <!-- ***************       Data      *********************** --> 
 <!-- ======================================================= -->
@@ -154,19 +180,6 @@ table_format(x = mod_params,
 
 \newpage
 
-
-<!-- ======================================================= -->
-<!-- ********  Reference Points & Management *************** --> 
-<!-- ======================================================= -->
-
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
-
-\newpage
-
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_ES.tex}
-
-\newpage
-
 <!-- ======================================================= -->
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
@@ -183,6 +196,47 @@ col_names = c('Method',
 table_format(x = tab,
              caption = "Data weights applied by each alternative data weighting methods.",
              label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+\newpage
+
+
+<!-- ======================================================= -->
+<!-- ********  Reference Points & Management *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
+man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
+
+out = cbind(tab$Year,
+            c(man[man$Year %in% c(2021, 2022), "OFL"], rep("-",10)),
+            c(man[man$Year %in% c(2021, 2022), "ACL"], rep("-",10)),
+            c(man[man$Year %in% c(2021, 2022), "ACL"] * 0.26, rep("-", 10)),
+            c(rep("-",2), round(tab[3:12,2], 2)),
+            c(rep("-",2), round(tab[3:12,3],2)),
+            c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
+            round(tab[ ,5:ncol(tab)], 2))
+
+col_names = c('Year',
+              'Complex OFL',
+              'Complex ACL',
+              "WA ACL",
+              "OFL", 
+              "ABC", 
+              "ABC/OFL",
+              "Spawning Output",
+              "Fraction Unfished")
+table_format(x = out,
+             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Washington (WA) ACL for 2021 and 2022 reflect adopted management limits.",
+             label = "project",
              align = 'l',
              col_names = col_names)
 ```
