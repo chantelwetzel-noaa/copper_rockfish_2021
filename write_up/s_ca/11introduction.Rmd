@@ -8,7 +8,7 @@ read_child(filein)
 
 ## Historical and Current Fishery Information
 
-Off the coast of California State, South of Pt. Conception, `r spp` is primarily caught in by both commercial and recreational fisheries.    
+Off the coast of California State, South of Pt. Conception, `r spp` is primarily caught by the recreational fishery. `r Spp` is also caught by both commercial fisheries, in lesser amounts, and are landed in both the live dead fish markets.    
 
 
 ## Summary of Management History and Performance
@@ -18,3 +18,5 @@ general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
+
+The OFL and ACLs for `r spp` South of 40$^\circ$ 10' Lat. N. management area and the total removals south of Pt. Conception are shown in Table \ref{tab:ofl}.

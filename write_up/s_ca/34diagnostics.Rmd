@@ -30,6 +30,10 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table XXX.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XXX and XXX.
 
+## Length-Based Spawner-per-Recruit Analysis
+
+An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity estimating year independent estimates of selectivity and spawner-per-recruit effort on the recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 25 cm with full selection between 31 - 32 cm  (Figure \ref{fig:lbspr}). For comparison, the size at 50 percent length-at-maturity was fixed at `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm south of Pt. Conception based on new research (Melissa Head, pers. comm.).  This indicates that the mode of the recreational removals by length are from individuals that have not reach full maturity. 
+
 
 ### Retrospective Analysis
 
