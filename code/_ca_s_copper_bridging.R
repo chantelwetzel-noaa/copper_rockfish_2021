@@ -262,6 +262,7 @@ rec_len = SS_output(file.path(wd, "6.1_data_lengths"))
 no_indices = SS_output(file.path(wd, "7.1_indices_remove"))
 hkl = SS_output(file.path(wd, "8.0_fleets_add_hkl"))
 comm = SS_output(file.path(wd, "8.1_fleets_add_hkl_com"))
+recdevs = SS_output(file.path(wd, "9.0_recdevs"))
 
 modelnames <- c("Match XDB-SRA", 
 				"- Remove Depletion Survey", 
@@ -271,7 +272,8 @@ modelnames <- c("Match XDB-SRA",
 				"+ Rec. Lengths",
 				"- Remove Indices",
 				"+ Hook & Line",
-				"+ Split Out Commercial")
+				"+ Split Out Commercial",
+				"+ Recruitment Devs.")
 mysummary <- SSsummarize(list(base,  
 							  depl,
 							  two_sex, 
@@ -280,12 +282,13 @@ mysummary <- SSsummarize(list(base,
 							  rec_len,
 							  no_indices,
 							  hkl,
-							  comm))
+							  comm,
+							  recdevs))
 
 SSplotComparisons(mysummary, 
 				  subplots = c(1,3),
 				  legendlabels = modelnames, 
-				  filenameprefix = "bridge_all_",
+				  filenameprefix = "1_bridge_all_",
 				  plotdir = file.path(wd, "_plots"), 
 				  print = TRUE, 
 				  pdf = FALSE)
@@ -296,19 +299,21 @@ modelnames <- c("+ Biology",
 				"+ Rec. Lengths",
 				"- Remove Indices",
 				"+ Hook & Line",
-				"+ Split Out Commercial")
+				"+ Split Out Commercial",
+				"+ Recruitment Devs.")
 mysummary <- SSsummarize(list(two_sex, 
 							  bh,
 							  catch,
 							  rec_len,
 							  no_indices,
 							  hkl,
-							  comm))
+							  comm,
+							  recdevs))
 
 SSplotComparisons(mysummary, 
 				  subplots = c(1,3),
 				  legendlabels = modelnames, 
-				  filenameprefix = "bridge_subset_",
+				  filenameprefix = "1_bridge_subset_",
 				  plotdir = file.path(wd, "_plots"), 
 				  print = TRUE, 
 				  pdf = FALSE)

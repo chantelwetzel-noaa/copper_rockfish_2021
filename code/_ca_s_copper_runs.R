@@ -395,6 +395,21 @@ base = SS_output(file.path(wd, model))
 SS_plots(base)
 
 
+model = "10.4_base_nodevs_asym"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+
+model = "10.4_base_mat_linf_com_catch"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "10.4_base_rec_hybrid"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+
+
 #############################################################
 # Sensitivity 
 
