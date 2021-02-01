@@ -65,6 +65,12 @@ label = 'mean-rec-len-data')
 <!-- ************** NWFSC HKL Index & Length Sample  ********************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "hkl_cca_comparison.png"), 
+caption = "NWFSC Hook and Line observations by year outside and inside the cowcod conservation area",
+label = 'hkl-cca')
+```
 
 ```{r, results = 'asis'}
 add_figure(
@@ -110,22 +116,22 @@ label = 'len-weight')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(data_fig_loc, "doc_Data_Length_Age_by_Sex.png"), 
-caption = "Observed length-at-age by data source",
-label = 'len-age-data')
+filein = file.path(data_fig_loc, "South_Len_at_Age.png"), 
+caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT survey",
+label = 'south-len-at-age')
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(data_fig_loc, "doc_Length_Age_by_Sex.png"), 
-caption = "Length-at-age data from the with sex specific estimated growth",
-label = 'len-age')
+filein = file.path(data_fig_loc, "South_Data_Comparison_Len_at_Age.png"), 
+caption = "Length-at-age comparison of observed fish sampled in Oregon/Washington and south of Pt. Conception ",
+label = 'len-age-comp')
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
-caption = "Length at age in the beginning of the year in the ending year of the model",
+caption = "Length-at-age in the beginning of the year with the coefficient of variation by age within the model",
 label = 'len-age-ss')
 ```
 
@@ -156,6 +162,7 @@ filein = file.path(data_fig_loc, "Age_fraction_female.png"),
 caption = "Fraction female by age across all available data sources",
 label = 'age-sex-ratio')
 ```
+
 <!-- ====================================================================== -->
 <!-- *********************  Model Bridging          ********************** --> 
 <!-- ====================================================================== -->
@@ -195,14 +202,7 @@ filein = file.path(loc, "1_bridge_subset_compare1_spawnbio.png"),
 caption = "The time series of spawning output for the subset of bridge models with the updated fecundity relationship",
 label = 'bridge-ssb-2')
 ```
-```{r, results = 'asis'}
-lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
-add_figure(
-filein = file.path(lbspr, "Copper_South_LBSPR.png"), 
-caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
-label = 'lbspr')
-```
-\newpage
+
 
 <!-- ====================================================================== -->
 <!-- *********************    Selectivity            ********************** --> 
@@ -382,6 +382,20 @@ label = 'yield')
 #caption = "Change in estimated fraction unfished by sensitivity",
 #label = 'sens-depl')
 ```
+<!-- ====================================================================== -->
+<!-- ******************       LB-SPR          ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
+
+add_figure(
+filein = file.path(lbspr, "Copper_South_LBSPR.png"), 
+caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
+label = 'lbspr')
+```
+
+\newpage
 
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 

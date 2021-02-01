@@ -9,6 +9,32 @@
 
 \newpage
 
+```{r, results = 'asis'}
+yrs = hist = 2011:2020
+nfleets = 2
+catch = dead = total.dead = 0
+for (i in 1:nfleets){
+  name = paste0("retain(B):_",i)
+  input.catch = model$timeseries[model$timeseries$Yr %in% yrs, name]
+  catch = cbind(catch, input.catch)
+}
+total.catch <- round(apply(catch, 1, sum),2)
+
+man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
+man = man[man$Year %in% yrs, ]
+out = cbind(man, total.catch)
+
+col_names = c("Year", "OFL", "ACL", "Removals")
+
+table_format(x = out,
+             caption = "The OFL and ACL for south of 40.10 Latitude N. and the total removals south of Pt. Conception.",
+             label = "ofl",
+             align = 'l',
+             col_names = col_names)
+
+
+```
+
 <!-- ======================================================= -->
 <!-- ***************       Data      *********************** --> 
 <!-- ======================================================= -->
@@ -26,8 +52,13 @@
 
 \newpage
 
+\include{tex_tables/hkl_index_for_doc.tex}
+
+\newpage
+
 \include{tex_tables/south_length_SampleSize.tex}
 
+\newpage
 
 <!-- ======================================================= -->
 <!-- ***************    Biology      *********************** --> 
@@ -109,7 +140,6 @@ table_format(x = mod_params,
 <!-- ======================================================= -->
 
 
-
 \newpage
 
 ```{r, results = 'asis'}
@@ -135,6 +165,36 @@ table_format(x = tab,
 
 \newpage
 
-\include{tex_tables/g_Projections_ES.tex}
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
+
+man_south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
+
+ofl_s = man_south[man_south$Year %in% c(2021, 2020), "OFL"] 
+acl_s = man_south[man_south$Year %in% c(2021, 2022), "ACL"]
+
+out = cbind(tab$Year,
+            c(ofl_s, rep("-",10)),
+            c(acl_s, rep("-",10)),
+            c(rep("-",2), round(tab[3:12,2], 2)),
+            c(rep("-",2), round(tab[3:12,3],2)),
+            c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
+            round(tab[ ,5:ncol(tab)], 2))
+
+col_names = c('Year',
+              'S. 40.10 OFL',
+              'S. 40.10 ACL',
+              "OFL", 
+              "ABC", 
+              "Buffer",
+              "Spawning Output",
+              "Fraction Unfished")
+table_format(x = out,
+             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL and ACL,for 2021 and 2022 reflect adopted management limits for the area South of 40.10 Latitude N.",
+             label = "project",
+             align = 'l',
+             col_names = col_names)
+```
 
 \newpage
