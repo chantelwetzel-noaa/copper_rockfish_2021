@@ -2,9 +2,7 @@
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated ACL for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:projectionES}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) DESCRIBE ALLOCATION ASSUMPTIONS 
-
-PFMC Groundfish Management Team (GMT). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were determine by allocating the adopted ACLs South and North of 40$^\circ$ 10' Lat. N. (25 percent - PFMC Groundfish Management Team pers. comm.) for California. Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Pt. Conception area based on the percentage of total removals in California (north and south of Pt. Conception) from 2015 - 2019.
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -14,3 +12,17 @@ The decision table uncertainty axes and catch levels to be determined later.
 filein = file.path(general_wd,'management_uncertainty.Rmd')
 read_child(filein)
 ```
+
+## Future Research and Data Needs
+
+There were some major items of uncertainty within this assessment. To improve our understanding of the `r spp` stock south of Pt. Conception the following research and data collection should be prioritized:
+
+\begin{enumerate}
+
+	\item The commercial and recreational fisheries had limited observations of larger `r spp`.  It is unclear whether this was due to lack of access to larger individuals or a truncation of the length/age distribution due to fishing effort. Targeted fishery-independent survey information (via. hook and line or remotely operated vehicles (ROVs)) could improve our understanding the status of `r spp` in this region.
+
+	\item The life history values were fixed within this assessment. Area specific life history studies for `r spp` would allow for improved parameterization for `r spp` in this region.
+
+	\item There are very limited age data for `r spp` south of Pt. Conception. Increasing otolith sampling and allocating otolith reading resources would improve the understanding of the population structure and life history. 
+
+\end{enumerate}
