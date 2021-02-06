@@ -60,9 +60,9 @@ sa4ss::draft(authors = c("Chantel R. Wetzel",
   			 edit = FALSE)
 ```
 
-The above example will  automatically populates a document for copper rockfish with the above authors and their associated affiliation.  **sa4ss* has a list of common authors and their affiliations already set-up. In order for authors to be found in the available list and their affiliation the names need to be entered exactly as expected here: https://github.com/nwfsc-assess/sa4ss/blob/master/data-raw/authors.csv.
+The above example will  automatically populate a document for copper rockfish with the above authors and their associated affiliation.  **sa4ss* has a list of common authors and their affiliations already set-up. In order for authors to be found in the available list and their affiliation the names need to be entered exactly as expected here: https://github.com/nwfsc-assess/sa4ss/blob/master/data-raw/authors.csv.
 
-The above call creates a number of files that will be used in the document (Introduction, Data, ...) and their subsections.  All files have a leading number at the start of the Rmd file names.  The order of the numbers indicates the order that each separate file will be stitched together to create the whole document.  If you would like to move the order of a text section of the document, you will just need to adjust the number order.  Additionally, when the documented is drafted a standard set of sections are created, however, not every assessment will need each section.  A common example are the standard survey files created (e.g. '21s-wcgbts'). If your assessment will not include data from a specific survey, this file can be removed from the document by deleting the file.
+The above call creates a number of files that will be used in the document (Introduction, Data, ...) and their subsections.  All files have a leading number at the start of the Rmd file names.  The order of the numbers indicates the order that each separate file will be stitched together to create the whole document.  If you would like to move the order of a text section of the document, you will just need to adjust the number order.  Additionally, when the document is drafted a standard set of sections are created, however, not every assessment will need each section.  A common example are the standard survey files created (e.g. '21s-wcgbts'). If your assessment will not include data from a specific survey, this file can be removed from the document by deleting the file.
 
 ## Step 3
 
@@ -83,7 +83,7 @@ bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
 
 ```
 
-This will create build the pdf document which will be save directly in the working directory.  However, one may prefer to have the pdf saved in a specific folder.  One default approach is the call the render_book function without specifying the output_dir which will put the pdf document in a separate folder in the working directory. 
+This will create the pdf document which will be saved directly in the working directory.  However, one may prefer to have the pdf saved in a specific folder.  One default approach is to call the render_book function without specifying the output_dir which will put the pdf document in a separate folder in the working directory. 
 
 ```r
 bookdown::render_book("00a.Rmd", clean = FALSE)
@@ -147,7 +147,7 @@ This will create a new model output Rdata file containing the output from **r4ss
 # Tips & Tricks
 
 ## Share Text Across Documents
-If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done by creating separate folder for sections of text that will be shared across documents. Text should be included in a file with an Rmd extension and can be called using a code chunk with the **knit_child** command in the **knitr** package:
+If you are creating an area-specific assessment document for species you may want to use the same text across multiple documents.  This can be easily done by creating separate folder for sections of text that will be shared across documents. Text should be included in a file with an Rmd extension and can be called using a **R** code chunk with the **knit_child** command in the **knitr** package:
 
 
 ```{r}
@@ -160,7 +160,7 @@ cat(res, sep = '\n')
 
 ## Add Figures from **r4ss**
 
-There are a number of ways to add figures to the document, either in the executive summary or figures sections.  The first approach is to directly specify where the document is located, add a figure caption and alternative text caption (for accessibility), and specific a figure label which allows the user to reference the figure in the document. In the below example the figure (data-plot.png) is located in the same directory as the Rmd files being rendered. 
+There are a number of ways to add figures to the document, either in the executive summary or figures sections.  The first approach is to directly specify where the document is located, add a figure caption and alternative text caption (for accessibility), and specify a figure label which allows the user to reference the figure in the document. In the below example the figure (data-plot.png) is located in the same directory as the Rmd files being rendered. No **R** code chunk is needed in this case. 
 
 ```{r, eval = FALSE}
 # This is the text that is placed in the document:
@@ -172,7 +172,7 @@ There are a number of ways to add figures to the document, either in the executi
 
 ![Summary of data sources used in the base model.\label{fig:data-plot}](data-plot.png){width=75% height=75% alt="Summary of data sources used in the base model"}
 
-Alternatively, the figure you want to include may be located in a folder outside the folder that you are rendering the document within.  To do this easily a function has been added to the **sa4ss** package that allows users to do this. 
+Alternatively, the figure you want to include may be located in a folder outside the folder that you are rendering the document within.  To do this easily a function has been added to the **sa4ss** package that allows users to do this within a **R** code chunk. 
 
 ```{r, eval = FALSE}
 # The add_figure function has the user specific the figure and its location to be used. 
@@ -235,7 +235,7 @@ sa4ss::table_format(x = tab,
              col_names = col_names)
 ```
 
-**R** code chunks can also create tables from **R** objects that are loading in the work space. One item that will be loaded into your work session is a Rdata object with the output from **r4ss::SS_output** for your model. This Rdata object is created using the **sa4ss::read_model** function (see "Updating the Base Model" section above for infomation).  
+**R** code chunks can also create tables from **R** objects that are loading in the work space. One item that will be loaded into your work session is a Rdata object with the output from **r4ss::SS_output** for your model. This Rdata object is created using the **sa4ss::read_model** function (see "Updating the Base Model" section above for infomation). 
 
 ```{r, eval = FALSE}
 
@@ -243,7 +243,6 @@ like = cbind(rownames(model$likelihoods_used),  model$likelihoods_used$values)
 like[,1] = gsub("\\_", " ", like[,1])
 colnames(like) = c("Label", "Total")
 
-  
 sa4ss::table_format(x = like,
              caption = "Likelihoods in the model",
              label = "likelihood",
@@ -258,7 +257,6 @@ like = cbind(rownames(model$likelihoods_used),  model$likelihoods_used$values)
 like[,1] = gsub("\\_", " ", like[,1])
 colnames(like) = c("Label", "Total")
 
-  
 sa4ss::table_format(x = like,
              caption = "Likelihoods in the model",
              label = "likelihood",
@@ -284,11 +282,11 @@ Once the tex files have been created they can be sourced into your assessment do
 
 ```
 
-Users often need to add tables describing data or other items that are not included in the suite of tables created by the **r4ss::SSexecutivesummary** function. One example would be a table of the number of trips and lengths sampled per year for a fleet in your model. Users could to this via Option 1 described above or they could create a tex file for the existing csv containing the needed information.  To do this, you will need to create a master csv file that is specifies specific attributes for the various csv files you would like to include in your document. The master csv file will need to have these specific columns with the exact name and order as: "caption",	"altcaption" "label",	"filename", "loc".  In the "caption" column you will type out the table caption, "altcaption" is the text for the altervatve 508 compliance caption (a value of NA will default to use the caption), "label" is the way the table will be referenced in the document, "filename" is the name of csv file to read, and "loc" is the location of the csv file. Once this master csv file is created you can create tex files for all items using the **sa4ss::es_table_tex** function:
+Users often need to add tables describing data or other items that are not included in the suite of tables created by the **r4ss::SSexecutivesummary** function. One example would be a table of the number of trips and lengths sampled per year for a fleet in your model. Users could to this via Option 1 described above or they could create a tex file for the existing csv containing the needed information.  To do this, you will need to create a master csv file that specifies specific attributes for the various csv files you would like to include in your document. The master csv file will need to have these specific columns with the exact name and order as: "caption",	"altcaption" "label",	"filename", "loc".  In the "caption" column you will type out the table caption, "altcaption" is the text for the altervatve 508 compliance caption (a value of NA will default to use the caption), "label" is the way the table will be referenced in the document, "filename" is the name of csv file to read, and "loc" is the location of the csv file. Once this master csv file is created you can create tex files for all items using the **sa4ss::es_table_tex** function:
 
 ```{r, eval = FALSE}
-es_table_tex(dir = file.path(getwd(), 'tables'), 
-            save_loc = file.path(getwd(), "tex_tables"), 
+es_table_tex(dir = file.path(getwd(), 'tables'),
+            save_loc = file.path(getwd(), "tex_tables"),
             csv_name = "all_tables.csv")
 
 ```
@@ -329,7 +327,7 @@ knitr::knit_hooks$set(plot = function(x,options) {
       if (alt != ""){
         sprintf('![%s](%s%s "%s")', cap, base, x, alt)
       } else {
-        sprintf('![%s](%s%s)', cap, base, x)  
+        sprintf('![%s](%s%s)', cap, base, x) 
         }
   })
 
