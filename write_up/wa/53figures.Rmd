@@ -37,6 +37,14 @@ caption = "Length composition data from the recreational fleet",
 label = 'wa-len-data')
 ```
 
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "comp_lendat__aggregated_across_time.png"), 
+caption = "Aggregated length composition data across all years from the recreational fleet",
+label = 'wa-len-agg')
+```
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_WA_Recreational.png"), 
@@ -160,7 +168,7 @@ label = 'yield')
 
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -168,21 +176,21 @@ label = 'sens-ssb')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
 label = 'sens-depl')
 ```
 
-<!-- ====================================================================== -->
-<!-- ******************     Retrospectives    ***************************** --> 
-<!-- ====================================================================== -->
-
 ```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'figures_retro.Rmd')
-read_child(filein)
+nm = paste0(basename(mod_loc), "_compare12_recdevs_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated annual recruitment deviations by sensitivity",
+label = 'sens-recr')
 ```
+
 
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
@@ -193,5 +201,32 @@ filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
 
+\newpage
+
+
+<!-- ====================================================================== -->
+<!-- ******************       LB-SPR          ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
+
+add_figure(
+filein = file.path(lbspr, "Copper_WA_LBSPR_newVBGF_plots.png"), 
+caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
+label = 'lbspr')
+```
+
+\newpage
+
+
+<!-- ====================================================================== -->
+<!-- ******************     Retrospectives    ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_retro.Rmd')
+read_child(filein)
+```
 
 \newpage

@@ -7,9 +7,10 @@ read_child(filein)
 ```
 
 ## Historical and Current Fishery Information
-Off the coast of Washington State `r spp` is primarily caught in the recreational/sport fishery with very little mortality from commercial fishing. `r Spp` has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of selected years with high (2005) or low catches (2015). `r Spp` is landed as part of the live fish fisheries in other areas of the West Coast (e.g.,  Oregon and California), however, live fish fisheries are prohibited in Washington waters. 
 
-The primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` are associated with in comparison to the southern coast of Washington is primarily soft and sandy substrate.  The stock off the Washington coast was assessed as a separate stock from other populations off the West Coast based on the likely limited flow of fish between Washington and Oregon given the substrate separation, `r spp` biology, and the different exploitation patterns by state.   
+Off the coast of Washington State `r spp` is primarily caught in the recreational/sport fishery with very little mortality from commercial fishing. `r Spp` has been a target of recreational fishing as early as 1934 with catches stabilizing around 2,500 - 3,000 fish per year starting around 1980 with the exception of select years with high (2005) or low catches (2015). `r Spp` is landed as part of the live fish fisheries in other areas off the West Coast (e.g., Oregon and California), however, live fish fisheries are prohibited in Washington waters. 
+
+The primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` are associated with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate.  The stock off the Washington coast was assessed as a separate stock from other populations off the West Coast based on three factors: 1) suspected limited flow of fish between Washington and Oregon given the substrate separation, 2) the different exploitation patterns within Washington waters compared to Oregon and California, and 3) the quantity of length data in Washington compared to other areas.   
 
 
 ## Summary of Management History and Performance
@@ -18,4 +19,4 @@ general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
-The OFL and ACLs for `r spp` North of 40$^\circ$ 10' Lat. N. management area, the state/specific ACL allocation (49 percent for Washington, Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
+The OFL and ACLs for `r spp` North of 40$^\circ$ 10' Lat. N. management area, the state-specific ACL allocation (26 percent for Washington, Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
