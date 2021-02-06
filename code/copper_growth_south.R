@@ -1,3 +1,7 @@
+################################################################################################
+# Merge the trawl survey age fish with lengths
+################################################################################################
+
 all = read.csv("C:/Assessments/2020/assess_prioritization/survey_data/pulls/bio_collected_pull_01152020.csv")
 
 ages = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/NWFSC_Combo_2004-2017_COPP_AgeData_20210129.csv")
@@ -26,6 +30,7 @@ file = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_r
 library(ggplot2)
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/dataModerate_2021")
 
+# Hook & Line Ages
 dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
 hkl_age = read.csv(file.path(dir, "survey", "nwfsc_hkl_ages.csv"))
 hkl = data.frame(Length = hkl_age$length_cm,
@@ -33,18 +38,30 @@ hkl = data.frame(Length = hkl_age$length_cm,
 			Sex = hkl_age$Sex, 
 			Source = "NWFSC HKL")
 
+# NWFSC WCGBT Ages
 combo_age = read.csv(file.path(dir, "survey", "wcgbts_ages.csv"))
 combo = data.frame(Length = combo_age$length_cm, 
 				   Age = combo_age$Age, 
 				   Sex = combo_age$sex,
 				   Source = "NWFSC WCGBT")
 
+# OR commerical, OR recreational, WA recreational ages
 load(file.path(dir, "biology", "age_length_only.Rdat"))
+find = which(df$Length < 10 & df$Source == "PacFIN")
+df = df[-find, ]
+
+# Re-animated Lea young fish
+lea_age = read.csv(file.path(dir, "biology", "estimated_growth", "age_lt.csv"))
+lea = data.frame(Length = lea_age$Length,
+				 Age = lea_age$Age,
+				 Sex = "U",
+				 Source = "Lea")
 
 data_list <- list()
 data_list[[1]] = hkl
 data_list[[2]] = combo
-data_list[[3]] = df
+data_list[[3]] = df[df$Source != "Lea", ]
+data_list[[4]] = lea[lea$Age <= 6, ]
 
 all_data = NA
 for (a in 1:length(data_list)){
@@ -57,6 +74,92 @@ for (a in 1:length(data_list)){
 
 all_data = all_data[-1,] 
 aggregate(Age~Source, all_data, quantile)
+
+################################################################################################
+# Create plots for the docs
+################################################################################################
+
+line_col = c("red", 'blue', 'grey')
+pch_vec = c(0, 1, 2, 5)
+#pch_vec = c(15, 16, 17, 18)
+sex_col = alpha(line_col, 1)
+lens = 1:max(all_data$Length, na.rm = TRUE)
+xmax = max(all_data$Age + 2,    na.rm = TRUE)
+ymax = max(all_data$Length + 5, na.rm = TRUE)
+
+pngfun(wd = file.path(dir,  "biology", "plots"), file = "doc_north_Age_by_Sex_Source.png", w = 7, h = 7, pt = 12)
+par(mfrow = c(1, 1))
+ind = which(all_data$Sex == 'F' & all_data$Source == "PacFIN")
+plot(all_data[ind, "Age"], all_data[ind, "Length"], xlab = "Age", ylab = "Length (cm)",
+	xaxs = "i", yaxs = "i",ylim = c(0, ymax), xlim = c(0, xmax), pch = pch_vec[1], col = sex_col[1]) 
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[1], col = sex_col[1])
+ind = which(all_data$Sex == 'M' & all_data$Source == "PacFIN")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[1], col = sex_col[2])
+
+ind = which(all_data$Sex == 'F' & all_data$Source == "ODFW_Rec")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[2], col = sex_col[1])
+ind = which(all_data$Sex == 'M' & all_data$Source == "ODFW_Rec")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[2], col = sex_col[2])
+
+ind = which(all_data$Sex == 'F' & all_data$Source == "WDFW_Rec")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[3], col = sex_col[1])
+ind = which(all_data$Sex == 'M' & all_data$Source == "WDFW_Rec")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[3], col = sex_col[2])
+
+ind = which(all_data$Source == "Lea")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[4], col = sex_col[3])
+
+lines(0:xmax, 48.43 * (1 - exp(-0.206 * (0:xmax + 0.5813))), col = 'red',  lty = 1, lwd = 2)
+lines(0:xmax, 47.24 * (1 - exp(-0.2313 * (0:xmax + 0.323))), col = 'blue', lty = 1, lwd = 2) 	
+legend("topleft", bty = 'n', legend = c("Female", "Male", "Unsexed"), 
+	col = c(sex_col, sex_col), pch = pch_vec[1],  cex = 1.25)
+legend("bottomright", bty = 'n', legend = c("OR Commercial", "OR Recreational", 
+	"WA Recreational", "Lea"), pch = pch_vec, cex = 1.25)
+dev.off()
+
+pngfun(wd = file.path(dir,  "biology", "plots"), file = "doc_south_Age_by_Sex_Source.png", w = 7, h = 7, pt = 12)
+par(mfrow = c(1, 1))
+ind = which(all_data$Sex == 'F' & all_data$Source == "NWFSC HKL")
+plot(all_data[ind, "Age"], all_data[ind, "Length"], xlab = "Age", ylab = "Length (cm)",
+	xaxs = "i", yaxs = "i",ylim = c(0, ymax), xlim = c(0, xmax), pch = pch_vec[1], col = sex_col[1]) 
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[1], col = sex_col[1])
+ind = which(all_data$Sex == 'M' & all_data$Source == "NWFSC HKL")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[1], col = sex_col[2])
+
+ind = which(all_data$Sex == 'F' & all_data$Source == "NWFSC WCGBT")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[2], col = sex_col[1])
+ind = which(all_data$Sex == 'M' & all_data$Source == "NWFSC WCGBT")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[2], col = sex_col[2])
+
+ind = which(all_data$Source == "Lea")
+points(all_data[ind, "Age"], all_data[ind, "Length"], pch = pch_vec[4], col = sex_col[3])
+
+lines(0:xmax, 47.36 * (1 - exp(-0.231 * (0:xmax + 0.226))), col = 'red',  lty = 1, lwd = 2)
+lines(0:xmax, 47.09 * (1 - exp(-0.238 * (0:xmax + 0.164))), col = 'blue', lty = 2, lwd = 2) 	
+legend("topleft", bty = 'n', legend = c("Female", "Male", "Unsexed"), 
+	col = c(sex_col, sex_col), pch = pch_vec[1],  cex = 1.25)
+legend("bottomright", bty = 'n', legend = c("NWFSC HKL", "NWFSC WCGBT", "Lea"), 
+	pch = pch_vec[-3], cex = 1.25)
+dev.off()
+
+dev.off()
+
+################################################################################################
+# Exploratory Plots and Growth Estimates
+################################################################################################
+
+pngfun(wd = file.path(dir,  "biology", "plots"), file = "Age_by_Sex.png", w = 7, h = 7, pt = 12)
+ggplot(all_data[all_data$Sex != "U",], aes(Age, fill = Sex, color = Sex)) +
+	#facet_wrap(facets = c("Sex")) +
+	geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5, bw = 1)
+dev.off()
+
+find = which(all_data$Sex != "U" & !all_data$Source %in% c("Lea", "NWFSC HKL", "NWFSC WCGBT"))
+pngfun(wd = file.path(dir,  "biology", "plots"), file = "Age_by_Fishery_Source.png", w = 7, h = 7, pt = 12)
+ggplot(all_data[find,], aes(Age, fill = Source, color = Source)) +
+	#facet_wrap(facets = c("Sex")) +
+	geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5, bw = 1)
+dev.off()
 
 ggplot(all_data, aes(Age, fill = Source, color = Source)) +
 	facet_wrap(facets = c("Source")) +

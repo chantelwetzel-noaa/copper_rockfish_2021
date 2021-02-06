@@ -394,19 +394,36 @@ model = "10.3_base"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
-
-model = "10.4_base_nodevs_asym"
-base = SS_output(file.path(wd, model))
-SS_plots(base)
-
-
 model = "10.4_base_mat_linf_com_catch"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
-model = "10.4_base_rec_hybrid"
-base = SS_output(file.path(wd, model))
-SS_plots(base)
+model = "10.5_base_growth"
+growth = SS_output(file.path(wd, model))
+
+model  = "10.5_base_growth_no_recdevs"
+nodevs = SS_output(file.path(wd, model))
+
+model  = "10.5_base_growth_no_recdevs_asym_com"
+com = SS_output(file.path(wd, model))
+
+model  = "10.5_base_growth_no_recdevs_asym_rec"
+rec = SS_output(file.path(wd, model))
+
+modelnames <- c("10.3 Base",
+				"10.5 Growth",
+				"10.5 Growth & No Devs.",
+				"10.5 Growth, No Devs., & Com. Asym.",
+				"10.5 Growth, No Devs., & Rec. Asym.")
+mysummary <- SSsummarize(list(base, growth, nodevs, com, rec))
+
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.5_growth_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+
 
 
 

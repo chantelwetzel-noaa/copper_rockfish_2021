@@ -282,3 +282,15 @@ model = "6.4_base"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
+# Update growth based on lea < 3 age fish and OR/WA length age observations
+model = "6.5_base"
+new_base = SS_output(file.path(wd, model))
+SS_plots(new_base)
+
+modelnames <- c("Old Base - 6.4", "New Base - Growth")
+mysummary  <- SSsummarize(list(base,  new_base))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.4_growth_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

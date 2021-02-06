@@ -135,26 +135,29 @@ rerun_profile_vals(mydir = file.path(mydir, base_name),
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/wa"
 base_name = "5.1.1_selex_cv_fixed"
 base_name = "7.0_base"
+base_name = "7.7_base"
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)",  "L_at_Amax_Fem_GP_1"),
-							low =  c(0.085, 0.30, -1, 45),
-							high = c(0.125, 1.0,  2, 55),
-							step_size = c(0.005, 0.10, 0.25, 1),
-							param_space = c('real', 'real', 'relative', 'real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)",  
+							"L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+							low =  c(0.09, 0.30, -0.8, 45, 0.14),
+							high = c(0.14, 1.0,  1.6, 53, 0.30),
+							step_size = c(0.005, 0.10, 0.2, 1, 0.01),
+							param_space = c('real', 'real', 'relative', 'real', 'real'))
 
-#get = get_settings_profile( parameters =  c( "SR_BH_steep",  "L_at_Amax_Fem_GP_1"),
-#							low =  c(0.30, -5),
-#							high = c(1.0,   5),
-#							step_size = c(0.10, 1),
-#							param_space = c('real', 'relative'))
+get = get_settings_profile( parameters =  c(  
+							"L_at_Amax_Fem_GP_1"),
+							low =  c( 44),
+							high = c(52),
+							step_size = c(1),
+							param_space = c('real'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-							  run = c("jitter"),
-							  jitter_fraction = 0.15))
+							  run = 'profile',
+							  profile_details = get ))
 
-#model_settings = get_settings(settings = list(base_name = base_name,
-#							  run = c("jitter", "profile", "retro"),
-#							  profile_details = get ))
+model_settings = get_settings(settings = list(base_name = base_name,
+							  jitter_fraction = 0.10,
+							  profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 

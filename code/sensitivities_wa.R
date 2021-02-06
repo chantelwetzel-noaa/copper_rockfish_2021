@@ -14,6 +14,7 @@ devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 ###################################################################
 area = "wa"
 base_model = "7.0_base"
+base_model = "7.7_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -23,16 +24,14 @@ out.dir = wd
 base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
            area, base_model)
 
-model.list <- c(paste0(base_model, "_low_m"),  #1     
-                paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_dome"), #3
-                #paste0(base_model, "_platoons"), #3
-                paste0(base_model, "_linf_hi"), #4
+model.list <- c(paste0(base_model, "_est_m"),  #1     
+                paste0(base_model, "_est_linf"), #3
+                paste0(base_model, "_est_k"), #4
                 paste0(base_model, "_recdevs"), #5
+                paste0(base_model, "_recdevs_dome"), #5
 				        paste0(base_model, "_francis"), #6
                 paste0(base_model, "_mi"), #7
-                paste0(base_model, "_dirichlet"))#,  #8
-                #paste0(base_model, "_sss")) #9
+                paste0(base_model, "_dirichlet")) #8
 
 out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -46,16 +45,16 @@ sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose =
 sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
-                "Low M", 
-                "High M", 
-                #"Domed Selectivity",
-                "High Linf",
+                "Est. M (f)", 
+                "Est. Linf (f)",
+                "Est. k (f)",
                 "Estimate Rec. Devs.",
+                "Estimate Rec. Devs. and Dome Selex",
                 "Francis Data Weight",
                 "MI Data Weight",
                 "DM Data Weight") 
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_4, sens_5, 
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
@@ -67,18 +66,19 @@ SSplotComparisons(x, endyrvec = 2021,
                   print = TRUE, 
                   pdf = FALSE)
 
+SSplotComparisons(x, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  plotdir = file.path(getwd(), '_plots'), 
+                  legendloc = c(0.01,0.9), 
+                  filenameprefix = paste0(base_model, "_"),
+                  subplot = c(4), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
 ###################################################################################
 # Create a Table of Results
 ###################################################################################
-modelnames <- c("Base Model",
-                "Low M", 
-                "High M", 
-                "Domed Selectivity",
-                "High Linf",
-                "Estimate Rec. Devs.",
-                "Francis Data Weight",
-                "MI Data Weight",
-                "DM Data Weight") 
+
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
                  sens_6, sens_7, sens_8))

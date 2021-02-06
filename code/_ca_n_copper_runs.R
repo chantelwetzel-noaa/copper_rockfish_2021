@@ -270,3 +270,28 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+
+
+model = "9.2_base_commercial_catch"
+catch = SS_output(file.path(wd, model))
+
+model = "9.3_base_growth"
+growth = SS_output(file.path(wd, model))
+
+# The difference in model results with the dome for
+# commercial selectivity is very small.
+model = "9.3_base_growth_asym"
+selex = SS_output(file.path(wd, model))
+
+model = "9.3_base_growth_spline"
+spline = SS_output(file.path(wd, model))
+
+modelnames <- c("9.0 Base", "9.3 Growth",
+				"9.3 Asym. Selex", "9.3 Spline Selex")
+mysummary  <- SSsummarize(list(base, growth, selex, spline))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "9.3_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

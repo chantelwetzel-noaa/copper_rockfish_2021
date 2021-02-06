@@ -230,6 +230,22 @@ SS_plots(blocks)
 # aggregated length fit not dramatically improved.
 SS_plots(all_lengths)
 
+model = "7.6_base"
+base = SS_output(file.path(wd, model))
+
+# Update growth based on lea < 3 age fish and OR/WA length age observations
+model = "7.7_base"
+new_base = SS_output(file.path(wd, model))
+SS_plots(new_base)
+
+modelnames <- c("Old Base - 7.6", "New Base - Growth")
+mysummary  <- SSsummarize(list(base,  new_base))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.7_growth_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
 
 
 #===================================================================
