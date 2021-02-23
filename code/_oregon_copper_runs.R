@@ -285,12 +285,68 @@ SS_plots(base)
 # Update growth based on lea < 3 age fish and OR/WA length age observations
 model = "6.5_base"
 new_base = SS_output(file.path(wd, model))
-SS_plots(new_base)
+#SS_plots(new_base)
 
-modelnames <- c("Old Base - 6.4", "New Base - Growth")
-mysummary  <- SSsummarize(list(base,  new_base))
+model = "6.5_base_no_com"
+base_no_com = SS_output(file.path(wd, model))
+
+# Also changed comm input N to number of fish
+model = "6.5_base_2015_2016"
+base_rm_lown = SS_output(file.path(wd, model))
+
+model = "6.5_base_2015_2016_full_wght"
+full_wght = SS_output(file.path(wd, model))
+
+model = "6.5_base_2015_2016_rec_full_wght"
+rec_wght = SS_output(file.path(wd, model))
+
+modelnames <- c("Base", "No Comm. Comps", "Rm. 2015-16", 
+				"Rm. 2015-16 Full Weight", "Rm. 2015-16 Rec Full Weight")
+mysummary  <- SSsummarize(list(new_base,  base_no_com, base_rm_lown,
+						       full_wght, rec_wght))
 SSplotComparisons(mysummary, 
-				  filenameprefix = "6.4_growth_",
+				  filenameprefix = "Data_Exploration_",
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+model = "6.5_base_nodevs"
+determ = SS_output(file.path(wd, model))
+
+
+modelnames <- c("Old Base - 6.4", "New Base - Growth", "New Base - No Rec Devs")
+mysummary  <- SSsummarize(list(base,  new_base, determ))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.5_growth_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "6.5_base_nodevs_2000"
+rec_2000 = SS_output(file.path(wd, model))
+model = "6.5_base_nodevs_fran_no_com"
+fran = SS_output(file.path(wd, model))
+model = "6.5_base_nodevs_mi_no_com"
+mi = SS_output(file.path(wd, model))
+model = "6.5_base_nodevs_dm"
+dm = SS_output(file.path(wd, model))
+
+
+modelnames <- c( "6.5",
+				 "6.5 No Devs After 2000",
+				 "6.5 No Devs, No Comm. - Francis",
+				 "6.5 No Devs, No Comm. - MI", 
+				 "6.5 - No Devs. DM")
+mysummary  <- SSsummarize(list(new_base, rec_2000, fran, mi, dm))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "6.5_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+
+model = "6.5_base_2015_16"
+rem_1516 = SS_output(file.path(wd, model))
+
+model = "6.5_base_2015_16_add"
+add_1516 = SS_output(file.path(wd, model))

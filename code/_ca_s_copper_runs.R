@@ -424,8 +424,60 @@ SSplotComparisons(mysummary,
 				  pdf = TRUE)
 
 
+model  = "10.6_base_new_len_data"
+data = SS_output(file.path(wd, model))
+SS_plots(data)
 
+modelnames <- c(
+				"10.5 Growth & No Devs.",
+				"10.6 New Len Data")
+mysummary <- SSsummarize(list(nodevs, data))
 
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.6_len_data_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model  = "10.7_data_len_data_asym"
+asym = SS_output(file.path(wd, model))
+SS_plots(asym)
+
+model  = "10.8_data_asym_rm_hkl"
+no_hkl = SS_output(file.path(wd, model))
+SS_plots(no_hkl)
+
+model = "10.9_data_asym_rmhkl_recdevs"
+recdevs = SS_output(file.path(wd, model))
+SS_plots(recdevs)
+
+model = "10.10_data_rmhkl"
+fix_no_hkl = SS_output(file.path(wd, model))
+SS_plots(fix_no_hkl)
+
+model = "10.10_data_rmhkl_asym_com"
+asym_com = SS_output(file.path(wd, model))
+SS_plots(asym_com)
+
+model = "10.11_data_rmhkl_asym_com"
+asym_com = SS_output(file.path(wd, model))
+SS_plots(asym_com)
+
+model = "10.12_data_rmhkl_asym_rec"
+asym_rec = SS_output(file.path(wd, model))
+SS_plots(asym_rec)
+
+model = "11.0_2_area"
+area = SS_output(file.path(wd, model))
+SS_plots(area)
+
+model = "11.1_2_area_recdevs"
+area = SS_output(file.path(wd, model))
+SS_plots(area)
+
+model = "11.2_2_area_recdevs_cca"
+area = SS_output(file.path(wd, model))
+SS_plots(area)
 
 #############################################################
 # Sensitivity 

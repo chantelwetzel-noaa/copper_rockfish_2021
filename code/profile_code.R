@@ -105,12 +105,12 @@ base_name = "2.4_recdevs_early_est_p1_only_block"
 base_name = "5.0_dw_francis"
 base_name = "5.5_dw_francis_sigmar_60"
 base_name = "6.0_base"
-base_name = "6.4_base"
+base_name = "6.5_base"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", 
 								"L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
-							low =  c(0.09, 0.30, -0.70, 45, 0.10),
-							high = c(0.13, 1.0,  1.2, 55, 0.20),
+							low =  c(0.09, 0.30, -0.70, 44, 0.14),
+							high = c(0.13, 1.0,  1.2, 52, 0.25),
 							step_size = c(0.005, 0.10, 0.20, 1, 0.01),
 							param_space = c('real', 'real', 'relative', 'real', 'real'))
 

@@ -6,7 +6,7 @@
 #			  by Chantel Wetzel 
 #
 ##############################################################################################################
-
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/PacFIN.Utilities")
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/dataModerate_2021")
 library(HandyCode)
 library(dplyr)
@@ -52,8 +52,9 @@ wa_rec = read.csv(file.path(dir, "_wa", "wa_recreational_all_years.csv"))
 #-----------------------------------------------------------------------------------
 
 # PacFIN Commercial
-load(file.path(dir, "COPP.CompFT.17.Aug.2020.RData"))
-com = COPP.CompFT.17.Aug.2020
+#load(file.path(dir, "COPP.CompFT.17.Aug.2020.RData"))
+load(file.path(dir, "COPP.CompFT.21.Feb.2021.RData"))
+com = cleanColumns.catch(data)
 
 # Oregon Historical Catches
 or_all_ali = read.csv(file.path(dir, "/_or/or_copper_final_commercial_landings_1892_2020.csv"))
@@ -163,21 +164,19 @@ wa_rec_catch[,"Total.removal_."] = wa_rec_catch[,"Total.removal_."] / 1000
 # Evaluate the commercial landings
 #################################################################################################################
 
-com$round_mt = com$CATCH.LBS / 2204.62262
+#com$round_mt = com$CATCH.LBS / 2204.623
+com$round_mt = com$ROUND_WEIGHT_MTONS
 
-com$area = com$AGID
+com$area = com$AGENCY_CODE
 # All areas south of Point Conception
 south_ca = c("DNA","HNM","LGB","NWB","OBV", "OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
-find = which(com$PCID %in% south_ca)
+find = which(com$PACFIN_PORT_CODE %in% south_ca)
 com$area[find] = "south"
 com$area[which(com$area == "C")] = "north"
 
-aggregate(round_mt~area+REMOVAL_TYPE, data = com, FUN = function(x) round(sum(x),3))
-# Research removals are very small
-remove = which(com$REMOVAL_TYPE == "R")
-com = com[-remove, ]
-
-tmp_com = aggregate(round_mt ~ YEAR + area, data = com[com$area %in% c('north', 'south', 'W'),], FUN = sum, drop = FALSE)
+aggregate(round_mt ~ LANDING_YEAR + area, com[com$LANDING_YEAR == 2020,], FUN = sum, drop = FALSE)
+tmp_com = aggregate(round_mt ~ LANDING_YEAR + area, data = com[com$area %in% c('north', 'south', 'W'),], FUN = sum, drop = FALSE)
+tmp_com[is.na(tmp_com)] = 0
 colnames(tmp_com) = c('year', 'area', 'round_mt')
 
 #################################################################################
