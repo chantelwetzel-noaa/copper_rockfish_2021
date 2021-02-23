@@ -28,7 +28,8 @@ The bridge model was modified from this point to determine the base model by ext
 
 ## Model Structure and Assumptions
 
-The South of Pt. Conception `r spp` area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fishings fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr` and one survey fleet, `r hkl`.  Selectivity was specified for all fleets in the model using the double normal parameterization within SS. The selectivity for the commercial and recreational fleets was fixed to be asymptotic and the `r hkl` selectivity was allowed to estimate dome-shape. Annual recruitment deviations were estimated. 
+The South of Pt. Conception `r spp` area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fishings fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr` and one survey fleet, `r hkl`.  Selectivity was specified for all fleets in the model using the double normal parameterization within Stock Synthesis. The selectivity for the commercial and recreational fleets were allowed to estimate dome-shaped selectivity and the `r hkl` selectivity was allowed to estimate dome-shape. 
+
 
 ### Modeling Platform and Structure
 
@@ -50,13 +51,15 @@ The base  model was weighted using the "Francis method", which was based on equa
 
 ### Estimated and Fixed Parameters
 
-There were XXX estimated parameters in the base model. These included one parameter for $R_0$, X parameters for selectivity and time blocking of the fleets, 105 recruitment deviations, and 12 forecast recruitment deviations (Table \ref{tab:params}).
+There were XXX estimated parameters in the base model. These included one parameter for $R_0$ and X parameters for selectivity (Table \ref{tab:params}). The estimation of annual recruitment was explored but were not included in the base model due to correlation in catch and estimates.
 
-Fixed parameters in the model were as follows. Steepness was fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`. A sensitivity analysis and a likelihood profile were performed for steepness. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, which is the median of the prior.  The standard deviation of recruitment deviates was fixed at `r print(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Growth, maturity-at-length, and length-at-weight was fixed as described above in Section \ref{data}. 
+Fixed parameters in the model were as follows. Steepness was fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`.  Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, which is the median of the prior.  Annual recruitment was deterministic predicted from the stock-recruitment curve. Growth, maturity-at-length, and length-at-weight was fixed as described above in Section \ref{data}. Likelihood profiles were conducted across steepness, natural mortality, and growth parameters to examine the impact of the selected fixed values in the model.
 
-Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. After explorations, there was little support for dome-shaped selectivity for the commercial and recreational fleet, however, the fit to the `r hkl` length compositions were best with a limited dome in selectivity for the largest sizes. 
+Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. After explorations, the commercial and recreational fleets were both allowed to estimate dome-shaped selectivity due to extreme model estimates when forced to be asymptotic. The `r hkl` length compositions were best with a limited dome in selectivity for the largest sizes. 
 
 
 ## Model Selection and Evaluation
 
 The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+
+## Area Specific Assessment Challenges

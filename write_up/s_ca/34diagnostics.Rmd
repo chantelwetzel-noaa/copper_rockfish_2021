@@ -22,22 +22,15 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
   
   \item Remove the `r hkl` index of abundance and length data. 
 
+  \item Remove `r hkl` data collected inside the CCA. 
+
   \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table \ref{tab:dw}. 
   
   \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dw}. 
   
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table XXX.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XXX and XXX.
-
-### Length-Based Spawner-per-Recruit Analysis
-
-An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity estimating year independent estimates of selectivity and spawner-per-recruit effort on the recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 25 cm with full selection between 31 - 32 cm  (Figure \ref{fig:lbspr}). For comparison, the size at 50 percent length-at-maturity was fixed at `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm south of Pt. Conception based on new research (Melissa Head, pers. comm.).  This indicates that the mode of the recreational removals by length are from individuals that have not reach full maturity. 
-
-
-### Retrospective Analysis
-
-A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  
+Likelihood values and estimates of key parameters from each sensitivity are available in Table XXX.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures XXX and XXX. 
 
 
 ### Likelihood Profiles
@@ -57,3 +50,15 @@ The negative log-likelihood profile across female natural mortatliy supported va
 A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 48 and 50 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
 A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values from 0.14 and higher. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
+
+### Retrospective Analysis
+
+A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). 
+
+### Length-Based Spawner-per-Recruit Analysis
+
+An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity estimating year independent estimates of selectivity and spawner-per-recruit effort on the recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 25 cm with full selection between 31 - 32 cm  (Figure \ref{fig:lbspr}). For comparison, the size at 50 percent length-at-maturity was fixed at `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm south of Pt. Conception based on new research (Melissa Head, pers. comm.).  This indicates that the mode of the recreational removals by length are from individuals that have not reach full maturity. 
+
+### Alternative Models
+
+The TOR for SS-CL provided clear guidelines for data usage and model structure that would facilitate review the the PFMC SSC grounfish sub-committee in a multi-day meeting. The data available for use in the SS-CL assessment for `r spp` south of Pt. Conception, along with the complexities of a potentially non-homogenous population and fishing effort in the area, led to many questions about possible states of the stock. The alternative model assumptions and structures presented are designed to be in-depth sensitivities aimed to address some of these uncertainties. 

@@ -67,9 +67,31 @@ label = 'mean-rec-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
+filein = file.path(data_loc, "survey", "plots",  "HL_SurveyExtent_2017_figure_light_wPorts1024_1.jpg"), 
+caption = "NWFSC Hook and Line sampling sites where yellow sites indicate locations inside Cowcod Conservation Areas",
+label = 'hkl-sites')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "plots",  "HKL_Site_Observations.png"), 
+caption = "NWFSC Hook and Line sample sites inside and outside the CCA and site with observations of copper rockfish",
+label = 'hkl-site-ob')
+```
+
+```{r, results = 'asis'}
+add_figure(
 filein = file.path(data_fig_loc, "hkl_cca_comparison.png"), 
 caption = "NWFSC Hook and Line observations by year outside and inside the cowcod conservation area",
 label = 'hkl-cca')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "plots",  "HKL_Size_by_Depth.png"), 
+caption = "Lengths observations by depth in the NWFSC Hook and Line data",
+label = 'hkl-len-dep')
 ```
 
 ```{r, results = 'asis'}
@@ -93,6 +115,30 @@ caption = "Index of abundance for the NWFSC Hook and Line survey. Lines indicate
 label = 'hkl-index')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey_indices", "Copp.2019.NFT.1m.ALL",  "Copp.ALL.GAM.Fig.png"), 
+caption = "Diangostics for the binomial generalized-linear model",
+label = 'hkl-diag')
+```
+
+<!-- ====================================================================== -->
+<!-- *************************     ROV         **************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_socal_open_area.png"), 
+caption = "Count of length observations across depths in an open access area",
+label = 'rov-open')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_socal_mpa_area.png"), 
+caption = "Count of length observations across depths within a marine protected area",
+label = 'rov-mpa')
+```
 
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
@@ -118,15 +164,25 @@ label = 'len-weight')
 add_figure(
 filein = file.path(data_fig_loc, "South_Len_at_Age.png"), 
 caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT survey",
-label = 'south-len-at-age')
+label = 'survey-len-at-age-data')
+```	
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "doc_south_Age_by_Sex_Source.png"), 
+caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT survey and young fish from Lea",
+label = 'south-len-at-age-data')
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "South_Data_Comparison_Len_at_Age.png"), 
-caption = "Length-at-age comparison of observed fish sampled in Oregon/Washington and south of Pt. Conception ",
-label = 'len-age-comp')
+caption = "Length-at-age comparisons between survey collected fish south of Pt. Conception and to those observed off the coast of Oregon and Washington",
+label = 'len-at-age-comp')
 ```	
+
+\newpage
 
 ```{r, results = 'asis'}
 add_figure(
@@ -401,6 +457,10 @@ label = 'lbspr')
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
 
+```{r, echo=FALSE, results='asis'}
+#filein = file.path(general_wd,'figures_likelihoods.Rmd')
+#read_child(filein)
+```
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

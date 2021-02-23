@@ -1,5 +1,11 @@
 # Introduction
 
+## Basic Information
+
+This assessment reports the status of `r spp` (*Sebastes caurinus*) off the U.S. West Coast for the area south of  Pt. Conception in California to the U.S./Mexico border using data through 2020. The population of `r spp` south of Pt. Conception to the California/Mexican border is assessed here as a separate stock.  This decision was made based on oceanographic and geographic conditions.  The `r spp` stock in California waters was split at Pt. Conception due to water circulation patterns that create a natural barrier between nearshore rockfish population north and south of the area.
+
+## Life History
+
 ```{r, echo=FALSE, results='asis'}
 general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_life_history_fishery_info.Rmd')
@@ -8,8 +14,9 @@ read_child(filein)
 
 ## Historical and Current Fishery Information
 
-Off the coast of California State, South of Pt. Conception, `r spp` is primarily caught by the recreational fishery. `r Spp` is also caught by both commercial fisheries, in lesser amounts, and are landed in both the live dead fish markets.    
+Off the coast of California southth of Pt. Conception `r spp` is caught in both commercial and recreational fisheries. Recreational removals have been the largest source of fishing mortality of `r spp` across all years (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The recreational fishery is comprised of individual recreational fishers and charter recreational private vessels which take groups of individuals out for day fishing trips. Across both types of recreational fishing the majority of effort occurs around rocky reefs that can be accessed via a day-trips.  
 
+The landings from the commercial fishery have been minimal by year, expect for a brief period in the 1990s. In the late 1980s a market for live landed fish arose driven by demand from Asian restaurants and markets. The growth of the live fish market was driven by consumers willingness to pay a higher price for live fish, ideally plate-sized. `r Spp` is one of the many rockfish species that is included in the commercial live fish fishery but also are included in the traditional dead fish fishery off the coast of California.   
 
 ## Summary of Management History and Performance
 
@@ -19,4 +26,4 @@ filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
 
-The OFL and ACLs for `r spp` South of 40$^\circ$ 10' Lat. N. management area and the total removals south of Pt. Conception are shown in Table \ref{tab:ofl}.
+Although, management defines OFLs and ACLs North and South of 40$^\circ$ 10' Lat. N. management areas, `r spp` in California are managed based on the portion of OFL and ACL allocated to California.  The OFLs and ACLs for south of  40$^\circ$ 10' Lat. N. and recent removals for the California area south of Pt. Conception are shown in Table \ref{tab:ofl}.  
