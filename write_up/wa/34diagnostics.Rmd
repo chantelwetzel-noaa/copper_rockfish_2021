@@ -30,7 +30,9 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
 
-The two sensitivities that had the largest impact relative to the base model were the ones that estimated annual recruitment deviations alone or combined to estimate dome-shaped selectivity (Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}).  The time series of each of these sensitivities resulted in large scale swings in spawning output across time.  The estimates or recruitment deviations where above average during the late 1990s and early 2000s switching to a period of low recruitment success in recent years (Figure \ref{fig:sens-recr}) which are likely being driven by subtle shifts in the mean lengths being observed across time (Figure \ref{fig:mean-len-data}). The model did estimate dome-shaped selectivity when allowed to when recruitment deviations were also estimated.  A sensitivity run allowing dome-shaped selectivity alone was performed but not shown here because the model failed to estimate a reasonable biomass scale (hit the upper bound of log($R_0$)). 
+The two sensitivities that had the largest impact relative to the base model were the ones that estimated annual recruitment deviations alone or combined to estimate dome-shaped selectivity (Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}). The time series of each of these sensitivities resulted in large scale swings in spawning output across time. The estimates or recruitment deviations had a string of average estimates during the late 1990s and early 2000s then switching to a period of low recruitment success in recent years (Figure \ref{fig:sens-recr}). The recruitment deviation estimates were likely being driven by subtle shifts in the mean lengths being observed across time (Figure \ref{fig:mean-len-data}). The pattern of recruitment deviations estimated was extreme for the Washington area model but the general pattern showed some coherence with the recruitment deviations peaks estimated in the separate Oregon area model. The Oregon base model which had larger length sample sizes relative to the Washington base model, estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s similar to what was observed in this sensitivity for the Washington model.  This may indicate that `r spp` off the coast of Oregon and Washington experience similar drivers in recruitment.     
+
+A sensitivity run allowing dome-shaped selectivity with deterministic recruitment was also performed but not shown here due to the model failing to estimate a reasonable biomass scale (hit the upper bound of log($R_0$) of 20). 
 
 The sensitivities exploring data weighting using the Francis or MI methods matched the base model as expected given that there was only one source of data used in the model. In contrast, the DM method resulted in a stock size and status less than the base model.  It is unclear why this difference in results across data weighting arose.  
 
@@ -51,32 +53,34 @@ A profile across a range of female $k$ values was also conducted (Figure \ref{fi
 
 ### Length-Based Spawner-per-Recruit Analysis
 
-An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity estimating year independent estimates of selectivity and spawner-per-recruit (SPR) effort on the recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 30 - 35 cm (excluding 2018) with full selection between 35 - 40 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.60 - 0.80 between 2016 - 2020. 
+An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 30 - 35 cm (excluding 2018) with full selection between 35 - 40 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.60 - 0.75 between 2016 - 2020. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model.  The estimates of the SPR harvest rate by year was used to provide an external estimate of stock status for a Simple Stock Synthesis sensitivity.   
 
 ### Simple Stock Synthesis
 
-A Simple Stock Sythesis (SSS) was run to compare the results from the base model with a simpler modeling approach.  SSS samples via Monte Carlo from three key parameter distributions: natural mortality, steepness, and stock status in a specific year.  The mean and median of the priors assumed in the base model were used to create sampling distributions for natural mortality and steepness.  Two alternative assumptions regarding the distribution of current stock status were explored. SSS applies parameter draws from each of the three parameters within the model and then estimates an $R0$ value based on the fixed removals and drawn parameters.   
+A Simple Stock Synthesis (SSS) was run to compare the results from the base model with a simpler modeling approach.  SSS samples via Monte Carlo from three key parameter distributions: natural mortality, steepness, and stock status in a specific year.  The mean and median of the priors assumed in the base model were used to create sampling distributions for natural mortality and steepness.  Two alternative assumptions regarding the distribution of current stock status were explored. SSS applies parameter draws from each of the three parameters within the model and then estimates an $R0$ value based on the fixed removals and drawn parameters.   
 
 \begin{enumerate}
 
-	\item Current stock status based on the estimate from the SS-CL model:
+	\item Current stock status based on the estimate from the base model (SS-CL):
 	\begin{itemize}
 		\item Number of draws = 1000,
-		\item $M$ = lognormal distrubtion (0.108, 0.22),
-		\item $h$ = truncated beta (0.72, 0.15), and
-		\item current stock status = beta(0.40, 0.20)
+		\item $M$ = lognormal distribution ($\mu$ = 0.108, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in `r endyr` = beta($\alpha$ = 0.40, $\beta$ = 0.20)
 	\end{itemize}	  
 	\item Current stock status based on LB-SPR estimates: 
 		\begin{itemize}
 		\item Number of draws = 1000,
-		\item $M$ = lognormal distrubtion (0.108, 0.22),
-		\item $h$ = truncated beta (0.72, 0.15), and
-		\item current stock status = beta(0.60, 0.20)	
+		\item $M$ = lognormal ($\mu$ = 0.108, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in `r endyr` = beta($\alpha$ = 0.60, $\beta$ = 0.20)	
 	\end{itemize}
 
 \end{enumerate}
 
+The median of unfished spawning output, spawning output `r endyr+1`, fraction unfished in `r endyr+1`, the OFL in `r endyr + 3`, and the ABC in `r endyr + 3` based on the `r endyr +1` fraction unfished of 60 percent is shown in in Table \ref{tab:SSS-60}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-60} and \ref{fig:sss-quant-60}. Assuming that the stock was less depleted relative to the base model resulted in higher estimates of the OFL and ABC in 2023, even when the category 3 buffer was applied (buffer = 0.78, based on a P* = 0.45 and \sigma = 2.0).  
 
+The median of unfished spawning output, spawning output `r endyr+1`, fraction unfished in `r endyr+1`, the OFL in `r endyr + 3`, and the ABC in `r endyr + 3` based on the `r endyr +1` fraction unfished of 40 percent is shown in in Table \ref{tab:SSS-40}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-40} and \ref{fig:sss-quant-40}. Assuming a stock status similar to the base model in SSS resulted in an OFL and ABC values that were marginally lower due to the larger buffer applied in the SSS model (base model OFL in `r endyr + 3` = `r round(model$derived_quant[model$derived_quant$Label == "OFLCatch_2023", 2], 2)`, ABC in `r endyr + 3` = `r round(model$derived_quant[model$derived_quant$Label == "ForeCatch_2023", 2], 2)`).  
 
 ### Retrospective Analysis
 A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was consistent with the base model when recent year's data were removed up until 4 and 5 years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). Removing this amount of data resulted in a downward shift in stock scale and status.

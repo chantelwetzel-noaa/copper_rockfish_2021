@@ -1,5 +1,9 @@
 # Introduction
 
+## Basic Information
+
+This assessment reports the status of `r spp` (*Sebastes caurinus*) off the Washington coast using data through 2020.
+
 ```{r, echo=FALSE, results='asis'}
 general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_life_history_fishery_info.Rmd')

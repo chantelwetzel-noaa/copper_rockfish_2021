@@ -162,6 +162,16 @@ table_format(x = mod_params,
 \newpage
 
 <!-- ======================================================= -->
+<!-- ****************     Sensitivities      *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_60.tex}
+
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_40.tex}
+
+\newpage
+
+<!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 

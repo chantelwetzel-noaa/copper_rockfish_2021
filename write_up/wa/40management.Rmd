@@ -19,8 +19,10 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 \begin{itemize}
 
-	\item Continue collecting length samples from recreational catches with an emphasis on increasing annual samples collected.
+	\item Continue collecting length and otolith samples from recreational catches with an emphasis on increasing annual samples collected.
 
 	\item Collect length data for the commercial fleet if catches occur.
+
+	\item Evaluate the connectivity of `r spp` stock off the coast of Oregon and Washington. 
 
 \end{itemize}
