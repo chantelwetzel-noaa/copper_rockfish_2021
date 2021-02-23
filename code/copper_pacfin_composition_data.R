@@ -6,8 +6,8 @@
 #
 ##################################################################################################
 
-#devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/PacFIN.Utilities")
-library(PacFIN.Utilities)
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/PacFIN.Utilities")
+#library(PacFIN.Utilities)
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/HandyCode")
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/dataModerate_2021")
 library(ggplot2)
@@ -17,7 +17,10 @@ options(stringsAsFactors = TRUE)
 dir = "N://Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/"
 setwd(dir)
 
-load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.13.Aug.2020.RData"))
+load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.21.Feb.2021.RData"))
+pacfin = bds.pacfin
+bds.file = "PacFIN.COPP.bds.21.Feb.2021"
+#load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.13.Aug.2020.RData
 #load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.16.Oct.2020.RData"))
 #pacfin = out
 # Hand remove puget sound records - this needs to be added to the cleanPacFIN function
@@ -26,35 +29,19 @@ load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.13.Aug.2020.RData")
 #pacfin_convert = cleanColumns(data = pacfin, use = 'vdrfd')
 ## Add some required columns for cleanPacFIN function
 #pacfin_convert$INPFC_AREA = 'all'
-#
-
-pacfin = PacFIN.COPP.bds.13.Aug.2020
 
 # Load in the current weight-at-length estimates by sex
-femalea = 9.56e-6; femaleb = 3.19 
-malea   = 1.08e-5; maleb = 3.15    
-unsexa  = (femalea + malea)/2;  unsexb = (femaleb + maleb)/2        
+fa = 9.56e-6; fb = 3.19 
+ma   = 1.08e-5; mb = 3.15    
+ua  = (fa + ma)/2;  ub = (fb + mb)/2        
 
 catch.file = read.csv(file.path(getwd(), "catches", "commercial_catch_by_state.csv"))
+catch.file = catch.file[,-1]
 colnames(catch.file) = c("Year", "SOUTH.ALL", "NORTH.ALL", "OR.ALL", "WA.ALL")
 
-# Add default age data column in order to make code work 
-# Must remove once data are re-pulled!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-pacfin$FISH_AGE_YEARS_FINAL = NA
-
-table(pacfin$FISH_LENGTH_TYPE)
-
-# May want to evaluat the data by state and the sample quality code to identify special projects data
-table(pacfin$SOURCE_AGID, pacfin$SAMPLE_QUALITY)
-table(pacfin$SAMPLE_TYPE,pacfin$SOURCE_AGID)
-
-keep = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT","PS")
-tmp = pacfin[pacfin$INPFC_AREA %in% keep, ]
-
-Pdata = cleanPacFIN(Pdata = tmp, 
-					keep_length_type = c("", "A", "F", "U", "T", NA),
-					keep_missing_lengths = FALSE,
-					keep_INPFC = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT","PS"),
+pacfin$age1 <- NA
+Pdata = cleanPacFIN(Pdata = pacfin, 
+					CLEAN = TRUE,
 					verbose = TRUE)
 
 #  Removal Report
@@ -103,46 +90,35 @@ aggregate(lengthcm~state_areas, data = Pdata, FUN = quantile)
 
 
 MasterPdata = Pdata
-
-Pdata$fleet = "ALL"
-
-Pdata$stratification = paste(Pdata$state_areas, Pdata$fleet, sep=".")
+Pdata$fleet = Pdata$state_areas
+Pdata$stratification = paste(Pdata$fleet, "ALL", sep=".")
 
 #################################################################################
 # Length comp expansions
 #################################################################################
 
-# There is one Oregon record where the number of sexes sampled do not add up - 3 fish total
-remove = which(Pdata$SAMPLE_NO == "OR1867882") 
-Pdata = Pdata[-remove, ]
 
-Pdata =  getExpansion_1(Pdata = Pdata, 
-						maxExp = 0.95,
-						Exp_WA = TRUE, 
-						Indiv_Wgts = TRUE,
-						plot = FALSE,
-						fa = femalea, fb = femaleb, ma = malea, mb = maleb, ua = unsexa, ub = unsexb)
+Pdata_exp <- getExpansion_1(Pdata = Pdata,
+					   fa = fa, fb = fb, ma = ma, mb = mb, ua = ua, ub = ub)
 
-
-# The convert input will change the catch from external file into pounds
-Pdata = getExpansion_2(Pdata = Pdata, 
+Pdata_exp <- getExpansion_2(Pdata = Pdata_exp, 
 					   Catch = catch.file, 
 					   Units = "MT",
 					   maxExp = 0.80)
 
-Pdata$Final_Sample_Size <- capValues(Pdata$Expansion_Factor_1_L * Pdata$Expansion_Factor_2, maxVal = 0.80)
+Pdata_exp$Final_Sample_Size <- capValues(Pdata_exp$Expansion_Factor_1_L * Pdata_exp$Expansion_Factor_2, maxVal = 0.80)
 
 # Look for consistency between lengths and ages of sampled fish
 myLbins = c(seq(10, 54, 2))
 
-Lcomps = getComps(Pdata, defaults = c("fishyr", "fleet", "stratification"), Comps = "LEN")
-
-masterLcomps = Lcomps
-
-Lcomps = doSexRatio(Lcomps, findRatio = TRUE)
+# There are very few sexed fish in CA - set them all to unsexed for simplicity
+find = which(Pdata_exp$fleet %in% c("NORTH", "SOUTH"))
+Pdata_exp[find, "SEX"] = "U"
+Lcomps = getComps(Pdata_exp, 
+				  Comps = "LEN")
 
 writeComps(inComps = Lcomps, 
-		   fname = file.path(getwd(), "commercial_comps", "forSS", "Lcomps.COPP.Nov.2020.csv"), 
+		   fname = file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), 
 		   lbins = myLbins, 
 		   partition = 0, 
 		   sum1 = TRUE,
@@ -162,77 +138,70 @@ writeComps(inComps = Lcomps,
 #########################################################################################
 # For California North & South use the sexes combined in the model
 #########################################################################################
-out = read.csv(file.path(getwd(), "commercial_comps", "forSS", "Lcomps.COPP.Nov.2020.csv"), skip = 3, header = TRUE)
-start = which(as.character(out[,1]) %in% c(" Sexes combined ")) + 2
-end   = which(as.character(out[,1]) %in% c(" Females then males ")) -1 #nrow(out)
+out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
+start = which(as.character(out[,1]) %in% c(" Usexed only ")) + 2
+end   = nrow(out)
 cut_out = out[start:end,]
 
-cut_out$fleetnum = 1
-cut_out$month = 1
-
 ind = which(colnames(cut_out) %in% "L10"):which(colnames(cut_out) %in% "L54.1")
-format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
+format = cbind(cut_out$fishyr, cut_out$month, cut_out$fleet, cut_out$sex, cut_out$partition, 
 			   cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
-colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
+colnames(format) = c("fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 format = format[format$fishyr != 2021, ]
 
-south_comps = format[format$strat == "SOUTH.ALL", -1]
-north_comps = format[format$strat == "NORTH.ALL", -1]
-write.csv(south_comps, file = paste0(getwd(), "/commercial_comps/forSS/S_CA_Lcomps_unsexed_10_54_formatted.csv"), row.names = FALSE)
-write.csv(north_comps, file = paste0(getwd(), "/commercial_comps/forSS/N_CA_Lcomps_unsexed_10_54_formatted.csv"), row.names = FALSE)
+south_comps = format[format$fleet == "SOUTH", ]
+north_comps = format[format$fleet == "NORTH", ]
+write.csv(south_comps, file = paste0(getwd(), "/commercial_comps/forSS/S_CA_Lcomps_unsexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
+write.csv(north_comps, file = paste0(getwd(), "/commercial_comps/forSS/N_CA_Lcomps_unsexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
 
 #########################################################################################
 # Grabbed the females then males for Oregon & Washington
 #########################################################################################
-out = read.csv(file.path(getwd(), "commercial_comps", "forSS", "Lcomps.COPP.Nov.2020.csv"), skip = 3, header = TRUE)
-start   = which(as.character(out[,1]) %in% c(" Females then males ")) + 2 
-end = nrow(out)
+out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
+start = 1 #which(as.character(out[,1]) %in% c(" Females then males ")) + 2 
+end = which(as.character(out[,1]) %in% c(" Females only ")) - 1 #nrow(out)
 cut_out = out[start:end,]
 
-# format the california unsexed length comps
-cut_out$fleetnum = 1
-cut_out$month = 1
-
 ind = which(colnames(cut_out) %in% "L10"):which(colnames(cut_out) %in% "L54.1")
-format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
+format = cbind(cut_out$fishyr, cut_out$month, cut_out$fleet, cut_out$sex, cut_out$partition, 
 			   cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
-colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
+colnames(format) = c("fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 format = format[format$fishyr != 2021, ]
 
-or = format[format$strat == "OR.ALL", -1]
-wa = format[format$strat == "WA.ALL", -1]
-write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/OR_Lcomps_sexed_10_54_formatted.csv"), row.names = FALSE)
-write.csv(wa, file = paste0(getwd(), "/commercial_comps/forSS/WA_Lcomps_sexed_10_54_formatted.csv"), row.names = FALSE)
+or = format[format$fleet == "OR", ]
+wa = format[format$fleet == "WA", ]
+write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/OR_Lcomps_sexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
+write.csv(wa, file = paste0(getwd(), "/commercial_comps/forSS/WA_Lcomps_sexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
 
 
 #########################################################################################
 # Calculate the number of trips and fish
 #########################################################################################
-
+Pdata = Pdata_exp
 temp = Pdata[!is.na(Pdata$lengthcm) & Pdata$SAMPLE_YEAR < 2021,]
 
-Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$stratification)
+Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$fleet)
 
-aa = unique(temp$stratification)
+aa = unique(temp$fleet)
 yy = sort(unique(temp$SAMPLE_YEAR))
 Ntows = matrix(0, length(yy), length(aa))
 for(y in 1:length(yy)){
 	for(a in 1:length(aa)){
-		ind = which(temp$SAMPLE_YEAR == yy[y] & temp$stratification == aa[a])
+		ind = which(temp$SAMPLE_YEAR == yy[y] & temp$fleet == aa[a])
 		if(length(ind) > 0) {Ntows[y, a] = length(unique(temp$SAMPLE_NO[ind])) }
 	}
 }
 colnames(Ntows) = aa
 rownames(Ntows) = yy
 
-keep = Ntows[,"WA.ALL"] != 0
-wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA.ALL"], Nfish[keep,,"WA.ALL"])
-keep = Ntows[,"OR.ALL"] != 0
-or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR.ALL"], Nfish[keep,,"OR.ALL"])
-keep = Ntows[,"NORTH.ALL"] != 0
-north_ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"NORTH.ALL"], Nfish[keep,,"NORTH.ALL"])
-keep = Ntows[,"SOUTH.ALL"] != 0
-south_ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"SOUTH.ALL"], Nfish[keep,,"SOUTH.ALL"])
+keep = Ntows[,"WA"] != 0
+wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA"], Nfish[keep,,"WA"])
+keep = Ntows[,"OR"] != 0
+or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR"], Nfish[keep,,"OR"])
+keep = Ntows[,"NORTH"] != 0
+north_ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"NORTH"], Nfish[keep,,"NORTH"])
+keep = Ntows[,"SOUTH"] != 0
+south_ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"SOUTH"], Nfish[keep,,"SOUTH"])
 
 colnames(wa_samps) = colnames(or_samps) = colnames(north_ca_samps) = colnames(south_ca_samps) = 
 	c("Year", "N_Trips", "N_Fish_Females", "N_Fish_Males", "N_Fish_Unsexed")
