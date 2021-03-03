@@ -2,7 +2,7 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10%. This was repeated 100 times with 24 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 10 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
 
 
 ### Sensitivity Analyses
@@ -13,17 +13,17 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
    
   \item Deterministic recruitment from the stock recruitment curve. 
 
-  \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the McAllister-Ianelli method (MI DW) using the weighting values shown in Table \ref{tab:dw}. 
   
-  \item Data weighting according to the Dirichlet Multinomial method where the estimated parameters are shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the Dirichlet Multinomial method (DM DW) where the estimated parameters are shown in Table \ref{tab:dw}. 
 
   \item Estimate $L_{\infty}$ for both sexes.
 
   \item Estimate the coefficient of variation for older fishes for both sexes.
 
-  \item Fix recreational selectivity from to be asymptotic. 
+  \item Estimate natural mortality for females only.
 
-  \item Apply a block in recreational selectivity with asymptotic selectivity from 1979-1999 and dome-shaped selectivity for 2000-2020. 
+  \item Fix recreational selectivity from to be asymptotic. 
 
   \item Use all recreational length data and estimate two selectivity blocks: 1979-1999 shallow asymptotic selectivity curve (higher selection of smaller fish) and 2000-2020 estimate dome-shaped selectivity.   
   
@@ -31,23 +31,25 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
 
-The largest change from the base model resulted in the sensitivity that assumed asymptotic selecitivity for the recreational fleet which resulted in a reduction in the scale and status of the stock. Data weighting with the McAllister-Ianelli (MI) resulted in a similar stock trajectory to the base model, however, the Diricthlet-Multinomial (DM) increased the variability in the stock trajectory (higher high and lower low) with a final stock status less depleted than the base model. Estimating single life history parameters, $L_{infty}$ or the CV at older ages, were generally similar to the base model although estimating $L_{infty}$ estimated a more pesimistic final stock status.
+The largest change from the base model resulted when recruitment was fixed to be deterministic.  The sensitivity estimated a higher stock scale and a less depleted stock relative to the base model. Assuming asymptotic selectivity for the recreational fleet resulted in a reduction in the scale and status of the stock. The sensitivity that used all recreational length data and estimated two time blocks for selectivity estimated similar final stock status and size compared to the base model.
+
+Data weighting with the McAllister-Ianelli (MI) resulted in a similar stock trajectory to the base model, however, the Diricthlet-Multinomial (DM) increased the variability in the stock trajectory (slightly higher high and lower low) with a final stock status less depleted than the base model. Estimating single life history parameters, the CV at older ages or female natural mortality, were similar to the base model. In contrast, estimating the $L_{\infty}$ for both sexes resulted in a more pessimistic view of the final stock status compared to the base model. 
 
 ### Likelihood Profiles
 
-Likelihood profiles were conducted for $R_0$, steepness, female maximum length, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
+Likelihood profiles were conducted for $R_0$, steepness, female natural mortality, female $L_{\infty}$, and female growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
-In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). Both the commercial and recreational data supported lower log($R_0$) value compared to the base model estimate. Increasing the $R_0$, relative to the value estimated, results in an a sharp increase in stock scale and status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). Both the commercial and recreational data supported lower log($R_0$) values. Increasing the $R_0$, relative to the value estimated, results in an a sharp increase in stock scale and status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
 
-For steepness, values from approximately 0.30 to 1.0 were supported with the lowest negative log-likelihood occuring at the upper bound of 1.0 (Figure \ref{fig:h-profile}).  Assuming higher or lower steepness values had minimal impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between around the minumum threshold (0.25) to above the management target depending upon assuming a lower or higher steepness value (Figure \ref{fig:h-depl}).
+For steepness, values from approximately 0.30 to 1.0 were supported with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). Assuming higher or lower steepness values had minimal impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status was generally within the pre-cautionary zone, between 0.25 and 0.40  of unfished, across steepness values except for the lowest steepness values (0.30 and 0.40) (Figure \ref{fig:h-depl}).
 
-The negative log-likelihood profile across female natural mortatliy supported values greater than the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output and resulted in stock statuses within the management precautionary zone (between 0.25 - 0.40) and above (Figures \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
+The negative log-likelihood profile across female natural mortality supported values between 0.105 and 0.125 which included the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output and resulted in stock statuses just below or within the management precautionary zone (between 0.25 - 0.40) and above (Figures \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
 
-A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 48 and 50 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figures \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
+A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 47.5 and 48.5 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figures \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
-A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.13 and 0.17. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figures \ref{fig:k-ssb} and XXX).
+A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.17 and 0.22. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figures \ref{fig:k-ssb} and \ref{fig:k-depl}).
 
 
 ### Retrospective Analysis
 
-A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  Removing 3 and 4 years of data resulted in a decline is spawning output relative to the base model likely due to the limited length samples from the recreational fishery available in 2015 and 2016 when retention was prohibited in the Oregon recreational fishery. 
+A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  Removing the final 3 - 5 years of data resulted in a decline is spawning output relative to the base model likely due to the limited length samples from the recreational fishery available in 2015 and 2016 when retention was prohibited in the Oregon recreational fishery. 

@@ -2,17 +2,6 @@
 # Figures
 
 
-<!-- ====================================================================== --> 
-<!-- ******************* Data Used in the Model *************************** --> 
-<!-- ====================================================================== --> 
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "data_plot.png"), 
-caption = "Summary of data sources used in the base model",
-label = 'data-plot')
-```	
-
 <!-- ====================================================================== -->  
 <!-- ****************** Catches Used in the Model ************************* --> 
 <!-- ====================================================================== -->  
@@ -22,6 +11,18 @@ add_figure(
 filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
 caption = "Catches by fleet used in the base model",
 label = 'catch')
+```	
+
+
+<!-- ====================================================================== --> 
+<!-- ******************* Data Used in the Model *************************** --> 
+<!-- ====================================================================== --> 
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "data_plot.png"), 
+caption = "Summary of data sources used in the base model",
+label = 'data-plot')
 ```	
 
 
@@ -49,14 +50,14 @@ label = 'mean-com-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figs", "comp_lendat_bubflt2mkt0_page3.png"), 
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page2.png"), 
 caption = "Length composition data from the recreational fleet",
 label = 'rec-len-data')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figs", "comp_lendat_data_weighting_TA1.8_OR_Recreational.png"), 
+filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_OR_Recreational.png"), 
 caption = "Mean length for recreational fleet with 95 percent confidence intervals",
 label = 'mean-rec-len-data')
 ```
@@ -82,6 +83,27 @@ add_figure(
 filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
+caption = "Estimated time series of age-0 recruits (1000s)",
+label = 'recruits')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
+caption = "Estimated time series of recruitment deviations",
+label = 'rec-devs')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(getwd(), "figs", "recruit_fit_bias_adjust.png"),
+caption = "Recruitment bias adjustment applied in the base model",
+label = 'bias-adj')
 ```
 
 
@@ -145,8 +167,8 @@ label = 'tot-bio')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated time series of fraction of unfished spawning output",
+filein = file.path(mod_loc, "plots", "ts9_Relative_spawning_output_intervals.png"), 
+caption = "Estimated time series of relative spawning output",
 label = 'depl')
 ```
 
@@ -165,26 +187,6 @@ label = 'bh-curve')
 ```
 
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated time series of age-0 recruits (1000s)",
-label = 'recruits')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated time series of recruitment deviations",
-label = 'rec-devs')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(getwd(), "figs", "recruit_fit_bias_adjust.png"),
-caption = "Recruitment bias adjustment applied in the base model",
-label = 'bias-adj')
-```
 
 <!-- ====================================================================== -->
 <!-- ******************    Reference Points    **************************** --> 

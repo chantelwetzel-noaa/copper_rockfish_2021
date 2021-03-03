@@ -25,6 +25,14 @@ for (a in plot.vec){
 
 ## Implied Fit to Recreational 'Ghost' Fleet Length Data 
 
+The 'ghost' fleet data consist of recreational length samples collected prior to 2000 which were not used in the base model due to low sample sizes which resulted in noisy length distributions that were not considered consistent with the recreational fleet selectivity.  Length composition data included in the 'ghost' fleet collected from 2005 and after reflect special collection samples of released fish from the recreational fleet.
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(getwd(), "figs", "comp_lendat_bubflt2mkt0_page3.png"), 
+caption = "Length composition data from the recreational fleet",
+label = 'ghost-rec-len-data')
+```
 
 ```{r, results='asis'}
 plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))

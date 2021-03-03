@@ -2,7 +2,7 @@
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (49 percent) for Oregon state provided by the PFMC Groundfish Management Team (GMT, pers. comm.). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (49 percent) for Oregon state provided by the PFMC Groundfish Management Team (GMT, personal communication). 
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -12,3 +12,15 @@ The decision table uncertainty axes and catch levels to be determined later.
 filein = file.path(general_wd,'management_uncertainty.Rmd')
 read_child(filein)
 ```
+
+## Research and Data Needs
+
+The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
+
+\begin{itemize}
+
+	\item Continue collecting length and otolith samples from recreational catches.
+
+	\item The recreational selecitivity form was a source of uncertainty in the base model. Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would be beneficial to better understand selectivitiy form.  
+
+\end{itemize}

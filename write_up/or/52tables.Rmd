@@ -9,6 +9,7 @@
 
 \newpage
 
+
 ```{r, results = 'asis'}
 yrs = hist = 2011:2020
 nfleets = 2
@@ -34,6 +35,9 @@ table_format(x = out,
 
 
 ```
+
+\newpage
+
 
 <!-- ======================================================= -->
 <!-- ***************       Data      *********************** --> 
@@ -63,9 +67,30 @@ table_format(x = out,
 <!-- ***************    Biology      *********************** --> 
 <!-- ======================================================= -->
 
+```{r, echo=FALSE, results='asis'}
+
+filein = file.path(general_wd,'table_growth.Rmd')
+read_child(filein)
+
+```
+
+<!-- ======================================================= -->
+<!-- ***************  Data Weights   *********************** --> 
+<!-- ======================================================= -->
 
 
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
 
+col_names = c('Method',
+        'Commercial Lengths',
+              'Recreational Lengths')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods.",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
 
 <!-- ======================================================= -->
 <!-- ***********   Model Parameters     ******************** --> 
@@ -149,20 +174,6 @@ table_format(x = mod_params,
 
 \newpage
 
-```{r, results = 'asis'}
-tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
-
-col_names = c('Method',
-			  'Commercial Lengths',
-              'Recreational Lengths')
-table_format(x = tab,
-             caption = "Data weights applied by each alternative data weighting methods.",
-             label = "dw",
-             align = 'l',
-             col_names = col_names)
-```
-
-\newpage
 
 
 <!-- ======================================================= -->
@@ -188,9 +199,9 @@ out = cbind(tab$Year,
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              'OFL',
-              'ACL',
-              "ACL-OR",
+              'Adopted OFL',
+              'Adopted ACL',
+              "Adopted ACL-OR",
               "OFL", 
               "ABC", 
               "Buffer",

@@ -1,6 +1,6 @@
 savedir = "C:/Assessments/2021/copper_rockfish_2021/write_up/or/figs"
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
-base_name = "6.4_base"
+base_name = "7.0_base"
 model = SS_output(file.path(mydir, base_name))
 
 library(HandyCode)
@@ -26,6 +26,9 @@ pngfun(wd = savedir, file = "selectivity.png", w = 7, h = 7, pt = 12)
 				subplot = 1, legendloc = 'bottomright', showmain=FALSE, year = c(1998, 2020))	
 	grid()
 dev.off()
+
+
+
 
 pngfun(wd = savedir, 'unavailable_biomass.png', w = 10, h = 7)
 	SSunavailableSpawningOutput(model, plot=TRUE)

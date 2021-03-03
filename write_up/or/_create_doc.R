@@ -22,7 +22,7 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 
 # Sometimes: Create objects based on a base model:
 sa4ss::read_model(
-          mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/6.4_base",
+          mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/7.0_base",
 				  create_plots = FALSE, 
 				  save_loc = file.path(getwd(), "tex_tables"),
 				  verbose = TRUE)
@@ -36,7 +36,7 @@ es_table_tex(dir = mod_loc,
 
 # Sometimes: Read and create tex files for tables listed in "table" folder in the doc
 es_table_tex(dir = file.path(getwd(), 'tables'), 
-            save_loc = file.path(getwd(), "tex_table-s"), 
+            save_loc = file.path(getwd(), "tex_tables"), 
             csv_name = "all_tables.csv")
 
 # Render Call:
