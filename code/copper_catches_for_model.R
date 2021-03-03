@@ -35,6 +35,7 @@ ca_rec = ca_rec[ca_rec$Species.Name == "COPPER ROCKFISH", ]
 # 1993 - 2004 CRFS years which are split north and south correctly at pt. concep
 ca_rec_early = read.csv(paste0(dir, "/_ca/mrfss_catch_estimates_1980_2004_final.csv"))
 ca_rec_early = ca_rec_early[ca_rec_early$AGENCY_CODE == 6 & ca_rec_early$SPECIES_NAME == "Copper Rockfish", ]
+ca_rec_early = ca_rec_early[ca_rec_early$YEAR_ != 1980, ]
 # The column A+B1 should represent retained and discard mortality 
 
 
@@ -66,6 +67,7 @@ com_disc_rate = 1.044
 # California Historical Catches
 ca_com_hist = read.csv(file.path(dir, "_ca", "ca_hist_commercial_1969_1980_ej.csv"))
 ca_com_hist[is.na(ca_com_hist)] = 0
+# Convert to mt from pounds
 ca_com_hist$catch_mt_south = 0.000453592 * (ca_com_hist$OSB + ca_com_hist$OLA + ca_com_hist$OSD)
 ca_com_hist$catch_mt_north = 0.000453592 * ca_com_hist$Grand.Total - ca_com_hist$catch_mt_south 
 
@@ -148,10 +150,10 @@ all_rec_ca = data.frame(year = 1928:2020,
 #-----------------------------------------------------------------------------------------------------
 # Oregon
 #-----------------------------------------------------------------------------------------------------
-or_rec_catch = or_rec[,1:2]
+or_rec_catch = or_rec[,c('Year', 'TOTAL_REC')]
 or_rec_catch$total_mt = NA
-or_rec_catch$total_mt[which(or_rec_catch$Year > 2000)] = or_rec_catch[which(or_rec_catch$Year > 2000), "Total"]
-or_rec_catch$total_mt[which(or_rec_catch$Year < 2001)] = or_rec_disc_rate * or_rec_catch[which(or_rec_catch$Year < 2001), "Total"]
+or_rec_catch$total_mt[which(or_rec_catch$Year > 2000)] = or_rec_catch[which(or_rec_catch$Year > 2000), "TOTAL_REC"]
+or_rec_catch$total_mt[which(or_rec_catch$Year < 2001)] = or_rec_disc_rate * or_rec_catch[which(or_rec_catch$Year < 2001), "TOTAL_REC"]
 
 #-----------------------------------------------------------------------------------------------------
 # Washington 
@@ -173,6 +175,22 @@ south_ca = c("DNA","HNM","LGB","NWB","OBV", "OLA","OSD","OXN","SB","SD","SP","TR
 find = which(com$PACFIN_PORT_CODE %in% south_ca)
 com$area[find] = "south"
 com$area[which(com$area == "C")] = "north"
+
+# quickly look at the live vs. dead by area
+# com$cond = 'dead'
+# com$cond[com$CONDITION_CODE == "A"] = 'live'
+# c = aggregate(round_mt ~ LANDING_YEAR + area + cond, com, FUN = sum, drop = FALSE)
+# par(mfrow = c(3,1))
+# plot(sort(unique(c$LANDING_YEAR)), c[c$area == 'south' & c$cond == 'dead', 'round_mt'], 
+# 	xlim = c(1995, 2020), ylim = c(0, 10), ylab = '', type = 'l', lwd = 2, col = 1)
+# lines(sort(unique(c$LANDING_YEAR)), c[c$area == 'south' & c$cond == 'live', 'round_mt'], lwd = 2, col = 2)
+# plot(sort(unique(c$LANDING_YEAR)), c[c$area == 'north' & c$cond == 'dead', 'round_mt'], 
+# 	xlim = c(1995, 2020), ylim = c(0, 10), ylab = '', type = 'l', lwd = 2, col = 1)
+# lines(sort(unique(c$LANDING_YEAR)), c[c$area == 'north' & c$cond == 'live', 'round_mt'], lwd = 2, col = 2)
+# plot(sort(unique(c$LANDING_YEAR)), c[c$area == 'O' & c$cond == 'dead', 'round_mt'], 
+# 	xlim = c(1995, 2020), ylim = c(0, 5), ylab = '', type = 'l', lwd = 2, col = 1)
+# lines(sort(unique(c$LANDING_YEAR)), c[c$area == 'O' & c$cond == 'live', 'round_mt'], lwd = 2, col = 2)
+
 
 aggregate(round_mt ~ LANDING_YEAR + area, com[com$LANDING_YEAR == 2020,], FUN = sum, drop = FALSE)
 tmp_com = aggregate(round_mt ~ LANDING_YEAR + area, data = com[com$area %in% c('north', 'south', 'W'),], FUN = sum, drop = FALSE)

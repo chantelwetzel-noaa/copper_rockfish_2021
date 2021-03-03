@@ -21,12 +21,12 @@ cbind(x, round(p, 4))
 [11]  0.001  0.003  0.008  0.011 -0.017 -0.120 -0.158 -0.089 -0.035 -0.012
 [21] -0.004 -0.001  0.000  0.000  0.000  0.000  0.000  0.000  0.000
 
-slope = -0.60
+slope = -0.592
 mat = 1 / (1 + exp(slope*(x-34.83))) 
 plot(x, p)
 lines(x, mod$biology$Mat_len, col = 'red') 
 lines(x, mat, col = 'blue') 
 
-
+cbind(x, mat, 1 / (1 + exp(-0.60*(x-34.83))) )
 
 

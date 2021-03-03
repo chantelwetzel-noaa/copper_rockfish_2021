@@ -295,3 +295,6 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+model = "10.0_base"
+base = SS_output(file.path(wd, model))

@@ -53,45 +53,29 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c"
 base_name = "5.1_data_rec_len_trawl_survey"
 base_name = "8.1_dw_francis"
-base_name = "9.0_base"
+base_name = "10.0_base"
 
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
-							low =  c(0.09, 0.30, -1.0, 45),
-							high = c(0.13, 1.0,  2, 55),
-							step_size = c(0.005, 0.10, 0.25, 1),
-							param_space = c('real', 'real', 'relative', 'real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", 
+											"L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+							low =  c(0.09, 0.30, -1.0, 44, 0.14),
+							high = c(0.13, 1.0,  2, 52, 0.25),
+							step_size = c(0.005, 0.10, 0.25, 1, 0.01),
+							param_space = c('real', 'real', 'relative', 'real', 'real'))
 
-get = get_settings_profile( parameters =  c("L_at_Amax_Fem_GP_1"),
-							low =  c(45),
-							high = c(55),
-							step_size = c(1),
-							param_space = c('real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1",  "SR_LN(R0)"),
+							low =  c(0.07,  -0.5),
+							high = c(0.15,   1.0),
+							step_size = c(0.005, 0.25),
+							param_space = c('real', 'relative'))
 
-#model_settings = get_settings(settings = list(base_name = base_name,
-#							  run = c("jitter", "profile", "retro"),
-#							  profile_details = get ))
-#
-model_settings = get_settings(settings = list(base_name = base_name,
-							  run = c("profile"),
-							  profile_details = get ))
-
-model_settings = get_settings(settings = list(base_name = base_name,
-							  run = "jitter",
-							  jitter_fraction = 0.10))
-
-run_diagnostics(mydir = mydir, model_settings = model_settings)
-
-
-get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
-							low =  c(0.10),
-							high = c(0.20),
-							step_size = c(0.01),
-							param_space = c('real'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("profile"),
+							  #jitter_fraction = 0.10,
 							  profile_details = get ))
+
+
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
@@ -105,7 +89,7 @@ base_name = "2.4_recdevs_early_est_p1_only_block"
 base_name = "5.0_dw_francis"
 base_name = "5.5_dw_francis_sigmar_60"
 base_name = "6.0_base"
-base_name = "6.5_base"
+base_name = "7.0_base"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", 
 								"L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),

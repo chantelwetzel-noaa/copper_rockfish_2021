@@ -10,7 +10,7 @@ library(sa4ss)
 # Oregon 
 ###################################################################
 area = "or"
-base_model = "6.4_base"
+base_model = "7.0_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -25,8 +25,9 @@ model.list <- c(paste0(base_model, "_no_recdevs"), #1
                 paste0(base_model, "_dm"), #3
                 paste0(base_model, "_est_linf"), #4
                 paste0(base_model, "_est_cv2"), #5
-                paste0(base_model, "_asym"), #6
-                paste0(base_model, "_data_block")) #7
+                paste0(base_model, "_est_m"), #6
+                paste0(base_model, "_asym"), #7
+                paste0(base_model, "_data_block")) #8
 
 out.list = NULL 
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -37,20 +38,25 @@ sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose =
 sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
 
 modelnames <- c("Base Model",
-                #"No Rec. Devs.",
+                "No Rec. Devs.",
                 "MI DW",
                 "DM DW",
                 "Estimate Linf",
                 "Estimate CV Old",
+                "Estimate M (f)",
                 "Rec. Asym. Selectivity",
                 "Rec. Data w/ Block")
 
-x <- SSsummarize(list(base, sens_2,sens_3,sens_4, sens_5, sens_6, sens_7))
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, 
+                      sens_5, sens_6, sens_7, sens_8))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
+                  ylimAdj = 1.10,
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
                   filenameprefix = paste0(base_model, "_"),
@@ -62,18 +68,18 @@ SSplotComparisons(x, endyrvec = 2021,
 # Create a Table of Results
 ###################################################################################
 
-modelnames <- c("Base Model",
-                "No Rec. Devs.",
-                "MI DW",
-                "DM DW",
-                "Est. Linf",
-                "Est. CV Old",
-                "Rec. Asym. Selec.",
-                "Rec. Data w/ Block")
-
-
-x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7))
+# modelnames <- c("Base Model",
+#                 "No Rec. Devs.",
+#                 "MI DW",
+#                 "DM DW",
+#                 "Est. Linf",
+#                 "Est. CV Old",
+#                 "Rec. Asym. Selec.",
+#                 "Rec. Data w/ Block")
+# 
+# 
+# x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
+#                  sens_6, sens_7))
 
 ii = 1:length(modelnames)
 n = length(modelnames)

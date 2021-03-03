@@ -11,7 +11,7 @@ library(r4ss)
 # North of Pt Conception
 ###################################################################
 area = "ca_n_pt_c"
-base_model = "9.0_base"
+base_model = "10.0_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -21,14 +21,15 @@ out.dir = wd
 base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
            area, base_model)
 
-model.list <- c(paste0(base_model, "_low_m"),  #1     
-                paste0(base_model, "_high_m"), #2
-                paste0(base_model, "_linf_hi"), #3
-                paste0(base_model, "_no_recdevs"), #4
-                paste0(base_model, "_asymptotic_selex_no_blocks"), #5
-                paste0(base_model, "_mi"), #6
-                paste0(base_model, "_dirichlet")) #7
-                #paste0(base_model, "_sss")) #9
+model.list <- c(paste0(base_model, "_no_recdevs"), #1
+                paste0(base_model, "_mi"), #2
+                paste0(base_model, "_dm"), #3
+                paste0(base_model, "_est_linf"), #4
+                paste0(base_model, "_est_cv2"), #5
+                paste0(base_model, "_est_m"), #6
+                paste0(base_model, "_dome"), #7
+                paste0(base_model, "_spline"), #8
+                paste0(base_model, "_no_blocks_")) #9
 
 out.list = NULL   
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -39,19 +40,22 @@ sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose =
 sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-#sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_9  = SS_output( file.path(wd, model.list[9]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
-                "Low M", 
-                "High M", 
-                "High Linf",
                 "No Rec. Devs.",
-                "No Selectivity Block",
-                "MI D.W.",
-                "Dirichlet D.W.") 
+                "MI DW",
+                "DM DW",
+                "Estimate Linf (f)",
+                "Estimate CV Old (f)",
+                "Estimate M (f)",
+                "Comm. Dome Selectivity",
+                "Comm. Spline Selectivity",
+                "Comm. No Selectivity Blocks")
 
 x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7))
+                 sens_6, sens_7, sens_8, sens_9))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 

@@ -44,19 +44,31 @@ Pdata = cleanPacFIN(Pdata = pacfin,
 					CLEAN = TRUE,
 					verbose = TRUE)
 
-#  Removal Report
-#  
-#  Records in input:                  8798 
-#  Records not in USINPFC             0 
-#  Records not in INPFC_AREA:         351 
-#  Records in bad INPFC_AREA:         0 
-#  Records in badRecords list:        0 
-#  Records with bad SAMPLE_TYPE       0 
-#  Records with bad SAMPLE_METHOD     0 
-#  Records with no SAMPLE_NO          0 
-#  Records with no usable length      225 
-#  Records remaining:                 8222 
+# The table below summarizes the number of records that are outside of
+# the area that should be included for US West Coast stock assessments
+# by PSMFC area, or some derivative thereof.
+# [1] 35
+# 
+# N SAMPLE_TYPEs changed from M to S for special samples from OR: 0
+# N not in keep_sample_type (SAMPLE_TYPE): 212
+# N not in keep_sample_method (SAMPLE_METHOD): 0
+# N with SAMPLE_NO of NA: 0
+# N without length: 280
+# N without age: 8946
+# N without length and age: 8947
+# N records: 9305
+# N remaining if CLEAN: 8845
+# N records will be removed if CLEAN: 460
+# The following are not removed with CLEAN ...
+# N sample weights not available for OR: 0
+# N sample weights not available for CA: 7434
 
+
+or_sp <- read.csv(file.path(getwd(), "commercial_comps", "oregon_copper_special_samples.csv"))
+or_sp$FISH_LENGTH_TYPE <- or_sp$FISH_LENGTH_TYPE_CODE
+Pdata_sp = cleanPacFIN(Pdata = or_sp, 
+					CLEAN = TRUE,
+					verbose = TRUE)
 
 ############################################################################################################
 # Create areas based on areas being modeled

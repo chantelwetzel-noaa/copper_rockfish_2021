@@ -350,3 +350,9 @@ rem_1516 = SS_output(file.path(wd, model))
 
 model = "6.5_base_2015_16_add"
 add_1516 = SS_output(file.path(wd, model))
+
+# Updated catches and commercial data
+model = "7.0_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
