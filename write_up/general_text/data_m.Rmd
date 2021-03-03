@@ -8,6 +8,8 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 \end{centering}
 
+\vspace{0.5cm}
+
 The above is also the median of the prior. The prior is defined as a log normal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 per year  
 
 The maximum age was selected based on available age data from all West Coast data sources and literature values.  The oldest aged rockfish was 51 years with two observations, off the coast of Washington and Oregon in 2019.  The maximum age in the model was set at 50 years.  This selection was consistent with the literature examining the longevity of  `r spp` [@love_milton_probably_1996] and was supported by the observed ages which had multiple observations of fish between 44 and 51 years of age.  

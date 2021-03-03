@@ -1,0 +1,18 @@
+
+```{r, results = 'asis'}
+
+growth = model$endgrowth[model$endgrowth$Sex == 1, ]
+out = growth[, c("Age_Beg", "Len_Beg", "Wt_Beg", "Len_Mat", "Mat*Fecund")]
+out$Len_Mat[out$Len_Mat > 0.99] = 1
+rownames(out) = NULL
+col_names = c('Age', 'Length (cm)', 'Weight (kg)', 'Maturity', 'Spawning Output')
+
+table_format(x = out,
+             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year for female fish.",
+             label = "growth-tab",
+             digits = c(0, 2, 2, 2, 2),
+             align = 'l',
+             col_names = col_names,
+             longtable = TRUE) 
+
+```
