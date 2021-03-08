@@ -93,13 +93,6 @@ for (a in 1:length(area_grouping)){
 ############################################################################################################
 # Investigate data and create needed columns
 ##########################################################################################################
-aggregate(lengthcm~state_areas, data = Pdata, FUN = quantile)
-# state_areas lengthcm.0% lengthcm.25% lengthcm.50% lengthcm.75% lengthcm.100%
-#       NORTH        18.0         32.0         38.0         44.0          61.0
-#          OR        26.0         38.0         43.0         47.0          60.0
-#       SOUTH        19.0         33.0         36.0         40.0          54.0
-#          WA        37.0         41.5         44.0         49.5          55.0
-
 
 MasterPdata = Pdata
 Pdata$fleet = Pdata$state_areas
@@ -139,15 +132,6 @@ writeComps(inComps = Lcomps,
 ##############################################################################################################
 # Format and rewrite
 ##############################################################################################################
-
-# The available sex by state really vary:
-#           F    M    U
-#  NORTH   57   69 4200
-#  OR     653  619    4
-#  SOUTH    2    7 2602
-#  WA       2    4    0
-
-#########################################################################################
 # For California North & South use the sexes combined in the model
 #########################################################################################
 out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
