@@ -2,6 +2,8 @@
 # Copper North California Model Runs
 
 library(r4ss)
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
+
 
 wd = "N:/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_n_pt_c"
 wd = "C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c"
@@ -298,3 +300,11 @@ SSplotComparisons(mysummary,
 
 model = "10.0_base"
 base = SS_output(file.path(wd, model))
+
+model = "10.1_base_corrected_pacfin"
+pacfin = SS_output(file.path(wd, model))
+SS_plots(pacfin)
+
+model = "10.2_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)

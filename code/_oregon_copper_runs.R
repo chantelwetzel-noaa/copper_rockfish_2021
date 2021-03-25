@@ -356,3 +356,14 @@ model = "7.0_base"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
 
+model = "7.0_base_dev_2"
+alt = SS_output(file.path(wd, model))
+SS_plots(base)
+
+modelnames <- c( "7.0: Dev = 1", "7.0: Dev = 2")
+mysummary  <- SSsummarize(list(base, alt))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.0_dev_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

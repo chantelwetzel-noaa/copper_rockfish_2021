@@ -479,6 +479,51 @@ model = "11.2_2_area_recdevs_cca"
 area = SS_output(file.path(wd, model))
 SS_plots(area)
 
+model = "12.0_base"
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "12.1_base_corrected_pacfin"
+pacfin = SS_output(file.path(wd, model))
+SS_plots(pacfin)
+
+#############################################################
+modelnames <- c("Wrong PacFIN", "Correct PacFIN")
+mysummary <- SSsummarize(list(base, pacfin))
+
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_pacfin_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+
+#############################################################
+modelnames <- c("All HKL Data", "Outside the CCA Only")
+mysummary <- SSsummarize(list(base, outside))
+
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.0_hkl_data_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+#############################################################
+# Sensitivity 
+
+model = "12.0_base_recdevs"
+devs = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(devs)
+
+model = "12.0_base_recfin_index"
+recfin = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(recfin)
+
+model = "12.0_base_recfin_index_asym_devs"
+alt = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(alt)
+
+
 #############################################################
 # Sensitivity 
 
