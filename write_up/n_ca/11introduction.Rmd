@@ -1,5 +1,9 @@
 # Introduction
 
+## Basic Information
+
+This assessment reports the status of `r spp` (*Sebastes caurinus*) off the California coast, north of Point Conception, using data through 2020.
+
 ```{r, echo=FALSE, results='asis'}
 general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_life_history_fishery_info.Rmd')
@@ -8,8 +12,15 @@ read_child(filein)
 
 ## Historical and Current Fishery Information
 
-Off the coast of California State, North of Pt. Conception, `r spp` is primarily caught in by both commercial and recreational fisheries.    
+Off the coast of California, north of Point Conception, `r spp` is caught in both commercial and recreational fisheries. Recreational removals have been the largest source of fishing mortality, comprising nearly 85 percent of total removals of `r spp` across all years (Table \ref{tab:allcatches} and Figure \ref{fig:catch}).  The landings from the commercial fishery have been minimal by year, expect for a brief period between the mid-1980s and early-2000s. 
 
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'1_intro_ca_commercial.Rmd')
+read_child(filein)
+```
+
+The population of `r spp` north of Point Conception to the California/Oregon border is assessed here as a separate stock.  This decision was made based on oceanographic, geographic, and fishery conditions.  The `r spp` stock in California waters was split at Point Conception due to water circulation patterns that create a natural barrier between nearshore rockfish population north and south of the area. The northern border for this assessment was defined as the California/Oregon border due to substantial differences in historical and current exploitation levels. 
 
 ## Summary of Management History and Performance
 
@@ -18,3 +29,5 @@ general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
 filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
+
+Although, management defines OFLs and ACLs North and South of 40$^\circ$ 10' Lat. N. management areas, `r spp` in California are managed based on the portion of OFL and ACL allocated to California.  The OFLs and ACLs for South of  40$^\circ$ 10' Lat. N., the portion of ACL allocated for the California area North of 40$^\circ$ 10' Lat. N. (25 percent, Groundfish Management Team, personal communication), the total of the ACL allocated to California (e.g., the sum North and South of  40$^\circ$ 10' Lat. N. for California), and recent removals for the California area north of Point Conception are shown in Table \ref{tab:ofl}.   

@@ -1,6 +1,16 @@
 \clearpage
 # Figures
 
+<!-- ====================================================================== -->  
+<!-- ****************** Catches Used in the Model ************************* --> 
+<!-- ====================================================================== -->  
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
+caption = "Catches by fleet used in the base model",
+label = 'catch')
+```	
 
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
@@ -13,25 +23,13 @@ caption = "Summary of data sources used in the base model",
 label = 'data-plot')
 ```	
 
-<!-- ====================================================================== -->  
-<!-- ****************** Catches Used in the Model ************************* --> 
-<!-- ====================================================================== -->  
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
-caption = "Catches by fleet used in the base model",
-label = 'catch')
-```	
-
-
 <!-- ====================================================================== -->
 <!-- ****************   Commercial Length Samples    ********************** --> 
 <!-- ====================================================================== -->
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lendat_bubflt1mkt0_page3.png"), 
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt1mkt0_page2.png"), 
 caption = "Length composition data from the commercial fleet",
 label = 'com-len-data')
 ```
@@ -49,7 +47,7 @@ label = 'mean-com-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page2.png"), 
+filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page3.png"), 
 caption = "Length composition data from the recreational fleet",
 label = 'rec-len-data')
 ```
@@ -92,17 +90,23 @@ label = 'selex')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated time series of age-0 recruits (1000s)",
+caption = "Estimated timeseries of age-0 recruits (1000s)",
 label = 'recruits')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated time series of recruitment deviations",
+caption = "Estimated timeseries of recruitment deviations",
 label = 'rec-devs')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(getwd(), "figs", "recruit_fit_bias_adjust.png"),
+caption = "Recruitment bias adjustment applied in the base model",
+label = 'bias-adj')
+```
 
 ```{r, results = 'asis'}
 add_figure(
@@ -119,7 +123,7 @@ label = 'bh-curve')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page3.png"), 
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
 caption = "Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'com-pearson')
 ```
@@ -133,7 +137,7 @@ label = 'com-mean-len-fit')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page2.png"), 
+filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page3.png"), 
 caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'rec-pearson')
 ```
@@ -160,21 +164,21 @@ label = 'agg-len-fit')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated time series of spawning output",
+caption = "Estimated timeseries of spawning output",
 label = 'ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
-caption = "Estimated time series of total biomass",
+caption = "Estimated timeseries of total biomass",
 label = 'tot-bio')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated time series of fraction of unfished spawning output",
+caption = "Estimated timeseries of fraction of unfished spawning output",
 label = 'depl')
 ```
 
@@ -199,27 +203,43 @@ fishery selectivity and with steepness fixed at 0.72",
 label = 'yield')
 ```
 
-
 <!-- ====================================================================== -->
 <!-- ******************       Sensitivity     ***************************** --> 
 <!-- ====================================================================== -->
 
-
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path(substr(mod_loc, 1, 57), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 59, 99), "_compare2_spawnbio_uncertainty.png")
+nm = paste0(substr(mod_loc, 59, 99), "_1_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
-label = 'sens-ssb')
+label = 'sens-ssb-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 59, 99), "_compare4_Bratio_uncertainty.png")
+nm = paste0(substr(mod_loc, 59, 99), "_1_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
-label = 'sens-depl')
+label = 'sens-depl-1')
+```
+
+
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path(substr(mod_loc, 1, 57), "_sensitivities", "_plots")
+nm = paste0(substr(mod_loc, 59, 99), "_2_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb-2')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 59, 99), "_2_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl-2')
 ```
 
 <!-- ====================================================================== -->
@@ -231,13 +251,39 @@ filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
 
+\newpage
+
+<!-- ====================================================================== -->
+<!-- ******************         LB-SPR        ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
+
+add_figure(
+filein = file.path(lbspr, "Copper_LBSPR_NoCal_newVBGF.png"), 
+caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
+label = 'lbspr')
+```
+
+\newpage
+
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 
 <!-- ====================================================================== -->
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'figures_retro.Rmd')
-read_child(filein)
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_retro"),  "compare2_spawnbio_uncertainty.png"), 
+caption = "Change in the estimate of spawning output when the most recent 10 years of data area removed sequentially",
+label = 'retro-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_retro"),  "compare4_Bratio_uncertainty.png"),
+caption = "Change in the estimate of fraction unfished when the most recent 10 years of data area removed sequentially",
+label = 'retro-depl')
 ```
 
 

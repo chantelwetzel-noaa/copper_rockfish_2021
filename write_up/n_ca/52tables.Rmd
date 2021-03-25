@@ -9,6 +9,49 @@
 
 \newpage
 
+
+<!-- ======================================================= -->
+<!-- ********* Management Performance ********************** --> 
+<!-- ======================================================= -->
+
+
+```{r, results = 'asis'}
+yrs = hist = 2011:2020
+nfleets = 2
+catch = dead = total.dead = 0
+for (i in 1:nfleets){
+  name = paste0("retain(B):_",i)
+  input.catch = model$timeseries[model$timeseries$Yr %in% yrs, name]
+  catch = cbind(catch, input.catch)
+}
+total.catch <- round(apply(catch, 1, sum),2)
+
+north = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
+
+south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
+
+north = north[north$Year %in% yrs, ]
+south = south[south$Year %in% yrs, ]
+out = cbind(south, round(north$OFL * 0.25, 2), round(north$ACL * 0.25, 2), 
+            round(south$ACL + 0.25*north$ACL,2), total.catch)
+
+col_names = c("Year", "S 4010 OFL", "S 4010 ACL", "N 4010 CA OFL",  "N 4010 CA ACL", "ACL CA Total", "N CA Removals")
+
+table_format(x = out,
+             caption = "The OFL and ACL for north nearshore, the ACL allocated to California, and the total removals.",
+             label = "ofl",
+             align = 'l',
+             col_names = col_names)
+```
+
+<!-- ======================================================= -->
+<!-- *************** Com. Catch Ratio  ********************* --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/historical_landings_tables_2020_revised_Avila_1953.tex}
+
+\newpage
+
 <!-- ======================================================= -->
 <!-- ***************       Data      *********************** --> 
 <!-- ======================================================= -->
@@ -34,6 +77,13 @@
 
 \include{tex_tables/len_at_age_data.tex}
 
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'table_growth.Rmd')
+read_child(filein)
+```
+\newpage
 
 <!-- ======================================================= -->
 <!-- ***********   Model Parameters     ******************** --> 
@@ -94,6 +144,13 @@ table_format(x = mod_params,
 
 
 <!-- ======================================================= -->
+<!-- ********  Reference Points & Management *************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/e_ReferencePoints_ES.tex}
+
+
+<!-- ======================================================= -->
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
@@ -127,10 +184,34 @@ table_format(x = tab,
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
-\include{tex_tables/e_ReferencePoints_ES.tex}
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
 
-\newpage
+ofl = c(247.4322 + 0.25*9.817770, 246.9806 + 0.25*9.859380)
+acl = c(206.41, 202.03)
+acl_nca = 0.5157563 * acl
 
-\include{tex_tables/g_Projections_ES.tex}
+out = cbind(tab$Year,
+            c(round(ofl, 2), rep("-",10)),
+            c(round(acl, 2), rep("-",10)),
+            c(round(acl_nca, 2), rep("-", 10)),
+            c(rep("-",2), round(tab[3:12,2], 2)),
+            c(rep("-",2), round(tab[3:12,3],2)),
+            c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
+            round(tab[ ,5:ncol(tab)], 2))
 
-\newpage
+col_names = c('Year',
+              'OFL - CA',
+              'ACL - CA',
+              "ACL-N CA",
+              "OFL", 
+              "ABC", 
+              "Buffer",
+              "Spawning Output",
+              "Fraction Unfished")
+table_format(x = out,
+             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and the north of Pt. Conception ACL for 2021 and 2022 reflect adopted management limits.",
+             label = "project",
+             align = 'l',
+             col_names = col_names)
+```

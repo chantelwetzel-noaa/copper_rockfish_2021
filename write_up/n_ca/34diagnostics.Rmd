@@ -3,7 +3,7 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5%. This was repeated 100 times and a better minimum was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained above and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 78 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
 
 
 ### Sensitivity Analyses
@@ -11,45 +11,58 @@ Proper convergence was determined by starting the minimization process from disp
 A number of sensitivity analyses were conducted.  The majority of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
-
-  \item Fix natural mortality 10 percent lower at a value of 0.097 per year for both sexes.
-  
-  \item Fix natural mortality 10 percent higher at a value of 0.119 per year for both sexes.
-
-  \item Fix $L_{\infty}$ 5 percent higher at a value of 52.2 cm for females and 50.5 for males. 
    
-  \item Deterministic recruitment from the stock recruitment curve. 
+  \item Deterministic recruitment with annual recruitment based on the stock recruitment curve. 
 
-  \item Remove selectivity block for the commercial fleet. 
-
-  \item Data weighting according to the McAllister-Ianelli method using the weighting values shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the McAllister-Ianelli method (MI DW) using the weighting values shown in Table \ref{tab:dw}. 
   
-  \item Data weighting according to the Dirichlet method where the estimated parameters are shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the Dirichlet Multinomial method (DM DW) where the estimated parameters are shown in Table \ref{tab:dw}. 
+
+  \item Estimate $L_{\infty}$ for both sexes.
+
+  \item Estimate the coefficient of variation for older fish for both sexes.
+
+  \item Estimate natural mortality for females only.
+
+  \item Fix the commercial fleet selectivity to be asymptotic in the late block.
+
+  \item Parameterize commercial selectivity using a cubic spline to fit the commercial composition data. 
+
+  \item Remove the block in commercial selectivity and estimate a single asymptotic selectivity curve. 
+
+  \item Add selectivity block for the recreational fleet for `r startyr` - 1997.
+
+  \item Add the onboard Commercial Passenger Fishing Vessel (CPFV) index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimated added variance to the index of abundance.
+
+  \item  Add the recreational dockside index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimated added variance to the index of abundance.
   
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}.  Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time series of spawning output and relative spawning output are shown in Figures \ref{fig:sens-ssb-1} - \ref{fig:sens-depl-2}. The majority of sensitivities estimated the final stock status within the precautionary zone, between 25 and 40 percent of unfished spawning output. Assuming deterministic recruitment, annual recruitment from the stock recruitment curve, estimated a more pessimistic final stock status with the final stock status below the management threshold of 25 percent of unfished.  The sensitivity that estimated female natural mortality estimated a higher unfished spawning output but a similar final stock size, relative to the base model resulting in a final stock status below the management threshold. 
 
+The two of the three sensitivities that examined alternative parameterization of the commercial selectivity estimated similar stock size and status to the base model. Fixing the commercial selectivity to be asymptotic in the late block resulted in slightly more depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The sensitivity that estimated a single selectivity curve across time estimated a final stock status greater than the base model which was primarily driven by the model estimating a selectivity curve that was between the selectivities by time block within the base model. Given the magnitude of difference in final estimates relative to the base model, additional explorations were conducted. Typically, sensitivity runs assume the same data weighting applied in the base model which allows for direct comparison on the negative log-likelihood across models. Updating the data weighting to this sensitivity resulted in a model that was similar to the base model (31 percent depletion in 2021, Figure \ref{fig:sens-depl-2}).  
 
-### Retrospective Analysis
-
-A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  
+Each sensitivity which used either the onboard CPFV or dockside recreational index of abundance resulted in similar spawning output and relative biomass to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). Both sensitivities were allowed to estimate additional added variance for the input standard deviation for the index timeseries which is typical practice in West Coast groundfish stock assessments. The estimated added variance for each sensitivity was relatively high: 0.17 added to the CPFV index and 0.27 added to the dockside recreational index. 
 
 
 ### Likelihood Profiles
 
-Likelihood profiles were conducted for $R_0$, steepness, female maximum length, and female natural mortality values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
+Likelihood profiles were conducted for $R_0$, steepness, female $L_{\infty}$, female natural mortality values, and female growth coefficient $k$ separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
 
-In regards to values of $R_0$, the negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). 
+The log($R_0$) negative log-likelihood was minimized at approximately log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). The likelihood component driving the estimate of the log($R_0$) was attributed to the recruitment deviations in the base model with the length data having little to no influence on the estimate.  However, length data are the only data in the base model and those data are driving the estimate of annual recruitment deviations. Conducting a profile across $R_0$ with recruitment deviations not estimated in the base model results in a profile where all influence on the estimated parameter is attributed to the length data supporting a similar parameter estimate for log($R_0$).  This confirms that length data are the key source of information for the estimate of $R_0$ in the base model. Assuming higher of lower values of $R_0$ result in large fluctuations in the scale of the stock and final stock status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
 
-(Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
+For steepness, values from approximately 0.60 to 0.80 were supported by the negative log-likelihood (Figure \ref{fig:h-profile}).  The main source of informing the likelihood across parameter values were the recreational length data.  Assuming higher or lower steepness values had a large impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between 0 - 1.0+ with values of 0.60 and 0.80, values with similar support by the data, resulted in a relative stock status that well below the minimum threshold and target stock status (Figure \ref{fig:h-depl}).
 
-For steepness, values from approximately 0.30 to 1.0 were supported with the lowest negative log-likelihood occuring at the upper bound of 1.0 (Figure \ref{fig:h-profile}).  Assuming higher or lower steepness values had minimal impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between around the minumum threshold (0.25) to above the management target depending upon assuming a lower or higher steepness value (Figure \ref{fig:h-depl}).
+The negative log-likelihood profile across female natural mortality supported a wide range of values compared to the fixed value in the base model `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The range of value explored in the profile resulted in large changed in the unfished stock size and a range of final stock status between 5 - 75 percent of unfished (Figure \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
 
-The negative log-likelihood profile across female natural mortatliy supported values greater than the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). 
+A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between approximately 46 - 49 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on external model estimates using length-at-age data collected off the Oregon and Washington coast. The stock scale and status was quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
-(Figure \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
+A profile across a range of female $k$ showed support for values from 0.16 - 0.24 (Figure \ref{fig:k-profile}). The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale and status increased under lower $k$ values and assuming higher values resulted in a decrease in stock scale and status (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
 
-A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 48 and 50 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
+### Length-Based Spawner-per-Recruit Analysis
 
-A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values from 0.14 and higher. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
+An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 25 - 30 cm  with full selection typically between 35 - 40 cm  (excluding 2017, Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.10 - 0.30 between 2012 - 2019 (lower values of SPR indicate higher exploitation levels). This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. Examining the length data by year in isolation, assuming deterministic recruitment indicates that SPR by year has been higher than the proxy rockfish SPR target (0.50) with 50 percent selectivity occurring before the length of 50 percent maturity.
+
+### Retrospective Analysis
+
+A ten-year retrospective analysis was conducted by peeling back a year of data from the model from 2020 (e.g., Data -1 Years) to 2010 (e.g. Data -10 Years). The estimated spawning output was generally consistent with the base model when recent years of data were removed and had the largest departure from the base model when the largest number of data years were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  
