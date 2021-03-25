@@ -47,12 +47,8 @@ if(file.exists("_main.Rmd")){
 bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
 
 
-# To do list:
-# Redo the Linf profile
 
 
-
-#bookdown::render_book("00a.Rmd", clean = FALSE)
 
 
 # Use to only render a specific section which can be quicker

@@ -47,3 +47,113 @@ for (a in plot.vec){
 			   label = lab)
 }
 ```
+\clearpage
+
+## ODFW Marine Reserve Hook and Line Survey
+
+One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey.  This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for `r spp`.
+
+The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011.  Data from the hook and line survey from 2011 - 2019 are presented in this summary.  Surveys in 2011 and 2012 only visited a single site, Redfish Rocks.  Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head.  Each of these four sites has a marine reserve and one to three comparison areas.  Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure.  Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to execute surveys.  Sites and areas sampled that are included in this dataset are below.  
+
+
+```{r, results = 'asis'}
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_1_sample_info.csv")
+
+col_names = c("Site", "Area", "Years Sampled", "Total Samples")
+table_format(x = data,
+             caption = "Sites and areas sampled by the Mrine Reserve Program hook and line survey.",
+             label = "table-1",
+             align = 'l',
+             custom_width = TRUE,
+             col_to_adjust = 1:4,
+             width = c('2.2cm', '5.75cm', '3.5cm', '1.25cm'),
+             col_names = col_names)
+```
+
+A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
+
+
+A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
+
+### Copper Rockfish Summary   
+
+Of the 940 total-cell days at 14 areas, 97 (10.3 percent) of those had positive `r spp` catches with a total of 136 observations across all years and sites. The number of `r spp` caught ranged from 1 to 6 fish in a cell-day. 
+
+```{r, results = 'asis'}
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_2_marine_hkl.csv")
+
+col_names = c("", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "Total")
+table_format(x = data,
+             caption = "Summary of number of catch cell days and positive observations of copper rockfish.",
+             label = "table-2",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+```{r, results = 'asis'}
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+add_figure(
+filein = file.path(loc,  "fig_1_marine_hkl.png"), 
+caption = "Frequency of positive copper rockfish catches between 2011 - 2019",
+label = 'pos-hkl')
+```
+
+Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of of some species (e.g., cabezon) due to the recent implementation of the reserves.  It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast.  However, this may not be possible with the sample size available at some sites.
+
+Observations of `r spp` were varied across sample sites and years.  The number of observations of `r spp` was highest at Cape Perpetua (N = 50), followed by Cascade Head (N = 46) and Redfish Rocks (N = 35) respectively.  
+
+```{r, results = 'asis'}
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_3_data.csv")
+
+data = data[-nrow(data),]
+
+col_names = c("Site", "Year", "Number of Positive Catch Cell Days", "Total Cell Days", "Proportion of Positives", "Total Number of Copper Rockfish Caught")
+table_format(x = data,
+             caption = "SSummary of sampling effort by year and site combined with the positive observations of copper rockfish.",
+             label = "table-3",
+             align = 'l',
+             digits = c(0, 0, 0, 0, 3, 0), 
+             col_names = col_names)
+```
+
+
+Catch-per-unit-effort (CPUE) was calculated by the number of fish per angler hour. The number of anglers and hooks are standardized for each survey. Angler hours have been adjusted for non-fishing time (i.e., travel time, etc.).
+
+```{r, results = 'asis'}
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+add_figure(
+filein = file.path(loc,  "fig_2_cpue_val.png"), 
+caption = "Copper rockfish CPUE calculated based on positive values only",
+label = 'fig-2')
+```
+
+```{r, results = 'asis'}
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+add_figure(
+filein = file.path(loc,  "fig_3_cpue.png"), 
+caption = "Copper rockfish CPUE calculated based on all values",
+label = 'fig-3')
+```
+
+Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a timeseries at a coastwide level.  However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE at this site shows an increasing trend since 2011 for `r spp`.
+
+
+```{r, results = 'asis'}
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+add_figure(
+filein = file.path(loc,  "fig_4_redfish_cpue.png"), 
+caption = "Copper rockfish CPUE calculated at Redfish Rocks based on postive values only",
+label = 'fig-4')
+```
+
+`r Spp` appear to have an increasing trend from 2011 – 2019, with the last four years of surveys above the long-term mean. 
+
+
+```{r, results = 'asis'}
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+add_figure(
+filein = file.path(loc,  "fig_5_relative_cpue.png"), 
+caption = "Copper rockfish relative CPUE across all sample sites",
+label = 'fig-4')
+```

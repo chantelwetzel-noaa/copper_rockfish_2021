@@ -248,6 +248,22 @@ filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
 ```
 
+\newpage
+
+<!-- ====================================================================== -->
+<!-- ******************       LB-SPR          ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, results = 'asis'}
+
+add_figure(
+filein = file.path(net_loc, "models", "lbspr", "Copper_OR_LBSPR_newVBGF.png"), 
+caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
+label = 'lbspr')
+```
+
+\newpage
+
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 
 <!-- ====================================================================== -->
