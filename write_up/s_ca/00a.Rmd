@@ -24,6 +24,11 @@ knitr::knit_hooks$set(plot = function(x,options) {
   })
 
 data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots"
+
+data_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
+
+sens_wd = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/_sensitivities/_plots"
+
   
 load("00opts.Rdata")
 

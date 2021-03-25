@@ -8,7 +8,6 @@ Estimated parameter values are provided in Table \ref{tab:params}. The $R_0$ was
 
 The selectivity curves for the commercial and recreational fleet is shown in Figure XXX. 
 
-The estimated annual recruitment and recruitment deviations are shown in  Figures \ref{fig:recruits} and \ref{fig:rec-devs}. 
 
 The stock-recruit curve resulting from a value of steepness fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)` is shown in Figure \ref{fig:bh-curve}. 
 
@@ -40,13 +39,13 @@ The predicted spawning output (in millions of eggs) is given in Table \ref{tab:t
 
 Figure \ref{fig:tot-bio}.
 
-The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (`r round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)`, Figure \ref{fig:depl}).   
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (`r round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)`, Figure \ref{fig:depl}).   
 
  
 
 ### Reference Points
 
-Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields  were `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40% of the unfished spawning output ($SB_{40\%}$) was `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields  were `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($SB_{40\%}$) was `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
 
-The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40% of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has bounced above and blow the harvest rate limit ($SPR_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has bounced above and blow the harvest rate limit ($SPR_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
 

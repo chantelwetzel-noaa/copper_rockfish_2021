@@ -1,6 +1,14 @@
 \clearpage
 # Tables
 
+<!-- ======================================================= -->
+<!-- ***************    Catches      *********************** --> 
+<!-- ======================================================= -->
+
+\include{tex_tables/Catches_All_Years.tex}
+
+\newpage
+
 
 ```{r, results = 'asis'}
 yrs = hist = 2011:2020
@@ -17,20 +25,21 @@ man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/
 man = man[man$Year %in% yrs, ]
 out = cbind(man, total.catch)
 
-col_names = c("Year", "OFL", "ACL", "Removals")
+col_names = c("Year", "OFL", "ACL", "Total Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for south of 40.10 Latitude N. and the total removals south of Pt. Conception.",
+             caption = "The OFL and ACL for south of 40.10 Latitude N. and the total removals south of Point Conception.",
              label = "ofl",
              align = 'l',
              col_names = col_names)
 ```
 
+
 <!-- ======================================================= -->
-<!-- ***************    Catches      *********************** --> 
+<!-- *************** Com. Catch Ratio  ********************* --> 
 <!-- ======================================================= -->
 
-\include{tex_tables/Catches_All_Years.tex}
+\include{tex_tables/historical_landings_tables_2020_revised_Avila_1953.tex}
 
 \newpage
 
@@ -43,7 +52,7 @@ table_format(x = out,
 \newpage
 
 
-\include{tex_tables/s_ca_rec_len_samples.tex}
+\include{tex_tables/s_ca_rec_len_samples_mar2021.tex}
 
 \newpage
 
@@ -63,7 +72,11 @@ table_format(x = out,
 <!-- ***************    Biology      *********************** --> 
 <!-- ======================================================= -->
 
-
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'table_growth.Rmd')
+read_child(filein)
+```
+\newpage
 
 <!-- ======================================================= -->
 <!-- ***********   Model Parameters     ******************** --> 
@@ -153,6 +166,14 @@ table_format(x = tab,
 
 \newpage
 
+\include{tex_tables/sensitivities_1.tex}
+
+\newpage
+
+\include{tex_tables/sensitivities_2.tex}
+
+\newpage
+
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
@@ -170,9 +191,13 @@ man_south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate
 ofl_s = man_south[man_south$Year %in% c(2021, 2020), "OFL"] 
 acl_s = man_south[man_south$Year %in% c(2021, 2022), "ACL"]
 
+find = which(model$timeseries$Yr %in% c(2021, 2022))
+rm = model$timeseries[find, "dead(B):_1"] + model$timeseries[find, "dead(B):_2"]
+
 out = cbind(tab$Year,
             c(ofl_s, rep("-",10)),
             c(acl_s, rep("-",10)),
+            c(rm, rep("-",10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3],2)),
             c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
@@ -181,16 +206,23 @@ out = cbind(tab$Year,
 col_names = c('Year',
               'S. 40.10 OFL',
               'S. 40.10 ACL',
+              "Assumed Removals",
               "OFL", 
               "ABC", 
               "Buffer",
               "Spawning Output",
               "Fraction Unfished")
+
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL and ACL,for 2021 and 2022 reflect adopted management limits for the area South of 40.10 Latitude N.",
+             caption = "Projections of potential OFLs (mt), ACLs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL and ACL for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N.",
              label = "project",
+             landscape = TRUE,
              align = 'l',
+             custom_width = TRUE,
+             col_to_adjust = c(2,3,4,5,6,7,8,9), 
+             width = c("3cm", "3cm","3cm","3cm","3cm","3cm","3cm","3cm"),
              col_names = col_names)
+
 ```
 
 \newpage

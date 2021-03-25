@@ -37,8 +37,11 @@ for (a in plot.vec){
 }
 ```
 
+\newpage
+
 ## Implied Fit to Commercial 'Ghost' Fleet Length Data 
 
+The 'ghost' fleet data consist of commercial length samples collected prior to 1995 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
 
 ```{r, results='asis'}
 plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))

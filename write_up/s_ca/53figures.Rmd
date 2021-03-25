@@ -2,16 +2,6 @@
 # Figures
 
 
-<!-- ====================================================================== --> 
-<!-- ******************* Data Used in the Model *************************** --> 
-<!-- ====================================================================== --> 
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "data_plot.png"), 
-caption = "Summary of data sources used in the base model",
-label = 'data-plot')
-```	
 
 <!-- ====================================================================== -->  
 <!-- ****************** Catches Used in the Model ************************* --> 
@@ -22,7 +12,19 @@ add_figure(
 filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
 caption = "Catches by fleet used in the base model",
 label = 'catch')
+```
+
+<!-- ====================================================================== --> 
+<!-- ******************* Data Used in the Model *************************** --> 
+<!-- ====================================================================== --> 
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "data_plot.png"), 
+caption = "Summary of data sources used in the base model",
+label = 'data-plot')
 ```	
+	
 
 
 <!-- ====================================================================== -->
@@ -287,14 +289,6 @@ label = 'recruits')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated time series of recruitment deviations",
-label = 'rec-devs')
-```
-
-
-```{r, results = 'asis'}
-add_figure(
 filein = file.path(mod_loc, "plots", "SR_curve.png"), 
 caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
 label = 'bh-curve')
@@ -391,7 +385,7 @@ label = 'tot-bio')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
+filein = file.path(mod_loc, "plots", "ts9_Relative_spawning_output_intervals.png"), 
 caption = "Estimated time series of fraction of unfished spawning output",
 label = 'depl')
 ```
@@ -423,21 +417,38 @@ label = 'yield')
 <!-- ====================================================================== -->
   
 ```{r, echo=FALSE, results='asis'}
-#sens_wd = file.path(substr(mod_loc, 1, 57), "_sensitivities", "_plots")
-#nm = paste0(substr(mod_loc, 59, 99), "_compare2_spawnbio_uncertainty.png")
-#add_figure(
-#filein = file.path(sens_wd, nm),
-#caption = "Change in estimated spawning output by sensitivity",
-#label = 'sens-ssb')
+nm = paste0(basename(mod_loc), "_1_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-#nm = paste0(substr(mod_loc, 59, 99), "_compare4_Bratio_uncertainty.png")
-#add_figure(
-#filein = file.path(sens_wd, nm),
-#caption = "Change in estimated fraction unfished by sensitivity",
-#label = 'sens-depl')
+nm = paste0(basename(mod_loc), "_1_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl-1')
 ```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(basename(mod_loc), "_2_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb-2')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(basename(mod_loc), "_2_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl-2')
+```
+\newpage
+
 <!-- ====================================================================== -->
 <!-- ******************       LB-SPR          ***************************** --> 
 <!-- ====================================================================== -->
@@ -446,7 +457,7 @@ label = 'yield')
 lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr"
 
 add_figure(
-filein = file.path(lbspr, "Copper_South_LBSPR.png"), 
+filein = file.path(lbspr, "Copper_SoCAL_YrEsts_newVBGF.png"), 
 caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values",
 label = 'lbspr')
 ```
@@ -458,8 +469,8 @@ label = 'lbspr')
 <!-- ====================================================================== -->
 
 ```{r, echo=FALSE, results='asis'}
-#filein = file.path(general_wd,'figures_likelihoods.Rmd')
-#read_child(filein)
+filein = file.path(general_wd,'figures_likelihoods.Rmd')
+read_child(filein)
 ```
 
 <!-- ====================================================================== -->
@@ -470,6 +481,5 @@ label = 'lbspr')
 filein = file.path(general_wd,'figures_retro.Rmd')
 read_child(filein)
 ```
-
 
 \newpage

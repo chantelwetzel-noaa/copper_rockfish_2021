@@ -1,5 +1,5 @@
 caption,altcaption,label,filename,loc
-Summary of the recreational length samples used in the stock assessment.,NA,len-samps,s_ca_rec_len_samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/recreational_comps/forSS
+Summary of the recreational length samples used in the stock assessment.,NA,len-samps,s_ca_rec_len_samples_mar2021.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/recreational_comps/forSS
 Summary of the number of samples by year and source used to estimate length-at-age parameters.,NA,len-at-age-samps,len_at_age_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology
 Summary of the commercial length samples by number of trips and lengths by sex per year. ,NA,com-len-samps,CA_S_Samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/commercial_comps/forSS
 Summary of the NWFSC WCGBTS length samples by number of trips and lengths by sex per year. ,NA,wcgbts-len,south_length_SampleSize.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/wcgbts/forSS
