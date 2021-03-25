@@ -2,7 +2,7 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10%. This was repeated 100 times with 94 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 94 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
 
 ### Sensitivity Analyses
 
@@ -20,11 +20,11 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
   \item Estimate annual recruitment deviations while allowing for a dome-shaped selectivity curve. 
   
-  \item Data weighting according to the McAllister-Ianelli (MI) method using the weighting values shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the McAllister-Ianelli (MI DW) method using the weighting values shown in Table \ref{tab:dw}. 
 
   \item Data weighting according to the Francis method using the weighting values shown in Table \ref{tab:dw}. 
   
-  \item Data weighting according to the Dirichlet-Multinomial (DM) method where the estimated parameters are shown in Table \ref{tab:dw}. 
+  \item Data weighting according to the Dirichlet-Multinomial (DM DW) method where the estimated parameters are shown in Table \ref{tab:dw}. 
   
 \end{enumerate}
 
@@ -53,7 +53,7 @@ A profile across a range of female $k$ values was also conducted (Figure \ref{fi
 
 ### Length-Based Spawner-per-Recruit Analysis
 
-An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated the `r spp` were 50 percent selected size around 30 - 35 cm (excluding 2018) with full selection between 35 - 40 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.60 - 0.75 between 2016 - 2020. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model.  The estimates of the SPR harvest rate by year was used to provide an external estimate of stock status for a Simple Stock Synthesis sensitivity.   
+An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated that `r spp` were 50 percent selected generally between 30 - 35 cm (excluding 2018) with full selection between 35 - 40 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.60 - 0.75 between 2016 - 2020. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model.  The estimates of the SPR harvest rate by year was used to provide an external estimate of stock status for a Simple Stock Synthesis sensitivity.   
 
 ### Simple Stock Synthesis
 

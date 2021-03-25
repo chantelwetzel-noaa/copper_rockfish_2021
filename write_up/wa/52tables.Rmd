@@ -70,6 +70,14 @@ table_format(x = out,
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/len_at_age_data.tex}
 
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+
+filein = file.path(general_wd,'table_growth.Rmd')
+read_child(filein)
+
+```
 
 \newpage
 
@@ -135,7 +143,7 @@ table_format(x = mod_params,
 
 ```
 
-
+\newpage
 
 <!-- ======================================================= -->
 <!-- ***********       Likelihood       ******************** --> 
@@ -157,12 +165,27 @@ table_format(x = mod_params,
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
 
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
+col_names = c('Method',
+              'Recreational Lengths')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods.",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+\newpage
+
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sensitivities.tex}
 
 \newpage
 
+
+
 <!-- ======================================================= -->
-<!-- ****************     Sensitivities      *************** --> 
+<!-- ****************         SSS            *************** --> 
 <!-- ======================================================= -->
 
 \input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_60.tex}
@@ -180,19 +203,6 @@ table_format(x = mod_params,
 \newpage
 
 
-```{r, results = 'asis'}
-tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
-col_names = c('Method',
-              'Recreational Lengths')
-table_format(x = tab,
-             caption = "Data weights applied by each alternative data weighting methods.",
-             label = "dw",
-             align = 'l',
-             col_names = col_names)
-```
-
-\newpage
-
 
 ```{r, results = 'asis'}
 tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
@@ -208,8 +218,8 @@ out = cbind(tab$Year,
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              'OFL',
-              'ACL',
+              'Adopted OFL',
+              'Adopted ACL',
               "ACL-WA",
               "OFL", 
               "ABC", 

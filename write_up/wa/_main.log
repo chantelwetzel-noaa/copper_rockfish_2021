@@ -1,67 +1,35 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.12.21)  28 DEC 2020 10:14
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2021.3.3)  4 MAR 2021 06:34
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
-LaTeX2e <2020-10-01> patch level 2
-Lua module: luaotfload-main 2020-09-02 3.15 luaotfload entry point
-Lua module: luaotfload-init 2020-09-02 3.15 luaotfload submodule / initializatio
-n
-Lua module: lualibs 2020-08-31 2.72 ConTeXt Lua standard libraries.
-Lua module: lualibs-extended 2020-08-31 2.72 ConTeXt Lua libraries -- extended c
+LaTeX2e <2020-10-01> patch level 4
+Lua module: luaotfload 2021-01-08 3.17 Lua based OpenType font support
+Lua module: lualibs 2020-12-30 2.73 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-12-30 2.73 ConTeXt Lua libraries -- extended c
 ollection.
-Lua module: luaotfload-log 2020-09-02 3.15 luaotfload submodule / logging
-Lua module: luaotfload-parsers 2020-09-02 3.15 luaotfload submodule / parsers
-Lua module: luaotfload-configuration 2020-09-02 3.15 luaotfload submodule / conf
-ig file reader
 luaotfload | conf : Root cache directory is "C:/Users/Chantel.Wetzel/AppData/Roa
 ming/TinyTeX/texmf-var/luatex-cache/generic/names".
-luaotfload | init : Loading fontloader "fontloader-2020-08-31.lua" from kpse-res
+luaotfload | init : Loading fontloader "fontloader-2021-01-07.lua" from kpse-res
 olved path "c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/luate
-x/luaotfload/fontloader-2020-08-31.lua".
+x/luaotfload/fontloader-2021-01-07.lua".
 Lua-only attribute luaotfload@noligature = 1
 Lua-only attribute luaotfload@syllabe = 2
-luaotfload | init : Context OpenType loader version 0x1.8e353f7ced917p+1
-Lua module: luaotfload-fallback 2020-09-02 3.15 luaotfload submodule / fallback
-Lua module: luaotfload-multiscript 2020-09-02 3.15 luaotfload submodule / multis
-cript
-Lua module: luaotfload-script 2020-09-02 3.15 luaotfload submodule / Script help
-ers
+luaotfload | init : Context OpenType loader version 0x1.8e76c8b439581p+1
 Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
 Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
-Lua module: luaotfload-loaders 2020-09-02 3.15 luaotfload submodule / callback h
-andling
 Inserting `luaotfload.define_font' at position 1 in `define_font'.
-Lua module: luaotfload-database 2020-09-02 3.15 luaotfload submodule / database
-Lua module: luaotfload-unicode 2020-09-02 3.15 luaotfload submodule / Unicode he
-lpers
-Lua module: luaotfload-colors 2020-09-02 3.15 luaotfload submodule / color
 Lua-only attribute luaotfload_color_attribute = 3
-Lua module: luaotfload-resolvers 2020-09-02 3.15 luaotfload submodule / resolver
-s
 luaotfload | conf : Root cache directory is "C:/Users/Chantel.Wetzel/AppData/Roa
 ming/TinyTeX/texmf-var/luatex-cache/generic/names".
-Lua module: luaotfload-features 2020-09-02 3.15 luaotfload submodule / features
-Lua module: luaotfload-harf-define 2020-09-02 3.15 luaotfload submodule / HarfBu
-zz font loading
 Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_truetype_file'.
-Lua module: luaotfload-harf-plug 2020-09-02 3.15 luaotfload submodule / HarfBuzz
- shaping
-Inserting `Harf pre_output_filter callback' at position 1 in `pre_output_filter'
-.
-Inserting `Harf wrapup_run callback' at position 1 in `wrapup_run'.
-Inserting `Harf finish_pdffile callback' at position 1 in `finish_pdffile'.
-Inserting `Harf glyph_info callback' at position 1 in `glyph_info'.
-Lua module: luaotfload-letterspace 2020-09-02 3.15 luaotfload submodule / letter
-spacing
-Lua module: luaotfload-embolden 2020-09-02 3.15 luaotfload submodule / embolden
-Lua module: luaotfload-notdef 2020-09-02 3.15 luaotfload submodule / notdef
-Lua module: luaotfload-suppress 2020-09-02 3.15 luaotfload submodule / suppress
-Lua module: luaotfload-szss 2020-09-02 3.15 luaotfload submodule / Special featu
-re handling
-Lua module: luaotfload-auxiliary 2020-09-02 3.15 luaotfload submodule / auxiliar
-y functions
+Inserting `luaotfload.harf.finalize_vlist' at position 1 in `post_linebreak_filt
+er'.
+Inserting `luaotfload.harf.finalize_hlist' at position 2 in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' at position 1 in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' at position 1 in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' at position 1 in `glyph_info'.
 Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
 font'.
 Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
@@ -73,10 +41,81 @@ t_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
-Lua module: luaotfload-tounicode 2020-09-02 3.15 luaotfload submodule / tounicod
-e
 Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
-. L3 programming layer <2020-12-07> xparse <2020-03-03>
+. L3 programming layer <2021-02-18> (./input_accessability.tex
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/pdfmanagement-testphase.sty
+Package: pdfmanagement-testphase 2021-02-22 v0.95a LaTeX PDF management testphas
+e bundle
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/pdfmanagement-testphase.ltx
+File: pdfmanagement-testphase.ltx 2021-02-22 v0.95a PDF management code (testpha
+se)
+
+LaTeX3 Info: Defining command \DeclareDocumentMetadata with sig. 'm' on line
+(LaTeX3)     961.
+
+
+LaTeX3 Info: Defining command \AddToDocumentProperties with sig. 'O{\@currname
+(LaTeX3)     }mm' on line 971.
+
+
+LaTeX3 Info: Defining command \GetDocumentProperties with sig. 'm' on line
+(LaTeX3)     975.
+
+
+LaTeX3 Info: Defining command \ShowDocumentProperties with sig. '' on line
+(LaTeX3)     987.
+
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3experim
+ental/l3bitset/l3bitset.sty
+Package: l3bitset 2021-02-18 L3 Experimental bitset support
+\l__bitset_internal_int=\count175
+)))
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/
+expl3.sty
+Package: expl3 2021-02-18 L3 programming layer (loader) 
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/
+l3debug.def
+File: l3debug.def 2019-04-06 L3 Debugging support
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend
+/l3backend-luatex.def
+File: l3backend-luatex.def 2021-03-02 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count176
+\l__pdf_internal_box=\box47
+))
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/l3backend-testphase-luatex.def
+File: l3backend-testphase-luatex.def 2021-02-22 LaTeX PDF management testphase b
+undle backend support:PDFoutput(LuaTeX)
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/l3ref-tmp.sty
+Package: l3ref-tmp 2020-10-09 L3 Experimental cross-referencing
+)
+\l__pdf_backend_tmpa_box=\box48
+\g__pdf_backend_resourceid_int=\count177
+\g__pdf_backend_name_int=\count178
+\g__pdf_backend_page_int=\count179
+\g__pdf_backend_EmbeddedFiles_int=\count180
+)
+
+LaTeX3 Info: Redefining command \DeclareDocumentMetadata with sig. 'm' on line
+(LaTeX3)     3.
+
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/pdfmanagement-firstaid.sty
+Package: pdfmanagement-firstaid 2021-02-22 v0.95a LaTeX PDF management testphase
+ bundle / firstaid-patches
+
+Package pdfmanagement Info: loading pdfmanagement firstaid code for pgf
+
+))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/arti
 cle.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -86,14 +125,14 @@ Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 luaotfload | db : Font names database loaded from C:/Users/Chantel.Wetzel/AppDat
 a/Roaming/TinyTeX/texmf-var/luatex-cache/generic/names/luaotfload-names.luc)
-\c@part=\count173
-\c@section=\count174
-\c@subsection=\count175
-\c@subsubsection=\count176
-\c@paragraph=\count177
-\c@subparagraph=\count178
-\c@figure=\count179
-\c@table=\count180
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -116,7 +155,7 @@ lities/pgfutil-common.tex
 lities/pgfutil-common-lists.tex))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/uti
 lities/pgfutil-latex.def
-\pgfutil@abb=\box47
+\pgfutil@abb=\box49
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/uti
 lities/pgfrcs.code.tex
@@ -185,14 +224,14 @@ lities/pgfkeysfiltered.code.tex
 \pgf@yd=\dimen152
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count181
-\c@pgf@countb=\count182
-\c@pgf@countc=\count183
-\c@pgf@countd=\count184
+\c@pgf@counta=\count189
+\c@pgf@countb=\count190
+\c@pgf@countc=\count191
+\c@pgf@countd=\count192
 \t@pgf@toka=\toks20
 \t@pgf@tokb=\toks21
 \t@pgf@tokc=\toks22
-\pgf@sys@id@count=\count185
+\pgf@sys@id@count=\count193
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/sys
 temlayer/pgf.cfg
@@ -211,8 +250,8 @@ File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/sys
 temlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfsyssoftpath@smallbuffer@items=\count186
-\pgfsyssoftpath@bigbuffer@items=\count187
+\pgfsyssoftpath@smallbuffer@items=\count194
+\pgfsyssoftpath@bigbuffer@items=\count195
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/sys
 temlayer/pgfsysprotocol.code.tex
@@ -237,6 +276,10 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/xcolor-patches-tmp-ltx.sty
+Package: xcolor-patches-tmp-ltx 2021/02/22 v0.95a patch xcolor for l3color
+)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcore.code.tex
 Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
@@ -250,8 +293,8 @@ h/pgfmathutil.code.tex)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mat
 h/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen153
-\pgfmath@count=\count188
-\pgfmath@box=\box48
+\pgfmath@count=\count196
+\pgfmath@box=\box50
 \pgfmath@toks=\toks23
 \pgfmath@stack@operand=\toks24
 \pgfmath@stack@operation=\toks25
@@ -276,7 +319,7 @@ h/pgfmathfunctions.misc.code.tex)
 h/pgfmathfunctions.integerarithmetics.code.tex)))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mat
 h/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count189
+\c@pgfmathroundto@lastzeros=\count197
 ))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mat
 h/pgfint.code.tex)
@@ -313,10 +356,10 @@ File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfpic=\box49
-\pgf@hbox=\box50
-\pgf@layerbox@main=\box51
-\pgf@picture@serial@count=\count190
+\pgfpic=\box51
+\pgf@hbox=\box52
+\pgf@layerbox@main=\box53
+\pgf@picture@serial@count=\count198
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcoregraphicstate.code.tex
@@ -351,8 +394,8 @@ File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 iclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgf@max=\dimen177
-\pgf@sys@shading@range@num=\count191
-\pgf@shadingcount=\count192
+\pgf@sys@shading@range@num=\count199
+\pgf@shadingcount=\count266
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcoreimage.code.tex
@@ -361,7 +404,7 @@ File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfexternal@startupbox=\box52
+\pgfexternal@startupbox=\box54
 ))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/bas
 iclayer/pgfcorelayers.code.tex
@@ -382,7 +425,7 @@ File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mod
 ules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfnodeparttextbox=\box53
+\pgfnodeparttextbox=\box55
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mod
 ules/pgfmoduleplot.code.tex
@@ -426,7 +469,7 @@ Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/lib
 raries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count193
+\pgf@plot@mark@count=\count267
 \pgfplotmarksize=\dimen182
 )
 \tikz@lastx=\dimen183
@@ -437,23 +480,23 @@ File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \tikz@lastmovetoy=\dimen188
 \tikzleveldistance=\dimen189
 \tikzsiblingdistance=\dimen190
-\tikz@figbox=\box54
-\tikz@figbox@bg=\box55
-\tikz@tempbox=\box56
-\tikz@tempbox@bg=\box57
-\tikztreelevel=\count194
-\tikznumberofchildren=\count195
-\tikznumberofcurrentchild=\count196
-\tikz@fig@count=\count197
+\tikz@figbox=\box56
+\tikz@figbox@bg=\box57
+\tikz@tempbox=\box58
+\tikz@tempbox@bg=\box59
+\tikztreelevel=\count268
+\tikznumberofchildren=\count269
+\tikznumberofcurrentchild=\count270
+\tikz@fig@count=\count271
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/mod
 ules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count198
-\pgfmatrixcurrentcolumn=\count199
-\pgf@matrix@numberofcolumns=\count266
+\pgfmatrixcurrentrow=\count272
+\pgfmatrixcurrentcolumn=\count273
+\pgf@matrix@numberofcolumns=\count274
 )
-\tikz@expandcount=\count267
+\tikz@expandcount=\count275
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/fro
 ntendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
@@ -471,9 +514,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 ftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count268
-\Gm@cntv=\count269
-\c@Gm@tempcnt=\count270
+\Gm@cnth=\count276
+\Gm@cntv=\count277
+\c@Gm@tempcnt=\count278
 \Gm@bindingoffset=\dimen191
 \Gm@wd@mp=\dimen192
 \Gm@odd@mp=\dimen193
@@ -490,8 +533,8 @@ Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/
 fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
-
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
+s
 \f@nch@headwidth=\skip49
 \f@nch@O@elh=\skip50
 \f@nch@O@erh=\skip51
@@ -514,39 +557,38 @@ Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
 \h@ngcolonwd=\skip64
 \h@ngscolonwd=\skip65
 )
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape
-/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/pdflscape-ltx.sty
+Package: pdflscape-ltx 2021/02/22 vv0.95a Display of landscape pages in PDF - ad
+aption of pdflscape to the PDFmanagement bundle (testphase)
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/
 lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
+))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype.sty
-Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
+Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
 \MT@toks=\toks29
-\MT@count=\count271
+\MT@count=\count279
 LaTeX Info: Redefining \textls on input line 788.
 \MT@outer@kern=\dimen199
 LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
-\MT@listname@count=\count272
+\MT@listname@count=\count280
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype-luatex.def
-File: microtype-luatex.def 2020/12/07 v2.8 Definitions specific to luatex (RS)
-Module microtype Info: overwriting function `keepligature' on input line 59
-LaTeX Info: Redefining \lsstyle on input line 706.
-LaTeX Info: Redefining \lslig on input line 706.
+File: microtype-luatex.def 2021/02/25 v2.8b Definitions specific to luatex (RS)
+Module microtype Info: overwriting function `keepligature' on input line 62
+LaTeX Info: Redefining \lsstyle on input line 710.
+LaTeX Info: Redefining \lslig on input line 710.
 \MT@outer@space=\skip66
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /microtype.cfg
-File: microtype.cfg 2020/12/07 v2.8 microtype main configuration file (RS)
+File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 ))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/he
 lvet.sty
@@ -580,19 +622,10 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks30
 \XKV@tempa@toks=\toks31
 )
-\XKV@depth=\count273
+\XKV@depth=\count281
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\zifour@ocount=\count274
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inpu
-tenc.sty
-Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks32
-\inpenc@posthook=\toks33
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+\zifour@ocount=\count282
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/font
 enc.sty
@@ -611,33 +644,25 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/flo
 at.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count275
-\float@exts=\toks34
-\float@box=\box58
-\@float@everytoks=\toks35
-\@floatcapt=\box59
+\c@float@type=\count283
+\float@exts=\toks32
+\float@box=\box60
+\@float@everytoks=\toks33
+\@floatcapt=\box61
 )
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperxmp/
-hyperxmp.sty
-Package: hyperxmp 2020/11/22 v5.9 Store hyperref metadata in XMP format
-\hyxmp@aep@toks=\toks36
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions
-/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.s
+ty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
+hyperref.sty
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds
 /ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetke
-ys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfesca
-pe/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexc
 mds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
@@ -650,71 +675,19 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks37
-))
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
-nc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
-
+\pdftexcmds@toks=\toks34
 )
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc
-/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetke
+ys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ifmtarg/i
-fmtarg.sty
-Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/
-etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count276
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifth
-en.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/lualatex/luacod
-e/luacode.sty
-Package: luacode 2012/01/23 v1.2a lua-in-tex helpers (mpg)
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/i
-fluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/luatex/luatexba
-se/luatexbase.sty
-Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/luatex/ctablest
-ack/ctablestack.sty
-Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count277
-)
-\CatcodeTableOther=\catcodetable12
-\CatcodeTableExpl=\catcodetable13
-)
-\luacode@lines=\toks38
-\luacode@table@soft=\catcodetable14
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/
-ifdraft.sty
-Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
-)
-\hyxmp@cct=\catcodetable15
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.s
-ty
-\Urlmuskip=\muskip16
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
-hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
-
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefin
 ekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfesca
+pe/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/h
 ycolor.sty
@@ -728,30 +701,48 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 uxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions
+/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
 \@linkdim=\dimen256
-\Hy@linkcounter=\count278
-\Hy@pagecounter=\count279
+\Hy@linkcounter=\count284
+\Hy@pagecounter=\count285
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
 pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
+hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel lan
+guages
+)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc
+/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmd
 s/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count280
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing ON on input line 4482.
+\Hy@SavedSpaceFactor=\count286
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
+puenc.def
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing ON on input line 4210.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
+Package hyperref Info: Bookmarks ON on input line 4445.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
 backref.sty
-Package: backref 2020/01/14 v1.40 Bibliographical back referencing
+Package: backref 2021/02/04 v1.41 Bibliographical back referencing
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfile
 check/rerunfilecheck.sty
@@ -775,26 +766,26 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 6.
 ))
-\c@Hy@tempcnt=\count281
-LaTeX Info: Redefining \url on input line 5076.
+\c@Hy@tempcnt=\count287
+LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen257
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/
 bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
-\Fld@menulength=\count282
+\Fld@menulength=\count288
 \Field@Width=\dimen258
 \Fld@charsize=\dimen259
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing ON on input line 6360.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing ON on input line 6088.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbe
 gshi-ltx.sty
@@ -802,42 +793,54 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packag
 e
 with kernel methods
 )
-\Hy@abspage=\count283
-\c@Item=\count284
-\c@Hfootnote=\count285
+\Hy@abspage=\count289
+\c@Item=\count290
+\c@Hfootnote=\count291
 )
-Package hyperref Info: Driver (autodetected): hluatex.
+Package hyperref Info: Driver (custom): hgeneric-testphase.
 
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
-hluatex.def
-File: hluatex.def 2020-05-15 v7.00e Hyperref driver for luaTeX
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/hgeneric-testphase.def
+File: hgeneric-testphase.def 2021/02/22 v0.95a generic Hyperref driver for the L
+aTeX PDF management testphase bundle
 
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
-puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/
+etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count292
 )
-\Fld@listcount=\count286
-\c@bookmark@seq@number=\count287
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfmanage
+ment-testphase/hyperref-colorschemes.def)
+
+LaTeX3 Info: Redefining command \Acrobatmenu with sig. 'mm' on line 175.
+
+\l__hyp_tmpa_box=\box62
+\l__hyp_tmpa_int=\count293
+\l__hyp_dest_box=\box63
+
+LaTeX3 Info: Defining command \MakeFieldObject with sig. 'mm' on line 2200.
+
+\HyAnn@Count=\count294
+\Fld@listcount=\count295
 \Hy@SectionHShift=\skip67
+LaTeX Info: Redefining \Hy__hypSectionAnchor on input line 3237.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 60.
-
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/na
 tbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip68
 \bibsep=\skip69
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count288
+\c@NAT@ctr=\count296
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/
 fancyvrb.sty
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count289
+Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count297
 \FV@InFile=\read3
-\FV@TabBox=\box60
-\c@FancyVerbLine=\count290
-\FV@StepNumber=\count291
+\FV@TabBox=\box64
+\c@FancyVerbLine=\count298
+\FV@StepNumber=\count299
 \FV@OutFile=\write4
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/allt
@@ -847,7 +850,7 @@ Package: alltt 1997/06/16 v2.0g defines alltt environment
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/
 amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks39
+\@emptytoks=\toks35
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -870,8 +873,8 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen266
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count292
-\c@continuedfloat=\count293
+\c@caption@flags=\count300
+\c@continuedfloat=\count301
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
@@ -883,7 +886,7 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 s/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks40
+\@envbody=\toks36
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/accsupp/a
 ccsupp.sty
@@ -897,12 +900,12 @@ File: accsupp-luatex.def 2019/12/05 v0.6 accsupp driver for pdfTeX (HO)
 t/pdfcomment.sty
 Package: pdfcomment 2018/11/01 pdfcomment.sty v2.4a - Josef Kleber (C) 2008-2012
 , 2015-2016, 2018
-\c@pc@count@i=\count294
-\c@pc@count@ii=\count295
-\c@pc@count@iii=\count296
-\c@pc@count@iv=\count297
-\pc@mathannot@box=\box61
-\pc@nullbox=\box62
+\c@pc@count@i=\count302
+\c@pc@count@ii=\count303
+\c@pc@count@iii=\count304
+\c@pc@count@iv=\count305
+\pc@mathannot@box=\box65
+\pc@nullbox=\box66
 \pc@dima=\skip70
 \pc@dimb=\skip71
 \pc@Sposx=\skip72
@@ -951,160 +954,171 @@ Package zref Info: New property list: savepos on input line 80.
 Package zref Info: New property: posx on input line 85.
 Package zref Info: New property: posy on input line 86.
 )
-\c@zref@unique=\count298
+\c@zref@unique=\count306
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/
 refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifth
+en.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/cal
 c.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count299
-\calc@Bcount=\count300
+\calc@Acount=\count307
+\calc@Bcount=\count308
 \calc@Adimen=\dimen267
 \calc@Bdimen=\dimen268
 \calc@Askip=\skip80
 \calc@Bskip=\skip81
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count301
+\calc@Ccount=\count309
 \calc@Cskip=\skip82
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/marginnot
 e/marginnote.sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count302
+\c@mn@abspage=\count310
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/i
 fpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/i
+fluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/soulpos/s
 oulpos.sty
 Package: soulpos 2012/02/25 v1.1 Fancy underlining
-\ulp@subcnt=\count303
-\ulp@cnt=\count304
+\ulp@subcnt=\count311
+\ulp@cnt=\count312
 \ulp@out=\write5
 \ulp@in=\read4
 \ulwidth=\dimen269
 )
+
+Package hyperref Warning: unknown key luatex of module ’hyp / setup’ set to
+(hyperref)                ’’.
+
 Package zref Info: New property list: pdfcomment on input line 2735.
 Package zref Info: New property: PCPDFOBJID on input line 2736.
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf.sty
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/
-expl3.sty
-Package: expl3 2020-12-07 L3 programming layer (loader) 
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend
-/l3backend-luatex.def
-File: l3backend-luatex.def 2020-09-24 L3 backend support: PDF output (LuaTeX)
-\l__kernel_color_stack_int=\count305
-\l__pdf_internal_box=\box63
-))
-Package: tagpdf 2019/07/02 v0.61 A package to experiment with pdf tagging
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
-s/xparse/xparse.sty
-Package: xparse 2020-10-27 L3 Experimental document command parser
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
-s/xparse/xparse-generic.tex))
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/zref/zref
--lastpage.sty
-Package: zref-lastpage 2020-07-03 v2.32 Module lastpage for zref (HO)
-
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/zref/zref
--abspage.sty
-Package: zref-abspage 2020-07-03 v2.32 Module abspage for zref (HO)
-\c@abspage=\count306
-Package zref Info: New property: abspage on input line 66.
-)
-Package zref Info: New property list: LastPage on input line 59.
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3experim
-ental/l3pdf/l3pdf.sty
-Package: l3pdf 2020-10-27 L3 Experimental core PDF support
-)
-\g__uftag_abspage_int=\count307
-Package zref Info: New property list: uftagzrl on input line 55.
-Package zref Info: New property: tagabspage on input line 56.
-\l__uftag_loglevel_int=\count308
+Package: tagpdf 2021/02/23 v0.80  A package to experiment with pdf tagging 
+\l__tag_loglevel_int=\count313
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-luatex.def
-File: tagpdf-luatex.def 2019/07/02 v0.61 tagpdf driver for luatex
-\l__uftag_mc_type_attr=\attribute4
-\l__uftag_mc_cnt_attr=\attribute5
-\g__uftag_interwordspace_attr=\attribute6
-\g__uftag_interwordfont_attr=\attribute7
-Lua module: tagpdf 2019-07-02 0.61 tagpdf lua code)
+File: tagpdf-luatex.def 2021/02/23 v0.80 tagpdf driver for luatex
+\l__tag_mc_type_attr=\attribute4
+\l__tag_mc_cnt_attr=\attribute5
+\g__tag_interwordspace_attr=\attribute6
+\g__tag_interwordfont_attr=\attribute7
+Lua module: tagpdf 2021-02-23 0.80 tagpdf lua code)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-checks-code.sty
-Package: tagpdf-checks-code 2019/07/02 v0.61 part of tagpdf - code related to ch
+Package: tagpdf-checks-code 2021/02/23 v0.80 part of tagpdf - code related to ch
 ecks and messages
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-user.sty
-Package: tagpdf-user 2019/07/02 v0.61 tagpdf - user commands
+Package: tagpdf-user 2021/02/23 v0.80 tagpdf - user commands
+
+LaTeX3 Info: Defining command \tagpdfsetup with sig. 'm' on line 28.
+
+
+LaTeX3 Info: Defining command \tagmcifinTF with sig. 'mm' on line 82.
+
+
+LaTeX3 Info: Defining environment 'tagmcartifact' with sig. 'm' on line 90.
+
+
+LaTeX3 Info: Defining command \tagmcbegin with sig. 'm' on line 95.
+
+
+LaTeX3 Info: Defining command \tagmcend with sig. '' on line 101.
+
+
+LaTeX3 Info: Defining command \tagmcuse with sig. 'm' on line 106.
+
+
+LaTeX3 Info: Defining command \tagstructbegin with sig. 'm' on line 113.
+
+
+LaTeX3 Info: Defining command \tagstructend with sig. '' on line 118.
+
+
+LaTeX3 Info: Defining command \tagstructuse with sig. 'm' on line 123.
+
+
+LaTeX3 Info: Defining command \showtagpdfmcdata with sig.
+(LaTeX3)     'O{\__tag_tag_get_mc_abs_cnt: }' on line 135.
+
+
+LaTeX3 Info: Defining command \showtagpdfattributes with sig. '' on line 159.
+
+
+LaTeX3 Info: Defining command \pdffakespace with sig. '' on line 167.
+
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-tree-code.sty
-Package: tagpdf-tree-code 2019/07/02 v0.61 part of tagpdf - code related to writ
+Package: tagpdf-tree-code 2021/02/23 v0.80 part of tagpdf - code related to writ
 ing trees and dictionaries to the pdf
-\c@g__uftag_parenttree_obj_int=\count309
+\c@g__tag_parenttree_obj_int=\count314
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-roles-code.sty
-Package: tagpdf-roles-code 2019/07/02 v0.61 part of tagpdf - code related to rol
+Package: tagpdf-roles-code 2021/02/23 v0.80 part of tagpdf - code related to rol
 es and structure names
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-attr-code.sty
-Package: tagpdf-attr-code 2019/07/02 v0.61 part of tagpdf - code related to attr
+Package: tagpdf-attr-code 2021/02/23 v0.80 part of tagpdf - code related to attr
 ibutes and attribute classes
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-mc-code-shared.sty
-Package: tagpdf-mc-code-shared 2019/07/02 v0.61 part of tagpdf - code related to
+Package: tagpdf-mc-code-shared 2021/02/23 v0.80 part of tagpdf - code related to
  marking chunks - code shared by generic and luamode 
-\c@g__uftag_MCID_abs_int=\count310
-Package zref Info: New property: tagmcabs on input line 16.
+\c@g__tag_MCID_abs_int=\count315
+\g__tag_MCID_tmp_bypage_int=\count316
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-mc-code-lua.sty
-Package: tagpdf-mc-code-lua 2019/07/02 v0.61 tagpdf - mc code only for the luamo
+Package: tagpdf-mc-code-lua 2021/02/23 v0.80 tagpdf - mc code only for the luamo
 de 
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-struct-code.sty
-Package: tagpdf-struct-code 2019/07/02 v0.61 part of tagpdf - code related to st
+Package: tagpdf-struct-code 2021/02/23 v0.80 part of tagpdf - code related to st
 oring structure
-\c@g__uftag_struct_abs_int=\count311
-Package zref Info: New property: tagstruct on input line 11.
-Package zref Info: New property list: uftagzrlstruct on input line 12.
-)
+\c@g__tag_struct_abs_int=\count317
+))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tagpdf/ta
 gpdf-space-code.sty
-Package: tagpdf-space-code 2019/07/02 v0.61 part of tagpdf - code related to rea
+Package: tagpdf-space-code 2021/02/23 v0.80 part of tagpdf - code related to rea
 l space chars
-))
+)
 Inserting `markspaces' at position 2 in `pre_linebreak_filter'.
-Inserting `markspaces' at position 2 in `hpack_filter'.
+Inserting `markspaces' at position 3 in `hpack_filter'.
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utili
 ties/pgfpages.sty
 Package: pgfpages 2011/01/05 ver 0.02
-\pgf@logicalpages=\count312
-\pgf@firstshipout=\count313
-\pgf@lastshipout=\count314
-\pgf@currentshipout=\count315
-\pgf@cpn=\count316
-\pgf@shipoutnextto=\count317
+\pgf@logicalpages=\count318
+\pgf@firstshipout=\count319
+\pgf@lastshipout=\count320
+\pgf@currentshipout=\count321
+\pgf@cpn=\count322
+\pgf@shipoutnextto=\count323
 \pgfphysicalheight=\dimen270
 \pgfphysicalwidth=\dimen271
-\pgfpages@shipoutbox=\box64
+\pgfpages@shipoutbox=\box67
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/base/glossaries.sty
@@ -1113,8 +1127,8 @@ Package: glossaries 2020/03/19 v4.46 (NLCT)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mfirstuc/
 mfirstuc.sty
 Package: mfirstuc 2017/11/14 v2.06 (NLCT)
-\@glsmfirst=\toks41
-\@glsmrest=\toks42
+\@glsmfirst=\toks37
+\@glsmrest=\toks38
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/textcase/
 textcase.sty
@@ -1141,7 +1155,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/a
 msgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks43
+\@emptytoks=\toks39
 \ex@=\dimen272
 ))
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/a
@@ -1154,48 +1168,48 @@ msopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 LaTeX Info: Redefining \operatorname on input line 43.
 )
-\inf@bad=\count318
+\inf@bad=\count324
 LaTeX Info: Redefining \frac on input line 236.
-\uproot@=\count319
-\leftroot@=\count320
+\uproot@=\count325
+\leftroot@=\count326
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count321
-\DOTSCASE@=\count322
+\classnum@=\count327
+\DOTSCASE@=\count328
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box65
-\strutbox@=\box66
+\Mathstrutbox@=\box68
+\strutbox@=\box69
 \big@size=\dimen274
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count323
-\c@MaxMatrixCols=\count324
+\macc@depth=\count329
+\c@MaxMatrixCols=\count330
 \dotsspace@=\muskip17
-\c@parentequation=\count325
-\dspbrk@lvl=\count326
-\tag@help=\toks44
-\row@=\count327
-\column@=\count328
-\maxfields@=\count329
-\andhelp@=\toks45
+\c@parentequation=\count331
+\dspbrk@lvl=\count332
+\tag@help=\toks40
+\row@=\count333
+\column@=\count334
+\maxfields@=\count335
+\andhelp@=\toks41
 \eqnshift@=\dimen275
 \alignsep@=\dimen276
 \tagshift@=\dimen277
 \tagwidth@=\dimen278
 \totwidth@=\dimen279
 \lineht@=\dimen280
-\@envbody=\toks46
+\@envbody=\toks42
 \multlinegap=\skip84
 \multlinetaggap=\skip85
-\mathdisplay@stack=\toks47
+\mathdisplay@stack=\toks43
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/substr/su
 bstr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count330
+\c@su@anzahl=\count336
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/datatool/
 datatool-fp.sty
@@ -1207,20 +1221,20 @@ Package: fp 1995/04/02
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fp/defpat
 tern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count331
+\actioncount=\count337
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fp/fp-bas
 ic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count332
-\FP@xia=\count333
-\FP@xib=\count334
-\FP@xfa=\count335
-\FP@xfb=\count336
-\FP@rega=\count337
-\FP@regb=\count338
-\FP@regs=\count339
-\FP@times=\count340
+\FP@xs=\count338
+\FP@xia=\count339
+\FP@xib=\count340
+\FP@xfa=\count341
+\FP@xfb=\count342
+\FP@rega=\count343
+\FP@regb=\count344
+\FP@regs=\count345
+\FP@times=\count346
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fp/fp-add
 ons.sty
@@ -1245,7 +1259,7 @@ Package: fp-pas 1994/08/29
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fp/fp-ran
 dom.sty
 Package: fp-random 1995/02/23
-\FPseed=\count341
+\FPseed=\count347
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fp/fp-eqn
 .sty
@@ -1259,33 +1273,31 @@ Package: fp-upn 1996/10/21
 l.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks48
-\@dtl@tmpcount=\count342
+\@dtl@toks=\toks44
+\@dtl@tmpcount=\count348
 \dtl@tmplength=\skip86
-\dtl@sortresult=\count343
-\@dtl@numgrpsepcount=\count344
-\@dtl@datatype=\count345
-\dtl@codeA=\count346
-\dtl@codeB=\count347
-\@dtl@foreach@level=\count348
+\dtl@sortresult=\count349
+\@dtl@numgrpsepcount=\count350
+\@dtl@datatype=\count351
+\dtl@codeA=\count352
+\dtl@codeB=\count353
+\@dtl@foreach@level=\count354
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/base/glossaries-compatible-307.sty
 Package: glossaries-compatible-307 2020/03/19 v4.46 (NLCT)
 )
-
-Package glossaries Warning: No language module detected for `english'.
-(glossaries)                Language modules need to be installed separately.
-(glossaries)                Please check on CTAN for a bundle called
-(glossaries)                `glossaries-english' or similar.
-
-\gls@level=\count349
-\@gls@tmpb=\toks49
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
+s-english/glossaries-english.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count355
+\@gls@tmpb=\toks45
 \gls@tmplen=\skip87
-\glskeylisttok=\toks50
-\glslabeltok=\toks51
-\glsshorttok=\toks52
-\glslongtok=\toks53
+\glskeylisttok=\toks46
+\glslabeltok=\toks47
+\glsshorttok=\toks48
+\glslongtok=\toks49
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/styles/glossary-hypernav.sty
@@ -1307,17 +1319,17 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip90
 \LTpre=\skip91
 \LTpost=\skip92
-\LTchunksize=\count350
+\LTchunksize=\count356
 \LTcapwidth=\dimen281
-\LT@head=\box67
-\LT@firsthead=\box68
-\LT@foot=\box69
-\LT@lastfoot=\box70
-\LT@cols=\count351
-\LT@rows=\count352
-\c@LT@tables=\count353
-\c@LT@chunks=\count354
-\LT@p@ftn=\toks54
+\LT@head=\box70
+\LT@firsthead=\box71
+\LT@foot=\box72
+\LT@lastfoot=\box73
+\LT@cols=\count357
+\LT@rows=\count358
+\c@LT@tables=\count359
+\c@LT@chunks=\count360
+\LT@p@ftn=\toks50
 )
 \glsdescwidth=\skip93
 \glspagelistwidth=\skip94
@@ -1335,12 +1347,12 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ay.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen282
-\ar@mcellbox=\box71
+\ar@mcellbox=\box74
 \extrarowheight=\dimen283
-\NC@list=\toks55
+\NC@list=\toks51
 \extratabsurround=\skip96
 \backup@length=\skip97
-\ar@cellbox=\box72
+\ar@cellbox=\box75
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/
 booktabs.sty
@@ -1355,12 +1367,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen291
 \cmidrulekern=\dimen292
 \defaultaddspace=\dimen293
-\@cmidla=\count355
-\@cmidlb=\count356
+\@cmidla=\count361
+\@cmidlb=\count362
 \@aboverulesep=\dimen294
 \@belowrulesep=\dimen295
-\@thisruleclass=\count357
-\@lastruleclass=\count358
+\@thisruleclass=\count363
+\@lastruleclass=\count364
 \@thisrulewidth=\dimen296
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmoder
@@ -1413,8 +1425,14 @@ Package: unicode-math-luatex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
+s/xparse/xparse.sty
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
+s/xparse/xparse-2020-10-01.sty
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
+s/xparse/xparse-generic.tex)))
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3package
 s/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2020-10-27 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-02-02 LaTeX2e option processing using LaTeX3 keys
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/
 fontspec.sty
@@ -1424,17 +1442,17 @@ Lua module: fontspec 2020/02/21 2.7i Font selection for XeLaTeX and LuaLaTeX
 fontspec-luatex.sty
 Package: fontspec-luatex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count359
-\l__fontspec_language_int=\count360
-\l__fontspec_strnum_int=\count361
-\l__fontspec_tmp_int=\count362
-\l__fontspec_tmpa_int=\count363
-\l__fontspec_tmpb_int=\count364
-\l__fontspec_tmpc_int=\count365
-\l__fontspec_em_int=\count366
-\l__fontspec_emdef_int=\count367
-\l__fontspec_strong_int=\count368
-\l__fontspec_strongdef_int=\count369
+\l__fontspec_script_int=\count365
+\l__fontspec_language_int=\count366
+\l__fontspec_strnum_int=\count367
+\l__fontspec_tmp_int=\count368
+\l__fontspec_tmpa_int=\count369
+\l__fontspec_tmpb_int=\count370
+\l__fontspec_tmpc_int=\count371
+\l__fontspec_em_int=\count372
+\l__fontspec_emdef_int=\count373
+\l__fontspec_strong_int=\count374
+\l__fontspec_strongdef_int=\count375
 \l__fontspec_tmpa_dim=\dimen297
 \l__fontspec_tmpb_dim=\dimen298
 \l__fontspec_tmpc_dim=\dimen299
@@ -1462,9 +1480,9 @@ Package: lualatex-math 2020/09/25 v1.9 Patches for mathematics typesetting with
 LuaLaTeX
 Lua module: lualatex-math 2013/08/03 1.3 Patches for mathematics typesetting wit
 h LuaLaTeX)
-\g__um_fam_int=\count370
-\g__um_fonts_used_int=\count371
-\l__um_primecount_int=\count372
+\g__um_fam_int=\count376
+\g__um_fonts_used_int=\count377
+\l__um_primecount_int=\count378
 \g__um_primekern_muskip=\muskip18
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-m
@@ -1477,16 +1495,16 @@ im
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/
 footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box73
+\fn@notes=\box76
 \fn@width=\dimen300
 )
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/b
 abel.sty
-Package: babel 2020/12/16 3.52 The Babel package
+Package: babel 2021/02/22 3.54 The Babel package
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/b
 abel.def
-File: babel.def 2020/12/16 3.52 Babel common definitions
+File: babel.def 2021/02/22 3.54 Babel common definitions
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/l
 uababel.def
@@ -1494,10 +1512,10 @@ uababel.def
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 117.
 \l@nohyphenation=\language3
-\babelcatcodetablenum=\catcodetable16
-\bbl@pattcodes=\catcodetable17
+\babelcatcodetablenum=\catcodetable12
+\bbl@pattcodes=\catcodetable13
 )
-\babel@savecnt=\count373
+\babel@savecnt=\count379
 \U@D=\dimen301
 \l@babelnohyphens=\language4
 
@@ -1522,36 +1540,45 @@ Package babel Info: \l@newzealand = using hyphenrules for english
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-e
 nglish/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
+))
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/
+bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/
+bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count380
 )) (./_main.aux
 
 LaTeX Warning: Label `tab:nums-mt' multiply defined.
 
 
-LaTeX Warning: Label `tab:params' multiply defined.
+LaTeX Warning: Label `tab:growth-tab' multiply defined.
 
-)
+(./tex_tables/likelihoods.aux))
 \openout1 = _main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-
 pkg/epstopdf-base.sty
@@ -1611,44 +1638,40 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 100.
-LaTeX Info: Redefining \microtypecontext on input line 100.
+(lastpage)             ! on input line 101.
+LaTeX Info: Redefining \microtypecontext on input line 101.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 100.
+LaTeX Info: Redefining \showhyphens on input line 101.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /mt-LatinModernRoman.cfg
-File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mode
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mode
 rn Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 101.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/
 nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitl
 estring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count374
+\c@section@level=\count381
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
-(./_main.out) (./_main.out)
-\@outlinefile=\write6
-
-\openout6 = _main.out
-Package backref Info: ** backref set up for natbib ** on input line 100.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
+Package backref Info: ** backref set up for natbib ** on input line 101.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
 
@@ -1657,7 +1680,7 @@ tcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package soulpos Info: Loading soulutf8 on input line 100.
+Package soulpos Info: Loading soulutf8 on input line 101.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/soulutf
 8/soulutf8.sty
@@ -1666,30 +1689,30 @@ Package: soulutf8 2019/12/15 v1.2 Permit use of UTF-8 characters in soul (HO)
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/soul/so
 ul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks56
-\SOUL@lasttoken=\toks57
-\SOUL@cmds=\toks58
-\SOUL@buffer=\toks59
-\SOUL@token=\toks60
+\SOUL@word=\toks52
+\SOUL@lasttoken=\toks53
+\SOUL@cmds=\toks54
+\SOUL@buffer=\toks55
+\SOUL@token=\toks56
 \SOUL@spaceskip=\skip98
 \SOUL@ttwidth=\dimen302
 \SOUL@uldp=\dimen303
 \SOUL@ulht=\dimen304
 ))
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 100.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 100.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 100.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 100.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 100.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 100.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 100.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 101.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1724,7 +1747,7 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 100.
+(Font)              scaled to size 10.95pt on input line 101.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1769,17 +1792,17 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 100.
+(Font)              scaled to size 10.95pt on input line 101.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 100.
+(Font)              `operators' in the math version `normal' on input line 101.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input 
-line 100.
+line 101.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 100.
+(Font)              `operators' in the math version `bold' on input line 101.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input
- line 100.
+ line 101.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1870,15 +1893,15 @@ n-math.otf]:mode=base;script=math;language=dflt;+ssty=0;"<-6.57>s*[1.00009676651
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 100.
+(Font)              `symbols' in the math version `normal' on input line 101.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input
- line 100.
+ line 101.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 100.
+(Font)              `symbols' in the math version `bold' on input line 101.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input
- line 100.
+ line 101.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -1952,98 +1975,98 @@ e;script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 10
-0.
+1.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input
- line 100.
+ line 101.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 100.
+(Font)              `largesymbols' in the math version `bold' on input line 101.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input
- line 100.
+ line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 100.
+(Font)              scaled to size 7.665pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 100.
+(Font)              scaled to size 5.475pt on input line 101.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 10
-0.
+1.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm
 .fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 100.
+(Font)              scaled to size 10.95099pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.66568pt on input line 100.
+(Font)              scaled to size 7.66568pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.4755pt on input line 100.
+(Font)              scaled to size 5.4755pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 100.
+(Font)              scaled to size 10.94882pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 100.
+(Font)              scaled to size 7.66417pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 100.
+(Font)              scaled to size 5.47441pt on input line 101.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 1
-00.
+01.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot
 1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 100.
+(Font)              scaled to size 11.40997pt on input line 101.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.98697pt on input line 100.
+(Font)              scaled to size 7.98697pt on input line 101.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.70499pt on input line 100.
+(Font)              scaled to size 5.70499pt on input line 101.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 100.
+(Font)              scaled to size 11.40997pt on input line 101.
 
 (c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype
 /mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.98697pt on input line 100.
+(Font)              scaled to size 7.98697pt on input line 101.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.70499pt on input line 100.
+(Font)              scaled to size 5.70499pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 118.
+(Font)              scaled to size 10.0pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.6pt on input line 118.
+(Font)              scaled to size 7.6pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 118.
+(Font)              scaled to size 6.0pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 118.
+(Font)              scaled to size 10.00092pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6007pt on input line 118.
+(Font)              scaled to size 7.6007pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 118.
+(Font)              scaled to size 6.00055pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 118.
+(Font)              scaled to size 9.99893pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.59918pt on input line 118.
+(Font)              scaled to size 7.59918pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 118.
+(Font)              scaled to size 5.99936pt on input line 119.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 118.
+(Font)              scaled to size 10.42007pt on input line 119.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 118.
+(Font)              scaled to size 7.91925pt on input line 119.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 118.
+(Font)              scaled to size 6.25204pt on input line 119.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 118.
+(Font)              scaled to size 10.42007pt on input line 119.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 118.
+(Font)              scaled to size 7.91925pt on input line 119.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 118.
+(Font)              scaled to size 6.25204pt on input line 119.
 [1
 
 
@@ -2054,35 +2077,54 @@ ap/pdftex.map}] [2
 ] (./_main.toc [3
 
 ])
-\tf@toc=\write7
+\tf@toc=\write6
 
-\openout7 = _main.toc
+\openout6 = _main.toc
 [4] (./_main.lof [5
 
 ])
-\tf@lof=\write8
+\tf@lof=\write7
 
-\openout8 = _main.lof
-(./_main.lot)
-\tf@lot=\write9
+\openout7 = _main.lof
+(./_main.lot [6])
+\tf@lot=\write8
 
-\openout9 = _main.lot
-[6]
+\openout8 = _main.lot
+[7]
 \cslhangindent=\skip99
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 [1
 
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
-(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/Catches_All_Ye
-ars.tex [14] [15]) [16] [17] [18]
-(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/len_at_age_dat
-a.tex) [19]
-(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex
-) [20]
-(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_age_samples
-.tex) [21] [22
+]
+Package marginnote Info: Using workaround for absolute page number on input line
+ 194.
+[1]
+Package marginnote Info: Using workaround for absolute page number on input line
+ 264.
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13
+Missing character: There is no 𝜎 (U+1D70E) in font [lmroman10-regular]:+tlig;
+!
+] [14] [15
 
-] [23]
+] [16]
+(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/Catches_All_Ye
+ars.tex [17
+
+]) [18] [19] [20] [21]
+(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/wa_samples.tex
+) [22]
+(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/len_at_age_dat
+a.tex) [23] [24] [25] [26
+
+
+]
+\openout2 = tex_tables/likelihoods.aux
+ (./tex_tables/likelihoods.tex) [27
+
+
+]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/TimeSeries.tex
 
 Overfull \hbox (0.63622pt too wide) in paragraph at lines 7--7
@@ -2144,48 +2186,22 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 79--99
  [][][][][][][][][] 
  []
 
-[24
+[28
+
 
 ]
 Overfull \hbox (7.39053pt too wide) in alignment at lines 99--117
  [][][][][][][][][] 
  []
 
-[25]) [26]
+[29]) [30] [31]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sensitivities.
-tex
-Overfull \hbox (11.24928pt too wide) in alignment at lines 5--10
- [][][][][][][][][][] 
- []
+tex [32
 
 
-Overfull \hbox (11.24928pt too wide) in alignment at lines 10--15
- [][][][][][][][][][] 
- []
+]) (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_60.tex) (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_40.tex) [33
 
-
-Overfull \hbox (11.24928pt too wide) in alignment at lines 15--17
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (11.24928pt too wide) in alignment at lines 17--19
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (11.24928pt too wide) in alignment at lines 19--40
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (11.24928pt too wide) in alignment at lines 40--45
- [][][][][][][][][][] 
- []
-
-[27
-
-])
+]
 (c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/e_ReferencePoi
 nts_ES.tex
 Overfull \hbox (41.71796pt too wide) in alignment at lines 4--9
@@ -2217,520 +2233,691 @@ Overfull \hbox (41.71796pt too wide) in alignment at lines 39--39
  [][][][] 
  []
 
-) [28
+) [34]
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1398--1398
+[]|\TU/lmr/m/n/10 Adopted 
+ []
 
-]
-(c:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/g_Projections_
-ES.tex) [29]
-<figs/catches_wa.png, id=811, 505.89pt x 505.89pt>
+
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1398--1398
+[]|\TU/lmr/m/n/10 Adopted 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1395--1400
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1403--1403
+[]|\TU/lmr/m/n/10 Adopted 
+ []
+
+
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1403--1403
+[]|\TU/lmr/m/n/10 Adopted 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1400--1405
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1405--1407
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1407--1409
+ [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1409--1422
+ [][][][][][][][][] 
+ []
+
+[35]
+<figs/catches_wa.png, id=845, 505.89pt x 505.89pt>
 File: figs/catches_wa.png Graphic file (type png)
 <use figs/catches_wa.png>
-Package luatex.def Info: figs/catches_wa.png  used on input line 1072.
+Package luatex.def Info: figs/catches_wa.png  used on input line 1441.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plot.png
-, id=813, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plo
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/data_plot.png
+, id=847, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/data_plo
 t.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/data_plot
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/data_plot
 .png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/data_plot.png  used on input line 1082.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/data_plot.png  used on input line 1451.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_b
-ubflt1mkt0_page2.png, id=815, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_b
+ubflt1mkt0_page2.png, id=849, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
 dat_bubflt1mkt0_page2.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lend
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lend
 at_bubflt1mkt0_page2.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/comp_lendat_bubflt1mkt0_page2.png  used on input line 1092.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lendat_bubflt1mkt0_page2.png  used on input line 1461.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_d
-ata_weighting_TA1.8_WA_Recreational.png, id=817, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat__
+aggregated_across_time.png, id=851, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
+dat__aggregated_across_time.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lend
+at__aggregated_across_time.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lendat__aggregated_across_time.png  used on input line 1471.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_d
+ata_weighting_TA1.8_WA_Recreational.png, id=853, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
 dat_data_weighting_TA1.8_WA_Recreational.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lend
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lend
 at_data_weighting_TA1.8_WA_Recreational.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png  used on input l
-ine 1102.
+ine 1481.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Weight_Source.png, id=819, 505.89pt x 505.89pt>
+/data/biology/plots/doc_Length_Weight_Source.png, id=855, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/doc_Length_Weight_Source.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/doc_Length_Weight_Source.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png  used o
-n input line 1112.
+n input line 1491.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio5_weightat
+size.png, id=857, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio5_wei
+ghtatsize.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio5_weig
+htatsize.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/bio5_weightatsize.png  used on input line 1501.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Weight_Sex.png, id=821, 505.89pt x 505.89pt>
+/data/biology/plots/doc_north_Age_by_Sex_Source.png, id=859, 505.89pt x 505.89pt
+>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
-kfish/data/biology/plots/doc_Length_Weight_Sex.png Graphic file (type png)
-<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
-fish/data/biology/plots/doc_Length_Weight_Sex.png>
-Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
-ate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Sex.png  used on i
-nput line 1122.
-(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Data_Length_Age_by_Sex.png, id=823, 867.24pt x 505.89pt>
+kfish/data/biology/plots/doc_north_Age_by_Sex_Source.png Graphic file (type png)
 
-File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
-kfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
-fish/data/biology/plots/doc_Data_Length_Age_by_Sex.png>
+fish/data/biology/plots/doc_north_Age_by_Sex_Source.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
-ate_2021/copper_rockfish/data/biology/plots/doc_Data_Length_Age_by_Sex.png  used
- on input line 1132.
-(luatex.def)             Requested size: 398.33977pt x 232.36485pt.
-<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/doc_Length_Age_by_Sex.png, id=825, 867.24pt x 505.89pt>
-File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
-kfish/data/biology/plots/doc_Length_Age_by_Sex.png Graphic file (type png)
-<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
-fish/data/biology/plots/doc_Length_Age_by_Sex.png>
-Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
-ate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png  used on i
-nput line 1142.
-(luatex.def)             Requested size: 398.33977pt x 232.36485pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_maturity
-.png, id=827, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_mat
+ate_2021/copper_rockfish/data/biology/plots/doc_north_Age_by_Sex_Source.png  use
+d on input line 1511.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio1_sizeatag
+e.png, id=861, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio1_siz
+eatage.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio1_size
+atage.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/bio1_sizeatage.png  used on input line 1521.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio6_maturity
+.png, id=863, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio6_mat
 urity.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_matu
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio6_matu
 rity.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/bio6_maturity.png  used on input line 1152.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/bio6_maturity.png  used on input line 1531.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fecundit
-y_len.png, id=829, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fec
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio9_fecundit
+y_len.png, id=865, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio9_fec
 undity_len.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fecu
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio9_fecu
 ndity_len.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/bio9_fecundity_len.png  used on input line 1162.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/bio9_fecundity_len.png  used on input line 1541.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/Length_fraction_female.png, id=831, 505.89pt x 505.89pt>
+/data/biology/plots/Length_fraction_female.png, id=867, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/Length_fraction_female.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/Length_fraction_female.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png  used on 
-input line 1172.
+input line 1551.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
-/data/biology/plots/Age_fraction_female.png, id=833, 505.89pt x 505.89pt>
+/data/biology/plots/Age_fraction_female.png, id=869, 505.89pt x 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
 kfish/data/biology/plots/Age_fraction_female.png Graphic file (type png)
 <use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
 fish/data/biology/plots/Age_fraction_female.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModer
 ate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png  used on inp
-ut line 1182.
+ut line 1561.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_multipl
-e_fleets_length1.png, id=835, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_mu
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_multipl
+e_fleets_length1.png, id=871, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_mu
 ltiple_fleets_length1.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/sel01_mul
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_mul
 tiple_fleets_length1.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/sel01_multiple_fleets_length1.png  used on input line 1192.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/sel01_multiple_fleets_length1.png  used on input line 1571.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-0_re
-cruits_(1000s)_with_95_asymptotic_intervals.png, id=837, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age
--0_recruits_(1000s)_with_95_asymptotic_intervals.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-
-0_recruits_(1000s)_with_95_asymptotic_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png  used on
- input line 1202.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_sizeatag
-e.png, id=839, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_siz
-eatage.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio1_size
-atage.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/bio1_sizeatage.png  used on input line 1212.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_r
-esidsflt1mkt0_page2.png, id=841, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_r
+esidsflt1mkt0_page2.png, id=873, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
 fit_residsflt1mkt0_page2.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenf
 it_residsflt1mkt0_page2.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/comp_lenfit_residsflt1mkt0_page2.png  used on input line 1222.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lenfit_residsflt1mkt0_page2.png  used on input line 1581.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_d
-ata_weighting_TA1.8_WA_Recreational.png, id=843, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_d
+ata_weighting_TA1.8_WA_Recreational.png, id=875, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
 fit_data_weighting_TA1.8_WA_Recreational.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenf
 it_data_weighting_TA1.8_WA_Recreational.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png  used on input l
-ine 1232.
+ine 1591.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit__
-aggregated_across_time.png, id=845, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit__
+aggregated_across_time.png, id=877, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
 fit__aggregated_across_time.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenf
 it__aggregated_across_time.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/comp_lenfit__aggregated_across_time.png  used on input line 1242.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lenfit__aggregated_across_time.png  used on input line 1601.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawning_
-output_with_95_asymptotic_intervals_intervals.png, id=847, 469.755pt x 361.35pt>
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts7_Spawning_
+output_with_95_asymptotic_intervals_intervals.png, id=879, 469.755pt x 361.35pt>
 
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spaw
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts7_Spaw
 ning_output_with_95_asymptotic_intervals_intervals.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawn
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts7_Spawn
 ing_output_with_95_asymptotic_intervals_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png  used 
-on input line 1252.
+on input line 1611.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total_bio
-mass_(mt).png, id=849, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Tota
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts1_Total_bio
+mass_(mt).png, id=881, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts1_Tota
 l_biomass_(mt).png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts1_Total
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts1_Total
 _biomass_(mt).png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/ts1_Total_biomass_(mt).png  used on input line 1262.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/ts1_Total_biomass_(mt).png  used on input line 1621.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fraction_
-of_unfished_with_95_asymptotic_intervals_intervals.png, id=851, 469.755pt x 361.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts9_Fraction_
+of_unfished_with_95_asymptotic_intervals_intervals.png, id=883, 469.755pt x 361.
 35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Frac
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts9_Frac
 tion_of_unfished_with_95_asymptotic_intervals_intervals.png Graphic file (type p
 ng)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fract
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts9_Fract
 ion_of_unfished_with_95_asymptotic_intervals_intervals.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png  
-used on input line 1272.
+used on input line 1631.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.png,
- id=853, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SR_curve.png,
+ id=885, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SR_curve
 .png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SR_curve.
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SR_curve.
 png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/SR_curve.png  used on input line 1282.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/SR_curve.png  used on input line 1641.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.0_ba
-se_compare2_spawnbio_uncertainty.png, id=855, 469.755pt x 361.35pt>
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts11_Age-0_re
+cruits_(1000s)_with_95_asymptotic_intervals.png, id=887, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts11_Age
+-0_recruits_(1000s)_with_95_asymptotic_intervals.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts11_Age-
+0_recruits_(1000s)_with_95_asymptotic_intervals.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png  used on
+ input line 1651.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_minusSPR
+series.png, id=889, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_min
+usSPRseries.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_minu
+sSPRseries.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/SPR2_minusSPRseries.png  used on input line 1661.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_yield_
+curve_with_refpoints.png, id=891, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_y
+ield_curve_with_refpoints.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_yi
+eld_curve_with_refpoints.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/yield2_yield_curve_with_refpoints.png  used on input line 1671.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_ba
+se_compare2_spawnbio_uncertainty.png, id=893, 469.755pt x 361.35pt>
 File: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7
-.0_base_compare2_spawnbio_uncertainty.png Graphic file (type png)
+.7_base_compare2_spawnbio_uncertainty.png Graphic file (type png)
 <use C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.
-0_base_compare2_spawnbio_uncertainty.png>
+7_base_compare2_spawnbio_uncertainty.png>
 Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sen
-sitivities/_plots/7.0_base_compare2_spawnbio_uncertainty.png  used on input line
- 1292.
+sitivities/_plots/7.7_base_compare2_spawnbio_uncertainty.png  used on input line
+ 1681.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.0_ba
-se_compare4_Bratio_uncertainty.png, id=857, 469.755pt x 361.35pt>
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_ba
+se_compare4_Bratio_uncertainty.png, id=895, 469.755pt x 361.35pt>
 File: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7
-.0_base_compare4_Bratio_uncertainty.png Graphic file (type png)
+.7_base_compare4_Bratio_uncertainty.png Graphic file (type png)
 <use C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.
-0_base_compare4_Bratio_uncertainty.png>
+7_base_compare4_Bratio_uncertainty.png>
 Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sen
-sitivities/_plots/7.0_base_compare4_Bratio_uncertainty.png  used on input line 1
-302.
+sitivities/_plots/7.7_base_compare4_Bratio_uncertainty.png  used on input line 1
+691.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare2_spaw
-nbio_uncertainty.png, id=859, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare2
-_spawnbio_uncertainty.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare2_
-spawnbio_uncertainty.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base_retro/compare2_spawnbio_uncertainty.png  used on input line 1312.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_ba
+se_compare12_recdevs_uncertainty.png, id=897, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7
+.7_base_compare12_recdevs_uncertainty.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.
+7_base_compare12_recdevs_uncertainty.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/_sen
+sitivities/_plots/7.7_base_compare12_recdevs_uncertainty.png  used on input line
+ 1701.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare4_Brat
-io_uncertainty.png, id=861, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare4
-_Bratio_uncertainty.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compare4_
-Bratio_uncertainty.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base_retro/compare4_Bratio_uncertainty.png  used on input line 1322.
-(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/p
-iner_panel_SR_LN(R0).png, id=863, 505.89pt x 505.89pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/p
+iner_panel_SR_LN(R0).png, id=899, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(
 R0)/piner_panel_SR_LN(R0).png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R
 0)/piner_panel_SR_LN(R0).png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png  used on input line 1332.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png  used on input line 1711.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/S
-R_LN(R0)_trajectories_compare1_spawnbio.png, id=865, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/S
+R_LN(R0)_trajectories_compare1_spawnbio.png, id=901, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(
 R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R
 0)/SR_LN(R0)_trajectories_compare1_spawnbio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png  used on inp
-ut line 1342.
+ut line 1721.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/S
-R_LN(R0)_trajectories_compare3_Bratio.png, id=867, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/S
+R_LN(R0)_trajectories_compare3_Bratio.png, id=903, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(
 R0)/SR_LN(R0)_trajectories_compare3_Bratio.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R
 0)/SR_LN(R0)_trajectories_compare3_Bratio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png  used on input
- line 1352.
+ line 1731.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep
-/piner_panel_SR_BH_steep.png, id=869, 505.89pt x 505.89pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep
+/piner_panel_SR_BH_steep.png, id=905, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_
 steep/piner_panel_SR_BH_steep.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_s
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_s
 teep/piner_panel_SR_BH_steep.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png  used on input line 1362.
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png  used on input line 1741.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep
-/SR_BH_steep_trajectories_compare1_spawnbio.png, id=871, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep
+/SR_BH_steep_trajectories_compare1_spawnbio.png, id=907, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_
 steep/SR_BH_steep_trajectories_compare1_spawnbio.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_s
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_s
 teep/SR_BH_steep_trajectories_compare1_spawnbio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png  used on
- input line 1372.
+ input line 1751.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep
-/SR_BH_steep_trajectories_compare3_Bratio.png, id=873, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep
+/SR_BH_steep_trajectories_compare3_Bratio.png, id=909, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_
 steep/SR_BH_steep_trajectories_compare3_Bratio.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_s
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_s
 teep/SR_BH_steep_trajectories_compare3_Bratio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png  used on i
-nput line 1382.
+nput line 1761.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fe
-m_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png, id=875, 505.89pt x 505.89pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fe
+m_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png, id=911, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p
 _1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_
 1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png  used on input 
-line 1392.
+line 1771.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fe
-m_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png, id=877, 469.755pt x
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fe
+m_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png, id=913, 469.755pt x
  361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p
 _1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (t
 ype png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_
 1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.
-png  used on input line 1402.
+png  used on input line 1781.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fe
-m_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png, id=879, 469.755pt x 3
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fe
+m_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png, id=915, 469.755pt x 3
 61.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p
 _1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (typ
 e png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_
 1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
 base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.pn
-g  used on input line 1412.
+g  used on input line 1791.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minusSPR
-series.png, id=881, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_min
-usSPRseries.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minu
-sSPRseries.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/SPR2_minusSPRseries.png  used on input line 1422.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_F
+em_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png, id=917, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_A
+max_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Am
+ax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png  used on inpu
+t line 1801.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_F
+em_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png, id=919, 469.755pt
+ x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_A
+max_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file 
+(type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Am
+ax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbi
+o.png  used on input line 1811.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yield_
-curve_with_refpoints.png, id=883, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_y
-ield_curve_with_refpoints.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yi
-eld_curve_with_refpoints.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/yield2_yield_curve_with_refpoints.png  used on input line 1432.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_F
+em_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png, id=921, 469.755pt x
+ 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_A
+max_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (t
+ype png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Am
+ax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.
+png  used on input line 1821.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[30<./figs/catches_wa.png>] [31<c:/Assessments/2021/copper_rockfish_2021/models/
-wa/7.0_base/plots/data_plot.png>] [32<c:/Assessments/2021/copper_rockfish_2021/m
-odels/wa/7.0_base/plots/comp_lendat_bubflt1mkt0_page2.png>] [33<c:/Assessments/2
-021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lendat_data_weighting_TA1
-.8_WA_Recreational.png>] [34<//nwcfile/FRAM/Assessments/CurrentAssessments/DataM
-oderate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png>] 
-[35<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockf
-ish/data/biology/plots/doc_Length_Weight_Sex.png>] [36<//nwcfile/FRAM/Assessment
-s/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Da
-ta_Length_Age_by_Sex.png><//nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
-rate_2021/copper_rockfish/data/biology/plots/doc_Length_Age_by_Sex.png>] [37<c:/
-Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio6_maturity.png
->] [38<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/bio9_fe
-cundity_len.png>] [39<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate
-_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png>] [40<//nwcf
-ile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/b
-iology/plots/Age_fraction_female.png>] [41<c:/Assessments/2021/copper_rockfish_2
-021/models/wa/7.0_base/plots/sel01_multiple_fleets_length1.png>] [42<c:/Assessme
-nts/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts11_Age-0_recruits_(1000
-s)_with_95_asymptotic_intervals.png>] [43<c:/Assessments/2021/copper_rockfish_20
-21/models/wa/7.0_base/plots/bio1_sizeatage.png>] [44<c:/Assessments/2021/copper_
-rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_residsflt1mkt0_page2.png>] [
-45<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit
-_data_weighting_TA1.8_WA_Recreational.png>] [46<c:/Assessments/2021/copper_rockf
-ish_2021/models/wa/7.0_base/plots/comp_lenfit__aggregated_across_time.png>] [47
-<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts7_Spawning_
-output_with_95_asymptotic_intervals_intervals.png>] [48<c:/Assessments/2021/copp
-er_rockfish_2021/models/wa/7.0_base/plots/ts1_Total_biomass_(mt).png>] [49<c:/As
-sessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/ts9_Fraction_of_unf
-ished_with_95_asymptotic_intervals_intervals.png>] [50<c:/Assessments/2021/coppe
-r_rockfish_2021/models/wa/7.0_base/plots/SR_curve.png>] [51<c:/Assessments/2021/
-copper_rockfish_2021/models/wa/_sensitivities/_plots/7.0_base_compare2_spawnbio_
-uncertainty.png>] [52<c:/Assessments/2021/copper_rockfish_2021/models/wa/_sensit
-ivities/_plots/7.0_base_compare4_Bratio_uncertainty.png>] [53<c:/Assessments/202
-1/copper_rockfish_2021/models/wa/7.0_base_retro/compare2_spawnbio_uncertainty.pn
-g>] [54<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_retro/compar
-e4_Bratio_uncertainty.png>] [55<c:/Assessments/2021/copper_rockfish_2021/models/
-wa/7.0_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png>] [56<c:/Assessments/202
-1/copper_rockfish_2021/models/wa/7.0_base_profile_SR_LN(R0)/SR_LN(R0)_trajectori
-es_compare1_spawnbio.png>] [57<c:/Assessments/2021/copper_rockfish_2021/models/w
-a/7.0_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png>] [58<c:
-/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep/pi
-ner_panel_SR_BH_steep.png>] [59<c:/Assessments/2021/copper_rockfish_2021/models/
-wa/7.0_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png>] [60<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png>] [61<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>] [62<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png>] [63<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>] [64<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/SPR2_minusSPRseries.png>] [65<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/yield2_yield_curve_with_refpoints.png>]
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_f
-lt1mkt0_page1.png, id=1062, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
-fit_flt1mkt0_page1.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
-it_flt1mkt0_page1.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/comp_lenfit_flt1mkt0_page1.png  used on input line 1451.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_F
+em_GP_1/piner_panel_VonBert_K_Fem_GP_1.png, id=923, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBer
+t_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert
+_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png  used on inpu
+t line 1831.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_F
+em_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png, id=925, 469.755pt
+ x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBer
+t_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file 
+(type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert
+_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbi
+o.png  used on input line 1841.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfit_f
-lt1mkt0_page2.png, id=1064, 469.755pt x 361.35pt>
-File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_len
-fit_flt1mkt0_page2.png Graphic file (type png)
-<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenf
-it_flt1mkt0_page2.png>
-Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_
-base/plots/comp_lenfit_flt1mkt0_page2.png  used on input line 1461.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_F
+em_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png, id=927, 469.755pt x
+ 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBer
+t_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (t
+ype png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert
+_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.
+png  used on input line 1851.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[66<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.0_base/plots/comp_lenfi
-t_flt1mkt0_page1.png>] [67<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.
-0_base/plots/comp_lenfit_flt1mkt0_page2.png>] [68
+[36
 
-] 
+<./figs/catches_wa.png>] [37<c:/Assessments/2021/copper_rockfish_2021/models/wa/
+7.7_base/plots/data_plot.png>] [38<c:/Assessments/2021/copper_rockfish_2021/mode
+ls/wa/7.7_base/plots/comp_lendat_bubflt1mkt0_page2.png>] [39<c:/Assessments/2021
+/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat__aggregated_across_ti
+me.png>] [40<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/c
+omp_lendat_data_weighting_TA1.8_WA_Recreational.png>] [41<//nwcfile/FRAM/Assessm
+ents/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc
+_Length_Weight_Source.png>] [42<c:/Assessments/2021/copper_rockfish_2021/models/
+wa/7.7_base/plots/bio5_weightatsize.png>] [43<//nwcfile/FRAM/Assessments/Current
+Assessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_north_Age_b
+y_Sex_Source.png>] [44<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_ba
+se/plots/bio1_sizeatage.png>] [45<c:/Assessments/2021/copper_rockfish_2021/model
+s/wa/7.7_base/plots/bio6_maturity.png>] [46<c:/Assessments/2021/copper_rockfish_
+2021/models/wa/7.7_base/plots/bio9_fecundity_len.png>] [47<//nwcfile/FRAM/Assess
+ments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Le
+ngth_fraction_female.png>] [48<//nwcfile/FRAM/Assessments/CurrentAssessments/Dat
+aModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png>] [49
+<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_multipl
+e_fleets_length1.png>] [50<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.
+7_base/plots/comp_lenfit_residsflt1mkt0_page2.png>] [51<c:/Assessments/2021/copp
+er_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Re
+creational.png>] [52<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base
+/plots/comp_lenfit__aggregated_across_time.png>] [53<c:/Assessments/2021/copper_
+rockfish_2021/models/wa/7.7_base/plots/ts7_Spawning_output_with_95_asymptotic_in
+tervals_intervals.png>] [54<c:/Assessments/2021/copper_rockfish_2021/models/wa/7
+.7_base/plots/ts1_Total_biomass_(mt).png>] [55<c:/Assessments/2021/copper_rockfi
+sh_2021/models/wa/7.7_base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_int
+ervals_intervals.png>] [56<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.
+7_base/plots/SR_curve.png>] [57<c:/Assessments/2021/copper_rockfish_2021/models/
+wa/7.7_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png>] [58<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_minusSPRseries.png>] [59<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_yield_curve_with_refpoints.png>] [60<c:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare2_spawnbio_uncertainty.png>] [61<c:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare4_Bratio_uncertainty.png>] [62<c:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare12_recdevs_uncertainty.png>] [63<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png>] [64<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png>] [65<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png>] [66<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png>] [67<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png>] [68<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png>] [69<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>] [70<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png>] [71<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>] [72<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png>] [73<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png>] [74<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png>] [75<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png>] [76<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png>] [77<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newVBGF_p
+lots.png, id=1137, 903.375pt x 552.0625pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newV
+BGF_plots.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newVB
+GF_plots.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/lbspr/C
+opper_WA_LBSPR_newVBGF_plots.png  used on input line 1863.
+(luatex.def)             Requested size: 398.34087pt x 243.43051pt.
+[78<c:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newVBG
+F_plots.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_60_P
+riors.png, id=1144, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl
+_60_Priors.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_
+60_Priors.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/sss/plo
+ts/wa_7.7_base_depl_60_Priors.png  used on input line 1875.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+[79<c:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_6
+0_Priors.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_60_q
+uants.png, id=1151, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl
+_60_quants.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_
+60_quants.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/sss/plo
+ts/wa_7.7_base_depl_60_quants.png  used on input line 1887.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+[80<c:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_6
+0_quants.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_40_P
+riors.png, id=1158, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl
+_40_Priors.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_
+40_Priors.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/sss/plo
+ts/wa_7.7_base_depl_40_Priors.png  used on input line 1899.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+[81<c:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_4
+0_Priors.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_40_q
+uants.png, id=1165, 505.89pt x 505.89pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl
+_40_quants.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_
+40_quants.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/sss/plo
+ts/wa_7.7_base_depl_40_quants.png  used on input line 1911.
+(luatex.def)             Requested size: 398.34415pt x 398.34415pt.
+[82<c:/Assessments/2021/copper_rockfish_2021/models/sss/plots/wa_7.7_base_depl_4
+0_quants.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2_spaw
+nbio_uncertainty.png, id=1172, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2
+_spawnbio_uncertainty.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2_
+spawnbio_uncertainty.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_retro/compare2_spawnbio_uncertainty.png  used on input line 1923.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare4_Brat
+io_uncertainty.png, id=1174, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare4
+_Bratio_uncertainty.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare4_
+Bratio_uncertainty.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base_retro/compare4_Bratio_uncertainty.png  used on input line 1933.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[83<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2_s
+pawnbio_uncertainty.png>] [84<c:/Assessments/2021/copper_rockfish_2021/models/wa
+/7.7_base_retro/compare4_Bratio_uncertainty.png>]
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_f
+lt1mkt0_page1.png, id=1188, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
+fit_flt1mkt0_page1.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenf
+it_flt1mkt0_page1.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lenfit_flt1mkt0_page1.png  used on input line 1954.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_f
+lt1mkt0_page2.png, id=1190, 469.755pt x 361.35pt>
+File: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_len
+fit_flt1mkt0_page2.png Graphic file (type png)
+<use C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenf
+it_flt1mkt0_page2.png>
+Package luatex.def Info: C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_
+base/plots/comp_lenfit_flt1mkt0_page2.png  used on input line 1964.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+
 AED: lastpage setting LastPage
-[69]
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
-nc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringe
-nc/se-utf32be.def
-File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
-) (./_main.aux)
-Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: B778C70C88D196BA804B98829E404EE3;8383.
+[85
+
+<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_f
+lt1mkt0_page1.png>] [86<c:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_b
+ase/plots/comp_lenfit_flt1mkt0_page2.png>] (./_main.aux (./tex_tables/likelihoo
+ds.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>740
-=====>812
-=====>814
-=====>816
-=====>818
-=====>820
-=====>826
-=====>828
-=====>830
-=====>832
-=====>834
-=====>836
-=====>838
-=====>840
-=====>842
-=====>844
-=====>846
-=====>848
-=====>850
-=====>852
-=====>854
-=====>856
-=====>858
-=====>860
-=====>862
-=====>864
-=====>866
-=====>868
-=====>870
-=====>872
-=====>874
-=====>876
-=====>878
-=====>880
-=====>882
-=====>1063
-=====>1076)
+=====>313 0 R
+=====>715 0 R
+=====>762 0 R
+=====>846 0 R
+=====>848 0 R
+=====>850 0 R
+=====>852 0 R
+=====>854 0 R
+=====>856 0 R
+=====>858 0 R
+=====>860 0 R
+=====>862 0 R
+=====>864 0 R
+=====>866 0 R
+=====>868 0 R
+=====>870 0 R
+=====>872 0 R
+=====>874 0 R
+=====>876 0 R
+=====>878 0 R
+=====>880 0 R
+=====>882 0 R
+=====>884 0 R
+=====>886 0 R
+=====>888 0 R
+=====>890 0 R
+=====>892 0 R
+=====>894 0 R
+=====>896 0 R
+=====>898 0 R
+=====>900 0 R
+=====>902 0 R
+=====>904 0 R
+=====>906 0 R
+=====>908 0 R
+=====>910 0 R
+=====>912 0 R
+=====>914 0 R
+=====>916 0 R
+=====>918 0 R
+=====>920 0 R
+=====>922 0 R
+=====>924 0 R
+=====>926 0 R
+=====>1136 0 R
+=====>1143 0 R
+=====>1150 0 R
+=====>1157 0 R
+=====>1164 0 R
+=====>1171 0 R
+=====>1173 0 R
+=====>1189 0 R)
 
 Here is how much of LuaTeX's memory you used:
- 44225 strings out of 478902
- 244556,1648299 words of node,token memory allocated
- 964 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 64 attribute, 78 gl
-ue_spec, 34 attribute_list, 6 write, 1 close, 22 pdf_action nodes
-   avail lists: 1:1,2:8585,3:2074,4:165,5:525,6:1001,7:13663,8:1751,9:6703,10:16
-,11:445
- 61248 multiletter control sequences out of 65536+600000
- 102 fonts using 16881255 bytes
- 122i,12n,125p,3118b,615s stack positions out of 5000i,500n,10000p,200000b,200000s
+ 45604 strings out of 478543
+ 244188,1977958 words of node,token memory allocated
+ 1095 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 92 attribute, 78 gl
+ue_spec, 43 attribute_list, 5 write, 1 close, 32 pdf_action nodes
+   avail lists: 1:53,2:9587,3:2125,4:189,5:576,6:1030,7:13982,8:2219,9:6825,10:2
+1,11:603,12:1
+ 62878 multiletter control sequences out of 65536+600000
+ 101 fonts using 16792895 bytes
+ 128i,12n,146p,3118b,623s stack positions out of 5000i,500n,10000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'append_a'
 <c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf
--dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/Users/Chantel.Wetzel/App
-Data/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf><c
-:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/
-lm-math/latinmodern-math.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/te
-xmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Chantel.We
-tzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmromanslant10-
-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/op
-entype/public/lm/lmroman10-bold.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/Tin
-yTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/Chantel.We
-tzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-itali
-c.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
-/public/lm/lmroman8-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX
-/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/Chantel.Wet
-zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic
-.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/
-public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (75 pages, 100683119 bytes).
+-dist/fonts/opentype/public/lm/lmroman6-regular.otf><c:/Users/Chantel.Wetzel/App
+Data/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.o
+tf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/pu
+blic/lm-math/latinmodern-math.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf><c:/Users/Chan
+tel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10
+-bold.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/open
+type/public/lm/lmroman12-bold.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/Users/Chantel.We
+tzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regula
+r.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
+/public/lm/lmroman10-regular.otf><c:/Users/Chantel.Wetzel/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Chantel.Wet
+zel/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regula
+r.otf>
+Output written on _main.pdf (94 pages, 147772007 bytes).
 
-PDF statistics: 1214 PDF objects out of 1440 (max. 8388607)
- 251 named destinations out of 1000 (max. 131072)
- 1438 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1426 PDF objects out of 1440 (max. 8388607)
+ 283 named destinations out of 1000 (max. 131072)
+ 1629 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -10,12 +10,12 @@ read_child(filein)
 
 ### Bridging Analysis
 
-A direct bridging analysis was not conducted because the previous assessment was structured to include the area from North of Pt. Conception to the Washington/Canadian border.  
+A direct bridging analysis was not conducted because the previous assessment was structured to include the area from north of Point Conception to the Washington/Canadian border.  
 
 
 ## Model Structure and Assumptions
 
-The Washington `r spp` area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within SS for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated.  The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve.  Recruitment was specified to be deterministic due to limited composition data. 
+The assessment of `r spp` in Washington waters was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated.  The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve.  Recruitment was specified to be deterministic due to limited composition data. 
 
 ### Modeling Platform and Structure
 
@@ -31,7 +31,7 @@ read_child(filein)
 
 ### Data Weighting
 
-Length compositions from the recreational fleet were the only composition data fit in the model. In the absence of index or commercial composition data, no data weighting was performed in the base model. Sensitivities were performed using the three data weighting approaches that are commonly applied for West Coast groundfish stock assessments: Francis method [@francis_data_2011], McAllister and Ianelli method (also known as Harmonic Mean weighting) [@mcallister_bayesian_1997], and the Dirichlet-Multinomial method [@thorson_model-based_2017].
+Length compositions from the recreational fleet were the only composition data fit in the model. In the absence of index or commercial composition data, no data weighting was performed in the base model. Sensitivities were performed using the three data weighting approaches that are commonly applied for West Coast groundfish stock assessments: Francis method [@francis_data_2011], McAllister and Ianelli method,also known as Harmonic Mean weighting [@mcallister_bayesian_1997], and the Dirichlet-Multinomial method [@thorson_model-based_2017].
 
 
 ### Estimated and Fixed Parameters

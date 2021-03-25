@@ -1,6 +1,15 @@
 \clearpage
 # Figures
 
+
+<!-- ====================================================================== -->  
+<!-- ****************** Catches Used in the Model ************************* --> 
+<!-- ====================================================================== -->  
+
+![Catches by year for the recreational and commercial fleets in the model.\label{fig:catch}](figs/catches_wa.png){width=100% height=100% alt="Catches by year for the recreational and commercial fleets in the model"}
+
+
+
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
 <!-- ====================================================================== --> 
@@ -11,14 +20,6 @@ filein = file.path(mod_loc, "plots", "data_plot.png"),
 caption = "Summary of data sources used in the base model",
 label = 'data-plot')
 ```	
-
-
-<!-- ====================================================================== -->  
-<!-- ****************** Catches Used in the Model ************************* --> 
-<!-- ====================================================================== -->  
-
-![Catches by year for the recreational and commercial fleets in the model.\label{fig:catch}](figs/catches_wa.png){width=100% height=100% alt="Catches by year for the recreational and commercial fleets in the model"}
-
 
 
 <!-- ====================================================================== -->
@@ -218,6 +219,11 @@ label = 'lbspr')
 ```
 
 \newpage
+
+<!-- ====================================================================== -->
+<!-- ******************         SSS           ***************************** --> 
+<!-- ====================================================================== -->
+
 
 ```{r, echo=FALSE, results='asis'}
 sss_loc = "C:/Assessments/2021/copper_rockfish_2021/models/sss/plots"
