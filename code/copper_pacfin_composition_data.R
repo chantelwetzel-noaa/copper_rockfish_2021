@@ -19,21 +19,13 @@ setwd(dir)
 
 load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.21.Feb.2021.RData"))
 pacfin = bds.pacfin
-bds.file = "PacFIN.COPP.bds.21.Feb.2021"
-#load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.13.Aug.2020.RData
-#load(file.path(getwd(), "commercial_comps", "PacFIN.COPP.bds.16.Oct.2020.RData"))
-#pacfin = out
-# Hand remove puget sound records - this needs to be added to the cleanPacFIN function
-#remove = which(pacfin$PSMFC_CATCH_AREA_CODE %in% c("4A", "_PS"))
-#pacfin = pacfin[-remove, ]
-#pacfin_convert = cleanColumns(data = pacfin, use = 'vdrfd')
-## Add some required columns for cleanPacFIN function
-#pacfin_convert$INPFC_AREA = 'all'
+bds.file = "test_4kelli_PacFIN.COPP.bds.21.Feb.2021"
+
 
 # Load in the current weight-at-length estimates by sex
 fa = 9.56e-6; fb = 3.19 
-ma   = 1.08e-5; mb = 3.15    
-ua  = (fa + ma)/2;  ub = (fb + mb)/2        
+ma = 1.08e-5; mb = 3.15    
+ua = (fa + ma)/2;  ub = (fb + mb)/2        
 
 catch.file = read.csv(file.path(getwd(), "catches", "commercial_catch_by_state.csv"))
 catch.file = catch.file[,-1]
@@ -47,7 +39,7 @@ Pdata = cleanPacFIN(Pdata = pacfin,
 # The table below summarizes the number of records that are outside of
 # the area that should be included for US West Coast stock assessments
 # by PSMFC area, or some derivative thereof.
-# [1] 35
+# [1] 351
 # 
 # N SAMPLE_TYPEs changed from M to S for special samples from OR: 0
 # N not in keep_sample_type (SAMPLE_TYPE): 212
@@ -63,12 +55,12 @@ Pdata = cleanPacFIN(Pdata = pacfin,
 # N sample weights not available for OR: 0
 # N sample weights not available for CA: 7434
 
-
-or_sp <- read.csv(file.path(getwd(), "commercial_comps", "oregon_copper_special_samples.csv"))
-or_sp$FISH_LENGTH_TYPE <- or_sp$FISH_LENGTH_TYPE_CODE
-Pdata_sp = cleanPacFIN(Pdata = or_sp, 
-					CLEAN = TRUE,
-					verbose = TRUE)
+# Abandoned effort to inclued Oregon Special Samples provided directly from Ali
+# or_sp <- read.csv(file.path(getwd(), "commercial_comps", "oregon_copper_special_samples.csv"))
+# or_sp$FISH_LENGTH_TYPE <- or_sp$FISH_LENGTH_TYPE_CODE
+# Pdata_sp = cleanPacFIN(Pdata = or_sp, 
+# 					CLEAN = TRUE,
+# 					verbose = TRUE)
 
 ############################################################################################################
 # Create areas based on areas being modeled
@@ -89,19 +81,13 @@ for (a in 1:length(area_grouping)){
 	Pdata$state_areas[find] = area_names[a]
 }
 
-
-############################################################################################################
-# Investigate data and create needed columns
-##########################################################################################################
-
-MasterPdata = Pdata
-Pdata$fleet = Pdata$state_areas
-Pdata$stratification = paste(Pdata$fleet, "ALL", sep=".")
-
 #################################################################################
 # Length comp expansions
 #################################################################################
 
+MasterPdata = Pdata
+Pdata$fleet = Pdata$state_areas
+Pdata$stratification = paste(Pdata$fleet, "ALL", sep=".")
 
 Pdata_exp <- getExpansion_1(Pdata = Pdata,
 					   fa = fa, fb = fb, ma = ma, mb = mb, ua = ua, ub = ub)
@@ -112,13 +98,22 @@ Pdata_exp <- getExpansion_2(Pdata = Pdata_exp,
 					   maxExp = 0.80)
 
 Pdata_exp$Final_Sample_Size <- capValues(Pdata_exp$Expansion_Factor_1_L * Pdata_exp$Expansion_Factor_2, maxVal = 0.80)
+# Maximum expansion capped at 0.8 quantile: 77.3078 
 
 # Look for consistency between lengths and ages of sampled fish
 myLbins = c(seq(10, 54, 2))
 
 # There are very few sexed fish in CA - set them all to unsexed for simplicity
+# table(Pdata_exp$fleet, Pdata_exp$SEX)
+#            F    M    U
+#   SOUTH    2    7 2656
+#   NORTH  107  104 4558
+#   OR     714  687    4
+#   WA       2    4    0
+
 find = which(Pdata_exp$fleet %in% c("NORTH", "SOUTH"))
 Pdata_exp[find, "SEX"] = "U"
+
 Lcomps = getComps(Pdata_exp, 
 				  Comps = "LEN")
 
@@ -132,6 +127,7 @@ writeComps(inComps = Lcomps,
 ##############################################################################################################
 # Format and rewrite
 ##############################################################################################################
+#
 # For California North & South use the sexes combined in the model
 #########################################################################################
 out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
@@ -147,8 +143,8 @@ format = format[format$fishyr != 2021, ]
 
 south_comps = format[format$fleet == "SOUTH", ]
 north_comps = format[format$fleet == "NORTH", ]
-write.csv(south_comps, file = paste0(getwd(), "/commercial_comps/forSS/S_CA_Lcomps_unsexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
-write.csv(north_comps, file = paste0(getwd(), "/commercial_comps/forSS/N_CA_Lcomps_unsexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
+write.csv(south_comps, file = paste0(getwd(), "/commercial_comps/forSS/S_CA_Lcomps_unsexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
+write.csv(north_comps, file = paste0(getwd(), "/commercial_comps/forSS/N_CA_Lcomps_unsexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
 
 #########################################################################################
 # Grabbed the females then males for Oregon & Washington
@@ -166,8 +162,8 @@ format = format[format$fishyr != 2021, ]
 
 or = format[format$fleet == "OR", ]
 wa = format[format$fleet == "WA", ]
-write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/OR_Lcomps_sexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
-write.csv(wa, file = paste0(getwd(), "/commercial_comps/forSS/WA_Lcomps_sexed_10_54_formatted_Feb21.csv"), row.names = FALSE)
+write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/OR_Lcomps_sexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
+write.csv(wa, file = paste0(getwd(), "/commercial_comps/forSS/WA_Lcomps_sexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
 
 
 #########################################################################################
