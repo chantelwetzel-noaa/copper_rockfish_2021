@@ -177,9 +177,15 @@ com$area[find] = "south"
 com$area[which(com$area == "C")] = "north"
 
 # quickly look at the live vs. dead by area
-# com$cond = 'dead'
-# com$cond[com$CONDITION_CODE == "A"] = 'live'
-# c = aggregate(round_mt ~ LANDING_YEAR + area + cond, com, FUN = sum, drop = FALSE)
+#  com$cond = 'dead'
+#  com$cond[com$CONDITION_CODE == "A"] = 'live'
+#  c = aggregate(round_mt ~ LANDING_YEAR + area + cond, com, FUN = sum, drop = FALSE)
+#  c[is.na(c)] = 0
+# prop_live_n = c[c$area == "north" & c$cond == "live", "round_mt"] /
+# (c[c$area == "north" & c$cond == "live", "round_mt"] + c[c$area == "north" & c$cond == "dead", "round_mt"])
+# prop_live_s = c[c$area == "south" & c$cond == "live", "round_mt"] /
+# (c[c$area == "south" & c$cond == "live", "round_mt"] + c[c$area == "south" & c$cond == "dead", "round_mt"])
+# south ~ 58% , north ~ 72% average of catch is live since 2000
 # par(mfrow = c(3,1))
 # plot(sort(unique(c$LANDING_YEAR)), c[c$area == 'south' & c$cond == 'dead', 'round_mt'], 
 # 	xlim = c(1995, 2020), ylim = c(0, 10), ylab = '', type = 'l', lwd = 2, col = 1)
