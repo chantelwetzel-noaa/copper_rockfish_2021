@@ -4,6 +4,7 @@
 ########################################################
 
 library(r4ss)
+library(sa4ss)
 #devtools::install_github("r4ss/r4ss", ref = "development")
 #devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
@@ -11,7 +12,7 @@ library(r4ss)
 # North of Pt Conception
 ###################################################################
 area = "ca_n_pt_c"
-base_model = "10.0_base"
+base_model = "10.2_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -27,9 +28,11 @@ model.list <- c(paste0(base_model, "_no_recdevs"), #1
                 paste0(base_model, "_est_linf"), #4
                 paste0(base_model, "_est_cv2"), #5
                 paste0(base_model, "_est_m"), #6
-                paste0(base_model, "_dome"), #7
+                paste0(base_model, "_com_asym"), #7
                 paste0(base_model, "_spline"), #8
-                paste0(base_model, "_no_blocks_")) #9
+                paste0(base_model, "_no_blocks"),  #9
+                paste0(base_model, "_rec_block"), #10
+                paste0(base_model, "_index_cpfv")) #11
 
 out.list = NULL   
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -42,26 +45,41 @@ sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose =
 sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_9  = SS_output( file.path(wd, model.list[9]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_10  = SS_output( file.path(wd, model.list[10]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_11  = SS_output( file.path(wd, model.list[11]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
-modelnames <- c("Base Model",
+modelnames1 <- c("Base Model",
                 "No Rec. Devs.",
                 "MI DW",
                 "DM DW",
-                "Estimate Linf (f)",
-                "Estimate CV Old (f)",
-                "Estimate M (f)",
-                "Comm. Dome Selectivity",
-                "Comm. Spline Selectivity",
-                "Comm. No Selectivity Blocks")
+                "Estimate Linf",
+                "Estimate CV Old",
+                "Estimate M (f)")
 
-x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, 
-                 sens_6, sens_7, sens_8, sens_9))
+modelnames2 <- c("Base Model",
+                "Com. Asym. Select.", #7
+                "Com. Spline Select.",
+                "Com. No Select. Blocks and Asym.",
+                "Early Block in Rec. Selectivity",
+                "2013 CPFV Onboard Index")
 
-SSplotComparisons(x, endyrvec = 2021, 
-                  legendlabels = modelnames, 
+x1 <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, sens_6))
+x2 <- SSsummarize(list(base, sens_7, sens_8, sens_9, sens_10, sens_11))
+
+SSplotComparisons(x1, endyrvec = 2021, 
+                  legendlabels = modelnames1, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  filenameprefix = paste0(base_model, "_"),
+                  filenameprefix = paste0(base_model, "_1_"),
+                  subplot = c(2,4,10,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+SSplotComparisons(x2, endyrvec = 2021, 
+                  legendlabels = modelnames2, 
+                  plotdir = file.path(getwd(), '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = paste0(base_model, "_2_"),
                   subplot = c(2,4,10,12), 
                   print = TRUE, 
                   pdf = FALSE)
@@ -69,16 +87,31 @@ SSplotComparisons(x, endyrvec = 2021,
 ###################################################################################
 # Create a Table of Results
 ###################################################################################
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, sens_6, 
+          sens_7, sens_8, sens_9, sens_10, sens_11))
+
+modelnames <- c("Base Model",
+                "No Rec. Devs.",
+                "MI DW",
+                "DM DW",
+                "Estimate Linf",
+                "Estimate CV Old",
+                "Estimate M (f)",
+                "Com. Asym. Select.", #7
+                "Com. Spline Select.",
+                "Com. No Select. Blocks and Asym.",
+                "Early Block in Rec. Selectivity",
+                "2013 CPFV Onboard Index")
 
 ii = 1:length(modelnames)
 n = length(modelnames)
-out<- matrix(NA, 24, max(ii))
+out<- matrix(NA, 23, max(ii))
 
 out = rbind(
             as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
-            as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
             as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
@@ -106,7 +139,7 @@ colnames(out) = modelnames
 rownames(out) = c("Total Likelihood",
                   "Survey Likelihood",
                   "Length Likelihood",
-                  "Age Likelihood",
+                  #"Age Likelihood",
                   "Recruitment Likelihood",
                   "Forecast Recruitment Likelihood",
                   "Parameter Priors Likelihood",
@@ -137,7 +170,7 @@ t = table_format(x = out,
       label = 'sensitivities',
       longtable = TRUE,
       font_size = 9,
-      digits = 3,
+      digits = 2,
       landscape = TRUE,
       col_names = modelnames)
 
