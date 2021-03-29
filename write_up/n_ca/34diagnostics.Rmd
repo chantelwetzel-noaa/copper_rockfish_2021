@@ -33,8 +33,6 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
   \item Add selectivity block for the recreational fleet for `r startyr` - 1997.
 
   \item Add the onboard Commercial Passenger Fishing Vessel (CPFV) index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimated added variance to the index of abundance.
-
-  \item  Add the recreational dockside index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimated added variance to the index of abundance.
   
 \end{enumerate}
 
@@ -42,7 +40,7 @@ Likelihood values and estimates of key parameters from each sensitivity are avai
 
 The two of the three sensitivities that examined alternative parameterization of the commercial selectivity estimated similar stock size and status to the base model. Fixing the commercial selectivity to be asymptotic in the late block resulted in slightly more depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The sensitivity that estimated a single selectivity curve across time estimated a final stock status greater than the base model which was primarily driven by the model estimating a selectivity curve that was between the selectivities by time block within the base model. Given the magnitude of difference in final estimates relative to the base model, additional explorations were conducted. Typically, sensitivity runs assume the same data weighting applied in the base model which allows for direct comparison on the negative log-likelihood across models. Updating the data weighting to this sensitivity resulted in a model that was similar to the base model (31 percent depletion in 2021, Figure \ref{fig:sens-depl-2}).  
 
-Each sensitivity which used either the onboard CPFV or dockside recreational index of abundance resulted in similar spawning output and relative biomass to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). Both sensitivities were allowed to estimate additional added variance for the input standard deviation for the index timeseries which is typical practice in West Coast groundfish stock assessments. The estimated added variance for each sensitivity was relatively high: 0.17 added to the CPFV index and 0.27 added to the dockside recreational index. 
+The sensitivity which used the onboard CPFV index of abundance resulted in similar spawning output and relative biomass to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The sensitivity was allowed to estimate additional added variance for the input standard deviation for the index timeseries which is typical practice in West Coast groundfish stock assessments. The estimated added variance for this index of abundance was relatively high, 0.17 added. 
 
 
 ### Likelihood Profiles
@@ -65,4 +63,4 @@ An exploratory length-based spawner-per-recruit analysis which assumes asymptoti
 
 ### Retrospective Analysis
 
-A ten-year retrospective analysis was conducted by peeling back a year of data from the model from 2020 (e.g., Data -1 Years) to 2010 (e.g. Data -10 Years). The estimated spawning output was generally consistent with the base model when recent years of data were removed and had the largest departure from the base model when the largest number of data years were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  
+A ten-year retrospective analysis was conducted by peeling back a year of data from the model from 2020 (e.g., Data -1 Years) to 2010 (e.g. Data -10 Years). The estimated spawning output was generally consistent with the base model when recent years of data were removed and had the largest departure from the base model when the largest number of data years were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). Figure \ref{fig:retro-squid} shows the change in estimated annual recruitment deviations as subsequent years data are removed during the retrospective run.

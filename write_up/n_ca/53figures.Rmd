@@ -286,5 +286,12 @@ caption = "Change in the estimate of fraction unfished when the most recent 10 y
 label = 'retro-depl')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_retro"),  "Squid_RecDevs.png"),
+caption = "The change in estimated recruitment deviations by year as additional years of data are removed during a retrospective run",
+label = 'retro-squid')
+```
+
 
 \newpage
