@@ -35,7 +35,7 @@ load("00opts.Rdata")
 spp = 'copper rockfish'
 Spp = 'Copper rockfish'
 
-hkl = 'NWFSC Hook and Line'
+hkl = 'NWFSC Hook and Line Survey'
 
 if(file.exists("00mod.Rdata")){
   load("00mod.Rdata")

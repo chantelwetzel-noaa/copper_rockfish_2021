@@ -18,8 +18,8 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 
 #Create a model Rdata object
 sa4ss::read_model(
-  mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.0_base",
-  create_plots = FALSE, 
+  mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base",
+  create_plots = TRUE, 
   save_loc = file.path(getwd(), "tex_tables"),
   verbose = TRUE)
 

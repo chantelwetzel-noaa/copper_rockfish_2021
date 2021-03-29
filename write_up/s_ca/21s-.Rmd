@@ -20,7 +20,7 @@ The observations of `r spp` by the \Gls{s-wcgbt} were limited (Table \ref{tab:wc
 
 ### Remotely Operated Vehicle Observations
 
-Data collected by Remotely Operated Vehicle (ROV) fall outside the Terms of Reference (TOR) for catch and length based assessments and were not included in this assessment.  However, data collected by ROV were preliminarly examined in order to gain insight in `r spp` south of Pt. Conception which may provide additional understanding of the data from the commercial, recreational, and survey fleets that are being included in this assessment. 
+Data collected by Remotely Operated Vehicle (ROV) fall outside the Terms of Reference (TOR) for catch and length based assessments and were not included in this assessment.  However, data collected by ROV were preliminarly examined in order to gain insight in `r spp` south of Point Conception which may provide additional understanding of the data from the commercial, recreational, and survey fleets that are being included in this assessment. 
 
 Figure \ref{fig:rov-open}
 

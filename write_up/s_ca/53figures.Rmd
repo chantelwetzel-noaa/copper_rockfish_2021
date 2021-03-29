@@ -69,8 +69,8 @@ label = 'mean-rec-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(data_loc, "survey", "plots",  "HL_SurveyExtent_2017_figure_light_wPorts1024_1.jpg"), 
-caption = "NWFSC Hook and Line sampling sites where yellow sites indicate locations inside Cowcod Conservation Areas",
+filein = file.path(data_loc, "survey", "plots",  "Map_HL_Sites_lndscp.jpg"), 
+caption = "NWFSC Hook and Line sampling sites where yellow sites indicate locations inside Cowcod Conservation Areas. Additionally, known substrate structure, depths, and areas under various management regulations are shown for the area south of Point Conception",
 label = 'hkl-sites')
 ```
 
@@ -180,11 +180,11 @@ label = 'south-len-at-age-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "South_Data_Comparison_Len_at_Age.png"), 
-caption = "Length-at-age comparisons between survey collected fish south of Pt. Conception and to those observed off the coast of Oregon and Washington",
+caption = "Length-at-age comparisons between survey collected fish south of Point Conception and to those observed off the coast of Oregon and Washington",
 label = 'len-at-age-comp')
 ```	
 
-\newpage
+\clearpage
 
 ```{r, results = 'asis'}
 add_figure(
@@ -279,12 +279,11 @@ label = 'selex')
 <!-- ====================================================================== -->
 
 
-
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated time series of age-0 recruits (1000s)",
-label = 'recruits')
+filein = file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/10.0_base_retro", "Squid_RecDevs.png"), 
+caption = "The estimated recruitment deviations as additional years of data are removed during a retrospective run. Select years of estimated recruitment deviations remain greater than 0 after all informative data are removed",
+label = 'squid-rec')
 ```
 
 ```{r, results = 'asis'}
@@ -292,6 +291,13 @@ add_figure(
 filein = file.path(mod_loc, "plots", "SR_curve.png"), 
 caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
 label = 'bh-curve')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
+caption = "Estimated time series of age-0 recruits (1000s)",
+label = 'recruits')
 ```
 
 
@@ -343,9 +349,7 @@ caption = "Mean length for recreational lengths with 95 percent confidence inter
 label = 'hkl-mean-len-fit')
 ```
 
-
 ```{r, results = 'asis'}
-
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"),
 caption = "Aggregated length comps over all years",
@@ -385,7 +389,7 @@ label = 'tot-bio')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "ts9_Relative_spawning_output_intervals.png"), 
+filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
 caption = "Estimated time series of fraction of unfished spawning output",
 label = 'depl')
 ```
@@ -447,7 +451,42 @@ filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
 label = 'sens-depl-2')
 ```
+
 \newpage
+
+<!-- ====================================================================== -->
+<!-- ******************  Area Sensitivities   ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(basename(mod_loc), "_2_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity examining alternative percent of the population protected from fishing",
+label = 'sens-area-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(basename(mod_loc), "_2_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity examining alternative percent of the population protected from fishing",
+label = 'sens-area-depl')
+```
+
+\newpage
+
+
+<!-- ====================================================================== -->
+<!-- ******************      Likelihoods      ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_likelihoods.Rmd')
+read_child(filein)
+```
+
+\clearpage
 
 <!-- ====================================================================== -->
 <!-- ******************       LB-SPR          ***************************** --> 
@@ -463,15 +502,6 @@ label = 'lbspr')
 ```
 
 \newpage
-
-<!-- ====================================================================== -->
-<!-- ******************      Likelihoods      ***************************** --> 
-<!-- ====================================================================== -->
-
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'figures_likelihoods.Rmd')
-read_child(filein)
-```
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

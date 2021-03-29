@@ -12,7 +12,7 @@ read_child(filein)
 
 ## Historical and Current Fishery Information
 
-Off the coast of California southth of Point Conception `r spp` is caught in both commercial and recreational fisheries. Recreational removals have been the largest source of fishing mortality of `r spp` across all years (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The recreational fishery is comprised of individual recreational fishers and charter recreational private vessels which take groups of individuals out for day fishing trips. Across both types of recreational fishing the majority of effort occurs around rocky reefs that can be accessed via a day-trips.  
+Off the coast of California south of Point Conception `r spp` is caught in both commercial and recreational fisheries. Recreational removals have been the largest source of fishing mortality of `r spp` across all years (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The recreational fishery is comprised of individual recreational fishers and charter recreational private vessels which take groups of individuals out for day fishing trips. Across both types of recreational fishing the majority of effort occurs around rocky reefs that can be accessed via a day-trips.  
 
 ```{r, echo=FALSE, results='asis'}
 general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"

@@ -2,7 +2,7 @@
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were determine by allocating the adopted ACLs South and North of 40$^\circ$ 10' Lat. N. (25 percent - PFMC Groundfish Management Team pers. comm.) for California. Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Pt. Conception area based on the percentage of total removals in California (north and south of Pt. Conception) from 2015 - 2019.
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were determine by allocating the adopted ACLs South and North of 40$^\circ$ 10' Lat. N. (25 percent - PFMC Groundfish Management Team pers. comm.) for California. Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Point Conception area based on the percentage of total removals in California (north and south of Point Conception) from 2015 - 2019.
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -15,7 +15,7 @@ read_child(filein)
 
 ## Future Research and Data Needs
 
-There were some major sources of uncertainty within this assessment. To improve our understanding of the `r spp` stock south of Pt. Conception the following research and data collection should be prioritized:
+There were some major sources of uncertainty within this assessment. To improve our understanding of the `r spp` stock south of Point Conception the following research and data collection should be prioritized:
 
 \begin{enumerate}
 
@@ -23,6 +23,6 @@ There were some major sources of uncertainty within this assessment. To improve 
 
 	\item The assessment area appears to have a mixture of observations from areas experiencing variable fishing effort.  In the region there are likely a mixture of areas: open access rocky reefs that are close to port that are heavily fished, open access rocky reefs that are inaccessible via day-trips that are fished but likely lower levels, and rocky reefs that fall within marine protect areas.  A spatially explicit assessment model may be able to capture this complexity but will require data (indices of abundance and composition data) from each of the regions. 
 
-	\item There are very limited age data for `r spp` south of Pt. Conception. Increasing otolith sampling and allocating otolith reading resources would improve the understanding of the population structure and life history. 
+	\item There are very limited age data for `r spp` south of Point Conception. Increasing otolith sampling and allocating otolith reading resources would improve the understanding of the population structure and life history. 
 
 \end{enumerate}

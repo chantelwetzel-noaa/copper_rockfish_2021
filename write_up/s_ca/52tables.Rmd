@@ -36,6 +36,11 @@ table_format(x = out,
 
 
 <!-- ======================================================= -->
+<!-- *************** Management Reg.   ********************* --> 
+<!-- ======================================================= -->
+
+
+<!-- ======================================================= -->
 <!-- *************** Com. Catch Ratio  ********************* --> 
 <!-- ======================================================= -->
 
@@ -68,6 +73,7 @@ table_format(x = out,
 
 \newpage
 
+
 <!-- ======================================================= -->
 <!-- ***************    Biology      *********************** --> 
 <!-- ======================================================= -->
@@ -85,7 +91,7 @@ read_child(filein)
 
 ```{r, results = 'asis'}
 mod_params = model$parameters[-c(grep('Impl',model$parameters$Label),
-							     grep('Fore',model$parameters$Label)),
+                   grep('Fore',model$parameters$Label)),
                                 (names(model$parameters) %in%
                                 c("Num","Label","Value","Phase","Min",
                                   "Max","Status","Parm_StDev",
@@ -154,9 +160,9 @@ table_format(x = mod_params,
 ```{r, results = 'asis'}
 tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
 col_names = c('Method',
-			  'Commercial Lengths',
+        'Commercial Lengths',
               'Recreational Lengths',
-			  'NWFSC Hook and Line')
+        'NWFSC Hook and Line')
 table_format(x = tab,
              caption = "Data weights applied by each alternative data weighting methods.",
              label = "dw",
@@ -166,6 +172,7 @@ table_format(x = tab,
 
 \newpage
 
+
 \include{tex_tables/sensitivities_1.tex}
 
 \newpage
@@ -173,6 +180,7 @@ table_format(x = tab,
 \include{tex_tables/sensitivities_2.tex}
 
 \newpage
+
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
@@ -216,7 +224,7 @@ col_names = c('Year',
 table_format(x = out,
              caption = "Projections of potential OFLs (mt), ACLs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL and ACL for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N.",
              label = "project",
-             landscape = TRUE,
+             landscape = FALSE,
              align = 'l',
              custom_width = TRUE,
              col_to_adjust = c(2,3,4,5,6,7,8,9), 
