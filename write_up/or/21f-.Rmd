@@ -10,7 +10,7 @@ Landings from 1987 - 1999 were compiled from a combination of PacFIN, the centra
 
 The input catches in the model represent total removals: landings plus discards.  Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated to state and area based on the total observed landings observed by WCGOP. The historical commercial discard mortality used to adjust the landings data to account for total removals was calculated based on the average coastwide discard rates from WCGOP of 4.4 percent. 
 
-#### Length Compositions
+#### Length Compositions {#commercial-fishery-length-and-age-data}
 
 Commercial `r spp` length samples are available from PacFIN from 1999 - 2020 (Table \ref{tab:com-len-samps}, extracted on 2/21/2021).  Approximately 50.9 percent of these samples are females (n = 714) and 48.9 percent are males (n = 686). Only four fish were unsexed. The majority (82.8 percent) are from the southern Oregon coast, centered in Port Orford (63.9 percent) and Gold Beach (19.0 percent), where the majority of permit holders for the commercial nearshore fishery are based and where most of the landings are made.  The majority of length samples are from `r spp` landed live (67.0 percent).  
 
