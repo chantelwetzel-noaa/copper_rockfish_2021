@@ -12,7 +12,7 @@ devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 # South of Pt Conception
 ###################################################################
 area = "ca_s_pt_c"
-base_model = "12.0_base"
+base_model = "12.1_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -26,16 +26,15 @@ sens_list = c("est_m", #1
               "est_linf", #2
               "est_cv2", #3
               "recdevs", #4
-              "dm", #5
-              "mi") #6
+              "dw_dm", #5
+              "dw_mi") #6
 
 sens_list2 =  c("com_asym", #1
               "rec_asym", #2
               "all_asym", #3
-              "hkl_outside", #4
+              "no_hkl", #4
               "recfin_index", #5
-              "cpfv_index", #6
-              "area") #7
+              "cpfv_index") #6
 
 model.list <- paste0(base_model, "_", sens_list)
 model.list2 <- paste0(base_model, "_", sens_list2)
@@ -56,7 +55,6 @@ sens_9  = SS_output( file.path(wd, model.list2[3]), printstats = FALSE, verbose 
 sens_10 = SS_output( file.path(wd, model.list2[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_11 = SS_output( file.path(wd, model.list2[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_12 = SS_output( file.path(wd, model.list2[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
-sens_13 = SS_output( file.path(wd, model.list2[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
                 "Est. M (f)", 
@@ -70,13 +68,12 @@ modelnames2 <- c("Base Model",
                 "Com. Asymptotic Selectivity", 
                 "Rec. Asymptotic Selectivity",
                 "Com. & Rec. Asymptotic Selectivity", 
-                "HKL Outside CCA Only",
+                #"Remove HKL",
                 "2013 RecFIN Index",
-                "2013 CPFV Index",
-                "2 Areas")
+                "2013 CPFV Index")
 
 x <- SSsummarize(list(base, sens_1, sens_3, sens_4, sens_5, sens_6))
-x2 <- SSsummarize(list(base, sens_7, sens_8, sens_9, sens_10, sens_11, sens_12, sens_13))
+x2 <- SSsummarize(list(base, sens_7, sens_8, sens_9, sens_11, sens_12))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
@@ -251,3 +248,35 @@ t = table_format(x = out,
 
 kableExtra::save_kable(t,
 file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_2.tex")
+
+################################################################################################
+
+
+sens_list =  c("area_10",
+               "area_15", 
+               "area_20") #6
+
+model.list <- paste0(base_model, "_", sens_list)
+
+
+#out.list = NULL  
+base   = SS_output( base_loc, printstats = FALSE, verbose = FALSE) 
+sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
+modelnames <- c("Base Model",
+                "Protected 10%",
+                "Protected 15%",
+                "Protected 20%")
+
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3))
+
+SSplotComparisons(x, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  plotdir = file.path(getwd(), '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = paste0(base_model, "_area_"),
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)

@@ -6,7 +6,7 @@
 library(r4ss)
 
 state = "ca_n_pt_c"
-base.name = "10.0_base"
+base_name = "10.2_base"
 
 dir = file.path("C:/Assessments/2021/copper_rockfish_2021/models", state)
 retro.folder = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
@@ -24,28 +24,28 @@ retro7 = SS_output(file.path(retro.folder, "retro", "retro-7"), printstats = FAL
 retro8 = SS_output(file.path(retro.folder, "retro", "retro-8"), printstats = FALSE, verbose = FALSE, covar = FALSE)
 retro9 = SS_output(file.path(retro.folder, "retro", "retro-9"), printstats = FALSE, verbose = FALSE, covar = FALSE)
 retro10 = SS_output(file.path(retro.folder, "retro", "retro-10"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro11 = SS_output(file.path(retro.folder, "retro", "retro-11"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro12 = SS_output(file.path(retro.folder, "retro", "retro-12"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro13 = SS_output(file.path(retro.folder, "retro", "retro-13"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro14 = SS_output(file.path(retro.folder, "retro", "retro-14"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro15 = SS_output(file.path(retro.folder, "retro", "retro-15"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro16 = SS_output(file.path(retro.folder, "retro", "retro-16"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro17 = SS_output(file.path(retro.folder, "retro", "retro-17"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro18 = SS_output(file.path(retro.folder, "retro", "retro-18"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro19 = SS_output(file.path(retro.folder, "retro", "retro-19"), printstats = FALSE, verbose = FALSE, covar = FALSE)
-retro20 = SS_output(file.path(retro.folder, "retro", "retro-20"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro11 = SS_output(file.path(retro.folder, "retro", "retro-11"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro12 = SS_output(file.path(retro.folder, "retro", "retro-12"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro13 = SS_output(file.path(retro.folder, "retro", "retro-13"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro14 = SS_output(file.path(retro.folder, "retro", "retro-14"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro15 = SS_output(file.path(retro.folder, "retro", "retro-15"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro16 = SS_output(file.path(retro.folder, "retro", "retro-16"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro17 = SS_output(file.path(retro.folder, "retro", "retro-17"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro18 = SS_output(file.path(retro.folder, "retro", "retro-18"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro19 = SS_output(file.path(retro.folder, "retro", "retro-19"), printstats = FALSE, verbose = FALSE, covar = FALSE)
+#retro20 = SS_output(file.path(retro.folder, "retro", "retro-20"), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 
-modelnames <- c("Base Model", paste0("Retro -", 1:15))
+modelnames <- c("Base Model", paste0("Retro -", 1:10))
 
 # Summarize the results across models
 mysummary <- SSsummarize(list(base, retro1, retro2, retro3, retro4, retro5,
-                              retro6, retro7, retro8, retro9, retro10,
-                              retro11, retro12, retro13, retro14, retro15))
+                              retro6, retro7, retro8, retro9, retro10))#,
+                              #retro11, retro12, retro13, retro14, retro15))
 # Create plots and save as png files
-SSplotComparisons(mysummary, endyrvec = rev(2001:2021), legendlabels = modelnames, 
+SSplotComparisons(mysummary, endyrvec = rev(2010:2021), legendlabels = modelnames, 
     plotdir = retro.folder, subplot = seq(2, 12, 2), legendloc = "topright", print = TRUE, pdf = FALSE)
-SSplotComparisons(mysummary, endyrvec = rev(2001:2021), legendlabels = modelnames, 
+SSplotComparisons(mysummary, endyrvec = rev(2010:2021), legendlabels = modelnames, 
     plotdir = retro.folder, legendloc = "bottomleft", subplot = c(10), print = TRUE, pdf = FALSE)
 
 mohns = SSmohnsrho(summaryoutput = mysummary,
@@ -132,8 +132,8 @@ dev.off()
 
 pngfun(wd = retro.folder, file = "Squid_RecDevs.png", h = 7, w = 7)
 SSplotRetroRecruits(retroSummary = mysummary,
-                    endyrvec = rev(2006:2021),
-                    cohorts = 2001:2019,
+                    endyrvec = rev(2010:2021),
+                    cohorts = 2005:2019,
                     ylim=NULL,uncertainty=FALSE,
                     labels=c('Recruitment deviation', 'Recruitment (billions)', 'relative to recent estimate', 'Age'),
                     main="",
