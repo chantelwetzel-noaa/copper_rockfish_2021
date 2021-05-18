@@ -20,7 +20,7 @@ label = 'catch')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "data_plot.png"), 
+filein = file.path(doc_figs, "data_plot.png"), 
 caption = "Summary of data sources used in the base model",
 label = 'data-plot')
 ```	
@@ -112,7 +112,7 @@ label = 'mean-hkl-len-data')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "index1_cpuedata_NWFSC_HKL.png"), 
+filein = file.path(doc_figs, "hkl_index.png"), 
 caption = "Index of abundance for the NWFSC Hook and Line survey. Lines indicate 95 percent uncertainty interval around index values based on the model assumption of lognormal error. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter",
 label = 'hkl-index')
 ```
@@ -131,15 +131,33 @@ label = 'hkl-diag')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_socal_open_area.png"), 
-caption = "Count of length observations across depths in an open access area",
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing south of Point Conception",
 label = 'rov-open')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_socal_mpa_area.png"), 
-caption = "Count of length observations across depths within a marine protected area",
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where retention is prohibited",
 label = 'rov-mpa')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_open.png"), 
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in reference locations where retention is allowed",
+#width = 150,
+#height = 150,
+label = 'rov-percent-open')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_mpa.png"), 
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in marine protected areas where retention is prohibited",
+#width = 150,
+#height = 150,
+label = 'rov-percent-mpa')
 ```
 
 <!-- ====================================================================== -->
@@ -268,7 +286,7 @@ label = 'bridge-ssb-2')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
+filein = file.path(doc_figs, "selectivity.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
@@ -389,30 +407,16 @@ label = 'tot-bio')
 
 ```{r, results = 'asis'}
 add_figure(
+filein = file.path(doc_figs, "unavailable_biomass.png"), 
+caption = "Estimated time series of unavailable spawning output",
+label = 'ssb-unavailable')
+```
+
+```{r, results = 'asis'}
+add_figure(
 filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
 caption = "Estimated time series of fraction of unfished spawning output",
 label = 'depl')
-```
-
-
-<!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
-caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
 ```
 
 
@@ -459,7 +463,7 @@ label = 'sens-depl-2')
 <!-- ====================================================================== -->
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_2_compare2_spawnbio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_area_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity examining alternative percent of the population protected from fishing",
@@ -467,7 +471,7 @@ label = 'sens-area-ssb')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_2_compare4_Bratio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_area_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity examining alternative percent of the population protected from fishing",
@@ -513,3 +517,53 @@ read_child(filein)
 ```
 
 \newpage
+
+<!-- ====================================================================== -->
+<!-- ******************   Comparison with 2013  *************************** --> 
+<!-- ====================================================================== -->
+  
+add_figure(
+filein = file.path(getwd(), 'figs', "assess_compare_compare2_spawnbio_uncertainty.png"), 
+caption = "The estimated spawning output from the base model and the 2013 assessment",
+label = 'compare-ssb')
+```
+
+add_figure(
+filein = file.path(getwd(), 'figs', "assess_compare_compare4_Bratio_uncertainty.png"), 
+caption = "The estimated fraction unfished from the base model and the 2013 assessment",
+label = 'compare-depl')
+```
+
+\newpage
+
+
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+label = 'phase')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```

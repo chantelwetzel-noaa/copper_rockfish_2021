@@ -1,8 +1,14 @@
 # Management 
 
+## Reference Points
+
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields  were `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($\text{SB}_{40\%}$) was `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
+
+The `r endyr` spawning output relative to unfished equilibrium spawning output is below the management threshold limit of 25 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has been above the harvest rate limit ($\text{SPR}_{50\%}$) in recent years, except 2020 when overall removals declined due to impacts of COVID-19 which reduced recreational fishing effort (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The stock is estimated to be below the management target with fishing intensity exceeding the target across recent years (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were determine by allocating the adopted ACLs South and North of 40$^\circ$ 10' Lat. N. (25 percent - PFMC Groundfish Management Team pers. comm.) for California. Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Point Conception area based on the percentage of total removals in California (north and south of Point Conception) from 2015 - 2019.
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying $\sigma$ and $P^*$ = 0.45 for years 2023-2032 and the 40:10 harvest control rule (Table \ref{tab:project}). Since the stock is estimated to be below the management target the buffer applied between the OFL and ABC incorporates both the harvest control rule adjustment and the default time-varying buffer.  The removals in 2021 and 2022 were determine by first summing the adopted ACLs South of 40$^\circ$ 10' Lat. N. and the portion of the North of 40$^\circ$ 10' Lat. N. allocated to California(25 percent - PFMC Groundfish Management Team pers. comm.). Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Point Conception was based on the percentage of total removals in each area of California (north and south of Point Conception) from 2017 - 2019. 
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -19,10 +25,10 @@ There were some major sources of uncertainty within this assessment. To improve 
 
 \begin{enumerate}
 
-	\item The commercial and recreational fisheries had limited observations of larger `r spp`.  It is unclear whether this was due to lack of access to larger individuals or a truncation of the length/age distribution due to fishing effort. Targeted fishery-independent survey information (via. hook and line or remotely operated vehicles (ROVs) could improve our understanding the status of `r spp` in this region.
+	\item The commercial and recreational fisheries had limited observations of larger `r spp`.  It is unclear whether this was due to lack of access to larger individuals or a truncation of the length/age distribution due to fishing effort. Fishery-independent survey information via. hook and line or remotely operated vehicles (ROVs) targeted at areas that are subject to recreational and commercial fishing could improve our understanding the availability of  of `r spp`.
 
 	\item The assessment area appears to have a mixture of observations from areas experiencing variable fishing effort.  In the region there are likely a mixture of areas: open access rocky reefs that are close to port that are heavily fished, open access rocky reefs that are inaccessible via day-trips that are fished but likely lower levels, and rocky reefs that fall within marine protect areas.  A spatially explicit assessment model may be able to capture this complexity but will require data (indices of abundance and composition data) from each of the regions. 
 
-	\item There are very limited age data for `r spp` south of Point Conception. Increasing otolith sampling and allocating otolith reading resources would improve the understanding of the population structure and life history. 
+	\item There are very limited age data for `r spp` south of Point Conception. The `r hkl` was the main source of otoliths read for constructing a age-at-length curve for `r spp`. Collection otoliths from the recreational fishery, a large source of mortality in the area, would support future assessments  and would improve the understanding of the population structure and life history of `r spp`. 
 
 \end{enumerate}

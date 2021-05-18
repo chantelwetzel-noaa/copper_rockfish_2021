@@ -4,6 +4,10 @@ remotes::install_github("nwfsc-assess/sa4ss")
 library(sa4ss)
 
 
+devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
+
+
+
 # Specify the directory for the document
 setwd("C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca")
 
@@ -19,7 +23,7 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 #Create a model Rdata object
 sa4ss::read_model(
   mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base",
-  create_plots = TRUE, 
+  create_plots = FALSE, 
   save_loc = file.path(getwd(), "tex_tables"),
   verbose = TRUE)
 

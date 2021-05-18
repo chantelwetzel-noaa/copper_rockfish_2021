@@ -196,8 +196,13 @@ tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
 
 man_south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
 
+man_north = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
+
 ofl_s = man_south[man_south$Year %in% c(2021, 2020), "OFL"] 
 acl_s = man_south[man_south$Year %in% c(2021, 2022), "ACL"]
+
+ofl_n = round(man_north[man_north$Year %in% c(2021, 2020), "OFL"],2) 
+acl_n = round(0.25*man_north[man_north$Year %in% c(2021, 2022), "ACL"],2)
 
 find = which(model$timeseries$Yr %in% c(2021, 2022))
 rm = model$timeseries[find, "dead(B):_1"] + model$timeseries[find, "dead(B):_2"]
@@ -205,6 +210,9 @@ rm = model$timeseries[find, "dead(B):_1"] + model$timeseries[find, "dead(B):_2"]
 out = cbind(tab$Year,
             c(ofl_s, rep("-",10)),
             c(acl_s, rep("-",10)),
+            c(ofl_n, rep("-",10)),
+            c(acl_n, rep("-",10)),
+            c(acl_s + acl_n, rep("-", 10)),
             c(rm, rep("-",10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3],2)),
@@ -212,8 +220,11 @@ out = cbind(tab$Year,
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              'S. 40.10 OFL',
-              'S. 40.10 ACL',
+              'OFL - S. 40.10',
+              'ACL - S. 40.10',
+              'OFL - N. 40.10',
+              'CA ACL - N. 40.10',
+              'Total CA ACL',
               "Assumed Removals",
               "OFL", 
               "ABC", 
@@ -222,13 +233,14 @@ col_names = c('Year',
               "Fraction Unfished")
 
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ACLs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL and ACL for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10.",
              label = "project",
-             landscape = FALSE,
+             landscape = TRUE,
              align = 'l',
              custom_width = TRUE,
-             col_to_adjust = c(2,3,4,5,6,7,8,9), 
-             width = c("3cm", "3cm","3cm","3cm","3cm","3cm","3cm","3cm"),
+             font_size = 10,
+             col_to_adjust = c(2,3,4,5,6,7,8,9,10,11,12), 
+             width = c("1.3cm","1.3cm","1.3cm","1.3cm","1.3cm","1.5cm","1.3cm","1.3cm","1.3cm","1.5cm","1.5cm"),
              col_names = col_names)
 
 ```
