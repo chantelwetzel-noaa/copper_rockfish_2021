@@ -19,7 +19,16 @@ The Oregon `r spp` area was assessed using a two-sex model with sex specific lif
 
 ### Modeling Platform and Structure
 
-Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'model_platform.Rmd')
+read_child(filein)
+``` 
+
+## Model Selection and Evaluation
+
+The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Oregon coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+
 
 ### Priors
 
@@ -42,12 +51,4 @@ There were 112 estimated parameters in the base model. These included one parame
 Fixed parameters in the model were as follows. Steepness was fixed at `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, the mean of the rockfish prior. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, which is the median of the prior.  The standard deviation of recruitment deviates was fixed at `r round(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Growth, maturity-at-length, and length-at-weight was fixed as described above in Section \ref{data}. Likelihood profiles were performed across select parameters to examine the information content in the data. 
 
 Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. The final base model estimated dome-shaped selectivity for only the largest fish for the recreational fishery. The selectivity for the commercial fishery was fixed to be asymptotic. The ascending and descending width (recrational fleet only) of the double normal selectivity curve were estimated during model development and fixed in the base model based upon those explorations.
-
-
-
-
-## Model Selection and Evaluation
-
-The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
-
 

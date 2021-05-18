@@ -19,7 +19,7 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 \begin{itemize}
 
-	\item Continue collecting length and otolith samples from recreational catches.
+	\item Continue collecting length and otolith samples from both the commercial and recreational catches. 
 
 	\item The recreational selecitivity form was a source of uncertainty in the base model. Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would be beneficial to better understand selectivitiy form.  
 

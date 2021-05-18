@@ -58,10 +58,6 @@ table_format(x = out,
 \newpage
 
 
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/or/tex_tables/or_age_samples.tex}
-
-\newpage
-
 
 <!-- ======================================================= -->
 <!-- ***************    Biology      *********************** --> 
