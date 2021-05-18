@@ -10,16 +10,21 @@ read_child(filein)
 
 ### Bridging Analysis
 
-A direct bridging analysis was not conducted because the previous assessment was structured to include the area from north of Point Conception to the Washington/Canadian border. Additionally, the previous assessment was conducted in an alternative modeling platform, extended depletion-based stock reduction analysis which may direct bridging challenging.  
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'model_bridge.Rmd')
+read_child(filein)
+```
 
 
 ## Model Structure and Assumptions
 
-The north of Point Conception `r spp` area assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the commercial fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters being estimated. The commercial fishery estimated two selectivity blocks: one from `r startyr`- 2008 and the second from 2009 - `r endyr`. The recreational fleet also used a double normal parameterization to model selectivity and was fixed to be asymptotic. Annual recruitment deviations were estimated for all years. 
+`r Spp` north of Point Conception off the coast of California are assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the commercial fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters being estimated. The commercial fishery estimated two selectivity blocks: one from `r startyr`- 2008 and the second from 2009 - `r endyr`. The recreational fleet also used a double normal parameterization to model selectivity and was fixed to be asymptotic. Annual recruitment deviations were estimated for all years. 
 
 ### Modeling Platform and Structure
 
-Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package [r4ss](https://github.com/r4ss/r4ss), version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+The assessment was conducted used Stock Synthesis version 3.30.16 developed by Dr. Richard Methot at the NOAA, NWFSC [@methot_stock_2013]. This most recent version was used because it included improvements and corrections to older model versions. The R package [r4ss](https://github.com/r4ss/r4ss), version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+
 
 ### Priors
 
