@@ -56,9 +56,13 @@ wa_rec = read.csv(file.path(dir, "_wa", "wa_recreational_all_years.csv"))
 #load(file.path(dir, "COPP.CompFT.17.Aug.2020.RData"))
 load(file.path(dir, "COPP.CompFT.21.Feb.2021.RData"))
 com = cleanColumns.catch(data)
+com = com[com$LANDING_YEAR <2021, ]
+
 
 # Oregon Historical Catches
 or_all_ali = read.csv(file.path(dir, "/_or/or_copper_final_commercial_landings_1892_2020.csv"))
+# cut out years that I not going to use
+or_all_ali = or_all_ali[or_all_ali$Year > 1909, ]
 
 # Discard rate to apply to historical catches - calculated based on the average coastwide discarding
 # from 2002 - 2018 in WCGOP, 2019 was ommitted since it increased due to reg changes.
@@ -160,7 +164,7 @@ or_rec_catch$total_mt[which(or_rec_catch$Year < 2001)] = or_rec_disc_rate * or_r
 #----------------------------------------------------------------------------------------------------
 wa_rec_catch = wa_rec[, c("Year", "Total.removal_.")]
 colnames(wa_rec_catch) = c("Year", 'Total')
-wa_rec_catch[,"Total.removal_."] = wa_rec_catch[,"Total.removal_."] / 1000
+wa_rec_catch[,"Total"] = wa_rec_catch[,"Total"] / 1000
 
 #################################################################################################################
 # Evaluate the commercial landings
@@ -219,7 +223,7 @@ ca_com_hist$total_north_no_disc = ca_com_hist[,"catch_mt_north"]
 # process wa's provided commercial catches
 wa_com$round_mt = wa_com$SpeciesPounds * 0.000453592
 wa = aggregate(round_mt~Year, data = wa_com[wa_com$Year > 1950,], FUN = sum)
-pac_wa = aggregate(round_mt ~ YEAR, data = com[com$area %in% c('W'),], FUN = sum, drop = FALSE)
+pac_wa = aggregate(round_mt ~ LANDING_YEAR, data = com[com$area %in% c('W'),], FUN = sum, drop = FALSE)
 colnames(pac_wa) = c("Year", "round_mt")
 wa_all = rbind(wa[wa$Year < min(pac_wa$Year), ], pac_wa[,1:2])
 
@@ -243,7 +247,7 @@ compiled_no_disc[which(compiled_no_disc[,"year"] %in% or_all_ali$Year), "or"] = 
 # Washington all years
 compiled_no_disc[which(compiled_no_disc[,"year"] %in% wa_all$Year), 'wa'] = wa_all[, "round_mt"]
 
-write.csv(compiled_no_disc, file = file.path(dir, "commercial_landings_by_state_no_discards.csv"))
+write.csv(compiled_no_disc, file = file.path(dir, "commercial_landings_by_state_no_discards_May.csv"))
 
 
 
@@ -281,7 +285,7 @@ or_all_ali[which(!or_all_ali$Year %in% gemm$Year), "total_mt"] =
 # process wa's provided commercial catches
 wa_com$round_mt = wa_com$SpeciesPounds * 0.000453592
 wa = aggregate(round_mt~Year, data = wa_com[wa_com$Year > 1950,], FUN = sum)
-pac_wa = aggregate(round_mt ~ YEAR, data = com[com$area %in% c('W'),], FUN = sum, drop = FALSE)
+pac_wa = aggregate(round_mt ~ LANDING_YEAR, data = com[com$area %in% c('W'),], FUN = sum, drop = FALSE)
 colnames(pac_wa) = c("Year", "round_mt")
 wa_all = rbind(wa[wa$Year < min(pac_wa$Year), ], pac_wa[,1:2])
 
@@ -305,7 +309,7 @@ all_com[which(all_com[,"year"] %in% or_all_ali$Year), "or"] = or_all_ali[which(a
 # Washington all years
 all_com[which(all_com[,"year"] %in% wa_all$Year), 'wa'] = wa_all[, "round_mt"]
 
-write.csv(all_com, file = file.path(dir, "commercial_catch_by_state.csv"))
+write.csv(all_com, file = file.path(dir, "commercial_catch_by_state_May.csv"))
 
 #################################################################################################################
 # For the catches for SS by each model area:
@@ -328,7 +332,7 @@ washington_catch_ss = rbind( cbind(as.numeric(wa_rec_catch$Year), 1, 1, as.numer
 						 cbind(as.numeric(all_com[which(all_com[,'wa'] > 0), "year"]), 1, 2, as.numeric(all_com[which(all_com[,'wa']> 0), "wa"]), 0.01) )
 colnames(washington_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
-write.csv(south_catch_ss, file = file.path(dir, "forSS", "south_ca_catches_for_ss.csv"), row.names = FALSE)
-write.csv(north_catch_ss, file = file.path(dir, "forSS", "north_ca_catches_for_ss.csv"), row.names = FALSE)
-write.csv(oregon_catch_ss, file = file.path(dir, "forSS", "oregon_catches_for_ss.csv"), row.names = FALSE)
-write.csv(washington_catch_ss, file = file.path(dir, "forSS", "washington_catches_for_ss.csv"), row.names = FALSE)
+write.csv(south_catch_ss, file = file.path(dir, "forSS", "south_ca_catches_for_ss_may.csv"), row.names = FALSE)
+write.csv(north_catch_ss, file = file.path(dir, "forSS", "north_ca_catches_for_ss_may.csv"), row.names = FALSE)
+write.csv(oregon_catch_ss, file = file.path(dir, "forSS", "oregon_catches_for_ss_may.csv"), row.names = FALSE)
+write.csv(washington_catch_ss, file = file.path(dir, "forSS", "washington_catches_for_ss_may.csv"), row.names = FALSE)

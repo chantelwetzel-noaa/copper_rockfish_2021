@@ -27,7 +27,7 @@ fa = 9.56e-6; fb = 3.19
 ma = 1.08e-5; mb = 3.15    
 ua = (fa + ma)/2;  ub = (fb + mb)/2        
 
-catch.file = read.csv(file.path(getwd(), "catches", "commercial_catch_by_state.csv"))
+catch.file = read.csv(file.path(getwd(), "catches", "commercial_catch_by_state_may.csv"))
 catch.file = catch.file[,-1]
 colnames(catch.file) = c("Year", "SOUTH.ALL", "NORTH.ALL", "OR.ALL", "WA.ALL")
 
@@ -118,7 +118,7 @@ Lcomps = getComps(Pdata_exp,
 				  Comps = "LEN")
 
 writeComps(inComps = Lcomps, 
-		   fname = file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), 
+		   fname = file.path(getwd(), "commercial_comps", "forSS", paste0("may_Lcomps.", bds.file, ".csv")), 
 		   lbins = myLbins, 
 		   partition = 0, 
 		   sum1 = TRUE,
@@ -130,7 +130,7 @@ writeComps(inComps = Lcomps,
 #
 # For California North & South use the sexes combined in the model
 #########################################################################################
-out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
+out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("may_Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
 start = which(as.character(out[,1]) %in% c(" Usexed only ")) + 2
 end   = nrow(out)
 cut_out = out[start:end,]
@@ -149,7 +149,7 @@ write.csv(north_comps, file = paste0(getwd(), "/commercial_comps/forSS/N_CA_Lcom
 #########################################################################################
 # Grabbed the females then males for Oregon & Washington
 #########################################################################################
-out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
+out = read.csv(file.path(getwd(), "commercial_comps", "forSS", paste0("may_Lcomps.", bds.file, ".csv")), skip = 3, header = TRUE)
 start = 1 #which(as.character(out[,1]) %in% c(" Females then males ")) + 2 
 end = which(as.character(out[,1]) %in% c(" Females only ")) - 1 #nrow(out)
 cut_out = out[start:end,]
@@ -162,7 +162,7 @@ format = format[format$fishyr != 2021, ]
 
 or = format[format$fleet == "OR", ]
 wa = format[format$fleet == "WA", ]
-write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/OR_Lcomps_sexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
+write.csv(or, file = paste0(getwd(), "/commercial_comps/forSS/may_OR_Lcomps_sexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
 write.csv(wa, file = paste0(getwd(), "/commercial_comps/forSS/WA_Lcomps_sexed_10_54_formatted_Feb21_corrected.csv"), row.names = FALSE)
 
 
