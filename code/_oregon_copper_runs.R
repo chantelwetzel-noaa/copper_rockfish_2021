@@ -367,3 +367,183 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+model = "7.1_base" # corrected or comm catches
+new_base = SS_output(file.path(wd, model))
+SS_plots(new_base)
+
+modelnames <- c( "7.0 Incorrect Com. Catch", "7.1 Fixed")
+mysummary  <- SSsummarize(list(base, new_base))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.0_catch_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "8.0_base_no_devs" # corrected or comm catches
+no_devs = SS_output(file.path(wd, model))
+SS_plots(no_devs)
+
+modelnames <- c( "7.1 w/ Rec.Devs.", "8.0 No Devs.")
+mysummary  <- SSsummarize(list(new_base, dw))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.1_devs_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "8.3_base_no_devs_dw" # corrected or comm catches
+dw = SS_output(file.path(wd, model))
+SS_plots(dw)
+
+model = "8.2_base_no_devs_asym" # corrected or comm catches
+asym = SS_output(file.path(wd, model))
+SS_plots(asym)
+
+model = "8.1_base_no_devs_mirror_asym" # corrected or comm catches
+mirror = SS_output(file.path(wd, model))
+SS_plots(mirror)
+
+modelnames <- c( "8.0", "8.0 DW", "8.0 Mirror & Asym", "8.0 Asym")
+mysummary  <- SSsummarize(list(no_devs, dw, mirror, asym))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "8.0_selex_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+
+model = "8.4_base_no_devs_dw_logistic" # corrected or comm catches
+logistic = SS_output(file.path(wd, model))
+SS_plots(logistic)
+
+model = "8.4_base_jitter_best" # corrected or comm catches
+jitter = SS_output(file.path(wd, model))
+SS_plots(jitter)
+
+
+model = "8.6_selex_com_low" # corrected or comm catches
+low = SS_output(file.path(wd, model))
+SS_plots(low)
+
+modelnames <- c( "7.1", "8.4")
+mysummary  <- SSsummarize(list(new_base, jitter))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "7.1_vs_8.4_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "8.7_base_data_early_rec" # corrected or comm catches
+data = SS_output(file.path(wd, model))
+SS_plots(data)
+
+model = "9.0_base" # fix 2015 and 2016 rec catch
+base = SS_output(file.path(wd, model))
+SS_plots(base)
+
+model = "9.0_base_recdevs" # fix 2015 and 2016 rec catch
+recdevs = SS_output(file.path(wd, model))
+SS_plots(recdevs)
+
+model = "9.0_base_spline" # fix 2015 and 2016 rec catch
+spline = SS_output(file.path(wd, model))
+SS_plots(spline)
+
+model = "9.0_base_spline_recdevs" # fix 2015 and 2016 rec catch
+spline_recdevs = SS_output(file.path(wd, model))
+SS_plots(spline_recdevs)
+
+modelnames <- c( "Deterministic", "Stochastic", "Spline Determ.", "Spline Stoch.")
+mysummary  <- SSsummarize(list(base, recdevs, spline, spline_recdevs))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "9.0_determ_vs_stoch_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+model = "9.1_data_com_lens" #
+com = SS_output(file.path(wd, model))
+SS_plots(com)
+
+model = "9.1_base_prior" # fix 2015 and 2016 rec catch
+prior = SS_output(file.path(wd, model))
+SS_plots(prior)
+
+
+model = "9.4_base_recdevs_low" # fix 2015 and 2016 rec catch
+low = SS_output(file.path(wd, model))
+SS_plots(low)
+
+
+
+model = "9.5_7.0_fixed_catch" # fix 2015 and 2016 rec catch
+catch = SS_output(file.path(wd, model))
+SS_plots(catch)
+
+model = "9.6_7.0_fixed_catch_no_devs" # fix 2015 and 2016 rec catch
+catch_no_devs = SS_output(file.path(wd, model))
+SS_plots(catch_no_devs)
+SS_tune_comps(replist = catch_no_devs, option = "MI", dir = file.path(wd, model))
+
+
+model = "9.7_7.0_fixed_catch_sigma" # fix 2015 and 2016 rec catch
+sigma = SS_output(file.path(wd, model))
+SS_plots(sigma)
+
+# "Base w/ Devs" NLL 253.7 (124.6, 120.1)
+model = "9.8_7.0_fixed_catch_asym" # fix 2015 and 2016 rec catch
+asym = SS_output(file.path(wd, model))
+# NLL = 267.2
+SS_plots(asym)
+
+model = "9.9_7.0_fixed_catch_asym_sigma" # fix 2015 and 2016 rec catch
+asym_sigma = SS_output(file.path(wd, model))
+# NLL = 311
+
+# Deterministic (NLL = 347.664, 200.2 and 147.3) 
+model = "10.0_no_devs_super_period" 
+super = SS_output(file.path(wd, model))
+SS_plots(super)
+#NLL = 150.1
+
+model = "10.1_no_devs_logistic" 
+logistic = SS_output(file.path(wd, model))
+SS_plots(logistic)
+# NLL = 352.3
+# Peak Comm = 32 Rec = 33 (R0 = 5.6)
+
+model = "10.2_devs_unsexed_rm_data" 
+unsexed = SS_output(file.path(wd, model))
+SS_plots(unsexed)
+#NLL = 335 (R0 = 4.3)
+
+model = "10.3_no_devs_unsexed_rm_data" 
+determ = SS_output(file.path(wd, model))
+SS_plots(determ)
+
+model = "10.3_no_devs_unsexed_rm_comm" 
+determ_no_comm = SS_output(file.path(wd, model))
+SS_plots(determ_no_comm)
+
+# est com ~42  nll = 69.7
+# fix com 48.2 nll = 71.4
+# fix com 49.5 nll = 73.0
+
+model = "10.4_determ" 
+base = SS_output(file.path(wd, model))
+francis = SS_output(file.path( wd, "_sensitivities", "10.4_determ_francis"))
+asym = SS_output(file.path( wd, "_sensitivities", "10.4_determ_asym"))
+devs = SS_output(file.path( wd, "_sensitivities", "10.4_determ_recdevs"))
+SS_tune_comps(replist = base, option = "MI", dir = file.path( wd, "10.4_determ"))
+devs_dw = SS_output(file.path( wd, "_sensitivities", "10.4_determ_recdevs_dw"))
+devs_data = SS_output(file.path( wd, "_sensitivities", "10.4_determ_recdevs_all_data"))
+
+modelnames <- c( "Base", "Base Francis", "Rec. Asymptotic", "Rec. Devs. Data Weighted", "Rec Devs (All Comm. Data)")
+mysummary  <- SSsummarize(list(base, francis, asym,devs_dw, devs_data))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.4_sensitivities",
+				  legendlabels = modelnames, 
+				  ylimAdj = 1.25,
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
