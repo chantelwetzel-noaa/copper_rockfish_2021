@@ -23,6 +23,7 @@ sub_hkl = hkl[hkl$COMNAME == 'Copper Rockfish', ]
 sub_hkl = rename_hook_and_line(data = sub_hkl, survey_name = "nwfsc_hkl")
 
 
+
 load(file.path(dir, "survey", "wcgbts", "Catch__NWFSC.Combo_2020-08-13.rda"))
 load(file.path(dir, "survey", "wcgbts", "Bio_All_NWFSC.Combo_2020-08-14.rda"))
 catch = Out
@@ -172,6 +173,13 @@ PlotSexRatio.fn(dir = file.path(dir, "survey", "wcgbts"), dat = north_len, data.
 # NWFSC Hook & Line Data
 #
 #####################################################################################
+data = data.frame(Length_cm = c(sub_hkl$LENGTH, bio$Length_cm),
+                  Sex = c(sub_hkl$SEX, bio$Sex))
+
+PlotSexRatio.fn(dir = file.path(dir, "survey"), dat = data, 
+  data.type = "length", dopng = TRUE, main = "Survey Data")
+
+
 sub_hkl$Trawl_id = sub_hkl$Set.ID
 sub_hkl$Length_cm = sub_hkl$Length
 n = GetN.fn(dir = dir, dat = sub_hkl, type = "length", species = "others", printfolder = "forSS")
