@@ -10,16 +10,21 @@ read_child(filein)
 
 ### Bridging Analysis
 
-A direct bridging analysis was not conducted because the previous assessment was structured to include the area from north of Point Conception to the Washington/Canadian border.  
-
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'model_bridge.Rmd')
+read_child(filein)
+```
+ 
 
 ## Model Structure and Assumptions
 
-The assessment of `r spp` in Washington waters was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated.  The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve.  Recruitment was specified to be deterministic due to limited composition data. 
+The assessment of `r spp` in Washington waters was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated. The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve. The commercial and recreational fleets were kept separate in the model despite the limited commercial removals and composition data for two reasons: 1) clarity and 2) the recreational fleet removals were specified in terms of numbers while the commercial removals were in biomass. Recruitment was specified to be deterministic due to limited composition data. 
 
 ### Modeling Platform and Structure
 
-Stock Synthesis version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+The assessment was conducted used Stock Synthesis version 3.30.16 developed by Dr. Richard Methot at the NOAA, NWFSC [@methot_stock_2013]. This most recent version was used because it included improvements and corrections to older model versions. The R package [r4ss](https://github.com/r4ss/r4ss), version 1.38.0, along with R version 4.0.1 were used to investigate and plot model fits. 
+
 
 ### Priors
 
@@ -31,7 +36,7 @@ read_child(filein)
 
 ### Data Weighting
 
-Length compositions from the recreational fleet were the only composition data fit in the model. In the absence of index or commercial composition data, no data weighting was performed in the base model. Sensitivities were performed using the three data weighting approaches that are commonly applied for West Coast groundfish stock assessments: Francis method [@francis_data_2011], McAllister and Ianelli method,also known as Harmonic Mean weighting [@mcallister_bayesian_1997], and the Dirichlet-Multinomial method [@thorson_model-based_2017].
+Length compositions from the recreational fleet were the only composition data fit in the model. In the absence of index or commercial composition data, no data weighting was performed in the base model. Sensitivities were performed using the three data weighting approaches that are commonly applied for West Coast groundfish stock assessments: Francis method [@francis_data_2011], McAllister and Ianelli method, known as Harmonic Mean weighting [@mcallister_bayesian_1997], and the Dirichlet-Multinomial method [@thorson_model-based_2017].
 
 
 ### Estimated and Fixed Parameters
@@ -43,6 +48,6 @@ Fixed parameters in the model were as follows. Steepness was fixed at `r print(m
 
 ## Model Selection and Evaluation
 
-The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. A series of investigative model runs were done to achieve the final base model.
 
 

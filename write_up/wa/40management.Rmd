@@ -1,8 +1,14 @@
 # Management 
 
+## Reference Points
+
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields are estimated to be `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of unfished ($SB_{40\%}$) was estimated to be `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
+
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output in 2020 (`r 100*round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)` percent, Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has bounced above and below the harvest rate limit ($\text{SPR}_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The base model estimates that the stock has not fallen below the biomass target and fishing intensity has not exceeded the target (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (26 percent) for Washington state provided by the PFMC Groundfish Management Team (GMT, personal communication). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for `r spp` N. 40$^\circ$ 10' Lat. N. and the percent allocation (26 percent) for Washington state provided by the PFMC Groundfish Management Team (GMT, personal communication). 
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -15,7 +21,7 @@ read_child(filein)
 
 ## Research and Data Needs
 
-The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
+The ability to estimate additional process and biological parameters for `r spp` was limited by data. Collecting the following data would be beneficial to future assessments of the stock:
 
 \begin{itemize}
 
@@ -23,6 +29,6 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 	\item Collect length data for the commercial fleet if catches occur.
 
-	\item Evaluate the connectivity of `r spp` stock off the coast of Oregon and Washington. 
+	\item Evaluate the connectivity of `r spp` stocks off the coast of Oregon and Washington. 
 
 \end{itemize}

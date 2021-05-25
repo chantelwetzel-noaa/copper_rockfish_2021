@@ -99,7 +99,7 @@ label = 'rec-mean-len-fit')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
-caption = "Aggregated length comps over all years",
+caption = "Aggregated length comps across all years",
 label = 'agg-len-fit')
 ```
 
@@ -141,27 +141,6 @@ filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asympt
 caption = "Estimated time series of age-0 recruits (1000s)",
 label = 'recruits')
 ```
-
-<!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
-caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
-```
-
 
 <!-- ====================================================================== -->
 <!-- ******************       Sensitivity     ***************************** --> 
@@ -226,30 +205,30 @@ label = 'lbspr')
 
 
 ```{r, echo=FALSE, results='asis'}
-sss_loc = "C:/Assessments/2021/copper_rockfish_2021/models/sss/plots"
+sss_loc = "C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots"
 
 add_figure(
-filein = file.path(sss_loc, "wa_7.7_base_depl_60_Priors.png"), 
+filein = file.path(sss_loc, "7.7_base_depl_67_Priors.png"), 
 caption = "Prior distributions for parameter input for SSS",
-label = "sss-prior-60")
+label = "sss-prior-67")
 ```
 
 \newpage
 
 ```{r, echo=FALSE, results='asis'}
 add_figure(
-filein = file.path(sss_loc, "wa_7.7_base_depl_60_quants.png"), 
+filein = file.path(sss_loc, "7.7_base_depl_67_quants.png"), 
 caption = "Derived quantities from SSS run where fraction unfished was assumed to be 60 percent",
-label = "sss-quant-60")
+label = "sss-quant-67")
 ```
 
 \newpage
 
 ```{r, echo=FALSE, results='asis'}
 add_figure(
-filein = file.path(sss_loc, "wa_7.7_base_depl_40_Priors.png"), 
+filein = file.path(sss_loc, "7.7_base_depl_44_Priors.png"), 
 caption = "Prior distributions for parameter input for SSS",
-label = "sss-prior-40")
+label = "sss-prior-44")
 ```
 
 \newpage
@@ -257,9 +236,9 @@ label = "sss-prior-40")
 
 ```{r, echo=FALSE, results='asis'}
 add_figure(
-filein = file.path(sss_loc, "wa_7.7_base_depl_40_quants.png"), 
+filein = file.path(sss_loc, "7.7_base_depl_44_quants.png"), 
 caption = "Derived quantities from SSS run where fraction unfished was assumed to be 40 percent",
-label = "sss-quant-40")
+label = "sss-quant-44")
 ```
 
 \newpage
@@ -275,3 +254,41 @@ read_child(filein)
 ```
 
 \newpage
+
+<!-- ====================================================================== -->
+<!-- ******************     Comparison      ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_compare.Rmd')
+read_child(filein)
+```
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+label = 'phase')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```

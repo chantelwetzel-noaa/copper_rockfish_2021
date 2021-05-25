@@ -35,5 +35,10 @@ if(file.exists("00mod.Rdata")){
   print("Model output not being read. Please run the read_model() function.")
 }
 
+model_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models"
+
 data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots"
+
+net_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
 ```
+

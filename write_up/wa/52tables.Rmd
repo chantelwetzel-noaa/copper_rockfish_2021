@@ -11,12 +11,19 @@
 
 
 ```{r}
+#load(file.path(net_loc, "catches", "gemm_2020.Rdat"))
+#tmp = gemm[gemm$species == "Copper Rockfish",]
+#gemm_vals = aggregate(total_discard_and_landings_mt~year,tmp[tmp$sector == "Washington Recreational",], sum)
+
 tab = data.frame(Year = model$catch[model$catch$Fleet == 1, "Yr"],
                     Numbers = model$catch[model$catch$Fleet == 1, "Obs"] * 1000,
                     MT = model$catch[model$catch$Fleet == 1, "kill_bio"])
-col_names = c("Year", "Numbers of Fish", "Metric Tons")
+#find = which(tab$Year %in% gemm_vals$year)
+#tab[find, 4] = round(gemm_vals[,2],2)
+col_names = c("Year", "Numbers of Fish", "Model Estimated (mt)")
+
 table_format(x = tab,
-      caption = 'Input numbers of fish removals converted to metric tons (mt) within the model.',
+      caption = 'Input numbers of fish removals by year converted to metric tons (mt) within the model.',
       label = 'nums-mt',
       longtable = TRUE,
             digits = c(0, 0, 2),
@@ -40,7 +47,7 @@ man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/
 man = man[man$Year %in% yrs, ]
 out = cbind(man, round(man$ACL * 0.26, 2), total.catch)
 
-col_names = c("Year", "OFL", "ACL", "WA ACL", "WA Removals")
+col_names = c("Year", "Complex OFL", "Complex ACL", "OFL - copper", "ACL - copper", "WA ACL", "WA Removals")
 
 table_format(x = out,
              caption = "The OFL and ACL for north nearshore, the ACL allocated to Washington, and the total removals.",
@@ -188,9 +195,9 @@ table_format(x = tab,
 <!-- ****************         SSS            *************** --> 
 <!-- ======================================================= -->
 
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_60.tex}
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_67.tex}
 
-\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_40.tex}
+\input{C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_44.tex}
 
 \newpage
 
