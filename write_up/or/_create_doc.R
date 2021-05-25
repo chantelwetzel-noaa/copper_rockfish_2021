@@ -22,7 +22,7 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 
 # Sometimes: Create objects based on a base model:
 sa4ss::read_model(
-          mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/7.0_base",
+          mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/or/10.5_base",
 				  create_plots = FALSE, 
 				  save_loc = file.path(getwd(), "tex_tables"),
 				  verbose = TRUE)

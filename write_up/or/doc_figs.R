@@ -1,6 +1,6 @@
 savedir = "C:/Assessments/2021/copper_rockfish_2021/write_up/or/figs"
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
-base_name = "7.0_base"
+base_name = "10.5_base"
 model = SS_output(file.path(mydir, base_name))
 
 library(HandyCode)

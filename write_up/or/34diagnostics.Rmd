@@ -2,18 +2,22 @@
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 10 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was done without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 5 percent. This was repeated 100 times with 11 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. 
 
 
-### Sensitivity Analyses
+### Sensitivity Analyses{#sensitivities}
 
 A number of sensitivity analyses were conducted.  The majority of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
    
-  \item Deterministic recruitment from the stock recruitment curve. 
+  \item Estimate annual recruitment deviations for all model years.
 
-  \item Data weighting according to the McAllister-Ianelli method (MI DW) using the weighting values shown in Table \ref{tab:dw}. 
+  \item Fix the commercial selectivity parameters at the values from the base model and estimate annual recruitment deviations for all model years.
+
+  \item Estimate annual recruitment deviations from 1927 - 2000. Fix recruitment deviations from 2001 - 2020 to 0.
+
+  \item Data weighting according to the Francis method (Francis DW) using the weighting values shown in Table \ref{tab:dw}. 
   
   \item Data weighting according to the Dirichlet Multinomial method (DM DW) where the estimated parameters are shown in Table \ref{tab:dw}. 
 
@@ -26,34 +30,100 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
   \item Fix recreational selectivity from to be asymptotic. 
 
   \item Use all recreational length data and estimate two selectivity blocks: 1979-1999 shallow asymptotic selectivity curve (higher selection of smaller fish) and 2000-2020 estimate dome-shaped selectivity.   
-  
+
+  \item Use sexed length compositions from the commercial fishery (input aggregated as unsexed in the base model).
+
+  \item Add the Oregon Charter-Private Fishing Vessel (CPFV) onboard observer index of abundance used in the 2013 assessment.
+
+  \item Add the Oregon Charter-Private Fishing Vessel (CPFV) onboard observer index of abundance and allow the model to estimated added variance in order to fit the index.
+
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}.
+Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities-1} and \ref{tab:sensitivities-2}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb-1} - \ref{fig:sens-depl-1}.
 
-The largest change from the base model resulted when recruitment was fixed to be deterministic.  The sensitivity estimated a higher stock scale and a less depleted stock relative to the base model. Assuming asymptotic selectivity for the recreational fleet resulted in a reduction in the scale and status of the stock. The sensitivity that used all recreational length data and estimated two time blocks for selectivity estimated similar final stock status and size compared to the base model.
+Estimating recruitment deviations resulted in large changes in estimated stock size and status relative to the base model. The sensitivity that estimated recruitment deviations for all model years estimated a lower initial stock size relative to the base model (14.1 vs `r round(model$derived_quants[model$derived_quants$Label == 'SSB_1927','Value'], 1)` millions of eggs) and the estimated stock status (30 percent) was below the management target (Table \ref{tab:sensitivities-1} and Figures \ref{fig:sens-ssb-1} and \ref{fig:sens-depl-1}). This sensitivity estimated a multiple large recruitments in the late-1990s with only a few years after 2000 having above average recruitment (Figure \ref{fig:sens-recdev-1}). The two other sensitivities exploring the estimation of recruitment deviations (Rec. Devs. Fix Comm. and Rec. Devs. 1927-2000) each estimated stock scale and statuses that were intermediate to the all recruitment deviations sensitivity (Rec. Devs.) and the base model.
 
-Data weighting with the McAllister-Ianelli (MI) resulted in a similar stock trajectory to the base model, however, the Diricthlet-Multinomial (DM) increased the variability in the stock trajectory (slightly higher high and lower low) with a final stock status less depleted than the base model. Estimating single life history parameters, the CV at older ages or female natural mortality, were similar to the base model. In contrast, estimating the $L_{\infty}$ for both sexes resulted in a more pessimistic view of the final stock status compared to the base model. 
+Data weighting with the Francis method or the Dirichlet-Multinomial (DM) had large impacts on estimated stock size.  If the Francis method was used to weight the composition data the estimated log($R_0$) was significantly higher compared to the base model (Table \ref{tab:sensitivities-1}). In comparison to the McAllister-Ianelli data weighting the Francis method applied a higher weight to the commercial lengths and a lower weight to recreational lengths (Table \ref{tab:dw}). The DM method also applied a higher weight to the commercial lengths and a relatively low weight to the recreational lengths compared to the base model similar to the Francis method. However, the estimates of stock size did not approach the log($R0$) upper bound, although the estimated stock scale and status were higher compared to the base model (Figure \ref{fig:sens-ssb-1} and \ref{fig:sens-depl-1}). 
 
-### Likelihood Profiles
+Sensitivities that explored estimating select growth parameters had similar estimates of spawning output and fraction unfished to the base model (Figures \ref{fig:sens-ssb-1} and \ref{fig:sens-depl-1}) except for the sensitivity that estimated $L_{\infty}$ for both sexes. The estimated $L_{\infty}$ for both sexes were lower than the fixed values in the base model, resulting in significantly higher estimated initial spawning output with the stock near unfished (Table \ref{tab:sensitivities-1}).
 
-Likelihood profiles were conducted for $R_0$, steepness, female natural mortality, female $L_{\infty}$, and female growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
+Inputting the commercial lengths as sex-specific compositions estimated a higher stock scale  but overall similar fraction unfished trajectory relative to the base model (Figures \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The change in estimated stock size was primarily driven by a leftward shift in the peak selectivity parameter (37.9 cm, Table \ref{tab:sensitivities-2}). The general behavior led to the decision that the base model would use these data as unsexed lengths which appeared to improve the signal from these data regarding selectivity in the model.  
 
-In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). Both the commercial and recreational data supported lower log($R_0$) values. Increasing the $R_0$, relative to the value estimated, results in an a sharp increase in stock scale and status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
+The sensitivities that explored using the CPFV onboard observer index of abundance from the 2013 XDB-SRA assessment either with or without added estimated variance each estimated a lower stock scale with the stock being slightly more depleted in 2021 (Figures \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The catchability for the survey ranged between 0.0002 - 0.0003 with and estimated added variance of 0.127. 
 
-For steepness, values from approximately 0.30 to 1.0 were supported with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). Assuming higher or lower steepness values had minimal impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status was generally within the pre-cautionary zone, between 0.25 and 0.40  of unfished, across steepness values except for the lowest steepness values (0.30 and 0.40) (Figure \ref{fig:h-depl}).
+
+### Likelihood Profiles{#like-profiles}
+
+Likelihood profiles were conducted for $R_0$, steepness, female natural mortality, female $L_{\infty}$, female growth coefficient ($k$), female coefficient of variotion for older fish ($CV_2$), and the peak of the commercial selectivity  separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimated the remaining parameters based on the fixed parameter value.
+
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). The recreational lengths provide the majority of the information regarding $R_0$ where the commercial lengths support higher values. Increasing the $R_0$, relative to the value estimated, results in an increases in stock scale and status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
+
+For steepness, values across the profiled range, 0.30 to 1.0, all resulted in negative log-likelihood differences that were not significantly different (less than 1.92 units) with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). Assuming higher or lower steepness values had minimal impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status had limited variation across steepness values due to the high estimated stock status (Figure \ref{fig:h-depl}).
 
 The negative log-likelihood profile across female natural mortality supported values between 0.105 and 0.125 which included the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output and resulted in stock statuses just below or within the management precautionary zone (between 0.25 - 0.40) and above (Figures \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
 
-A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between 47.5 and 48.5 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figures \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
+A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}).  The negative log-likelihood showed support for values between approximately 46.5 and 48.5 cm. The $L_{\infty}$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figures \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
-A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.17 and 0.22. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figures \ref{fig:k-ssb} and \ref{fig:k-depl}).
+The profile across a range of female $k$ values is shown in Figure \ref{fig:k-profile}.  The negative log-likelihood showed support for values less than 0.20 (0.15 was the lowest value profiled). The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figures \ref{fig:k-ssb} and \ref{fig:k-depl}).
+
+The profile across a range of coefficient of variation ($CV_2$) for older females supported $CV_2$ values ranging between 0.075 - 0.10 (Figure \ref{fig:cv-profile}). Assuming lower $CV_2$ values decreased the estimated spawning output but had limited impact in the estimate of fraction unfished (Figure \ref{fig:cv-ssb} and \ref{fig:cv-depl}).
+
+Profiling across values of the commercial peak selectivity show a wide range of values, 38 - 46.5 cm, supported (Figure \ref{fig:selex-profile}). The stock scale increases sharply for lower values of 37 - 38 cm (Figure \ref{fig:selex-ssb}). The estimated fraction unfished at the end of the time series increases with lower peak values and decreases with high values relative to the base model (Figure \ref{fig:selex-depl}).
 
 ### Length-Based Spawner-per-Recruit Analysis
 
-An exploratory length-based spawner-per-recruit analysis which assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated that `r spp` were 50 percent selected generally between 30 - 40 cm with full selection between 40 - 60 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year had a wide across years between 0.30 - 0.80 (excluding 2015 and 2016 when retention in the recreational fishery was prohibited). This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimates of SPR by year from the length-based spawner-per-recruit analysis was contradictory to those from the integrated assessment. There are likely multiple reasons why this might be. First, each annual SPR value estimated by the length-based spawner-per-recruit analysis is independent where derived SPR estimats from the base model are based upon the population dynamics and age-structure of the population across time. Second, the simplifying assumptions in a length-based spawner-per-recruit analysis is that recruitment is a fixed value which differs from the assumption within the base model where estimated annual recruitment has been below average generally across recent years.     
+An exploratory length-based spawner-per-recruit analysis using the approach developed by Hordyk et al. [-@hordyk_novel_2015]. This approach assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated that `r spp` were 50 percent selected generally between 30 - 40 cm with full selection between 40 - 60 cm  (Figure \ref{fig:lbspr}). The median estimates of SPR by year had a wide across years between 0.30 - 0.97 (excluding 2015 and 2016 when retention in the recreational fishery was prohibited) with the average across the last five years with data was 0.75.     
+
+An additional analysis to estimate stock status based on length data alone was conducted within a length only version of Stock Synthesis. Within this approach the removal history is removed but the same life history values, selectivities, and length compositions (both sexed and unsexed) are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment in order to get an estimate of the current stock status. Length compositions are fit by estimating the parameter log($R_0$) (considered a nuisance parameter) which allows for best fits to the length comps and the selectivity by fleet. This analysis was conducted under either the assumption of asymptotic recreational selectivity curve or the dome-shaped selectivity from the base model. Using the recreational lengths, the estimated asymptotic selectivity, and life history from the Oregon base model the implied stock status in 2020 was estimated to be approximately 0.47. In contrast, the estimated stock status in 2020 was 0.57 when the selectivity was assumed to be dome-shaped. 
+
+These type of analyses can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimates of SPR by year from the length-based spawner-per-recruit analysis were relatively consistent with those from the base model while the length-only Stock Synthesis analysis were lower under both selectivity assumptions than the base model estimate. 
+
+The estimates of the SPR harvest rate by year and the length only versions of Stock Synthesis were used to provide external estimates of stock status in 2020 for three Simple Stock Synthesis (SSS) analysis. 
+
+### Simple Stock Synthesis
+
+A SSS was run to compare the results from the base model with a simpler modeling approach.  SSS samples via Monte Carlo from three key parameter distributions: natural mortality, steepness, and stock status in a specific year.  The mean and median of the priors assumed in the base model were used to create sampling distributions for natural mortality and steepness.  Two alternative assumptions regarding the distribution of current stock status were explored. SSS applies parameter draws from each of the three parameters within the model and then estimates an $R0$ value based on the fixed removals and drawn parameters.   
+
+\begin{enumerate}  
+	\item Current stock status based on LB-SPR estimates: 
+		\begin{itemize}
+		\item Number of draws = 1,000,
+		\item $M$ = lognormal ($\mu$ = 0.108, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in `r endyr` = beta($\alpha$ = 0.75, $\beta$ = 0.20)	
+	\end{itemize}
+	\item Current stock status based on the estimate from length only Stock Synthesis assuming asymptotic selectivity:
+	\begin{itemize}
+		\item Number of draws = 1,000,
+		\item $M$ = lognormal distribution ($\mu$ = 0.108, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in `r endyr` = beta($\alpha$ = 0.47, $\beta$ = 0.20)
+	\end{itemize}	
+	\item Current stock status based on the estimate from length only Stock Synthesis assuming dome-shaped selectivity:
+	\begin{itemize}
+		\item Number of draws = 1,000,
+		\item $M$ = lognormal distribution ($\mu$ = 0.108, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in `r endyr` = beta($\alpha$ = 0.57, $\beta$ = 0.20)
+	\end{itemize}
+\end{enumerate}
+
+Assuming a beta distribution around fraction unfished of 0.75  (alpha) in 2020 with a beta = 0.20 resulted in a large portion of draws between 0.75 and 1.0 which slightly increased the median fraction unfished across all 1,000 draws (Table \ref{tab:sss-75} and Figure \ref{fig:sss-prior-75}).  The median of unfished spawning output, spawning output `r endyr+1`, fraction unfished in `r endyr+1`, the OFL in `r endyr + 3`, and the ABC in `r endyr + 3` based on the `r endyr` fraction unfished of 0.75 are shown in in Table \ref{tab:sss-75}. The median spawning output and fraction unfished time series with the 95 percent interval are shown in Figure \ref{fig:sss-quant-75}. Assuming that the stock was status was similar to the base model resulted in higher estimates of the OFL and ABC in 2023, even when the category 3 buffer was applied (buffer = 0.778, based on a P* = 0.45 and \sigma = 2.0) due to distribution of fraction unfished being skewed towards the upper bound of 1.0.  Assuming a tighter interval around the fraction unfished distribution (smaller \beta value of 0.10) results in similar estimates of the OFL and ABC in `endyr +3` to the base model.
+
+The median of unfished spawning output, spawning output `r endyr+1`, fraction unfished in `r endyr+1`, the OFL in `r endyr + 3`, and the ABC in `r endyr + 3` based on the `r endyr +1` fraction unfished of 0.47 are shown in in Table \ref{tab:sss-47}. The prior distribution for parameters and the derived quantities with 95 percent intervals are shown in Figures \ref{fig:sss-prior-47} and \ref{fig:sss-quant-47}. Assuming a stock status lower than the base model and close to the management target of 0.40, SSS resulted in an OFL and ABC values that were significantly lower (base model OFL in `r endyr + 3` = `r round(model$derived_quant[model$derived_quant$Label == "OFLCatch_2023", 2], 2)` versus 5.07 mt, base model ABC in `r endyr + 3` = `r round(model$derived_quant[model$derived_quant$Label == "ForeCatch_2023", 2], 2)` versus 3.89 mt).  
+
+The median of unfished spawning output, spawning output `r endyr+1`, fraction unfished in `r endyr+1`, the OFL in `r endyr + 3`, and the ABC in `r endyr + 3` based on the `r endyr +1` fraction unfished of 0.57 with a dome-shaped recreational selectivity is shown in in Table \ref{tab:sss-57}. The prior distribution for parameters and the derived quantities with 95 percent interval are shown in Figures \ref{fig:sss-prior-57} and \ref{fig:sss-quant-57}. 
 
 
 ### Retrospective Analysis
 
 A five-year retrospective analysis was conducted by running the model using data only through 2015, 2016, 2017, 2018, 2019 and 2020. The estimated spawning output was generally consistent with the base model when recent years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}).  Removing the final 3 - 5 years of data resulted in a decline is spawning output relative to the base model likely due to the limited length samples from the recreational fishery available in 2015 and 2016 when retention was prohibited in the Oregon recreational fishery. 
+
+
+### Comparison with Other West Coast Stocks
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'diag_area_compare.Rmd')
+read_child(filein)
+```

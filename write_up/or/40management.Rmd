@@ -1,8 +1,15 @@
 # Management 
 
+### Reference Points
+
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields  were `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($\text{SB}_{40\%}$) was `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
+
+The `r endyr` spawning output relative to unfished equilibrium spawning output is above the management target of 40 percent (Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has bounced around in recent years but has been well below the harvest rate limit ($\text{SPR}_{50\%}$) with the stock remaining in the relative biomass above management with fishing effort below the target (Figure \ref{fig:phase}). Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+
+
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (49 percent) for Oregon state provided by the PFMC Groundfish Management Team (GMT, personal communication). 
+A ten year projection, 2023 - 2032, of the base model with removals equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying $\sigma = 1.0$ and $P^*$ = 0.45 is shown in Table \ref{tab:project}. The removals in 2021 and 2022 were set based on the average total mortality between 2018 - 2020 of `r round(model$derived_quants[model$derived_quants$Label == 'ForeCatch_2021','Value'], 2)` mt, based on input from the PFMC Groundfish Management Team (GMT, personal communication).  
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -21,6 +28,8 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 	\item Continue collecting length and otolith samples from both the commercial and recreational catches. 
 
-	\item The recreational selecitivity form was a source of uncertainty in the base model. Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would be beneficial to better understand selectivitiy form.  
+	\item The peak of commercial selectivity was highly uncertain in the base model with the estimated parameter having a large influence on the estimated stock scale and status. Data collections should continue to collect length and age data from this fleet. 
+
+	\item The recreational selectivity form (i.e., asymptotic versus dome-shaped) was a source of uncertainty in the base model. Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would be beneficial to better understand selectivity form.  
 
 \end{itemize}

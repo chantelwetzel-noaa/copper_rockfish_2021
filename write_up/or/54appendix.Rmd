@@ -23,7 +23,33 @@ for (a in plot.vec){
 
 \clearpage
 
-## Implied Fit to Recreational 'Ghost' Fleet Length Data 
+## Implied Fit to Commercial 'Ghost' Fleet Length Data{#append-com}
+
+The 'ghost' fleet data consist of commercial length samples collected 1999-2002 which were not used in the base model due issues estimating selectivity.  These years have increased observations of small fish likely due to a strong late 1990s recruitment that caused selectivity to shift leftward, estimating a relatively low peak selectivity when recruitment was assumed to be deterministic. The data from 2017 was also removed due to lower sample sizes and a large proportion of small fish observed in the length composition data. 
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(getwd(), "figs", "comp_lendat_bubflt1mkt0_page2.png"), 
+caption = "Length composition data from the commercial fleet",
+label = 'ghost-com-len-data')
+```
+
+```{r, results='asis'}
+plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
+len_fit = plot_info[which(plot_info$category == "LenComp"), ]
+plot.vec = grep("comp_gstlenfit_flt1mkt0", len_fit$label)
+filein = file.path(mod_loc, "plots")
+for (a in plot.vec){
+      cap = len_fit$caption[a]
+      lab = len_fit$label[a]
+      add_figure(filein = file.path(filein, len_fit$file[a]), 
+                     caption = cap, 
+                     label = lab)
+}
+```
+\clearpage
+
+## Implied Fit to Recreational 'Ghost' Fleet Length Data{#append-rec} 
 
 The 'ghost' fleet data consist of recreational length samples collected prior to 2000 which were not used in the base model due to low sample sizes which resulted in noisy length distributions that were not considered consistent with the recreational fleet selectivity.  Length composition data included in the 'ghost' fleet collected from 2005 and after reflect special collection samples of released fish from the recreational fleet.
 
@@ -49,7 +75,9 @@ for (a in plot.vec){
 ```
 \clearpage
 
-## ODFW Marine Reserve Hook and Line Survey
+## ODFW Marine Reserve Hook and Line Survey{#append-survey}
+
+### General Survey Information
 
 One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey.  This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for `r spp`.
 
@@ -57,11 +85,11 @@ The Marine Reserve Program in the ODFW has routinely monitored state marine rese
 
 
 ```{r, results = 'asis'}
-data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_1_sample_info.csv")
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix/table_1_sample_info.csv")
 
 col_names = c("Site", "Area", "Years Sampled", "Total Samples")
 table_format(x = data,
-             caption = "Sites and areas sampled by the Mrine Reserve Program hook and line survey.",
+             caption = "Sites and areas sampled by the Marine Reserve Program hook and line survey.",
              label = "table-1",
              align = 'l',
              custom_width = TRUE,
@@ -80,7 +108,7 @@ A 500 meter square grid overlaid on the area defines the sampling units or cells
 Of the 940 total-cell days at 14 areas, 97 (10.3 percent) of those had positive `r spp` catches with a total of 136 observations across all years and sites. The number of `r spp` caught ranged from 1 to 6 fish in a cell-day. 
 
 ```{r, results = 'asis'}
-data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_2_marine_hkl.csv")
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix/table_2_marine_hkl.csv")
 
 col_names = c("", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "Total")
 table_format(x = data,
@@ -92,25 +120,25 @@ table_format(x = data,
 ```
 
 ```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix"
 add_figure(
 filein = file.path(loc,  "fig_1_marine_hkl.png"), 
 caption = "Frequency of positive copper rockfish catches between 2011 - 2019",
 label = 'pos-hkl')
 ```
 
-Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of of some species (e.g., cabezon) due to the recent implementation of the reserves.  It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast.  However, this may not be possible with the sample size available at some sites.
+Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of some species (e.g., cabezon) due to the recent implementation of the reserves.  It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast.  However, this may not be possible with the sample size available at some sites.
 
 Observations of `r spp` were varied across sample sites and years.  The number of observations of `r spp` was highest at Cape Perpetua (N = 50), followed by Cascade Head (N = 46) and Redfish Rocks (N = 35) respectively.  
 
 ```{r, results = 'asis'}
-data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/table_3_data.csv")
+data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix/table_3_data.csv")
 
 data = data[-nrow(data),]
 
 col_names = c("Site", "Year", "Number of Positive Catch Cell Days", "Total Cell Days", "Proportion of Positives", "Total Number of Copper Rockfish Caught")
 table_format(x = data,
-             caption = "SSummary of sampling effort by year and site combined with the positive observations of copper rockfish.",
+             caption = "Summary of sampling effort by year and site combined with the positive observations of copper rockfish.",
              label = "table-3",
              align = 'l',
              digits = c(0, 0, 0, 0, 3, 0), 
@@ -121,7 +149,7 @@ table_format(x = data,
 Catch-per-unit-effort (CPUE) was calculated by the number of fish per angler hour. The number of anglers and hooks are standardized for each survey. Angler hours have been adjusted for non-fishing time (i.e., travel time, etc.).
 
 ```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix"
 add_figure(
 filein = file.path(loc,  "fig_2_cpue_val.png"), 
 caption = "Copper rockfish CPUE calculated based on positive values only",
@@ -129,21 +157,21 @@ label = 'fig-2')
 ```
 
 ```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix"
 add_figure(
 filein = file.path(loc,  "fig_3_cpue.png"), 
 caption = "Copper rockfish CPUE calculated based on all values",
 label = 'fig-3')
 ```
 
-Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a timeseries at a coastwide level.  However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE at this site shows an increasing trend since 2011 for `r spp`.
+Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a time series at a coastwide level.  However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE at this site shows an increasing trend since 2011 for `r spp`.
 
 
 ```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix"
 add_figure(
 filein = file.path(loc,  "fig_4_redfish_cpue.png"), 
-caption = "Copper rockfish CPUE calculated at Redfish Rocks based on postive values only",
+caption = "Copper rockfish CPUE calculated at Redfish Rocks based on positive values only",
 label = 'fig-4')
 ```
 
@@ -151,9 +179,15 @@ label = 'fig-4')
 
 
 ```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or"
+loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix"
 add_figure(
 filein = file.path(loc,  "fig_5_relative_cpue.png"), 
 caption = "Copper rockfish relative CPUE across all sample sites",
-label = 'fig-4')
+label = 'fig-5')
 ```
+
+### Comparison to the Base Model
+
+While the CPUE was not used in the base model, comparisons between the trend in Figure \ref{fig:fig-5} and the estimated stock trend in base model can be made. Examining all years the trend in the CPUE in Figure \ref{fig:fig-5} is generally increasing, but noisy, across the survey years. In contrast, the total biomass and spawning biomass trajectories from the base model are slowly declining between 2011 - 2020. However, the base model assumed a deterministic population (no recruitment deviations) which could prevent capturing recruitment driven dynamics which could result in an increasing stock trend independent of catches. 
+
+After the first two years in the CPUE series, 2013 - 2019, generally flat in trend with high uncertainty intervals. These years still do not match the trend in the base model; however, the CPUE have be capturing localized trends. This may provide a slightly different view of the population compared to the base model that assumed the equal fishing pressure across the assessed area.

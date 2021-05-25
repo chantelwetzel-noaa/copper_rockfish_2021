@@ -4,3 +4,5 @@
 filein = file.path(general_wd,'acknowledgements.Rmd')
 read_child(filein)
 ```
+
+We appreciate Troy Buell and Brett Rodomsky quickly responding to our multiple questions about the `r spp` fisheries off the coast of Oregon.  Their valuable input helped us better understand the data in order to make informed decisions regarding model structure and assumptions. 

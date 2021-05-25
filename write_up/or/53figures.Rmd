@@ -85,27 +85,14 @@ caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated time series of age-0 recruits (1000s)",
-label = 'recruits')
-```
+\clearpage
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated time series of recruitment deviations",
-label = 'rec-devs')
+filein = file.path(getwd(), "figs", "recdevs3_varcheck.png"),
+caption = "Asymptotic standard error estimate of recruitment deviations by years",
+label = 'rec-devs-se')
 ```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(getwd(), "figs", "recruit_fit_bias_adjust.png"),
-caption = "Recruitment bias adjustment applied in the base model",
-label = 'bias-adj')
-```
-
 
 <!-- ====================================================================== -->
 <!-- ****************** Fit to the Length Data **************************** --> 
@@ -143,7 +130,7 @@ label = 'rec-mean-len-fit')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
-caption = "Aggregated length comps over all years",
+caption = "Aggregated length comps across all years by sex and for each fleet",
 label = 'agg-len-fit')
 ```
 
@@ -158,6 +145,8 @@ caption = "Estimated time series of spawning output",
 label = 'ssb')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
@@ -165,12 +154,16 @@ caption = "Estimated time series of total biomass",
 label = 'tot-bio')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts9_Relative_spawning_output_intervals.png"), 
 caption = "Estimated time series of relative spawning output",
 label = 'depl')
 ```
+
+\clearpage
 
 ```{r, results = 'asis'}
 add_figure(
@@ -189,54 +182,51 @@ label = 'bh-curve')
 
 
 <!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
-caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
-```
-
-
-<!-- ====================================================================== -->
 <!-- ******************       Sensitivity     ***************************** --> 
 <!-- ====================================================================== -->
 
 
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
-nm = paste0(substr(mod_loc, 52, 99), "_compare2_spawnbio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_1_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
-label = 'sens-ssb')
+label = 'sens-ssb-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_compare4_Bratio_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_1_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
-label = 'sens-depl')
+label = 'sens-depl-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(substr(mod_loc, 52, 99), "_compare12_recdevs_uncertainty.png")
+nm = paste0(substr(mod_loc, 52, 99), "_1_compare12_recdevs_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated annual recruitment deviation",
-label = 'sens-recdev')
+label = 'sens-recdev-1')
+```
+
+
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path(substr(mod_loc, 1, 50), "_sensitivities", "_plots")
+nm = paste0(substr(mod_loc, 52, 99), "_2_compare2_spawnbio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb-2')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = paste0(substr(mod_loc, 52, 99), "_2_compare4_Bratio_uncertainty.png")
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl-2')
 ```
 
 <!-- ====================================================================== -->
@@ -246,6 +236,27 @@ label = 'sens-recdev')
 ```{r, echo=FALSE, results='asis'}
 filein = file.path(general_wd,'figures_likelihoods.Rmd')
 read_child(filein)
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_Size_DblN_peak_OR_Commercial(1)"),  "piner_panel_Size_DblN_peak_OR_Commercial(1).png"), 
+caption = "Change in the negative log-likelihood across a range of commercial peak selectivity values",
+label = 'selex-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_Size_DblN_peak_OR_Commercial(1)"),  "Size_DblN_peak_OR_Commercial(1)_trajectories_compare1_spawnbio.png"), 
+caption = "Change in the estimate of spawning output across a range of commercial peak selectivity values",
+label = 'selex-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_profile_Size_DblN_peak_OR_Commercial(1)"),  "Size_DblN_peak_OR_Commercial(1)_trajectories_compare3_Bratio.png"), 
+caption = "Change in the estimate of fraction unfished across a range of commercial peak selectivity values",
+label = 'selex-depl')
 ```
 
 \newpage
@@ -265,6 +276,73 @@ label = 'lbspr')
 \newpage
 
 <!-- ====================================================================== -->
+<!-- ******************       SSS             ***************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, echo=FALSE, results='asis'}
+sss_loc = "C:/Assessments/2021/copper_rockfish_2021/models/sss/or/_plots"
+
+add_figure(
+filein = file.path(sss_loc, "10.5_base_depl_75_Priors.png"), 
+caption = "Prior distributions for parameter input for SSS based on LB-SPR with fraction unfished in 2020 distributed around 75 percent",
+label = "sss-prior-75")
+```
+
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "10.5_base_depl_75_quants.png"), 
+caption = "Derived quantities from SSS run where fraction unfished in 2020 was assumed to be distribution around 75 percent",
+label = "sss-quant-75")
+```
+
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "10.5_base_logistic_depl_47_Priors.png"), 
+caption = "Prior distributions for parameter input for SSS based on asymptotic selectivity and a fraction unfished in 2020 distributed around 47 percent",
+label = "sss-prior-47")
+```
+
+\newpage
+
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "10.5_base_logistic_depl_47_quants.png"), 
+caption = "Derived quantities from SSS run where fraction unfished in 2020 was assumed to be distribution around 47 percent",
+label = "sss-quant-47")
+```
+
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "10.5_base_domed_depl_57_Priors.png"), 
+caption = "Prior distributions for parameter input for SSS based on dome-shaped selectivity and a fraction unfished in 2020 distributed around 57 percent",
+label = "sss-prior-57")
+```
+
+\newpage
+
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "10.5_base_domed_depl_57_quants.png"), 
+caption = "Derived quantities from SSS run where fraction unfished in 2020 was assumed to be distribution around 57 percent",
+label = "sss-quant-57")
+```
+
+\newpage
+
+
+
+
+
+<!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 
 <!-- ====================================================================== -->
 
@@ -273,5 +351,46 @@ filein = file.path(general_wd,'figures_retro.Rmd')
 read_child(filein)
 ```
 
+\clearpage
 
-\newpage
+
+<!-- ====================================================================== -->
+<!-- ******************     Comparison      ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'figures_compare.Rmd')
+read_child(filein)
+```
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+label = 'phase')
+```
+
+\clearpage
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```
