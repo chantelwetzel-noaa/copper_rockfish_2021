@@ -1,0 +1,22 @@
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(model_loc, "_plots",  "ca_comprare_compare2_spawnbio_uncertainty.png"), 
+caption = "Estimated spawning output time series for the California stocks north and south of Point Conception",
+label = 'ssb-ca-compare')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(model_loc, "_plots",  "or_wa_comprare_compare2_spawnbio_uncertainty.png"), 
+caption = "Estimated spawning output time series for the stock of the Oregon and Washington coasts",
+label = 'ssb-orwa-compare')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(model_loc, "_plots",  "comprare_compare4_Bratio_uncertainty.png"), 
+caption = "Estimated fraction unfished time series for all West Coast stocks",
+label = 'depl-compare')
+```
+
+\clearpage

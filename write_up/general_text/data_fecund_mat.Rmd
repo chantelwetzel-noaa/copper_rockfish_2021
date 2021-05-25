@@ -1,6 +1,6 @@
-Maturity-at-length based on the work of Hannah [-@hannah_length_2014] which estimated the 50 percent size-at-maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm and slope of `r round(model$MGparmAdj$Mat_slope_Fem_GP_1[1], 2)` off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}).  
+Maturity-at-length is based upon the work of Hannah [-@hannah_length_2014] which estimated the 50 percent size-at-maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm and slope of `r round(model$MGparmAdj$Mat_slope_Fem_GP_1[1], 2)` for `r spp` off the coast of Oregon with maturity reaching the asymptote of 1.0 for larger fish (Figure \ref{fig:maturity}).  
 
-The fecundity-at-length was based on research Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for `r spp` was estimated equal to `r format(model$MGparmAdj$Eggs_scalar_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Eggs_exp_len_Fem[1],2)`^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+The fecundity-at-length was based on research from Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for `r spp` was estimated equal to `r format(model$MGparmAdj$Eggs_scalar_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Eggs_exp_len_Fem[1],2)`^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
 
 Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
 

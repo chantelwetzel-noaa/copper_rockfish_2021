@@ -30,6 +30,8 @@ caption = "Length at age in the beginning of the year in the ending year of the 
 label = 'len-age-ss')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
@@ -37,12 +39,16 @@ caption = "Maturity as a function of  length",
 label = 'maturity')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
 caption = "Fecundity as a function of length",
 label = 'fecundity')
 ```
+
+\clearpage
 
 ```{r, results = 'asis'}
 add_figure(
