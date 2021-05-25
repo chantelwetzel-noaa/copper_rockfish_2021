@@ -24,7 +24,7 @@ SSS.BH <- SSS(filepath= Dir.in, # location to run the model
               M.in = c(3, 0.108, 0.22, 3, 0.108, 0.22), # c(distribution shape for females, mean for females, sd for females, distribution shape for males, mean for males, sd for males)
               h.in = c(1, 0.72, 0.15), # c(distribution, mean, sd)
               R_start = c(0, 3), # c( switch option, input value)
-              ts_yrs = c(1935, 2020),
+              ts_yrs = c(1935, 2022),
               sexes = TRUE)  # unique male and female M
 
 #######################################################################
@@ -34,7 +34,7 @@ SSS.BH <- SSS(filepath= Dir.in, # location to run the model
 #######################################################################
 library(HandyCode)
 library(sa4ss)
-dep = 67 #44 # 67
+dep = 44 # 67
 base = paste0("7.7_base_depl_", dep)
 dir = "C:/Assessments/2021/copper_rockfish_2021/models/sss/wa"
 load(file.path(dir, base , "SSS_out.DMP"))
@@ -54,8 +54,6 @@ ofl = apply(out$OFL, 2, quantile, c(0.025, 0.50, 0.975))
 library(ggplot2)
 library(ggthemes)
 library(gridExtra)
-
-
 
 p1 = ggplot(out$Priors, aes(x=M_f)) + 
   geom_histogram(bins = 17, aes(y = stat(density)), color = 'black', fill = 'white') +
@@ -81,9 +79,6 @@ pngfun(wd = file.path(dir, "_plots"), file = paste0(base, "_Priors_ggplot.png"),
 grid.arrange(p1, p2, p3, p4, nrow = 2, ncol = 2)
 dev.off()
 
-
-
-
 pngfun(wd = file.path(dir, "_plots"), file = paste0(base, "_Priors.png"), w = 7, h = 7, pt = 12)
 par(mfrow = c(2,2))
 hist(m.f, xlab = "Natural Mortality (f)", main = "", xlim = c(0, 0.25))
@@ -98,22 +93,24 @@ dev.off()
 
 pngfun(wd = file.path(dir, "_plots"), file = paste0(base, "_quants.png"), w = 7, h = 7, pt = 12)
 par(mfrow = c(2,2))
-plot(colnames(ssb), ssb[2,], ylim = c(0, max(ssb)), type = 'l', lwd = 2, 
+plot(colnames(ssb)[1:ncol(ssb)-1], ssb[2,1:ncol(ssb)-1], ylim = c(0, max(ssb)), type = 'l', lwd = 2, 
 	ylab = "Spawning output", xlab = "Year")
-lines(colnames(ssb), ssb[1,], lty = 2)
-lines(colnames(ssb), ssb[3,], lty = 2)
-plot(colnames(depl), depl[2,], ylim = c(0, 1), type = 'l', lwd = 2,
+lines(colnames(ssb)[1:ncol(ssb)-1], ssb[1,1:ncol(ssb)-1], lty = 2)
+lines(colnames(ssb)[1:ncol(ssb)-1], ssb[3,1:ncol(ssb)-1], lty = 2)
+plot(colnames(depl)[1:ncol(depl)-1], depl[2,1:ncol(depl)-1], ylim = c(0, 1), type = 'l', lwd = 2,
 	ylab = "Fraction unfished", xlab = "Year")
-lines(colnames(depl), depl[1,], lty = 2)
-lines(colnames(depl), depl[3,], lty = 2)
+lines(colnames(depl)[1:ncol(depl)-1], depl[1,1:ncol(depl)-1], lty = 2)
+lines(colnames(depl)[1:ncol(depl)-1], depl[3,1:ncol(depl)-1], lty = 2)
 abline(h = 0.40, lty = 3, col = 'red')
 abline(h = 0.25, lty = 3, col = 'red')
-boxplot(ofl[,3:12], ylab = "OFL (mt)", xlab = "Year")
-boxplot(abc[,3:12], ylab = "ABC (mt)", xlab = "Year")
+boxplot(ofl[,1:10], ylab = "OFL (mt)", xlab = "Year")
+boxplot(abc[,1:10], ylab = "ABC (mt)", xlab = "Year")
 dev.off()
 
 final = "2021"
 fore = "2023"
+depl_year = "2021"
+
 df = rbind(
 	 ssb_unfished = c(ssb[2,1], ssb[1,1], ssb[3,1]),
 	 ssb_final = c(ssb[2,final], ssb[1,final], ssb[3,final]),

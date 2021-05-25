@@ -10,12 +10,18 @@ mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c"
 base_name = "7.1_data_rec_len_add_trawl"
 base_name = "12.1_base"
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", 
-											"L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
-							low =  c(0.08, 0.30, -0.5, 44, 0.16),
-							high = c(0.14, 0.95,  1.5, 51, 0.28),
-							step_size = c(0.005, 0.05, 0.25, 1, 0.01),
-							param_space = c('real', 'real', 'relative', 'real', 'real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "CV_old_Fem_GP_1"),
+							low =  c(0.08, 0.30, -0.5, 0.05),
+							high = c(0.14, 0.95,  1.5, 0.15),
+							step_size = c(0.005, 0.05, 0.10, 0.01),
+							param_space = c('real', 'real', 'relative', 'real'))
+
+
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+							low =  c(-0.3),
+							high = c( 0.5),
+							step_size = c(0.05),
+							param_space = c('relative'))
 
 
 model_settings = get_settings(settings = list(base_name = base_name,
@@ -25,7 +31,7 @@ model_settings = get_settings(settings = list(base_name = base_name,
 											  jitter_fraction = 0.10))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-							run ="retro"))
+							run ="profile", profile_details = get))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
@@ -56,6 +62,13 @@ get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1",  "SR_LN(R0)"),
 							high = c(0.15,   1.5),
 							step_size = c(0.005, 0.25),
 							param_space = c('real', 'relative'))
+
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+							low =  c(0.05),
+							high = c(0.15),
+							step_size = c(0.01),
+							param_space = c('real'))
+
 model_settings = get_settings(settings = list(base_name = base_name,
 							  run = c("profile"),
 							  profile_details = get ))
@@ -98,15 +111,6 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/nwfscDiag")
 
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/or"
-base_name = "2.4_recdevs_early_est_p1_only_block"
-base_name = "5.0_dw_francis"
-base_name = "5.5_dw_francis_sigmar_60"
-base_name = "6.0_base"
-base_name = "9.0_base"
-base_name = "9.2_base_prior"
-base_name = "9.3_base_recdevs"
-base_name = "9.6_7.0_fixed_catch_no_devs"
-base_name = "10.4_determ"
 base_name = "10.5_base"
 
 
@@ -117,6 +121,11 @@ get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", 
 							step_size = c(0.005, 0.10, 0.20, 1, 0.01, 1, 1),
 							param_space = c('real', 'real', 'relative', 'real', 'real', 'real', 'real'))
 
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+							low =  c(0.075),
+							high = c(0.17),
+							step_size = c(0.005),
+							param_space = c('real'))
 
 get = get_settings_profile( parameters =  c("L_at_Amax_Fem_GP_1", "Size_DblN_peak_OR_Recreational(2)"),
 							low =  c(47, 43),
@@ -175,6 +184,12 @@ get = get_settings_profile( parameters =  c(
 							low =  c( 44),
 							high = c(52),
 							step_size = c(1),
+							param_space = c('real'))
+
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+							low =  c(0.05),
+							high = c(0.15),
+							step_size = c(0.01),
 							param_space = c('real'))
 
 model_settings = get_settings(settings = list(base_name = base_name,

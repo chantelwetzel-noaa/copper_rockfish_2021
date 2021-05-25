@@ -547,3 +547,32 @@ SSplotComparisons(mysummary,
 				  ylimAdj = 1.25,
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+
+model = "10.5_base" 
+best = SS_output(file.path(wd, model))
+SS_tune_comps(replist = best, option = "Francis", dir = file.path( wd, model))
+
+SS_plots(best)
+
+model = "10.5_base_sexed_com" 
+best = SS_output(file.path(wd, model))
+SS_plots(best)
+
+modelnames <- c( "Old Base", "Jitter Best")
+mysummary  <- SSsummarize(list(base, best))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.5_best_fit_",
+				  legendlabels = modelnames, 
+				  ylimAdj = 1.25,
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+# 10.5 Determistic Base
+# NLL = 296.39
+# Length_like: 296.389  73.7185 222.67
+# Comm N eff = 816.6, Rec N eff = 3635.2
+
+# 10.5 but with sexed comm lengths
+# NLL = 431.07
+

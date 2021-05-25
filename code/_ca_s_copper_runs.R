@@ -633,3 +633,36 @@ SSplotComparisons(mysummary,
 				  plotdir = file.path(sen_wd, "_plots"),
 				  pdf = TRUE)
 
+###############################################################
+
+model = "12.1_base"
+base = SS_output(file.path(wd, model))
+model = "12.1_base_hkl_len_only"
+hkl_len = SS_output(file.path(wd, "_sensitivities", model))
+SS_tune_comps(replist = hkl_len, option = "Francis", dir = file.path(wd, "_sensitivities", model))
+model = "12.1_base_no_hkl_len_catch"
+hkl_catch = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_index_only"
+hkl_index = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_outside_only"
+hkl_outside = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_len_only_dw"
+hkl_len_dw = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_wcgbt"
+wcgbt = SS_output(file.path(wd, "_sensitivities", model))
+
+
+modelnames <- c("12.1 Base Model",
+				"HKL Lengths Only", 
+				"HKL Lengths Only - DW",
+				"HKL Lengths w/ Catch",
+				#"HKL Index Only",
+				"HKL Outside CCA", "Add WCGBTS")
+mysummary <- SSsummarize(list(base, hkl_len, hkl_len_dw, hkl_catch,
+			hkl_outside, wcgbt))
+
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_hkl_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+				  pdf = TRUE)
