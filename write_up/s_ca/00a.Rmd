@@ -27,6 +27,8 @@ data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/
 
 data_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
 
+model_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models"
+
 sens_wd = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/ca_s_pt_c/_sensitivities/_plots"
 
 doc_figs = file.path(getwd(), "figs")

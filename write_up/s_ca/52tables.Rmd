@@ -21,16 +21,42 @@ for (i in 1:nfleets){
 }
 total.catch <- round(apply(catch, 1, sum),2)
 
-man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
-man = man[man$Year %in% yrs, ]
-out = cbind(man, total.catch)
 
-col_names = c("Year", "OFL", "ACL", "Total Removals")
+north = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
+
+south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
+
+
+south = round(south,2)
+south[is.na(south)] = "-"
+north = round(north,2)
+north[is.na(north)] = "-"
+
+north = north[north$Year %in% yrs, ]
+south = south[south$Year %in% yrs, ]
+out = cbind(south, north[,2:3], round(north$OFL, 2), round(north$ACL * 0.25, 2), 
+            round(south$ACL + 0.25*north$ACL,2), total.catch)
+
+col_names = c("Year", 
+              "Complex OFL - S.",
+              "Complex ACL - S.",
+              "OFL - S. ", 
+              "ACL - S.", 
+              "Complex OFL - N.",
+              "Complex ACL - N.",              
+              "OFL - N.",  
+              "CA ACL - N.", 
+              "CA ACL Total", 
+              "N. CA Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for south of 40.10 Latitude N. and the total removals south of Point Conception.",
+             caption = "The complex level OFL and ACL for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL and ACL contributions, the total ACL allocated to California, and the total removals from south of Point Conception.",
              label = "ofl",
              align = 'l',
+             landscape = TRUE,
+             custom_width = TRUE,
+             col_to_adjust = 2:ncol(out), 
+             width = rep("1.5cm", ncol(out)),
              col_names = col_names)
 ```
 
@@ -65,7 +91,7 @@ table_format(x = out,
 
 \newpage
 
-\include{tex_tables/hkl_index_for_doc.tex}
+\include{tex_tables/hkl_index.tex}
 
 \newpage
 
@@ -198,18 +224,27 @@ man_south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate
 
 man_north = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
 
-ofl_s = man_south[man_south$Year %in% c(2021, 2020), "OFL"] 
-acl_s = man_south[man_south$Year %in% c(2021, 2022), "ACL"]
+com_ofl_s = round(man_south[man_south$Year %in% c(2021, 2020), "Complex.OFL"], 1) 
+com_acl_s = round(man_south[man_south$Year %in% c(2021, 2022), "Complex.ACL"], 1)
+ofl_s = round(man_south[man_south$Year %in% c(2021, 2020), "OFL"], 1) 
+acl_s = round(man_south[man_south$Year %in% c(2021, 2022), "ACL"], 1)
 
-ofl_n = round(man_north[man_north$Year %in% c(2021, 2020), "OFL"],2) 
-acl_n = round(0.25*man_north[man_north$Year %in% c(2021, 2022), "ACL"],2)
+com_ofl_n = round(man_north[man_north$Year %in% c(2021, 2020), "Complex.OFL"], 1) 
+com_acl_n = round(man_north[man_north$Year %in% c(2021, 2022), "Complex.ACL"], 1)
+ofl_n = round(man_north[man_north$Year %in% c(2021, 2020), "OFL"], 1) 
+acl_n = round(0.25*man_north[man_north$Year %in% c(2021, 2022), "ACL"], 1)
+
 
 find = which(model$timeseries$Yr %in% c(2021, 2022))
 rm = model$timeseries[find, "dead(B):_1"] + model$timeseries[find, "dead(B):_2"]
 
 out = cbind(tab$Year,
+#            c(com_ofl_s, rep("-",10)),
+#            c(com_acl_s, rep("-",10)),
             c(ofl_s, rep("-",10)),
             c(acl_s, rep("-",10)),
+#            c(com_ofl_n, rep("-",10)),
+#            c(com_acl_n, rep("-",10)),
             c(ofl_n, rep("-",10)),
             c(acl_n, rep("-",10)),
             c(acl_s + acl_n, rep("-", 10)),
@@ -220,12 +255,16 @@ out = cbind(tab$Year,
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
+              #'OFL (c) - S. 40.10',
+              #'ACL (c) - S. 40.10',
               'OFL - S. 40.10',
               'ACL - S. 40.10',
+              #'OFL - N. 40.10',
+              #'ACL - N. 40.10',
               'OFL - N. 40.10',
               'CA ACL - N. 40.10',
               'Total CA ACL',
-              "Assumed Removals",
+              "Removals",
               "OFL", 
               "ABC", 
               "Buffer",
@@ -233,14 +272,14 @@ col_names = c('Year',
               "Fraction Unfished")
 
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFLs and ACLs reflect adopted species-specific contribution for copper rockfish by area. The California (CA) ACL is the sum of the species-specific ACL for south of 40.10 N. Lat. and the percent of the species-specific ACL for north of 40.10 N. Lat. allocated to California.",
              label = "project",
              landscape = TRUE,
              align = 'l',
+             font_size = 9.5,             
              custom_width = TRUE,
-             font_size = 10,
-             col_to_adjust = c(2,3,4,5,6,7,8,9,10,11,12), 
-             width = c("1.3cm","1.3cm","1.3cm","1.3cm","1.3cm","1.5cm","1.3cm","1.3cm","1.3cm","1.5cm","1.5cm"),
+             col_to_adjust = 2:ncol(out), #c(2,3,4,5,6,7,8,9,10,11,12), 
+             width = c("1.35cm","1.35cm","1.35cm","1.35cm","1.5cm","1.4cm","1.3cm","1.4cm","1.5cm","1.4cm"),
              col_names = col_names)
 
 ```
