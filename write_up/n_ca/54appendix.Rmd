@@ -1,8 +1,8 @@
 \clearpage
 
-# Appendex
+# Appendix
 
-## Annual Length Composition Data 
+## Annual Length Composition Data
 
 ```{r, results='asis'}
 plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
@@ -20,7 +20,7 @@ for (a in plot.vec){
 
 \newpage
 
-## Detailed Fit to Length Composition Data 
+## Detailed Fit to Length Composition Data{#append-fit} 
 
 
 ```{r, results='asis'}

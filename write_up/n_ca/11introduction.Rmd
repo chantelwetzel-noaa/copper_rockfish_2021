@@ -20,7 +20,7 @@ filein = file.path(general_wd,'1_intro_ca_commercial.Rmd')
 read_child(filein)
 ```
 
-The population of `r spp` north of Point Conception to the California/Oregon border is assessed here as a separate stock.  This decision was made based on oceanographic, geographic, and fishery conditions.  The `r spp` stock in California waters was split at Point Conception due to water circulation patterns that create a natural barrier between nearshore rockfish population north and south of the area. The northern border for this assessment was defined as the California/Oregon border due to substantial differences in historical and current exploitation levels. 
+`r Spp` residing between Point Conception and the California/Oregon border are assessed here as a single, separate stock.  This designation was made based on oceanographic, geographic, and fishery conditions.  The `r spp` population in California waters was split at Point Conception due to water circulation patterns that create a natural barrier between nearshore rockfish populations to the north and south. The northern border for this assessment was defined as the California/Oregon border due to substantial differences in historical and current exploitation levels. Additionally, he fairly sedentary nature of adult `r spp`, likely limits flow of fish between northern California and areas to the north.
 
 ## Summary of Management History and Performance
 
@@ -30,4 +30,4 @@ filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
 
-Although, management defines OFLs and ACLs North and South of 40$^\circ$ 10' Lat. N. management areas, `r spp` in California are managed based on the portion of OFL and ACL allocated to California.  The OFLs and ACLs for South of  40$^\circ$ 10' Lat. N., the portion of ACL allocated for the California area North of 40$^\circ$ 10' Lat. N. (25 percent, Groundfish Management Team, personal communication), the total of the ACL allocated to California (e.g., the sum North and South of  40$^\circ$ 10' Lat. N. for California), and recent removals for the California area north of Point Conception are shown in Table \ref{tab:ofl}.   
+Table \ref{tab:ofl} show the Nearshore Rockfish North and South complex level OFLs and ACLs, the `r spp` OFL and ACL contributions amounts for both areas, the state-specific allocations of the `r spp` ACL contribution (the south copper rockfish ACL plus 25 percent allocated to California from the north ACL), and the total removals for California, north of Point Conception. 

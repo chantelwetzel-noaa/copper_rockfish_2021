@@ -5,6 +5,12 @@ model = SS_output(file.path(mydir, base_name))
 
 library(HandyCode)
 
+SSplotData(replist = model, 
+           subplot = 1, 
+           plotdir = savedir,
+           plot = TRUE, print = TRUE,
+           margins = c(5.1, 2.1, 2.1, 9.5))
+
 fleets = c("Commercial", "Recreational")
 
 com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, year = c(2008, 2020))

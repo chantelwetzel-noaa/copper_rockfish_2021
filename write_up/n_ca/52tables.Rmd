@@ -30,17 +30,37 @@ north = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_202
 
 south = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_south.csv")
 
+south = round(south,2)
+south[is.na(south)] = "-"
+north = round(north,2)
+north[is.na(north)] = "-"
+
 north = north[north$Year %in% yrs, ]
 south = south[south$Year %in% yrs, ]
-out = cbind(south, round(north$OFL, 2), round(north$ACL * 0.25, 2), 
+out = cbind(south, north[,2:3], round(north$OFL, 2), round(north$ACL * 0.25, 2), 
             round(south$ACL + 0.25*north$ACL,2), total.catch)
 
-col_names = c("Year", "OFL -S 40.10 ", "ACL - S 40.10", "OFL - N 40.10",  "CA ACL - N 40.10 ", "CA ACL Total", "N. CA Removals")
+col_names = c("Year", 
+              "Complex OFL - S.",
+              "Complex ACL - S.",
+              "OFL - S. ", 
+              "ACL - S.", 
+              "Complex OFL - N.",
+              "Complex ACL - N.",              
+              "OFL - N.",  
+              "CA ACL - N.", 
+              "CA ACL Total", 
+              "N. CA Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for nearshore rockfish, the ACL allocated to California, and the total removals from north of Point Conception. The OFL S. 40.10 and ACL S. 40.10 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10",
+             caption = "The complex level OFL and ACL for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL and ACL contributions, the total ACL allocated to California, and the total removals from north of Point Conception.",
              label = "ofl",
+             landscape = TRUE,
              align = 'l',
+             custom_width = TRUE,
+             font_size = 10,
+             col_to_adjust = 2:ncol(out), 
+             width = rep("1.5cm", ncol(out)),
              col_names = col_names)
 ```
 
