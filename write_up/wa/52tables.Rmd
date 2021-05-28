@@ -26,7 +26,10 @@ table_format(x = tab,
       caption = 'Input numbers of fish removals by year converted to metric tons (mt) within the model.',
       label = 'nums-mt',
       longtable = TRUE,
-            digits = c(0, 0, 2),
+      digits = c(0, 0, 2),
+      custom_width = TRUE,
+      col_to_adjust = 2:3, 
+      width = c("2.5cm", "2.5cm"),
       col_names = col_names)
 ```
 \newpage
@@ -44,7 +47,8 @@ for (i in 1:nfleets){
 total.catch <- round(apply(catch, 1, sum),2)
 
 man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/management/copper_north.csv")
-man = man[man$Year %in% yrs, ]
+man = round(man[man$Year %in% yrs, ],2)
+man[is.na(man)] = "-"
 out = cbind(man, round(man$ACL * 0.26, 2), total.catch)
 
 col_names = c("Year", "Complex OFL", "Complex ACL", "OFL - copper", "ACL - copper", "WA ACL", "WA Removals")

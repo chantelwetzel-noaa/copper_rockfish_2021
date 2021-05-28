@@ -51,7 +51,7 @@ A profile across a range of female $L_{\infty}$ values was also conducted (Figur
 
 A profile across a range of female $k$ values was also conducted (Figure \ref{fig:k-profile}).  The negative log-likelihood showed support for values between 0.11 and 0.13. The $k$ value for female fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]` based on length-at-age data collected off the Oregon and Washington coast. The stock scale and status increases under lower $k$ values where assuming higher values resulted in decreases in stock scale and status (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
 
-The profile across a range of coefficient of variation ($CV_2$) for older females supported lower $CV_2$ values (Figure \ref{fig:cv-profile}). Assuming lower $CV_2$ values increased the estimated spawning output but had limited impact in the estimate of fraction unfished (Figure \ref{fig:cv-ssb} and \ref{fig:cv-depl}).
+The profile across a range of $\text{CV}_2$ for older females supported lower $\text{CV}_2$ values (Figure \ref{fig:cv-profile}). Assuming lower $\text{CV}_2$ values increased the estimated spawning output but had limited impact in the estimate of fraction unfished (Figure \ref{fig:cv-ssb} and \ref{fig:cv-depl}).
 
 ### Length-Based Spawner-per-Recruit Analysis
 

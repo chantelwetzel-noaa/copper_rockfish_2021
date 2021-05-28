@@ -118,7 +118,7 @@ Copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico
 
 Copper rockfish are commonly found in waters less than 130 meters in depth in nearshore kelp forests and rocky habitat [@love_milton_probably_1996]. The diets of copper rockfish consist primarily of crustaceans, mollusks, and fish [@lea_biological_1999; @bizzarro_diet_2017-1]. The body coloring of copper rockfish varies across the coast with northern fish often exhibiting dark brown to olive  with southern fish exhibiting yellow to olive-pink variations in color [@miller_guide_1972] which initially led to them being designated as two separate species (*S. caurinus* and *S. vexillaris*). 
 
-Numerous genetic studies have been performed looking for genetic variation in copper rockfish with variable outcomes. Genetic work has revealed significant differences between Puget Sound and coastal stocks [@dick_replicate_2014]. Stocks along the West Coast have not been determined to be genetically distinct populations but significant population sub division has been detected, indicating limited oceanographic exchange among geographically proximate locations [@buonaccorsi_population_2002; @johansson_influence_2008]. A specific study examining copper rockfish populations off the coast of Santa Barbara and Monterey California identified a genetic break between the north and south with moderate differentiation [@sivasundar_life_2010]. 
+Numerous genetic studies have been performed looking for genetic variation in copper rockfish with variable outcomes. Genetic work has revealed significant differences between Puget Sound and coastal stocks [@dick_replicate_2014]. Stocks along the West Coast have not been determined to be genetically distinct populations but significant population subdivision has been detected, indicating limited oceanographic exchange among geographically proximate locations [@buonaccorsi_population_2002; @johansson_influence_2008]. A specific study examining copper rockfish populations off the coast of Santa Barbara and Monterey California identified a genetic break between the north and south with moderate differentiation [@sivasundar_life_2010]. 
 
 Copper rockfish are a relatively long-lived rockfish estimated to live at least 50 years [@love_milton_probably_1996]. Copper rockfish was determined to have the highest vulnerability (V = 2.27) of any West Coast groundfish stock evaluated in a productivity susceptibility analysis [@cope_approach_2011]. This analysis calculated species-specific vulnerability scores based on two dimensions: productivity characterized by the life history and susceptibility that characterized how the stock could be impacted by fisheries and other activities. 
 
@@ -134,7 +134,7 @@ The primary region of recreational fishing off the Washington coast occurs in th
 ## Summary of Management History and Performance
 
 
-Copper rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes.  The North and South areas are split at 40$^\circ$ 10' Lat. N. off the West Coast. The complex is managed based on a complex level overfishing limit (OFL) and annual catch limit (ACL). The OFL and ACL values (set equal to the species-specific Acceptable Biological Catch) for the complex are determined by summing the species-specific contributions for all stocks managed in the complexes. Removals for species within the Nearshore Rockfish complex are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
+Copper rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes, split at 40$^\circ$ 10' Lat. N. off the West Coast. Each complex, comprised of nearshore rockfish species, is managed based on a complex level overfishing limit (OFL) and annual catch limit (ACL) that are determined by summing the species-specific OFLs and ACLs (ACLs set equal to the Acceptable Biological Catch) contributions for all stocks managed in the complex (North or South). Removals for species within the Nearshore Rockfish North and South complexes are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
 
 Table \ref{tab:ofl} show the Nearshore Rockfish North complex level OFLs and ACLs, the copper rockfish OFL and ACL contribution amounts, the state-specific allocations (26 percent for Washington, Groundfish Management Team, personal communication) applied to the copper rockfish ACL contribution, and the total removals in Washington. 
 
@@ -272,7 +272,7 @@ Length compositions from the recreational fleet were the only composition data f
 
 There were 3 estimated parameters in the base model. These included one parameter for $R_0$ and 2 parameters for recreational selectivity (Table \ref{tab:params}). Selectivity in the recreational fleet was fixed asymptotic with only the peak the and the ascending slope estimated.  Dome-shaped selectivity was explored for the recreational fleet. Older and larger copper rockfish may be found deeper waters and may move into areas that limit their availability to fishing gear. However, limited support for dome-shaped selectivity for the recreational fleet was found and the selectivity was fixed to be asymptotic.  The commercial selectivity was set equal to the recreational selectivity due to a lack of composition data to support fleet specific estimation. 
 
-Fixed parameters in the model were as follows. Steepness was fixed at  the mean of the prior. Natural mortality was fixed at 0.108 yr^-1^ for females and males, which is the median of the prior. The standard deviation of recruitment deviates was fixed at 0 and recruitment was assumed deterministic. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations described above in Section \ref{length-weight-relationship}. The length-at-age was fixed at sex-specific externally estimated values described above in Section \ref{growth-length-at-age}.
+Fixed parameters in the model were as follows. Steepness was fixed at , the mean of the prior. Natural mortality was fixed at 0.108 yr^-1^ for females and males, the median of the prior. The standard deviation of recruitment deviates was fixed at 0 and recruitment was assumed deterministic. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations described above in Section \ref{length-weight-relationship}. The length-at-age was fixed at sex-specific externally estimated values described above in Section \ref{growth-length-at-age}.
 
 
 ## Model Selection and Evaluation
@@ -295,9 +295,9 @@ Estimated parameter values are provided in Table \ref{tab:params}. The model est
 
 ### Fits to the Data
 
-Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for the recreational fleet. The Pearson residuals show a pattern of greater observations of all sexes (unsexed, males, and females) that start around 1995 and appear to move through the length data by year, possibly indicating a strong or multiple strong recruitments entering the population (Figure \ref{fig:rec-pearson}). Estimating annual recruitment deviations would have allowed the model to fit the patterns in the length data. However, the base model did not estimate annual recruitment deviations due to limited length data which resulted in extreme recruitment deviation estimates (large positive deviations in the 1990s followed by string of negative deviations from 2000 - 2020) resulting in a highly pessimistic stock status (see [Sensitivity Analyses](#sens)). The assessment of copper rockfish off the Oregon coast which also did not include annual recruitment deviations had similar indications in the data of one or more strong year classes in the mid-1990s indicating that oceanographic forces driving recruitment success or failure may be shared across Oregon and Washington.  The mean lengths across years with data was relatively stable ranging roughly between 35 and 42 cm by year (Figure \ref{fig:rec-mean-len-fit}). 
+Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for the recreational fleet. The Pearson residuals show a pattern of greater observations of all sexes (unsexed, males, and females) that start around 1995 and appear to move through the length data by year, possibly indicating a strong or multiple strong recruitments entering the population (Figure \ref{fig:rec-pearson}). Estimating annual recruitment deviations would have allowed the model to fit the patterns in the length data. However, the base model did not estimate annual recruitment deviations due to limited length data which resulted in extreme recruitment deviation estimates (large positive deviations in the 1990s followed by string of negative deviations from 2000 - 2020) resulting in a highly pessimistic stock status (see Section \ref{sens}). The assessment of copper rockfish off the Oregon coast which also did not include annual recruitment deviations had similar indications in the data of one or more strong year classes in the mid-1990s indicating that oceanographic forces driving recruitment success or failure may be shared across Oregon and Washington.  The mean lengths across years with data was relatively stable ranging roughly between 35 and 42 cm by year (Figure \ref{fig:rec-mean-len-fit}). 
 
-Detailed fits to the length data by year are provided in [Appendix A](#append_a). Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}.  There are a few things that stand out when examining the aggregated length composition data. The estimated fits to the data by sex matches the general shape of the aggregated lengths. However, the model expects a higher proportion of the largest fish relative to the data.  This may indicate that the true selectivity of the recreational fleet may have some level of reduced selectivity of the largest fish (dome-shaped) but the selectivity in the model was fixed to be asymptotic to follow the pre-specified terms of reference for a length-based assessment which specifies that at least one fleet in the model should have asymptotic selectivity. Sensitivities examining dome-shaped and estimating annual recruitment deviations were performed and presented in the [Sensitivity Analyses](#sensitivity-analyses) section below. 
+Detailed fits to the length data by year are provided in the Appendix, Section \ref{length-fit}. Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}.  There are a few things that stand out when examining the aggregated length composition data. The estimated fits to the data by sex matches the general shape of the aggregated lengths. However, the model expects a higher proportion of the largest fish relative to the data.  This may indicate that the true selectivity of the recreational fleet may have some level of reduced selectivity of the largest fish (dome-shaped) but the selectivity in the model was fixed to be asymptotic to follow the pre-specified terms of reference for a length-based assessment which specifies that at least one fleet in the model should have asymptotic selectivity. Sensitivities examining dome-shaped and estimating annual recruitment deviations were performed and presented in the [Sensitivity Analyses](#sensitivity-analyses) section below. 
 
 ### Population Trajectory
 
@@ -407,7 +407,7 @@ A five-year retrospective analysis was conducted by running the model using data
 ### Comparison with Other West Coast Stocks
 
 
-Copper rockfish is assessed as four distinct stocks off the U.S. west coast: south of Point Conception in California; north of Point Conception in California; Oregon; and Washington. The majority of copper rockfish off the West Coast falls along the California coast with the area north of Point Conception having the largest estimate of unfished spawning ouput.  The stocks off of the Oregon and Washington coast are smaller in size compared to the California stocks with the stock off the coast of Washington estimated to have the smallest unfished spawning output.  Comparison of the estimated spawning output trajectories for the California stocks are shown in Figure \ref{fig:ssb-ca-compare} with Oregon and Washington shown in Figure \ref{fig:ssb-orwa-compare}.  The fraction unfished across all West Coast stocks are shown in Figure \ref{fig:depl-compare}. The California stocks are estimated to be the most depleted with the stock south of Point Conception estimated below the management threshold of 25 percent of unfished and the stock north of Point Conception estimated to be in the precautionary zone (less that the management target of 40 percent but above the management threshold).  The stock off the coast of Washington is estimated to be just above the management target and the Oregon stock well above the target. 
+Copper rockfish is assessed as four distinct stocks off the U.S. west coast: south of Point Conception in California; north of Point Conception in California; Oregon; and Washington. The area north of Point Conception off the coast of California was estimated to have the largest unfished spawning output of copper rockfish off the West Coast. The stocks off of the Oregon and Washington coast are smaller in size compared to the California stocks with the stock off the coast of Washington estimated to have the smallest unfished spawning output.  Comparison of the estimated spawning output trajectories for the California stocks are shown in Figure \ref{fig:ssb-ca-compare} with Oregon and Washington shown in Figure \ref{fig:ssb-orwa-compare}.  The fraction unfished across all West Coast stocks are shown in Figure \ref{fig:depl-compare}. The California stocks are estimated to be the most depleted with the stock south of Point Conception estimated below the management threshold of 25 percent of unfished and the stock north of Point Conception estimated to be in the precautionary zone (less that the management target of 40 percent but above the management threshold).  The stock off the coast of Washington is estimated to be just above the management target and the Oregon stock well above the target. 
 
 <!--chapter:end:34diagnostics.Rmd-->
 
@@ -415,20 +415,20 @@ Copper rockfish is assessed as four distinct stocks off the U.S. west coast: sou
 
 ## Reference Points
 
-Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). Sustainable total yields are estimated to be 2.24 mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of unfished ($SB_{40\%}$) was estimated to be 3.41 millions of eggs. 
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). The estimated sustainable total yields are estimated to be 2.24 mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of unfished ($\text{SB}_{40\%}$) was estimated to be 3.41 million eggs. 
 
-The 2020 spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output in 2020 (42 percent, Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has bounced above and below the harvest rate limit ($\text{SPR}_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The base model estimates that the stock has not fallen below the biomass target and fishing intensity has not exceeded the target (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
+The spawning output relative to unfished equilibrium in 2021 is estimated to be above the management target of 40 percent of unfished spawning output (42 percent, Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has been above and below the harvest rate limit ($\text{SPR}_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The base model estimates that the stock has not fallen below the biomass target and fishing intensity has not exceeded the target (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for copper rockfish N. 40$^\circ$ 10' Lat. N. and the percent allocation (26 percent) for Washington state provided by the PFMC Groundfish Management Team (GMT, personal communication). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for copper rockfish N. 40$^\circ$ 10' Lat. N. allocated to Washington state (26 percent, PFMC Groundfish Management Team, personal communication). 
 
 The decision table uncertainty axes and catch levels to be determined later.
 
 ## Evaluation of Scientific Uncertainty
 
 
-The estimated uncertainty in the base model around the 2021 spawning output is $\sigma$ = 0.1 and the uncertainty in the base model around the 2021 OFL is $\sigma$ = 0.09. The estimated model uncertainty was less than the category 2 groundfish data moderate assessment default value of  $\sigma$ = 1.0. 
+The estimated uncertainty in the base model around the 2021 spawning output is $\sigma$ = 0.1 and the uncertainty in the base model around the 2021 OFL is $\sigma$ = 0.09. The estimated model uncertainty was less than the category 2 groundfish data-moderate assessment default value of  $\sigma$ = 1.0. 
 
 ## Research and Data Needs
 
@@ -451,7 +451,7 @@ The ability to estimate additional process and biological parameters for copper 
 
 Many people were instrumental in the successful completion of this assessment and their contribution is greatly appreciated. We are very grateful to all the agers at WDFW, ODFW, and the CAP lab for their hard work reading numerous otoliths and availability to answer questions when needed. Jason Jannot and Kayleigh Sommers assisted with data from the WCGOP and entertained our many questions. We would like to acknowledge our survey team and their dedication to improving the assessments we do. Peter Frey and John Harms were incredibly helpful in helping the STAT team to understand the data and as to why and when each of our assessments either encounter or do not copper rockfish along the coast. Melissa Head provided an area specific maturity estimate for copper rockfish and provided insight in the complex biological processes that govern maturity processes.   
 
-All of the data moderate assessment assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the copper rockfish assessments conducted this year. 
+All of the data-moderate assessment assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the copper rockfish assessments conducted this year. 
 
 
 <!--chapter:end:41acknowledgments.Rmd-->
@@ -489,7 +489,7 @@ All of the data moderate assessment assessments this year were greatly benefited
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{c>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
 \caption{(\#tab:nums-mt)Input numbers of fish removals by year converted to metric tons (mt) within the model.}\\
 \toprule
 Year & Numbers of Fish & Model Estimated (mt)\\
@@ -615,16 +615,16 @@ Year & Complex OFL & Complex ACL & OFL - copper & ACL - copper & WA ACL & WA Rem
 \endfoot
 \bottomrule
 \endlastfoot
-2011 & NA & NA & 28.61 & 23.88 & 6.21 & 2.64\\
-2012 & NA & NA & 28.61 & 23.88 & 6.21 & 1.76\\
-2013 & NA & NA & 25.96 & 21.65 & 5.63 & 2.56\\
-2014 & NA & NA & 25.96 & 21.65 & 5.63 & 2.34\\
-2015 & NA & 69 & 10.64 & 9.71 & 2.52 & 1.32\\
-2016 & NA & 69 & 10.33 & 9.43 & 2.45 & 1.86\\
-2017 & 118.3940 & 105 & 11.24 & 10.26 & 2.67 & 1.30\\
-2018 & 118.5952 & 105 & 11.59 & 10.58 & 2.75 & 3.03\\
-2019 & 91.0000 & 81 & 11.91 & 10.88 & 2.83 & 4.28\\
-2020 & 92.0000 & 82 & 12.24 & 11.18 & 2.91 & 1.55\\*
+2011 & - & - & 28.61 & 23.88 & 6.21 & 2.64\\
+2012 & - & - & 28.61 & 23.88 & 6.21 & 1.76\\
+2013 & - & - & 25.96 & 21.65 & 5.63 & 2.56\\
+2014 & - & - & 25.96 & 21.65 & 5.63 & 2.34\\
+2015 & - & 69 & 10.64 & 9.71 & 2.52 & 1.32\\
+2016 & - & 69 & 10.33 & 9.43 & 2.45 & 1.86\\
+2017 & 118.39 & 105 & 11.24 & 10.26 & 2.67 & 1.30\\
+2018 & 118.6 & 105 & 11.59 & 10.58 & 2.75 & 3.03\\
+2019 & 91 & 81 & 11.91 & 10.88 & 2.83 & 4.28\\
+2020 & 92 & 82 & 12.24 & 11.18 & 2.91 & 1.55\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1150,7 +1150,7 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 ![Estimated spawning output time series for the California stocks north and south of Point Conception.\label{fig:ssb-ca-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/ca_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Estimated spawning output time series for the California stocks north and south of Point Conception."}
 
 
-![Estimated spawning output time series for the stock of the Oregon and Washington coasts.\label{fig:ssb-orwa-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/or_wa_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Estimated spawning output time series for the stock of the Oregon and Washington coasts."}
+![Estimated spawning output time series for the stocks off the Oregon and Washington coast.\label{fig:ssb-orwa-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/or_wa_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Estimated spawning output time series for the stocks off the Oregon and Washington coast."}
 
 
 ![Estimated fraction unfished time series for all West Coast stocks.\label{fig:depl-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/comprare_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Estimated fraction unfished time series for all West Coast stocks."}
@@ -1178,11 +1178,11 @@ fishery selectivity and with steepness fixed at 0.72."}
 <!--chapter:end:53figures.Rmd-->
 
 \clearpage
-# Appendix A. Detailed Fit to Length Composition Data 
+# Appendix A. Detailed Fit to Length Composition Data{#length-fit}
 
 
 
-![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.."}
+![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method."}
 
 ![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 2 of 2)."}
 

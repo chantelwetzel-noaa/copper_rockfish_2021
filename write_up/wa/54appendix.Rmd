@@ -1,5 +1,5 @@
 \clearpage
-# Appendix A. Detailed Fit to Length Composition Data 
+# Appendix A. Detailed Fit to Length Composition Data{#length-fit}
 
 
 ```{r, results='asis'}
