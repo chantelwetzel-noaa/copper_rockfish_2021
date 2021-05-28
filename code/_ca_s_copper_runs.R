@@ -666,3 +666,16 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_sensitivities", "_plots"),
 				  pdf = TRUE)
+
+model = "12.2_base" # fixed rec lengths
+new = SS_output(file.path(wd, model))
+SS_plots(new)
+
+
+modelnames <- c("12.1 Base Model","12.2 New Base")
+mysummary <- SSsummarize(list(base, new))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.2_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

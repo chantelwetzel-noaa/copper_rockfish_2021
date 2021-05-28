@@ -43,8 +43,9 @@ ca_mrfss = ca_mrfss[ca_mrfss$ST == 6 & ca_mrfss$SP_CODE == 8826010108, ]
 ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ] # remove records without a county
 ca_mrfss = ca_mrfss[ca_mrfss$YEAR != 2004, ] # overlap with crfss in 2004
 ca_mrfss$STATE_NAME = "CA"
-spc = c(59, 73, 37, 111, 83)
+spc = c(37, 59, 73, 37, 111, 83) # 79 is San Luis Obispo which is north
 npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
+
 
 ca_mrfss_data = rename_mrfss(data = ca_mrfss,
 							 len_col = "LNGTH",
@@ -54,6 +55,11 @@ ca_mrfss_data = rename_mrfss(data = ca_mrfss,
 							 mode_grouping = list(c(1,2), c(6, 7)),
 					      	 mode_names = c("rec_shore", "rec_boat"),
 					      	 mode_column_name = "MODE_FX" )
+
+# for some reason CNTY 111 is not going to the south
+find = which(ca_mrfss_data$CNTY == 111)
+ca_mrfss_data[find,"State_Areas"] = "south_pt_concep"
+
 
 # Oregon Recreational
 or_mrfss = read.csv(file.path(dir, "data", "recreational_comps", "Oregon", "copper_mrfss_bio_1980_2003.csv"))
@@ -279,7 +285,7 @@ nca$Trawl_id = 1:nrow(nca)
 GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = nca, type = "length", species = 'others')
 n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
 n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
-write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "n_ca_rec_len_samples_mar2021.csv"), row.names = FALSE)
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "n_ca_rec_len_samples_may2021.csv"), row.names = FALSE)
 
 
 # There are only 10 fish sexed - change them to unsexed
@@ -290,7 +296,7 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"),
                        sex = 0, partition = 0, fleet = 2, month = 1)
 
 file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
-			to= file.path(dir, "data", "recreational_comps", "forSS", "nca_rec_notExpanded_Length_comp_Sex_0_bin=10-54_mar2021.csv")) 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "nca_rec_notExpanded_Length_comp_Sex_0_bin=10-54_may2021.csv")) 
 
 PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"), 
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
@@ -320,7 +326,7 @@ sca$Trawl_id = 1:nrow(sca)
 GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = sca, type = "length", species = 'others')
 n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
 n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
-write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "s_ca_rec_len_samples_mar2021.csv"), row.names = FALSE)
+write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "s_ca_rec_len_samples_may2021.csv"), row.names = FALSE)
 
 
 # There are only 2 fish sexed - change them to unsexed
@@ -332,7 +338,7 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"),
                        sex = 0, partition = 0, fleet = 2, month = 1)
 
 file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-54.csv"), 
-			to= file.path(dir, "data", "recreational_comps", "forSS", "sca_rec_notExpanded_Length_comp_Sex_0_bin=10-54_mar2021.csv")) 
+			to= file.path(dir, "data", "recreational_comps", "forSS", "sca_rec_notExpanded_Length_comp_Sex_0_bin=10-54_may2021.csv")) 
 
 PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"), 
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 

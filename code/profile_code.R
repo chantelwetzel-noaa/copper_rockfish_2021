@@ -52,10 +52,15 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c"
 base_name = "5.1_data_rec_len_trawl_survey"
 base_name = "8.1_dw_francis"
-base_name = "10.2_base"
+base_name = "10.3_base"
 
-#mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/_sensitivities"
-#base_name = "10.0_base_no_recdevs"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "CV_old_Fem_GP_1", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+							low =  c(0.08, 0.30, -0.3, 0.05, 45, 0.14),
+							high = c(0.15, 0.95,  1.0, 0.14, 52, 0.25),
+							step_size = c(0.005, 0.05, 0.10, 0.01, 1, 0.01),
+							param_space = c('real', 'real', 'relative', 'real', 'real', 'real'))
+
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1",  "SR_LN(R0)"),
 							low =  c(0.07,  -1.0),
@@ -70,7 +75,8 @@ get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
 							param_space = c('real'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-							  run = c("profile"),
+							  run = c("profile", "retro"),
+							  retro_yrs = -1:-10,
 							  profile_details = get ))
 
 model_settings = get_settings(settings = list(base_name = base_name,

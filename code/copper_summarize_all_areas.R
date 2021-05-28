@@ -7,7 +7,7 @@ library(r4ss)
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models/")
 
 south  = SS_output(file.path(wd, "ca_s_pt_c", "12.1_base"))
-north  = SS_output(file.path(wd, "ca_n_pt_c", "10.2_base"))
+north  = SS_output(file.path(wd, "ca_n_pt_c", "10.3_base"))
 oregon = SS_output(file.path(wd, "or", "10.5_base"))
 wash   = SS_output(file.path(wd, "wa", "7.7_base"))
 

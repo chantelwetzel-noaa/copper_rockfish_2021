@@ -12,7 +12,7 @@ library(sa4ss)
 # North of Pt Conception
 ###################################################################
 area = "ca_n_pt_c"
-base_model = "10.2_base"
+base_model = "10.3_base"
 
 wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
           area, "_sensitivities")
@@ -32,7 +32,8 @@ model.list <- c(paste0(base_model, "_no_recdevs"), #1
                 paste0(base_model, "_spline"), #8
                 paste0(base_model, "_no_blocks"),  #9
                 paste0(base_model, "_rec_block"), #10
-                paste0(base_model, "_index_cpfv")) #11
+                paste0(base_model, "_index_cpfv"), #11
+                paste0(base_model, '_no_blocks_asym')) #12
 
 out.list = NULL   
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -47,6 +48,7 @@ sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose =
 sens_9  = SS_output( file.path(wd, model.list[9]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_10  = SS_output( file.path(wd, model.list[10]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_11  = SS_output( file.path(wd, model.list[11]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_12  = SS_output( file.path(wd, model.list[11]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames1 <- c("Base Model",
                 "No Rec. Devs.",
@@ -59,7 +61,7 @@ modelnames1 <- c("Base Model",
 modelnames2 <- c("Base Model",
                 "Com. Asym. Select.", #7
                 "Com. Spline Select.",
-                "Com. No Select. Blocks and Asym.",
+                "Com. No Blocks and Asym.",
                 "Early Block in Rec. Selectivity",
                 "2013 CPFV Onboard Index")
 
@@ -70,8 +72,8 @@ SSplotComparisons(x1, endyrvec = 2021,
                   legendlabels = modelnames1, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  filenameprefix = paste0(base_model, "_1_"),
-                  subplot = c(2,4,10,12), 
+                  filenameprefix = paste0(base_model, "_1_new_"),
+                  subplot = c(2,4), 
                   print = TRUE, 
                   pdf = FALSE)
 
@@ -79,8 +81,8 @@ SSplotComparisons(x2, endyrvec = 2021,
                   legendlabels = modelnames2, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  filenameprefix = paste0(base_model, "_2_"),
-                  subplot = c(2,4,10,12), 
+                  filenameprefix = paste0(base_model, "_2_new_"),
+                  subplot = c(2,4), 
                   print = TRUE, 
                   pdf = FALSE)
 
@@ -163,16 +165,16 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = file.path(out.dir, paste0(base_model, "_sensitivities.csv")))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_sensitivities_final.csv")))
 
 t = table_format(x = out,
       caption = 'Sensitivities relative to the base model.',
       label = 'sensitivities',
       longtable = TRUE,
       font_size = 9,
-      digits = 2,
+      digits = 3,
       landscape = TRUE,
       col_names = modelnames)
 
 kableExtra::save_kable(t,
-file = file.path("C:/Assessments/2021/copper_rockfish_2021/write_up/n_ca/tex_tables/sensitivities.tex"))
+file = file.path("C:/Assessments/2021/copper_rockfish_2021/write_up/n_ca/tex_tables/sensitivities_final.tex"))

@@ -306,5 +306,23 @@ pacfin = SS_output(file.path(wd, model))
 SS_plots(pacfin)
 
 model = "10.2_base"
+wrong_catch = SS_output(file.path(wd, model))
+
+model = "10.3_base"
 base = SS_output(file.path(wd, model))
 SS_plots(base)
+SS_tune_comps(replist = model, option = "Francis", dir = wd)
+
+
+
+model = "10.4_base"
+no_devs = SS_output(file.path(wd, model))
+SS_plots(no_devs)
+
+modelnames <- c("10.2 Wrong Rec. Lengths", "10.3", "10.4")
+mysummary  <- SSsummarize(list(wrong_catch, base, no_devs))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.3_rec_dat_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

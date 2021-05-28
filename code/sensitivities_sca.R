@@ -158,7 +158,7 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = file.path(out.dir, paste0(base_model, "_1_sensitivities.csv")))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_1_sensitivities_new.csv")))
 
 t = table_format(x = out,
       caption = 'Sensitivities relative to the base model.',
@@ -170,7 +170,7 @@ t = table_format(x = out,
       col_names = modelnames)
 
 kableExtra::save_kable(t,
-file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_1.tex")
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_1_new.tex")
 
 ###################################################################################
 
@@ -235,7 +235,7 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = file.path(out.dir, paste0(base_model, "_2_sensitivities.csv")))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_2_sensitivities_new.csv")))
 
 t = table_format(x = out,
       caption = 'Sensitivities relative to the base model.',
@@ -247,7 +247,7 @@ t = table_format(x = out,
       col_names = modelnames2)
 
 kableExtra::save_kable(t,
-file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_2.tex")
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_2_new.tex")
 
 ################################################################################################
 

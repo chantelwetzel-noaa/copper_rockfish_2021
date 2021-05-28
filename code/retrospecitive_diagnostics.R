@@ -6,12 +6,12 @@
 library(r4ss)
 
 state = "ca_n_pt_c"
-base_name = "10.2_base"
+base_name = "10.3_base"
 
 dir = file.path("C:/Assessments/2021/copper_rockfish_2021/models", state)
 retro.folder = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
                 state, 
-                paste0(base.name, "_retro"))
+                paste0(base_name, "_retro"))
 
 base   = SS_output(file.path(dir, base_name), printstats = FALSE, verbose = FALSE, covar = FALSE)
 retro1 = SS_output(file.path(retro.folder, "retro", "retro-1"), printstats = FALSE, verbose = FALSE, covar = FALSE)
