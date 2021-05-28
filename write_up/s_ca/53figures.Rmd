@@ -70,7 +70,7 @@ label = 'mean-rec-len-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "plots",  "Map_HL_Sites_lndscp.jpg"), 
-caption = "NWFSC Hook and Line sampling sites where yellow sites indicate locations inside Cowcod Conservation Areas. Additionally, known substrate structure, depths, and areas under various management regulations are shown for the area south of Point Conception",
+caption = "NWFSC Hook and Line survey sampling sites where yellow sites indicate locations inside Cowcod Conservation Areas. Additionally, known substrate structure, depths, and areas under various management regulations are shown for the area south of Point Conception",
 label = 'hkl-sites')
 ```
 
@@ -78,35 +78,35 @@ label = 'hkl-sites')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "plots",  "HKL_Site_Observations.png"), 
-caption = "NWFSC Hook and Line sample sites inside and outside the CCA and site with observations of copper rockfish",
+caption = "NWFSC Hook and Line survey sample sites inside and outside the CCA and site with observations of copper rockfish",
 label = 'hkl-site-ob')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "hkl_cca_comparison.png"), 
-caption = "NWFSC Hook and Line observations by year outside and inside the cowcod conservation area",
+caption = "NWFSC Hook and Line survey observations by year outside and inside the cowcod conservation area",
 label = 'hkl-cca')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "plots",  "HKL_Size_by_Depth.png"), 
-caption = "Lengths observations by depth in the NWFSC Hook and Line data",
+caption = "Lengths observations by depth in the NWFSC Hook and Line survey data",
 label = 'hkl-len-dep')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_bubflt3mkt0.png"), 
-caption = "Length composition data from the NWFSC Hook and Line fleet",
+caption = "Length composition data from the NWFSC Hook and Line survey",
 label = 'hkl-len-data')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_NWFSC_HKL.png"), 
-caption = "Mean length for NWFSC Hook and Line fleet with 95 percent confidence intervals",
+caption = "Mean length for NWFSC Hook and Line survey with 95 percent confidence intervals",
 label = 'mean-hkl-len-data')
 ```
 
@@ -120,7 +120,7 @@ label = 'hkl-index')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey_indices", "Copp.2019.NFT.1m.ALL",  "Copp.ALL.GAM.Fig.png"), 
-caption = "Diangostics for the binomial generalized-linear model",
+caption = "Diagnostics for the binomial generalized-linear model",
 label = 'hkl-diag')
 ```
 
@@ -135,30 +135,39 @@ caption = "Length frequency distribution in each 10 fm depth bin for copper rock
 label = 'rov-open')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_socal_mpa_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where retention is prohibited",
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited",
 label = 'rov-mpa')
 ```
+
+\clearpage
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_open.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in reference locations where retention is allowed",
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in reference locations where fishing for groundfish is allowed",
 #width = 150,
 #height = 150,
 label = 'rov-percent-open')
 ```
 
+\clearpage
+
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_mpa.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in marine protected areas where retention is prohibited",
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in marine protected areas where fishing for groundfish is prohibited",
 #width = 150,
 #height = 150,
 label = 'rov-percent-mpa')
 ```
+
+\clearpage
+
 
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
@@ -175,7 +184,7 @@ label = 'len-weight-survey')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "doc_Length_Weight_Sex.png"), 
-caption = "Survey length-at-weight data with sex specific estimated fits",
+caption = "All available survey length-at-weight data with sex specific estimated fits",
 label = 'len-weight')
 ```
 
@@ -183,7 +192,7 @@ label = 'len-weight')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "South_Len_at_Age.png"), 
-caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT survey",
+caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT surveys",
 label = 'survey-len-at-age-data')
 ```	
 
@@ -191,7 +200,7 @@ label = 'survey-len-at-age-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "doc_south_Age_by_Sex_Source.png"), 
-caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT survey and young fish from Lea",
+caption = "Length-at-age for non-randomly sampled larger fish observed by the NWFSC Hook and Line and WCGBT surveys and young fish from Lea",
 label = 'south-len-at-age-data')
 ```	
 
@@ -363,7 +372,7 @@ label = 'hkl-pearson')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_NWFSC_HKL.png"), 
-caption = "Mean length for recreational lengths with 95 percent confidence intervals based on current samples sizes",
+caption = "Mean length for NWFSC Hook and Line survey lengths with 95 percent confidence intervals based on current samples sizes",
 label = 'hkl-mean-len-fit')
 ```
 
@@ -510,10 +519,19 @@ label = 'lbspr')
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 
 <!-- ====================================================================== -->
-  
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'figures_retro.Rmd')
-read_child(filein)
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_retro"),  "compare2_spawnbio_uncertainty.png"), 
+caption = "Change in the estimate of spawning output when the most recent 10 years of data area removed sequentially",
+label = 'retro-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "_retro"),  "compare4_Bratio_uncertainty.png"),
+caption = "Change in the estimate of fraction unfished when the most recent 10 years of data area removed sequentially",
+label = 'retro-depl')
 ```
 
 \newpage

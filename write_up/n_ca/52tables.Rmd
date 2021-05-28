@@ -81,7 +81,7 @@ table_format(x = out,
 \newpage
 
 
-\include{tex_tables/n_ca_rec_len_samples.tex}
+\include{tex_tables/n_ca_rec_len_samples_may.tex}
 
 
 \newpage
@@ -153,7 +153,7 @@ table_format(x = mod_params,
              landscape = TRUE,
              custom_width = TRUE,
              col_to_adjust = c(1,7), 
-             width = c("6cm", "4cm"))                         
+             width = c("8.5cm", "4cm"))                         
 ```
 
 <!-- ======================================================= -->
@@ -182,7 +182,7 @@ table_format(x = mod_params,
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
 
-\include{tex_tables/sensitivities.tex}
+\include{tex_tables/sensitivities_final.tex}
 
 \newpage
 

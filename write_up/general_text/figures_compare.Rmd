@@ -8,7 +8,7 @@ label = 'ssb-ca-compare')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(model_loc, "_plots",  "or_wa_comprare_compare2_spawnbio_uncertainty.png"), 
-caption = "Estimated spawning output time series for the stock of the Oregon and Washington coasts",
+caption = "Estimated spawning output time series for the stocks off the Oregon and Washington coast",
 label = 'ssb-orwa-compare')
 ```
 

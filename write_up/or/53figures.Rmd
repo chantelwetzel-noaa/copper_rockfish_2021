@@ -88,10 +88,10 @@ label = 'selex')
 \clearpage
 
 ```{r, results = 'asis'}
-add_figure(
-filein = file.path(getwd(), "figs", "recdevs3_varcheck.png"),
-caption = "Asymptotic standard error estimate of recruitment deviations by years",
-label = 'rec-devs-se')
+#add_figure(
+#filein = file.path(getwd(), "figs", "recdevs3_varcheck.png"),
+#caption = "Asymptotic standard error estimate of recruitment deviations by years",
+#label = 'rec-devs-se')
 ```
 
 <!-- ====================================================================== -->

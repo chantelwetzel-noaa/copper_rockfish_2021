@@ -2,6 +2,10 @@
 
 # Appendix
 
+## Summary of California Management Measures{#ca-man}
+
+Information on changes to California management measures across time can be found in the separate file "California Nearshore Regulation History-Data Moderate Accompanying Material.pdf".
+
 ## Annual Length Composition Data
 
 ```{r, results='asis'}
@@ -39,7 +43,7 @@ for (a in plot.vec){
 
 \newpage
 
-## Implied Fit to Recreational 'Ghost' Fleet Length Data 
+## Implied Fit to Commercial 'Ghost' Fleet Length Data 
 
 The 'ghost' fleet data consist of commercial length samples collected prior to 1999 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
 

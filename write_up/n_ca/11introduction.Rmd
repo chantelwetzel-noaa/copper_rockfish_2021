@@ -30,4 +30,4 @@ filein = file.path(general_wd,'1_intro_management.Rmd')
 read_child(filein)
 ```
 
-Table \ref{tab:ofl} show the Nearshore Rockfish North and South complex level OFLs and ACLs, the `r spp` OFL and ACL contributions amounts for both areas, the state-specific allocations of the `r spp` ACL contribution (the south copper rockfish ACL plus 25 percent allocated to California from the north ACL), and the total removals for California, north of Point Conception. 
+Table \ref{tab:ofl} show the Nearshore Rockfish North and South complex level OFLs and ACLs, the `r spp` OFL and ACL contributions amounts for both areas, the state-specific allocations of the `r spp` ACL contribution (the south `r spp` ACL plus 25 percent allocated to California from the north ACL), and the total removals for California, north of Point Conception. 

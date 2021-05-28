@@ -83,7 +83,7 @@ table_format(x = out,
 \newpage
 
 
-\include{tex_tables/s_ca_rec_len_samples_mar2021.tex}
+\include{tex_tables/s_ca_rec_len_samples_may2021.tex}
 
 \newpage
 
@@ -199,11 +199,11 @@ table_format(x = tab,
 \newpage
 
 
-\include{tex_tables/sensitivities_1.tex}
+\include{tex_tables/sensitivities_1_new.tex}
 
 \newpage
 
-\include{tex_tables/sensitivities_2.tex}
+\include{tex_tables/sensitivities_2_new.tex}
 
 \newpage
 

@@ -24,7 +24,7 @@ sa4ss::draft(authors = c("Chantel R. Wetzel", "Brian J. Langseth", "Jason M. Cop
 sa4ss::read_model(
   mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base",
   create_plots = FALSE, 
-  save_loc = file.path(getwd(), "tex_tables"),
+  save_loc = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base/tex_tables",
   verbose = TRUE)
 
 source("C:/Users/Chantel.Wetzel/Documents/GitHub/sa4ss/R/es_table_tex.R")

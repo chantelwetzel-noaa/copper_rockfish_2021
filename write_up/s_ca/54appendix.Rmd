@@ -1,6 +1,10 @@
 \clearpage
 
-# Appendix A 
+# Appendix 
+
+## Summary of California Management Measures{#ca-man}
+
+Information on changes to California management measures across time can be found in the separate file "California Nearshore Regulation History-Data Moderate Accompanying Material.pdf".
 
 ## Annual Length Composition Data{#length-data} 
 

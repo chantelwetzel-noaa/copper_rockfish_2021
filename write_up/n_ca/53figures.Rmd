@@ -78,7 +78,7 @@ label = 'rov-open')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_nocal_mpa_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where retention is prohibited",
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited",
 label = 'rov-mpa')
 ```
 
@@ -88,7 +88,7 @@ label = 'rov-mpa')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_open.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where retention is allowed",
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed",
 label = 'rov-percent-open')
 ```
 
@@ -97,7 +97,7 @@ label = 'rov-percent-open')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_mpa.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where retention is prohibited",
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited",
 label = 'rov-percent-mpa')
 ```
 
@@ -132,14 +132,14 @@ label = 'selex')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
-caption = "Estimated timeseries of age-0 recruits (1000s)",
+caption = "Estimated time series of age-0 recruits (1000s)",
 label = 'recruits')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
-caption = "Estimated timeseries of recruitment deviations",
+caption = "Estimated time series of recruitment deviations",
 label = 'rec-devs')
 ```
 
@@ -192,10 +192,9 @@ label = 'rec-mean-len-fit')
 ```
 
 ```{r, results = 'asis'}
-#filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
 add_figure(
-filein = file.path(getwd(), "figs", "comp_lenfit__aggregated_across_time.png"),
-caption = "Aggregated length comps over all years",
+filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
+caption = "Aggregated length comps across all years",
 label = 'agg-len-fit')
 ```
 
@@ -206,21 +205,21 @@ label = 'agg-len-fit')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated timeseries of spawning output",
+caption = "Estimated time series of spawning output",
 label = 'ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
-caption = "Estimated timeseries of total biomass",
+caption = "Estimated time series of total biomass",
 label = 'tot-bio')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated timeseries of fraction of unfished spawning output",
+caption = "Estimated time series of fraction of unfished spawning output",
 label = 'depl')
 ```
 
