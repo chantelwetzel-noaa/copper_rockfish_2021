@@ -95,6 +95,48 @@ SSplotComparisons(x2, endyrvec = 2021,
 
 
 ###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+
+modelnames <- c("Base",
+                "Est. M (f)", 
+                "Est. CV Old", 
+                "Est. Rec. Devs.",
+                "DM DW",
+                "DM MI",
+                "Com. Asymptotic Selectivity", 
+                "Rec. Asymptotic Selectivity",
+                "Com. & Rec. Asymptotic Selectivity", 
+                "2013 RecFIN Index",
+                "2013 CPFV Index")
+
+x <- SSsummarize(list(base, sens_1, sens_3, sens_4, sens_5, sens_6,
+     sens_7, sens_8, sens_9, sens_11, sens_12))
+
+wd_dat <- file.path(paste0(wd,"/_plots")) 
+# Sensitivity figure is something I adapted from Jason's Original that is in r4ss (SS_Sensi_plot)
+# Here is where my version can be found: https://github.com/chantelwetzel-noaa/dover_sole_2021/blob/master/code/sensi_plot_Dover.R
+Sensi_plot_dover(model.summaries=x,
+              dir = wd_dat,
+              current.year=2021,
+              mod.names=modelnames, #List the names of the sensitivity runs
+              likelihood.out = c(0, 1, 0),
+              Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+              CI=0.95, #Confidence interval box based on the reference model
+              TRP.in=0.40, #Target relative abundance value
+              LRP.in=0.25, #Limit relative abundance value
+              sensi_xlab="Sensitivity scenarios", #X-axis label
+              ylims.in=c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+              sensi.type.breaks=c(4.5, 6.5, 9.5), #vertical breaks that can separate out types of sensitivities
+              anno.x=c(3, 5.5, 8, 10.5), # Vertical positioning of the sensitivity types labels
+              anno.y=c(0.83,0.80,0.85,0.9), # Horizontal positioning of the sensitivity types labels
+              anno.lab=c("Parameters", "Data Weighting", "Selectivity", "Index"), #Sensitivity types labels
+              horizontal = TRUE) 
+
+
+
+###################################################################################
 # Create a Table of Results
 ###################################################################################
 

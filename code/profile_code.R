@@ -62,11 +62,11 @@ get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", 
 							param_space = c('real', 'real', 'relative', 'real', 'real', 'real'))
 
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1",  "SR_LN(R0)"),
-							low =  c(0.07,  -1.0),
-							high = c(0.15,   1.5),
-							step_size = c(0.005, 0.25),
-							param_space = c('real', 'relative'))
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+							low =  c(-0.6),
+							high = c(1.2),
+							step_size = c(0.1),
+							param_space = c('relative'))
 
 get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
 							low =  c(0.05),
@@ -75,7 +75,7 @@ get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
 							param_space = c('real'))
 
 model_settings = get_settings(settings = list(base_name = base_name,
-							  run = c("profile", "retro"),
+							  run = c("profile"), #, "retro"),
 							  retro_yrs = -1:-10,
 							  profile_details = get ))
 

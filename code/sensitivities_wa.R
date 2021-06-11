@@ -25,13 +25,13 @@ base.loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
            area, base_model)
 
 model.list <- c(paste0(base_model, "_est_m"),  #1     
-                paste0(base_model, "_est_linf"), #3
-                paste0(base_model, "_est_k"), #4
-                paste0(base_model, "_recdevs"), #5
+                paste0(base_model, "_est_linf"), #2
+                paste0(base_model, "_est_k"), #3
+                paste0(base_model, "_recdevs"), #4
                 paste0(base_model, "_recdevs_dome"), #5
 				        paste0(base_model, "_francis"), #6
-                paste0(base_model, "_mi"), #7
-                paste0(base_model, "_dirichlet")) #8
+                paste0(base_model, "_mi"), #
+                paste0(base_model, "_dirichlet")) #9
 
 out.list = NULL	
 base   = SS_output( base.loc, printstats = FALSE, verbose = FALSE) 
@@ -45,11 +45,12 @@ sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose =
 sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 
 modelnames <- c("Base Model",
-                "Est. M (f)", 
-                "Est. Linf (f)",
-                "Est. k (f)",
                 "Estimate Rec. Devs.",
                 "Estimate Rec. Devs. and Dome Selex",
+                "Est. M (f)", 
+                "Est. Linf (f)",
+                "Est. k (f)")
+
                 "Francis Data Weight",
                 "MI Data Weight",
                 "DM Data Weight") 
@@ -74,6 +75,36 @@ SSplotComparisons(x, endyrvec = 2021,
                   subplot = c(4), 
                   print = TRUE, 
                   pdf = FALSE)
+
+###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5))
+modelnames <- c("Base Model",
+                "Est. M (f)", 
+                "Est. Linf (f)",
+                "Est. k (f)",
+                "Estimate Rec. Devs.",
+                "Estimate Rec. Devs. and Dome Selex") 
+
+wd_dat <- file.path(paste0(wd,"/_plots")) 
+Sensi_plot_dover(model.summaries=x,
+              dir = wd_dat,
+              current.year=2021,
+              mod.names=modelnames, #List the names of the sensitivity runs
+              likelihood.out = c(0, 1, 0),
+              Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+              CI=0.95, #Confidence interval box based on the reference model
+              TRP.in=0.40, #Target relative abundance value
+              LRP.in=0.25, #Limit relative abundance value
+              sensi_xlab="Sensitivity scenarios", #X-axis label
+              ylims.in=c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+              sensi.type.breaks=c(4.5), #vertical breaks that can separate out types of sensitivities
+              anno.x=c(2.5, 5), # Vertical positioning of the sensitivity types labels
+              anno.y=c(0.85,0.85), # Horizontal positioning of the sensitivity types labels
+              anno.lab=c("Parameters","Recruitment"), #Sensitivity types labels
+              horizontal = TRUE)
 
 ###################################################################################
 # Create a Table of Results

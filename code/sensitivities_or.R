@@ -108,6 +108,45 @@ SSplotComparisons(x2, endyrvec = 2021,
                   pdf = FALSE)
 
 ###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+x <- SSsummarize(list(base, sens_2, sens_3, sens_16, sens_5, sens_7, sens_8,
+  sens_9, sens_10, sens_11, sens_12, sens_13))
+
+
+modelnames <- c("Base Model",
+                "Rec. Devs.", #1
+                "Rec. Devs. Fix Comm.",
+                "Rec. Devs. 1927-2000",
+                "DM DW", #4
+                "Estimate CV Old", #5
+                "Estimate M (f)",
+                "Rec. Asym. Selectivity", #7
+                "Rec. Data w/ Block",
+                "Commercial Sexed Comps.", #9
+                "2013 OR CPFV Index", #10
+                "2013 OR CPFV Index w/ Added Var.")
+
+wd_dat <- file.path(paste0(wd,"/_plots")) 
+Sensi_plot_dover(model.summaries=x,
+              dir = wd_dat,
+              current.year=2021,
+              mod.names=modelnames, #List the names of the sensitivity runs
+              likelihood.out = c(0, 1, 0),
+              Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+              CI=0.95, #Confidence interval box based on the reference model
+              TRP.in=0.40, #Target relative abundance value
+              LRP.in=0.25, #Limit relative abundance value
+              sensi_xlab="Sensitivity scenarios", #X-axis label
+              ylims.in=c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+              sensi.type.breaks=c(4.5, 5.5, 7.5, 10.5), #vertical breaks that can separate out types of sensitivities
+              anno.x=c(3, 5, 6.5, 9, 12), # Vertical positioning of the sensitivity types labels
+              anno.y=c(0.85,0.85, 0.85,0.82,0.9), # Horizontal positioning of the sensitivity types labels
+              anno.lab=c("Recruitment","Data Weighting", "Parameter","Selectivity", "Index"), #Sensitivity types labels
+              horizontal = TRUE)
+
+###################################################################################
 # Create a Table of Results
 ###################################################################################
 

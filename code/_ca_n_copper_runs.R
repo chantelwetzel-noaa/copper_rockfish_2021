@@ -326,3 +326,16 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+model = "10.3_base"
+base = SS_output(file.path(wd, model))
+model = "10.3_base_1981_rec"
+catch = SS_output(file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Base", "Adjust 1981 Recreational Catch")
+mysummary  <- SSsummarize(list(base, catch))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "10.3_rec_catch_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)

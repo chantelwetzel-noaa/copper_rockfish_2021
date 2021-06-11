@@ -679,3 +679,19 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
+
+model = "12.1_base_recdevs" 
+old = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recdevs_new" 
+new = SS_output(file.path(wd, "_sensitivities", model))
+
+model = "12.1_base_recdevs_asym_both_new" 
+asym = SS_output(file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Orig RecDevs", "New RecDevs", 'New RecDevs & Asym Selex (both)')
+mysummary <- SSsummarize(list(old, new, asym))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_recdevs_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+				  pdf = TRUE)
