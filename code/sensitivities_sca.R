@@ -7,7 +7,6 @@
 #devtools::install_github("r4ss/r4ss", ref = "development")
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/r4ss")
 
-
 ###################################################################
 # South of Pt Conception
 ###################################################################
@@ -322,3 +321,145 @@ SSplotComparisons(x, endyrvec = 2021,
                   subplot = c(2,4), 
                   print = TRUE,
                   pdf = FALSE)
+
+
+
+###################################################################
+# SSC Presentation Sub-Set
+###################################################################
+area = "ca_s_pt_c"
+base_model = "12.1_base"
+
+wd = file.path("C:/Assessments/2021/copper_rockfish_2021/models", 
+          area, "_sensitivities")
+setwd(wd)
+out.dir = wd
+
+base_loc = file.path("C:/Assessments/2021/copper_rockfish_2021/models",
+           area, base_model)
+
+sens_list = c(
+              "recdevs", #1
+              "com_asym", #2
+              "rec_asym", #3
+              "all_asym", #4
+              "no_hkl", #5
+              "hkl_len_only", #6
+              "hkl_outside_only", #7
+              "recfin_index") #8
+
+
+model.list <- paste0(base_model, "_", sens_list)
+
+#out.list = NULL  
+base   = SS_output( base_loc, printstats = FALSE, verbose = FALSE) 
+sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
+modelnames <- c("Base Model",
+                "Est. Rec. Devs.",
+                "Com. Asymptotic Selectivity", 
+                "Rec. Asymptotic Selectivity",
+                "Com. & Rec. Asymptotic Selectivity", 
+                "Remove HKL",
+                "HKL Lengths Only",
+                "HKL Outide the CCA Data Only",
+                "2013 RecFIN Index")
+
+x <- SSsummarize(list(base, sens_1, sens_2, sens_3, sens_4, sens_5, sens_6, sens_7, sens_8))
+
+SSplotComparisons(x, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  plotdir = file.path(getwd(), '_plots'), 
+                  legendloc = "topright", ylimAdj = 1.25,
+                  filenameprefix = paste0(base_model, "_for_presentation_"),
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+
+###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+
+sens_list = c("est_m", #1
+              "est_linf", #2
+              "est_cv2", #3
+              "recdevs", #4
+              "dw_dm", #5
+              "dw_mi", #6
+              "com_asym", #7
+              "rec_asym", #8
+              "all_asym", #9
+              "no_hkl", #10
+              "hkl_len_only", #11
+              "hkl_outside_only", #12
+              "recfin_index", #13
+              "cpfv_index") #14
+
+model.list <- paste0(base_model, "_", sens_list)
+
+#out.list = NULL  
+base   = SS_output( base_loc, printstats = FALSE, verbose = FALSE) 
+sens_1  = SS_output( file.path(wd, model.list[1]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_2  = SS_output( file.path(wd, model.list[2]), printstats = FALSE, verbose = FALSE, covar = FALSE) 
+sens_3  = SS_output( file.path(wd, model.list[3]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_4  = SS_output( file.path(wd, model.list[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_5  = SS_output( file.path(wd, model.list[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_6  = SS_output( file.path(wd, model.list[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_7  = SS_output( file.path(wd, model.list[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_8  = SS_output( file.path(wd, model.list[8]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_9  = SS_output( file.path(wd, model.list[9]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_10 = SS_output( file.path(wd, model.list[10]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_11 = SS_output( file.path(wd, model.list[11]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_12 = SS_output( file.path(wd, model.list[12]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_13 = SS_output( file.path(wd, model.list[13]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_14 = SS_output( file.path(wd, model.list[14]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
+
+modelnames <- c("Base",
+                "Est. M (f)", #1
+                "Est. CV Old", #2
+                "Est. Rec. Devs.", #3
+                "DM DW", #4
+                "DM MI", #5
+                "Com. Asymptotic Selectivity", #6
+                "Rec. Asymptotic Selectivity", #7
+                "Com. & Rec. Asymptotic Selectivity",  #8
+                "Remove HKL",
+                "HKL Lengths Only", #9
+                "HKL Outide the CCA Data Only", #10
+                "2013 RecFIN Index", #11
+                "2013 CPFV Index") #12
+
+
+x <- SSsummarize(list(base, sens_1, sens_3, sens_4, sens_5, sens_6,
+     sens_7, sens_8, sens_9, sens_10, sens_11, sens_12, sens_13, sens_14))
+
+wd_dat <- file.path(paste0(wd,"/_plots")) 
+# Sensitivity figure is something I adapted from Jason's Original that is in r4ss (SS_Sensi_plot)
+# Here is where my version can be found: https://github.com/chantelwetzel-noaa/dover_sole_2021/blob/master/code/sensi_plot_Dover.R
+Sensi_plot_dover(model.summaries=x,
+              dir = wd_dat,
+              current.year=2021,
+              mod.names=modelnames, #List the names of the sensitivity runs
+              likelihood.out = c(0, 1, 0),
+              Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+              CI=0.95, #Confidence interval box based on the reference model
+              TRP.in=0.40, #Target relative abundance value
+              LRP.in=0.25, #Limit relative abundance value
+              sensi_xlab="Sensitivity scenarios", #X-axis label
+              ylims.in=c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+              sensi.type.breaks=c(4.5, 6.5, 9.5, 12.5), #vertical breaks that can separate out types of sensitivities
+              anno.x=c(3, 5.5, 8, 11.0, 13.5), # Vertical positioning of the sensitivity types labels
+              anno.y=c(0.83,0.80,0.85,0.9, 0.9), # Horizontal positioning of the sensitivity types labels
+              anno.lab=c("Parameters", "Data Weighting", "Selectivity", "Survey", "Index"), #Sensitivity types labels
+              horizontal = TRUE) 
+

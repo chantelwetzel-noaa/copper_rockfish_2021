@@ -271,6 +271,43 @@ hist(yield, xlab = "Yield", col = 'purple', main = "", cex.lab = 1.5, cex.axis =
 abline (v = 100, lwd = 3, lty = 2)
 dev.off()
 
+################################################################################
+#  California Comparison of Growth
+################################################################################
+
+sca_f <- sca$endgrowth[sca$endgrowth$Sex == 1, "Len_Beg"]
+sca_m <- sca$endgrowth[sca$endgrowth$Sex == 2, "Len_Beg"]
+nca_f <- nca$endgrowth[nca$endgrowth$Sex == 1, "Len_Beg"]
+nca_m <- nca$endgrowth[nca$endgrowth$Sex == 2, "Len_Beg"]
+
+a = 0:50
+pngfun(wd = file.path(loc, "_plots"), file = "Growth_by_Area.png", w = 7, h = 7, pt = 12)
+plot(a, sca_f, ylim = c(0, 55), col = 'red', lwd = 3, type = 'l',
+  xlab = "Age (yr)", ylab = "Length (cm)")
+lines(a, sca_m, col = 'blue', lwd = 3, lty = 1)
+lines(a, nca_f, col = 'orange', lwd = 2, lty = 2)
+lines(a, nca_m, col = 'purple', lwd = 2, lty = 2)
+legend('bottomright', col = c("red", 'blue', 'orange', 'purple'), lwd = 2,
+  lty = c(1,1,2,2), bty = 'n', cex = 1.25,
+  legend = c("SCA - Females", "SCA - Males", "NCA/OR/WA - Females", "NCA/OR/WA - Males"))
+dev.off()
+
+pngfun(wd = file.path(loc, "_plots"), file = "Growth_by_Area_1x2.png", w = 7, h = 7, pt = 12)
+par(mfrow = c(1,2))
+plot(a, sca_f, ylim = c(0, 55), col = 'red', lwd = 3, type = 'l',
+  xlab = "Age (yr)", ylab = "Length (cm)")
+lines(a, sca_m, col = 'blue', lwd = 3, lty = 1)
+legend('bottomright', col = c("red", 'blue'), lwd = 2,
+  lty = c(1,1), bty = 'n', cex = 1.25,
+  legend = c("SCA - Females", "SCA - Males"))
+plot(a, nca_f, col = 'red', lwd = 3, type = 'l', ylim = c(0,55),
+  xlab = "Age (yr)", ylab = "Length (cm)")
+lines(a, nca_m, col = 'blue', lwd = 3, lty = 1)
+legend('bottomright', col = c("red", 'blue'), lwd = 2,
+  lty = c(1,1), bty = 'n', cex = 1.25,
+  legend = c("NCA/OR/WA - Females", "NCA/OR/WA - Males"))
+dev.off()
+
 
 ################################################################################
 #  SCA Selectivity

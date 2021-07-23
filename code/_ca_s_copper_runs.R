@@ -672,10 +672,25 @@ new = SS_output(file.path(wd, model))
 SS_plots(new)
 
 
-modelnames <- c("12.1 Base Model","12.2 New Base")
-mysummary <- SSsummarize(list(base, new))
+model = "12.1_base_hkl_domed"
+hkl_dome = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_domed_com_asym"
+com_asym = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_upweight"
+hkl_upweight = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_index"
+recfin = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_cpfv_index"
+cpfv = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_cpfv"
+cpfv_recfin = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(cpfv_recfin)
+
+modelnames <- c("Base","HKL Domed", "HKL Domed & Com. Asym.", "HKL Upweighted",
+		"RecFIN Index", "CPFV Index", "RecFIN & CPFC Indices")
+mysummary <- SSsummarize(list(base, hkl_dome, com_asym, hkl_upweight, recfin, cpfv, cpfv_recfin))
 SSplotComparisons(mysummary, 
-				  filenameprefix = "12.2_",
+				  filenameprefix = "12.1_ssc_",
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
@@ -695,3 +710,538 @@ SSplotComparisons(mysummary,
 				  legendlabels = modelnames, 
 				  plotdir = file.path(wd, "_sensitivities", "_plots"),
 				  pdf = TRUE)
+
+
+modelnames <- c("Orig RecDevs", "New RecDevs", 'New RecDevs & Asym Selex (both)')
+mysummary <- SSsummarize(list(old, new, asym))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_recdevs_",
+				  legendlabels = modelnames, 
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+				  pdf = TRUE)
+
+
+model = "12.1_base_hkl_len_only_dw"
+hkl_len_dw = SS_output(file.path(wd, "_sensitivities", model))
+
+model = "12.1_base_hkl_domed_com_asym"
+com_asym = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_index"
+recfin = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_cpfv_index"
+cpfv = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_cpfv"
+cpfv_recfin = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(cpfv_recfin)
+
+###################################################################
+#  SSC Review
+###################################################################
+
+model = "12.1_base"
+base = SS_output(file.path(wd, model))
+model = "12.1_base_hkl_len_only"
+hkl_len = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_index_only"
+hkl_index = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_outside_only"
+hkl_outside = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_domed"
+hkl_dome = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_no_var"
+hkl_var = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recdevs_hkl_var"
+hkl_var_recdevs = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recdevs"
+recdevs = SS_output(file.path(wd, "_sensitivities", model))
+
+
+modelnames <- c("Base", "HKL Length Only", 
+	'HKL Outside CCA Only', "HKL Dome Shaped Selectivity", 
+	"HKL w/ No Added Var.", "Rec. Devs", "Rec. Devs. & HKL w/ No Added Var.")
+mysummary <- SSsummarize(list(base, hkl_len, hkl_outside,
+	hkl_dome, hkl_var, recdevs, hkl_var_recdevs))
+
+SSplotComparisons(mysummary, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.15,
+                  plotdir = file.path(wd, "_sensitivities", '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = "12.1_ssc_hkl_",
+                  subplot = c(2,4,12,13,14,15), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+
+ii = 1:length(modelnames)
+n = length(modelnames)
+out<- matrix(NA, 26, max(ii))
+x = mysummary
+out = rbind(
+            as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
+            t(as.numeric(x$likelihoods_by_fleet[x$likelihoods_by_fleet$Label == "Length_like", "CA_S_Commercial"])),
+            t(as.numeric(x$likelihoods_by_fleet[x$likelihoods_by_fleet$Label == "Length_like", "CA_S_Recreational"])),
+            t(as.numeric(x$likelihoods_by_fleet[x$likelihoods_by_fleet$Label == "Length_like", "NWFSC_HKL"])),
+            #as.numeric(x$likelihoods[x$likelihoods$Label == "Age_comp",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_LN(R0)", 1:n]), 
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_Virgin", 1:n]),
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_2021", 1:n]),
+            as.numeric(x$Bratio[x$Bratio$Label == "Bratio_2021", 1:n]), 
+            as.numeric(x$quants[x$quants$Label == "Dead_Catch_SPR", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_BH_steep", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Mal_GP_1", 1:n]) )  
+
+out = as.data.frame(out)
+colnames(out) = modelnames
+rownames(out) = c("Total Likelihood",
+                  "Survey Likelihood",
+                  "Length Likelihood",
+                  "Commercial Length Like.",
+                  "Recreational Length Like.",
+                  "NWFSC HKL Like.",
+                  #"Age Likelihood",
+                  "Recruitment Likelihood",
+                  "Forecast Recruitment Likelihood",
+                  "Parameter Priors Likelihood",
+                  "log(R0)",
+                  "SB Virgin",
+                  "SB 2020",
+                  "Fraction Unfished 2021",
+                  "Total Yield - SPR 50",
+                  "Steepness",
+                  "Natural Mortality - Female",
+                  "Length at Amin - Female",
+                  "Length at Amax - Female",
+                  "Von Bert. k - Female",
+                  "CV young - Female",
+                  "CV old - Female",
+                  "Natural Mortality - Male",
+                  "Length at Amin - Male",
+                  "Length at Amax - Male",
+                  "Von Bert. k - Male",
+                  "CV young - Male",
+                  "CV old - Male")
+
+
+write.csv(out, file = file.path(wd, "_sensitivities", "_plots", "12.1_hkl_sensitivities_new.csv"))
+
+
+model = "12.1_base_hkl_upweight"
+hkl_upweight = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_upweight_selex"
+hkl_upweight_selex = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_upweight_recdevs"
+hkl_upweight_recdevs = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_hkl_upweight_recdevs_selex"
+hkl_upweight_recdevs_selex = SS_output(file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Base", "Up-Weighted HKL Length and Index (Fix Com/Rec Selex)",
+	"Up-Weighted HKL Length and Index", 
+	"Up-Weighted HKL Length and Index w/ Rec. Devs. (Fix Com/Rec Selex)", 
+	"Up-Weighted HKL Length and Index w/ Rec. Devs.")
+mysummary <- SSsummarize(list(base, hkl_upweight, 
+	hkl_upweight_selex, hkl_upweight_recdevs, 
+	hkl_upweight_recdevs_selex))
+
+SSplotComparisons(mysummary, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.4,
+                  plotdir = file.path(wd, "_sensitivities", '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = "12.1_ssc_hkl_upweighted_",
+                  subplot = c(2,4,12, 13,14,15), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+
+model = "12.1_base_recfin_index"
+recfin = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_cpfv_index"
+cpfv = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_cpfv"
+cpfv_recfin = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_cpfv_hkl_var"
+cpfv_recfin_var = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_recfin_cpfv_recdevs"
+cpfv_recfin_recdevs = SS_output(file.path(wd, "_sensitivities", model))
+
+
+modelnames <- c("Base", "RecFIN Index", "CPFV Index", "RecFIN + CPFV Index",
+	#"RecFIN, CPFV, HKL No added Var.",
+	"RecFIN + CPFV Indices w/ Rec. Devs.")
+mysummary <- SSsummarize(list(base, recfin, cpfv, cpfv_recfin, 
+	#cpfv_recfin_var, 
+	cpfv_recfin_recdevs))
+
+SSplotComparisons(mysummary, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.15,
+                  plotdir = file.path(wd, "_sensitivities", '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = "12.1_ssc_rec_indices_",
+                  subplot = c(1,3), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+model = "12.1_base"
+base = SS_output(file.path(wd, model))
+model = "12.1_base_no_hkl"
+no_hkl = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_no_hkl_recdevs"
+no_hkl_recdevs = SS_output(file.path(wd, "_sensitivities", model))
+modelnames <- c("Base Model", "No HKL Data", "No HKL Data w/ Rec. Devs.")
+mysummary <- SSsummarize(list(base, no_hkl, no_hkl_recdevs))
+
+SSplotComparisons(mysummary, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.15,
+                  plotdir = file.path(wd, "_sensitivities", '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = "12.1_ssc_no_hkl_",
+                  subplot = c(2,4, 12), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+
+model = "12.1_base"
+base = SS_output(file.path(wd, model))
+model = "12.1_base_no_hkl_2"
+no_hkl = SS_output(file.path(wd, "_sensitivities", model))
+model = "12.1_base_no_hkl_2_recdevs"
+no_hkl_w_recdevs = SS_output(file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Base Model", "No HKL Data", "No HKL Data w/ Rec. Devs.")
+mysummary <- SSsummarize(list(base, no_hkl, no_hkl_w_recdevs))
+SSplotComparisons(mysummary, endyrvec = 2021, 
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.15,
+                  plotdir = file.path(wd, "_sensitivities", '_plots'), 
+                  legendloc = "topright", 
+                  filenameprefix = "12.1_ssc_no_hkl_only_",
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+################################################################################
+#  Council Requests
+################################################################################
+model = "12.1_base"
+base = SS_output(file.path(wd, model))
+
+model = "12.1_base_council_cpfv_mirror"
+mirror = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(mirror)
+
+model = "12.1_base_council_cpfv"
+cpfv = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(cpfv)
+SS_tune_comps(replist = cpfv, option = "Francis", dir = file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Adopted Model", "+ Early Length Data")
+mysummary <- SSsummarize(list(base, cpfv))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_council_cpfv_data_",
+				  legendlabels = modelnames, 
+				  #ylimAdj = 1.45,
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+################################################################################
+# Table of estimates from the added data
+################################################################################
+x = mysummary
+ii = 1:length(modelnames)
+n = length(modelnames)
+out = matrix(NA, 35, max(ii))
+find1 = which(x$likelihoods_by_fleet$model == 1 &x$likelihoods_by_fleet$Label == "Length_like")
+find2 = which(x$likelihoods_by_fleet$model == 2 &x$likelihoods_by_fleet$Label == "Length_like")
+find3 = which(x$likelihoods_by_fleet$model == 3 &x$likelihoods_by_fleet$Label == "Length_like")
+
+out = rbind(
+            as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
+            c(as.numeric(x$likelihoods_by_fleet[find1,4]), as.numeric(x$likelihoods_by_fleet[find2,4])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,5]), as.numeric(x$likelihoods_by_fleet[find2,5])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,6]), as.numeric(x$likelihoods_by_fleet[find2,6])),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_LN(R0)", 1:n]), 
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_Virgin", 1:n]),
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_2021", 1:n]),
+            as.numeric(x$Bratio[x$Bratio$Label == "Bratio_2021", 1:n]), 
+            as.numeric(x$quants[x$quants$Label == "Dead_Catch_SPR", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_BH_steep", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "LnQ_base_NWFSC_HKL(3)", 1:n]), 
+            as.numeric(x$pars[x$pars$Label == "Q_extraSD_NWFSC_HKL(3)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_NWFSC_HKL(3)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_NWFSC_HKL(3)", 1:n]))  
+			
+out = as.data.frame(out)
+colnames(out) = modelnames
+rownames(out) = c("Total Likelihood",
+                  "Survey Likelihood",
+                  "Length Likelihood",
+                  "Commercial Length Likelihood",
+                  "Recreational Length Likelihood",
+                  "NWFSC HKL Length Likelihood",
+                  "Parameter Priors Likelihood",
+                  "log(R0)",
+                  "SB Virgin",
+                  "SB 2021",
+                  "Fraction Unfished 2021",
+                  "Total Yield - SPR 50",
+                  "Steepness",
+                  "Natural Mortality - Female",
+                  "Length at Amin - Female",
+                  "Length at Amax - Female",
+                  "Von Bert. k - Female",
+                  "CV young - Female",
+                  "CV old - Female",
+                  "Natural Mortality - Male",
+                  "Length at Amin - Male",
+                  "Length at Amax - Male",
+                  "Von Bert. k - Male",
+                  "CV young - Male",
+                  "CV old - Male",
+                  "log(Q) NWFSC HKL", "Extra SD NWFSC HKL",
+                  "Peak Selectivity - Commercial", "Ascending Selectivity - Commercial", "Final Selectivity - Commercial",
+				  "Peak Selectivity - Recreational", "Ascending Selectivity - Recreational", "Final Selectivity - Recreation",
+				  "Peak Selectivity - NWFSC HKL", "Ascending Selectivity - NWFSC HKL")
+t = sa4ss::table_format(x = out,
+      caption = 'Data sensitivity relative to the adoptedbase model.',
+      label = 'data-sens-south',
+      digits = 3,
+      col_names = modelnames)
+
+kableExtra::save_kable(t,
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/sca_data_sens.tex")
+
+################################################################################
+model = "12.1_base_council_cpfv_rec_selex_block"
+cpfv_selex = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(cpfv_selex)
+#SS_tune_comps(replist = cpfv_selex, option = "Francis", dir = file.path(wd, "_sensitivities", model))
+
+model = "12.1_base_council_cpfv_all_selex_block"
+all_selex = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex)
+
+model = "12.1_base_council_cpfv_rec_selex_block_fix"
+cpfv_selex_fix = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(cpfv_selex_fix)
+#SS_tune_comps(replist = cpfv_selex, option = "Francis", dir = file.path(wd, "_sensitivities", model))
+
+model = "12.1_base_council_cpfv_all_selex_block_fix"
+all_selex_fix = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_fix)
+
+modelnames <- c("Adopted Model", "+ Early Length Data", 
+	'+ Early Length Data & Selex Block Est.',
+	'+ Early Length Data & Selex Block Fix')
+mysummary <- SSsummarize(list(base, cpfv, 
+	all_selex, all_selex_fix))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_council_selex_",
+				  legendlabels = modelnames, 
+				  ylimAdj = 1.25,
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+################################################################################
+# Table of estimates from the added data
+################################################################################
+x = mysummary
+ii = 1:length(modelnames)
+n = length(modelnames)
+out = matrix(NA, 36, max(ii))
+find1 = which(x$likelihoods_by_fleet$model == 1 &x$likelihoods_by_fleet$Label == "Length_like")
+find2 = which(x$likelihoods_by_fleet$model == 2 &x$likelihoods_by_fleet$Label == "Length_like")
+find3 = which(x$likelihoods_by_fleet$model == 3 &x$likelihoods_by_fleet$Label == "Length_like")
+find4 = which(x$likelihoods_by_fleet$model == 4 &x$likelihoods_by_fleet$Label == "Length_like")
+
+out = rbind(
+            as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
+            c(as.numeric(x$likelihoods_by_fleet[find1,4]), as.numeric(x$likelihoods_by_fleet[find2,4]), as.numeric(x$likelihoods_by_fleet[find3,4]),as.numeric(x$likelihoods_by_fleet[find4,4])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,5]), as.numeric(x$likelihoods_by_fleet[find2,5]), as.numeric(x$likelihoods_by_fleet[find3,5]),as.numeric(x$likelihoods_by_fleet[find4,5])),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_LN(R0)", 1:n]), 
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_Virgin", 1:n]),
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_2021", 1:n]),
+            as.numeric(x$Bratio[x$Bratio$Label == "Bratio_2021", 1:n]), 
+            as.numeric(x$quants[x$quants$Label == "Dead_Catch_SPR", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_BH_steep", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Commercial(1)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Commercial(1)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK2repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)_BLK1repl_1916", 1:n]))  
+			
+out = as.data.frame(out)
+colnames(out) = modelnames
+rownames(out) = c("Total Likelihood",
+                  "Survey Likelihood",
+                  "Length Likelihood",
+                  "Commercial Length Likelihood",
+                  "Recreational Length Likelihood",
+                  "Recruitment Likelihood",
+                  "Forecast Recruitment Likelihood",
+                  "Parameter Priors Likelihood",
+                  "log(R0)",
+                  "SB Virgin",
+                  "SB 2021",
+                  "Fraction Unfished 2021",
+                  "Total Yield - SPR 50",
+                  "Steepness",
+                  "Natural Mortality - Female",
+                  "Length at Amin - Female",
+                  "Length at Amax - Female",
+                  "Von Bert. k - Female",
+                  "CV young - Female",
+                  "CV old - Female",
+                  "Natural Mortality - Male",
+                  "Length at Amin - Male",
+                  "Length at Amax - Male",
+                  "Von Bert. k - Male",
+                  "CV young - Male",
+                  "CV old - Male",
+                  "Peak Selectivity - Commercial", "Ascending Selectivity - Commercial", "Final Selectivity - Commercial",
+				  "Peak Selectivity (1916 - 2001) - Commercial","Final Selectivity (1916 - 2001) - Commercial",
+				  "Peak Selectivity - Recreational", "Ascending Selectivity - Recreational", "Final Selectivity - Recreational",
+				  "Peak Selectivity (1916 - 2001) - Recreational","Final Selectivity (1916 - 2001) - Recreational")
+t = sa4ss::table_format(x = out,
+      caption = 'Selectivity sensitivities relative to the adopted base model.',
+      label = 'selex-sens-south',
+      digits = 3,
+      col_names = modelnames)
+
+kableExtra::save_kable(t,
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/sca_selex_sens.tex")
+###############################################################################################
+
+
+################################################################################
+#  SCA Selectivity
+################################################################################
+model = all_selex_fix
+# Create selectivity plots
+fleets = model$FleetNames
+
+com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1,years = c(2000, 2020))
+com_selex$infotable$col <- 'blue'
+com_selex$infotable$longname = c("Commercial 1916-2000", "Commercial 2001-2020")
+rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000, 2020))
+rec_selex$infotable$longname = c("Recreational 1916-2000", "Recreational 2001-2020")
+rec_selex$infotable$col <- 'red'
+hkl <- SSplotSelex(model, fleets=3, fleetnames=fleets, subplot=1)
+hkl$infotable$col <- "purple"
+hkl$infotable$longname = "NWFSC Hook & Line"
+
+pngfun(wd = file.path(wd, "_sensitivities", "_plots"), 
+	'12.1_base_council_fix_selex_block.png', w = 10, h = 5)
+par(mfrow=c(1,3), mar=c(4,4,3,1))
+SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, year = c(2000, 2020),
+			subplot = 1, showmain=FALSE, legend = 'topright')
+grid()
+SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, year = c(2000, 2020),
+			subplot = 1, legend= 'topright', showmain=FALSE)	
+grid()
+SSplotSelex(model, fleets=3,  infotable=hkl$infotable, legend = 'bottomright',
+			subplot = 1, showmain=FALSE)
+legend("topleft", legend = hkl$infotable$longname, 
+	col = hkl$infotable$col, lwd = 2, lty = 1, pch = 16, bty = 'n')
+grid()
+dev.off()
+
+
+# Both Fleets
+#-------------------------------------------------
+model = all_selex
+# Create selectivity plots
+fleets = model$FleetNames
+
+com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, years = c(2000, 2020))
+com_selex$infotable$col <- 'blue'
+com_selex$infotable$longname = c("Commercial 1916-2000", "Commercial 2001-2020")
+rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000, 2020))
+rec_selex$infotable$longname = c("Recreational 1916-2000", "Recreational 2001-2020")
+rec_selex$infotable$col <- 'red'
+hkl <- SSplotSelex(model, fleets=3, fleetnames=fleets, subplot=1)
+hkl$infotable$col <- "purple"
+hkl$infotable$longname = "NWFSC Hook & Line"
+
+pngfun(wd = file.path(wd, "_sensitivities", "_plots"), 
+	'12.1_base_council_est_selex_block.png', w = 10, h = 5)
+par(mfrow=c(1,3), mar=c(4,4,3,1))
+SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, year = c(2000,2020),
+			subplot = 1, showmain=FALSE, legend = 'topright')
+grid()
+SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2000, 2020),
+			subplot = 1, legend= 'topright', showmain=FALSE)	
+#legend("topleft", legend = rec_selex$infotable$longname, 
+#	col = rec_selex$infotable$col, lwd = 2, lty = 1, pch = 16, bty = 'n')
+grid()
+SSplotSelex(model, fleets=3,  infotable=hkl$infotable, legend = 'bottomright',
+			subplot = 1, showmain=FALSE)
+legend("topleft", legend = hkl$infotable$longname, 
+	col = hkl$infotable$col, lwd = 2, lty = 1, pch = 16, bty = 'n')
+grid()
+dev.off()

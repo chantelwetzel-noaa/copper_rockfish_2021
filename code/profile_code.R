@@ -2,6 +2,35 @@
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/nwfscDiag")
 #library(nwfscDiag)
 
+
+#######################################################################################################
+# All of California
+#######################################################################################################
+
+mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca"
+base_name = "2.1_south_growth_no_hkl"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "CV_old_Fem_GP_1"),
+							low =  c(0.08, 0.30, -0.5, 0.05),
+							high = c(0.14, 0.95,  1.5, 0.15),
+							step_size = c(0.005, 0.05, 0.10, 0.01),
+							param_space = c('real', 'real', 'relative', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+											  profile_details = get,
+											  run = c("profile"),
+											  retro_yrs = -1:-10,
+											  jitter_fraction = 0.10))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							run ="profile", profile_details = get))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+							run ="retro",
+							retro_yrs = -1:-20))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 #######################################################################################################
 # South of Pt. Conception
 #######################################################################################################

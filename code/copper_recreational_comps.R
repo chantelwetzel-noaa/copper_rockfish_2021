@@ -1,9 +1,9 @@
 ############################################################################################
-#	Recreational data-processing for copper rockfish
+#	  Recreational data-processing for copper rockfish
 #
-#				September, 2020
+#		          		September, 2020
 #
-#				 Chantel Wetzel
+#           			 Chantel Wetzel
 ############################################################################################
 
 devtools::load_all("C:/Users/Chantel.Wetzel/Documents/GitHub/nwfscSurvey")
@@ -23,7 +23,7 @@ len_bin = seq(10, 54, 2)
 
 # California Recreational
 #ca_recfin = read.csv(file.path(dir, "data", "recreational_comps", "ca_rec_lengths_2004_2020_updated.csv"))
-ca_recfin = read.csv(file.path(dir, "data", "recreational_comps", "Copper Revised CRFS Lengths No Region SD501-CALIFORNIA-1980-2020.csv"))
+ca_recfin = read.csv(file.path(dir, "data", "recreational_comps", "ca", "Copper Revised CRFS Lengths No Region SD501-CALIFORNIA-1980-2020.csv"))
 ca_recfin =	ca_recfin[ca_recfin$AGENCY_WATER_AREA_NAME != "MEXICO (AREAB AND P1B IMPORT, CPFV)", ]
 ca_recfin = rename_budrick_recfin(data = ca_recfin)
 ca_recfin_data = rename_recfin(data = ca_recfin,
@@ -35,17 +35,28 @@ ca_recfin_data = rename_recfin(data = ca_recfin,
 					      mode_column_name = "RECFIN_MODE_NAME" )
 ca_recfin_data$Source = "RecFIN_MRFSS"
 
+find = which(ca_recfin_data$RECFIN_MODE_NAME %in% c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS") )
+tmp = ca_recfin_data[find,]
+north = which(tmp$State_Areas == "north_pt_concep")
+ggplot(tmp[north, ], aes(Length, fill = RECFIN_MODE_NAME, color = RECFIN_MODE_NAME)) +
+  facet_wrap(facets = "Year") +
+  ylim(0, 0.25)+
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+ggplot(tmp[-north, ], aes(Length, fill = RECFIN_MODE_NAME, color = RECFIN_MODE_NAME)) +
+  facet_wrap(facets = "Year") +
+  ylim(0, 0.25)+
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
 
 #ca_mrfss = read.csv(file.path(dir, "data", "recreational_comps", "ca_mrfss_bio_1980_2003.csv"))
 #old_ca_mrfss = ca_mrfss[ca_mrfss$ST == 6 & ca_mrfss$SP_CODE == 8826010108, ]
-ca_mrfss = read.csv(file.path(dir, 'data', 'recreational_comps', 'ca_type3.csv'))
+ca_mrfss = read.csv(file.path(dir, 'data','recreational_comps', 'ca',  'ca_type3.csv'))
 ca_mrfss = ca_mrfss[ca_mrfss$ST == 6 & ca_mrfss$SP_CODE == 8826010108, ]
 ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ] # remove records without a county
 ca_mrfss = ca_mrfss[ca_mrfss$YEAR != 2004, ] # overlap with crfss in 2004
 ca_mrfss$STATE_NAME = "CA"
 spc = c(37, 59, 73, 37, 111, 83) # 79 is San Luis Obispo which is north
 npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
-
 
 ca_mrfss_data = rename_mrfss(data = ca_mrfss,
 							 len_col = "LNGTH",
@@ -59,6 +70,20 @@ ca_mrfss_data = rename_mrfss(data = ca_mrfss,
 # for some reason CNTY 111 is not going to the south
 find = which(ca_mrfss_data$CNTY == 111)
 ca_mrfss_data[find,"State_Areas"] = "south_pt_concep"
+
+find = which(ca_mrfss_data$MODE_FX %in% c(6,7) )
+tmp = ca_mrfss_data[find,]
+tmp$MODE_FX = as.factor(tmp$MODE_FX)
+north = which(tmp$State_Areas == "north_pt_concep")
+
+ggplot(tmp[north, ], aes(Length, fill = "MODE_FX", color = "MODE_FX")) +
+  facet_wrap(facets = "MODE_FX") +
+  ylim(0, 0.25)+
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+ggplot(tmp[-north, ], aes(Length, fill = MODE_FX, color = MODE_FX)) +
+  facet_wrap(facets = "MODE_FX") +
+  ylim(0, 0.25)+
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
 
 
 # Oregon Recreational
@@ -355,4 +380,111 @@ file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Survey
 			to= file.path(dir, "data", "recreational_comps", "forSS", "released_sca_rec_notExpanded_Length_comp_Sex_0_bin=10-54_mar2021.csv")) 
 
 
+############################################################################################
+# Additional California CPFV data
+############################################################################################
+ca_cpfv_1970 = read.csv(file.path(dir, "data", "recreational_comps", "ca", "copper_rockfish_qry_70slengthdata_sca_cpfv.csv"))
+ca_cpfv_1980 = read.csv(file.path(dir, "data", "recreational_comps", "ca", "copper_rockfish_qry_80slengthdata_sca_cpfv.csv"))
+nca_cpfv = read.csv(file.path(dir, "data", "recreational_comps", "ca", "copper_cpfv_ca_central_lengths.csv"))
 
+# Combine the 1970s - 1980s data
+sca_cpfv = rbind(ca_cpfv_1970[,c("Year", "Month", "Length", "County")], ca_cpfv_1980[,c("Year", "Month", "Length", "County")])
+sca_cpfv$Length_cm = sca_cpfv$Length/10
+sca_cpfv$Trawl_id = 1:nrow(sca_cpfv)
+sca_cpfv$Sex = "U"
+#GetN.fn(dir = file.path(dir, "data", "recreational_comps"), bds = sca_cpfv, species = 'others')
+
+# Lets do the CA CPFV 1980 - 1990s separate
+nca_cpfv$Length_cm = nca_cpfv$Total.Length / 10
+nca_cpfv$Year = nca_cpfv$YEAR
+nca_cpfv$Trawl_id = 1:nrow(nca_cpfv)
+nca_cpfv$Sex = "U"
+#GetN.fn(dir = file.path(dir, "data", "recreational_comps"), dat = nca, type = "length", species = 'others')
+#n = read.csv(file.path(dir, "data", "recreational_comps", "forSS", "length_SampleSize.csv"))
+#n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+#write.csv(n, file = file.path(dir, "data", "recreational_comps", "forSS", "n_ca_rec_len_samples_may2021.csv"), row.names = FALSE)
+
+par(mfrow=c(2,2))
+hist(ca_cpfv_1970$Length/10, xlim = c(10, 60))
+hist(ca_cpfv_1980$Length/10, xlim = c(10, 60))
+find = which(nca_cpfv$Year <= 1989)
+hist(nca_cpfv$Length_cm[find], xlim = c(10, 60))
+find = which(nca_cpfv$Year > 1989)
+hist(nca_cpfv$Length_cm[find], xlim = c(10, 60))
+
+aggregate(Length_cm~Year, sca_cpfv, mean)
+aggregate(Length_cm~Year, nca_cpfv, mean)
+aggregate(Length_cm~County, sca_cpfv, mean)
+aggregate(Length_cm~COUNTY, nca_cpfv, mean)
+
+ggplot(sca_cpfv, aes(Length_cm)) +
+  facet_wrap(facets = "Year") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+ggplot(sca_cpfv, aes(Length_cm)) +
+  facet_wrap(facets = "County") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+ggplot(sca_cpfv, aes(Length_cm, fill = County, color = County)) +
+  facet_wrap(facets = "Year") +
+  ylim(c(0, 0.3)) +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+ggplot(nca_cpfv, aes(Length_cm)) +
+  facet_wrap(facets = "Year") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+ggplot(nca_cpfv, aes(Length_cm)) +
+  facet_wrap(facets = "COUNTY") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+ggplot(nca_cpfv, aes(Length_cm, fill = COUNTY, color = COUNTY)) +
+  facet_wrap(facets = "Year") +
+  ylim(c(0, 0.3)) +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       bds = sca_cpfv, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Length_notExpanded_Sex_0_bin=10-54.csv"), 
+            to= file.path(dir, "data", "recreational_comps", "forSS", "sca_cpfv_Length_notExpanded_Sex_0_bin=10-54.csv")) 
+
+PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                dat = lfs$comps, ylim = c(0, max(len_bin) + 4), 
+                main = "CA S. Pt. Conception Recreational - Unsexed (CPFV)", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                       bds = nca_cpfv, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "recreational_comps", "forSS", "Length_notExpanded_Sex_0_bin=10-54.csv"), 
+            to= file.path(dir, "data", "recreational_comps", "forSS", "nca_cpfv_Length_notExpanded_Sex_0_bin=10-54.csv")) 
+
+PlotFreqData.fn(dir = file.path(dir, "data", "recreational_comps"), 
+                dat = lfs$comps, ylim = c(0, max(len_bin) + 4), 
+                main = "CA N. Pt. Conception Recreational - Unsexed (CPFV)", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+#####################################################################
+# Compare new data with the original data
+#####################################################################
+nca_cpfv$Length = nca_cpfv$Length_cm
+nca_cpfv$Type = "New_Data"
+out$Type = "Original_Data"
+nca_all = rbind(nca_cpfv[, c("Year","Length", "Type")],out[out$State_Areas == "north_pt_concep", c("Year","Length", "Type")])
+sca_cpfv$Length = sca_cpfv$Length_cm
+sca_cpfv$Type = "New_Data"
+sca_all = rbind(sca_cpfv[, c("Year","Length", "Type")],out[out$State_Areas == "south_pt_concep", c("Year","Length", "Type")])
+
+wd = 'C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests'
+pngfun(wd = wd, file = 'north_data_compare.png', w = 12, h = 12)
+ggplot(nca_all[nca_all$Year > 1986 & nca_all$Year < 1999,] , aes(Length, fill = Type, color = Type)) +
+  facet_wrap(facets = "Year") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+dev.off()
+
+pngfun(wd = wd, file = 'south_data_compare.png', w = 12, h = 12)
+ggplot(sca_all[sca_all$Year < 1990,] , aes(Length, fill = Type, color = Type)) +
+  facet_wrap(facets = "Year") +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5)
+dev.off()
