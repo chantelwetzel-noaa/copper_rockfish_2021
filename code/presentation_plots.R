@@ -292,7 +292,7 @@ legend('bottomright', col = c("red", 'blue', 'orange', 'purple'), lwd = 2,
   legend = c("SCA - Females", "SCA - Males", "NCA/OR/WA - Females", "NCA/OR/WA - Males"))
 dev.off()
 
-pngfun(wd = file.path(loc, "_plots"), file = "Growth_by_Area_1x2.png", w = 7, h = 7, pt = 12)
+pngfun(wd = file.path(loc, "_plots"), file = "Growth_by_Area_1x2.png", w = 12, h = 6, pt = 12)
 par(mfrow = c(1,2))
 plot(a, sca_f, ylim = c(0, 55), col = 'red', lwd = 3, type = 'l',
   xlab = "Age (yr)", ylab = "Length (cm)")

@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "May"
+month: "August"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -42,14 +42,14 @@ affiliation:
       Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
       Montlake Boulevard East, Seattle, Washington 98112
   - code: 2
-    address: California Department of Fish and Wildlife, 350 Harbor Boulevard, Belmont,
-      California 94002
+    address: California Department of Fish and Wildlife, 1123 Industrial Rd., Suite 300, San Carlos,
+      California 94070
 address:
   - ^1^Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic
     and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake
     Boulevard East, Seattle, Washington 98112
-  - ^2^California Department of Fish and Wildlife, 350 Harbor Boulevard, Belmont,
-    California 94002
+  - ^2^California Department of Fish and Wildlife, 1123 Industrial Rd., Suite 300, San Carlos,
+      California 94070
 ---
 
 <!--chapter:end:00authors.Rmd-->
@@ -209,11 +209,6 @@ The \Gls{s-wcgbt} is based on a random-grid design; covering the coastal waters 
 
 The observations of copper rockfish by the \Gls{s-wcgbt} are limited.  The number of tows where copper rockfish were observed in California waters north of Point Conception are shown in Table \ref{tab:wcgbts-len}.  The limited number of tows by year within this area prevented the calculation of an index of abundance for copper rockfish. Additionally, observations using trawl gear may not be informative of population trends for rocky-habitat associated species such as copper rockfish. With limited observations and in the absence of an index of abundance to link associated length data to, this data set was not used in the base model.
 
-### Remotely Operated Vehicle Observations
-
-Data collected by Remotely Operated Vehicle (ROV) fall outside the Terms of Reference (TOR) for catch and length based assessments and were not included in this assessment.  However, data collected by ROV were examined in order to gain insight in copper rockfish north of Point Conception which may provide additional understanding of the data from the commercial, recreational, and survey fleets that are being included in this assessment. 
-
-Length frequency distribution for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception show the majority of observations occurring between 10 - 30 fathoms with peak observations between 31 - 35 cm (Figure \ref{fig:rov-open}). The observations in closed areas, marine protected areas where retention is prohibited, had higher number of observations of copper rockfish across sizes and depths (Figure \ref{fig:rov-mpa}). A reduced range of sizes, percent of copper rockfish by length bin, were observed across depths in open areas (Figure \ref{fig:rov-percent-open}) versus closed areas (Figure \ref{fig:rov-percent-mpa}). 
 
 
 <!--chapter:end:21s-.Rmd-->
@@ -243,7 +238,7 @@ The length-weight relationship for copper rockfish was estimated outside the mod
 ### Growth (Length-at-Age)
 
 
-Length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington, collected between 1998-2019 (Table \ref{tab:len-at-age-samps}).  The available fishery-dependent data from Oregon and Washington included limited observations of young fish (less than 4 years of age) which presented challenges for estimating growth. Attempting to estimate growth in the absence of data to inform the rate of growth ($k$) and the size-at-age 0 ($t_0$) could result in biased estimates of all parameters including the size-at-maximum length ($L_{\infty}$). A published growth study for copper rockfish by Lea [-@lea_biological_1999] had numerous observations of young fish and also reported the mean length, the number of observations, and the standard deviation of the length observations by age. These pieces of information were used to simulate length-at-age data that would be representative of the study's data for fish less than 5 years of age. The simulated data for young fish appeared consistent with older fish observed off the Oregon and Washington coast (Figure \ref{fig:len-age-data}). This combined data set was used to estimate growth curves for male and female copper rockfish that were used in this assessment.  Ideally, growth would be estimated using data collected from similar sources. However, the bias from using data from different sources was considered to be less than the bias that may arise from estimating growth from observations that did not cover the range of ages. 
+Length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington, collected between 1998-2019 (Table \ref{tab:len-at-age-samps}).  The available fishery-dependent data from Oregon and Washington included limited observations of young fish (less than 4 years of age) which presented challenges for estimating growth. Attempting to estimate growth in the absence of data to inform the rate of growth ($k$) and the size-at-age 0 ($t_0$) could result in biased estimates of all parameters including the size-at-maximum length ($L_{\infty}$). A published growth study for copper rockfish by Lea et al. [-@lea_biological_1999] had numerous observations of young fish and also reported the mean length, the number of observations, and the standard deviation of the length observations by age. These pieces of information were used to simulate length-at-age data that would be representative of the study's data for fish less than 5 years of age. The simulated data for young fish appeared consistent with older fish observed off the Oregon and Washington coast (Figure \ref{fig:len-age-data}). This combined data set was used to estimate growth curves for male and female copper rockfish that were used in this assessment.  Ideally, growth would be estimated using data collected from similar sources. However, the bias from using data from different sources was considered to be less than the bias that may arise from estimating growth from observations that did not cover the range of ages. 
 
 The estimated growth used in this assessment had females reach marginally larger asymptotic sizes compared to males. Sex-specific growth parameters were estimated at the following values:
 
@@ -259,7 +254,7 @@ Males $L_{\infty}$ = 47.2 cm; $k$ = 0.231
 
 These values were fixed within the base model for male and female copper rockfish. While the growth differences between sexes was limited for copper rockfish, sex-specific parameterization was used in the hopes that it would allow the length data to the most informative within the assessment. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age by sex is shown in Figure \ref{fig:len-age-ss}.  
 
-In contrast to the current approach, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for copper rockfish (although not directly used by the data-moderate model) were from Lea [-@lea_biological_1999]. The $L_{\infty}$ from the Lea study were quite a bit larger for both sexes than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. In the Lea [-@lea_biological_1999] young fish were well sampled, however, there were very few observations of fish older than 12 years of age (less than 5 total) which appears to have led to a poorly informed estimate of $L_{\infty}$.   
+In contrast to the current approach, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for copper rockfish (although not directly used by the data-moderate model) were from Lea et al. [-@lea_biological_1999]. The $L_{\infty}$ from Lea et al. [-@lea_biological_1999] by sex were quite a bit larger than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. In the Lea et al. [-@lea_biological_1999] young fish were well sampled, however, there were very few observations of fish older than 12 years of age (less than 5 total) which appears to have led to a poorly informed estimate of $L_{\infty}$.   
 
 For the sake of parsimony, the length-age samples were pooled across sources to estimate a single length-at-age curve for copper rockfish in California north of Point Conception, Oregon, and Washington. In the future, if adequate area based length-age samples across a range of fishery-dependent and -independent source are available, copper rockfish growth should be re-evaluated for possible area-specific variation.
 
@@ -979,32 +974,6 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 
 ![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-rec-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_data_weighting_TA1.8_CA_N_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
 
-
-<!-- ====================================================================== -->
-<!-- ****************        ROV Figures             ********************** --> 
-<!-- ====================================================================== -->
-
-
-
-![Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception.\label{fig:rov-open}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_open_area.png){width=100% height=100% alt="Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception."}
-
-\clearpage
-
-
-
-![Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited.\label{fig:rov-mpa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_mpa_area.png){width=100% height=100% alt="Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited."}
-
-\clearpage
-
-
-
-![Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed.\label{fig:rov-percent-open}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_percent_open.png){width=100% height=100% alt="Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed."}
-
-\clearpage
-
-
-![Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited.\label{fig:rov-percent-mpa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_percent_mpa.png){width=100% height=100% alt="Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited."}
-
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
@@ -1246,6 +1215,238 @@ fishery selectivity and with steepness fixed at 0.72."}
 ## Summary of California Management Measures{#ca-man}
 
 Information on changes to California management measures across time can be found in the separate file "California Nearshore Regulation History-Data Moderate Accompanying Material.pdf".
+
+## Percent of Habitat Area Closed to Fishing for Groundfish in the Rockfish Conservation Areas, Cowcod Conservation Areas, and Marine Protected Areas in California from 2001-2021
+
+
+At present, stock assessments reliant on fishery dependent data only represent the areas open to fishing, unless there is a fishery independent data source providing information on the relative abundance and length composition in closed areas.  A network of marine protected areas (MPAs) was established between 2003 to 2012 through a regional siting process.  The length composition and relative abundance inside and outside MPAs in part results from the presence of MPAs prohibiting take of groundfish established prior to expansion of the current network, duration of existence of new areas, degree of effort prior to protection and criteria for selection focusing on high productivity reefs.  These areas are established in perpetuity and will provide substantial protections to nearshore fish stocks for the foreseeable future. 
+
+In addition to MPAs, extensive Rockfish Conservation Areas (RCAs) of varying depths over time and space, as well as the two cowcod conservation areas (CCAs) encompassing 4200 square miles of water area since 2001, were established to facilitate rebuilding of overfished species.   While the depth restrictions in these closed areas can change or be eliminated, the areas closed become refugia that reduce fishing mortality, allowing accumulation of biomass within them.  There has long been interest in quantifying the area of reef habitat for each assessed species that resides in protected areas, but until very recently, there was insufficient data on the distribution of rocky reef habitat.  This analysis provides the percentage of habitat area for copper and quillback rockfish closed to fishing in MPAs, RCAs and CCAs where the take of groundfish was prohibited in each year from 2001 to 2021.  
+
+### Methods
+
+#### Descriptions of the habitat layers 
+
+A predictive substrate layer that identifies hard and soft substrate was used to analyze seafloor coverage within the 3 nautical miles from California’s shore.  Substrate types were generated algorithmically using rugosity analysis, to identify areas likely to have rocky reefs. This layer was derived from bathymetric data of 2, 5 and 10 m resolution and bathymetric data were collected by California Seafloor Mapping Project (CSMP). Potential issues with this rugosity analysis include noise and artifacts resulting from unusual substrate structure, original mapping data, and steep slopes. In addition, hard substrate might be underestimated in areas with canyon slopes, deep water, over smooth rock and where sediments cover rock. 
+
+Data from the CSMP is known to have nearshore data gaps referred to as the white zone.  Contributors from The University of California Santa Cruz, California Ocean Science Trust, and California Department of Fish and Wildlife (CDFW) conducted a 30 m resolution interpolation analysis to estimate hard and soft substrate within the white zone.  The interpolation analysis utilized data from the CSMP and National Oceanic and the National Oceanic and Atmospheric Administration Environmental Sensitivity Index (ESI).  Accuracy of the interpolation is estimated to be best where the white zone bands are narrowest and worst where the white zone bands are widest.  In addition, metadata indicates the interpolation is questionable at scales finer than 100 m.
+
+Substrate data developed for an Essential Fish Habitat Review was incorporated into this analysis for seafloor occurring outside of California State Waters (3 nautical miles).  This dataset was generated by Joe Bizarro of the National Marine Fisheries Service, Southwest Fisheries Science Center in Santa Cruz and was created by combining multiple sources of bathymetric data with varying resolutions including multibeam sonar, sidescan sonar, sediment grabs, core samples seismic reflection profiles, still photos and video.  This habitat data is subject to georeferencing errors and data resolution errors.  Currently this is the best available data that represents hard and soft substrate types offshore for the areas outside of California State waters.  
+
+
+#### Boundaries of the CCAs, RCAs and MPAs 
+
+Regulation histories for each type of closure were converted to Boolean fields with zeros and ones indicating absence and implementation, respectively from 2001-2020.  The corresponding GIS layers were either available from previous CDFW GIS staff projects or approximated by the depth contour where specific weigh points were unavailable.  The area in MPAs prohibiting take by the recreational and commercial fisheries were included in the estimates of area closed to fishing from the first year in which the MPA was in place for a full calendar year.  The Western CCA area accounted for waters around islands and banks open to take of a limited suite of groundfish species including copper rockfish.  The RCAs for commercial and recreational fisheries were based on the deeper of the depth restrictions for the sectors to reflect only areas where take was prohibited for both.  Where the RCA lines for the stock in question were not available, depth contours were used to approximate the percent of area closed.  
+
+#### Delineating Habitat in Restricted Areas and Open to Fishing
+
+The depth range of habitat for copper and quillback rockfish was between shore to 100 m, covering the primary depth distribution of both stocks observed in the CDFW ROV survey (Budrick, Ryley and Prall 2020) or noted in Love et al. (2002). The latitudinal range was set from the California/Mexican border to the California/Oregon border (42$^\circ$ N. lat.), which was stratified north and south Point Conception (34$^\circ$ 27' N. lat.).  Quillback rockfish are relatively rare south of Point Conception, thus only estimates for the area north of Point Conception are pertinent to this stock, while copper rockfish are found in both areas. 
+ 
+The distribution and area of rocky reef habitat within a species range was delineated in ArcGIS Pro (2.6) by extracting specific values from a 10 m bathymetric raster based on species depth and latitudinal ranges.  The resulting raster layer was converted into a shapefile and merged with a coastal boundary of California to account for gaps in the bathymetric raster.  Hard habitat within the species range was identified and isolated using the intersect tool to create species range shapefile.  This process was repeated to identify overlapping coverage between the species range and hard substrate, as well as intersecting the species range with a combination of different types of regulatory boundaries. 
+
+The area of the resulting shapefiles were calculated in GIS and exported into tables using Python script.  The combination of area closures in a given year were overlayed on the habitat maps, with the area in MPAs and CCAs extracted first, then the habitat in the remaining RCAs estimated.  The residual habitat still open to fishing after accounting for the closed areas was then estimated.  The area of rocky reef habitat closed to fishing within a species range was converted to a percentage of the total habitat. This process for identifying overlapping boundaries and calculating areas were scripted in Python to reduce the possibility of human error.  
+
+
+#### Examination of bottom type coverage relative to habitat
+
+The extent of existing substrate data within a given species range was examined through geospatial analysis. This included hard, soft, and unknown substrate for data from California Seafloor Mapping Project, and hard, mixed, and soft data from the EFH project. Both datasets were merged within the species range for copper and quillback rockfish. The resulting combination of substrate data was erased from the species range.  
+
+### Results
+
+The tables reflecting the percent of habitat area in RCAs, MPAs, CCAs closed to fishing for groundfish and waters open to fishing are provided for north of Point Conception (Table \ref{tab:north-ca-percent}) and south of Point Conception (Table \ref{tab:south-ca-percent}).  The potential habitat within the depth primary depth range of the species, rocky reef habitat within the potential habitat, MPAs and CCAs are depicted for the entire state (Figure \ref{fig:ca-all-app}) and various regions along the state in Figures \ref{fig:north-ca-app} - \ref{fig:south-ca-app}. 
+
+We found minimal voids in coverage in habitat layers across the species range, with 0.13 square miles missing north of Point Conception and 4.95 square miles missing from the south of Point Conception. 
+
+### Discussion
+
+Current assessments do not account for length/age composition and differing fishing mortality rates inside and outside MPAs or waters in long-established CCAs and RCAs.  As biomass accrues inside these areas, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside.  There is the potential for future assessments to account for differences in length composition, fishing mortality and relative abundance in a two-area model in Stock Synthesis with available data from long-term MPA monitoring.  
+
+Additional high resolution side scan sonar data in waters seaward of the CSMP coverage would improve coverage and resolution of habitat data.  Similar analyses for each nearshore or shallower distributed shelf rockfish species (i.e., vermilion rockfish) would be a helpful addition to stock assessments to inform time blocking and selectivity considerations.  The extent and design of the network to function in this way is unique to California and it’s efforts to conserve nearshore stocks.  Until the closed areas can be accounted for explicitly in stock assessments, the substantial areas in MPAs should be taken into consideration as a buffer against overfishing, since they were established in the interest of preserving spawning stock to seed areas outside and other MPAs in the network.  
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
+\caption{(\#tab:north-ca-percent)Percent of rocky reef habitat within 100 meters in MPAs, RCAs closed to fishing for groundfish and waters open to fishing in California north of Point Conception}\\
+\toprule
+Year & Percent Protected by MPA & Percent Protected by RCA & Percent Open to Fishing\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:north-ca-percent)Percent of rocky reef habitat within 100 meters in MPAs, RCAs closed to fishing for groundfish and waters open to fishing in California north of Point Conception \textit{(continued)}}\\
+\toprule
+Year & Percent Protected by MPA & Percent Protected by RCA & Percent Open to Fishing\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2001 & 0.03 & 0.00 & 0.97\\
+2002 & 0.03 & 0.00 & 0.97\\
+2003 & 0.03 & 0.41 & 0.55\\
+2004 & 0.03 & 0.23 & 0.73\\
+2005 & 0.03 & 0.30 & 0.67\\
+2006 & 0.03 & 0.30 & 0.67\\
+2007 & 0.03 & 0.28 & 0.69\\
+2008 & 0.11 & 0.27 & 0.62\\
+2009 & 0.11 & 0.27 & 0.62\\
+2010 & 0.11 & 0.33 & 0.56\\
+2011 & 0.17 & 0.29 & 0.54\\
+2012 & 0.17 & 0.29 & 0.54\\
+2013 & 0.20 & 0.27 & 0.53\\
+2014 & 0.20 & 0.27 & 0.53\\
+2015 & 0.20 & 0.24 & 0.56\\
+2016 & 0.20 & 0.24 & 0.56\\
+2017 & 0.20 & 0.14 & 0.66\\
+2018 & 0.20 & 0.14 & 0.66\\
+2019 & 0.20 & 0.11 & 0.68\\
+2020 & 0.20 & 0.13 & 0.67\\
+2021 & 0.20 & 0.05 & 0.75\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\caption{(\#tab:south-ca-percent)Percent of rocky reef habitat within 100 meters in MPAs, RCAs, CCAs closed to fishing for groundfish and waters open to fishing in California south of Point Conception}\\
+\toprule
+Year & Percent Protected by MPA & Percent Protected by RCA & Percent Protected by CCA & Percent Open to Fishing\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:south-ca-percent)Percent of rocky reef habitat within 100 meters in MPAs, RCAs, CCAs closed to fishing for groundfish and waters open to fishing in California south of Point Conception \textit{(continued)}}\\
+\toprule
+Year & Percent Protected by MPA & Percent Protected by RCA & Percent Protected by CCA & Percent Open to Fishing\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2001 & 0.01 & 0.00 & 0.34 & 0.65\\
+2002 & 0.01 & 0.00 & 0.34 & 0.65\\
+2003 & 0.01 & 0.16 & 0.34 & 0.49\\
+2004 & 0.04 & 0.10 & 0.34 & 0.52\\
+2005 & 0.04 & 0.10 & 0.34 & 0.52\\
+2006 & 0.04 & 0.10 & 0.34 & 0.52\\
+2007 & 0.04 & 0.10 & 0.34 & 0.52\\
+2008 & 0.04 & 0.10 & 0.34 & 0.52\\
+2009 & 0.04 & 0.10 & 0.34 & 0.52\\
+2010 & 0.04 & 0.10 & 0.34 & 0.52\\
+2011 & 0.04 & 0.10 & 0.34 & 0.52\\
+2012 & 0.08 & 0.10 & 0.34 & 0.48\\
+2013 & 0.08 & 0.10 & 0.34 & 0.48\\
+2014 & 0.08 & 0.10 & 0.34 & 0.48\\
+2015 & 0.08 & 0.10 & 0.34 & 0.48\\
+2016 & 0.08 & 0.10 & 0.34 & 0.48\\
+2017 & 0.08 & 0.10 & 0.34 & 0.48\\
+2018 & 0.08 & 0.10 & 0.34 & 0.48\\
+2019 & 0.08 & 0.10 & 0.25 & 0.57\\
+2020 & 0.08 & 0.10 & 0.25 & 0.57\\
+2021 & 0.08 & 0.10 & 0.25 & 0.57\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+
+
+
+![Copper and quillback rockfish potential depth range off California in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCAs in light blue.\label{fig:ca-all-app}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/ca_appendix/ca_substrate.png){width=100% height=100% alt="Copper and quillback rockfish potential depth range off California in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCAs in light blue."}
+
+
+![Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between the Oregon/California border and Point Arena, California.\label{fig:north-ca-app}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/ca_appendix/north_ca_substrate.png){width=100% height=100% alt="Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between the Oregon/California border and Point Arena, California."}
+
+
+![Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between Point Arena and Pigeon Point, California.\label{fig:central-ca-north-app}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/ca_appendix/central_ca_385_37_substrate.png){width=100% height=100% alt="Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between Point Arena and Pigeon Point, California."}
+
+
+![Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between Pigeon Point and Point Conception, California.\label{fig:central-ca-south-app}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/ca_appendix/central_ca_37_343_substrate.png){width=100% height=100% alt="Copper and quillback rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink and MPAs in dark blue outline between Pigeon Point and Point Conception, California."}
+
+
+![. Copper rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCA in light blue between the Point Conception, California and the U.S./Mexican border.   .\label{fig:south-ca-app}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/ca_appendix/south_ca_substrate.png){width=100% height=100% alt=". Copper rockfish potential depth range in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCA in light blue between the Point Conception, California and the U.S./Mexican border.   ."}
+
+\newpage
+
+## California Remotely Operated Vehicle Data 
+
+From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside MPAs and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of copper rockfish biomass (Table \ref{tab:ca-rov}). 
+ 
+In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. Length frequency distribution for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception show the majority of observations occurring between 10 - 30 fathoms with peak observations between 31 - 35 cm (Figure \ref{fig:rov-open}). The observations in closed areas, marine protected areas where retention is prohibited, had higher number of observations of copper rockfish across sizes and depths (Figure \ref{fig:rov-mpa}). A reduced range of sizes, percent of copper rockfish by length bin, were observed across depths in open areas (Figure \ref{fig:rov-percent-open}) versus closed areas (Figure \ref{fig:rov-percent-mpa}). 
+
+\clearpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
+\caption{(\#tab:ca-rov)Counts of fish, areas surveyed by the ROV, and density.}\\
+\toprule
+Depth (fm) & Observed Area (m2) & Copper Rockfish Observed & Copper Rockfish Density (fish/m2)\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:ca-rov)Counts of fish, areas surveyed by the ROV, and density. \textit{(continued)}}\\
+\toprule
+Depth (fm) & Observed Area (m2) & Copper Rockfish Observed & Copper Rockfish Density (fish/m2)\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+0-10 & 2905 & 0 & 0.0000\\
+10-20 & 124611 & 44 & 0.0004\\
+20-30 & 106708 & 84 & 0.0008\\
+30-40 & 86149 & 76 & 0.0009\\
+40-50 & 49896 & 68 & 0.0014\\
+50-60 & 16972 & 18 & 0.0011\\
+60-70 & 1379 & 0 & 0.0000\\
+70-80 & 970 & 0 & 0.0000\\
+80-90 & 947 & 0 & 0.0000\\
+90-100 & 1257 & 0 & 0.0000\\
+100-110 & 608 & 0 & 0.0000\\
+110-120 & 696 & 0 & 0.0000\\
+120-130 & 415 & 0 & 0.0000\\
+130-140 & 777 & 0 & 0.0000\\
+140-150 & 1633 & 0 & 0.0000\\
+150-160 & 908 & 0 & 0.0000\\
+160-170 & 860 & 0 & 0.0000\\
+170-180 & 1268 & 0 & 0.0000\\
+180-190 & 912 & 0 & 0.0000\\
+190-200 & 735 & 0 & 0.0000\\
+200-210 & 604 & 0 & 0.0000\\
+210-220 & 167 & 0 & 0.0000\\
+220-230 & 54 & 0 & 0.0000\\
+230-240 & 100 & 0 & 0.0000\\
+Total & 401535 & 209 & -\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+
+![Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception.\label{fig:rov-open}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_open_area.png){width=100% height=100% alt="Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception."}
+
+\clearpage
+
+
+
+![Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited.\label{fig:rov-mpa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_mpa_area.png){width=100% height=100% alt="Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited."}
+
+\clearpage
+
+
+
+![Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed.\label{fig:rov-percent-open}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_percent_open.png){width=100% height=100% alt="Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed."}
+
+\clearpage
+
+
+![Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited.\label{fig:rov-percent-mpa}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/survey/rov/copper_nocal_percent_mpa.png){width=100% height=100% alt="Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited."}
+
+\newpage
 
 ## Annual Length Composition Data
 

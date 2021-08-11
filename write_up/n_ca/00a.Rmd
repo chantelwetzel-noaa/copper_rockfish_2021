@@ -34,6 +34,8 @@ data_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copp
 
 model_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models"
 
+app_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up"
+
 if(file.exists("00mod.Rdata")){
   load("00mod.Rdata")
 } else {

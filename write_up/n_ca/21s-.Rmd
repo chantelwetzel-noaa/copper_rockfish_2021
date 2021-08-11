@@ -6,9 +6,4 @@ The \Gls{s-wcgbt} is based on a random-grid design; covering the coastal waters 
 
 The observations of `r spp` by the \Gls{s-wcgbt} are limited.  The number of tows where `r spp` were observed in California waters north of Point Conception are shown in Table \ref{tab:wcgbts-len}.  The limited number of tows by year within this area prevented the calculation of an index of abundance for `r spp`. Additionally, observations using trawl gear may not be informative of population trends for rocky-habitat associated species such as `r spp`. With limited observations and in the absence of an index of abundance to link associated length data to, this data set was not used in the base model.
 
-### Remotely Operated Vehicle Observations
-
-Data collected by Remotely Operated Vehicle (ROV) fall outside the Terms of Reference (TOR) for catch and length based assessments and were not included in this assessment.  However, data collected by ROV were examined in order to gain insight in `r spp` north of Point Conception which may provide additional understanding of the data from the commercial, recreational, and survey fleets that are being included in this assessment. 
-
-Length frequency distribution for `r spp` sampled by the ROV in reference locations open to fishing north of Point Conception show the majority of observations occurring between 10 - 30 fathoms with peak observations between 31 - 35 cm (Figure \ref{fig:rov-open}). The observations in closed areas, marine protected areas where retention is prohibited, had higher number of observations of `r spp` across sizes and depths (Figure \ref{fig:rov-mpa}). A reduced range of sizes, percent of `r spp` by length bin, were observed across depths in open areas (Figure \ref{fig:rov-percent-open}) versus closed areas (Figure \ref{fig:rov-percent-mpa}). 
 

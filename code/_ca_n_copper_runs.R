@@ -458,6 +458,28 @@ model = "10.3_base_council_cpfv_all_selex_block"
 all_selex = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(all_selex)
 
+model = "10.3_base_council_cpfv_all_selex_block_dw"
+all_selex_dw = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_dw)
+
+model = "10.3_base_council_cpfv_all_selex_block_2000"
+all_selex_2000 = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_2000)
+
+model = "10.3_base_council_cpfv_all_selex_block_4"
+all_selex_4 = SS_output(file.path(wd, "_sensitivities", model))
+
+model = "10.3_base_council_cpfv_all_selex_both_block_4"
+both_selex_4 =SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(both_selex_4)
+
+model = "10.3_base_council_cpfv_all_selex_domed_block_4"
+domed_selex_4 = SS_output(file.path(wd, "_sensitivities", model))
+
+model = "10.3_base_council_selex_block"
+base_selex = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base_selex)
+
 model = "10.3_base_council_cpfv_com_asym_rec_dome"
 alt_selex = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(alt_selex)
@@ -466,9 +488,15 @@ model = "10.3_base_rec_com_block_domed"
 base_selex = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(base_selex)
 
-modelnames <- c("Adopted Model", "+ Early Length Data", 
-	'+ Early Length Data, Selectivity Block')
-mysummary <- SSsummarize(list(base, cpfv, all_selex))
+model = "10.3_base_com_asym_rec_dome"
+base_alt_selex = SS_output(file.path(wd, "_sensitivities", model))
+
+
+modelnames <- c("Adopted Model", 
+	"Adopted Model, Selectivity Blocks",
+	"+ Early Length Data", 
+	'+ Early Length Data, Selectivity Blocks')
+mysummary <- SSsummarize(list(base, base_selex, cpfv, all_selex))
 SSplotComparisons(mysummary, 
 				  filenameprefix = "10.3_council_selex_",
 				  legendlabels = modelnames, 
@@ -478,23 +506,68 @@ SSplotComparisons(mysummary,
                   print = TRUE,
                   pdf = FALSE)
 
-################################################################################
+modelnames <- c("Adopted Model", "Adopted Model: Fix Com. Asym. Rec. Domed",
+    "+ Early Length Data",
+    "+ Early Length Data, Allow Rec. & Com. Domed", 
+    '+ Early Length Data, Fix Com. Asym. Rec. Domed')
+mysummary <- SSsummarize(list(base, base_alt_selex,
+    cpfv, all_selex, alt_selex))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "10.3_council_selex_dome_comparison",
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.35,
+                  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  #subplot = c(2,4,12), 
+                  #print = TRUE,
+                  pdf = TRUE)
+
+modelnames <- c("Adopted Model", 
+    "+ Early Length Data",
+    "+ Early Length Data, Allow Rec. & Com. Domed", 
+    '+ Early Length Data, Rec. 1916 - 00, 1-2, 3-7, 8-16')
+mysummary <- SSsummarize(list(base, 
+    cpfv, all_selex, both_selex_4))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "10.3_council_selex_block_comparison_",
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.35,
+                  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  #subplot = c(2,4,12), 
+                  #print = TRUE,
+                  pdf = TRUE)
+
+modelnames <- c("Adopted Model", 
+    "+ Early Length Data",
+    "+ Early Length Data, Rec. & Com. 1916 - 00, 2001 +", 
+    '+ Early Length Data, Com and Rec. 1916 - 00, 1-2, 3-7, 8-16, 17-20')
+mysummary <- SSsummarize(list(base, 
+    cpfv, all_selex,both_selex_4))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "10.3_council_selex_blocks_2_options_",
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.25,
+                  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  subplot = c(2,4,12), 
+                  print = TRUE,
+                  pdf = FALSE)
+##################################################
 # Table of estimates from the added data
 ################################################################################
 x = mysummary
 ii = 1:length(modelnames)
 n = length(modelnames)
-out = matrix(NA, 34, max(ii))
+out = matrix(NA, 38, max(ii))
 find1 = which(x$likelihoods_by_fleet$model == 1 &x$likelihoods_by_fleet$Label == "Length_like")
 find2 = which(x$likelihoods_by_fleet$model == 2 &x$likelihoods_by_fleet$Label == "Length_like")
 find3 = which(x$likelihoods_by_fleet$model == 3 &x$likelihoods_by_fleet$Label == "Length_like")
+find4 = which(x$likelihoods_by_fleet$model == 4 &x$likelihoods_by_fleet$Label == "Length_like")
 
 out = rbind(
             as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
-            c(as.numeric(x$likelihoods_by_fleet[find1,4]), as.numeric(x$likelihoods_by_fleet[find2,4]), as.numeric(x$likelihoods_by_fleet[find3,4])),
-            c(as.numeric(x$likelihoods_by_fleet[find1,5]), as.numeric(x$likelihoods_by_fleet[find2,5]), as.numeric(x$likelihoods_by_fleet[find3,5])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,4]), as.numeric(x$likelihoods_by_fleet[find2,4]), as.numeric(x$likelihoods_by_fleet[find3,4]),as.numeric(x$likelihoods_by_fleet[find4,4])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,5]), as.numeric(x$likelihoods_by_fleet[find2,5]), as.numeric(x$likelihoods_by_fleet[find3,5]),as.numeric(x$likelihoods_by_fleet[find4,5])),
             as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
             as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
             as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
@@ -520,10 +593,14 @@ out = rbind(
             as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_N_Commercial(1)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_N_Commercial(1)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Commercial(1)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Commercial(1)_BLK1repl_2001", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_N_Recreational(2)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_N_Recreational(2)", 1:n]),
-            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)_BLK2repl_1916", 1:n]))  
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)_BLK2repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)_BLK2repl_2001", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)_BLK2repl_2003", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_N_Recreational(2)_BLK2repl_2008", 1:n]))  
 			
 out = as.data.frame(out)
 colnames(out) = modelnames
@@ -555,18 +632,25 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male",
                   "Peak Selectivity - Commercial", "Ascending Selectivity - Commercial", "Final Selectivity - Commercial",
 				  "Peak Selectivity (1916 - 2001) - Commercial",
+				  "Peak Selectivity (2002 - 2007) - Commercial",
 				  "Peak Selectivity - Recreational", "Ascending Selectivity - Recreational", "Final Selectivity - Recreational",
-				  "Peak Selectivity (1916 - 2001) - Recreational")
+				  "Peak Selectivity (1916 - 2001) - Recreational",
+                          "Peak Selectivity (2001 - 2002) - Recreational",
+                          "Peak Selectivity (2003 - 2007) - Recreational",
+                          "Peak Selectivity (2008 - 2016) - Recreational")
 t = sa4ss::table_format(x = out,
-      caption = 'Selectivity sensitivities relative to the adopted base model.',
-      label = 'selex-sens-north',
+      caption = 'Selectivity sensitivities relative to the adopted base model for north of Point Conception.',
+      label = 'selex-sens-north-alt',
       digits = 3,
       col_names = modelnames)
 
 kableExtra::save_kable(t,
-file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/nca_selex_sens.tex")
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/nca_selex_sens_alt.tex")
 ###############################################################################################
 
+pngfun(wd = file.path(wd, "_sensitivities", "_plots"), '10.3_cpfv_selex_unavailable_biomass.png', w = 10, h = 7)
+	SSunavailableSpawningOutput(alt_selex, plot=TRUE)
+dev.off()
 
 ################################################################################
 #  NCA Selectivity
@@ -599,20 +683,20 @@ model = all_selex
 # Create selectivity plots
 fleets = model$FleetNames
 
-com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, year = c(2001, 2008, 2020))
-com_selex$infotable$longname = c("Commercial 1916-2001","Commercial 2002-2000", "Commercial 2009-2020")
+com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, year = c(2000, 2008, 2020))
+com_selex$infotable$longname = c("Commercial 1916-2000","Commercial 2001-2008", "Commercial 2009-2020")
 com_selex$infotable$col <- rep(rich.colors.short(n = 8)[2],3)
-rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2001, 2020))
-rec_selex$infotable$longname = c("Recreational 1916-2001", "Recreational 2002-2020")
+rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000, 2020))
+rec_selex$infotable$longname = c("Recreational 1916-2000", "Recreational 2001-2020")
 rec_selex$infotable$col <- 'red'
 
 pngfun(wd = file.path(wd, "_sensitivities", "_plots"), 
 	'10.3_base_council_cpfv_selex_block_1x2.png', w = 10, h = 5)
 par(mfrow=c(1,2), mar=c(4,4,3,1))
 SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, 
-				subplot = 1, legendloc = 'topleft', mainTitle=FALSE, year = c(2001, 2008, 2020))
+				subplot = 1, legendloc = 'topleft', mainTitle=FALSE, year = c(2000, 2008, 2020))
 grid()
-SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2001, 2020),
+SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2000, 2020),
 			subplot = 1, legend= 'bottomright', mainTitle=FALSE)	
 grid()
 dev.off()
@@ -620,24 +704,26 @@ dev.off()
 
 # Com Asym - Rec Domed
 #-------------------------------------------------
-model = alt_selex
+model = both_selex_4
 fleets = model$FleetNames
 
-com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, year = c(2001, 2008, 2020))
-com_selex$infotable$longname = c("Commercial 1916-2001","Commercial 2002-2000", "Commercial 2009-2020")
-com_selex$infotable$col <- rep(rich.colors.short(n = 8)[2],3)
-rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2001, 2020))
-rec_selex$infotable$longname = c("Recreational 1916-2001", "Recreational 2002-2020")
-rec_selex$infotable$col <- 'red'
+com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1, year = c(2000,2002,2007,2016, 2020))
+com_selex$infotable$longname = c("Commercial 1916-2000","2001-2002", '2003-2007',
+    '2008-2016', '2017-2020')
+com_selex$infotable$col <- c('orange','red', 'blue', 'purple', 'green')
+rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000,2002,2007,2016, 2020))
+rec_selex$infotable$longname = c("Recreational 1916-2000", "2001-2002", '2003-2007',
+    '2008-2016', '2017-2020')
+rec_selex$infotable$col <-  c('orange','red', 'blue', 'purple', 'green')
 
 pngfun(wd = file.path(wd, "_sensitivities", "_plots"), 
-	'10.3_base_council_cpfv_com_asym_rec_dome_1x2.png', w = 10, h = 5)
+	'10.3_base_council_cpfv_com_rec_4_blocks_1x2.png', w = 10, h = 5)
 par(mfrow=c(1,2), mar=c(4,4,3,1))
 SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, 
-				subplot = 1, legendloc = 'topleft', mainTitle=FALSE, year = c(2001, 2008, 2020))
+				subplot = 1, legendloc = 'topleft', mainTitle=FALSE, year = c(2000,2002,2007,2016, 2020))
 grid()
-SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2001, 2020),
-			subplot = 1, legend= 'bottomright', mainTitle=FALSE)	
+SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2000,2002,2007,2016, 2020),
+			subplot = 1, legend= 'topleft', mainTitle=FALSE)	
 grid()
 dev.off()
 

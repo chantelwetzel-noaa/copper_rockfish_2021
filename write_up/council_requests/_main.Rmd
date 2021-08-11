@@ -1,0 +1,60 @@
+
+---
+title: "Copper rockfish: Response to additional requests for California models"
+author: "Chantel Wetzel"
+address:
+- num: fill in
+  address: "Northwest Fisheries Science Center"
+corraddr: chantel.wetzel@noaa.gov
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(sa4ss)
+library(r4ss)
+
+data_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
+Spp = 'Copper rockfish'
+```
+
+California Department of Fish and Wildlife (CDFW) provided additional length observation data that was not available for use in the base models reviewed in the June Groundfish Subcommittee meeting of the Scientific and Statistical Committee (GFS-SSC).  These data were collected from the recreational fishery charter-private fishing vessels (CPFV) between the 1970s - 1990s. A total of 3,499 additional length observations collected between 1975 - 1989 were provided for the area south of Point Conception is (Table \ref{tab:cpfv-added}). A total of 6,347 additional length observations collected between 1987 - 1998 were provided for the area north of Point Conception is (Table \ref{tab:cpfv-added}). 
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'recreational_comps', 'forSS', 'cpfv_samples.csv'))
+col_names = c('Year',
+        'Lengths (south)',
+              'Lengths (north)')
+table_format(x = tab,
+             caption = "Additional length data from CPFV in California by year and area.",
+             label = "cpfv-added",
+             align = 'l',
+             col_names = col_names)
+
+```
+
+
+
+## Request 1 
+Evaluate alternative selectivity time blocking given the timing of depth restrictions north of Point Conception, California. In particular, add a time block starting in the early 2000s, and allow dome-shaped selectivity, and consider additional time blocks.
+
+## Response 1
+Extensive time blocking of selectivies was explored during model development.  These explorations showed little support for additional model complexity that accompanies adding additional selectivity parameters.
+
+
+```{r, results = 'asis'}
+
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+
+```
+
+<!--chapter:end:Copper_Responses.Rmd-->
+

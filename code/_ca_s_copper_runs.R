@@ -1062,6 +1062,19 @@ model = "12.1_base_council_cpfv_all_selex_block"
 all_selex = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(all_selex)
 
+model = "12.1_base_council_cpfv_selex_both_block_4"
+all_selex_4 =SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_4)
+
+model = "12.1_base_council_cpfv_selex_both_block_4_dw"
+all_selex_4_dw =SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_4_dw)
+
+
+model = "12.1_base_council_cpfv_all_selex_block_dw"
+all_selex_dw = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(all_selex_dw)
+
 model = "12.1_base_council_cpfv_rec_selex_block_fix"
 cpfv_selex_fix = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(cpfv_selex_fix)
@@ -1071,13 +1084,32 @@ model = "12.1_base_council_cpfv_all_selex_block_fix"
 all_selex_fix = SS_output(file.path(wd, "_sensitivities", model))
 SS_plots(all_selex_fix)
 
-modelnames <- c("Adopted Model", "+ Early Length Data", 
-	'+ Early Length Data & Selex Block Est.',
-	'+ Early Length Data & Selex Block Fix')
-mysummary <- SSsummarize(list(base, cpfv, 
-	all_selex, all_selex_fix))
+model = "12.1_base_rec_com_early_domed"
+base_selex = SS_output(file.path(wd, "_sensitivities", model))
+SS_plots(base_selex)
+
+modelnames <- c("Adopted Model", 
+	"Adopted Model, Selex Block Est.", 
+	"+ Early Length Data", 
+	'+ Early Length Data, Selex Block Est.')
+mysummary <- SSsummarize(list(base, base_selex, cpfv, all_selex))
 SSplotComparisons(mysummary, 
 				  filenameprefix = "12.1_council_selex_",
+				  legendlabels = modelnames, 
+				  ylimAdj = 1.25,
+				  plotdir = file.path(wd, "_sensitivities", "_plots"),
+                  subplot = c(2,4), 
+                  print = TRUE,
+                  pdf = FALSE)
+
+
+modelnames <- c("Adopted Model", 
+	"+ Early Length Data", 
+	'+ Early Length Data, Com. and Rec. 1916 - 00, 01-20',
+	'+ Early Length Data, Com. and Rec. 1916 - 00, 1-2, 3-11, 12-18')
+mysummary <- SSsummarize(list(base, cpfv, all_selex, all_selex_4))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "12.1_council_selex_alt_",
 				  legendlabels = modelnames, 
 				  ylimAdj = 1.25,
 				  plotdir = file.path(wd, "_sensitivities", "_plots"),
@@ -1132,7 +1164,7 @@ out = rbind(
             as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Recreational(2)", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)", 1:n]),
-            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK2repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK1repl_1916", 1:n]),
             as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)_BLK1repl_1916", 1:n]))  
 			
 out = as.data.frame(out)
@@ -1177,32 +1209,130 @@ kableExtra::save_kable(t,
 file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/sca_selex_sens.tex")
 ###############################################################################################
 
+################################################################################
+# Table of estimates from the added data
+################################################################################
+x = mysummary
+ii = 1:length(modelnames)
+n = length(modelnames)
+out = matrix(NA, 38, max(ii))
+find1 = which(x$likelihoods_by_fleet$model == 1 &x$likelihoods_by_fleet$Label == "Length_like")
+find2 = which(x$likelihoods_by_fleet$model == 2 &x$likelihoods_by_fleet$Label == "Length_like")
+find3 = which(x$likelihoods_by_fleet$model == 3 &x$likelihoods_by_fleet$Label == "Length_like")
+find4 = which(x$likelihoods_by_fleet$model == 4 &x$likelihoods_by_fleet$Label == "Length_like")
+
+out = rbind(
+            as.numeric(x$likelihoods[x$likelihoods$Label == "TOTAL",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Survey",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Length_comp",1:n]),
+            c(as.numeric(x$likelihoods_by_fleet[find1,4]), as.numeric(x$likelihoods_by_fleet[find2,4]), as.numeric(x$likelihoods_by_fleet[find3,4]),as.numeric(x$likelihoods_by_fleet[find4,4])),
+            c(as.numeric(x$likelihoods_by_fleet[find1,5]), as.numeric(x$likelihoods_by_fleet[find2,5]), as.numeric(x$likelihoods_by_fleet[find3,5]),as.numeric(x$likelihoods_by_fleet[find4,5])),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Recruitment",1:n]), 
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Forecast_Recruitment",1:n]),
+            as.numeric(x$likelihoods[x$likelihoods$Label == "Parm_priors",1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_LN(R0)", 1:n]), 
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_Virgin", 1:n]),
+            as.numeric(x$SpawnBio[x$SpawnBio$Label == "SSB_2021", 1:n]),
+            as.numeric(x$Bratio[x$Bratio$Label == "Bratio_2021", 1:n]), 
+            as.numeric(x$quants[x$quants$Label == "Dead_Catch_SPR", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "SR_BH_steep", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "NatM_p_1_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amin_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "L_at_Amax_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "VonBert_K_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_young_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "CV_old_Mal_GP_1", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Commercial(1)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Commercial(1)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Commercial(1)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_ascend_se_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_end_logit_CA_S_Recreational(2)", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK1repl_1916", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK2repl_2001", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK2repl_2003", 1:n]),
+            as.numeric(x$pars[x$pars$Label == "Size_DblN_peak_CA_S_Recreational(2)_BLK2repl_2012", 1:n]))  
+			
+out = as.data.frame(out)
+colnames(out) = modelnames
+rownames(out) = c("Total Likelihood",
+                  "Survey Likelihood",
+                  "Length Likelihood",
+                  "Commercial Length Likelihood",
+                  "Recreational Length Likelihood",
+                  "Recruitment Likelihood",
+                  "Forecast Recruitment Likelihood",
+                  "Parameter Priors Likelihood",
+                  "log(R0)",
+                  "SB Virgin",
+                  "SB 2021",
+                  "Fraction Unfished 2021",
+                  "Total Yield - SPR 50",
+                  "Steepness",
+                  "Natural Mortality - Female",
+                  "Length at Amin - Female",
+                  "Length at Amax - Female",
+                  "Von Bert. k - Female",
+                  "CV young - Female",
+                  "CV old - Female",
+                  "Natural Mortality - Male",
+                  "Length at Amin - Male",
+                  "Length at Amax - Male",
+                  "Von Bert. k - Male",
+                  "CV young - Male",
+                  "CV old - Male",
+                  "Peak Selectivity - Commercial", "Ascending Selectivity - Commercial", "Final Selectivity - Commercial",
+				  "Peak Selectivity (1916 - 2000) - Commercial","Final Selectivity (1916 - 2000) - Commercial",
+				  "Peak Selectivity - Recreational", "Ascending Selectivity - Recreational", "Final Selectivity - Recreational",
+				  "Peak Selectivity (1916 - 2000) - Recreational","Peak Selectivity (2001 - 2002) - Recreational",
+				  "Peak Selectivity (2003 - 2011) - Recreational","Peak Selectivity (2012 - 2018) - Recreational")#
+				  #"Final Selectivity (1916 - 2000) - Recreational")
+t = sa4ss::table_format(x = out,
+      caption = 'Selectivity sensitivities relative to the adopted base model.',
+      label = 'selex-sens-south-alt',
+      digits = 3,
+      col_names = modelnames)
+
+kableExtra::save_kable(t,
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/council_requests/sca_selex_sens_alt.tex")
+###############################################################################################
+
 
 ################################################################################
 #  SCA Selectivity
 ################################################################################
-model = all_selex_fix
+model = all_selex_4
 # Create selectivity plots
 fleets = model$FleetNames
 
-com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1,years = c(2000, 2020))
-com_selex$infotable$col <- 'blue'
-com_selex$infotable$longname = c("Commercial 1916-2000", "Commercial 2001-2020")
-rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000, 2020))
-rec_selex$infotable$longname = c("Recreational 1916-2000", "Recreational 2001-2020")
-rec_selex$infotable$col <- 'red'
+com_selex <- SSplotSelex(model, fleets = 1, fleetnames = fleets, subplot = 1,years = c(2000, 2002, 2011, 2018,2020))
+com_selex$infotable$col <- c('orange','red', 'blue', 'purple', 'green')
+com_selex$infotable$longname = c("Commercial 1916-2000", "2001-2002",
+	"2003-2011","2012 - 2018", "2019 - 2020")
+rec_selex <- SSplotSelex(model, fleets = 2, fleetnames = fleets, subplot = 1, years = c(2000, 2002, 2011, 2018,2020))
+rec_selex$infotable$longname = c("Recreational 1916-2000", "2001-2002",
+	"2003-2011","2012 - 2018", "2019 - 2020")
+rec_selex$infotable$col <- c('orange','red', 'blue', 'purple', 'green')
 hkl <- SSplotSelex(model, fleets=3, fleetnames=fleets, subplot=1)
 hkl$infotable$col <- "purple"
 hkl$infotable$longname = "NWFSC Hook & Line"
 
 pngfun(wd = file.path(wd, "_sensitivities", "_plots"), 
-	'12.1_base_council_fix_selex_block.png', w = 10, h = 5)
+	'12.1_base_council_selex_block_4.png', w = 10, h = 5)
 par(mfrow=c(1,3), mar=c(4,4,3,1))
-SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, year = c(2000, 2020),
-			subplot = 1, showmain=FALSE, legend = 'topright')
+SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, year = c(2000, 2002, 2011, 2018,2020),
+			subplot = 1, showmain=FALSE, legend = 'topleft')
 grid()
-SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, year = c(2000, 2020),
-			subplot = 1, legend= 'topright', showmain=FALSE)	
+SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, year = c(2000, 2002, 2011, 2018,2020),
+			subplot = 1, legend= 'topleft', showmain=FALSE)	
 grid()
 SSplotSelex(model, fleets=3,  infotable=hkl$infotable, legend = 'bottomright',
 			subplot = 1, showmain=FALSE)
@@ -1232,16 +1362,16 @@ pngfun(wd = file.path(wd, "_sensitivities", "_plots"),
 	'12.1_base_council_est_selex_block.png', w = 10, h = 5)
 par(mfrow=c(1,3), mar=c(4,4,3,1))
 SSplotSelex(model, fleets=1,  infotable=com_selex$infotable, year = c(2000,2020),
-			subplot = 1, showmain=FALSE, legend = 'topright')
+			subplot = 1, showmain=FALSE, legend = 'bottomright')
 grid()
 SSplotSelex(model, fleets = 2, infotable = rec_selex$infotable, , year = c(2000, 2020),
-			subplot = 1, legend= 'topright', showmain=FALSE)	
+			subplot = 1, legend= 'bottom', showmain=FALSE)	
 #legend("topleft", legend = rec_selex$infotable$longname, 
 #	col = rec_selex$infotable$col, lwd = 2, lty = 1, pch = 16, bty = 'n')
 grid()
 SSplotSelex(model, fleets=3,  infotable=hkl$infotable, legend = 'bottomright',
 			subplot = 1, showmain=FALSE)
-legend("topleft", legend = hkl$infotable$longname, 
+legend("bottomright", legend = hkl$infotable$longname, 
 	col = hkl$infotable$col, lwd = 2, lty = 1, pch = 16, bty = 'n')
 grid()
 dev.off()

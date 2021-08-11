@@ -6,6 +6,74 @@
 
 Information on changes to California management measures across time can be found in the separate file "California Nearshore Regulation History-Data Moderate Accompanying Material.pdf".
 
+## Percent of Habitat Area Closed to Fishing for Groundfish in the Rockfish Conservation Areas, Cowcod Conservation Areas, and Marine Protected Areas in California from 2001-2021
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'appendix_ca_open_closed.Rmd')
+read_child(filein)
+```
+
+\newpage
+
+## California Remotely Operated Vehicle Data 
+
+From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside MPAs and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of `r spp` biomass (Table \ref{tab:ca-rov}). 
+ 
+In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. Length frequency distribution for `r spp` sampled by the ROV in reference locations open to fishing north of Point Conception show the majority of observations occurring between 10 - 30 fathoms with peak observations between 31 - 35 cm (Figure \ref{fig:rov-open}). The observations in closed areas, marine protected areas where retention is prohibited, had higher number of observations of `r spp` across sizes and depths (Figure \ref{fig:rov-mpa}). A reduced range of sizes, percent of `r spp` by length bin, were observed across depths in open areas (Figure \ref{fig:rov-percent-open}) versus closed areas (Figure \ref{fig:rov-percent-mpa}). 
+
+\clearpage
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(app_loc, 'ca_appendix', 'rov_density.csv'))
+col_names = c('Depth (fm)',
+			  'Observed Area (m2)',
+              'Copper Rockfish Observed',
+              'Copper Rockfish Density (fish/m2)')
+table_format(x = tab,
+             caption = "Counts of fish, areas surveyed by the ROV, and density.",
+             label = "ca-rov",
+             align = 'l',
+             col_names = col_names)
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_nocal_open_area.png"), 
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception",
+label = 'rov-open')
+```
+
+\clearpage
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_nocal_mpa_area.png"), 
+caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited",
+label = 'rov-mpa')
+```
+
+\clearpage
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_open.png"), 
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed",
+label = 'rov-percent-open')
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_mpa.png"), 
+caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited",
+label = 'rov-percent-mpa')
+```
+
+\newpage
+
 ## Annual Length Composition Data
 
 ```{r, results='asis'}

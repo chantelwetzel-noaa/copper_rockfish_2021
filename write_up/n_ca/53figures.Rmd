@@ -59,48 +59,6 @@ caption = "Mean length for recreational fleet with 95 percent confidence interva
 label = 'mean-rec-len-data')
 ```
 
-
-<!-- ====================================================================== -->
-<!-- ****************        ROV Figures             ********************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_nocal_open_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing north of Point Conception",
-label = 'rov-open')
-```
-
-\clearpage
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_nocal_mpa_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited",
-label = 'rov-mpa')
-```
-
-\clearpage
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_open.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where where fishing for groundfish is allowed",
-label = 'rov-percent-open')
-```
-
-\clearpage
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_nocal_percent_mpa.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in marine protected areas where where fishing for groundfish is prohibited",
-label = 'rov-percent-mpa')
-```
-
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->

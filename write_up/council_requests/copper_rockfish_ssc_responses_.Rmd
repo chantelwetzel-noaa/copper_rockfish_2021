@@ -1,0 +1,625 @@
+
+---
+title: "Copper rockfish: Response to additional requests for California models"
+author: "Chantel Wetzel"
+address:
+- num: fill in
+  address: "Northwest Fisheries Science Center"
+corraddr: chantel.wetzel@noaa.gov
+date: "`r Sys.Date()`"
+output: pdf_document
+includes:
+  in_header: header.tex
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(sa4ss)
+library(r4ss)
+
+data_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data"
+mod_loc = "C:/Assessments/2021/copper_rockfish_2021/models"
+
+Spp = 'Copper rockfish'
+spp = 'Copper rockfish'
+```
+
+# Additional Data Request
+
+## Request 3
+
+Add the length data from the historical onboard CPFV surveys from the 1970s and 1980s from Crooke and Alley south of Point Conception and 1980s and 1990s northern California survey north of Point Conception noted in Table 2 of the SSC Report.  If time and data allow, explore differences between CPFV and private vessel mode length data to help inform whether adding the CPFV-only length data to a pooled fleet would be appropriate.
+
+### Rational 
+While the CRFS and MRFSS data may provide consistent sampling over time and space, the sample sizes from the MRFSS era are low due to sampling 30 anglers per day.  Addition of these supplementary data sources will help increase the sample size providing more insight on the effects of the low sample size.
+
+### Response 
+
+California Department of Fish and Wildlife (CDFW) provided additional length observation data that was not available for use in the base models reviewed in the June Groundfish Subcommittee meeting of the Scientific and Statistical Committee (GFS-SSC).  These data were collected from the recreational fishery commercial passenger fishing vessels (CPFV; aka 'party' and 'charter') between the 1970s - 1990s (Ally et al. 1991, Collins and Crooke n.d). A total of 3,499 additional length observations collected between 1975 - 1989 were provided for the area south of Point Conception (Table \ref{tab:cpfv-added}). A total of 6,347 additional length observations collected between 1987 - 1998 were provided for the area north of Point Conception (Table \ref{tab:cpfv-added}). The distribution of lengths in the added CPFV data and the pre-existing length data for overlapping years for each area are shown in Figures \ref{fig:south-data-comparison} and \ref{fig:north-data-comparison}. These data were incorporated into the corresponding area model to evaluate the impact of these additional data to the estimates from the adopted base models. 
+
+\newpage
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'recreational_comps', 'forSS', 'cpfv_samples.csv'))
+col_names = c('Year',
+        'New CPFV Lengths - South',
+        'Lengths in Adopted Base Model - South',
+        'New CPFV Lengths - North',
+        'Lengths in Adopted Base Model - North')
+
+table_format(x = tab,
+             caption = "Additional length data received from CDFW collected from CPFV in California by year and area compared to the number of length samples by year included in the adopted base model by area.",
+             label = "cpfv-added",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = "south_data_compare.png", 
+caption = "Distribution across lengths from the new CPFV data with the existing length data for overlapping years in the adopted base model south of Point Conception",
+label = 'south-data-comparison')
+```	
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = "north_data_compare.png", 
+caption = "Distribution across lengths from the new CPFV data with the existing length data for overlapping years in the adopted base model north of Point Conception",
+label = 'north-data-comparison')
+```	
+
+\clearpage
+
+#### South of Point Conception
+
+The data sensitivity with the added CPFV lengths relative to the adopted base model south of Point Conception is provided in Figures \ref{fig:south-data-ssb} and \ref{fig:south-data-depl}. Overall, the impact of adding these data to the adopted base model was relatively limited. The estimated spawning output from the sensitivity with the added data estimated a slightly lower initial spawning output (SB0) and a slightly more depleted stock in the final year, 2021, compared to the adopted base model. A comparison of the model estimates are shown in Table \ref{tab:data-sens-south}.
+
+```{r, echo = FALSE, results = 'asis'}
+sa4ss::add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_council_cpfv_data_compare2_spawnbio_uncertainty.png"), 
+caption = "Comparison of the estimated spawning output between the adopted base model and the model with the additional data for the model south of Point Conception",
+width = 60, height = 60,
+label = 'south-data-ssb')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_council_cpfv_data_compare4_Bratio_uncertainty.png"), 
+caption = "Comparison of the estimated fraction unfished between the adopted base model and the model with the additional data for the model south of Point Conception",
+width = 60, height = 60,
+label = 'south-data-depl')
+```	
+
+\clearpage
+
+\include{sca_data_sens.tex}
+
+#### North of Point Conception
+
+The data sensitivity with the added CPFV lengths relative to the adopted base model north of Point Conception is provided in Figures \ref{fig:north-data-ssb}, \ref{fig:north-data-depl}, and \ref{fig:north-data-recdev}. Similar to the sensitivity for the south of Point Conception model, overall, the impact of adding the additional CPFV length data to the adopted base model was relatively limited. Including the additional CPFV length data resulted in a slightly reduced estimate of the initial spawning output (SB0) and a similar final spawning output in 2021, resulting and a slightly less depleted stock in the final year compared to the adopted base model. Adding additional data between 1987 - 1998 resulted in small changes in the estimated annual recruitment deviations during the years of additional data but also impacted the estimates of subsequent years (Figure \ref{fig:north-data-recdev}, i.e., likely due to the requirement of a zero summed vector of recruitment deviations in the main period with Stock Synthesis). A comparison of the model estimates are shown in Table \ref{tab:data-sens-north}.
+
+
+```{r, echo = FALSE, results = 'asis'}
+sa4ss::add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_cpfv_data_compare2_spawnbio_uncertainty.png"), 
+caption = "Comparison of the estimated spawning output between the adopted base model and the model with the additional data for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-data-ssb')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_cpfv_data_compare4_Bratio_uncertainty.png"), 
+caption = "Comparison of the estimated fraction unfished between the adopted base model and the model with the additional data for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-data-depl')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_cpfv_data_compare12_recdevs_uncertainty.png"), 
+caption = "Comparison of the estimated annual recruitment deviations between the adopted base model and the model with the additional data for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-data-recdev')
+```	
+
+\clearpage
+
+\include{nca_data_sens.tex}
+
+# Model Structure Requests
+
+The subsequent request were conducted including the additional CPFV data in order to provide insight as to the impact of these data combined with alternative model structures compared to the adopted base models.
+
+## Request 1 
+Evaluate alternative selectivity time blocking given the timing of depth restrictions north of Point Conception, California. In particular, add a time block starting in the early 2000s, and allow dome-shaped selectivity, and consider additional time blocks.
+
+### Rationale 
+Input from the GAP and GMT indicate that asymptotic selectivity for the recreational fishery may not be a realistic assumption, although this assumption was made based on the 2021 stock assessment [Terms of Reference (pg 36)](https://www.pcouncil.org/documents/2021/01/terms-of-reference-for-the-coastal-pelagic-species-stock-assessment-review-process-for-2021-2022-december-2020.pdf/) requiring evaluation of asymptotic selectivity for at least one fleet.  It may be more realistic to consider blocking the period before regulations that restrict fishing to shallower areas in the early 2000s (asymptotic or domed), then consider domed shape assumptions thereafter, perhaps with a separate dome shape after 2016 when regulations were slightly relaxed. 
+
+### Response 
+Two model sensitivities was conducted allowing for additional time blocks for the recreational and commercial fleets. The first sensitivity, the recreational fleet would now estimate two selectivity blocks (1916 - 2000 and 2001 - 2020) and three blocks for the commercial fishery (1916-2000, 2001-2007, and 2008-2020). The model was allowed to estimate dome-shaped selectivity starting in 2001 while fixing selectivity to be asymptotic for earlier years. The second sensitivity incorporated additional blocking for the recreational and commercial fleets. The selection of the blocks in this second sensitivity were informed by changes to the percent of area open to fishing. This sensitivity estimated five selectivity blocks for both the recreational and commercial fleets: 1916-2000, 2001-2002, 2003-2007, 2008-2016, 2017-2020.
+
+Allowing the model the additional flexibility of time blocks and additional parameter flexibility resulted in very minimal changes in selectivity estimation for the commercial fleet (e.g., the 2001 - 2007 block) compared to the adopted base model (Figure \ref{fig:north-selex} versus  \ref{fig:north-selex-est}). When allowed to estimate dome-shaped selectivity the recreational fleet estimated a reduction in selectivity at larger sizes using only the data from 2001 - 2020. The sensitivity run that incorporated additional flexibility in the estimation of selectivity for both fleets had similar results to the sensitivity that estimated fewer selectivity blocks (Figure \ref{fig:north-selex-est-4}).
+
+The Pearson residuals and fits to the mean length by year from the adopted base model are shown in Figure \ref{fig:north-base-pearson} and \ref{fig:north-base-mean-len}. Figures \ref{fig:north-selex-pearson}, \ref{fig:north-selex-com-mean-len}, and \ref{fig:north-selex-mean-len} show the difference in fits to the data form the sensitivity that allowed the recreational fleet to estimate dome-shaped selectivity from 2001 - 2020. Allowing this additional model flexibility allows for a better fit to the length composition data based on visual examination of the Pearson residuals; however, the fit to the mean lengths by year appear similar among the model structures (e.g., for years with the same length composition data). Figures \ref{fig:north-selex-5-pearson}, \ref{fig:north-selex-5-com-mean-len}, and \ref{fig:north-selex-5-mean-len} show the difference in fits to the data fom the sensitivity that incorporated the most selectivity blocks. 
+
+The estimated spawning output and fraction unfished are shown in Figure \ref{fig:north-selex-ssb} and \ref{fig:north-selex-depl} for the adopted base model, the adopted base model with these selectivity blocks, the added length data model, and both models with added length data and selectivity blocks. The estimated annual recruitment deviations are shown in Figure \ref{fig:north-selex-recdev}. Allowing limited additional flexibility in selectivity after 2000 results in increased estimates of spawning output and fraction unfished during those years. However, incorporating five selectivity blocks for both fleets results in a decrease in the estimated fraction unfished relative to the model with limited selectivity blocks.  Model estimates and likelihoods across models are provided in Table \ref{tab:selex-sens-north-alt}.
+
+
+\newpage
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_base_council_base_selex_block_1x2.png"), 
+caption = "Estimated selectivity from the adopted base model",
+#width = 90, height = 90,
+label = 'north-selex')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_base_council_cpfv_selex_block_1x2.png"), 
+caption = "Estimated selectivities for each time block and for each fleet for the run that allowed domed or asymptotic selectivity between 1916-2020 for the north of Point Conception model",
+width = 90, height = 90,
+label = 'north-selex-est')
+```	
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_base_council_cpfv_com_rec_4_blocks_1x2.png"), 
+caption = "Estimated selectivities for each time block and for each fleet for the run that allowed domed or asymptotic selectivity between 1916-2020 for the north of Point Conception model",
+width = 90, height = 90,
+label = 'north-selex-est-4')
+```	
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "10.3_base", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals for the commercial and recreational fleet from the adopted base model north of Point Conception",
+#width = 60, height = 80,
+label = 'north-base-pearson')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "10.3_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Commercial.png"), 
+caption = "Fit to the observed mean length by year for the commercial fleet from the adopted base model north of Point Conception",
+width = 60, height = 60,
+label = 'north-base-com-mean-len')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "10.3_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Recreational.png"), 
+caption = "Fit to the observed mean length by year for the recreational fleet from the adopted base model north of Point Conception",
+width = 60, height = 60,
+label = 'north-base-mean-len')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c",  "_sensitivities", "10.3_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals for the commercial and recreational fleets with added length data and dome shaped selectivity from 2001 - 2020 for the model north of Point Conception",
+#width = 60, height = 60,
+label = 'north-selex-pearson')
+```	
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "10.3_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Commercial.png"), 
+caption = "Fit to the observed mean length by year for the commercial fleet with added length data and dome shaped selectivity from 2001 - 2007 and 2008-2020 for the model north of Point Conception",
+width = 60, height = 50,
+label = 'north-selex-com-mean-len')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "10.3_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Recreational.png"), 
+caption = "Fit to the observed mean length by year for the recreational fleet with added length data and dome shaped selectivity from 2001 - 2020 for the model north of Point Conception",
+width = 60, height = 50,
+label = 'north-selex-mean-len')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c",  "_sensitivities", "10.3_base_council_cpfv_all_selex_both_block_4_dw", "plots","comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals for the commercial and recreational fleets with added length data and five selectivity blocks for the model north of Point Conception",
+#width = 60, height = 60,
+label = 'north-selex-5-pearson')
+``` 
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "10.3_base_council_cpfv_all_selex_both_block_4_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Commercial.png"), 
+caption = "Fit to the observed mean length by year for the commercial fleet with added length data and five selectivity blocks for the model north of Point Conception",
+width = 60, height = 50,
+label = 'north-selex-5-com-mean-len')
+``` 
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "10.3_base_council_cpfv_all_selex_both_block_4_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_N_Recreational.png"), 
+caption = "Fit to the observed mean length by year for the recreational fleet with added length data and five selectivity blocks for the model north of Point Conception",
+width = 60, height = 50,
+label = 'north-selex-5-mean-len')
+``` 
+
+
+```{r, echo = FALSE, results = 'asis'}
+sa4ss::add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_selex_blocks_2_options_compare2_spawnbio_uncertainty.png"), 
+caption = "Comparison of the estimated spawning output between the adopted base model, the model with the additional data, and models with the additional data and alternative selectivity forms for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-selex-ssb')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_selex_blocks_2_options_compare4_Bratio_uncertainty.png"), 
+caption = "Comparison of the estimated fraction unfished between the adopted base model, the model with the additional data, and models with the additional data and alternative selectivity forms for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-selex-depl')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_n_pt_c", "_sensitivities", "_plots", "10.3_council_selex_blocks_2_options_compare12_recdevs_uncertainty.png"), 
+caption = "Comparison of the estimated annual recruitment deviations between the adopted base model, the model with the additional data, and models with the additional data and alternative selectivity forms for the model north of Point Conception",
+width = 60, height = 60,
+label = 'north-selex-recdev')
+```	
+
+
+\clearpage
+
+\include{nca_selex_sens_alt.tex}
+
+## Request 2
+
+Evaluate estimation of a separate dome-shaped selectivity curve for recreational and commercial fisheries after 2001 south of Point Conception. In particular, add a time block starting in 2001 to each of recreational and commercial selectivities.
+
+### Rationale
+Rationale:  Given the large percentage of habitat area closed to fishing in the CCA, MPAs and RCAs, additional grounds were closed to fishing, making more of the offshore adult biomass inaccessible, which can be reflected by a stronger dome shape to the selectivity after implementation of closures that cover almost 50% of the grounds predominantly in deeper waters where larger adults are expected to be found.  The assumption of dome shaped selectivity prior to 2001 is reasonable given the distance of offshore banks and islands up to 100 miles off shore (ie Cortez bank).
+
+### Response 
+
+Two model sensitivities was conducted allowing for additional time blocks for the recreational and commercial fleets. The first sensitivity, the recreational and commercial fleets would now estimate two selectivities blocks: 1916 - 2000 and 2001 - 2020). The selection of the blocks in the second sensitivity were informed by changes to the percent of area open to fishing. This sensitivity set five selectivity blocks for both the recreational and commercial fleets: 1916-2000, 2001-2002, 2003-2011, 2012-2018, and 2019-2020.  The model was allowed to estimate dome-shaped selectivity for each time block and for each fleet.
+
+Allowing the model the additional flexibility of selectivity time blocks resulted in minimal shifts in selectivity estimation for both fleets compared to the adopted base model (Figure \ref{fig:south-selex} versus Figures \ref{fig:south-selex-est} and \ref{fig:south-selex-est-4}). The peak of selectivity shifted slightly leftward in the 2001 - 2020 compared to the 1916 - 2000 for both fleets with the final selectivity being estimated lower in the 2001 - 2020 for the commercial fleet.  
+
+The Pearson residuals and fits to the mean length by year for the recreational and commercial fleet from the adopted base model are shown in Figures \ref{fig:south-base-pearson}, \ref{fig:south-base-com-mean-len}, \ref{fig:south-base-rec-mean-len}. The same figures for the sensitivity with the added data and selectivity blocks from 1916-2000 and 2001-2020 for the recreational and commercial fleets are shown in Figures \ref{fig:south-selex-pearson}, \ref{fig:south-selex-com-mean-len}, and \ref{fig:south-selex-rec-mean-len}. Finally, the Pearson residuals and the mean lengths for the commercial and recreational fleets with the added flexibility of five selectivity blocks are shown in Figures \ref{fig:south-selex-4-pearson}, \ref{fig:south-selex-4-com-mean-len}, and \ref{fig:south-selex-4-rec-mean-len}. The Pearson residuals do not reflect large visual changes but a shift in the mean length expectation can be observed when a selectivity blocks were included.
+
+
+The estimated spawning output and fraction unfished are shown in Figure \ref{fig:south-selex-ssb} and \ref{fig:south-selex-depl} for the adopted base model, the added length data model, and the models with added length and selectivity blocks.  Allowing additional flexibility in selectivity after 2000 results in only minimal changes in the estimates of spawning output and fraction unfished.  Model estimates and likelihoods across models are provided in Table \ref{tab:selex-sens-south-alt}.
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "12.1_base", "plots", "sel01_multiple_fleets_length1.png"), 
+caption = "Estimated selectivity from the adopted base model south of Point Conception",
+label = 'south-selex')
+
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_base_council_est_selex_block.png"), 
+caption = "Estimated selectivities for each time block and for each fleet for the run that allowed domed or asymptotic selectivity between 1916-2000 and 2001-2020 for the south of Point Conception model",
+label = 'south-selex-est')
+
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_base_council_selex_block_4.png"), 
+caption = "Estimated selectivities for each time block and for each fleet for the run that allowed for five selectivity blocks for the south of Point Conception model",
+label = 'south-selex-est-4')
+
+```	
+
+\clearpage
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "12.1_base", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals from the commercial fleet from the adopted base model south of Point Conception",
+label = 'south-base-pearson')
+```	
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "12.1_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Commercial.png"), 
+caption = "Fit to the observed mean length by year from the commercial fleet from the adopted base model south of Point Conception",
+width = 60, height  = 30,
+label = 'south-base-com-mean-len')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "12.1_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Recreational.png"), 
+caption = "Fit to the observed mean length by year from the recreational fleet from the adopted base model south of Point Conception",
+width = 60, height  = 30,
+label = 'south-base-rec-mean-len')
+```	
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c",  "_sensitivities", "12.1_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals for the recreational fleet with the added data and selectivity blocks from 1916 - 2000 and 2001 - 2020 for the model south of Point Conception",
+label = 'south-selex-pearson')
+```	
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "12.1_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Commercial.png"), 
+caption = "Fit to the observed mean length by year for the commercial fleet with the added data and selectivity blocks from 1916 - 2000 and 2001 - 2020 for the model south of Point Conception",
+width = 60, height = 30,
+label = 'south-selex-com-mean-len')
+```	
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "12.1_base_council_cpfv_all_selex_block_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Recreational.png"), 
+caption = "Fit to the observed mean length by year for the recreational fleet with the added data and selectivity blocks from 1916 - 2000 and 2001 - 2020 for the model south of Point Conception",
+width = 60, height = 30,
+label = 'south-selex-rec-mean-len')
+```	
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c",  "_sensitivities", "12.1_base_council_cpfv_selex_both_block_4_dw", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
+caption = "Pearson residuals for the recreational fleet with the added data and selectivity blocks from 1916 - 2000 and 2001 - 2020 for the model south of Point Conception",
+label = 'south-selex-4-pearson')
+```	
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "12.1_base_council_cpfv_selex_both_block_4_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Commercial.png"), 
+caption = "Fit to the observed mean length by year for the commercial fleet with the added data and five selectivity blocks for the model south of Point Conception",
+width = 60, height = 30,
+label = 'south-selex-4-com-mean-len')
+```	
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "12.1_base_council_cpfv_selex_both_block_4_dw", "plots", "comp_lenfit_data_weighting_TA1.8_CA_S_Recreational.png"), 
+caption = "Fit to the observed mean length by year for the recreational fleet with the added data and five selectivity blocks for the model south of Point Conception",
+width = 60, height = 30,
+label = 'south-selex-4-rec-mean-len')
+```	
+
+
+
+
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+sa4ss::add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_council_selex_alt_compare2_spawnbio_uncertainty.png"), 
+caption = "Comparison of the estimated spawning output between the adopted base model, the model with the additional data, and models with the additional data and alternative selectivity forms for the model south of Point Conception",
+#width = 70, height = 35,
+label = 'south-selex-ssb')
+```	
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "ca_s_pt_c", "_sensitivities", "_plots", "12.1_council_selex_alt_compare4_Bratio_uncertainty.png"), 
+caption = "Comparison of the estimated fraction unfished between the adopted base model, the model with the additional data, and models with the additional data and alternative selectivity forms for the model south of Point Conception",
+#width = 70, height = 35,
+label = 'south-selex-depl')
+```	
+
+\clearpage
+
+\include{sca_selex_sens_alt.tex}
+
+## Request 6
+
+Evaluate the appropriateness of a statewide assessment for copper rockfish vs. stratification at Point Conception, and provide a statewide assessment for comparison to stratification at Point Conception if appropriate and if technically feasible with the limited time available.
+
+### Rationale 
+The assessment was stratified at Point Conception in part due to interest in comparison to previous assessment results as well as interest in evaluating finer spatial stratification given historical exploitation patterns.  Population structure was weak in genetic studies (Sivasundar 2010) and potential for demographic connectivity between regions provides an impetus to examine the state-wide model.  Evaluation of considerations related to stock structure and modeling considerations/limitations will inform the most representative stratification. If a statewide model is conducted, the stratification of fleets should be given careful consideration, particularly as to whether separate fleets should be designated for either (or both) commercial and recreational fisheries north and south of Point Conception.  
+
+### Response 
+
+The stratification selected for assessment of copper rockfish was carefully considered by the STAT. Two factors that were not considered when determining the appropriate stratification were the previous stratification used in the 2013 assessment or the ability to bridge between that model and this year's assessment. The 2013 assessment document was reviewed in order to understand what was done in that assessment and the logic behind the selected stratification. The authors of the 2013 assessment cite feedback received during the STAR panel to split the model at Point Conception due to the poor fits to indices from southern California when modeled with the rest of the coast [(Cope et al. 2013, page 44)](https://www.pcouncil.org/documents/2015/01/data-moderate-stock-assessments-for-brown-china-copper-sharpchin-stripetail-and-yellowtail-rockfishes-and-english-and-rex-soles-in-2013-published-january-2015.pdf/). 
+
+The STAT began discussions early in the assessment process about the appropriate stratification considering multiple factors ranging from: genetics, variation in growth, availability of data, and the exploitation patterns by area. The following excerpt pulled from an email exchange among the STAT team from August 4th, 2020 by Dr. John Budrick highlights the factors being considered:
+
+> "Copper is an odd one with white belly in the south formerly described as a separate species and an odd peach colored variant at the channel islands, It will likely break down to stratification north and south of Point Conception more due to differences in growth potential and differences in data       availability (Hook and Line Survey) state line kind of assessment ... No real population structure that I recall at Cape Mendocino, though I can do a literature search again and talk to a couple people about unpublished work. Last pub I remember on copper pop[ulation] gen[etics] was Mattias Miller circa 2008 out of OSU with Banks in which no strong population structure was observed but there was isolation by distance if I recall correctly, sot [*sic*] stratification at state lines and Conception makes some sense genetically as well, but now [*sic*] abrupt breaks I recall. They may not have sampled sufficiently or identified color morphs beforehand to test for populations structure. If multiple populations co-occur and are sampled at each location assigned for analysis, they may go undetected. I don't think he used a clustering program like Structure of BAPS that detects such structure."
+
+The proposed stratification was presented at the [pre-assessment data webinar](https://www.pcouncil.org/documents/2021/01/report-of-the-pre-assessment-workshop-for-2021-groundfish-stock-assessments-of-dover-sole-copper-rockfish-quillback-rockfish-and-squarespot-rockfish-october-2020.pdf/) held October 26th and 27th, 2020. During the pre-assessment data webinar we received advice that was incorporated or considered during data treatment, model development, and the interpretation of the results. However, during the pre-assessment data webinar we did not receive comments or concern around the proposed model structure of splitting the California stock north and south of Point Conception.
+
+Anticipating potential variation in biological attributes north and south of Point Conception additional biological work was undertaken to create an area- and sex-specific growth curve and an estimate of female functional maturity-at-length south of Point Conception. Both area-specific estimates from the stock south of Point Conception yielded biological attributes that varied from estimates from the stock off the coast of Oregon (Figure \ref{fig:mat} and \ref{fig:len-at-age}). Unfortunately, biological estimates specific to copper rockfish off the coast of California north of Point Conception were not found in the literature preventing the ability to evaluate potential growth variation between this area and Oregon/Washington. Modeling the segment of the stock south of Point Conception provided the ability to capture these area-specific differences.
+
+The choice to model the sub-set of the stock north and south of Point Conception was reinforced once modeling began. The estimated selectivities for the commercial and recreational fleets differed by area based on observed length compositions. Finally, the estimated time series between the two areas did not follow similar trends or show coherence which provided support to retaining the area based models (Figure \ref{fig:est-ssb}).  
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/presentations/_plots/Maturity_Comparison.png", 
+caption = "Maturity-at-length by area",
+width = 90, height = 90,
+label = 'mat')
+```	
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "_plots", "Growth_by_Area.png"),
+caption = "Length-at-age by sex and area",
+width = 75, height = 50,
+label = 'len-at-age')
+```	
+
+\clearpage
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "_plots", "ca_comprare_compare2_spawnbio_uncertainty.png"), 
+caption = "Estimated spawning output from the both adopted base models south and north of Point Conception",
+width = 75, height = 50,
+label = 'est-ssb')
+```	
+
+
+
+# Biologic Parameter Requests
+
+## Request 4
+Age otoliths and use corresponding lengths from samples collected in Northern California and compare results to the growth curve from samples collected in Oregon and Washington. Otoliths should be provided as requested in the NMFS Report 1 [Agenda Item C.10, Supplemental NMFS Report 1, June 2021](https://www.pcouncil.org/documents/2021/06/c-10-a-supplemental-nmfs-report-1.pdf/).
+
+### Rationale 
+Comparison of ages and lengths of fish sampled in Northern California to the growth curve derived from samples collected in Oregon and Washington will provide a means of examining whether the growth curve provided by them are representative of growth in California.  
+
+### Response 
+
+Otoliths collected from California's commercial or recreational fisheries collected north of Point Conception were provided by CDFW.  A summary of the otoliths by sex and length are provided in Tables \ref{tab:com-otoliths-north} and \ref{tab:rec-otoliths-north}. These otoliths arrived at the Cooperative Ageing Program (CAP) lab on July 22nd, 2021. Additional to the otoliths provided by CDFW there are copper rockfish otoliths collected by the West Coast Groundfish Bottom Trawl Survey with a summary of the available otoliths by sex and length provided in Table \ref{tab:wcgbts-otoliths-north}.  
+
+On July 27, 2021 Traci Larinto (CDFW) reached out to say that additional copper and quillback rockfish otoliths collected by the California Collaborative Fisheries Research Program (CCFRP) may also be available (via Rick Starr). The tables of otoliths by source below do not include these samples since data summarizing the number of otoliths available by species and the lengths samples has not been received yet.  
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'biology', 'ageing', 'commercial_north_california.csv'))
+col_names = c('Length Bins (cm)',
+        'Female',
+        'Male',
+        'Unsexed')
+
+table_format(x = tab,
+             caption = "Available otoliths collected north of Point Conception by sex and length bin (cm) provided by CDFW from the commercial fishery. Fish lengths were binned where bin 10 would have fish of length [10 - 14) cm.",
+             label = "com-otoliths-north",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'biology', 'ageing', 'recreational_north_california.csv'))
+col_names = c('Length Bins (cm)',
+        'Female',
+        'Male',
+        'Unsexed')
+
+table_format(x = tab,
+             caption = "Available otoliths collected north of Point Conception by sex and length bin (cm) provided by CDFW from the recreational fishery. Fish lengths were binned where bin 10 would have fish of length [10 - 14) cm.",
+             label = "rec-otoliths-north",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'biology', 'ageing', 'wcgbts_north_ca_34_42.csv'))
+col_names = c('Length Bins (cm)',
+        'Female',
+        'Male',
+        'Unsexed')
+
+table_format(x = tab,
+             caption = "Available otoliths collected north of Point Conception by sex and length bin (cm) by the NWFSC West Coast Groundfish Bottom Trawl Survey. Fish lengths were binned where bin 10 would have fish of length [10 - 14) cm.",
+             label = "wcgbts-otoliths-north",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+## Request 5
+Age the remaining copper rockfish samples collected by the Hook and Line survey and compare them to the growth curve in the range currently represented by samples collected and aged by Love et al. informing the growth curve south of Point Conception in addition to other samples from the survey.  
+
+### Rationale 
+The growth curve was derived by combining sampling and ageing from two separate studies (Love (1999) vs. WCBTS/Hook and Line Surveys aged by CAP) over differing parts of the growth curve.  This is a source of uncertainty in the growth estimates south of Point Conception.  Comparison of ages and lengths from samples collected over the remainder of the growth curve from the hook and line survey would better inform whether the combined sources currently informing the growth curve are consistent in terms of age determination potentially affecting the shape of the growth curve. 
+
+
+### Response 
+The samples used to estimate length-at-age for small fish were obtained from Lea et al. 1999 not Love et al. As a reminder, the length-at-age was estimated for male and female `r spp` south of Point Conception using data combined across multiple sources.  Ideally a full area-specific growth curve would be externally estimated by sex (parameters $k$, $L_{\infty}$, $L1$, and $L2$ within Stock Synthesis) based on a single age and growth study. However, given limitations in ageing capacity  a targeted sampling approach was applied. The Cooperative Ageing Program (CAP) selected a subsample of larger (greater than 35 cm) of copper rockfish observed by both the NWFSC West Coast Groundfish Bottom Trawl and Hook and Line Surveys. These observations were combined with simulated data based on a published growth study for copper rockfish from south of Point Conception by Lea et al. 1999. Fishes reported in the Lea et al. 1999 study were for the most part taken off central California during the period July 1978 through December 1985. This study included numerous observations of young fish and also reported the mean length, the number of observations, and the standard deviation of the length observations by age. These pieces of information were used to simulate length-at-age data that would be representative of the study's data for fish less than 5 years of age (since data on individual fish were not reported). The simulated data for young fish appeared consistent with data from older fish observed in the survey data sources (Figure \ref{fig:len-at-age-data}). This combined data set was used to calculate the growth curves for male and female copper rockfish that were used in the adopted base model south of Point Conception.
+
+Otoliths available for ageing collected by the NWFSC West Coast Groundfish Bottom Trawl and Hook and Line Surveys are provided in Tables \ref{tab:wcgbts-otoliths-south} and \ref{tab:hkl-otoliths-south}.  Of the otoliths listed in Table \ref{tab:wcgbts-otoliths-south} 187 otoliths and Table \ref{tab:hkl-otoliths-south} 300 otoltihs from fish larger than 35 cm have already been aged.  These aged fish were used to estimate the existing length-at-age by sex used in the adopted base model (Figure \ref{fig:len-at-age-data}). 
+
+
+
+```{r, echo = FALSE, results = 'asis'}
+add_figure(
+filein = file.path(data_loc, "biology", "plots", "doc_south_Age_by_Sex_Source.png"), 
+caption = "Length-at-age by sex from each data source used to estimate growth south of Point Conception",
+width = 75, height = 50,
+label = 'len-at-age-data')
+```	
+
+
+\clearpage
+
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'biology', 'ageing', 'wcgbts_south_ca_31_34.csv'))
+col_names = c('Length Bins (cm)',
+        'Female',
+        'Male',
+        'Unsexed')
+
+table_format(x = tab,
+             caption = "Available otoliths collected south of Point Conception by sex and length bin (cm) from the NWFSC West Coast Groundfish Bottom Trawl Survey. Fish lengths were binned where bin 10 would have fish of length [10 - 14) cm. A total of 187 otoliths from the larger fish, included in the summary below, have already been aged and used to estimate the length-at-age used in the adopted base model.",
+             label = "wcgbts-otoliths-south",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+
+\clearpage
+
+```{r, echo = FALSE, results = 'asis'}
+tab = read.csv(file.path(data_loc, 'biology', 'ageing', 'nwfsc_hkl_south_california.csv'))
+tab[is.na(tab)] = 0
+col_names = c('Length Bins (cm)',
+        'Female',
+        'Male')
+
+table_format(x = tab,
+             caption = "Available otoliths collected south of Point Conception by sex and length bin (cm) from the NWFSC Hook and Line Survey. Fish lengths were binned into 1 cm bins where bin 10 would have fish of length [10 - 11) cm. A total of 300 otoliths from the larger fish, included in the summary below, have already been aged and used to estimate the length-at-age used in the adopted base model.",
+             label = "hkl-otoliths-south",
+             align = 'c',
+             col_names = col_names)
+
+```
+
+
+
+

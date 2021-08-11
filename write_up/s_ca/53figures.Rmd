@@ -125,51 +125,6 @@ label = 'hkl-diag')
 ```
 
 <!-- ====================================================================== -->
-<!-- *************************     ROV         **************************** --> 
-<!-- ====================================================================== -->
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_socal_open_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in reference locations open to fishing south of Point Conception",
-label = 'rov-open')
-```
-
-\clearpage
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_socal_mpa_area.png"), 
-caption = "Length frequency distribution in each 10 fm depth bin for copper rockfish sampled by the ROV in marine protected areas where fishing for groundfish is prohibited",
-label = 'rov-mpa')
-```
-
-\clearpage
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_open.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in reference locations where fishing for groundfish is allowed",
-#width = 150,
-#height = 150,
-label = 'rov-percent-open')
-```
-
-\clearpage
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(data_loc, "survey", "rov",  "copper_socal_percent_mpa.png"), 
-caption = "Percent composition of copper rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations south of Point Conception in marine protected areas where fishing for groundfish is prohibited",
-#width = 150,
-#height = 150,
-label = 'rov-percent-mpa')
-```
-
-\clearpage
-
-
-<!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
 

@@ -66,6 +66,38 @@ SSplotComparisons(mysummary,
 				  plotdir = file.path(wd, "_plots"),
 				  pdf = TRUE)
 
+##########################################################
+model = "2.1_south_growth_no_hkl_mirror_fleets"
+mirror = SS_output(file.path(wd, model))
+
+model = "2.1_south_growth_no_hkl_combine_data"
+combine = SS_output(file.path(wd, model))
+
+model = "2.1_south_growth_no_hkl_blocks"
+blocks_dome = SS_output(file.path(wd, model))
+
+model = "2.1_south_growth_no_hkl_blocks_rec_n_asym"
+blocks_rec_asy = SS_output(file.path(wd, model))
+
+model = "2.1_south_growth_no_hkl_blocks_com_n_asym"
+blocks_com_asym = SS_output(file.path(wd, model))
+
+modelnames <- c("SCA Adopted Model", "NCA Adopted Model", 
+#	'Single Area - South Bio. Stoch. (Mirror Fleets)',
+	'Single Area - South Bio. Stoch. (Combined Data)',
+	'Fleets as Areas - Selex Blocks All Domed',
+	'Fleets as Areas - Selex Blocks Rec. N. Asym.',
+	'Fleets as Areas - Selex Blocks Com. N. Asym.')
+mysummary <- SSsummarize(list(sca, nca, #mirror, 
+	combine, blocks_dome, blocks_rec_asy, blocks_com_asym))
+SSplotComparisons(mysummary, 
+				  filenameprefix = "California_Fleets_as_Areas_South_Bio_Stoch_",
+				  legendlabels = modelnames, 
+				  ylimAdj = 1.6,
+				  plotdir = file.path(wd, "_plots"),
+				  pdf = TRUE)
+
+
 #####################################################
 # Two-Area Only
 #####################################################
