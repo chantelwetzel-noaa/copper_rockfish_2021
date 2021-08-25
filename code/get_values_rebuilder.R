@@ -1,4 +1,6 @@
-get_values <- function(res, num_rows = 200) {
+get_values <- function(rebuild_dir, num_rows = 200) {
+
+	res <-  readLines(file.path(rebuild_dir, "RES.CSV"))
 
 	start <- grep("#Summary_2", res) + 1
 	end   <- grep("#Summary_3", res) + 1 
