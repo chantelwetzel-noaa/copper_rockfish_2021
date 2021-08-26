@@ -86,6 +86,18 @@ get_values <- function(rebuild_dir, num_rows = 200) {
    	col_names = c("Year", noquote(strsplit(res[start-1],","))[[1]][find[-1]])
    	colnames(spr_matrix) = col_names
 
+   	start <- grep("#B0_Etc", res) + 1
+	end   <- start + 7
+	b0_etc <- unlist(noquote(strsplit(res[start:end],",")))
+	b0_etc <- as.numeric(b0_etc)
+	sb0  <- b0_etc[1]
+	sb40 <- b0_etc[2]
+	sb_ass_year <- b0_etc[3]
+	sb_decl_year <- b0_etc[4]
+	prob_depl <- b0_etc[5]
+	prob_overfished <- b0_etc[6]
+	alpha <- b0_etc[7]
+	beta  <- b0_etc[8]
 
 	out <- list()
 	out$acl_matrix <- acl_matrix
@@ -99,5 +111,13 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	out$rebuild_quants <- rebuild_quants
 	out$tmax	<- tmax
 	out$tmin	<- tmin
+	out$sb0 <- sb0
+	out$sb40 <- sb40
+	out$sb_ass_year <- sb_ass_year
+	out$sb_decl_year <- sb_decl_year
+	out$prob_depl	<- prob_depl
+	out$prob_overfished <- prob_overfished
+	out$alpha <- alpha
+	out$beta <- beta
 	return(out)
 }
