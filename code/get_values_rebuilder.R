@@ -15,6 +15,8 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	end   <- start + 9
 	recovery_spec <- unlist(noquote(strsplit(res[start:end],",")))
 	recovery_spec <- as.numeric(recovery_spec)
+	find <- grep("#Biol_Pars", res) - 4
+	mean_gen <- as.numeric(unlist(noquote(res[find])))
 
 	#Read in the catches from the rebuilder RES.CSV file
 	start = grep("#Summary_1", res) + 3
@@ -23,10 +25,10 @@ get_values <- function(rebuild_dir, num_rows = 200) {
     find = 2:11
 
     tmax <- recovery_spec[10]
-	tmin <- summary_2[6,7]
+	tmin <- ceiling(summary_2[6,7])
 	spr_rebuild_vec  <- summary_2[2,1:9]
 	prebuild_vec <- summary_2[4,1:9]/100
-	ttarget_vec <- floor(summary_2[6,1:9] + 0.99) + recovery_spec[3]
+	ttarget_vec <- ceiling(summary_2[6,1:9]) + recovery_spec[3]
 	rebuild_quants <- data.frame(Ttarget = ttarget_vec,
 								 SPR = spr_rebuild_vec,
 								 Prebuild = prebuild_vec)
@@ -111,6 +113,7 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	out$rebuild_quants <- rebuild_quants
 	out$tmax	<- tmax
 	out$tmin	<- tmin
+	out$mean_gen <- mean_gen
 	out$sb0 <- sb0
 	out$sb40 <- sb40
 	out$sb_ass_year <- sb_ass_year
