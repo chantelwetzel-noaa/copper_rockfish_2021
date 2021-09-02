@@ -14,7 +14,9 @@ A ten year projection of the base model with catches equal to the estimated Acce
 
 The area assumed in this assessment does not align with the PMFC management regions that define `r spp` ACL allocation, north and south of 40$^\circ$ 10' Lat. N. To determine the amount of the 2021 and 2021 ACL for the California portion of the stock north of Point Conception the total ACL that would be allocated to the state of California was determined by summing the S. 40$^\circ$ 10' Lat. N. ACL and the percent of the N. 40$^\circ$ 10' Lat. N. allocated to California (25 percent, PFMC Groundfish Management team personal communication). Once the total ACLs for California were determined the portion of the ACL allocated to the area north of Point Conception was based on the percentage of total removals in each area of California (north and south of Point Conception) from 2017 - 2019.  
 
-The decision table uncertainty axes and catch levels to be determined later.
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` ($\sigma$ = `r model$Pstar_sigma ` ) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.098 and 0.123^-y^.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.31 - 0.60 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished across the state of natures assuming the full ABC removals all increase over the projection period from the fraction unfished in 2023.
 
 
 ## Evaluation of Scientific Uncertainty

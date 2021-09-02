@@ -1,0 +1,94 @@
+\clearpage
+# Tables
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = c(round(reb[[1]]$sb0,2), 
+		   round(reb[[1]]$sb40, 2), 
+		   round(reb[[1]]$sb_ass_year, 2),
+		   reb[[1]]$recovery_spec[4],
+		   reb[[1]]$recovery_spec[3], 
+		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4], 
+		   reb[[1]]$mean_gen, 
+		   reb[[1]]$tmax, 
+		   "TBD",
+		   "TBD")
+row_names = c("SB0", "SB40\\%", "SB2021", "Year rebuilding begins",
+		  "Current year", "TMIN", "Mean generation time", "TMAX", 
+		  "TTARGET", "SPRTARGET")
+
+col_names = c("Parameter", "Value")
+out = cbind(row_names, quants)
+
+table_format(x = out,
+             caption = "Summary of the rebuilding reference points.",
+             label = "ref-points",
+             align = 'l',
+             col_names = col_names)
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = rbind(round(reb[[1]]$acl_matrix[3:4,-1],2),
+		   reb[[1]]$rebuild_quants$SPR,
+		   reb[[1]]$rebuild_quants$Ttarget,
+		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
+		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+row_names = c("2023 ACL (mt)", "2024 ACL (mt)", "SPR", "TTARGET", 
+			  "TMAX",
+			  "Probability of recovery by TMAX")
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Results of rebuilding alternative based on selection of an SPR target or year for 50 percent probability of recovery.",
+             label = "reb-alts",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+
+out = as.data.frame(reb[[1]]$prob_matrix[1:75, ],3)
+
+table_format(x = out,
+             caption = "Probability of recovery for rebuilding alternatives for the years 2021-2095.",
+             label = "prob-mat",
+             align = 'l',
+             col_names = col_names)
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[1]]$acl_matrix[1:75, ],2))
+
+table_format(x = out,
+             caption = "ACLs (mt) for rebuilding alternatives for the years 2021-2095.",
+             label = "acl-mat",
+             align = 'l',
+             col_names = col_names)
+```
+
+\clearpage
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[1]]$ssb_matrix[1:75, ],2))
+
+table_format(x = out,
+             caption = "ACLs (mt) for rebuilding alternatives for the years 2021-2095.",
+             label = "ssb-mat",
+             align = 'l',
+             col_names = col_names)
+```

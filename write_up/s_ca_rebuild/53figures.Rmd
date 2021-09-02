@@ -1,0 +1,23 @@
+\clearpage
+# Figures
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, "rebuilding_probability.png"), 
+caption = "Probability of rebuilding by year for alternative rebuilding strategies",
+label = 'prob-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, "rebuilding_acl.png"), 
+caption = "ACLs (mt) by year for alternative rebuilding strategies",
+label = 'catch-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, "rebuilding_ssb.png"), 
+caption = "Spawning output by year for alternative rebuilding strategies",
+label = 'ssb-fig')
+```

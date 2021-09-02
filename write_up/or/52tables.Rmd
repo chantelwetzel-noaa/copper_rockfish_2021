@@ -243,4 +243,8 @@ table_format(x = out,
              col_names = col_names)
 ```
 
-\newpage
+\clearpage
+
+\input{tex_tables/decision_table.tex}
+
+\clearpage

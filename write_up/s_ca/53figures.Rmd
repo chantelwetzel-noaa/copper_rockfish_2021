@@ -389,7 +389,7 @@ label = 'depl')
 <!-- ====================================================================== -->
   
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_1_compare2_spawnbio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_final_1_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -397,7 +397,7 @@ label = 'sens-ssb-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_1_compare4_Bratio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_final_1_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
@@ -405,7 +405,7 @@ label = 'sens-depl-1')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_2_compare2_spawnbio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_final_2_compare2_spawnbio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -413,7 +413,7 @@ label = 'sens-ssb-2')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = paste0(basename(mod_loc), "_2_compare4_Bratio_uncertainty.png")
+nm = paste0(basename(mod_loc), "_final_2_compare4_Bratio_uncertainty.png")
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",

@@ -199,11 +199,11 @@ table_format(x = tab,
 \newpage
 
 
-\include{tex_tables/sensitivities_1_new.tex}
+\include{tex_tables/sensitivities_1_final.tex}
 
 \newpage
 
-\include{tex_tables/sensitivities_2_new.tex}
+\include{tex_tables/sensitivities_2_final.tex}
 
 \newpage
 
@@ -234,40 +234,36 @@ com_acl_n = round(man_north[man_north$Year %in% c(2021, 2022), "Complex.ACL"], 1
 ofl_n = round(man_north[man_north$Year %in% c(2021, 2020), "OFL"], 1) 
 acl_n = round(0.25*man_north[man_north$Year %in% c(2021, 2022), "ACL"], 1)
 
+sigma = c(1, 1*(1+(1:11-1)*0.075))
+buffer = exp(stats::qnorm(0.45, 0, sigma))
 
 find = which(model$timeseries$Yr %in% c(2021, 2022))
 rm = model$timeseries[find, "dead(B):_1"] + model$timeseries[find, "dead(B):_2"]
 
 out = cbind(tab$Year,
-#            c(com_ofl_s, rep("-",10)),
-#            c(com_acl_s, rep("-",10)),
             c(ofl_s, rep("-",10)),
             c(acl_s, rep("-",10)),
-#            c(com_ofl_n, rep("-",10)),
-#            c(com_acl_n, rep("-",10)),
             c(ofl_n, rep("-",10)),
             c(acl_n, rep("-",10)),
             c(acl_s + acl_n, rep("-", 10)),
             c(rm, rep("-",10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
+            c(rep("-",2), round(tab[3:12,2] * buffer[3:12], 2)),
+            c(rep("-",2), round(buffer[3:12], 3)),
             c(rep("-",2), round(tab[3:12,3],2)),
-            c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              #'OFL (c) - S. 40.10',
-              #'ACL (c) - S. 40.10',
               'OFL - S. 40.10',
               'ACL - S. 40.10',
-              #'OFL - N. 40.10',
-              #'ACL - N. 40.10',
               'OFL - N. 40.10',
               'CA ACL - N. 40.10',
               'Total CA ACL',
               "Removals",
-              "OFL", 
-              "ABC", 
-              "Buffer",
+              "OFL",
+              "ABC",
+              "Buffer", 
+              "ACL", 
               "Spawning Output",
               "Fraction Unfished")
 
@@ -283,5 +279,11 @@ table_format(x = out,
              col_names = col_names)
 
 ```
+
+\clearpage
+
+\input{tex_tables/decision_table.tex}
+
+\clearpage
 
 \newpage

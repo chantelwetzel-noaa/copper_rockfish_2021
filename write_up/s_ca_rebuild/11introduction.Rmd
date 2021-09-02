@@ -1,0 +1,12 @@
+# Introduction
+
+The 2021 assessment of `r spp` south of Point Conception documented that the stock had declined below the minimum stock size  (MSST) 25%, for the first during the mid 1980s, increased above the MSST briefly between 2010-2016, but has fallen back below the MSST starting in 2017 (ADD REFERENCE). The previous assessment of `r spp` south of Point Conception conducted in 2013 estimated the stock to be well above the management target of 40% of unfished spawning output at that time.  The 2013 assessment was an index-only data-moderate stock assessment conducted in Extended Depletion-Based Stock Reduction Analysis (DB-SRA). 
+
+This is the first rebuilding analysis for `r spp` and was completed in September 2021 using version 3.12h and running 1000 simulations.
+
+# Overview of the 2021 stock assessment
+
+# Management performance under rebuilding
+
+This is the first rebuilding plan for `r spp ` south of Point Conception.
+

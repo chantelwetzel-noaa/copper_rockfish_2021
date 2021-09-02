@@ -182,7 +182,11 @@ table_format(x = mod_params,
 <!-- ****************     Sensitivities      *************** --> 
 <!-- ======================================================= -->
 
-\include{tex_tables/sensitivities_final.tex}
+\include{tex_tables/sensitivities_final_1.tex}
+
+\newpage
+
+\include{tex_tables/sensitivities_final_2.tex}
 
 \newpage
 
@@ -256,3 +260,9 @@ table_format(x = out,
              width = c("1.3cm","1.3cm","1.3cm","1.3cm","1.3cm","1.5cm","1.3cm","1.3cm","1.3cm","1.5cm","1.5cm"),
              col_names = col_names)
 ```
+
+\clearpage
+
+\input{tex_tables/decision_table.tex}
+
+\clearpage

@@ -12,7 +12,10 @@ A ten year projection of the base model with catches equal to the estimated Acce
 
 The removals in 2021 and 2022 were determine by first summing the adopted ACLs South of 40$^\circ$ 10' Lat. N. and the portion of the North of 40$^\circ$ 10' Lat. N. allocated to California (25 percent - PFMC Groundfish Management Team pers. comm.). Once the total ACLs for California were determined the portion of the ACL allocated to the area south of Point Conception was based on the percentage of total removals in each area of California (north and south of Point Conception) from 2017 - 2019. 
 
-The decision table uncertainty axes and catch levels to be determined later.
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` ($\sigma$ = `r model$Pstar_sigma ` ) via the log($R0$) parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across log($R0$) values were done to attain the current year spawning biomass values. The log($R0$) values that corresponded with the lower and upper percentiles were 5.44 and 5.55.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.21 - 0.39 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished across the state of natures assuming the ACL removals (the ABC adjusted by the 40:10 harvest control rule) remains below the management target.  
+
 
 ## Evaluation of Scientific Uncertainty
 

@@ -31,9 +31,10 @@ sens_list = c("est_m", #1
 sens_list2 =  c("com_asym", #1
               "rec_asym", #2
               "all_asym", #3
-              "no_hkl", #4
-              "recfin_index", #5
-              "cpfv_index") #6
+              "no_hkl_2", #4
+              "recfin_cpfv_no_var_corrected", #5
+              "council_cpfv", #6
+              "council_cpfv_selex_both_block_4") #7
 
 model.list <- paste0(base_model, "_", sens_list)
 model.list2 <- paste0(base_model, "_", sens_list2)
@@ -54,6 +55,8 @@ sens_9  = SS_output( file.path(wd, model.list2[3]), printstats = FALSE, verbose 
 sens_10 = SS_output( file.path(wd, model.list2[4]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_11 = SS_output( file.path(wd, model.list2[5]), printstats = FALSE, verbose = FALSE, covar = FALSE)
 sens_12 = SS_output( file.path(wd, model.list2[6]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+sens_13 = SS_output( file.path(wd, model.list2[7]), printstats = FALSE, verbose = FALSE, covar = FALSE)
+
 
 modelnames <- c("Base Model",
                 "Est. M (f)", 
@@ -67,19 +70,20 @@ modelnames2 <- c("Base Model",
                 "Com. Asymptotic Selectivity", 
                 "Rec. Asymptotic Selectivity",
                 "Com. & Rec. Asymptotic Selectivity", 
-                #"Remove HKL",
-                "2013 RecFIN Index",
-                "2013 CPFV Index")
+                "Remove HKL",
+                "2013 RecFIN and CPFV Indices",
+                "Additional CPFV Lengths",
+                "CPFV Lengths and Selectivity Blocks")
 
 x <- SSsummarize(list(base, sens_1, sens_3, sens_4, sens_5, sens_6))
-x2 <- SSsummarize(list(base, sens_7, sens_8, sens_9, sens_11, sens_12))
+x2 <- SSsummarize(list(base, sens_7, sens_8, sens_9, sens_10, sens_11, sens_12, sens_13))
 
 SSplotComparisons(x, endyrvec = 2021, 
                   legendlabels = modelnames, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  filenameprefix = paste0(base_model, "_1_"),
-                  subplot = c(2,4,10,12), 
+                  filenameprefix = paste0(base_model, "_final_1_"),
+                  subplot = c(2,4), 
                   print = TRUE,
                   pdf = FALSE)
 
@@ -87,8 +91,9 @@ SSplotComparisons(x2, endyrvec = 2021,
                   legendlabels = modelnames2, 
                   plotdir = file.path(getwd(), '_plots'), 
                   legendloc = "topright", 
-                  filenameprefix = paste0(base_model, "_2_"),
-                  subplot = c(2,4,10,12), 
+                  ylimAdj = 1.25,
+                  filenameprefix = paste0(base_model, "_final_2_"),
+                  subplot = c(2,4), 
                   print = TRUE,
                   pdf = FALSE)
 
@@ -199,7 +204,7 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = file.path(out.dir, paste0(base_model, "_1_sensitivities_new.csv")))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_1_sensitivities_final.csv")))
 
 t = table_format(x = out,
       caption = 'Sensitivities relative to the base model.',
@@ -211,13 +216,22 @@ t = table_format(x = out,
       col_names = modelnames)
 
 kableExtra::save_kable(t,
-file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_1_new.tex")
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_1_final.tex")
 
 ###################################################################################
+modelnames2 <- c("Base Model",
+                "Com. Asym. Sel.", 
+                "Rec. Asym. Sel.",
+                "Com. and Rec. Asym. Sel.", 
+                "Remove HKL Survey",
+                "2013 RecFIN and CPFV Indices",
+                "Additional CPFV Lengths",
+                "CPFV Lengths and Sel. Blocks")
 
-ii = 1:length(modelnames2)
-n = length(modelnames2)
-out<- matrix(NA, 23, max(ii))
+modelnames = modelnames2
+ii = 1:length(modelnames)
+n = length(modelnames)
+out =  matrix(NA, 23, max(ii))
 x = x2
 
 out = rbind(
@@ -276,10 +290,11 @@ rownames(out) = c("Total Likelihood",
                   "CV old - Male")
 
 
-write.csv(out, file = file.path(out.dir, paste0(base_model, "_2_sensitivities_new.csv")))
+write.csv(out, file = file.path(out.dir, paste0(base_model, "_2_sensitivities_final.csv")))
 
 t = table_format(x = out,
-      caption = 'Sensitivities relative to the base model.',
+      caption = 'Sensitivities relative to the base model. The negative log-likelihood for the Early CPFV Lengths
+                 and the Early CPFV Lengths and Selectivity Blocks sensitivities are not comparable with the base model since these sensitivities include additional data.',
       label = 'sensitivities-2',
       longtable = TRUE,
       font_size = 9,
@@ -288,7 +303,7 @@ t = table_format(x = out,
       col_names = modelnames2)
 
 kableExtra::save_kable(t,
-file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_2_new.tex")
+file = "C:/Assessments/2021/copper_rockfish_2021/write_up/s_ca/tex_tables/sensitivities_2_final.tex")
 
 ################################################################################################
 

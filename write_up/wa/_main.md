@@ -423,7 +423,9 @@ The spawning output relative to unfished equilibrium in 2021 is estimated to be 
 
 A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for copper rockfish N. 40$^\circ$ 10' Lat. N. allocated to Washington state (26 percent, PFMC Groundfish Management Team, personal communication). 
 
-The decision table uncertainty axes and catch levels to be determined later.
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 via the log($R0$) parameter. The within model uncertainty estimated from the model was low (0.0977455) which resulted in little variation in the low and high state of nature relative to the base model if used.  Meanwhile, the default category 2 $\sigma$ of 1.0 resulted in a very large range across the states of nature. As an alternative approach to determine a low and high state of nature from the base model the model uncertanties across the three other area based copper rockfish assessments were averaged to arise at a a $\sigma$ = 0.35. of This $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across log($R0$) values were done to attain the current year spawning biomass values. The log($R0$) values that corresponded with the lower and upper percentiles were 1.89 and 2.12.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.37 - 0.58 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
 
 ## Evaluation of Scientific Uncertainty
 
@@ -758,7 +760,7 @@ CV young Fem GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
 CV old Fem GP 1 & 0.100 & -2 & (0.01, 0.3) & NA & NA & None\\
 Wtlen 1 Fem GP 1 & 0.000 & -9 & (0, 0.1) & NA & NA & None\\
 Wtlen 2 Fem GP 1 & 3.190 & -9 & (2, 4) & NA & NA & None\\
-Mat50% Fem GP 1 & 34.830 & -9 & (10, 60) & NA & NA & None\\
+Mat50\% Fem GP 1 & 34.830 & -9 & (10, 60) & NA & NA & None\\
 Mat slope Fem GP 1 & -0.600 & -9 & (-1, 0) & NA & NA & None\\
 Eggs scalar Fem GP 1 & 0.000 & -9 & (-3, 3) & NA & NA & None\\
 Eggs exp len Fem GP 1 & 3.679 & -9 & (-3, 3) & NA & NA & None\\
@@ -896,9 +898,11 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 \endgroup{}
 \endgroup{}
 
-\newpage
+\clearpage
 
+\input{tex_tables/decision_table.tex}
 
+\clearpage
 
 <!--chapter:end:52tables.Rmd-->
 
@@ -919,7 +923,7 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== --> 
 
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/data_plot.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -932,14 +936,14 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![Length composition data from the recreational fleet.\label{fig:wa-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="Length composition data from the recreational fleet."}
+![Length composition data from the recreational fleet.\label{fig:wa-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
 
-![Aggregated length composition data across all years from the recreational fleet.\label{fig:wa-len-agg}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat__aggregated_across_time.png){width=100% height=100% alt="Aggregated length composition data across all years from the recreational fleet."}
+![Aggregated length composition data across all years from the recreational fleet.\label{fig:wa-len-agg}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat__aggregated_across_time.png){width=100% height=100% alt="."}
 
 
-![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
+![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -947,43 +951,43 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png){width=100% height=100% alt="Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys."}
+![Comparison of the length-at-weight data from the NWFSC Hook and Line and the NWFSC WCGBT surveys.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_Length_Weight_Source.png){width=100% height=100% alt="."}
 
 
-![Weight-at-length by sex used in the model.\label{fig:len-weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight-at-length by sex used in the model."}
-
-
-
-![Observed sex specific length-at-age by data source with the estimate length-at-age curve.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_north_Age_by_Sex_Source.png){width=100% height=100% alt="Observed sex specific length-at-age by data source with the estimate length-at-age curve."}
+![Weight-at-length by sex used in the model.\label{fig:len-weight}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio5_weightatsize.png){width=100% height=100% alt="."}
 
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
-
-\clearpage
+![Observed sex specific length-at-age by data source with the estimate length-at-age curve.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_north_Age_by_Sex_Source.png){width=100% height=100% alt="."}
 
 
-![Maturity as a function of  length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio6_maturity.png){width=100% height=100% alt="Maturity as a function of  length."}
+
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio1_sizeatage.png){width=100% height=100% alt="."}
 
 \clearpage
 
 
-![Fecundity as a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
+![Maturity as a function of  length.\label{fig:maturity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio6_maturity.png){width=100% height=100% alt="."}
 
 \clearpage
 
 
-![Fraction female by length across all available data sources.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="Fraction female by length across all available data sources."}
+![Fecundity as a function of length.\label{fig:fecundity}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="."}
+
+\clearpage
 
 
-![Fraction female by age across all available data sources.\label{fig:age-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png){width=100% height=100% alt="Fraction female by age across all available data sources."}
+![Fraction female by length across all available data sources.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="."}
+
+
+![Fraction female by age across all available data sources.\label{fig:age-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- *********************    Selectivity            ********************** --> 
 <!-- ====================================================================== -->
 
 
-![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
+![Selectivity at length by fleet.\label{fig:selex}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -992,45 +996,45 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 
 
 
-![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
-![Mean length for recreational with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational with 95 percent confidence intervals based on current samples sizes."}
+![Mean length for recreational with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="."}
 
 
-![Aggregated length comps across all years.\label{fig:agg-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps across all years."}
+![Aggregated length comps across all years.\label{fig:agg-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- ******************      Time Series       **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Estimated time series of spawning output.\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of spawning output."}
+![Estimated time series of spawning output.\label{fig:ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="."}
 
 
-![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time series of total biomass."}
+![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="."}
 
 
-![Estimated time series of fraction of unfished spawning output.\label{fig:depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of fraction of unfished spawning output."}
+![Estimated time series of fraction of unfished spawning output.\label{fig:depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts9_Fraction_of_unfished_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="."}
 
 
-![Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SR_curve.png){width=100% height=100% alt="Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years."}
+![Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SR_curve.png){width=100% height=100% alt="."}
 
 
-![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="Estimated time series of age-0 recruits (1000s)."}
+![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- ******************       Sensitivity     ***************************** --> 
 <!-- ====================================================================== -->
 
 
-![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity."}
+![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity."}
+![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in estimated annual recruitment deviations by sensitivity.\label{fig:sens-recr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviations by sensitivity."}
+![Change in estimated annual recruitment deviations by sensitivity.\label{fig:sens-recr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/_sensitivities/_plots/7.7_base_compare12_recdevs_uncertainty.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1038,58 +1042,58 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![Change in the negative log-likelihood across a range of log(R0) values.\label{fig:r0-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="Change in the negative log-likelihood across a range of log(R0) values."}
+![Change in the negative log-likelihood across a range of log(R0) values.\label{fig:r0-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of log(R0) values.\label{fig:r0-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of log(R0) values."}
+![Change in the estimate of spawning output across a range of log(R0) values.\label{fig:r0-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of log(R0) values.\label{fig:r0-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of log(R0) values."}
+![Change in the estimate of fraction unfished across a range of log(R0) values.\label{fig:r0-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
-![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of steepness values."}
+![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of steepness values."}
+![Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values."}
+![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
-![Change in the negative log-likelihood across a range of female natural mortality values.\label{fig:m-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female natural mortality values."}
+![Change in the negative log-likelihood across a range of female natural mortality values.\label{fig:m-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of female natural mortality values.\label{fig:m-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of female natural mortality values."}
+![Change in the estimate of spawning output across a range of female natural mortality values.\label{fig:m-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of female natural values.\label{fig:m-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female natural values."}
+![Change in the estimate of fraction unfished across a range of female natural values.\label{fig:m-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
-![Change in the negative log-likelihood across a range of female maximum length values.\label{fig:linf-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female maximum length values."}
+![Change in the negative log-likelihood across a range of female maximum length values.\label{fig:linf-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of female maximum length values.\label{fig:linf-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of female maximum length values."}
+![Change in the estimate of spawning output across a range of female maximum length values.\label{fig:linf-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of female maximum length values.\label{fig:linf-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female maximum length values."}
+![Change in the estimate of fraction unfished across a range of female maximum length values.\label{fig:linf-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
-![Change in the negative log-likelihood across a range of female k values.\label{fig:k-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female k values."}
+![Change in the negative log-likelihood across a range of female k values.\label{fig:k-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of female k values.\label{fig:k-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of female k values."}
+![Change in the estimate of spawning output across a range of female k values.\label{fig:k-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of female k values.\label{fig:k-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female k values."}
+![Change in the estimate of fraction unfished across a range of female k values.\label{fig:k-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
-![Change in the negative log-likelihood across a range of female coefficient of variation for older ages.\label{fig:cv-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female coefficient of variation for older ages."}
+![Change in the negative log-likelihood across a range of female coefficient of variation for older ages.\label{fig:cv-profile}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of female coefficient of variation for older ages.\label{fig:cv-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of female coefficient of variation for older ages."}
+![Change in the estimate of spawning output across a range of female coefficient of variation for older ages.\label{fig:cv-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of female coefficient of variation for older ages.\label{fig:cv-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female coefficient of variation for older ages."}
+![Change in the estimate of fraction unfished across a range of female coefficient of variation for older ages.\label{fig:cv-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1099,7 +1103,7 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values.\label{fig:lbspr}](C:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newVBGF_plots.png){width=100% height=100% alt="LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values."}
+![LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values.\label{fig:lbspr}](C:/Assessments/2021/copper_rockfish_2021/models/lbspr/Copper_WA_LBSPR_newVBGF_plots.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1109,23 +1113,23 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 
 
 
-![Prior distributions for parameter input for SSS.\label{fig:sss-prior-67}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_67_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS."}
+![Prior distributions for parameter input for SSS.\label{fig:sss-prior-67}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_67_Priors.png){width=100% height=100% alt="."}
 
 \newpage
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 60 percent.\label{fig:sss-quant-67}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_67_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 60 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 60 percent.\label{fig:sss-quant-67}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_67_quants.png){width=100% height=100% alt="."}
 
 \newpage
 
 
-![Prior distributions for parameter input for SSS.\label{fig:sss-prior-44}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_44_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS."}
+![Prior distributions for parameter input for SSS.\label{fig:sss-prior-44}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_44_Priors.png){width=100% height=100% alt="."}
 
 \newpage
 
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-44}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_44_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 40 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-44}](C:/Assessments/2021/copper_rockfish_2021/models/sss/wa/_plots/7.7_base_depl_44_quants.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1135,10 +1139,10 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.\label{fig:retro-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially."}
+![Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.\label{fig:retro-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially.\label{fig:retro-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially."}
+![Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially.\label{fig:retro-depl}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1147,13 +1151,13 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 <!-- ====================================================================== -->
 
 
-![Estimated spawning output time series for the California stocks north and south of Point Conception.\label{fig:ssb-ca-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/ca_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Estimated spawning output time series for the California stocks north and south of Point Conception."}
+![Estimated spawning output time series for the California stocks north and south of Point Conception.\label{fig:ssb-ca-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/ca_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Estimated spawning output time series for the stocks off the Oregon and Washington coast.\label{fig:ssb-orwa-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/or_wa_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Estimated spawning output time series for the stocks off the Oregon and Washington coast."}
+![Estimated spawning output time series for the stocks off the Oregon and Washington coast.\label{fig:ssb-orwa-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/or_wa_comprare_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Estimated fraction unfished time series for all West Coast stocks.\label{fig:depl-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/comprare_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Estimated fraction unfished time series for all West Coast stocks."}
+![Estimated fraction unfished time series for all West Coast stocks.\label{fig:depl-compare}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/models/_plots/comprare_compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 \clearpage
 
@@ -1164,16 +1168,15 @@ Year & Adopted OFL & Adopted ACL & ACL-WA & OFL & ABC & Buffer & Spawning Output
 
 
 
-![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
+![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="."}
 
 
 
-![Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio.\label{fig:phase}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio."}
+![Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio.\label{fig:phase}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/SPR4_phase.png){width=100% height=100% alt="."}
 
 
 ![Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72."}
+fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="."}
 
 <!--chapter:end:53figures.Rmd-->
 
@@ -1182,9 +1185,9 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 
 
-![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method."}
+![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="."}
 
-![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 2 of 2)."}
+![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/wa/7.7_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="."}
 
 <!--chapter:end:54appendix.Rmd-->
 

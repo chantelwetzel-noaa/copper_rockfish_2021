@@ -1,0 +1,56 @@
+# Rebuilding calculations
+
+This rebuilding analysis was conducted using software developed by A. Punt (version 3.12h, August 2021). The steps followed were: 
+
+\begin{itemize}
+	\item Define how virgin spawning output ($\text{SB}_0$) will be calculated. 
+	\item Define how future recruitment will be generated. 
+	\item Define the fishery selectivity and allocation to be applied during rebuilding. 
+	\item Decide how to include uncertainty in input parameters from the stock assessment in the rebuilding analysis. 
+	\item Calculate rebuilding reference points from the most current assessment results 
+	\begin{itemize}
+		\item Calculate the projected year in which the stock would rebuild with a 50$\%$ probability if all future fishing mortality was eliminated ($\text{T}_\text{F}$=0).
+		\item  Calculate the projected year for a 50$\%$ probability of rebuilding from the year in which the stock was first declared overfished ($\text{T}_\text{MIN}$). 
+		\item Calculate the mean generation time. 
+		\item Calculate the maximum allowable rebuilding time ($\text{T}_\text{MAX}$). 
+	\end{itemize}
+	\item Identification and analysis of alternative harvest strategies for rebuilding. 
+\end{itemize}
+
+## Definition of B0
+
+The equilibrium spawning output ($\text{SB}_0$) used in this rebuilding analysis is calculated via the stock-recruitment relationship in order to be consistent with assessment model results. This level is estimated to be 233.0 mt in the base case assessment model, which dictates that the rebuilding target ($\text{SB}_{40\%}$) is 93.2 mt (Table XX). 
+
+## Generation of future recruitment
+
+The estimated parameters of the stock recruitment relationship (unexploited equilibrium recruitment [natural log of $R_0$], and steepness [$h$]) are used to generate future recruitments in the rebuilding analysis. These values in the rebuilding analysis were informed by the 2021 stock assessment. The degree of recruitment variability ($\sigma_R = 0$), deterministic recruitment, was also consistent with 2021 assessment.
+
+## Fishery selectivity and allocation
+
+The selectivity and weight at age used in the rebuilding analysis were obtained from 2021 assessment. The relative allocation of catch among fleets in this rebuilding analysis was informed using the allocation averaged over recent years (2015-20169.
+
+## Inclusion of uncertainty
+
+
+
+## Calculate reference points
+
+The 2021 and 2022 ABC are set at XX mt and XX mt, respectively (referred to as Option 1). Given the estimated stock status a number of alternative analyses are presented for proposed lower 2021-2022 catches.  The 2021 and 2022 ABCs are set at XX mt, respectively (Option a). 
+
+Recovery in the absence of fishing ($\text{T}_\text{F}=0$) was calculated by setting fishing mortality to zero in 2023 for all projections. The value for $\text{T}_\text{F}=0$ is XX-XX, depending upon the catch level chosen for 2021 and 2022. The value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the first year catches can be set to zero (2023) is the same as $\text{T}_\text{F}=0$ since this is the first rebuilding plan for `r spp`.  The estimated generation time is XX years. In conjunction with $\text{T}_\text{MIN}$, the mean generation time generally dictates the estimate of $\text{T}_\text{MAX}$., unless the stock can rebuild within 10 years of $\text{T}_\text{MIN}$. `r Spp` are unable to rebuild to the target biomass within ten years, so $\text{T}_\text{MAX}$ is XX. $\text{T}_\text{TARGET}$, $\text{SPR}_\text{TARGET}$ and $\text{P}_\text{MAX}$ are not specified as this is the first rebuilding plan for `r spp` and these values have not been set via the Council process. All reference points from the rebuilding analysis are summarized in Table XX. 
+
+
+## Alternate rebuilding strategies
+
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a harvest rate (SPR rate), or 2) strategies based selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents 5 alternate strategies spread among the approaches based on the selection of a harvest rate. Alternatives 1-5 correspond to requests made in the PFMC terms of reference for rebuilding analysis.  A sixth alternative that corresponds to a range of years between $T_\text{MIN}$ and $T_\text{MAX}$ that produce 50% probability of recovery given the control rule was also explored.
+
+Specifically, the alternatives are: 
+\begin{itemize}
+	\item Eliminate all harvest beginning in the next management cycle, 2023 (i.e., estimate $\text{T}_\text{F} = 0$).
+	\item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by $\text{T}_\text{MID}$ 
+	\item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$
+	\item Apply a range of SPR values: 0.60, 0.70, 0.80, and 0.90 
+	\item Apply the ACL based on the 40:10 harvest control rule.
+	\item Apply the ABC with time-varying $\sigma$.
+\end{itemize}
+

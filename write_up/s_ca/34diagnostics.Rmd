@@ -27,18 +27,20 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
   \item Fix selectivity for the recreational fleet to be asymptotic. 
     
   \item Fix selectivity for both the commercial and recreational fleets to be asymptotic. 
-  
-  \item Fit to the dockside RecFIN index of abundance used in the 2013 assessment. 
-
-  \item Fit to the onboard Charter Priveat Fishing Vessel (CPFV) index of abundance used in the 2013 assessment. 
 
   \item Remove the `r hkl` length and index data.
+  
+  \item Fit to the dockside RecFIN  (1980 - 1988 and 1993 - 2003) and CPFV (1999-2011) indices of abundance used in the 2013 assessment with no estimated added variance. 
+
+  \item Add additional early CPFV lengths collected during onboard sampling from Ally et al. 1991 and Collins and Crooke n.d. that were not included in the base model (data not received prior to the data deadline).
+
+  \item Include the CPFV lengths prior the previous sensitivity and include additional flexibility in selectivity for both the commercial and recreational fishery allowing for selectivity time blocks that would allow dome-shaped selectivity (if estimated): 1916-2000, 2001-2002, 2003-2011, 2012-2018, and 2019-2020. The time blocks for selectivity were designed to capture changes in percentage of area open to fishing. 
   
 \end{enumerate}
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities-1} and \ref{tab:sensitivities-2}. Plots of the estimated time series of spawning output and relative spawning output are shown in Figures \ref{fig:sens-ssb-1} - \ref{fig:sens-depl-2}. The majority of sensitivities estimated the final stock status to be below the management threshold limit of 25 percent of unfished spawning output, similar to the base model. Estimating annual recruitment deviations from the stock recruitment curve resulted in a more pessimistic final stock status relative to the base model (Figure \ref{fig:sens-depl-1}).  The sensitivity that estimated female natural mortality estimated a lower unfished spawning output but a similar final stock size to the base model (Figures \ref{fig:sens-ssb-1} and \ref{fig:sens-depl-1}). 
 
-The two sensitivities that examined alternative parameterization of the recreational selectivity (forced to be asymptotic) estimated a relative stock status of 3 percent in the final year of the model (Figure \ref{fig:sens-depl-2}). Fixing the only the commercial selectivity to be asymptotic resulted in slightly more depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The sensitivity that included the onboard CPFV index of abundance from the 2013 assessment estimated a similar stock size and status relative to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The sensitivity that included the dockside RecFIN index of abundance estimated a larger initial spawning output and higher relative biomass compared to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). Both sensitivities were allowed to estimate additional added variance for the input standard deviation for the index time series which is typical practice in West Coast groundfish stock assessments. The estimated added variance for the CPFV index was high (0.26), while little added variance was estimated in order to fit the  RecFIN index of abundance (0.05).
+The two sensitivities that examined alternative parameterization of the recreational selectivity (forced to be asymptotic) estimated a relative stock status of 3 percent in the final year of the model (Figure \ref{fig:sens-depl-2}). Fixing the only the commercial selectivity to be asymptotic resulted in slightly more depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The sensitivity that included the onboard CPFV index of abundance from the 2013 assessment estimated a similar stock size and status relative to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The sensitivity that included the recreational indices of abundance from the 2013 index-only data-moderate assessment estimated a slightly larger initial spawning output and higher relative biomass compared to the base model, but still below the management threshold of 0.25 (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). 
 
 The sensitivity of removing the `r hkl` length and index data is not shown due to the model estimating a log($R_0$) value at the upper bound (log($R_0$) of 20). This is due to slight shifts in the recreational and commercial selectivity curves.  Fixing the selectivity parameters at the values of the base model (estimating log($R_0$) only) resulted in a similar estimate of the unfished spawning output but a more depleted final status in 2021 (0.17) relative to the base model. Splitting the `r hkl` data between samples inside and outside the CCA for the index of abundance and compositions data were also explored.  However, since there were limited samples of `r spp` inside the CCAs the estimates from this sensitivity were the same as the base model.    
 

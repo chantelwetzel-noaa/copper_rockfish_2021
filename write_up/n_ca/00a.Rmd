@@ -6,7 +6,7 @@ preamble: |
 output: sa4ss::techreport_pdf
 bibliography: sa4ss.bib
 lang: en
-papersize: a4
+pagesize: letter
 ---
 
 ```{r opts, include = FALSE}
