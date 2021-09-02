@@ -32,6 +32,7 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	rebuild_quants <- data.frame(Ttarget = ttarget_vec,
 								 SPR = spr_rebuild_vec,
 								 Prebuild = prebuild_vec)
+	tmid <- rebuild_quants[6,1]
 	row_names <- c(noquote(strsplit(res[start-1],","))[[1]][find[-1]])
 	rownames(rebuild_quants) = row_names
 
@@ -113,6 +114,7 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	out$rebuild_quants <- rebuild_quants
 	out$tmax	<- tmax
 	out$tmin	<- tmin
+	out$tmid    <- tmid
 	out$mean_gen <- mean_gen
 	out$sb0 <- sb0
 	out$sb40 <- sb40
@@ -122,5 +124,6 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 	out$prob_overfished <- prob_overfished
 	out$alpha <- alpha
 	out$beta <- beta
+	out$loc <- rebuild_dir
 	return(out)
 }
