@@ -1,6 +1,8 @@
 \clearpage
 # Tables
 
+## Rebuilding reference points and summary of alternatives
+
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
 
@@ -13,10 +15,13 @@ quants = c(round(reb[[1]]$sb0,2),
 		   reb[[1]]$mean_gen, 
 		   reb[[1]]$tmax, 
 		   "TBD",
+		   "TBD",
 		   "TBD")
-row_names = c("SB0", "SB40\\%", "SB2021", "Year rebuilding begins",
-		  "Current year", "TMIN", "Mean generation time", "TMAX", 
-		  "TTARGET", "SPRTARGET")
+
+row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", 
+			"SB2021 (millions of eggs)", "Year rebuilding begins",
+		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
+		    "Pmax", "Ttarget", "SPRtarget")
 
 col_names = c("Parameter", "Value")
 out = cbind(row_names, quants)
@@ -33,21 +38,75 @@ table_format(x = out,
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
 
-quants = rbind(round(reb[[1]]$acl_matrix[3:4,-1],2),
+quants = rbind(round(reb[[1]]$acl_matrix[1:4,-1],2),
 		   reb[[1]]$rebuild_quants$SPR,
 		   reb[[1]]$rebuild_quants$Ttarget,
 		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
 		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
 
-row_names = c("2023 ACL (mt)", "2024 ACL (mt)", "SPR", "TTARGET", 
-			  "TMAX",
-			  "Probability of recovery by TMAX")
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+			  "Tmax",
+			  "Probability of recovery by Tmax")
 out = cbind(row_names, quants)
 col_names = c("", colnames(out)[-1])
 
 table_format(x = out,
-             caption = "Results of rebuilding alternative based on selection of an SPR target or year for 50 percent probability of recovery.",
-             label = "reb-alts",
+             caption = "Results of rebuilding alternatives based on selection of an SPR target or year for 50 percent probability of recovery based on the assumed removals for 2021-22.",
+             label = "reb-options",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = rbind(round(reb[[2]]$acl_matrix[1:4,-1],2),
+		   reb[[2]]$rebuild_quants$SPR,
+		   reb[[2]]$rebuild_quants$Ttarget,
+		   rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)),
+		   reb[[2]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+			  "Tmax",
+			  "Probability of recovery by Tmax")
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Results of rebuilding alternatives based on alternative SPR targets resulting in 50 percent probability of recovery by the target year listed based on the assumed removals for 2021-22.",
+             label = "reb-options-catch",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = rbind(round(reb[[3]]$acl_matrix[1:4,2:6],2),
+		   reb[[3]]$rebuild_quants$SPR[1:5],
+		   reb[[3]]$rebuild_quants$Ttarget[1:5],
+		   rep(reb[[3]]$tmax, 5),
+		   reb[[3]]$rebuild_quants$Prebuild[1:5]) # Prob by Tmax
+
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+			  "Tmax",
+			  "Probability of recovery by Tmax")
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Results of rebuilding alternatives based on alternative target rebuilding years based on 50 percent probability of recovery.",
+             label = "reb-options-year",
              align = 'l',
              landscape = TRUE,
              col_names = col_names)
@@ -55,40 +114,116 @@ table_format(x = out,
 
 \clearpage
 
+## Rebuilding alternative time series 
+
 ```{r, results = 'asis'}
 
-out = as.data.frame(reb[[1]]$prob_matrix[1:75, ],3)
+out = as.data.frame(round(reb[[1]]$prob_matrix[1:35, ],3))
 
 table_format(x = out,
-             caption = "Probability of recovery for rebuilding alternatives for the years 2021-2095.",
+             caption = "Probability of recovery by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "prob-mat",
              align = 'l',
-             col_names = col_names)
+             col_names = colnames(out))
 ```
 
-\clearpage
 
 ```{r, results = 'asis'}
 
-out = as.data.frame(round(reb[[1]]$acl_matrix[1:75, ],2))
+out = as.data.frame(round(reb[[1]]$acl_matrix[1:35, ],2))
 
 table_format(x = out,
-             caption = "ACLs (mt) for rebuilding alternatives for the years 2021-2095.",
+             caption = "ACLs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "acl-mat",
              align = 'l',
-             col_names = col_names)
+             col_names = colnames(out))
 ```
-
-\clearpage
 
 
 ```{r, results = 'asis'}
 
-out = as.data.frame(round(reb[[1]]$ssb_matrix[1:75, ],2))
+out = as.data.frame(round(reb[[1]]$ssb_matrix[1:35, ],2))
 
 table_format(x = out,
-             caption = "ACLs (mt) for rebuilding alternatives for the years 2021-2095.",
+             caption = "Spawning output by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "ssb-mat",
              align = 'l',
-             col_names = col_names)
+             col_names = colnames(out))
+```
+
+\clearpage
+
+## Rebuilding alternative time series with reduced removals for 2021 and 2022
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$prob_matrix[1:35, ],3))
+
+table_format(x = out,
+             caption = "Probability of recovery by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+             label = "prob-mat-catch",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$acl_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "ACLs (mt) by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+             label = "acl-mat-catch",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$ssb_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Spawning output by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+             label = "ssb-mat-catch",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+\clearpage
+
+## Rebuilding alternative time series for target rebuilding years
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[3]]$prob_matrix[1:35, 1:6],2))
+
+table_format(x = out,
+             caption = "The probabilty of rebuilding by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "prob-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[3]]$acl_matrix[1:35, 1:6],2))
+
+table_format(x = out,
+             caption = "ACLs (mt) by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "acl-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[3]]$ssb_matrix[1:35, 1:6],2))
+
+table_format(x = out,
+             caption = "Spawning output by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "ssb-mat-year",
+             align = 'l',
+             col_names = colnames(out))
 ```

@@ -85,8 +85,8 @@ r4ss::DoProjectPlots(
 
 # Here is some modified code that does the cummalative figures in a nice way using 
 # ggplot
-
-x = reb
+for (a in 1:3){
+x = reb[[a]]
 #Probability Plots
 probs_gg <-reshape2::melt(data = x$prob_matrix[,2:ncol(x$prob_matrix)])
 colnames(probs_gg)<-c("Year", "Scenario", "Prob")
@@ -94,7 +94,7 @@ probs_gg[,"Year"] = rep(x$prob_matrix[,1], length(2:ncol(x$prob_matrix)))
 find = which(probs_gg$Prob <=1.0 & probs_gg$Year <= (x$tmax + 3*x$mean_gen))
 ggplot2::ggplot(probs_gg[find,], aes(x = Year,y = Prob, color = Scenario)) + 
 		geom_line(lwd = 1.5) + ylab("Prob SB > TRP")
-ggsave(file.path(rebuild_dir, run, "rebuilding_probability.png"), width = 10, height = 7)
+ggsave(file.path(rebuild_dir, run[a], "rebuilding_probability.png"), width = 10, height = 7)
 
 #Catches
 acl_gg <- reshape2::melt(x$acl_matrix[,2:ncol(x$acl_matrix)])
@@ -103,7 +103,7 @@ acl_gg[,"Year"] = rep(x$acl_matrix[,1], length(2:ncol(x$acl_matrix)))
 find = which(acl_gg$Year > 2023 & acl_gg$Year <= (x$tmax + 3*x$mean_gen))
 ggplot2::ggplot(acl_gg[find,], aes(x = Year, y = Catch, color = Scenario)) + 
 		geom_line(lwd=1.5) + ylab("ACL Catches (mt)")
-ggsave(file.path(rebuild_dir, run, "rebuilding_acl.png"), width = 10, height = 7)
+ggsave(file.path(rebuild_dir, run[a], "rebuilding_acl.png"), width = 10, height = 7)
 
 
 #Spawning output
@@ -113,5 +113,6 @@ sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
 find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
 ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
 		geom_line(lwd = 1.5) + ylab("Spawning output")
-ggsave(file.path(rebuild_dir, run, "rebuilding_ssb.png"), width = 10, height = 7)
+ggsave(file.path(rebuild_dir, run[2], "rebuilding_ssb.png"), width = 10, height = 7)
 
+}
