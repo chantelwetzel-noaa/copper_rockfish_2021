@@ -1,3 +1,4 @@
+# Load packages
 library(r4ss)
 library(reshape2)
 library(ggplot2)
@@ -9,7 +10,8 @@ source("C:/Assessments/2021/copper_rockfish_2021/code/get_values_rebuilder.R")
 rebuild_dir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_rebuilder"
 
 # Create a rebuilding that incorporates uncertainity around R0
-# make a table of the 9 states of nature with information about each one
+# make a table of the 3 states of nature with information about each one
+# Code stolen from 2011 yelloweye rockfish rebuilder analysis
 statetable <- data.frame(iR0=rep(NA, 3), R0=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature")
 n <- 1
@@ -68,13 +70,17 @@ a1-a2
 # Read in rebuilding options
 run <- c(
 		 "spr_fine_step_no_abc_max",
-		 "spr_no_abc_max",
-		 "spr_50mt_21_22_no_abc_max")
+		 "spr_fine_step_no_abc_max_50mt_21_22",
+		 "year_no_abc_max")
+reb <- list()
+for(a in 1:3){
+	reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
+}
 
-reb  <- get_values(rebuild_dir = file.path(rebuild_dir, run))
 
 
 # This function currently works to create figures but could use so refinement
+# None of the below figures were included in the final document
 r4ss::DoProjectPlots(
 	dirn = file.path(rebuild_dir, run), 
 	fileN = "RES.CSV",
@@ -85,34 +91,36 @@ r4ss::DoProjectPlots(
 
 # Here is some modified code that does the cummalative figures in a nice way using 
 # ggplot
+# Loop over the length of runs in the reb list object
 for (a in 1:3){
-x = reb[[a]]
-#Probability Plots
-probs_gg <-reshape2::melt(data = x$prob_matrix[,2:ncol(x$prob_matrix)])
-colnames(probs_gg)<-c("Year", "Scenario", "Prob")
-probs_gg[,"Year"] = rep(x$prob_matrix[,1], length(2:ncol(x$prob_matrix)))
-find = which(probs_gg$Prob <=1.0 & probs_gg$Year <= (x$tmax + 3*x$mean_gen))
-ggplot2::ggplot(probs_gg[find,], aes(x = Year,y = Prob, color = Scenario)) + 
-		geom_line(lwd = 1.5) + ylab("Prob SB > TRP")
-ggsave(file.path(rebuild_dir, run[a], "rebuilding_probability.png"), width = 10, height = 7)
+	x = reb[[a]]
 
-#Catches
-acl_gg <- reshape2::melt(x$acl_matrix[,2:ncol(x$acl_matrix)])
-colnames(acl_gg)<-c("Year", "Scenario", "Catch")
-acl_gg[,"Year"] = rep(x$acl_matrix[,1], length(2:ncol(x$acl_matrix)))
-find = which(acl_gg$Year > 2023 & acl_gg$Year <= (x$tmax + 3*x$mean_gen))
-ggplot2::ggplot(acl_gg[find,], aes(x = Year, y = Catch, color = Scenario)) + 
-		geom_line(lwd=1.5) + ylab("ACL Catches (mt)")
-ggsave(file.path(rebuild_dir, run[a], "rebuilding_acl.png"), width = 10, height = 7)
-
-
-#Spawning output
-sb_gg <- reshape2::melt(x$ssb_matrix[,2:ncol(x$ssb_matrix)])
-colnames(sb_gg)<-c("Year","Scenario","SB")
-sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
-find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
-ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
-		geom_line(lwd = 1.5) + ylab("Spawning output")
-ggsave(file.path(rebuild_dir, run[2], "rebuilding_ssb.png"), width = 10, height = 7)
+	#Probability Plots
+	probs_gg <-reshape2::melt(data = x$prob_matrix[,2:ncol(x$prob_matrix)])
+	colnames(probs_gg)<-c("Year", "Scenario", "Prob")
+	probs_gg[,"Year"] = rep(x$prob_matrix[,1], length(2:ncol(x$prob_matrix)))
+	find = which(probs_gg$Prob <=1.0 & probs_gg$Year <= (x$tmax + 3*x$mean_gen))
+	ggplot2::ggplot(probs_gg[find,], aes(x = Year,y = Prob, color = Scenario)) + 
+			geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output")
+	ggsave(file.path(rebuild_dir, run[a], "rebuilding_probability.png"), width = 10, height = 7)
+	
+	#Catches
+	acl_gg <- reshape2::melt(x$acl_matrix[,2:ncol(x$acl_matrix)])
+	colnames(acl_gg)<-c("Year", "Scenario", "Catch")
+	acl_gg[,"Year"] = rep(x$acl_matrix[,1], length(2:ncol(x$acl_matrix)))
+	find = which(acl_gg$Year > 2023 & acl_gg$Year <= (x$tmax + 3*x$mean_gen))
+	ggplot2::ggplot(acl_gg[find,], aes(x = Year, y = Catch, color = Scenario)) + 
+			geom_line(lwd=1.5) + ylab("Catches (mt)")
+	ggsave(file.path(rebuild_dir, run[a], "rebuilding_acl.png"), width = 10, height = 7)
+	
+	
+	#Spawning output
+	sb_gg <- reshape2::melt(x$ssb_matrix[,2:ncol(x$ssb_matrix)])
+	colnames(sb_gg)<-c("Year","Scenario","SB")
+	sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
+	find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
+	ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
+			geom_line(lwd = 1.5) + ylab("Spawning output")
+	ggsave(file.path(rebuild_dir, run[a], "rebuilding_ssb.png"), width = 10, height = 7)
 
 }
