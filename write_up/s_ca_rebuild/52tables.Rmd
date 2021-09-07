@@ -23,7 +23,7 @@ row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)",
 		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
 		    "Pmax", "Ttarget", "SPRtarget")
 
-col_names = c("Parameter", "Value")
+col_names = c("Parameter", "2021 Assessment Values")
 out = cbind(row_names, quants)
 
 table_format(x = out,
@@ -133,7 +133,7 @@ table_format(x = out,
 out = as.data.frame(round(reb[[1]]$acl_matrix[1:35, ],2))
 
 table_format(x = out,
-             caption = "ACLs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             caption = "Catches (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "acl-mat",
              align = 'l',
              col_names = colnames(out))
@@ -172,7 +172,7 @@ table_format(x = out,
 out = as.data.frame(round(reb[[2]]$acl_matrix[1:35, ],2))
 
 table_format(x = out,
-             caption = "ACLs (mt) by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+             caption = "Catches (mt) by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
              label = "acl-mat-catch",
              align = 'l',
              col_names = colnames(out))
@@ -199,7 +199,7 @@ table_format(x = out,
 out = as.data.frame(round(reb[[3]]$prob_matrix[1:35, 1:6],2))
 
 table_format(x = out,
-             caption = "The probabilty of rebuilding by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             caption = "The probability of rebuilding by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "prob-mat-year",
              align = 'l',
              col_names = colnames(out))
@@ -210,7 +210,7 @@ table_format(x = out,
 out = as.data.frame(round(reb[[3]]$acl_matrix[1:35, 1:6],2))
 
 table_format(x = out,
-             caption = "ACLs (mt) by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             caption = "Catches (mt) by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
              label = "acl-mat-year",
              align = 'l',
              col_names = colnames(out))

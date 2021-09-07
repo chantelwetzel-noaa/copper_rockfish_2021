@@ -11,7 +11,7 @@ label = 'prob-fig')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(reb[[1]]$loc, "rebuilding_acl.png"), 
-caption = "ACLs (mt) by year for alternative rebuilding strategies",
+caption = "Catches (mt) by year for alternative rebuilding strategies",
 label = 'acl-fig')
 ```
 
