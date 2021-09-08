@@ -78,7 +78,6 @@ for(a in 1:3){
 }
 
 
-
 # This function currently works to create figures but could use so refinement
 # None of the below figures were included in the final document
 r4ss::DoProjectPlots(
@@ -123,4 +122,21 @@ for (a in 1:3){
 			geom_line(lwd = 1.5) + ylab("Spawning output")
 	ggsave(file.path(rebuild_dir, run[a], "rebuilding_ssb.png"), width = 10, height = 7)
 
+
+	#Spawning output relative to the target
+	sb_gg <- reshape2::melt(x$relativeb_matrix[,2:ncol(x$relativeb_matrix)])
+	colnames(sb_gg)<-c("Year","Scenario","SB")
+	sb_gg[,"Year"] = rep(x$relativeb_matrix[,1], length(2:ncol(x$relativeb_matrix)))
+	find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
+	ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
+			geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
+	ggsave(file.path(rebuild_dir, run[a], "rebuilding_relative_sb.png"), width = 10, height = 7)
+
 }
+
+# Grab the ACLs and split by fleet for each of the SPR values
+split = c(0.0520979, 0.947902)
+
+
+
+

@@ -71,14 +71,14 @@ get_values <- function(rebuild_dir, num_rows = 200) {
    	col_names = c("Year", noquote(strsplit(res[start-1],","))[[1]][find[-1]])
    	colnames(ssb_matrix) = col_names
 
-   	abc_matrix = NULL
+   	ofl_matrix = NULL
     find = 42:51
     for(yy in find){
     	grab = mapply(function(x) grab = noquote(as.numeric(temp[[x]][yy])), x = 1:num_rows)
-    	abc_matrix = cbind(abc_matrix, grab)
+    	ofl_matrix = cbind(ofl_matrix, grab)
     }
    	col_names = c("Year", noquote(strsplit(res[start-1],","))[[1]][find[-1]])
-   	colnames(abc_matrix) = col_names
+   	colnames(ofl_matrix) = col_names
 
    	spr_matrix = NULL
     find = 52:61
@@ -104,10 +104,11 @@ get_values <- function(rebuild_dir, num_rows = 200) {
 
 	out <- list()
 	out$acl_matrix <- acl_matrix
-	out$abc_matrix <- abc_matrix
+	out$ofl_matrix <- ofl_matrix
 	out$prob_matrix <- prob_matrix
 	out$ssb_matrix <- ssb_matrix
 	out$spr_matrix <- spr_matrix
+	out$relativeb_matrix <- relativeb_matrix
 	out$recovery_spec <- recovery_spec
 	out$summary_2 <- summary_2
 	out$summary_3 <- summary_3
