@@ -17,7 +17,7 @@ label = 'acl-fig')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(reb[[1]]$loc, "rebuilding_ssb.png"), 
-caption = "Spawning output by year for alternative rebuilding strategies",
-label = 'ssb-fig')
+filein = file.path(reb[[1]]$loc, "rebuilding_relative_sb.png"), 
+caption = "Spawning output relative to the management target of 40 percent of unfished spawning output by year for alternative rebuilding strategies",
+label = 'rel-ssb-fig')
 ```
