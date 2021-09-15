@@ -15,13 +15,12 @@ quants = c(round(reb[[1]]$sb0,2),
 		   reb[[1]]$mean_gen, 
 		   reb[[1]]$tmax, 
 		   "TBD",
-		   "TBD",
 		   "TBD")
 
 row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", 
 			"SB2021 (millions of eggs)", "Year rebuilding begins",
 		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
-		    "Pmax", "Ttarget", "SPRtarget")
+		    "Ttarget", "SPRtarget")
 
 col_names = c("Parameter", "2021 Assessment Values")
 out = cbind(row_names, quants)

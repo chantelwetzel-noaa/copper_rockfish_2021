@@ -1,7 +1,173 @@
 \clearpage
 # Appendix
 
-## Rebuilder data file
+## Rebuilding strategies with catches constrained by the ABC{#abc-max-strategies}
 
-The rebuild.dat file used for the SPR alternative analysis has been provided as a separate file.
+Altenative rebuilding alternative that cap the potential removals across alternative strategies by the ABC with time-varying $\sigma$ values.  Capping removals by the ABC in this manner impacts the alternative rebuilding strategies that apply the lowest SPR values explored, 0.55 and 0.60..    
 
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = c(round(reb[[4]]$sb0,2), 
+		   round(reb[[4]]$sb40, 2), 
+		   round(reb[[4]]$sb_ass_year, 2),
+		         reb[[4]]$recovery_spec[4],
+		         reb[[4]]$recovery_spec[3], 
+		         reb[[4]]$tmin + reb[[4]]$recovery_spec[4], 
+		         reb[[4]]$mean_gen, 
+		         reb[[4]]$tmax, 
+		   "TBD",
+		   "TBD")
+
+row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", 
+			"SB2021 (millions of eggs)", "Year rebuilding begins",
+		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
+		    "Ttarget", "SPRtarget")
+
+col_names = c("Parameter", "2021 Assessment Values")
+out = cbind(row_names, quants)3
+
+table_format(x = out,
+             caption = "Summary of the rebuilding reference points.",
+             label = "ref-points-no-abc-cap",
+             align = 'l',
+             col_names = col_names)
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+
+quants = rbind(round(reb[[4]]$acl_matrix[1:4,-1],2),
+		             reb[[4]]$rebuild_quants$SPR,
+		             reb[[4]]$rebuild_quants$Ttarget,
+		             rep(reb[[4]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
+		             reb[[4]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+			  "Tmax",
+			  "Probability of recovery by Tmax")
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Results of rebuilding alternatives based on selection of an SPR target or year for 50 percent probability of recovery based on the assumed removals for 2021-22. The SPR value provided under the ABC Rule is the realized average applied SPR across projection years based on time-varying sigmas and the applied buffer where the ABC Rule is based initially on an SPR value of 0.50.",
+             label = "reb-options-no-abc-cap",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[4]]$prob_matrix[1:35, ],3))
+
+table_format(x = out,
+             caption = "Probability of recovery by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "prob-mat-abc",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[4]]$acl_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Catches (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "acl-mat-abc",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[4]]$ofl_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "OFLs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "ofl-mat-abc",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[4]]$relativeb_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. ",
+             label = "rel-ssb-mat-abc",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+\clearpage
+
+## Status determination across area-based assessments
+
+
+Recruitment - 
+
+Dispersal of Recruitment
+
+Movement - 
+
+Genetics - 
+
+Life History Traits - 
+
+Abundance Trends (Localized Depletion) -
+
+Size and Age Composition -  
+
+
+## Summary of California stocks
+
+`r Spp` in California waters were assessed as two separate sub-stocks split at Point Conception. The spawning output by area and summed across California along with the relative spawning outputs for each area are provided in Table \ref{tab:ca-ssb}.  
+
+
+```{r, results = 'asis'}  
+
+sca = r4ss::SS_output("C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base", printstats = FALSE, verbose = FALSE)
+nca = r4ss::SS_output("C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base",
+	printstats = FALSE, verbose = FALSE)
+
+find <- sca[["timeseries"]][["Yr"]] <= (sca$endyr + 1)
+ssb_south <- sca[["timeseries"]][["SpawnBio"]][find]
+
+find <- nca[["timeseries"]][["Yr"]] <= (nca$endyr + 1)
+ssb_north <- nca[["timeseries"]][["SpawnBio"]][find]
+
+ssb_total <- ssb_south + ssb_north
+
+out = data.frame(sca[["timeseries"]][["Yr"]][find], 
+			round(ssb_north, 2), 
+			round(ssb_south, 2), 
+			round(ssb_total, 2), 
+			round(ssb_north/ssb_north[1], 3),
+			round(ssb_south/ssb_south[1], 3),
+		    round(ssb_total / ssb_total[1], 3))
+colnames = c("Year", 
+			 "SO-North",
+			 "SO-South",
+			 "SO-CA",
+			 "Rel. SO-North",
+			 "Rel. SO-South",
+			 "Rel. SO-CA")
+
+table_format(x = out,
+             caption = "Spawning output (SO) south and north of Point Conception in California, total spawning output across California, relative spawning output (Rel. SO) north and south of Point Conception, and relative spawning output across California.",
+             label = "ca-ssb",
+             align = 'l',
+             col_names = colnames)
+
+```

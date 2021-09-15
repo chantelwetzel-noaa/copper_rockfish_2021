@@ -71,9 +71,10 @@ a1-a2
 run <- c(
 		 "spr_fine_step_no_abc_max",
 		 "spr_fine_step_no_abc_max_50mt_21_22",
-		 "year_no_abc_max")
+		 "year_no_abc_max",
+		"spr_fine_step")
 reb <- list()
-for(a in 1:3){
+for(a in 1:4){
 	reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
 }
 
@@ -81,7 +82,7 @@ for(a in 1:3){
 # This function currently works to create figures but could use so refinement
 # None of the below figures were included in the final document
 r4ss::DoProjectPlots(
-	dirn = file.path(rebuild_dir, run), 
+	dirn = reb[[1]]$loc, 
 	fileN = "RES.CSV",
 	ncols = 200,
 	Outlines = c(2, 2),
@@ -91,7 +92,11 @@ r4ss::DoProjectPlots(
 # Here is some modified code that does the cummalative figures in a nice way using 
 # ggplot
 # Loop over the length of runs in the reb list object
-for (a in 1:3){
+
+run <- c(
+		 "spr_fine_step",
+		 "year_no_abc_max")
+for (a in 1:length(run)){
 	x = reb[[a]]
 
 	#Probability Plots
@@ -101,7 +106,7 @@ for (a in 1:3){
 	find = which(probs_gg$Prob <=1.0 & probs_gg$Year <= (x$tmax + 3*x$mean_gen))
 	ggplot2::ggplot(probs_gg[find,], aes(x = Year,y = Prob, color = Scenario)) + 
 			geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output")
-	ggsave(file.path(rebuild_dir, run[a], "rebuilding_probability.png"), width = 10, height = 7)
+	ggsave(file.path(x$loc, "rebuilding_probability.png"), width = 10, height = 7)
 	
 	#Catches
 	acl_gg <- reshape2::melt(x$acl_matrix[,2:ncol(x$acl_matrix)])
@@ -109,8 +114,8 @@ for (a in 1:3){
 	acl_gg[,"Year"] = rep(x$acl_matrix[,1], length(2:ncol(x$acl_matrix)))
 	find = which(acl_gg$Year > 2023 & acl_gg$Year <= (x$tmax + 3*x$mean_gen))
 	ggplot2::ggplot(acl_gg[find,], aes(x = Year, y = Catch, color = Scenario)) + 
-			geom_line(lwd=1.5) + ylab("Catches (mt)")
-	ggsave(file.path(rebuild_dir, run[a], "rebuilding_acl.png"), width = 10, height = 7)
+			geom_line(lwd=0.5) + ylab("Catches (mt)")
+	ggsave(file.path(x$loc, "rebuilding_acl.png"), width = 10, height = 7)
 	
 	
 	#Spawning output
@@ -120,7 +125,7 @@ for (a in 1:3){
 	find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
 	ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
 			geom_line(lwd = 1.5) + ylab("Spawning output")
-	ggsave(file.path(rebuild_dir, run[a], "rebuilding_ssb.png"), width = 10, height = 7)
+	ggsave(file.path(x$loc, "rebuilding_ssb.png"), width = 10, height = 7)
 
 
 	#Spawning output relative to the target
@@ -129,8 +134,10 @@ for (a in 1:3){
 	sb_gg[,"Year"] = rep(x$relativeb_matrix[,1], length(2:ncol(x$relativeb_matrix)))
 	find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
 	ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
-			geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
-	ggsave(file.path(rebuild_dir, run[a], "rebuilding_relative_sb.png"), width = 10, height = 7)
+			geom_line(lwd = 1.5) + 
+			geom_hline(yintercept=1, linetype="dashed", color = "grey", size=1) + 
+			ylab("Spawning output relative to 40% spawning output")
+	ggsave(file.path(x$loc, "rebuilding_relative_sb.png"), width = 10, height = 7)
 
 }
 

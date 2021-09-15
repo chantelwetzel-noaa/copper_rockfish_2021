@@ -22,7 +22,9 @@ rebuild_dir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_rebuil
 run <- c(
 		 "spr_fine_step_no_abc_max",
 		 "spr_fine_step_no_abc_max_50mt_21_22",
-		 "year_no_abc_max")
+		 "year_no_abc_max",
+		 "spr_fine_step")
+
 reb <- list()
 for (a in 1:length(run)){
 	reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))

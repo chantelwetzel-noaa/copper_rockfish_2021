@@ -43,9 +43,11 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 \begin{itemize}
 	\item Apply a range of SPR values: 0.55, 0.60, 0.65, 0.70, and 0.75 
 	\item Eliminate all harvest, F = 0, beginning in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
-	\item Apply the ACL based on the 40:10 harvest control rule.
-	\item Apply the ABC with time-varying $\sigma$.
+	\item Apply the Annual Catch Limits (ACL) based on the 40:10 harvest control rule.
+	\item Apply the Acceptable Biological Catch (ABC) with time-varying $\sigma$.
 	\item Apply SPR harvest rates that are estimated to lead to a 50$\%$ probability of recovery by alternative target years: $\text{T}_\text{MID}$, $\text{T}_\text{MAX}$, and other years between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$
 \end{itemize}
 
 All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt and `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2021 and 2022. A sensitivity examining the impact of reducing removals in 2021 and 2022 to 50 mt was conducted on a subset of the alternative fixed SPR harvest rate alternative listed above.
+
+All of the rebuilding strategies were run without capping catches by the ABC in future projection years. In application rebuilding progress would be monitored through updated rebuilding analysis on a regular basis during rebuild that would evaluate the progress of the selected rebuilding strategy and associated SPR harvest rate limiting the probability of the rebuilding harvest exceeding the ABC in reality.  An additional analysis was conducted that did limit the future catches by the ABC and is provided in Section \ref{abc-max-strategies} for comparison.

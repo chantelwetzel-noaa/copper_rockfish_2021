@@ -14,7 +14,6 @@ library(dplyr)
 options(stringsAsFactors = FALSE)
 
 dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/catches"
-dir.create(file.path(dir, "plots"))
 
 #-----------------------------------------------------------------------------------
 # Load the Recreational Data
@@ -80,15 +79,57 @@ agg_all[agg_all$areas == "north_4010",'catch_mt']/sum(agg_all[,'catch_mt'])
 # 0.02843676
 
 
-
+# Commercial Catches
+# Mel Mandrup (CDFW) also suggest looking by "PORT" because records listed from 
+# PACFIN_PORT_NAME of "O HUMBOLDT" should be broken down as a finer scale for north and south
+# which the PORT field will allow you to do. The PORTS that are north of 4010 from 
+# PACFIN_PORT_NAME == "O HUMBOLDT" are c("GARBERVILLE", "RUTH", "SHELTER COVER", "MIRANDA").
+# No landing records for copper are shown for "O HUMBOLDT".
 com$area = "south"
 com[com$PACFIN_PORT_NAME %in% c("EUREKA", "CRESCENT", "FIELDS LDG", "TRINIDAD"), 'area'] = 'north'
 
 com_area = aggregate(ROUND_WEIGHT_MTONS ~ LANDING_YEAR + area, 
-	data = com, drop = FALSE, FUN = sum)
+	data = com[com$LANDING_YEAR >=2005,], drop = FALSE, FUN = sum)
+# The rec are split out from 2005 - 2020. Let's restrict to the same years for the 
+# commercial landings
 
 all_by_year_com = cbind(com_area[com_area$area == "south", c(1,3)], 
 					com_area[com_area$area == "north", 'ROUND_WEIGHT_MTONS'],
 					com_area[com_area$area == "north", 'ROUND_WEIGHT_MTONS']/ (com_area[com_area$area == "south", 'ROUND_WEIGHT_MTONS']+com_area[com_area$area == "north", 'ROUND_WEIGHT_MTONS']))
 colnames(all_by_year_com) = c('year', 'south_mt', 'north_mt', 'percent_north')
 
+agg_all_com = aggregate(ROUND_WEIGHT_MTONS ~ area, data = com[com$LANDING_YEAR >=2005,], drop = FALSE, FUN = sum)
+colnames(agg_all_com) = c('areas',  'catch_mt')
+agg_all_com[agg_all_com$area == "north",'catch_mt']/sum(agg_all_com[,'catch_mt'])
+
+
+# > agg_all
+#        areas catch_mt
+# 1 north_4010   43.695
+# 2 south_4010 1491.415
+# > agg_all_com
+#   areas  catch_mt
+# 1 north  20.65815
+# 2 south 103.44519
+
+(agg_all[agg_all$areas == "north_4010", "catch_mt"] + agg_all_com[agg_all_com$areas == "north", "catch_mt"]) /
+sum(agg_all[,"catch_mt"] + agg_all_com[, "catch_mt"])
+
+# Across the catches from commercial and recreational between 2005 - 2020, 3.9% of the
+# removals are calculated to be from north of 4010 in California.
+
+# Looking over a shorter period 
+aggregate(ROUND_WEIGHT_MTONS ~ area, data = com[com$LANDING_YEAR >=2010,], drop = FALSE, FUN = sum)
+aggregate(Total.Mortality.MT~areas, data = ca_rec[ca_rec$RecFIN.Year >= 2010,], drop = FALSE, FUN = sum)
+
+# aggregate(ROUND_WEIGHT_MTONS ~ area, data = com[com$LANDING_YEAR >=2010,], drop = FALSE, FUN = sum)
+#  area ROUND_WEIGHT_MTONS
+# north           11.67139
+# south           88.22766
+# aggregate(Total.Mortality.MT~areas, data = ca_rec[ca_rec$RecFIN.Year >= 2010,], drop = FALSE, FUN = sum)
+#      areas Total.Mortality.MT
+# north_4010             34.121
+# south_4010           1215.660
+
+(11.67139 + 34.121) / (1215.660 + 88.22766 + 34.121 + 11.67139)
+# 3.4% from 2010-2020
