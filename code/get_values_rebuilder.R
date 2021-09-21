@@ -25,7 +25,7 @@ get_values <- function(rebuild_dir, num_rows = 200) {
     find = 2:11
 
     tmax <- recovery_spec[10]
-	tmin <- ceiling(summary_2[6,7])
+	tmin <- recovery_spec[1] #ceiling(summary_2[6,7])
 	spr_rebuild_vec  <- summary_2[2,1:9]
 	prebuild_vec <- summary_2[4,1:9]/100
 	ttarget_vec <- ceiling(summary_2[6,1:9]) + recovery_spec[3]

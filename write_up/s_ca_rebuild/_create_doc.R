@@ -29,6 +29,8 @@ reb <- list()
 for (a in 1:length(run)){
 	reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
 }
+
+
 save(reb, file = file.path(getwd(), "00mod.Rdata"))
 
 
