@@ -1,0 +1,129 @@
+
+# Status determination across area-based assessments
+
+
+## Dispersal
+
+### Recruitment and Dispersal
+
+_Evidence for Managing at Assessment Scale_
+
+Markel [-@markel_rockfish_2011] - Observed significant differences of recruitment among sites and years which were not consistent, indicating spatial differences in recruitment intensity during year of high recruitment within the Barkley Sound, British Columbia. 
+
+Buonaccorsi et al. [-@buonaccorsi_molecular_2004]: Estimated the dispersal distance of `r spp` recruits as 13km or less based on a stepping stone model. Caveat: This value can be highly sensitive to the ratio of total population size to effective population size. 
+
+While annual recruitment deviations were not estimated in the base model for the area south of Point Conception, model sensitivities to estimating annual recruitment deviations appeared to be little coherence with strong or weak recruitment years between the models south and north of Point Conception. The base model for the area south of Point Conception opted to not estimate annual recruitment deviations due to correlations with recent high catch years (i.e., estimated a series of years [2008 - 2014] with high recruitment proceeding recent years with high catches between).  *Caveat*: length data may not be fully informative on recruitment and variation in growth can result in low or high recruitment years being attributed to multiple years. 
+
+
+_Evidence for Alternative Management Scale_
+
+Field et al. [-@field_spatiotemporal_2021] - Determined that rockfish strong recruitments observed between 2014-2016 were largely coastwide events.
+
+
+<!---------------------------------------------------->
+
+### Adult Movement 
+
+_Evidence for Managing at Assessment Scale_
+
+Lea et al [-@lea_biological_1999]: Summarized tagging data that reported `r spp` to have low to moderate degrees of movement and high site fidelity. Of 32 tagged `r spp` that were recaptured the distance moved ranged between 0-1.5 nautical miles after 2-1,017 days at liberty. 
+
+Reynolds et al. [@reynolds_application_2010]: Tagged `r spp` in nearshore waters of Prince William Sound, Alaska exhibited long periods of residency with limited movements. 
+
+Tolimieri et al. [-@tolimieri_home_2009]: Observed home ranges of `r spp` in Puget Sound was relatively small (~1500 to ~2500m$^2$). Caveat: movement of `r spp` in the Puget Sound may not be representative of movement of coastal populations. 
+
+_Evidence for Alternative Management Scale_
+
+Lowe et al. [-@lowe_site_2009]: `r Spp` exhibited low degrees of site fidelity and had high variation in the percentage of days on which individuals were detected based on 7 tagged fish at petroleum platforms in the Santa Barbara Channel.
+
+McGilliard et al. [-@mcgilliard_accounting_2015]: Fisheries managed by area closures impose spatial heterogeneity in fishing mortality, and simulations from generic operating models suggest that the accuracy of conventional stock assessments depends on movement rates.
+
+<!---------------------------------------------------->
+
+## Geographic variation
+
+### Variation in Genetic Composition 
+
+_Evidence for Managing at Assessment Scale_
+
+Sivasundar and Palumbi [-@sivasundar_life_2010]: Measured moderate differentiation mtDNA structure but no nuclear structure in coastal `r spp` populations. 
+
+Buonaccorsi et al. [-@buonaccorsi_population_2002]: Identified significant divergence along the U.S. West Coast when measured as variance in allele frequency or mean repeat number, indicting a substantial isolation between regions. Examined samples from Queen Charlotte, Puget Sound, Canadian Gulf Islands, Crescent City, Big Creek, San Miguel Island.
+
+Johansson et al. [-@johansson_influence_2008]: Identified isolation by distance in coastal `r spp` populations ($\text{F}_\text{ST}$ = 0.006) similar to Buonaccorsi et al. [-@buonaccorsi_population_2002]  ($\text{F}_\text{ST}$ = 0.008). However, concluded that some of the genetic divergence may be related to habitat patchiness and not distance alone.
+
+_Evidence for Alternative Management Scale_
+
+Sivasundar and Palumbi [-@sivasundar_life_2010]: The Oregon and Monterey Bay populations were both genetically differentiated from the Santa Barbara populations for mtDNA but the Monterey Bay and Oregon populations could not be distinguished from each other. This could indicate that there is limited differentiation between northern California and Oregon `r spp` populations indicating mixing between the areas. 
+
+_Caveat_
+
+Waples and Gaggiotti [@waples_what_2006]: Significant differences in neutral genetic characters indicate that the populations have been re-productively isolated for many generations,which is far longer than the ecological time scales that are relevant to stock assessment or fishery management.
+
+<!---------------------------------------------------->
+
+### Variation in Phenotypic Traits
+
+_Evidence for Managing at Assessment Scale_
+
+Minor differences measured in maturity-at-length between two areas of the coast: Oregon [@hannah_length_2014] and South of Point Conception (Melissa Head, NWFSC). 
+
+Punt et al.[-@punt_which_2015]: Conventional stock assessments produced significantly biased estimates when applied to an operating model of pink ling fisheries with spatial heterogeneity in fishing mortality, growth, and recruitment.
+
+_Evidence for Alternative Management Scale_
+
+Limited growth differences measured based on original age-length estimates between fish off the Oregon and Washington coast to those sample south of Point Conception. Caveat: Spatial gradients of growth across the coast are commonly observed in rockfish or other fish species along the U.S. west coast  [@keller_variation_2012; @gertseva_spatial_2017; @keller_canary_2018] and lack of measure growth variation may be due lack of spatial coverage of otoliths samples across the California coast.  
+
+<!---------------------------------------------------->
+
+## Other Considerations
+
+### Abundance Trends
+
+_Evidence for Managing at Assessment Scale_
+
+Ying et al. [-@ying_risks_2011]: The performance of stock assessments using an operating model to represent three connected sub-populations of small
+yellow croaker and observed that assessing and managing each sub-population as a unit led to overfishing and managing the metapopulation
+as a unit stock often led to local depletion.
+
+The separate models for the areas south and north of Point Conception estimated two distinct stock trajectories with the stock in the north over recent years from low levels to at or around the management target and the stock in the south increasing from low levels between 2001 - 2014 and decreasing in recent years to levels below the minimum stock size threshold. The model for the area south of Point Conception did not estimate annual recruitment deviations which could contribute to stock trajectory differences to the stock to the north where strong recent recruitments have led to increases in stock size.  However, in the model sensitivity for the south of Point Conception model that estimated annual recruitment deviations the stock trajectory remaining low (below the minimum stock size threshold) and did not show similar stock increases as observed in the north. 
+
+The trajectories across all model areas showed varying trajectories (Figure \ref{fig:relb-comparison}). 
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = "comprare_compare4_Bratio_uncertainty.png", 
+caption = "Estimate relative spawning output by assessed area.",
+label = 'relb-comparison')
+```
+
+\clearpage
+
+_Evidence for Alternative Management Scale_
+
+The areas of true population variation in relative stock size may not align with the assessment boundaries as currently defined. State based management is likely not the only factor impacting relative stock sizes across the coast where movement and recruitment patterns likely also influence potential differences in relative stock size.  
+
+Cope and Punt [-@cope_data-moderate_2013]: Conventional stock assessments failed to estimate differing spatial patterns and exploitation (localized depletion) but adequately estimated the overall stock status. 
+
+
+
+<!---------------------------------------------------->
+
+### Size and Age Composition   
+
+_Evidence for Managing at Assessment Scale_
+
+Distinct selectivity curves estimated between the recreational and commercial fisheries north and south of Point Conception.  While to a lesser degree, the selectivity in Oregon and Washington commercial and recreation fleets also varied from selectivity estimated in other areas.
+
+Bosely et al. [-@bosley_overcoming_2019]: Specifying the correct form spatial population structure may not e as critical as understanding movement patterns and spatial heterogeneity in fishery selectivity and life-history variation when developing reference points for management. 
+
+Berger et al. [-@berger_incoherent_2021]: Aligning management assessment areas with  with underlying population
+structure and processes is important, especially when fishing mortality is disproportionate to vulnerable biomass among management areas, demographic parameters (growth and maturity) are not homogeneous within management areas, and connectivity (via recruitment or movement) unknowingly exists among management areas. Bias and risk were greater for assessments that incorrectly span multiple population segments compared to assessments that cover a subset of a population segment, and these results were exacerbated when there was connectivity between population segments. Caveat: The variation is growth and connectivity between areas via recruitment for `r spp` off the West Coast is currently unknown or uncertain. 
+
+
+_Caveat_
+
+Rather than creating separate assessments to account for variation in exploitation or life-history variation across areas a more integrated approach could be to apply a spatial assessment that can provide both area- and coastwide population estimates. However, spatial assessments come at the cost of a larger number of parameters to estimate, but general guidance around the key decisions exists when moving to spatial assessments (Punt [-@punt_spatial_2019]). This approach should be evaluated to understand the trade-offs between adding parameters that may be poorly informed (e.g., movement, recruitment by area) via a spatial assessment approach versus either conducting separate assessments or applying the "fleets-as-areas" approach.  
+
+\clearpage

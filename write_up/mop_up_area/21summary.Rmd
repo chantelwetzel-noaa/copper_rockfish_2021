@@ -1,0 +1,48 @@
+ 
+# Summary of California stocks
+
+The 2021 assessment of `r Spp` off the coast of California assessed as two separate sub-stocks split at Point Conception. The spawning output by area and summed across California along with the relative spawning outputs for each area are provided in Table \ref{tab:ca-ssb}.  
+
+
+```{r, results = 'asis'}  
+
+sca = r4ss::SS_output("C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/12.1_base", printstats = FALSE, verbose = FALSE)
+nca = r4ss::SS_output("C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base",
+	printstats = FALSE, verbose = FALSE)
+
+find <- sca[["timeseries"]][["Yr"]] <= (sca$endyr + 1)
+ssb_south <- sca[["timeseries"]][["SpawnBio"]][find]
+
+find <- nca[["timeseries"]][["Yr"]] <= (nca$endyr + 1)
+ssb_north <- nca[["timeseries"]][["SpawnBio"]][find]
+
+ssb_total <- ssb_south + ssb_north
+
+out = data.frame(sca[["timeseries"]][["Yr"]][find], 
+			round(ssb_north, 2), 
+			round(ssb_south, 2), 
+			round(ssb_total, 2), 
+			round(ssb_north/ssb_north[1], 3),
+			round(ssb_south/ssb_south[1], 3),
+		    round(ssb_total / ssb_total[1], 3))
+colnames = c("Year", 
+			 "SO-North",
+			 "SO-South",
+			 "SO-CA",
+			 "Rel. SO-North",
+			 "Rel. SO-South",
+			 "Rel. SO-CA")
+
+table_format(x = out,
+             caption = "Spawning output (SO) south and north of Point Conception in California, total spawning output across California, relative spawning output (Rel. SO) north and south of Point Conception, and relative spawning output across California.",
+             label = "ca-ssb",
+             align = 'l',
+             col_names = colnames)
+
+```
+
+# Proposed Allocation of Yield Among Federal Management Areas
+
+The 2021 northern California base model for `r spp` represents U.S. waters between 34$^\circ$ 27' N. lat. and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes `r spp`, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yield estimates from the California base model must be divided between the norther and southern management areas in order to determine the contribution of `r spp` to the nearshore rockfish overfishing limit (OFL). 
+
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Unfortunately neither of these estimates were available for `r spp` to inform allocations by area.  In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 3.9 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this the recommend allocations of the OFLs from the northern California model 3.9 percent should be allocated to the north nearshore rockfish complex with 96.1 percent to the southern complex.    
