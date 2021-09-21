@@ -1,0 +1,45 @@
+# Washington
+
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 via the log($R0$) parameter. The within model uncertainty estimated from the model was low ($\sigma$ = 0.10) which resulted in little variation in the low and high state of nature relative to the base model if used.  Meanwhile, the default category 2 $\sigma$ of 1.0 resulted in a very large range across the states of nature. As an alternative approach to determine a low and high state of nature from the base model the model uncertanties across the three other area based `r spp` assessments were averaged to arise at a a $\sigma$ = 0.35. of This $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across log($R0$) values were done to attain the current year spawning biomass values. The log($R0$) values that corresponded with the lower and upper percentiles were 1.89 and 2.12.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.37 - 0.58 by the end of the 10 year projection period (Table \ref{tab:wa-dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
+
+\input{wa_decision_table.tex}
+
+\clearpage
+
+
+# Oregon
+
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 ($\sigma$ = 0.42 ) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.096 and 0.116^-y^.  
+
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.36 - 0.70 by the end of the 10 year projection period (Table \ref{tab:or-dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
+
+
+\input{or_decision_table.tex}
+
+\clearpage
+
+# California North of Point Conception
+
+
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 ($\sigma$ = 0.30) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.098 and 0.123^-y^.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.31 - 0.60 by the end of the 10 year projection period (Table \ref{tab:nca-dec-tab}). The fraction unfished across the state of natures assuming the full ABC removals all increase over the projection period from the fraction unfished in 2023.
+
+
+\input{nca_decision_table.tex}
+
+\clearpage
+
+# California South of Point Conception
+
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 ($\sigma$ = 0.33 ) via the log($R0$) parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across log($R0$) values were done to attain the current year spawning biomass values. The log($R0$) values that corresponded with the lower and upper percentiles were 5.44 and 5.55.  
+
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.21 - 0.39 by the end of the 10 year projection period (Table \ref{tab:sca-dec-tab}). The fraction unfished across the state of natures assuming the ACL removals (the ABC adjusted by the 40:10 harvest control rule) remains below the management target.  
+
+
+\input{sca_decision_table.tex}
+
+\clearpage
