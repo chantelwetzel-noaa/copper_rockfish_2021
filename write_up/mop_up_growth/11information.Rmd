@@ -1,0 +1,148 @@
+
+# Summary of new ageing data
+
+After the initial review of the assessment of `r spp` at the June Groudfish Sub-committee (GFSC) of the Scientific and Statistical Committee (SSC) additional otoliths collected across California were provided for ageing.  Otoliths were collected from a range of sources, commercial samples, graduate research, or research/science surveys and collected from a range of locations across the California coast.  Otoliths were sent to the Cooperative Ageing Program (CAP) lab in Newport, Oregon for ageing.  The CAP lab read a large proportion of the received otoliths in time for this report.   
+
+The CAP lab was able to age a total of `r nrow(new_ages)` `r spp` otoliths for consideration in new growth estimates (Table \ref{tab:new-ca-ages}). The range of source types of read otoliths were commercial (Carcass Sampling, Commercial - EFI, Commercial - Pilot Sampling) and scientific surveys (CP-CCFRP, MLML-CCFRP, Research [Don Pearson Survey Samples]).   The samples were collected across a range of locations across the California coast with the majority of samples occurring north of Point Conception (Table \ref{tab:ca-loc} - \ref{tab:pearson-loc}). Samples were collected over the last 20 years: Don Pearson research surveys were collected between 2001 - 2007, CCFRP between 2017 - 2021, carcass samples between 2018-2021, and commerial samples between 2019-2021. 
+
+Within the short time line the CAP lab was unable to age all available `r spp` otoliths.  Additional otoliths collected by Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl (WCGBT) and Hook and Line (HKL) Surveys, and  otoliths from the Abrams Thesis can be read to inform future stock assessments of `r spp` . Of the survey samples that have not yet been read, approximately 200 are from north of Point Conception and approximately 1,000 from south of Point Conception in California. 
+
+```{r, results = 'asis'}
+
+out = data.frame(table(new_ages$Program))
+col_names = c("Source", "Number of Samples")
+
+table_format(x = out,
+             caption = "Otoliths by collection program aged by the CAP lab.",
+             label = "new-ca-ages",
+             align = 'l',
+             col_names = col_names)
+
+```
+
+
+```{r, results = 'asis'}
+order = c(1,2, 11, 12, 3, 4, 9, 10, 8, 6, 5, 7)
+out = table(new_ages[is.na(new_ages$Latitude), "Location"], new_ages[is.na(new_ages$Latitude), "Program"])
+out = cbind(rownames(out), out)
+out = out[order,]
+rownames(out) = NULL
+col_names = c("Location", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Number of read otoliths collected by location and sampling program.",
+             label = "ca-loc",
+             landscape = TRUE,
+             align = 'l',
+             #custom_width = TRUE,
+             #col_to_adjust = 1:ncol(out),
+             #width = rep(1.2, ncol(out)),
+             font = 9,
+             col_names = col_names)
+
+```
+
+```{r, results = 'asis'}
+
+new_ages$lat = floor(new_ages[, "Latitude"] / 100)
+out = table(new_ages[!is.na(new_ages$lat), "lat"], new_ages[!is.na(new_ages$lat), "Program"])
+out = cbind(rownames(out), out)
+rownames(out) = NULL
+col_names = c("Latitude North", "Number of Samples")
+
+table_format(x = out,
+             caption = "Number of read otoliths collected by latitude from the Don Pearson Research surveys.",
+             label = "pearson-loc",
+             align = 'l',
+             col_names = col_names)
+
+```
+
+
+```{r, results = 'asis'}
+
+#out = table(new_ages$Year, new_ages$Program)
+#out = cbind(rownames(out), out)
+#out = data.frame(out)
+#rownames(out) = NULL
+#col_names = c("Year", colnames(out)[2:ncol(out)])
+#
+#table_format(x = out,
+#             caption = "The number of samples by collection year for each program.", 
+#             label = "collect-year",
+#             align = 'l',
+#             col_names = col_names)
+#
+```
+
+
+# Summary of all available ages
+
+The total read otoliths across all areas are shown in Table \ref{tab:all-ages}.  Lengths and ages by sex available in each assessment area is shown in Figure \ref{fig:samples-by-area}. Oregon had the largest number of age reads followed by Washington.  The read otoliths from both states were primarily from their recreational fisheries (OR Samples = 2,298 and WA Samples = 1,934). Additionally, the percentage of observations of fish of 15 years or older by area was highest in Oregon and Washington, with both California areas having lower percentages of observations of older fish (Table \ref{tab:percent-older}). This difference in available number of samples across ages may influence the growth estimates by area.
+
+
+```{r, results = 'asis'}
+
+
+out = table(df[df$Source != "Lea", "Source"], df[df$Source != "Lea", "Area"])
+out = cbind(out[, "South_CA"], out[, "North_CA"], out[, "Oregon"], out[,"Washington"])
+out = rbind(out, apply(out, 2, sum))
+out = cbind(c(rownames(out)[1:(nrow(out)-1)], "Total"), out)
+rownames(out) = NULL
+col_names = c("Source", "SPC-CA", "NPC-CA", "OR", "WA")
+
+table_format(x = out,
+             caption = "Number of read otoliths by collection source for each assessment area (CA-SPC: Califonia south of Point Conception, CA-NPC: California north of Point Conception, OR: Oregon, WA: Washington).",
+             label = "all-ages",
+             align = 'l',
+             col_names = col_names)
+
+```
+
+
+```{r, results = 'asis'}
+young = table(df[df$Source != "Lea", "Area"], df[df$Source != "Lea", "Age"] >= 10)
+young = young[,"TRUE"] / sum(young[,"TRUE"] + young[,"FALSE"])
+
+out = table(df[df$Source != "Lea", "Area"], df[df$Source != "Lea", "Age"] >= 15)
+out = out[,"TRUE"] / sum(out[,"TRUE"] + out[,"FALSE"])
+
+older = table(df[df$Source != "Lea", "Area"], df[df$Source != "Lea", "Age"] >= 20)
+older = older[,"TRUE"] / sum(older[,"TRUE"] + older[,"FALSE"])
+
+tmp = data.frame(Area = sort(unique(df[df$Source != "Lea", "Area"])), 
+                 Percent10 = round(100*young, 1),
+                  Percent15 = round(100*out, 1),
+                  Percent20 = round(100*older, 1))
+
+order = c(3,1,2,4)
+tmp = tmp[order,]
+
+col_names = c("Area", "10 and Older (%)", "15 and Older (%)", "20 and Older (%)")
+rownames(tmp) = NULL
+
+table_format(x = tmp,
+             caption = "Percentage of read otoliths that were assigned an age of 10, 15, or 20 and older by each area.",
+             label = "percent-older",
+             align = 'l',
+             col_names = col_names )
+
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/all_areas_growth_mop-up.png", 
+caption = "Length and age of by sex for each assessment area.",
+label = 'samples-by-area')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/data_by_area_mop-up.png", 
+caption = "Comparison of lengths and ages from each assessment area.",
+label = 'samples-area-1-panel')
+```
+
+
+
+\clearpage

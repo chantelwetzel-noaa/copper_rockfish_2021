@@ -1,0 +1,101 @@
+
+# Growth by area 
+
+## South of Point Conception
+
+The growth in the south of Point Conception model was externally estimated based on samples from the NWFSC WCGBT and NWFSC HKL Surveys (Table \ref{tab:all-ages}), along with simulated length-at-age for young fish based on Lea et al. [@lea_biological_1999]. The CAP lab was able to read `r nrow(df[df$Area == "South_CA" & df$Source == "Research", ])` otoliths collected by research surveys conducted by Don Pearson. The observed lengths and ages for each sample source are shown in Figure \ref{fig:south-samples} (excluding the Lea simulated samples).  The new ages appear to potentially be outliers relative to the existing ages from the area. However, this may be due to how the NWFSC WCGBT and HKL Survey samples were selected. Only larger fish were selected for ageing from these sources in order to inform and area specific maximum length. Estimates are made using all data combinded; however, noting that since the selection of fish were non-random from the surveys estimating growth using these samples along with other random samples may not be appropriate. Ideally for the next fully assessment of `r spp` all available survey samples will be age eliminating any potential otolith sampling issues.  Additiionally, the new research otoliths were generally collected in shallower waters, 16-58 m, compared to those from the NWFSC HKL Survey that ranged between 40-120 m.   
+
+Length-at-age by sex was estimated including the new research age samples (Figure \ref{fig:south-growth-est}). The estimated growth including the new samples did not meaningfully differ for either males or females in the area. The log ratio between the of estimated spawning output in 2021 using the new growth compared to the growth in the adopted base model was 0.01. 
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/south_ca_source_mop-up.png", 
+caption = "Length and age by source south of Point Conception.",
+label = 'south-samples')
+```
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/south_ca_growth_fits.png", 
+caption = "Externally estimated length-at-age from the adopted base model growth using NWFSC WCGBT, NWFSC HKL, and Lea samples compared to the new externally estimated length-at-age including the new samples (New Estimates of Southern CA w/ Lea, triangles).",
+label = 'south-growth-est')
+```
+
+\clearpage
+
+## North of Point Conception
+
+All read otoliths collected in California north of Point Conception are samples that were sent to the CAP lab after the June SSC GFSC meeting. The lengths and ages of the newly aged otoliths by source are shown in Figure \ref{fig:new-north-samples}.  The majority of the samples available were collected during research surveys conducted by Don Pearson (Table \ref{tab:all-ages}). There were limited observations of older ages with the majority of samples falling along the slope of the growth curve (Table \ref{tab:percent-older}, Figures \ref{fig:samples-by-area} and \ref{fig:new-north-samples}).   
+
+Growth was estimated for the area north of Point Conception using the new data and were compared to the assumed growth from the adopted base model. The fixed growth in the adopted based model was based on length-at-age estimates from Oregon and Washington, otoliths read in 2020 in preparation for the 2021 assessments, along with the simulated Lea young ages to inform the lower end of the growth curve. The length-at-age estimates using either only the new ages from north of Point Conception in California, the new ages plus the simulated Lea samples for young fish, or the growth estimate using the Oregon-Washington ages are shown in Figure \ref{fig:north-growth-fit}. 
+
+The estimated size-at-age-0 for females using only the new ages diverged from the other growth curves, estimating a size-at-age-0 larger than the curve estimated with the Lea simulated data. The growth rate, $k$, for both sexes were similar when the Lea data was used (Northern CA w/ Lea versus Adopted Base Model Growth, Figure \ref{fig:north-growth-fit}). However, the average maximum length by sex ($L_{\infty}$) estimated using the new ages was lower for both sexes (male 44.3 cm, female 45.3 cm) than the $L_{\infty}$ estimated using Oregon and Washington fish (male 47.2 cm, female 48.3 cm). Additionally, the $L_{\infty}$ estimate for each sex using the new north of Point Conception ages was less than the $L_{\infty}$ estimated for the area south of Point Conception (male 47.1 cm and female 47.4 cm; Figure \ref{fig:north-growth-fit} versus Figure \ref{fig:south-growth-est}). Multiple factors can affect growth in marine fish; however, the general expected pattern, if variation in growth is observed, is for the $L_{\infty}$ to increase south to north along the West Coast which makes the estimate of smaller growth in northern California compared to the southern growth unexpected. 
+
+A sensitivity of estimating $L_{\infty}$ by sex within the adopted base model was also conducted and compared against the adopted base model and the model with the new growth estimates.  The lowest total log-likelihood was achieved when the model was allowed to estimate $L_{\infty}$ but was not a significant improvement in fit relative to the adopted base model (Table \ref{tab:likes}). Fixing growth within the model at the new growth estimates degraded the fit to both the commercial and recreational length data relative to the other models examined. The model that assumed the new growth estimate resulted in a large change in the estimated spawning output in 2021 where the log ratio between the new growth and the adopted base model was 0.93 (0.90 after data weighting).
+When the adopted base model was allowed to estimated $L_{\infty}$ there was a non-significant improvement in model fit to the length data and had a more minimal impact on the model estimates (log ratio of 0.31) and was well within the model estimated uncertainty.
+
+<!---
+The estimated spawning output across growth assumptions are shown in Figure \ref{fig:spawn-out}.  
+--->
+
+The model is sensitive to the assumptions around growth and would benefit from additional efforts to understand the growth of `r spp` along the California coast. However, it is unclear whether the new otoliths provide an improved estimate of length-at-age compared to the assumed model growth or the growth estimated south of Point Conceptions.  Additionally, the new data had limited observations of older fish which could lead to poorly informed $L_{\infty}$ especially for `r spp` that exhibits large variation in size at older ages (Figure \ref{fig:samples-area-1-panel}).
+
+
+```{r, results = 'asis'}
+out = rbind(c("Total Likelihood", 188.8, 201.4, 187.4),
+			c("Commercial Length Likelihood", 85.8, 90.6, 86.2),
+			c("Recreational Length Likelihood", 105.7, 109.6, 102.6))
+col_names = c("Likelihood", "Adopted Base Model", "New External Growth Est.", "Adopted Base Model Est. Linf")
+
+
+table_format(x = out,
+             caption = "Likelihood comparison across model with alternative growth assumptions.",
+             label = "likes",
+             col_names = col_names,
+             align = 'r')
+
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/north_by_source_panels_growth_mop-up.png", 
+caption = "Lengths and ages of aged otoliths collected in California, north of Point Conception by sample source.",
+label = 'new-north-samples')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/north_ca_growth_fits.png", 
+caption = "Lengths and ages from the area north of Point Conception in California along with the estimated growth curve by sex (female- solid line, male - dashed line) using the new ages with and without the Lea samples (grey circles) and the growth from the adopted base model.",
+label = 'north-growth-fit')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/north_growth_model_comparison.png", 
+caption = "Length-at-age with uncertainty from the adopted base model (red lines), the length-at-age when L infinity was estimated by sex within the model (orange lines), and the length-at-age based on the new age samples (green lines).",
+label = 'north-growth-model')
+```
+
+
+```{r, results = 'asis'}
+#add_figure(
+#filein = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/model_growth_comparisoncompare2_spawnbio_uncertainty.png", 
+#caption = "Estimated spawning output for the adopted base model, the adopted base model with estimated L infinity (North CA Model Estimate), and the model with the new growth estimates (New North CA External Estimate).",
+#label = 'spawn-out')
+```
+
+\clearpage
+
+# Future data considerations
+
+Looking forward toward future assessments of `r spp` there are advantage and disadvantages to various otoltih data sources.  Otoliths collected from both fishery-dependent and -independent can be used within integrated models to inform model parameters. Otoliths collected from research studies or fishery-independent surveys can represent a wider range of lengths collected which can provide critical information on growth at young and old ages.   Otoliths collected from fishery sources typically consist of larger fish, based on retention regulations or gear that limits the selection of small fish, which can be useful to informing growth at older ages but provide limited information of early growth rates. Also noting that fishery samples could be biased toward larger fish for certain sizes if the fishery is selecting the faster growing fish.  Fishery collected otoliths are a critical source of information in assessment models often informing annual recruitment strength for nearshore stocks where fishery-independent sources may have limited samples across years or areas. To support future assessments of `r spp` efforts should be made to ensure coastwide comprehensive length and age sampling from commercial and recreational fisheries where feasible (i.e., noting that otolith sampling is not possible dockside for the live-fish fisheries). 
+
+To support future assessments of `r spp` in California waters otoliths already collected from recreational and commercial fisheries need to be identified and aged.  If there are not additional otoliths available for ageing, future assessments will largely remain similar to the 2021 stocks assessments that were driven by length data.  Data collection efforts should focus on collection biological samples that are representative across off-shore areas (i.e., day-trip, over-night trip, and closed areas) and across locations along the whole U.S. west coast.   
+
+
+# Acknowledgements
+
+I would like to thank Melissa Monk and John Field from the SWFSC who helped identify `r spp` otoliths available for ageing.  Thank you to Traci Larinto (CDFW) who provided the various samples from commercial data collection programs and thank you to Rick Starr who provide otoliths collected during by CCFRP.  Finally, thank you to Patrick McDonald and Tyler Johnson who read all `r spp` considered here.
