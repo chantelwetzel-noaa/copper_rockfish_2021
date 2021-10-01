@@ -173,6 +173,12 @@ ggplot(df[df$Area == "South_CA",], aes(Age, Length_cm)) +
 	xlim(0, 50) + ylim(0, 60)
 dev.off()
 
+pngfun(wd = file.path(dir, "data", "biology", "plots"), file = "south_ca_compared_orwa_mop-up.png", w = 12, h = 7)
+ggplot(df[df$Area %in% c("South_CA", "Oregon", "Washington"),], aes(Age, Length_cm)) + 
+	geom_point(aes(colour =  Area), size = 3, alpha = 0.75) +
+	xlim(0, 50) + ylim(0, 60)
+dev.off()
+
 
 
 ggplot(df[df$Source != "Lea", ], aes(Age, fill = Area, color = Area)) +

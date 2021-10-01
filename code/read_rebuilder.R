@@ -67,13 +67,14 @@ a1-a2
 # rebuild.dat file under the "# File with multiple parameter vectors " section
 
 # Read in rebuilding options
-run <- c(
-		 "spr_fine_step_no_abc_max",
-		 "spr_fine_step_no_abc_max_50mt_21_22",
-		 "year_no_abc_max",
-		 "spr_fine_step",
-		 "spr_no_abc_max")#,
+#run <- c(
+#		 "spr_fine_step_no_abc_max",
+#		 "spr_fine_step_no_abc_max_50mt_21_22",
+#		 "year_no_abc_max",
+#		 "spr_fine_step",
+#		 "spr_no_abc_max")#,
 		 #"spr_fine_step_50mt_21_22")
+run <- c("spr", "spr_high", "spr_fine_step")
 reb <- list()
 for(a in 1:length(run)){
 	reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
@@ -99,8 +100,8 @@ stuff <- r4ss::DoProjectPlots(dirn = reb[[1]]$loc,
 # ggplot
 # Loop over the length of runs in the reb list object
 
-run <- c("spr_fine_step_no_abc_max",
-		 "spr_fine_step")
+#run <- c("spr_fine_step_no_abc_max",
+#		 "spr_fine_step")
 
 # Franken-the results to deal with the ABC Rule
 reb[[1]]$prob_matrix = cbind(reb[[1]]$prob_matrix[,1:9], reb[[4]]$prob_matrix[,10], reb[[3]]$prob_matrix[,2:6])
@@ -108,6 +109,14 @@ reb[[1]]$acl_matrix = cbind(reb[[1]]$acl_matrix[,1:9], reb[[4]]$acl_matrix[,10],
 reb[[1]]$ofl_matrix = cbind(reb[[1]]$ofl_matrix[,1:9], reb[[4]]$ofl_matrix[,10], reb[[3]]$ofl_matrix[,2:6])
 reb[[1]]$ssb_matrix = cbind(reb[[1]]$ssb_matrix[,1:9], reb[[4]]$ssb_matrix[,10], reb[[3]]$ssb_matrix[,2:6])
 reb[[1]]$relativeb_matrix = cbind(reb[[1]]$relativeb_matrix[,1:9], reb[[2]]$relativeb_matrix[,10], reb[[3]]$relativeb_matrix[,2:6])
+
+reb[[1]]$prob_matrix = cbind(reb[[1]]$prob_matrix[,1:9], reb[[2]]$prob_matrix[,2:6])
+reb[[1]]$acl_matrix = cbind(reb[[1]]$acl_matrix[,1:9],   reb[[2]]$acl_matrix[,2:6])
+reb[[1]]$ofl_matrix = cbind(reb[[1]]$ofl_matrix[,1:9],   reb[[2]]$ofl_matrix[,2:6])
+reb[[1]]$ssb_matrix = cbind(reb[[1]]$ssb_matrix[,1:9],   reb[[2]]$ssb_matrix[,2:6])
+reb[[1]]$relativeb_matrix = cbind(reb[[1]]$relativeb_matrix[,1:9], reb[[2]]$relativeb_matrix[,2:6])
+
+
 
 colnames(reb[[1]]$prob_matrix)[10] = colnames(reb[[1]]$acl_matrix)[10]  = colnames(reb[[1]]$ssb_matrix)[10]  = colnames(reb[[1]]$relativeb_matrix)[10]  = "ABC Rule" 
 #colnames(reb[[1]]$prob_matrix)[11:16] = colnames(reb[[1]]$acl_matrix)[11:16]  = colnames(reb[[1]]$ssb_matrix)[11:16]  = colnames(reb[[1]]$relativeb_matrix)[11:16]  = colnames(reb[[3]]$prob_matrix)[2:6])
