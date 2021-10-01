@@ -1,0 +1,8 @@
+# Results
+
+## Rebuilding reference points
+
+All reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be `r reb[[1]]$tmin` years, corresponding to the stock being rebuilt by `r reb[[1]]$recovery[4] + reb[[1]]$tmin `, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be `r reb[[1]]$mean_gen ` years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$ is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that are unable to rebuild in less than 10 years.  The minimum rebuilding time for `r spp` was `r reb[[1]]$tmin ` years, just falling at the cut-off of 10 years, so  $\text{T}_\text{MAX}$ was set to `r reb[[1]]$tmax `. 
+
+## Alternative harvest projections
+

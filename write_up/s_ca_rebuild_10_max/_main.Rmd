@@ -1,0 +1,557 @@
+---
+geometry: margin=1in
+month: "`r format(Sys.Date(), '%B')`"
+year: "`r format(Sys.Date(), '%Y')`"
+bibliograph: [sa4ss.bib, copper.bib]
+preamble: |
+output:
+  sa4ss::techreport_pdf:
+    default
+  bookdown::pdf_document2:
+    keep_tex: true
+lang: en
+papersize: a4
+---
+
+```{r opts, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::knit_hooks$set(plot = function(x,options) {
+      base = knitr::opts_knit$get('base.url')
+      if (is.null(base)) base = ''
+      alt = ifelse (is.null(options$alt),"",options$alt)
+      cap = ifelse (is.null(options$caption),"",options$caption)
+      if (alt != ""){
+        sprintf('![%s](%s%s "%s")', cap, base, x, alt)
+      } else {
+        sprintf('![%s](%s%s)', cap, base, x)
+        }
+  })
+
+load("00opts.Rdata")
+
+if(file.exists("00mod.Rdata")){
+  load("00mod.Rdata")
+} else {
+  print("Model output not being read. Please run the read_model() function.")
+}
+
+
+spp = 'copper rockfish'
+Spp = 'Copper rockfish'
+
+```
+
+<!--chapter:end:00a.Rmd-->
+
+---
+author:
+  - name: Chantel R. Wetzel
+    code: 1
+    first: C
+    middle: R
+    family: Wetzel
+author_list: Wetzel, C.R
+affiliation:
+  - code: 1
+    address: Northwest Fisheries Science Center, U.S. Department of Commerce, National
+      Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
+      Montlake Boulevard East, Seattle, Washington 98112
+address: ^1^Northwest Fisheries Science Center, U.S. Department of Commerce, National
+  Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
+  Montlake Boulevard East, Seattle, Washington 98112
+---
+
+<!--chapter:end:00authors.Rmd-->
+
+---
+bibliography:
+  - sa4ss.bib
+---
+
+<!--chapter:end:00bibliography.Rmd-->
+
+---
+title: Draft - Rebuilding analysis for copper rockfish (_Sebastes caurinus_) in U.S. waters off the coast of California south of Point Conception based on the 2021 stock assessment
+---
+
+<!--chapter:end:00title.Rmd-->
+
+\pagebreak
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\renewcommand{\thetable}{\roman{table}}
+\renewcommand{\thefigure}{\roman{figure}}
+
+
+\setlength\parskip{0.5em plus 0.1em minus 0.2em}
+
+\vspace{500cm}
+
+# Disclaimer{-}
+
+_**These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited or reproduced. They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.**_
+
+\pagebreak
+
+<!--chapter:end:01a.Rmd-->
+
+# Summary{-}
+
+This rebuilding analysis is for the stock of `r spp` (_Sebastes caurinus_) in waters off California, south of Point Conception. The analysis is based on the 2021 stock assessment. The 2021 assessment model estimated the `r spp` south of Point Conception to be at 18.1 percent of the unexploited equilibrium spawning output at the beginning of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
+
+The results of the analysis show that the value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is `r reb[[1]]$recovery[4] + reb[[1]]$tmin `. The estimated generation time for `r spp` was estimated to be `r reb[[1]]$mean_gen` years. $\text{T}_\text{MAX}$ is  `r reb[[1]]$tmax ` which is defined based on $\text{T}_\text{MIN}$ plus the mean generation time. The SPR harvest rate of `r reb[[1]]$rebuild_quants[6,2]`  generates a 50 percent probability of recovery by $\text{T}_\text{MID}$ where $\text{T}_\text{MID}$ was set equal to `r reb[[1]]$rebuild_quants[6,1]`, an intermediate year between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
+
+
+<!--chapter:end:01executive.Rmd-->
+
+\pagebreak
+\setlength{\parskip}{5mm plus1mm minus1mm}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\setlength\parskip{0.2em plus 0.1em minus 0.2em}
+
+<!--chapter:end:10a.Rmd-->
+
+# Introduction
+
+The 2021 assessment of `r spp` south of Point Conception documented that the stock had declined below the Minimum Stock Size Threshold (MSST), 25 percent of unfished spawning output for rockfish stocks, for the first time during the mid-1980s, remained below the MSST until 2011, increased above the MSST briefly between 2011-2016, but had fallen back below the MSST starting in 2017 [@wetzel_status_2021]. Based on the assumed stock productivity combined with the longevity of `r spp` a range of alternative rebuilding approaches were examined where the stock rebuilt to or above the management target of 40% ranging between `r reb[[1]]$recovery_spec[4] + reb[[1]]$tmin ` - `r reb[[1]]$tmax ` based on various SPR harvest rates from 0.55 - `r round(max(reb[[1]]$rebuild_quants[,2]),2) `.
+
+
+# Overview of the 2021 stock assessment
+
+The 2021 assessment of `r spp` assessed the stock as four separate sub-stocks along the U.S. west coast: south of Point Conception in California, north of Point Conception in California, Oregon, and Washington.  This was the first assessment of `r spp` conducted within Stock Synthesis that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of `r spp` conducted in 2013 was modeled using Extended Depletion-Based Stock Reduction Analysis (XDB-SRA), a delay-difference model, using catch, catch-per-unit-effort data, and prior distributions around biological parameters [@cope_data-moderate_2013]. The 2013 assessment estimated the stock at 76 percent of unfished spawning output based on fits to catch-per-unit-effort and updated parameter distribution around biology (i.e., the posterior distributions). During model bridging between the 2013 to the 2021 assessment model, the large downward shift in estimated stock status in the new assessment was identified to be driven by the inclusion of the length data which implied a low relative stock size in recent years [@wetzel_status_2021]. 
+
+The stock assessment for the sub-stock south of Point Conception in California assumed two fishing fleets, a commercial and a recreational fleet, along with one survey fleet, the Northwest Fisheries Science Center Hook and Line Survey (NWFSC HKL Survey). The majority of the removals and length composition data within the model arose from the recreational fleet. Total removals of `r spp` south of Point Conception peaked in the late 1970s and early 1980s, decreased from the late 1980s to mid-2000s but had high annual variability, and then increased in recent years (2013 - 2019).  The stock was modeled using Stock Synthesis as a two-sex age-structured model. Area specific length-at-age and fecundity-at-length for `r spp` south of Point Conception were estimated externally and then fixed within the model. Weight-at-length was estimated externally based upon observations by the NWFSC HKL and West Coast Groundfish Bottom Trawl Survey observations with the values fixed within the assessment model. Natural mortality and steepness were both fixed at the median or mean of the respective priors. The selectivity of both the commercial and recreational fishery were estimated to be domed-shape with the NWFSC HKL Survey selectivity fixed to be asymptotic. The assessment model decision table explore uncertainty around stock size and status using lower and higher log($R_0$) values relative to the base model.
+
+\clearpage
+
+# Management performance under rebuilding
+
+This is the first rebuilding plan for `r spp ` off the coast of California south of Point Conception.
+
+
+<!--chapter:end:11introduction.Rmd-->
+
+# Rebuilding calculations
+
+This rebuilding analysis was conducted using software developed by A. Punt (version 3.12h, August 2021). The steps followed were: 
+
+\begin{itemize}
+	\item Define how equilibrium spawning output ($\text{SB}_0$) will be calculated. 
+	\item Define how future recruitment will be generated. 
+	\item Define the fishery selectivity and allocation to be applied during rebuilding. 
+	\item Decide how to include uncertainty in input parameters from the stock assessment in the rebuilding analysis. 
+	\item Calculate rebuilding reference points from the most current assessment results 
+	\begin{itemize}
+		\item Calculate the projected year in which the stock would rebuild with a 50 percent probability if all future fishing mortality was eliminated ($\text{T}_\text{F}$=0).
+		\item  Calculate the projected year for a 50 percent probability of rebuilding from the year in which the stock was first declared overfished ($\text{T}_\text{MIN}$). 
+		\item Calculate the mean generation time. 
+		\item Calculate the maximum allowable rebuilding time ($\text{T}_\text{MAX}$). 
+	\end{itemize}
+	\item Identification and analysis of alternative harvest strategies for rebuilding. 
+\end{itemize}
+
+## Definition of Equilibrium Spawning Output
+
+The equilibrium spawning output ($\text{SB}_0$) used in this rebuilding analysis is calculated via the stock-recruitment relationship in order to be consistent with assessment model results. This level was estimated to be `r round(reb[[1]]$sb0,2)` millions of eggs in the base case assessment model, which dictates a rebuilding relative spawning output target ($\text{SB}_{40\%}$) of `r round(reb[[1]]$sb40,2)` millions of eggs (Table \ref{tab:ref-points}). 
+
+## Generation of future recruitment
+
+The estimated parameters of the stock recruitment relationship (unexploited equilibrium recruitment, log($R_0$), and steepness, $h$) were used to generate future recruitments in the rebuilding analysis.  The 2021 assessment model did not estimate annual recruitment deviations but uncertainty around future recruitments was generated by assuming a recruitment variability of $\sigma_R = 0.60$.
+
+## Population biology, fishery selectivity, and removal allocations
+
+The biological parameters used for the rebuilding projections were based on the values from the Stock Synthesis assessment model. Biological parameters in the assessment were sex-specific and constant across time.  
+
+The selectivity used in the rebuilding analysis were obtained from 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in this rebuilding analysis was informed using the relative fishing mortality averaged over recent years (2015-2019).
+
+## Inclusion of uncertainty
+
+Uncertainty was included in this rebuilding analysis via 1,200 random simulations of stochastic future recruitment strengths and integration over the three states of nature across stock size, log($R_0$). The base model was given 50 percent of the weight and each alternative state of nature was given 25 percent of the weight. 
+
+
+## Alternate rebuilding strategies analyzed
+
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based selection of a $\text{T}_\text{TARGET}$ (year for 50 percent probability of recovery). This rebuilding analysis presents the following alternate strategies spread among the approaches based on the selection of a SPR harvest rate or rebuilding by a selected target year:  
+
+\begin{itemize}
+	\item Apply a range of SPR values: 0.55, 0.60, 0.65, 0.70, and 0.75 
+	\item Eliminate all harvest, F = 0, beginning in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
+	\item Apply the Annual Catch Limits (ACL) based on the 40:10 harvest control rule.
+	\item Apply the Acceptable Biological Catch (ABC) with time-varying $\sigma$.
+	\item Apply SPR harvest rates that are estimated to lead to a 50 percent probability of recovery by alternative target years: $\text{T}_\text{MID}$, $\text{T}_\text{MAX}$, and other years between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$
+\end{itemize}
+
+All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt and `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2021 and 2022. 
+
+The rebuilding strategies were run without capping catches by the ABC in future projection years. In application rebuilding progress would be monitored through updated rebuilding analysis on a regular basis during rebuild that would evaluate the progress of the selected rebuilding strategy and associated SPR harvest rate limiting the probability of the rebuilding harvest exceeding the ABC in reality.  An additional analysis was conducted that did limit the future catches by the ABC and is provided in Section \ref{abc-max-strategies} for comparison.
+
+<!--chapter:end:20rebuilding.Rmd-->
+
+# Results
+
+## Rebuilding reference points
+
+All reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be `r reb[[1]]$tmin` years, corresponding to the stock being rebuilt by `r reb[[1]]$recovery[4] + reb[[1]]$tmin `, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be `r reb[[1]]$mean_gen ` years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$ is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that are unable to rebuild in less than 10 years.  The minimum rebuilding time for `r spp` was `r reb[[1]]$tmin ` years, just falling at the cut-off of 10 years, so  $\text{T}_\text{MAX}$ was set to `r reb[[1]]$tmax `. 
+
+## Alternative harvest projections
+
+
+<!--chapter:end:30results.Rmd-->
+
+# Acknowledgments
+Thank you to Andre Punt for quickly updating the rebuilder program to apply time-varying $\sigma$ for the Acceptable Biological Catch scenarios and thank you for his  assistance and guidance on application of the rebuilding program. This document was greatly improved based on feedback and review of Owen Hamel. 
+
+<!--chapter:end:41acknowledgments.Rmd-->
+
+\clearpage
+
+# References
+<!-- If you want to references to appear somewhere before the end, add: -->
+<div id="refs"></div>
+<!-- where you want it to appear -->
+<!-- The following sets the appropriate indentation for the references
+  but it cannot be used with bookdown and the make file because it leads
+  to a bad pdf.
+\noindent
+\vspace{-2em}
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+ -->
+
+<!--chapter:end:49bibliography.Rmd-->
+
+\clearpage
+# Tables
+
+## Rebuilding reference points and summary of alternatives
+
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+# Table 1
+#==================================================================
+
+quants = c(round(reb[[1]]$sb0,2), 
+		   round(reb[[1]]$sb40, 2), 
+		   round(reb[[1]]$sb_ass_year, 2),
+		   reb[[1]]$recovery_spec[4],
+		   reb[[1]]$recovery_spec[3], 
+		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4], 
+		   reb[[1]]$mean_gen, 
+		   reb[[1]]$tmax, 
+		   "TBD",
+		   "TBD")
+
+row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", 
+			"SB2021 (millions of eggs)", "Year rebuilding begins",
+		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
+		    "Ttarget", "SPRtarget")
+
+col_names = c("Parameter", "2021 Assessment Values")
+out = cbind(row_names, quants)
+
+table_format(x = out,
+             caption = "Summary of the rebuilding reference points.",
+             label = "ref-points",
+             align = 'l',
+             col_names = col_names)
+```
+
+\clearpage
+
+```{r, results = 'asis'}
+#==========================================================================
+# Base Analysis Rebuilding Reference Points Table
+# Table 2 
+#=========================================================================
+
+# All based on upcapped
+#quants = rbind(round(reb[[1]]$acl_matrix[1:4,-1],2),
+#		   reb[[1]]$rebuild_quants$SPR,
+#		   reb[[1]]$rebuild_quants$Ttarget,
+#		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
+#		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+# Franken-results to change out the ABC Rule run for the capped
+quants = rbind(round(reb[[1]]$acl_matrix[1:4, 2:10], 2),
+               reb[[1]]$rebuild_quants$SPR,
+               reb[[1]]$rebuild_quants$Ttarget, 
+               rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
+               reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+			  "Tmax",
+			  "Probability of recovery by Tmax")
+
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[2:9], "ABC Rule")
+
+table_format(x = out,
+             caption = "Results of rebuilding alternatives based on selection of an SPR target or year for 50 percent probability of recovery based on the assumed removals for 2021-22. The SPR value for the ABC Rule is lower than 0.50 since this value represents the average SPR value applied across the projection period based on the time-varying buffer.",
+             label = "reb-options",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+
+```{r, results = 'asis'}
+#========================================================================================
+# Alternative Target Years Rebuilding Reference Points Table
+#========================================================================================
+
+quants = rbind(round(reb[[2]]$acl_matrix[1:4, 2:10], 2),
+               reb[[2]]$rebuild_quants$SPR,
+               reb[[2]]$rebuild_quants$Ttarget, 
+               rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)),
+               reb[[2]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+row_names = c("2021 Assumed Removals (mt)", 
+              "2022 Assumed Removals (mt)",
+              "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+              "Tmax",
+              "Probability of recovery by Tmax")
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+
+table_format(x = out,
+             caption = "Results of rebuilding alternatives based on alternative SPR harvest rates.",
+             label = "reb-options-year",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+
+```{r, results = 'asis'}
+#=========================================================================================
+# Low Catch Alternative Rebuilding Reference Points Table
+#=========================================================================================
+
+#quants = rbind(round(reb[[2]]$acl_matrix[1:4,-1],2),
+#		   reb[[2]]$rebuild_quants$SPR,
+#		   reb[[2]]$rebuild_quants$Ttarget,
+#		   rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)),
+#		   reb[[2]]$rebuild_quants$Prebuild) # Prob by Tmax
+
+# Franken-results to change out the ABC Rule run for the capped
+# quants = rbind(cbind(round(reb[[2]]$acl_matrix[1:4, 2:9], 2), round(reb[[5]]$acl_matrix[1:4, 10], 2)),
+#                c(reb[[2]]$rebuild_quants$SPR[1:8], reb[[5]]$rebuild_quants$SPR[9]),
+#                c(reb[[2]]$rebuild_quants$Ttarget[1:8], reb[[5]]$rebuild_quants$Ttarget[9]),
+#                rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)),
+#                c(reb[[2]]$rebuild_quants$Prebuild[1:8], reb[[5]]$rebuild_quants$Prebuild[9])) # Prob by Tmax
+# 
+# row_names = c("2021 Assumed Removals (mt)", 
+# 			  "2022 Assumed Removals (mt)",
+# 			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", 
+# 			  "Tmax",
+# 			  "Probability of recovery by Tmax")
+# out = cbind(row_names, quants)
+# col_names = c("", colnames(out)[2:9], "ABC Rule")
+# 
+# table_format(x = out,
+#              caption = "Results of rebuilding alternatives based on alternative SPR targets resulting in 50 percent probability of recovery by the target # year listed based on the assumed removals for 2021-22. The SPR value for the ABC Rule is lower than 0.50 since this value represents the # average SPR value applied across the projection period based on the time-varying ",
+#              label = "reb-options-catch",
+#              align = 'l',
+#              landscape = TRUE,
+#              col_names = col_names)
+```
+
+
+\clearpage
+
+## Rebuilding alternative time series 
+
+```{r, results = 'asis'}
+
+out = as.data.frame(cbind(round(reb[[1]]$prob_matrix[1:35, ],3)))
+colnames(out)[10] = "ABC Rule"
+
+table_format(x = out,
+             caption = "Probability of recovery by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "prob-mat",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(cbind(round(reb[[1]]$acl_matrix[1:35, ],2)))
+colnames(out)[10] = "ABC Rule"
+
+table_format(x = out,
+             caption = "Median catches (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "acl-mat",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(cbind(round(reb[[1]]$ofl_matrix[1:35,],2)))
+colnames(out)[10] = "ABC Rule"
+
+table_format(x = out,
+             caption = "Median ABCs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "ofl-mat",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(cbind(round(reb[[1]]$relativeb_matrix[1:35,],2)))
+colnames(out)[10] = "ABC Rule"
+
+table_format(x = out,
+             caption = "Median spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. ",
+             label = "rel-ssb-mat",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+\clearpage
+
+## Rebuilding alternative time series for high SPR harvest rates
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$prob_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "The probability of rebuilding by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "prob-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$acl_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Median catches (mt) by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "acl-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$ofl_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Median ABCs (mt) by year for alternative rebuilding target years assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "ofl-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+out = as.data.frame(round(reb[[2]]$relativeb_matrix[1:35, ],2))
+
+table_format(x = out,
+             caption = "Median spawning output relative to the 40 percent of unfished spawning output target by year for alternative rebuilding targets assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.",
+             label = "rel-ssb-mat-year",
+             align = 'l',
+             col_names = colnames(out))
+```
+
+
+\clearpage
+
+
+```{r, results = 'asis'}
+
+#out = as.data.frame(cbind(round(reb[[2]]$prob_matrix[1:35, 1:9],3), round(reb[[5]]$prob_matrix[1:35, 10])))
+#colnames(out)[10] = "ABC Rule"
+#
+#table_format(x = out,
+#             caption = "Probability of recovery by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+#             label = "prob-mat-catch",
+#             align = 'l',
+#             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+#out = as.data.frame(cbind(round(reb[[2]]$acl_matrix[1:35, 1:9],2), round(reb[[2]]$acl_matrix[1:35, 10],2)))
+#colnames(out)[10] = "ABC Rule"
+#
+#table_format(x = out,
+#             caption = "Catches (mt) by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+#             label = "acl-mat-catch",
+#             align = 'l',
+#             col_names = colnames(out))
+```
+
+```{r, results = 'asis'}
+
+#out = as.data.frame(cbind(round(reb[[2]]$ofl_matrix[1:35, 1:9],2), round(reb[[2]]$ofl_matrix[1:35, 10],2)))
+#colnames(out)[10] = "ABC Rule"
+#
+#table_format(x = out,
+#             caption = "OFLs (mt) by year for rebuilding SPR alternatives assuming removals of 50 mt in 2021 and 2022, respectively.",
+#             label = "ofl-mat-catch",
+#             align = 'l',
+#             col_names = colnames(out))
+```
+
+
+```{r, results = 'asis'}
+
+#out = as.data.frame(cbind(round(reb[[2]]$relativeb_matrix[1:35, 1:9],2), round(reb[[2]]$relativeb_matrix[1:35, 10],2)))
+#colnames(out)[10] = "ABC Rule"
+#
+#table_format(x = out,
+#             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming #removals of 50 mt in 2021 and 2022, respectively.",
+#             label = "rel-ssb-mat-catch",
+#             align = 'l',
+#             col_names = colnames(out))
+```
+
+<!--chapter:end:52tables.Rmd-->
+
+\clearpage
+# Figures
+
+```{r, results = 'asis'}
+type = "binded"
+
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_probability_", type, ".png")), 
+caption = "Probability of rebuilding by year for alternative rebuilding strategies",
+label = 'prob-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_acl_", type, ".png")), 
+caption = "Catches (mt) by year for alternative rebuilding strategies",
+label = 'acl-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_relative_sb_", type, ".png")), 
+caption = "Spawning output relative to the management target of 40 percent of unfished spawning output by year for alternative rebuilding strategies",
+label = 'rel-ssb-fig')
+```
+
+<!--chapter:end:53figures.Rmd-->
+

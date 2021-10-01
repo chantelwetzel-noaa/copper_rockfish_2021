@@ -1,0 +1,25 @@
+\clearpage
+# Figures
+
+```{r, results = 'asis'}
+type = "binded"
+
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_probability_", type, ".png")), 
+caption = "Probability of rebuilding by year for alternative rebuilding strategies",
+label = 'prob-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_acl_", type, ".png")), 
+caption = "Catches (mt) by year for alternative rebuilding strategies",
+label = 'acl-fig')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(reb[[1]]$loc, paste0("rebuilding_relative_sb_", type, ".png")), 
+caption = "Spawning output relative to the management target of 40 percent of unfished spawning output by year for alternative rebuilding strategies",
+label = 'rel-ssb-fig')
+```

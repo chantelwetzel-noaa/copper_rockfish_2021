@@ -1,0 +1,1124 @@
+\input{input_accessability.tex}
+\documentclass[11pt,
+  english,
+  a4paper,
+]{article}
+\usepackage{sa4ss}
+\usepackage{amsmath,amssymb,array}
+\usepackage{booktabs}
+
+% From tagged-template.latex
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\hypersetup{
+  pdftitle={Updated Draft (9/30/2021) - Rebuilding analysis for copper rockfish (Sebastes caurinus) in U.S. waters off the coast of California south of Point Conception based on the 2021 stock assessment},
+  pdflang={en},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[shorthands=off,main=english]{babel}
+\fi
+
+%Define cslreferences environment, required by pandoc 2.8
+%https://github.com/rstudio/rmarkdown/issues/1649
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}  % for \widthof, \maxof in minipage
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\date{}
+\newcommand{\trTitle}{Updated Draft (9/30/2021) - Rebuilding analysis for copper rockfish (\emph{Sebastes caurinus}) in U.S. waters off the coast of California south of Point Conception based on the 2021 stock assessment}
+\newcommand{\trYear}{2021}
+\newcommand{\trMonth}{September}
+\newcommand{\trAuthsLong}{true}
+\newcommand{\trAuthsBack}{Wetzel, C.R}
+\newcommand{\trCitation}{
+\begin{hangparas}{1em}{1}
+\trAuthsBack{}. \trYear{}. \trTitle{}. \glsentrylong{pfmc}, Portland, Oregon. \pageref{LastPage}{}\,p.
+\end{hangparas}}
+
+\AtBeginDocument{\tagstructbegin{tag=Document}}
+\AtEndDocument{\tagstructend}
+\pretocmd{\maketitle}{\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}}{}{}
+\apptocmd{\maketitle}{\tagmcend\tagstructend}{}{}
+
+\begin{document}
+
+%%%%% Frontmatter %%%%%
+
+% Footnote symbols in front matter
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\small
+\thispagestyle{empty}
+\pagenumbering{roman}
+\noindent
+\begin{center}
+\title{Updated Draft (9/30/2021) - Rebuilding analysis for copper rockfish (\emph{Sebastes caurinus}) in U.S. waters off the coast of California south of Point Conception based on the 2021 stock assessment}
+% \textnormal{\MakeTextUppercase{\trTitle{}}}
+\vspace{1.5cm}
+{\Large\textbf\newline{Updated Draft (9/30/2021) - Rebuilding analysis for copper rockfish (\emph{Sebastes caurinus}) in U.S. waters off the coast of California south of Point Conception based on the 2021 stock assessment}}
+\vfill
+by\\
+Chantel R. Wetzel\textsuperscript{1}\vfill
+\textsuperscript{1}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake Boulevard East, Seattle, Washington 98112\vfill
+\trMonth{} \trYear{}
+\end{center}
+\clearpage
+
+% Fourth page: Colophon
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\copyright{} \glsentrylong{pfmc}, \trYear{}\\
+\end{center}
+\par
+\bigskip
+\noindent
+Correct citation for this publication:
+\bigskip
+\par
+\trCitation{}
+\clearpage
+
+% Add TOC to pdf bookmarks (clickable pdf)
+\pdfbookmark[1]{\contentsname}{toc}
+
+% Table of contents page, lists of figures and tables
+\tableofcontents\clearpage
+\label{TRlastRoman}
+\clearpage
+
+% Table of contents
+\newpage
+\thispagestyle{empty} % to remove page number
+
+% Settings for the main document
+\pagenumbering{arabic}  % Regular page numbers
+\pagestyle{plain}  % No page number on first page of main document, use 'empty'
+\renewcommand*{\thefootnote}{\arabic{footnote}}  % Back to numeric footnotes
+\setcounter{footnote}{0}  % And start at 1
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%\pagestyle{fancy}\fancyhead[c]{Draft: Do not cite or circulate}
+
+\newcommand{\lt}{\ensuremath <}
+\newcommand{\gt}{\ensuremath >}
+
+\pagebreak
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\renewcommand{\thetable}{\roman{table}}
+\renewcommand{\thefigure}{\roman{figure}}
+
+\setlength\parskip{0.5em plus 0.1em minus 0.2em}
+
+\vspace{500cm}
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{disclaimer}{%
+\section*{Disclaimer}\label{disclaimer}}
+\addcontentsline{toc}{section}{Disclaimer}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+\emph{\textbf{These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited or reproduced. They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.}}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\pagebreak
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{summary}{%
+\section*{Summary}\label{summary}}
+\addcontentsline{toc}{section}{Summary}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This rebuilding analysis is for the stock of copper rockfish (\emph{Sebastes caurinus}) in waters off California, south of Point Conception. The analysis is based on the 2021 stock assessment. The 2021 assessment model estimated the copper rockfish south of Point Conception to be at 18.1 percent of the unexploited equilibrium spawning output at the beginning of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\pagebreak
+\setlength{\parskip}{5mm plus1mm minus1mm}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\setlength\parskip{0.2em plus 0.1em minus 0.2em}
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The 2021 assessment of copper rockfish south of Point Conception documented that the stock had declined below the Minimum Stock Size Threshold (MSST), 25 percent of unfished spawning output for rockfish stocks, for the first time during the mid-1980s, remained below the MSST until 2011, increased above the MSST briefly between 2011-2016, but had fallen back below the MSST starting in 2017 {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Wetzel et al. 2021)\leavevmode\tagmcend\tagstructend}. Based on the assumed stock productivity combined with the longevity of copper rockfish a range of alternative rebuilding approaches were examined where the stock rebuilt to or above the management target of 40\% ranging between 2033 - 2033 based on various SPR harvest rates from 0.55 - 1.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{overview-of-the-2021-stock-assessment}{%
+\section{Overview of the 2021 stock assessment}\label{overview-of-the-2021-stock-assessment}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The 2021 assessment of copper rockfish assessed the stock as four separate sub-stocks along the U.S. west coast: south of Point Conception in California, north of Point Conception in California, Oregon, and Washington. This was the first assessment of copper rockfish conducted within Stock Synthesis that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of copper rockfish conducted in 2013 was modeled using Extended Depletion-Based Stock Reduction Analysis (XDB-SRA), a delay-difference model, using catch, catch-per-unit-effort data, and prior distributions around biological parameters {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope et al. 2013)\leavevmode\tagmcend\tagstructend}. The 2013 assessment estimated the stock at 76 percent of unfished spawning output based on fits to catch-per-unit-effort and updated parameter distribution around biology (i.e., the posterior distributions). During model bridging between the 2013 to the 2021 assessment model, the large downward shift in estimated stock status in the new assessment was identified to be driven by the inclusion of the length data which implied a low relative stock size in recent years {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Wetzel et al. 2021)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The stock assessment for the sub-stock south of Point Conception in California assumed two fishing fleets, a commercial and a recreational fleet, along with one survey fleet, the Northwest Fisheries Science Center Hook and Line Survey (NWFSC HKL Survey). The majority of the removals and length composition data within the model arose from the recreational fleet. Total removals of copper rockfish south of Point Conception peaked in the late 1970s and early 1980s, decreased from the late 1980s to mid-2000s but had high annual variability, and then increased in recent years (2013 - 2019). The stock was modeled using Stock Synthesis as a two-sex age-structured model. Area specific length-at-age and fecundity-at-length for copper rockfish south of Point Conception were estimated externally and then fixed within the model. Weight-at-length was estimated externally based upon observations by the NWFSC HKL and West Coast Groundfish Bottom Trawl Survey observations with the values fixed within the assessment model. Natural mortality and steepness were both fixed at the median or mean of the respective priors. The selectivity of both the commercial and recreational fishery were estimated to be domed-shape with the NWFSC HKL Survey selectivity fixed to be asymptotic. The assessment model decision table explore uncertainty around stock size and status using lower and higher log({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) values relative to the base model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{management-performance-under-rebuilding}{%
+\section{Management performance under rebuilding}\label{management-performance-under-rebuilding}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This is the first rebuilding plan for copper rockfish off the coast of California south of Point Conception.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{rebuilding-calculations}{%
+\section{Rebuilding calculations}\label{rebuilding-calculations}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This rebuilding analysis was conducted using software developed by A. Punt (version 3.12h, August 2021). The steps followed were:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{itemize}
+    \item Define how equilibrium spawning output ($\text{SB}_0$) will be calculated. 
+    \item Define how future recruitment will be generated. 
+    \item Define the fishery selectivity and allocation to be applied during rebuilding. 
+    \item Decide how to include uncertainty in input parameters from the stock assessment in the rebuilding analysis. 
+    \item Calculate rebuilding reference points from the most current assessment results 
+    \begin{itemize}
+        \item Calculate the projected year in which the stock would rebuild with a 50 percent probability if all future fishing mortality was eliminated ($\text{T}_\text{F}$=0).
+        \item  Calculate the projected year for a 50 percent probability of rebuilding from the year in which the stock was first declared overfished ($\text{T}_\text{MIN}$). 
+        \item Calculate the mean generation time. 
+        \item Calculate the maximum allowable rebuilding time ($\text{T}_\text{MAX}$). 
+    \end{itemize}
+    \item Identification and analysis of alternative harvest strategies for rebuilding. 
+\end{itemize}
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{definition-of-equilibrium-spawning-output}{%
+\subsection{Definition of Equilibrium Spawning Output}\label{definition-of-equilibrium-spawning-output}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The equilibrium spawning output ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{SB}_0\)\leavevmode\tagmcend\tagstructend}) used in this rebuilding analysis is calculated via the stock-recruitment relationship in order to be consistent with assessment model results. This level was estimated to be 233.04 millions of eggs in the base case assessment model, which dictates a rebuilding relative spawning output target ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{SB}_{40\%}\)\leavevmode\tagmcend\tagstructend}) of 93.22 millions of eggs (Table \ref{tab:ref-points}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{generation-of-future-recruitment}{%
+\subsection{Generation of future recruitment}\label{generation-of-future-recruitment}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The estimated parameters of the stock recruitment relationship (unexploited equilibrium recruitment, log({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}), and steepness, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(h\)\leavevmode\tagmcend\tagstructend}) were used to generate future recruitments in the rebuilding analysis. The 2021 assessment model did not estimate annual recruitment deviations but uncertainty around future recruitments was generated by assuming a recruitment variability of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma_R = 0.60\)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{population-biology-fishery-selectivity-and-removal-allocations}{%
+\subsection{Population biology, fishery selectivity, and removal allocations}\label{population-biology-fishery-selectivity-and-removal-allocations}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The biological parameters used for the rebuilding projections were based on the values from the Stock Synthesis assessment model. Biological parameters in the assessment were sex-specific and constant across time.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The selectivity used in the rebuilding analysis were obtained from 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in this rebuilding analysis was informed using the relative fishing mortality averaged over recent years (2015-2019).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{inclusion-of-uncertainty}{%
+\subsection{Inclusion of uncertainty}\label{inclusion-of-uncertainty}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Uncertainty was included in this rebuilding analysis via 1,200 random simulations of stochastic future recruitment strengths and integration over the three states of nature across stock size, log({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}). The base model was given 50 percent of the weight and each alternative state of nature was given 25 percent of the weight.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{alternate-rebuilding-strategies-analyzed}{%
+\subsection{Alternate rebuilding strategies analyzed}\label{alternate-rebuilding-strategies-analyzed}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based selection of a {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{TARGET}\)\leavevmode\tagmcend\tagstructend} (year for 50 percent probability of recovery). This rebuilding analysis presents the following alternate strategies spread among the approaches based on the selection of a SPR harvest rate or rebuilding by a selected target year:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{itemize}
+    \item Apply a range of SPR values: 0.55, 0.60, 0.65, 0.70, and 0.75 
+    \item Eliminate all harvest, F = 0, beginning in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
+    \item Apply the Annual Catch Limits (ACL) based on the 40:10 harvest control rule.
+    \item Apply the Acceptable Biological Catch (ABC) with time-varying $\sigma$.
+    \item Apply SPR harvest rates that are estimated to lead to a 50 percent probability of recovery by alternative target years: $\text{T}_\text{MID}$, $\text{T}_\text{MAX}$, and other years between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$
+\end{itemize}
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+All of the above rebuilding strategies were conducted assuming removals of 90.8 mt and 88.9 mt in 2021 and 2022.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The rebuilding strategies were run without capping catches by the ABC in future projection years. In application rebuilding progress would be monitored through updated rebuilding analysis on a regular basis during rebuild that would evaluate the progress of the selected rebuilding strategy and associated SPR harvest rate limiting the probability of the rebuilding harvest exceeding the ABC in reality. An additional analysis was conducted that did limit the future catches by the ABC and is provided in Section \ref{abc-max-strategies} for comparison.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{rebuilding-reference-points}{%
+\subsection{Rebuilding reference points}\label{rebuilding-reference-points}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+All reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend}, with no fishing (F=0) starting in 2023 was estimated to be 10 years, corresponding to the stock being rebuilt by 2033, assuming the default removals for 2021 and 2022. The mean generation time was estimated to be 17 years. The maximum time allowed for rebuilding, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend} is defined as the {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend} plus the mean generation time for stocks that are unable to rebuild in less than 10 years. The minimum rebuilding time for copper rockfish was 10 years, just falling at the cut-off of 10 years, so {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend} was set to 2033.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{alternative-harvest-projections}{%
+\subsection{Alternative harvest projections}\label{alternative-harvest-projections}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Thank you to Andre Punt for quickly updating the rebuilder program to apply time-varying {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} for the Acceptable Biological Catch scenarios and thank you for his assistance and guidance on application of the rebuilding program. This document was greatly improved based on feedback and review of Owen Hamel.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=BibEntry}\tagmcbegin{tag=BibEntry}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-cope_data-moderate_2013}{}%
+Cope, Jason, E. J. Dick, Alec MacCall, Melissa Monk, Braden Soper, and Chantel Wetzel. 2013. {``Data-Moderate Stock Assessments for Brown, {China}, Copper, Sharpchin, Stripetail, and Yellowtail Rockfishes and {English} and Rex Soles in 2013.''} 7700 Ambassador Place NE, Suite 200, Portland, OR: Pacific Fishery Management Council. \url{http://www.academia.edu/download/44999856/CopeetalDataModerate2013.pdf}.
+
+\leavevmode\hypertarget{ref-wetzel_status_2021}{}%
+Wetzel, C. R., Brian J. Langseth, Jason M Cope, and John Budrick. 2021. {``The Status of Copper Rockfish (\emph{{Sebastes} Caurinus}) in {U}.{S}. Waters Off the Coast of {California} South of {Point} {Conception} in 2021 Using Catch and Length Data.''} Pacific Fishery Management Council, Portland, Oregon.
+
+\end{CSLReferences}
+
+\leavevmode\tagmcend\tagstructend
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{rebuilding-reference-points-and-summary-of-alternatives}{%
+\subsection{Rebuilding reference points and summary of alternatives}\label{rebuilding-reference-points-and-summary-of-alternatives}}
+
+\leavevmode\tagmcend\tagstructend
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}}
+\caption{\label{tab:ref-points}Summary of the rebuilding reference points.}\\
+\toprule
+Parameter & 2021 Assessment Values\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:ref-points}Summary of the rebuilding reference points. \textit{(continued)}}\\
+\toprule
+Parameter & 2021 Assessment Values\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+SB0 (millions of eggs) & 233.04\\
+SB40\% (millions of eggs) & 93.22\\
+SB2021 (millions of eggs) & 42.28\\
+Year rebuilding begins & 2023\\
+Current year & 2021\\
+Tmin & 2033\\
+Mean generation time (years) & 17\\
+Tmax & 2033\\
+Ttarget & TBD\\
+SPRtarget & TBD\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\clearpage
+
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:reb-options}Results of rebuilding alternatives based on selection of an SPR target or year for 50 percent probability of recovery based on the assumed removals for 2021-22. The SPR value for the ABC Rule is lower than 0.50 since this value represents the average SPR value applied across the projection period based on the time-varying buffer.}\\
+\toprule
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:reb-options}Results of rebuilding alternatives based on selection of an SPR target or year for 50 percent probability of recovery based on the assumed removals for 2021-22. The SPR value for the ABC Rule is lower than 0.50 since this value represents the average SPR value applied across the projection period based on the time-varying buffer. \textit{(continued)}}\\
+\toprule
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 Assumed Removals (mt) & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8\\
+2022 Assumed Removals (mt) & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9\\
+2023 ACL (mt) & 21.68 & 15.9 & 11.06 & 6.9 & 3.25 & 2.07 & 0 & 8.57 & 21.68\\
+2024 ACL (mt) & 24.06 & 17.97 & 12.69 & 8.02 & 3.81 & 2.44 & 0 & 11.16 & 24.06\\
+SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.935 & 1 & 0.788 & 0.5\\
+Ttarget & 2052 & 2042 & 2038 & 2035 & 2034 & 2033 & 2033 & 2041 & 2052\\
+Tmax & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033\\
+Probability of recovery by Tmax & 0.012 & 0.057 & 0.153 & 0.31 & 0.46 & 0.5 & 0.58 & 0.07 & 0.012\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\end{landscape}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:reb-options-year}Results of rebuilding alternatives based on alternative SPR harvest rates.}\\
+\toprule
+ & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:reb-options-year}Results of rebuilding alternatives based on alternative SPR harvest rates. \textit{(continued)}}\\
+\toprule
+ & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 Assumed Removals (mt) & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8 & 90.8\\
+2022 Assumed Removals (mt) & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9 & 88.9\\
+2023 ACL (mt) & 3.25 & 2.57 & 1.91 & 1.58 & 1.26 & 2.07 & 0 & 8.57 & 21.68\\
+2024 ACL (mt) & 3.82 & 3.03 & 2.25 & 1.86 & 1.49 & 2.44 & 0 & 11.16 & 24.06\\
+SPR & 0.9 & 0.92 & 0.94 & 0.95 & 0.96 & 0.935 & 1 & 0.788 & 0.5\\
+Ttarget & 2034 & 2034 & 2033 & 2033 & 2033 & 2033 & 2033 & 2041 & 2052\\
+Tmax & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033 & 2033\\
+Probability of recovery by Tmax & 0.464 & 0.486 & 0.509 & 0.52 & 0.538 & 0.5 & 0.578 & 0.072 & 0.012\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\end{landscape}
+\endgroup{}
+
+\clearpage
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{rebuilding-alternative-time-series}{%
+\subsection{Rebuilding alternative time series}\label{rebuilding-alternative-time-series}}
+
+\leavevmode\tagmcend\tagstructend
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:prob-mat}Probability of recovery by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:prob-mat}Probability of recovery by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2022 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2023 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2024 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2025 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2026 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2027 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
+2028 & 0.000 & 0.000 & 0.001 & 0.001 & 0.006 & 0.006 & 0.009 & 0.000 & 0.000\\
+2029 & 0.001 & 0.001 & 0.006 & 0.013 & 0.024 & 0.031 & 0.048 & 0.001 & 0.001\\
+2030 & 0.001 & 0.004 & 0.016 & 0.041 & 0.092 & 0.122 & 0.169 & 0.004 & 0.001\\
+2031 & 0.002 & 0.013 & 0.043 & 0.111 & 0.201 & 0.242 & 0.313 & 0.018 & 0.002\\
+2032 & 0.005 & 0.031 & 0.092 & 0.198 & 0.332 & 0.368 & 0.448 & 0.034 & 0.005\\
+2033 & 0.012 & 0.058 & 0.152 & 0.310 & 0.460 & 0.500 & 0.580 & 0.070 & 0.012\\
+2034 & 0.020 & 0.086 & 0.232 & 0.417 & 0.569 & 0.625 & 0.729 & 0.108 & 0.020\\
+2035 & 0.033 & 0.128 & 0.315 & 0.522 & 0.698 & 0.757 & 0.825 & 0.154 & 0.033\\
+2036 & 0.043 & 0.182 & 0.398 & 0.632 & 0.804 & 0.848 & 0.900 & 0.230 & 0.043\\
+2037 & 0.056 & 0.242 & 0.492 & 0.723 & 0.877 & 0.912 & 0.948 & 0.282 & 0.056\\
+2038 & 0.073 & 0.299 & 0.571 & 0.812 & 0.930 & 0.949 & 0.977 & 0.342 & 0.073\\
+2039 & 0.108 & 0.351 & 0.665 & 0.873 & 0.960 & 0.978 & 0.989 & 0.404 & 0.108\\
+2040 & 0.138 & 0.404 & 0.738 & 0.918 & 0.980 & 0.988 & 0.993 & 0.479 & 0.138\\
+2041 & 0.163 & 0.467 & 0.792 & 0.951 & 0.988 & 0.992 & 0.998 & 0.554 & 0.163\\
+2042 & 0.196 & 0.534 & 0.847 & 0.968 & 0.992 & 0.998 & 0.999 & 0.615 & 0.196\\
+2043 & 0.227 & 0.606 & 0.881 & 0.978 & 0.999 & 0.999 & 0.999 & 0.674 & 0.227\\
+2044 & 0.258 & 0.665 & 0.908 & 0.986 & 0.999 & 0.999 & 1.000 & 0.728 & 0.258\\
+2045 & 0.282 & 0.703 & 0.931 & 0.993 & 0.999 & 0.999 & 1.000 & 0.760 & 0.282\\
+2046 & 0.328 & 0.748 & 0.948 & 0.997 & 0.999 & 1.000 & 1.000 & 0.793 & 0.328\\
+2047 & 0.358 & 0.776 & 0.962 & 0.998 & 1.000 & 1.000 & 1.000 & 0.815 & 0.358\\
+2048 & 0.387 & 0.816 & 0.975 & 0.998 & 1.000 & 1.000 & 1.000 & 0.851 & 0.387\\
+2049 & 0.422 & 0.848 & 0.982 & 1.000 & 1.000 & 1.000 & 1.000 & 0.886 & 0.422\\
+2050 & 0.455 & 0.876 & 0.984 & 1.000 & 1.000 & 1.000 & 1.000 & 0.898 & 0.455\\
+2051 & 0.490 & 0.899 & 0.987 & 1.000 & 1.000 & 1.000 & 1.000 & 0.918 & 0.490\\
+2052 & 0.517 & 0.912 & 0.992 & 1.000 & 1.000 & 1.000 & 1.000 & 0.922 & 0.517\\
+2053 & 0.556 & 0.928 & 0.993 & 1.000 & 1.000 & 1.000 & 1.000 & 0.937 & 0.556\\
+2054 & 0.583 & 0.937 & 0.995 & 1.000 & 1.000 & 1.000 & 1.000 & 0.946 & 0.583\\
+2055 & 0.609 & 0.943 & 0.996 & 1.000 & 1.000 & 1.000 & 1.000 & 0.952 & 0.609\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:acl-mat}Median catches (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:acl-mat}Median catches (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 90.80 & 90.80 & 90.80 & 90.80 & 90.80 & 90.80 & 90.8 & 90.80 & 90.80\\
+2022 & 88.90 & 88.90 & 88.90 & 88.90 & 88.90 & 88.90 & 88.9 & 88.90 & 88.90\\
+2023 & 21.68 & 15.90 & 11.06 & 6.90 & 3.25 & 2.07 & 0.0 & 8.57 & 21.68\\
+2024 & 24.06 & 17.97 & 12.69 & 8.02 & 3.81 & 2.44 & 0.0 & 11.16 & 24.06\\
+2025 & 26.13 & 19.82 & 14.17 & 9.04 & 4.35 & 2.79 & 0.0 & 14.05 & 26.13\\
+2026 & 27.82 & 21.40 & 15.47 & 9.96 & 4.82 & 3.10 & 0.0 & 16.78 & 27.82\\
+2027 & 28.82 & 22.37 & 16.33 & 10.62 & 5.19 & 3.35 & 0.0 & 19.33 & 28.82\\
+2028 & 29.83 & 23.35 & 17.15 & 11.21 & 5.51 & 3.56 & 0.0 & 21.46 & 29.83\\
+2029 & 30.66 & 24.20 & 17.88 & 11.78 & 5.81 & 3.76 & 0.0 & 23.02 & 30.66\\
+2030 & 31.62 & 25.26 & 18.80 & 12.43 & 6.16 & 3.99 & 0.0 & 24.81 & 31.62\\
+2031 & 32.63 & 26.11 & 19.56 & 13.00 & 6.47 & 4.20 & 0.0 & 26.37 & 32.63\\
+2032 & 33.54 & 27.10 & 20.39 & 13.59 & 6.78 & 4.41 & 0.0 & 27.51 & 33.54\\
+2033 & 34.65 & 28.09 & 21.24 & 14.25 & 7.14 & 4.64 & 0.0 & 28.97 & 34.65\\
+2034 & 35.19 & 28.73 & 21.86 & 14.69 & 7.38 & 4.81 & 0.0 & 29.88 & 35.19\\
+2035 & 36.02 & 29.55 & 22.57 & 15.20 & 7.66 & 4.99 & 0.0 & 30.89 & 36.02\\
+2036 & 36.93 & 30.31 & 23.17 & 15.63 & 7.88 & 5.15 & 0.0 & 31.82 & 36.93\\
+2037 & 37.70 & 31.15 & 23.90 & 16.17 & 8.18 & 5.34 & 0.0 & 32.97 & 37.70\\
+2038 & 38.48 & 31.82 & 24.45 & 16.61 & 8.42 & 5.50 & 0.0 & 34.18 & 38.48\\
+2039 & 39.23 & 32.62 & 25.14 & 17.08 & 8.67 & 5.67 & 0.0 & 35.83 & 39.23\\
+2040 & 39.99 & 33.33 & 25.75 & 17.53 & 8.89 & 5.81 & 0.0 & 38.35 & 39.99\\
+2041 & 40.70 & 33.95 & 26.28 & 17.92 & 9.12 & 5.96 & 0.0 & 41.11 & 40.70\\
+2042 & 41.27 & 34.59 & 26.78 & 18.30 & 9.32 & 6.10 & 0.0 & 43.41 & 41.27\\
+2043 & 41.94 & 35.19 & 27.31 & 18.69 & 9.53 & 6.24 & 0.0 & 44.71 & 41.94\\
+2044 & 42.30 & 35.53 & 27.64 & 18.94 & 9.68 & 6.33 & 0.0 & 45.94 & 42.30\\
+2045 & 42.41 & 35.70 & 27.81 & 19.11 & 9.78 & 6.41 & 0.0 & 45.82 & 42.41\\
+2046 & 42.40 & 35.85 & 27.98 & 19.25 & 9.85 & 6.46 & 0.0 & 46.05 & 42.40\\
+2047 & 43.34 & 36.58 & 28.40 & 19.48 & 9.95 & 6.53 & 0.0 & 46.23 & 43.34\\
+2048 & 43.90 & 37.06 & 28.96 & 19.91 & 10.19 & 6.68 & 0.0 & 46.56 & 43.90\\
+2049 & 44.30 & 37.41 & 29.23 & 20.06 & 10.28 & 6.74 & 0.0 & 47.01 & 44.30\\
+2050 & 44.46 & 37.60 & 29.39 & 20.21 & 10.35 & 6.79 & 0.0 & 47.36 & 44.46\\
+2051 & 44.71 & 37.86 & 29.55 & 20.33 & 10.43 & 6.84 & 0.0 & 47.46 & 44.71\\
+2052 & 44.70 & 37.83 & 29.58 & 20.38 & 10.46 & 6.86 & 0.0 & 47.00 & 44.70\\
+2053 & 44.77 & 38.00 & 29.74 & 20.47 & 10.52 & 6.90 & 0.0 & 47.02 & 44.77\\
+2054 & 44.81 & 38.00 & 29.81 & 20.55 & 10.57 & 6.94 & 0.0 & 47.25 & 44.81\\
+2055 & 45.49 & 38.56 & 30.22 & 20.83 & 10.70 & 7.02 & 0.0 & 47.53 & 45.49\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:ofl-mat}Median ABCs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:ofl-mat}Median ABCs (mt) by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47\\
+2022 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33\\
+2023 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94\\
+2024 & 20.82 & 21.19 & 21.51 & 21.78 & 22.01 & 22.09 & 22.23 & 21.67 & 20.82\\
+2025 & 22.40 & 23.15 & 23.80 & 24.35 & 24.85 & 25.01 & 25.30 & 24.07 & 22.40\\
+2026 & 23.63 & 24.76 & 25.73 & 26.57 & 27.33 & 27.56 & 27.99 & 25.98 & 23.63\\
+2027 & 24.25 & 25.66 & 26.91 & 28.06 & 29.07 & 29.43 & 30.03 & 27.06 & 24.25\\
+2028 & 24.86 & 26.51 & 28.00 & 29.34 & 30.61 & 31.02 & 31.83 & 27.96 & 24.86\\
+2029 & 25.31 & 27.24 & 29.01 & 30.56 & 31.98 & 32.49 & 33.34 & 28.82 & 25.31\\
+2030 & 25.86 & 28.15 & 30.15 & 31.97 & 33.67 & 34.24 & 35.24 & 29.47 & 25.86\\
+2031 & 26.44 & 28.91 & 31.17 & 33.17 & 35.08 & 35.73 & 36.85 & 30.35 & 26.44\\
+2032 & 26.92 & 29.65 & 32.07 & 34.31 & 36.43 & 37.13 & 38.38 & 31.23 & 26.92\\
+2033 & 27.55 & 30.43 & 33.11 & 35.64 & 37.98 & 38.73 & 40.07 & 31.81 & 27.55\\
+2034 & 27.72 & 30.84 & 33.72 & 36.40 & 38.92 & 39.72 & 41.28 & 32.13 & 27.72\\
+2035 & 28.11 & 31.43 & 34.50 & 37.34 & 40.02 & 40.88 & 42.43 & 32.64 & 28.11\\
+2036 & 28.72 & 32.16 & 35.29 & 38.29 & 41.06 & 41.99 & 43.67 & 33.27 & 28.72\\
+2037 & 29.33 & 33.09 & 36.53 & 39.64 & 42.63 & 43.58 & 45.44 & 33.94 & 29.33\\
+2038 & 29.93 & 33.77 & 37.32 & 40.68 & 43.85 & 44.95 & 46.88 & 34.58 & 29.93\\
+2039 & 30.51 & 34.60 & 38.25 & 41.79 & 45.13 & 46.32 & 48.30 & 34.92 & 30.51\\
+2040 & 31.10 & 35.30 & 39.28 & 42.86 & 46.29 & 47.42 & 49.54 & 35.36 & 31.10\\
+2041 & 31.66 & 36.00 & 40.14 & 43.98 & 47.50 & 48.73 & 50.91 & 35.84 & 31.66\\
+2042 & 32.10 & 36.69 & 40.92 & 44.84 & 48.55 & 49.79 & 52.12 & 35.97 & 32.10\\
+2043 & 32.62 & 37.33 & 41.70 & 45.72 & 49.66 & 50.95 & 53.33 & 36.45 & 32.62\\
+2044 & 32.90 & 37.70 & 42.23 & 46.43 & 50.41 & 51.75 & 54.18 & 36.52 & 32.90\\
+2045 & 32.99 & 37.90 & 42.53 & 46.84 & 50.95 & 52.34 & 54.89 & 36.54 & 32.99\\
+2046 & 32.97 & 38.02 & 42.64 & 47.16 & 51.43 & 52.88 & 55.44 & 36.54 & 32.97\\
+2047 & 33.71 & 38.81 & 43.38 & 47.73 & 51.93 & 53.30 & 55.89 & 36.77 & 33.71\\
+2048 & 34.14 & 39.35 & 44.21 & 48.81 & 53.20 & 54.60 & 57.30 & 37.16 & 34.14\\
+2049 & 34.45 & 39.70 & 44.59 & 49.24 & 53.60 & 55.14 & 57.86 & 37.26 & 34.45\\
+2050 & 34.58 & 39.92 & 44.89 & 49.51 & 53.93 & 55.47 & 58.24 & 37.30 & 34.58\\
+2051 & 34.77 & 40.13 & 45.14 & 49.93 & 54.57 & 56.15 & 59.00 & 37.14 & 34.77\\
+2052 & 34.76 & 40.13 & 45.18 & 50.02 & 54.61 & 56.18 & 59.01 & 37.10 & 34.76\\
+2053 & 34.82 & 40.33 & 45.44 & 50.23 & 54.98 & 56.57 & 59.51 & 37.12 & 34.82\\
+2054 & 34.85 & 40.33 & 45.54 & 50.49 & 55.24 & 56.80 & 59.64 & 37.11 & 34.85\\
+2055 & 35.38 & 40.91 & 46.15 & 51.10 & 55.82 & 57.46 & 60.37 & 37.25 & 35.38\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:rel-ssb-mat}Median spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. }\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:rel-ssb-mat}Median spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.  \textit{(continued)}}\\
+\toprule
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45\\
+2022 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42\\
+2023 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38\\
+2024 & 0.40 & 0.40 & 0.41 & 0.41 & 0.41 & 0.41 & 0.42 & 0.41 & 0.40\\
+2025 & 0.42 & 0.43 & 0.44 & 0.45 & 0.46 & 0.46 & 0.46 & 0.45 & 0.42\\
+2026 & 0.45 & 0.47 & 0.48 & 0.50 & 0.51 & 0.52 & 0.53 & 0.49 & 0.45\\
+2027 & 0.48 & 0.51 & 0.53 & 0.56 & 0.58 & 0.58 & 0.60 & 0.54 & 0.48\\
+2028 & 0.51 & 0.55 & 0.58 & 0.61 & 0.64 & 0.65 & 0.67 & 0.58 & 0.51\\
+2029 & 0.54 & 0.59 & 0.63 & 0.67 & 0.71 & 0.72 & 0.74 & 0.63 & 0.54\\
+2030 & 0.57 & 0.63 & 0.68 & 0.73 & 0.78 & 0.79 & 0.82 & 0.67 & 0.57\\
+2031 & 0.60 & 0.67 & 0.73 & 0.79 & 0.84 & 0.86 & 0.90 & 0.71 & 0.60\\
+2032 & 0.62 & 0.70 & 0.78 & 0.85 & 0.91 & 0.93 & 0.97 & 0.75 & 0.62\\
+2033 & 0.65 & 0.74 & 0.82 & 0.90 & 0.97 & 1.00 & 1.05 & 0.79 & 0.65\\
+2034 & 0.68 & 0.78 & 0.87 & 0.96 & 1.04 & 1.07 & 1.12 & 0.82 & 0.68\\
+2035 & 0.70 & 0.81 & 0.91 & 1.01 & 1.11 & 1.14 & 1.20 & 0.85 & 0.70\\
+2036 & 0.73 & 0.84 & 0.96 & 1.06 & 1.17 & 1.20 & 1.27 & 0.89 & 0.73\\
+2037 & 0.75 & 0.87 & 1.00 & 1.11 & 1.22 & 1.26 & 1.33 & 0.91 & 0.75\\
+2038 & 0.77 & 0.90 & 1.03 & 1.16 & 1.28 & 1.32 & 1.40 & 0.94 & 0.77\\
+2039 & 0.78 & 0.93 & 1.07 & 1.20 & 1.33 & 1.38 & 1.46 & 0.96 & 0.78\\
+2040 & 0.80 & 0.95 & 1.10 & 1.25 & 1.39 & 1.44 & 1.52 & 0.98 & 0.80\\
+2041 & 0.82 & 0.98 & 1.14 & 1.29 & 1.44 & 1.49 & 1.58 & 1.00 & 0.82\\
+2042 & 0.84 & 1.01 & 1.18 & 1.34 & 1.50 & 1.55 & 1.65 & 1.02 & 0.84\\
+2043 & 0.86 & 1.03 & 1.21 & 1.38 & 1.54 & 1.60 & 1.70 & 1.03 & 0.86\\
+2044 & 0.88 & 1.06 & 1.24 & 1.42 & 1.59 & 1.65 & 1.76 & 1.04 & 0.88\\
+2045 & 0.90 & 1.09 & 1.28 & 1.46 & 1.64 & 1.70 & 1.82 & 1.05 & 0.90\\
+2046 & 0.91 & 1.11 & 1.31 & 1.50 & 1.69 & 1.75 & 1.87 & 1.05 & 0.91\\
+2047 & 0.93 & 1.13 & 1.33 & 1.53 & 1.72 & 1.79 & 1.91 & 1.06 & 0.93\\
+2048 & 0.94 & 1.15 & 1.35 & 1.56 & 1.76 & 1.83 & 1.95 & 1.06 & 0.94\\
+2049 & 0.95 & 1.16 & 1.37 & 1.58 & 1.79 & 1.86 & 1.99 & 1.07 & 0.95\\
+2050 & 0.96 & 1.18 & 1.39 & 1.61 & 1.82 & 1.89 & 2.03 & 1.07 & 0.96\\
+2051 & 0.97 & 1.19 & 1.41 & 1.63 & 1.85 & 1.92 & 2.06 & 1.08 & 0.97\\
+2052 & 0.98 & 1.20 & 1.43 & 1.65 & 1.87 & 1.94 & 2.09 & 1.09 & 0.98\\
+2053 & 0.99 & 1.22 & 1.45 & 1.68 & 1.90 & 1.98 & 2.13 & 1.09 & 0.99\\
+2054 & 1.00 & 1.23 & 1.47 & 1.70 & 1.92 & 2.00 & 2.15 & 1.09 & 1.00\\
+2055 & 1.00 & 1.24 & 1.48 & 1.71 & 1.94 & 2.02 & 2.17 & 1.09 & 1.00\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\clearpage
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{rebuilding-alternative-time-series-for-high-spr-harvest-rates}{%
+\subsection{Rebuilding alternative time series for high SPR harvest rates}\label{rebuilding-alternative-time-series-for-high-spr-harvest-rates}}
+
+\leavevmode\tagmcend\tagstructend
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:prob-mat-year}The probability of rebuilding for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:prob-mat-year}The probability of rebuilding for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2022 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2023 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2024 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2025 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2026 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2027 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+2028 & 0.00 & 0.00 & 0.00 & 0.01 & 0.01 & 0.00 & 0.01 & 0.00 & 0.00\\
+2029 & 0.02 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.05 & 0.00 & 0.00\\
+2030 & 0.09 & 0.10 & 0.12 & 0.13 & 0.15 & 0.12 & 0.17 & 0.00 & 0.00\\
+2031 & 0.20 & 0.23 & 0.25 & 0.26 & 0.27 & 0.25 & 0.32 & 0.02 & 0.00\\
+2032 & 0.34 & 0.37 & 0.39 & 0.40 & 0.41 & 0.38 & 0.46 & 0.03 & 0.01\\
+2033 & 0.46 & 0.49 & 0.51 & 0.52 & 0.54 & 0.50 & 0.58 & 0.07 & 0.01\\
+2034 & 0.57 & 0.60 & 0.63 & 0.64 & 0.66 & 0.62 & 0.73 & 0.11 & 0.02\\
+2035 & 0.70 & 0.74 & 0.76 & 0.77 & 0.79 & 0.76 & 0.82 & 0.16 & 0.03\\
+2036 & 0.80 & 0.82 & 0.85 & 0.86 & 0.87 & 0.85 & 0.90 & 0.23 & 0.04\\
+2037 & 0.88 & 0.89 & 0.91 & 0.92 & 0.92 & 0.91 & 0.95 & 0.28 & 0.05\\
+2038 & 0.93 & 0.94 & 0.95 & 0.96 & 0.97 & 0.95 & 0.98 & 0.34 & 0.07\\
+2039 & 0.96 & 0.98 & 0.98 & 0.98 & 0.98 & 0.98 & 0.99 & 0.40 & 0.11\\
+2040 & 0.98 & 0.99 & 0.99 & 0.99 & 0.99 & 0.99 & 0.99 & 0.48 & 0.14\\
+2041 & 0.99 & 0.99 & 0.99 & 0.99 & 0.99 & 0.99 & 1.00 & 0.55 & 0.16\\
+2042 & 0.99 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.61 & 0.20\\
+2043 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.67 & 0.23\\
+2044 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.73 & 0.26\\
+2045 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.76 & 0.28\\
+2046 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.79 & 0.32\\
+2047 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.81 & 0.35\\
+2048 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.85 & 0.38\\
+2049 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.88 & 0.42\\
+2050 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.90 & 0.45\\
+2051 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.92 & 0.48\\
+2052 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.92 & 0.51\\
+2053 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.94 & 0.55\\
+2054 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.94 & 0.58\\
+2055 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 0.95 & 0.60\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:acl-mat-year}Median catches (mt) by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:acl-mat-year}Median catches (mt) by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 90.80 & 90.80 & 90.80 & 90.80 & 90.80 & 90.80 & 90.8 & 90.80 & 90.80\\
+2022 & 88.90 & 88.90 & 88.90 & 88.90 & 88.90 & 88.90 & 88.9 & 88.90 & 88.90\\
+2023 & 3.25 & 2.57 & 1.91 & 1.58 & 1.26 & 2.07 & 0.0 & 8.57 & 21.68\\
+2024 & 3.82 & 3.03 & 2.25 & 1.86 & 1.49 & 2.44 & 0.0 & 11.16 & 24.06\\
+2025 & 4.35 & 3.46 & 2.58 & 2.14 & 1.70 & 2.79 & 0.0 & 14.07 & 26.17\\
+2026 & 4.84 & 3.85 & 2.87 & 2.38 & 1.90 & 3.11 & 0.0 & 16.84 & 27.91\\
+2027 & 5.21 & 4.15 & 3.10 & 2.57 & 2.05 & 3.35 & 0.0 & 19.38 & 28.97\\
+2028 & 5.55 & 4.43 & 3.31 & 2.74 & 2.19 & 3.58 & 0.0 & 21.56 & 29.97\\
+2029 & 5.82 & 4.64 & 3.47 & 2.89 & 2.31 & 3.76 & 0.0 & 23.12 & 30.70\\
+2030 & 6.15 & 4.91 & 3.67 & 3.05 & 2.44 & 3.98 & 0.0 & 24.66 & 31.71\\
+2031 & 6.47 & 5.17 & 3.88 & 3.23 & 2.58 & 4.19 & 0.0 & 26.37 & 32.62\\
+2032 & 6.78 & 5.43 & 4.07 & 3.39 & 2.71 & 4.40 & 0.0 & 27.53 & 33.54\\
+2033 & 7.14 & 5.72 & 4.29 & 3.57 & 2.86 & 4.64 & 0.0 & 29.05 & 34.67\\
+2034 & 7.40 & 5.93 & 4.45 & 3.71 & 2.97 & 4.81 & 0.0 & 30.03 & 35.36\\
+2035 & 7.68 & 6.15 & 4.62 & 3.85 & 3.09 & 5.00 & 0.0 & 30.99 & 36.11\\
+2036 & 7.88 & 6.31 & 4.74 & 3.95 & 3.17 & 5.13 & 0.0 & 31.80 & 36.93\\
+2037 & 8.16 & 6.54 & 4.92 & 4.10 & 3.29 & 5.32 & 0.0 & 32.76 & 37.70\\
+2038 & 8.40 & 6.74 & 5.07 & 4.22 & 3.38 & 5.48 & 0.0 & 34.05 & 38.34\\
+2039 & 8.65 & 6.94 & 5.22 & 4.35 & 3.49 & 5.64 & 0.0 & 35.63 & 39.24\\
+2040 & 8.90 & 7.14 & 5.37 & 4.48 & 3.59 & 5.81 & 0.0 & 38.21 & 40.06\\
+2041 & 9.12 & 7.32 & 5.51 & 4.59 & 3.68 & 5.96 & 0.0 & 41.21 & 40.73\\
+2042 & 9.32 & 7.48 & 5.63 & 4.69 & 3.76 & 6.08 & 0.0 & 43.41 & 41.39\\
+2043 & 9.51 & 7.64 & 5.75 & 4.80 & 3.85 & 6.22 & 0.0 & 44.70 & 41.85\\
+2044 & 9.65 & 7.75 & 5.84 & 4.87 & 3.90 & 6.31 & 0.0 & 45.95 & 42.23\\
+2045 & 9.79 & 7.86 & 5.92 & 4.94 & 3.96 & 6.40 & 0.0 & 46.01 & 42.50\\
+2046 & 9.87 & 7.93 & 5.97 & 4.98 & 4.00 & 6.46 & 0.0 & 46.05 & 42.37\\
+2047 & 9.95 & 7.99 & 6.01 & 5.02 & 4.02 & 6.50 & 0.0 & 46.25 & 43.30\\
+2048 & 10.19 & 8.18 & 6.17 & 5.14 & 4.13 & 6.66 & 0.0 & 46.63 & 43.91\\
+2049 & 10.27 & 8.25 & 6.22 & 5.19 & 4.16 & 6.72 & 0.0 & 47.06 & 44.15\\
+2050 & 10.34 & 8.31 & 6.25 & 5.22 & 4.19 & 6.76 & 0.0 & 47.34 & 44.43\\
+2051 & 10.43 & 8.38 & 6.31 & 5.26 & 4.22 & 6.82 & 0.0 & 47.49 & 44.77\\
+2052 & 10.50 & 8.45 & 6.37 & 5.31 & 4.26 & 6.88 & 0.0 & 47.00 & 44.77\\
+2053 & 10.55 & 8.48 & 6.39 & 5.34 & 4.28 & 6.91 & 0.0 & 47.16 & 44.92\\
+2054 & 10.61 & 8.53 & 6.43 & 5.36 & 4.30 & 6.95 & 0.0 & 47.34 & 45.02\\
+2055 & 10.72 & 8.61 & 6.49 & 5.42 & 4.35 & 7.02 & 0.0 & 47.63 & 45.68\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:ofl-mat-year}Median ABCs (mt) by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:ofl-mat-year}Median ABCs (mt) by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47 & 23.47\\
+2022 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33 & 21.33\\
+2023 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94 & 18.94\\
+2024 & 22.02 & 22.06 & 22.10 & 22.13 & 22.15 & 22.09 & 22.23 & 21.67 & 20.82\\
+2025 & 24.89 & 24.98 & 25.07 & 25.12 & 25.17 & 25.05 & 25.34 & 24.09 & 22.44\\
+2026 & 27.41 & 27.55 & 27.69 & 27.76 & 27.83 & 27.66 & 28.11 & 26.06 & 23.70\\
+2027 & 29.22 & 29.41 & 29.59 & 29.68 & 29.78 & 29.54 & 30.15 & 27.24 & 24.37\\
+2028 & 30.95 & 31.17 & 31.38 & 31.49 & 31.59 & 31.33 & 32.03 & 28.06 & 24.98\\
+2029 & 32.07 & 32.32 & 32.59 & 32.71 & 32.86 & 32.53 & 33.43 & 28.83 & 25.35\\
+2030 & 33.62 & 33.92 & 34.21 & 34.35 & 34.50 & 34.14 & 35.08 & 29.55 & 25.93\\
+2031 & 35.09 & 35.47 & 35.81 & 36.00 & 36.18 & 35.73 & 36.87 & 30.36 & 26.43\\
+2032 & 36.45 & 36.87 & 37.25 & 37.44 & 37.62 & 37.16 & 38.39 & 31.21 & 26.92\\
+2033 & 38.01 & 38.47 & 38.89 & 39.09 & 39.31 & 38.79 & 40.09 & 31.85 & 27.56\\
+2034 & 39.03 & 39.50 & 39.98 & 40.21 & 40.44 & 39.86 & 41.36 & 32.18 & 27.85\\
+2035 & 40.09 & 40.60 & 41.11 & 41.37 & 41.63 & 40.98 & 42.60 & 32.79 & 28.18\\
+2036 & 41.02 & 41.53 & 42.06 & 42.32 & 42.59 & 41.93 & 43.67 & 33.25 & 28.72\\
+2037 & 42.53 & 43.12 & 43.70 & 43.99 & 44.27 & 43.55 & 45.37 & 33.85 & 29.32\\
+2038 & 43.70 & 44.29 & 44.87 & 45.17 & 45.46 & 44.73 & 46.65 & 34.54 & 29.82\\
+2039 & 45.08 & 45.72 & 46.37 & 46.69 & 47.01 & 46.21 & 48.22 & 34.91 & 30.52\\
+2040 & 46.31 & 47.01 & 47.68 & 48.01 & 48.33 & 47.52 & 49.62 & 35.44 & 31.16\\
+2041 & 47.56 & 48.25 & 48.94 & 49.28 & 49.62 & 48.77 & 50.97 & 35.98 & 31.68\\
+2042 & 48.56 & 49.28 & 49.97 & 50.31 & 50.69 & 49.81 & 52.12 & 36.06 & 32.19\\
+2043 & 49.58 & 50.34 & 51.09 & 51.46 & 51.82 & 50.89 & 53.29 & 36.46 & 32.55\\
+2044 & 50.32 & 51.09 & 51.89 & 52.29 & 52.69 & 51.69 & 54.15 & 36.53 & 32.85\\
+2045 & 50.95 & 51.77 & 52.55 & 52.96 & 53.36 & 52.35 & 54.89 & 36.55 & 33.06\\
+2046 & 51.50 & 52.34 & 53.12 & 53.51 & 53.93 & 52.93 & 55.47 & 36.51 & 32.96\\
+2047 & 51.88 & 52.68 & 53.47 & 53.87 & 54.25 & 53.27 & 55.80 & 36.75 & 33.68\\
+2048 & 53.17 & 53.97 & 54.80 & 55.23 & 55.66 & 54.60 & 57.28 & 37.21 & 34.15\\
+2049 & 53.54 & 54.42 & 55.25 & 55.68 & 56.11 & 55.04 & 57.82 & 37.12 & 34.34\\
+2050 & 53.87 & 54.75 & 55.61 & 56.03 & 56.45 & 55.41 & 58.15 & 37.24 & 34.56\\
+2051 & 54.57 & 55.49 & 56.37 & 56.81 & 57.23 & 56.15 & 58.96 & 37.23 & 34.82\\
+2052 & 54.78 & 55.68 & 56.55 & 56.97 & 57.38 & 56.34 & 59.10 & 37.16 & 34.82\\
+2053 & 55.09 & 56.01 & 56.91 & 57.36 & 57.80 & 56.69 & 59.60 & 37.19 & 34.94\\
+2054 & 55.35 & 56.28 & 57.19 & 57.62 & 58.07 & 56.97 & 59.85 & 37.22 & 35.01\\
+2055 & 55.95 & 56.84 & 57.78 & 58.24 & 58.67 & 57.55 & 60.47 & 37.42 & 35.53\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{\label{tab:rel-ssb-mat-year}Median spawning output relative to the 40 percent of unfished spawning output target by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively.}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:rel-ssb-mat-year}Median spawning output relative to the 40 percent of unfished spawning output target by year for additional SPR harvest rates assuming removals of 90.8 and 88.9 mt in 2021 and 2022, respectively. \textit{(continued)}}\\
+\toprule
+Year & SPR= .900       & SPR= .920       & SPR= .940       & SPR= .950       & SPR= .960       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45\\
+2022 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42 & 0.42\\
+2023 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.38\\
+2024 & 0.41 & 0.41 & 0.41 & 0.41 & 0.41 & 0.41 & 0.42 & 0.41 & 0.40\\
+2025 & 0.46 & 0.46 & 0.46 & 0.46 & 0.46 & 0.46 & 0.46 & 0.45 & 0.42\\
+2026 & 0.51 & 0.52 & 0.52 & 0.52 & 0.52 & 0.52 & 0.53 & 0.49 & 0.45\\
+2027 & 0.58 & 0.58 & 0.58 & 0.59 & 0.59 & 0.58 & 0.60 & 0.54 & 0.48\\
+2028 & 0.64 & 0.65 & 0.65 & 0.66 & 0.66 & 0.65 & 0.67 & 0.58 & 0.51\\
+2029 & 0.71 & 0.72 & 0.72 & 0.73 & 0.73 & 0.72 & 0.74 & 0.63 & 0.54\\
+2030 & 0.78 & 0.79 & 0.80 & 0.80 & 0.81 & 0.80 & 0.82 & 0.67 & 0.57\\
+2031 & 0.85 & 0.86 & 0.87 & 0.87 & 0.88 & 0.86 & 0.90 & 0.72 & 0.60\\
+2032 & 0.91 & 0.93 & 0.94 & 0.94 & 0.95 & 0.94 & 0.98 & 0.75 & 0.63\\
+2033 & 0.97 & 0.99 & 1.00 & 1.01 & 1.02 & 1.00 & 1.05 & 0.79 & 0.65\\
+2034 & 1.04 & 1.06 & 1.07 & 1.08 & 1.09 & 1.07 & 1.12 & 0.82 & 0.68\\
+2035 & 1.11 & 1.13 & 1.14 & 1.15 & 1.16 & 1.14 & 1.20 & 0.86 & 0.70\\
+2036 & 1.17 & 1.19 & 1.21 & 1.22 & 1.23 & 1.21 & 1.27 & 0.89 & 0.73\\
+2037 & 1.23 & 1.25 & 1.27 & 1.28 & 1.29 & 1.27 & 1.34 & 0.92 & 0.75\\
+2038 & 1.29 & 1.31 & 1.33 & 1.35 & 1.36 & 1.33 & 1.40 & 0.94 & 0.77\\
+2039 & 1.34 & 1.36 & 1.39 & 1.40 & 1.42 & 1.38 & 1.47 & 0.97 & 0.78\\
+2040 & 1.39 & 1.42 & 1.44 & 1.46 & 1.47 & 1.44 & 1.53 & 0.98 & 0.80\\
+2041 & 1.44 & 1.46 & 1.49 & 1.51 & 1.52 & 1.49 & 1.58 & 1.00 & 0.82\\
+2042 & 1.49 & 1.52 & 1.55 & 1.57 & 1.58 & 1.55 & 1.64 & 1.02 & 0.84\\
+2043 & 1.54 & 1.57 & 1.60 & 1.62 & 1.64 & 1.60 & 1.70 & 1.03 & 0.86\\
+2044 & 1.59 & 1.62 & 1.66 & 1.67 & 1.69 & 1.65 & 1.76 & 1.04 & 0.88\\
+2045 & 1.64 & 1.67 & 1.71 & 1.73 & 1.74 & 1.70 & 1.81 & 1.05 & 0.89\\
+2046 & 1.68 & 1.72 & 1.76 & 1.78 & 1.79 & 1.75 & 1.87 & 1.05 & 0.91\\
+2047 & 1.72 & 1.76 & 1.80 & 1.82 & 1.83 & 1.79 & 1.91 & 1.06 & 0.93\\
+2048 & 1.76 & 1.80 & 1.84 & 1.86 & 1.88 & 1.83 & 1.95 & 1.06 & 0.94\\
+2049 & 1.79 & 1.83 & 1.87 & 1.89 & 1.91 & 1.86 & 2.00 & 1.07 & 0.95\\
+2050 & 1.82 & 1.86 & 1.91 & 1.93 & 1.95 & 1.89 & 2.03 & 1.07 & 0.96\\
+2051 & 1.85 & 1.89 & 1.93 & 1.96 & 1.98 & 1.92 & 2.06 & 1.08 & 0.97\\
+2052 & 1.87 & 1.91 & 1.96 & 1.98 & 2.00 & 1.94 & 2.09 & 1.08 & 0.98\\
+2053 & 1.90 & 1.95 & 1.99 & 2.01 & 2.03 & 1.98 & 2.12 & 1.09 & 0.99\\
+2054 & 1.92 & 1.97 & 2.01 & 2.04 & 2.06 & 2.00 & 2.15 & 1.09 & 1.00\\
+2055 & 1.94 & 1.99 & 2.04 & 2.06 & 2.08 & 2.02 & 2.18 & 1.09 & 1.00\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\clearpage
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_rebuilder/spr/rebuilding_probability_binded.png}
+\caption{Probability of rebuilding by year for alternative rebuilding strategies.\label{fig:prob-fig}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_rebuilder/spr/rebuilding_acl_binded.png}
+\caption{Catches (mt) by year for alternative rebuilding strategies.\label{fig:acl-fig}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c/_rebuilder/spr/rebuilding_relative_sb_binded.png}
+\caption{Spawning output relative to the management target of 40 percent of unfished spawning output by year for alternative rebuilding strategies.\label{fig:rel-ssb-fig}}
+\end{figure}
+
+\tagmcend\tagstructend
+\end{document}

@@ -1,0 +1,5 @@
+# Summary{-}
+
+This rebuilding analysis is for the stock of `r spp` (_Sebastes caurinus_) in waters off California, south of Point Conception. The analysis is based on the 2021 stock assessment. The 2021 assessment model estimated the `r spp` south of Point Conception to be at 18.1 percent of the unexploited equilibrium spawning output at the beginning of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
+
+
