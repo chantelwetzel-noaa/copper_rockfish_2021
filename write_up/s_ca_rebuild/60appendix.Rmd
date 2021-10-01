@@ -3,7 +3,7 @@
 
 ## Rebuilding strategies with catches constrained by the ABC{#abc-max-strategies}
 
-Altenative rebuilding alternative that cap the potential removals across alternative strategies by the ABC Rule with time-varying $\sigma$ values.  Capping removals by the ABC in this manner impacts both the SPR = 0.55 and the $\text{T}_\text{MID}$ (SPR = 0.545) rebuilding strategies where projected catches from these strategies equal those from the ABC Rule.  The intermediate rebuilding strategies, SPR between 0.60 - 0.75, are not impacted by applying a removal cap tied to the ABC values.    
+Alternative rebuilding alternative that cap the potential removals across alternative strategies by the ABC Rule with time-varying $\sigma$ values.  Capping removals by the ABC in this manner impacts both the SPR = 0.55 and the $\text{T}_\text{MID}$ (SPR = 0.545) rebuilding strategies where projected catches from these strategies equal those from the ABC Rule.  The intermediate rebuilding strategies, SPR between 0.60 - 0.75, are not impacted by applying a removal cap tied to the ABC values.    
 
 
 ```{r, results = 'asis'}

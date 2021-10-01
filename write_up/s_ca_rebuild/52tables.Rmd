@@ -50,7 +50,7 @@ table_format(x = out,
 #		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
 
 # Franken-results to change out the ABC Rule run for the capped
-quants = rbind(cbind(round(reb[[1]]$acl_matrix[1:4, 2:9], 2), round(reb[[4]]$acl_matrix[1:4, 9], 2)),
+quants = rbind(cbind(round(reb[[1]]$acl_matrix[1:4, 2:9], 2), round(reb[[4]]$acl_matrix[1:4, 10], 2)),
                c(reb[[1]]$rebuild_quants$SPR[1:8], reb[[4]]$rebuild_quants$SPR[9]),
                c(reb[[1]]$rebuild_quants$Ttarget[1:8], reb[[4]]$rebuild_quants$Ttarget[9]),
                rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
