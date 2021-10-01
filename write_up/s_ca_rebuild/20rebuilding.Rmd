@@ -29,7 +29,7 @@ The estimated parameters of the stock recruitment relationship (unexploited equi
 
 The biological parameters used for the rebuilding projections were based on the values from the Stock Synthesis assessment model. Biological parameters in the assessment were sex-specific and constant across time.  
 
-The selectivity used in the rebuilding analysis were obtained from 2021 assessment. Selectivity in the assesment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in this rebuilding analysis was informed using the relative fishing mortality averaged over recent years (2015-2019).
+The selectivity used in the rebuilding analysis were obtained from 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in this rebuilding analysis was informed using the relative fishing mortality averaged over recent years (2015-2019).
 
 ## Inclusion of uncertainty
 
