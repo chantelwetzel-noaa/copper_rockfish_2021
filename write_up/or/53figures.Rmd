@@ -13,6 +13,16 @@ caption = "Catches by fleet used in the base model",
 label = 'catch')
 ```	
 
+<!-- ====================================================================== -->  
+<!-- ******************           Map             ************************* --> 
+<!-- ====================================================================== -->  
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(general_wd, "map.png"), 
+caption = "Map of management area and assessments areas for copper rockfish with the assessment area for Oregon shown in purple",
+label = 'map')
+```
 
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
@@ -40,7 +50,7 @@ label = 'com-len-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_OR_Commercial.png"), 
-caption = "Mean length for commercial fleet with 95 percent confidence intervals",
+caption = "Mean length for the commercial fleet with 95 percent confidence intervals",
 label = 'mean-com-len-data')
 ```
 
@@ -58,7 +68,7 @@ label = 'rec-len-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_OR_Recreational.png"), 
-caption = "Mean length for recreational fleet with 95 percent confidence intervals",
+caption = "Mean length for the recreational fleet with 95 percent confidence intervals",
 label = 'mean-rec-len-data')
 ```
 
@@ -102,28 +112,28 @@ label = 'selex')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
-caption = "Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+caption = "Pearson residuals for the commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'com-pearson')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_OR_Commercial.png"), 
-caption = "Mean length for commercial lengths with 95 percent confidence intervals based on current samples sizes",
+caption = "Mean length for the commercial lengths with 95 percent confidence intervals based on current samples sizes",
 label = 'com-mean-len-fit')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page2.png"), 
-caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+caption = "Pearson residuals for the recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'rec-pearson')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_OR_Recreational.png"), 
-caption = "Mean length for recreational lengths with 95 percent confidence intervals based on current samples sizes",
+caption = "Mean length for the recreational lengths with 95 percent confidence intervals based on current samples sizes",
 label = 'rec-mean-len-fit')
 ```
 
@@ -380,7 +390,7 @@ label = '1-spr')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
-caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year",
 label = 'phase')
 ```
 

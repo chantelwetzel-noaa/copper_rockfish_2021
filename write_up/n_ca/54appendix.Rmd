@@ -2,11 +2,51 @@
 
 # Appendix
 
+
+## Detailed Fit to Length Composition Data{#append-fit} 
+
+
+```{r, results='asis'}
+plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
+len_fit = plot_info[which(plot_info$category == "LenComp"), ]
+plot.vec = grep("comp_lenfit_flt", len_fit$label)
+filein = file.path(mod_loc, "plots")
+for (a in plot.vec){
+	cap = len_fit$caption[a]
+	lab = len_fit$label[a]
+	add_figure(filein = file.path(filein, len_fit$file[a]), 
+			   caption = cap, 
+			   label = lab)
+}
+```
+
+\newpage
+
+## Implied Fit to Commercial 'Ghost' Fleet Length Data 
+
+The 'ghost' fleet data consist of commercial length samples collected prior to 1999 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
+
+
+```{r, results='asis'}
+plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
+len_fit = plot_info[which(plot_info$category == "LenComp"), ]
+plot.vec = grep("comp_gstlenfit_flt1mkt0", len_fit$label)
+filein = file.path(mod_loc, "plots")
+for (a in plot.vec){
+	cap = len_fit$caption[a]
+	lab = len_fit$label[a]
+	add_figure(filein = file.path(filein, len_fit$file[a]), 
+			   caption = cap, 
+			   label = lab)
+}
+```
+
+
 ## Allocation of Yield Among Federal Management Areas
 
-The 2021 northern California base model for `r spp` represents U.S. waters between 34$^\circ$ 27' N. lat. and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes `r spp`, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yeild estimates from the California base model must be divided between the norther and southern management areas in order to determine the contribution of `r spp` to the nearshore rockfish overfishing limit (OFL). 
+The 2021 northern California base model for `r spp` represents U.S. waters between 34$^\circ$ 27' N. lat. and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes `r spp`, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yield estimates from the California base model must be divided between the norther and southern management areas in order to determine the contribution of `r spp` to the nearshore rockfish overfishing limit (OFL). 
 
-Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Unfortunately neither of these estimates were available for `r spp` to inform allocations by area.  In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 3.9 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this the recommend allocations of the OFLs from the northern California model 3.9 percent should be allocated to the north nearshore rockfish complex with 96.1 percent to the southern complex.    
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Unfortunately neither of these estimates were available for `r spp` to inform allocations by area.  In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 3.9 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this the recommend allocations of the OFLs from the northern California model 3.9 percent should be allocated to the north nearshore rockfish complex with 96.1 percent to the southern complex.      
 
 ## Summary of California Management Measures{#ca-man}
 
@@ -86,46 +126,6 @@ label = 'rov-percent-mpa')
 plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
 len_fit = plot_info[which(plot_info$category == "CompDat"), ]
 plot.vec = grep("comp_lendat_flt", len_fit$label)
-filein = file.path(mod_loc, "plots")
-for (a in plot.vec){
-	cap = len_fit$caption[a]
-	lab = len_fit$label[a]
-	add_figure(filein = file.path(filein, len_fit$file[a]), 
-			   caption = cap, 
-			   label = lab)
-}
-```
-
-\newpage
-
-## Detailed Fit to Length Composition Data{#append-fit} 
-
-
-```{r, results='asis'}
-plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
-len_fit = plot_info[which(plot_info$category == "LenComp"), ]
-plot.vec = grep("comp_lenfit_flt", len_fit$label)
-filein = file.path(mod_loc, "plots")
-for (a in plot.vec){
-	cap = len_fit$caption[a]
-	lab = len_fit$label[a]
-	add_figure(filein = file.path(filein, len_fit$file[a]), 
-			   caption = cap, 
-			   label = lab)
-}
-```
-
-\newpage
-
-## Implied Fit to Commercial 'Ghost' Fleet Length Data 
-
-The 'ghost' fleet data consist of commercial length samples collected prior to 1999 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
-
-
-```{r, results='asis'}
-plot_info = read.csv(file.path(mod_loc, "plots", "plotinfotable_for_doc.csv"))
-len_fit = plot_info[which(plot_info$category == "LenComp"), ]
-plot.vec = grep("comp_gstlenfit_flt1mkt0", len_fit$label)
 filein = file.path(mod_loc, "plots")
 for (a in plot.vec){
 	cap = len_fit$caption[a]

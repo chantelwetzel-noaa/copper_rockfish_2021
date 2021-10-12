@@ -31,7 +31,7 @@ out = cbind(man, round(man$ACL * 0.49, 2), total.catch)
 col_names = c("Year", "Complex OFL", "Complex ACL", "OFL - copper", "ACL - copper", "OR ACL - copper", "OR Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for the north nearshore complex, the species specific OFL and ACL contribution for copper rockfish, the copper rockfish ACL allocated to Oregon, and the total removals.",
+             caption = "The OFL (mt) and ACL (mt) for the north nearshore complex, the species specific OFL and ACL contribution for copper rockfish, the copper rockfish ACL allocated to Oregon, and the total removals (mt).",
              label = "ofl",
              align = 'l',
              col_names = col_names)
@@ -86,7 +86,7 @@ col_names = c('Method',
         'Commercial Lengths',
               'Recreational Lengths')
 table_format(x = tab,
-             caption = "Data weights applied by each alternative data weighting methods.",
+             caption = "Data weights applied by each alternative data weighting method.",
              label = "dw",
              align = 'l',
              col_names = col_names)

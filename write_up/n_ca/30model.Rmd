@@ -1,3 +1,5 @@
+\clearpage
+
 # Assessment Model
 
 ## Summary of Previous Assessments 
@@ -19,7 +21,7 @@ read_child(filein)
 
 ## Model Structure and Assumptions
 
-`r Spp` north of Point Conception off the coast of California are assessed using a two-sex model with sex-specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for both the commercial and recreational fleets. The commercial selectivity applied two time blocks for selectivity: `r startyr` - 2008 and 2009 - `r endyr`. The commercial selectivity block from `r startyr` - 2008  was fixed to be asymptotic, while the selectivity block from  2009 - `r endyr`was allowed to be dome-shaped.   The recreational fleet selectivity was constant across the model years, `r startyr` - `r endyr`, and fixed to be asymptotic, although dome-shape selectivity was explored during model development. Annual recruitment deviations were estimated for all years. 
+`r Spp` north of Point Conception off the coast of California are assessed using a two-sex model with sex-specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for both the commercial and recreational fleets. The commercial selectivity applied two time blocks for selectivity: `r startyr` - 2008 and 2009 - `r endyr`. The commercial selectivity block from `r startyr` - 2008  was fixed to be asymptotic, while the selectivity block from  2009 - `r endyr` was allowed to be dome-shaped.   The recreational fleet selectivity was constant across the model years, `r startyr` - `r endyr`, and fixed to be asymptotic, although dome-shaped selectivity was explored during model development. Annual recruitment deviations were estimated for all years. 
 
 ### Modeling Platform and Structure
 
@@ -38,7 +40,7 @@ read_child(filein)
 
 Length composition data for the commercial fishery started with a sample size determined from the equation listed in Sections \ref{commercial-fishery}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
 
-The base  model weighted length data for each fleet using the "Francis method" which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and its associated  standard error, and determines if, across years,  the model is able to adequately match the data. If the model predictions do not adequately match the mean lengths given the associated standard errors, then that data source should be down-weighted (equivalently, the standard errors are increased).  This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting and model results using McAllister-Ianelli Harmonic Mean Weighting [@mcallister_bayesian_1997] and the Dirichlet-Multinomial Weighting [@thorson_model-based_2017].
+The base  model weighted length data for each fleet using the "Francis method" which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and its associated  standard error, and determines if, across years,  the model is able to adequately match the data. If the model predictions do not adequately match the mean lengths given the associated standard errors, then that data source should be down-weighted (equivalently, the standard errors are increased).  This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in results due to weighting using McAllister-Ianelli Harmonic Mean Weighting [@mcallister_bayesian_1997] and the Dirichlet-Multinomial Weighting [@thorson_model-based_2017].
 
 ### Estimated and Fixed Parameters
 
@@ -53,4 +55,4 @@ For the commercial fleet in order to fit a shift in observed lengths, two blocks
 
 ## Model Selection and Evaluation
 
-The base assessment model for `r spp` was developed to balance parsimony and realism, with the goal of estimating a spawning output trajectory for the population of `r spp` off the California coast north of Point Conception. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were developed to achieve the final base model.
+The base assessment model for `r spp` was developed to balance parsimony and realism, with the goal of estimating a spawning output trajectory for the population of `r spp` off the California coast north of Point Conception. The model contains many assumptions to achieve parsimony and uses many sources of data to estimate reality. A series of investigative model runs was developed to achieve the final base model.

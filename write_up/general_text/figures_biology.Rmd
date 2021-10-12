@@ -18,7 +18,7 @@ label = 'len-weight')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "doc_north_Age_by_Sex_Source.png"), 
-caption = "Observed sex specific length-at-age by data source with the estimate length-at-age curve",
+caption = "Observed sex-specific length-at-age by data source with the estimate length-at-age curve",
 label = 'len-age-data')
 ```	
 
@@ -26,7 +26,7 @@ label = 'len-age-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
-caption = "Length at age in the beginning of the year in the ending year of the model",
+caption = "Length at age in the start of the year in the ending year of the model",
 label = 'len-age-ss')
 ```
 
@@ -53,13 +53,13 @@ label = 'fecundity')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_fraction_female.png"), 
-caption = "Fraction female by length across all available data sources",
+caption = "Fraction female by length across all available data sources where the size of red circles are based on the number of observations by length where larger circles indicate more observations",
 label = 'len-sex-ratio')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Age_fraction_female.png"), 
-caption = "Fraction female by age across all available data sources",
+caption = "Fraction female by age across all available data sources where the size of red circles are based on the number of observations by age where larger circles indicate more observations",
 label = 'age-sex-ratio')
 ```

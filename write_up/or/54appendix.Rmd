@@ -25,7 +25,7 @@ for (a in plot.vec){
 
 ## Implied Fit to Commercial 'Ghost' Fleet Length Data{#append-com}
 
-The 'ghost' fleet data consist of commercial length samples collected 1999-2002 which were not used in the base model due issues estimating selectivity.  These years have increased observations of small fish likely due to a strong late 1990s recruitment that caused selectivity to shift leftward, estimating a relatively low peak selectivity when recruitment was assumed to be deterministic. The data from 2017 was also removed due to lower sample sizes and a large proportion of small fish observed in the length composition data. 
+The 'ghost' fleet data consist of commercial length samples collected during 1999-2002 which were not used in the base model due issues estimating selectivity.  These years have increased observations of small fish likely due to a strong late 1990s recruitment that caused selectivity to shift leftward, estimating a relatively low peak selectivity when recruitment was assumed to be deterministic. The data from 2017 were also removed due to lower sample sizes and a large proportion of small fish observed in the length composition data. 
 
 ```{r, results = 'asis'}
 add_figure(
@@ -51,7 +51,7 @@ for (a in plot.vec){
 
 ## Implied Fit to Recreational 'Ghost' Fleet Length Data{#append-rec} 
 
-The 'ghost' fleet data consist of recreational length samples collected prior to 2000 which were not used in the base model due to low sample sizes which resulted in noisy length distributions that were not considered consistent with the recreational fleet selectivity.  Length composition data included in the 'ghost' fleet collected from 2005 and after reflect special collection samples of released fish from the recreational fleet.
+The 'ghost' fleet data consist of recreational length samples collected prior to 2000 which were not used in the base model due to low sample sizes, which resulted in noisy length distributions that were not considered consistent with the recreational fleet selectivity.  Length composition data included in the 'ghost' fleet collected from 2005 and after reflect special collection samples of released fish from the recreational fleet.
 
 ```{r, results = 'asis'}
 add_figure(
@@ -79,9 +79,9 @@ for (a in plot.vec){
 
 ### General Survey Information
 
-One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey.  This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for `r spp`.
+One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey.  This data source has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of it and the available data for `r spp`.
 
-The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011.  Data from the hook and line survey from 2011 - 2019 are presented in this summary.  Surveys in 2011 and 2012 only visited a single site, Redfish Rocks.  Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head.  Each of these four sites has a marine reserve and one to three comparison areas.  Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure.  Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to execute surveys.  Sites and areas sampled that are included in this dataset are below.  
+The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011.  Data from the hook and line survey from 2011 - 2019 are presented in this summary.  Surveys in 2011 and 2012 only visited a single site, Redfish Rocks.  Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head.  Each of these four sites has a marine reserve and one to three comparison areas.  Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure.  Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to conduct surveys.  Sites and areas sampled that are included in this dataset are below.  
 
 
 ```{r, results = 'asis'}
@@ -100,8 +100,7 @@ table_format(x = data,
 
 A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
 
-
-A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
+A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are conducted in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
 
 ### Copper Rockfish Summary   
 
@@ -129,7 +128,7 @@ label = 'pos-hkl')
 
 Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of some species (e.g., cabezon) due to the recent implementation of the reserves.  It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast.  However, this may not be possible with the sample size available at some sites.
 
-Observations of `r spp` were varied across sample sites and years.  The number of observations of `r spp` was highest at Cape Perpetua (N = 50), followed by Cascade Head (N = 46) and Redfish Rocks (N = 35) respectively.  
+Observations of `r spp` varied across sample sites and years.  The number of observations of `r spp` was highest at Cape Perpetua (N = 50), followed by Cascade Head (N = 46) and Redfish Rocks (N = 35) respectively.  
 
 ```{r, results = 'asis'}
 data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or_appendix/table_3_data.csv")
@@ -190,4 +189,4 @@ label = 'fig-5')
 
 While the CPUE was not used in the base model, comparisons between the trend in Figure \ref{fig:fig-5} and the estimated stock trend in base model can be made. Examining all years the trend in the CPUE in Figure \ref{fig:fig-5} is generally increasing, but noisy, across the survey years. In contrast, the total biomass and spawning biomass trajectories from the base model are slowly declining between 2011 - 2020. However, the base model assumed a deterministic population (no recruitment deviations) which could prevent capturing recruitment driven dynamics which could result in an increasing stock trend independent of catches. 
 
-After the first two years in the CPUE series, 2013 - 2019, generally flat in trend with high uncertainty intervals. These years still do not match the trend in the base model; however, the CPUE have be capturing localized trends. This may provide a slightly different view of the population compared to the base model that assumed the equal fishing pressure across the assessed area.
+After the first two years in the CPUE series, 2013 - 2019, generally flat in trend with high uncertainty intervals. These years still do not match the trend in the base model; however, the CPUE have be capturing local trends. This may provide a slightly different view of the population compared to the base model that assumed the equal fishing pressure across the assessed area.

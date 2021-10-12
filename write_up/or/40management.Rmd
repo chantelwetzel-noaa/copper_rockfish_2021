@@ -11,7 +11,7 @@ The estimate `r endyr+1` spawning output relative to unfished equilibrium spawni
 
 A ten year projection, 2023 - 2032, of the base model with removals equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying $\sigma = 1.0$ and $P^*$ = 0.45 is shown in Table \ref{tab:project}. The removals in 2021 and 2022 were set based on the average total mortality between 2018 - 2020 of `r round(model$derived_quants[model$derived_quants$Label == 'ForeCatch_2021','Value'], 2)` mt, based on input from the PFMC Groundfish Management Team (GMT, personal communication).  
 
-The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` ($\sigma$ = `r model$Pstar_sigma ` ) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.096 and 0.116^-y^.  
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` ($\sigma$ = `r round(model$Pstar_sigma,3) `) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to match the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.096 and 0.116 yr^-1^.  
 
 
 Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.36 - 0.70 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
@@ -27,7 +27,7 @@ read_child(filein)
 
 The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
 
-\begin{itemize}
+\begin{enumerate}
 
 	\item Continue collecting length and otolith samples from both the commercial and recreational catches. 
 
@@ -35,4 +35,6 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 	\item The recreational selectivity form (i.e., asymptotic versus dome-shaped) was a source of uncertainty in the base model. Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would be beneficial to better understand selectivity form.  
 
-\end{itemize}
+	\item The next assessment of `r spp` way consider regional survey data (see Section \ref{append-survey}). Survey data collection across areas off the Oregon coast and research on how best these data can be incorporated into future assessments should continue and would benefit the understanding of local `r spp` dynamics off the Oregon coast. 
+
+\end{enumerate}

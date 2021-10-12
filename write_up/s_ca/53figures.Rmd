@@ -14,6 +14,17 @@ caption = "Catches by fleet used in the base model",
 label = 'catch')
 ```
 
+<!-- ====================================================================== -->  
+<!-- ******************           Map             ************************* --> 
+<!-- ====================================================================== -->  
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(general_wd, "map.png"), 
+caption = "Map of management area and assessments areas for copper rockfish with the assessment area south of Point Conception shown in red",
+label = 'map')
+```
+
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
 <!-- ====================================================================== --> 
@@ -78,7 +89,7 @@ label = 'hkl-sites')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_loc, "survey", "plots",  "HKL_Site_Observations.png"), 
-caption = "NWFSC Hook and Line survey sample sites inside and outside the CCA and site with observations of copper rockfish",
+caption = "NWFSC Hook and Line survey sample sites inside and outside the CCA and sites with observations of copper rockfish",
 label = 'hkl-site-ob')
 ```
 
@@ -192,14 +203,14 @@ label = 'fecundity')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_fraction_female.png"), 
-caption = "Fraction female by length across all available data sources",
+caption = "Fraction female by length across all available data sources where the size of red circles are based on the number of observations by length where larger circles indicate more observations",
 label = 'len-sex-ratio')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Age_fraction_female.png"), 
-caption = "Fraction female by age across all available data sources",
+caption = "Fraction female by age across all available data sources where the size of red circles are based on the number of observations by age where larger circles indicate more observations",
 label = 'age-sex-ratio')
 ```
 
@@ -260,6 +271,12 @@ label = 'selex')
 <!-- *********************    Recruitment            ********************** --> 
 <!-- ====================================================================== -->
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SR_curve.png"), 
+caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
+label = 'bh-curve')
+```
 
 ```{r, results = 'asis'}
 add_figure(
@@ -268,12 +285,6 @@ caption = "The estimated recruitment deviations as additional years of data are 
 label = 'squid-rec')
 ```
 
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SR_curve.png"), 
-caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
-label = 'bh-curve')
-```
 
 ```{r, results = 'asis'}
 add_figure(
@@ -538,7 +549,7 @@ label = '1-spr')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
-caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year",
 label = 'phase')
 ```
 

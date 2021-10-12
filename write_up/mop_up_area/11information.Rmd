@@ -1,7 +1,6 @@
 
 # Status determination across area-based assessments
 
-
 ## Dispersal
 
 ### Recruitment and Dispersal

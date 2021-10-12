@@ -46,10 +46,3 @@ if(file.exists("_main.Rmd")){
 # Put the pdf in the folder where compiled
 bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
 
-
-# Put the pdf in a seperate folder called "_book"
-bookdown::render_book("00a.Rmd", clean = FALSE)
-
-
-# Use to only render a specific section which can be quicker
-bookdown::preview_chapter("01executive.Rmd", preview = TRUE, clean = FALSE)

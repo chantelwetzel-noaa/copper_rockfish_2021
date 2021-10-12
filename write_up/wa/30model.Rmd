@@ -1,3 +1,5 @@
+\clearpage
+
 # Assessment Model
 
 ## Summary of Previous Assessments 
@@ -19,7 +21,7 @@ read_child(filein)
 
 ## Model Structure and Assumptions
 
-The assessment of `r spp` in Washington waters was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals beginning in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated. The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet specific selectivity curve. The commercial and recreational fleets were kept separate in the model despite the limited commercial removals and composition data for two reasons: 1) clarity and 2) the recreational fleet removals were specified in terms of numbers while the commercial removals were in biomass. Recruitment was specified to be deterministic due to limited composition data. 
+The assessment of `r spp` in Washington waters was assessed using a two-sex model with sex specific life history parameters.  The model assumed two fleets: 1) recreational and 2) commercial fleets with recreational removals starting in `r startyr`. Selectivity was specified using the double normal parameterization within Stock Synthesis for the recreational fleet where selectivity was fixed to be asymptotic with the ascending slope and size of maximum selectivity parameters estimated. The commercial fleet selectivity was assumed to be the same as the recreational fleet due to a lack of length data to estimate a fleet-specific selectivity curve. The commercial and recreational fleets were kept separate in the model despite the limited commercial removals and composition data for two reasons: 1) clarity and 2) the recreational fleet removals were specified in terms of numbers while the commercial removals were in biomass. Recruitment was specified to be deterministic due to limited composition data. 
 
 ### Modeling Platform and Structure
 
@@ -43,11 +45,11 @@ Length compositions from the recreational fleet were the only composition data f
 
 There were 3 estimated parameters in the base model. These included one parameter for $R_0$ and 2 parameters for recreational selectivity (Table \ref{tab:params}). Selectivity in the recreational fleet was fixed asymptotic with only the peak the and the ascending slope estimated.  Dome-shaped selectivity was explored for the recreational fleet. Older and larger `r spp` may be found deeper waters and may move into areas that limit their availability to fishing gear. However, limited support for dome-shaped selectivity for the recreational fleet was found and the selectivity was fixed to be asymptotic.  The commercial selectivity was set equal to the recreational selectivity due to a lack of composition data to support fleet specific estimation. 
 
-Fixed parameters in the model were as follows. Steepness was fixed at `r print(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, the mean of the prior. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, the median of the prior. The standard deviation of recruitment deviates was fixed at 0 and recruitment was assumed deterministic. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations described above in Section \ref{length-weight-relationship}. The length-at-age was fixed at sex-specific externally estimated values described above in Section \ref{growth-length-at-age}.
+Fixed parameters in the model were as follows. Steepness was fixed at `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, the mean of the prior. Natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)` yr^-1^ for females and males, the median of the prior. The standard deviation of recruitment deviates was fixed at 0 and recruitment was assumed deterministic. Maturity-at-length was fixed as described above in Section \ref{maturation-and-fecundity}. Length-weight parameters were fixed at estimates using all length-weight observations described above in Section \ref{length-weight-relationship}. The length-at-age was fixed at sex-specific externally estimated values described above in Section \ref{growth-length-at-age}.
 
 
 ## Model Selection and Evaluation
 
-The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. A series of investigative model runs were done to achieve the final base model.
+The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the Washington coast. Several investigative model runs were done to achieve the final base model.
 
 

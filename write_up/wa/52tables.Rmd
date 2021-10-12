@@ -54,7 +54,7 @@ out = cbind(man, round(man$ACL * 0.26, 2), total.catch)
 col_names = c("Year", "Complex OFL", "Complex ACL", "OFL - copper", "ACL - copper", "WA ACL", "WA Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for north nearshore, the ACL allocated to Washington, and the total removals.",
+             caption = "The OFL (mt) and ACL (mt) for north nearshore complex, the ACL allocated to Washington, and the total removals (mt).",
              label = "ofl",
              align = 'l',
              col_names = col_names)
@@ -181,7 +181,7 @@ tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
 col_names = c('Method',
               'Recreational Lengths')
 table_format(x = tab,
-             caption = "Data weights applied by each alternative data weighting methods.",
+             caption = "Data weights applied by each alternative data weighting method.",
              label = "dw",
              align = 'l',
              col_names = col_names)

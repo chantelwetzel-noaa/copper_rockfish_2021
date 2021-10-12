@@ -755,3 +755,27 @@ SSplotComparisons(mysummary,
 				  ylimAdj = 1.25,
 				  plotdir = file.path(wd, "_sensitivities","_plots"),
 				  pdf = TRUE)
+
+########################################################################################
+# Growth
+########################################################################################
+
+model = "10.3_base"
+base = SS_output(file.path(wd, model))
+
+model = "10.3_base_council_growth_north_dw"
+growth_raw = SS_output(file.path(wd, "_sensitivities", model))
+
+model = "10.3_base_council_growth_north_dw_rm_data_sigmaR_dw"
+growth_model = SS_output(file.path(wd, "_sensitivities", model))
+
+modelnames <- c("Adopted Base Model", 
+                "New External Growth Estimate", 
+                "Revised New External Growth Model")
+mysummary  <- SSsummarize(list(base, growth_raw, growth_model))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "10.3_growth_",
+                  legendlabels = modelnames, 
+                  ylimAdj = 1.25,
+                  plotdir = file.path(wd, "_sensitivities","_plots"),
+                  pdf = TRUE)

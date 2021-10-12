@@ -8,7 +8,16 @@
 
 ![Catches by year for the recreational and commercial fleets in the model.\label{fig:catch}](figs/catches_wa.png){width=100% height=100% alt="Catches by year for the recreational and commercial fleets in the model"}
 
+<!-- ====================================================================== -->  
+<!-- ******************           Map             ************************* --> 
+<!-- ====================================================================== -->  
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(general_wd, "map.png"), 
+caption = "Map of management area and assessments areas for copper rockfish with the assessment area for Washington shown in blue",
+label = 'map')
+```
 
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
@@ -49,7 +58,7 @@ label = 'wa-len-agg')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_WA_Recreational.png"), 
-caption = "Mean length for recreational fleet with 95 percent confidence intervals",
+caption = "Mean length for the recreational fleet with 95 percent confidence intervals",
 label = 'mean-len-data')
 ```
 
@@ -85,7 +94,7 @@ label = 'selex')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
-caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+caption = "Pearson residuals for the recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'rec-pearson')
 ```
 
@@ -218,7 +227,7 @@ label = "sss-prior-67")
 ```{r, echo=FALSE, results='asis'}
 add_figure(
 filein = file.path(sss_loc, "7.7_base_depl_67_quants.png"), 
-caption = "Derived quantities from SSS run where fraction unfished was assumed to be 60 percent",
+caption = "Derived quantities from the SSS run where fraction unfished was assumed to be 60 percent",
 label = "sss-quant-67")
 ```
 
@@ -237,7 +246,7 @@ label = "sss-prior-44")
 ```{r, echo=FALSE, results='asis'}
 add_figure(
 filein = file.path(sss_loc, "7.7_base_depl_44_quants.png"), 
-caption = "Derived quantities from SSS run where fraction unfished was assumed to be 40 percent",
+caption = "Derived quantities from the SSS run where fraction unfished was assumed to be 40 percent",
 label = "sss-quant-44")
 ```
 
@@ -281,7 +290,7 @@ label = '1-spr')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
-caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio",
+caption = "Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year",
 label = 'phase')
 ```
 

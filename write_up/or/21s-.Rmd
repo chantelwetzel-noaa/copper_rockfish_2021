@@ -2,6 +2,6 @@
 
 There were no fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) available for `r spp` off the Oregon coast to be considered for this assessment. 
 
-### Data Sources Examined but Not Used
+### Data Sources Examined But Not Used
 
-The ODFW Marine Reserve hook and line survey was examined.  This survey has not been formally incorporated in a West Coast groundfish stock assessment to date but may be considered in the future for full assessments, free of the data-moderate data restrictions, for select rockfish species (e.g., black rockfish) caught in Oregon waters. The data for `r spp` from this survey was limited and was not used in this assessment; however a detailed data exploration is provided in the Appendix, Section \ref{append-survey} .
+The ODFW Marine Reserve hook and line survey was examined.  This survey has not been formally incorporated in a West Coast groundfish stock assessment to date but may be considered in the future for full assessments, free of the data-moderate data restrictions, for select rockfish species (e.g., black rockfish) caught in Oregon waters. The data for `r spp` from this survey were limited and were not used in this assessment; however a detailed data exploration is provided in the Appendix, Section \ref{append-survey} .

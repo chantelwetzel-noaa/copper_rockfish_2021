@@ -1,18 +1,20 @@
+\clearpage
+
 # Management 
 
 ## Reference Points
 
 Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). The estimated sustainable total yields are estimated to be `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of unfished ($\text{SB}_{40\%}$) was estimated to be `r round(model$derived_quants[model$derived_quants$Label == 'SSB_Btgt', 'Value'], 2)` million eggs. 
 
-The spawning output relative to unfished equilibrium in `r endyr+1` is estimated to be above the management target of 40 percent of unfished spawning output (`r 100*round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)` percent, Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has been above and below the harvest rate limit ($\text{SPR}_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The base model estimates that the stock has not fallen below the biomass target and fishing intensity has not exceeded the target (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+The spawning output relative to unfished equilibrium in `r endyr+1` is estimated to be above the management target of 40 percent of unfished spawning output (`r 100*round(model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value'], 2)` percent, Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, has been above and below the harvest rate limit ($\text{SPR}_{50\%}$) in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). The base model estimates that the stock has not fallen below the biomass target and fishing intensity in `r endyr` is below the target (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for `r spp` N. 40$^\circ$ 10' Lat. N. allocated to Washington state (26 percent, PFMC Groundfish Management Team, personal communication). 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying $\sigma$ and $P^*$ = 0.45 for years 2023-2032 with all removals allocated to the recreational fleet (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for `r spp` N. 40$^\circ$ 10' Lat. N. allocated to Washington state (26 percent, PFMC Groundfish Management Team, personal communication). 
 
-The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` via the log($R0$) parameter. The within model uncertainty estimated from the model was low (`r model$Pstar_sigma `) which resulted in little variation in the low and high state of nature relative to the base model if used.  Meanwhile, the default category 2 $\sigma$ of 1.0 resulted in a very large range across the states of nature. As an alternative approach to determine a low and high state of nature from the base model the model uncertanties across the three other area based `r spp` assessments were averaged to arise at a a $\sigma$ = 0.35. of This $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across log($R0$) values were done to attain the current year spawning biomass values. The log($R0$) values that corresponded with the lower and upper percentiles were 1.89 and 2.12.  
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in `r endyr+1` via the log($R_0$) parameter. The within model uncertainty estimated from the model was low (`r round(model$Pstar_sigma,3) `) which resulted in little variation in the low and high state of nature relative to the base model if used.  Meanwhile, the default category 2 $\sigma$ of 1.0 resulted in a very large range across the states of nature. As an alternative approach to determine a low and high state of nature from the base model the model uncertanties across the three other area based `r spp` assessments were averaged to arise at a a $\sigma$ = 0.35. of This $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, `r endyr+1`, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the `r endyr + 1` spawning biomass for the low and high states of nature were identified a search across log($R_0$) values were done to attain the current year spawning biomass values. The log($R_0$) values that corresponded with the lower and upper percentiles were 1.89 and 2.21.  
 
-Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.37 - 0.58 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
+Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.36 - 0.58 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished under the low state of nature declines below that management target by the end of the projection period. 
 
 ## Evaluation of Scientific Uncertainty
 
@@ -25,12 +27,12 @@ read_child(filein)
 
 The ability to estimate additional process and biological parameters for `r spp` was limited by data. Collecting the following data would be beneficial to future assessments of the stock:
 
-\begin{itemize}
+\begin{enumerate}
 
 	\item Continue collecting length and otolith samples from recreational catches with an emphasis on increasing annual samples collected.
 
-	\item Collect length data for the commercial fleet if catches occur.
+	\item Collect length and age data for the commercial fleet if catches occur.
 
-	\item Evaluate the connectivity of `r spp` stocks off the coast of Oregon and Washington. 
+	\item The sub-stocks of `r spp` off the coast of Washington and Oregon were assessed separately here. However, research on the connectivity of `r spp` stocks off the coast of Oregon and Washington would be beneficial to inform future assessment area decisions. 
 
-\end{itemize}
+\end{enumerate}

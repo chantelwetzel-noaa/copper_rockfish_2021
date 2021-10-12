@@ -1,12 +1,17 @@
 ---
 geometry: margin=1in
-month: "August"
+month: "October"
 year: "2021"
 preamble: |
-output: sa4ss::techreport_pdf
+csl: sa4ss.csl
+output: 
+  sa4ss::techreport_pdf:
+    default
+  bookdown::pdf_document2:
+    keep_tex: true
 bibliography: sa4ss.bib
 lang: en
-pagesize: letter
+papersize: a4
 ---
 
 
@@ -73,9 +78,11 @@ title: The status of copper rockfish (_Sebastes caurinus_) in U.S. waters off th
 
 \vspace{500cm}
 
+<!--
 # Disclaimer{-}
 
 _**These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited or reproduced. They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.**_
+-->
 
 \pagebreak
 
@@ -108,37 +115,39 @@ This assessment reports the status of copper rockfish (*Sebastes caurinus*) off 
  
 Copper rockfish is a medium- to large-sized nearshore rockfish found from Mexico to Alaska.  The core range is comparatively large, from northern Baja Mexico to the Gulf of Alaska, as well as in Puget Sound.   Copper rockfish have historically been a part of both commercial and recreational fisheries throughout its range. 
 
-Copper rockfish are commonly found in waters less than 130 meters in depth in nearshore kelp forests and rocky habitat [@love_milton_probably_1996]. The diets of copper rockfish consist primarily of crustaceans, mollusks, and fish [@lea_biological_1999; @bizzarro_diet_2017-1]. The body coloring of copper rockfish varies across the coast with northern fish often exhibiting dark brown to olive  with southern fish exhibiting yellow to olive-pink variations in color [@miller_guide_1972] which initially led to them being designated as two separate species (*S. caurinus* and *S. vexillaris*). 
+Copper rockfish are commonly found in waters less than 130 meters in depth in nearshore kelp forests and rocky habitat [@love_milton_probably_1996]. The diets of copper rockfish consist primarily of crustaceans, mollusks, and fish [@lea_biological_1999; @bizzarro_diet_2017-1]. The body coloring of copper rockfish varies across the West Coast with northern fish often exhibiting dark brown to olive  with southern fish exhibiting yellow to olive-pink variations in color [@miller_guide_1972], which initially led to them being designated as two separate species (*S. caurinus* and *S. vexillaris*). 
 
-Numerous genetic studies have been performed looking for genetic variation in copper rockfish with variable outcomes. Genetic work has revealed significant differences between Puget Sound and coastal stocks [@dick_replicate_2014]. Stocks along the West Coast have not been determined to be genetically distinct populations but significant population subdivision has been detected, indicating limited oceanographic exchange among geographically proximate locations [@buonaccorsi_population_2002; @johansson_influence_2008]. A specific study examining copper rockfish populations off the coast of Santa Barbara and Monterey California identified a genetic break between the north and south with moderate differentiation [@sivasundar_life_2010]. 
+Numerous genetic studies have been performed looking for genetic variation in copper rockfish, with variable outcomes. Genetic work has revealed significant differences between Puget Sound and coastal stocks [@dick_replicate_2014]. Stocks along the West Coast have not been determined to be genetically distinct populations, but significant population subdivision has been detected, indicating limited oceanographic exchange among geographically proximate locations [@buonaccorsi_population_2002; @johansson_influence_2008]. A specific study examining copper rockfish populations off the coast of Santa Barbara and Monterey California identified a genetic break between the north and south, with moderate differentiation [@sivasundar_life_2010]. 
 
-Copper rockfish are a relatively long-lived rockfish estimated to live at least 50 years [@love_milton_probably_1996]. Copper rockfish was determined to have the highest vulnerability (V = 2.27) of any West Coast groundfish stock evaluated in a productivity susceptibility analysis [@cope_approach_2011]. This analysis calculated species-specific vulnerability scores based on two dimensions: productivity characterized by the life history and susceptibility that characterized how the stock could be impacted by fisheries and other activities. 
+Copper rockfish are a relatively long-lived rockfish, estimated to live at least 50 years [@love_milton_probably_1996]. Copper rockfish was determined to have the highest vulnerability (V = 2.27) of any West Coast groundfish stock evaluated in a productivity susceptibility analysis [@cope_approach_2011]. This analysis calculated species-specific vulnerability scores based on two dimensions: productivity characterized by the life history and susceptibility that characterized how the stock could be impacted by fisheries and other activities. 
 
 ## Historical and Current Fishery Information
 
 Off the coast of California, north of Point Conception, copper rockfish is caught in both commercial and recreational fisheries. Recreational removals have been the largest source of fishing mortality, comprising nearly 85 percent of total removals of copper rockfish across all years (Table \ref{tab:allcatches} and Figure \ref{fig:catch}).  The landings from the commercial fishery have been minimal by year, expect for a brief period between the mid-1980s and early-2000s. 
 
 
-The recreational fishery in the early part of the 20th century were focused on nearshore waters near ports, with activity expanded activity further from port and into deeper depths over time [@miller_spatially_2014]. Prior to the groundfish fishery being declared a federal disaster 2000, and the subsequent rebuilding period, there were no time or area closures for groundfish. Access to deeper depths during this period spread effort over a larger area and filled bag limits with a greater diversity of species from both the shelf and nearshore. This resulted in lower catch of nearshore rockfish relative to the period after 2000 when 20 to 60 fm depth restrictions ranging from 20 fm in the Northern Management Area to 60 fm in the Southern Management Area were put in place in various management area delineations along the state (see Appendix Section \ref{ca-man}). This shifting effort onto the nearshore, concomitantly increased catch rates for nearshore rockfish including copper rockfish in the remaining open depths, though season lengths were greatly curtailed.   
+The recreational fishery in the early part of the 20th century was focused on nearshore waters near ports, with expanded activity further from port and into deeper depths over time [@miller_spatially_2014]. Prior to the groundfish fishery being declared a federal disaster in 2000, and the subsequent rebuilding period, there were no time or area closures for groundfish. Access to deeper depths during this period spread effort over a larger area and filled bag limits with a greater diversity of species from both the shelf and nearshore. This resulted in lower catch of nearshore rockfish relative to the period after 2000 when 20 to 60 fm depth restrictions ranging from 20 fm in the Northern Management Area to 60 fm in the Southern Management Area were put in place in various management area delineations along the state (see Appendix Section \ref{ca-man}). This shifting effort onto the nearshore, concomitantly increased catch rates for nearshore rockfish including copper rockfish in the remaining open depths, though season lengths were greatly curtailed.   
 
 Following  all previously overfished groundfish species, other than yelloweye rockfish, being declared rebuilt by 2019, deeper depth restrictions were offered in the Southern Management area allowing resumed access to shelf rockfish in less than 75 fm and are currently 100 fm as of 2021. The increased access to deeper depths south of Point Conception with the rebuilding of cowcod is expected to reduce the effort in nearshore waters where copper rockfish is most prevalent.  To the north of Point Conception where yelloweye rockfish are prevalent, depth constraints persist and effort remains focused on the nearshore in 30 to 50 fm depending on the management area.  As yelloweye rockfish continues to rebuild, incremental increases in access to deeper depths are expected, which will likely further reduce the effort in nearshore waters where copper rockfish is most prevalent.
 
 Prior to development of the live fish market in the 1980s, there was very little commercial catch of copper rockfish, with dead copper rockfish fetching a low ex-vessel price per pound. Copper rockfish were targeted along with other rockfish to some degree in the nearshore or caught as incidental catch by vessels targeting other more valuable stocks such as lingcod.  Most fish were caught using hook and line gear, though some were caught using traps, gill nets and, rarely, trawl gear. Trawling was prohibited within three miles of shore in 1953 and gill netting within three miles of shore was prohibited in 1994, preventing access to a high proportion of the species habitat with these gear types. Copper rockfish were caught along with other rockfish to some degree in the nearshore or caught as bycatch by vessels targeting other more valuable stocks such as lingcod.
 
-In the late 1980s and early 1990s a market for fish landed live arose out of Los Angeles and the Bay area, driven by demand from Asian restaurants and markets. The growth of the live fish market was driven by consumers willing to pay a higher price for live fish, ideally plate-sized (12 - 14 inches or 30.5 - 35.6 cm). Live fish landed for the restaurant market lump fish into two categories, small (1 - 3 lbs.) or large (3 - 6 lbs.), with small, plate-sized, fish fetching higher prices at market ranging between $5 -7 per fish (Bill James, personal communication). Copper rockfish is one of the many rockfish species that is included in the commercial live fish fishery. The proportion of copper rockfish being landed live vs. dead since 2000 by California commercial fleets ranges between 50 to greater than 70 percent in the southern and northern areas, respectively. 
+In the late 1980s and early 1990s a market for fish landed live arose out of Los Angeles and the Bay area, driven by demand from Asian restaurants and markets. The growth of the live fish market was driven by consumers willing to pay a higher price for live fish, ideally plate-sized (12 - 14 inches or 30.5 - 35.6 cm). Live fish landed for the restaurant market are lumped into two categories, small (1 - 3 lbs.) or large (3 - 6 lbs.), with small, plate-sized, fish fetching higher prices at market ranging between $5 -7 per fish (Bill James, personal communication). Copper rockfish is one of the many rockfish species that is included in the commercial live fish fishery. The proportion of copper rockfish being landed live vs. dead since 2000 by California commercial fleets ranges between 50 to greater than 70 percent in the southern and northern areas, respectively. 
  
-With the development and expansion of the nearshore live fish fishery during the 1980s and 1990s, new entrants in this open access fishery were drawn by premium ex-vessel price per pound for live fish resulting in over-capitalization of the fishery. Since 2002, the California Department of Fish and Wildlife (CDFW) has managed 19 nearshore species in accordance with Nearshore Fisheries Management Plan [@wilson-vandenberg_implementing_2014]. In 2003, the CDFW implemented a Nearshore Restricted Access Permit system, including requirement of a Deeper Nearshore Fishery Species Permit to retain copper rockfish, with the overall goal of reducing the number of participants to a more sustainable level, with permit issuance based on historical landings history by the retrospective qualifying date.  The result was reduction in permits issued from 1,127 in 1999 to 505 in 2003, greatly reducing catch levels. In addition, reduced trip limits, season closures in March and April and depth restrictions were implemented to address bycatch of overfished species and associated constraints from their low catch limits.   
+With the development and expansion of the nearshore live fish fishery during the 1980s and 1990s, new entrants in this open access fishery were drawn by premium ex-vessel price per pound for live fish, resulting in over-capitalization of the fishery. Since 2002, the California Department of Fish and Wildlife (CDFW) has managed 19 nearshore species in accordance with Nearshore Fisheries Management Plan [@wilson-vandenberg_implementing_2014]. In 2003, the CDFW implemented a Nearshore Restricted Access Permit system, including the requirement of a Deeper Nearshore Fishery Species Permit to retain copper rockfish, with the overall goal of reducing the number of participants to a more sustainable level, with permit issuance based on historical landings history by the retrospective qualifying date.  The result was a reduction in permits issued from 1,127 in 1999 to 505 in 2003, greatly reducing catch levels. In addition, reduced trip limits, season closures in March and April and depth restrictions were implemented to address bycatch of overfished species and associated constraints from their low catch limits.   
  
  
 
-Copper rockfish residing between Point Conception and the California/Oregon border are assessed here as a single, separate stock.  This designation was made based on oceanographic, geographic, and fishery conditions.  The copper rockfish population in California waters was split at Point Conception due to water circulation patterns that create a natural barrier between nearshore rockfish populations to the north and south. The northern border for this assessment was defined as the California/Oregon border due to substantial differences in historical and current exploitation levels. Additionally, he fairly sedentary nature of adult copper rockfish, likely limits flow of fish between northern California and areas to the north.
+Copper rockfish residing between Point Conception and the California/Oregon border are assessed here as a single, separate stock (Figure \ref{fig:map}).  This designation was made based on oceanographic, geographic, and fishery conditions.  The copper rockfish population in California waters was split at Point Conception due to water circulation patterns that create a natural barrier between nearshore rockfish populations to the north and south. The northern border for this assessment was defined as the California/Oregon border due to substantial differences in historical and current exploitation levels. Additionally, the fairly sedentary nature of adult copper rockfish, likely limits flow of fish between northern California and areas to the north. 
+
+Analysis  that summarized current research to inform stock structure in copper rockfish off the West Coast and evaluated the available information to guide the selection of the management area relative to the assessment area is presented in Wetzel et al. [-@wetzel_status_2021]. 
 
 ## Summary of Management History and Performance
 
 
-Copper rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes, split at 40$^\circ$ 10' Lat. N. off the West Coast. Each complex, comprised of nearshore rockfish species, is managed based on a complex level overfishing limit (OFL) and annual catch limit (ACL) that are determined by summing the species-specific OFLs and ACLs (ACLs set equal to the Acceptable Biological Catch) contributions for all stocks managed in the complex (North or South). Removals for species within the Nearshore Rockfish North and South complexes are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
+Copper rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes, split at 40$^\circ$ 10' N. lat. off the West Coast. Each complex, comprised of nearshore rockfish species, is managed based on a complex level overfishing limit (OFL) and annual catch limit (ACL) that are determined by summing the species-specific OFLs and ACLs (ACLs set equal to the Acceptable Biological Catches) contributions for all stocks managed in the complex (North or South). Removals for species within the Nearshore Rockfish North and South complexes are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
 
-Table \ref{tab:ofl} show the Nearshore Rockfish North and South complex level OFLs and ACLs, the copper rockfish OFL and ACL contributions amounts for both areas, the state-specific allocations of the copper rockfish ACL contribution (the south copper rockfish ACL plus 25 percent allocated to California from the north ACL), and the total removals for California, north of Point Conception. 
+Table \ref{tab:ofl} shows the Nearshore Rockfish North and South complex level OFLs and ACLs, the copper rockfish OFL and ACL contributions amounts for both areas, the state-specific allocations of the copper rockfish ACL contribution (the south copper rockfish ACL plus 25 percent allocated to California from the north ACL), and the total removals for California, north of Point Conception. 
 
 <!--chapter:end:11introduction.Rmd-->
 
@@ -155,15 +164,15 @@ A description of each data source is provided below (Figure \ref{fig:data-plot})
 
 The commercial removals were extracted from the The Pacific Fisheries Information Network (PacFIN) database for 1981-2020 on February 21, 2021.  Commercial removals for copper rockfish were combined into a single fleet by aggregating across gear types and fish landed live or dead (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The grouping of all commercial landings into a single fleet was driven by the limited length composition data available per gear type.  Additionally, commercial length data available in PacFIN database for California did not have the needed information to identify samples from live versus dead fish (i.e., condition code) preventing the ability to evaluate the data based on live versus dead landing.  
 
-Commercial landings prior to 1969 were queried from the SWFSC catch reconstruction database for estimates from the California Catch Reconstruction [@ralston_documentation_2010]. Landings in this database are divided into trawl, non-trawl, and unknown gear categories. Regions 7 and 8 as defined by Ralston et al. [-@ralston_documentation_2010] were assigned to Southern California. Region 6 in Ralston et al. [-@ralston_documentation_2010] includes Santa Barbara County (mainly south of Point Conception), plus some major ports North of Point Conception. Catches from Region 6 were allocated to the areas north and south of Point Conception following an approach developed by Dick et al. [@dick_status_2007] for the assessment of cowcod. Specifically, port-specific landings of total rockfish from the California Department of Fish and Wildlife (CDFW) Fish Bulletin series were used to determine the annual fraction of landings in Region 6 that was south of Point Conception (Table \ref{tab:com-ratio}). Rockfish landings at that time were not reported at the species level. Although the use of total rockfish landings to partition catch in Region 6 is not ideal, this was the best available option given the absence of port-specific species composition data. Years with no data were imputed using the average of ratio estimates from adjacent years. Annual catches from unknown locations and unknown gear types were allocated proportional to the catches from known regions and gears. Catches from known regions, but unknown gears, were allocated proportional to catches by known gears within the same region. In this way, total annual removals in California were kept consistent with those reported by Ralston et al. [-@ralston_documentation_2010], and assigned to the assessment areas north and south of Point Conception.
+Commercial landings prior to 1969 were extracted from the SWFSC catch reconstruction database for estimates from the California Catch Reconstruction [@ralston_documentation_2010]. Landings in this database are divided into trawl, non-trawl, and unknown gear categories. Regions 7 and 8 as defined by Ralston et al. [-@ralston_documentation_2010] were assigned to Southern California. Region 6 in Ralston et al. [-@ralston_documentation_2010] includes Santa Barbara County (mainly south of Point Conception), plus some major ports North of Point Conception. Catches from Region 6 were allocated to the areas north and south of Point Conception following an approach developed by Dick et al. [-@dick_status_2007] for the assessment of cowcod. Specifically, port-specific landings of total rockfish from the California Department of Fish and Wildlife (CDFW) Fish Bulletin series were used to determine the annual fraction of landings in Region 6 that was south of Point Conception (Table \ref{tab:com-ratio}). Rockfish landings at that time were not reported at the species level. Although the use of total rockfish landings to partition catch in Region 6 is not ideal, this was the best available option given the absence of port-specific species composition data. Years with no data were imputed using the average of ratio estimates from adjacent years. Annual catches from unknown locations and unknown gear types were allocated proportional to the catches from known regions and gears. Catches from known regions, but unknown gears, were allocated proportional to catches by known gears within the same region. In this way, total annual removals in California were kept consistent with those reported by Ralston et al. [-@ralston_documentation_2010], and assigned to the assessment areas north and south of Point Conception.
 
-In September 2005, newly acquired commercial landings statistics from 1969-1979 were incorporated into the CALCOM database. The data consisted of landing receipts ("fish tickets"), including mixed species categories for rockfish. In order to assign rockfish landings to individual species, the earliest available species composition samples were applied to the fish ticket data by port, gear, and quarter. These 'ratio estimator' landings are coded (internally) as market category 977 in the CALCOM database, and are used in this, as they have in past assessments as the best available landings for the time period 1969 - 1979 for all port complexes.  See Appendix A of Dick et al. [-@dick_status_2007] for further details.
+In September 2005, the California Cooperative Groundfish Survey (CCGS CALCOM) incorporated newly acquired commercial landings statistics from 1969-1979 into the CALCOM database. The data consisted of landing receipts ("fish tickets"), including mixed species categories for rockfish. In order to assign rockfish landings to individual species, the earliest available species composition samples were applied to the fish ticket data by port, gear, and quarter. These 'ratio estimator' landings are coded (internally) as market category 977 in the CALCOM database, and are used in this assessment, as they have in past assessments as the best available landings for the time period 1969 - 1979 for all port complexes.  See Appendix A of Dick et al. [-@dick_status_2007] for further details.
  
-Commercial fishery landings from 1981-2020 were pulled from the PacFIN (extracted 2/22/2021). Landings were separated for the area north of Point Conception based on port of landing. The input catches in the model represent total removals: landings plus discards. Discards totals for the commercial fleet from 2002 - 2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide WCGOP discards were allocated to state and area based on the total observed landings by WCGOP. An average commercial discard mortality rate of 4.4 percent, based on the WCGOP data from 2002 - 2019, was applied to adjust historical landings data to account for total removals 
+Commercial fishery landings from 1981-2020 were extracted from the PacFIN (extracted 2/22/2021). Landings were separated for the area north of Point Conception based on port of landing. The input catches in the model represent total removals: landings plus discards. Discards totals for the commercial fleet from 2002 - 2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide WCGOP discards were allocated to state and area based on the total observed landings by WCGOP. An average commercial discard mortality rate of 4.4 percent, based on the WCGOP data from 2002 - 2019, was applied to adjust historical landings data to account for total removals 
 
 #### Length Compositions 
 
-Biological data were extracted from the PacFIN Biological Data System on February 21, 2001. The quantity of length samples from the commercial fishery were low until 1991 (Table \ref{tab:com-len-samps}). Due to low annual sample sizes, years prior to 1991 were not used in model fitting (entered as a 'ghost fleet' observations to see the implied fit). When used during model development, the noisy distribution of years with low sample size prior to 1991, impacted the estimation of selectivity, reducing the fits to the later more informed data years. Length samples were highest during the 1990s, while the number of lengths samples by year have been relatively low since 2002. The range of sizes observed from 1991 - 2007 was relatively broad, encompassing approximately 25 - 54 cm (Figure \ref{fig:com-len-data}).  Since 2008, the frequency of sizes observed has shifted to smaller lengths, centered around 30 cm, with larger fish still being observed in the data. This shift in observed sizes is also reflected in the mean lengths observed by year (Figure \ref{fig:mean-com-len-data}) which could be due to shifts in fishery behavior, changes in the population demographics (e.g., incoming strong recruitments), or a combination of multiple factors. 
+Biological data were extracted from the PacFIN Biological Data System on February 21, 2001. The quantity of length samples from the commercial fishery were low until 1991 (Table \ref{tab:com-len-samps}). Due to low annual sample sizes, years prior to 1991 were not used in model fitting (entered as a 'ghost fleet' observations to see the implied fit). When used during model development, the noisy distribution of years with low sample size prior to 1991, impacted the estimation of selectivity, reducing the fits to the later more informed data years. Length samples were highest during the 1990s, while the number of lengths samples by year have been relatively low since 2002. The range of sizes observed from 1991 - 2007 was relatively broad, encompassing approximately 25 - 54 cm (Figure \ref{fig:com-len-data}).  Since 2008, the frequency of sizes observed has shifted to smaller lengths, centered around 30 cm, with larger fish still being observed in the data. This shift in observed sizes is also reflected in the mean lengths observed by year (Figure \ref{fig:mean-com-len-data}), which could be due to shifts in fishery behavior, changes in the population demographics (e.g., incoming strong recruitments), or a combination of multiple factors. 
 
 The input sample sizes were calculated via the Stewart method (Ian Stewart, personal communication) based on a combination of trips and fish sampled:
 
@@ -182,9 +191,9 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 The recreational fishery is the main source of exploitation of copper rockfish. Recreational catches of copper rockfish in California waters north of Point Conception peaked in the late 1970s and early 1980s. Removals declined sharply in the 1990s and early 2000s.  The removals remained relatively low until 2015.  
 
-Recreational removal estimates from 1928 to 1980 were obtained from the historical reconstruction [@ralston_documentation_2010] which were available split north and south of Point Conception. Recreational removals from 1981 - 1989 and 1993 - 2003 were obtained from Marine Recreational Fisheries Statistics Survey (MRFSS). MRFSS includes estimates of removals for 1980. However, due to inconsistencies in the estimates of this year in MRFSS, likely due to it being the first year of the survey with low sample sizes, the value for recreational removals from Ralston et al. [-@ralston_documentation_2010] was used. 
+Recreational removal estimates from 1928 to 1980 were obtained from the historical reconstruction [@ralston_documentation_2010], which were available split north and south of Point Conception. Recreational removals from 1981 - 1989 and 1993 - 2003 were obtained from Marine Recreational Fisheries Statistics Survey (MRFSS). MRFSS includes estimates of removals for 1980. However, due to inconsistencies in the estimates of this year in MRFSS, likely due to it being the first year of the survey with low sample sizes, the value for recreational removals from Ralston et al. [-@ralston_documentation_2010] was used. 
 
-The MRFSS definition of "Southern California" included San Luis Obispo County from 1981 - 1989 requiring the catches from this county to be split out and added to recreational removals for north of Point Conception. Albin et al. [-@albin_effort_1993] used MRFSS data to estimate catch at a finer spatial scale from the California/Oregon border to the southern edge of San Luis Obispo County. The ratio of catches (0.316) in San Luis Obispo to the total removals calculated based on the data from Albin et al. [-@albin_effort_1993] was estimated and used to adjust the MRFSS catches to account for all removals north of Point Conception. 
+The MRFSS definition of "Southern California" included San Luis Obispo County from 1981 - 1989, requiring the catches from this county to be split out and added to recreational removals for north of Point Conception. Albin et al. [-@albin_effort_1993] used MRFSS data to estimate catch at a finer spatial scale from the California/Oregon border to the southern edge of San Luis Obispo County. The ratio of catches (0.316) in San Luis Obispo to the total removals calculated based on the data from Albin et al. [-@albin_effort_1993] was estimated and used to adjust the MRFSS catches to account for all removals north of Point Conception. 
 
 There are three years without removals, 1990 - 1992, available in the MRFSS data. Removals for the missing years were filled in by applying a linear ramp in removals between the 1989 and 1993 values. 
 
@@ -195,7 +204,7 @@ The recreational removals from the historical reconstruction from 1928 - 1980 ac
 
 #### Length Compositions
 
-Length data for retained catch for MRFSS (1980-2003) and CRFS (2004-2019) were downloaded from the RecFIN website. The number of length observation by year are shown in Table \ref{tab:len-samps}. Years with the highest number of samples occurred within the last 15 years of the modeled period. A broad range of sizes, between 20 - 50 cm, have been observed from the recreational fishery across available data years (Figure \ref{fig:rec-len-data}). The recreational length data show a pulse of smaller fish starting around 2010, which appears at greater lengths in subsequent years, perhaps indicating of a strong recruitment event.  The mean size observed across years ranged from 30 to approximately 38 cm (Figure \ref{fig:mean-rec-len-data}).
+Length data for retained catch for MRFSS (1980-2003) and CRFS (2004-2019) were downloaded from the RecFIN website. The number of length observation by year are shown in Table \ref{tab:len-samps}. The highest number of samples occurred within the last 15 years of the modeled period. A broad range of sizes, between 20 - 50 cm, have been observed from the recreational fishery across available data years (Figure \ref{fig:rec-len-data}). The recreational length data show a pulse of smaller fish starting around 2010, which appears at greater lengths in subsequent years, perhaps indicating of a strong recruitment event.  The mean size observed across years ranged from 30 to approximately 38 cm (Figure \ref{fig:mean-rec-len-data}).
 
 The input sample sizes were equal to the number of length samples available by year. 
 
@@ -218,7 +227,7 @@ The observations of copper rockfish by the \Gls{s-wcgbt} are limited.  The numbe
 ### Natural Mortality
 
 
-The current method for developing a prior on natural mortality for West Coast groundfish stock assessments is based on Hamel [-@hamel_method_2015], a method for combining meta-analytic approaches relating the $M$ rate to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on $M$. This approach modifies work done by Then et al. [-@then_evaluating_2015] who estimated $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M = 4.899A^{-0.916}_{\text{max}}$. Hamel (personal communication) re-evaluated the data used by Then et al. [-@then_evaluating_2015] by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space [@hamel_method_2015]), the point estimate and median of the prior for $M$ is:
+The current method for developing a prior on natural mortality for West Coast groundfish stock assessments is based on Hamel [-@hamel_method_2015], a method for combining meta-analytic approaches relating the $M$ rate to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior for $M$. This approach modifies work done by Then et al. [-@then_evaluating_2015] who estimated $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M = 4.899A^{-0.916}_{\text{max}}$. Hamel (personal communication) re-evaluated the data used by Then et al. [-@then_evaluating_2015] by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space [@hamel_method_2015], the point estimate and median of the prior for $M$ is:
 
 \begin{centering}
 
@@ -228,7 +237,7 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 \vspace{0.5cm}
 
-where $A_{\text{max}}$ is the maximum age. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and standard error = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 yr^-1^.  The maximum age was selected based on available age data from all West Coast data sources and literature values.  The oldest aged copper rockfish was 51 years with two observations, one each off of the coast of Washington and Oregon in 2019.  The maximum age in the model was set at 50 years.  This selection was consistent with the literature examining the longevity of  copper rockfish [@love_milton_probably_1996] and was supported by the observed ages which had multiple observations of fish between 44 and 51 years of age.  
+where $A_{\text{max}}$ is the maximum age. The prior is defined as a lognormal distribution with mean $ln(5.4/A_{\text{max}})$ and standard error = 0.438. Using a maximum age of 50, the point estimate and median of the prior is 0.108 yr^-1^.  The maximum age was selected based on available age data from all West Coast data sources and literature values.  The oldest aged copper rockfish was 51 years with two observations, one each off of the coast of Washington and Oregon in 2019.  The maximum age in the model was set at 50 years.  This selection was consistent with the literature examining the longevity of  copper rockfish [@love_milton_probably_1996] and was supported by the observed ages that had multiple observations of fish between 44 and 51 years of age.  
 
 ### Length-Weight Relationship
 
@@ -238,7 +247,7 @@ The length-weight relationship for copper rockfish was estimated outside the mod
 ### Growth (Length-at-Age)
 
 
-Length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coast of Oregon and Washington, collected between 1998-2019 (Table \ref{tab:len-at-age-samps}).  The available fishery-dependent data from Oregon and Washington included limited observations of young fish (less than 4 years of age) which presented challenges for estimating growth. Attempting to estimate growth in the absence of data to inform the rate of growth ($k$) and the size-at-age 0 ($t_0$) could result in biased estimates of all parameters including the size-at-maximum length ($L_{\infty}$). A published growth study for copper rockfish by Lea et al. [-@lea_biological_1999] had numerous observations of young fish and also reported the mean length, the number of observations, and the standard deviation of the length observations by age. These pieces of information were used to simulate length-at-age data that would be representative of the study's data for fish less than 5 years of age. The simulated data for young fish appeared consistent with older fish observed off the Oregon and Washington coast (Figure \ref{fig:len-age-data}). This combined data set was used to estimate growth curves for male and female copper rockfish that were used in this assessment.  Ideally, growth would be estimated using data collected from similar sources. However, the bias from using data from different sources was considered to be less than the bias that may arise from estimating growth from observations that did not cover the range of ages. 
+Length-at-age was estimated for male and female copper rockfish using data collected from fishery-dependent data sources off the coasts of Oregon and Washington, collected between 1998-2019 (Table \ref{tab:len-at-age-samps}).  The available fishery-dependent data from Oregon and Washington included limited observations of young fish (less than 4 years of age), which presented challenges for estimating growth. Attempting to estimate growth in the absence of data to inform the rate of growth ($k$) and the size-at-age 0 ($t_0$) could result in biased estimates of all parameters including the size-at-maximum length ($L_{\infty}$). A published growth study for copper rockfish by Lea et al. [-@lea_biological_1999] had numerous observations of young fish and also reported the mean length, the number of observations, and the standard deviation of the length observations by age. These pieces of information were used to simulate length-at-age data that would be representative of the study's data for fish younger than 5 years of age. The simulated data for young fish appeared consistent with the data for older fish observed off the Oregon and Washington coast (Figure \ref{fig:len-age-data}). This combined data set was used to estimate growth curves for male and female copper rockfish that were used in this assessment.  Ideally, growth would be estimated using data collected from similar sources. However, the bias from using data from different sources was considered to be less than the bias that may arise from estimating growth from observations that did not cover the range of ages. 
 
 The estimated growth used in this assessment had females reach marginally larger asymptotic sizes compared to males. Sex-specific growth parameters were estimated at the following values:
 
@@ -252,16 +261,16 @@ Males $L_{\infty}$ = 47.2 cm; $k$ = 0.231
 
 \vspace{0.5cm}
 
-These values were fixed within the base model for male and female copper rockfish. While the growth differences between sexes was limited for copper rockfish, sex-specific parameterization was used in the hopes that it would allow the length data to the most informative within the assessment. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age by sex is shown in Figure \ref{fig:len-age-ss}.  
+These values were fixed within the base model for male and female copper rockfish. While the growth differences between sexes was limited for copper rockfish, sex-specific parameterization was used in the hopes that it would allow the length data to the most informative within the assessment. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes, a value that was base on values  observed across other groundfish stocks. The length-at-age curve with the CV around length-at-age by sex is shown in Figure \ref{fig:len-age-ss}.  
 
-In contrast to the current approach, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for copper rockfish (although not directly used by the data-moderate model) were from Lea et al. [-@lea_biological_1999]. The $L_{\infty}$ from Lea et al. [-@lea_biological_1999] by sex were quite a bit larger than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. In the Lea et al. [-@lea_biological_1999] young fish were well sampled, however, there were very few observations of fish older than 12 years of age (less than 5 total) which appears to have led to a poorly informed estimate of $L_{\infty}$.   
+In contrast to the current approach, the length-at-age values cited in the 2013 data-moderate assessment [@cope_data-moderate_2013] for copper rockfish (although not directly used by the data-moderate model) were from Lea et al. [-@lea_biological_1999]. The $L_{\infty}$ from Lea et al. [-@lea_biological_1999] by sex were quite a bit larger than those estimated for this assessment using recent length and age data off the coast of Oregon and Washington. In the Lea et al. [-@lea_biological_1999] young fish were well sampled, however, there were very few observations of fish older than 12 years of age (fewer than 5 total), which appears to have led to a poorly informed estimate of $L_{\infty}$.   
 
-For the sake of parsimony, the length-age samples were pooled across sources to estimate a single length-at-age curve for copper rockfish in California north of Point Conception, Oregon, and Washington. In the future, if adequate area based length-age samples across a range of fishery-dependent and -independent source are available, copper rockfish growth should be re-evaluated for possible area-specific variation.
+For the sake of parsimony, the length-age samples were pooled across sources to estimate a single length-at-age curve for copper rockfish in California north of Point Conception, Oregon, and Washington. In the future, if adequate area-based length-age samples across a range of fishery-dependent and -independent source are available, copper rockfish growth should be re-evaluated for possible area-specific variation.
 
 ### Maturation and Fecundity
 
 
-Maturity-at-length is based upon the work of Hannah [-@hannah_length_2014] which estimated the 50 percent size-at-maturity of 34.8 cm and slope of -0.6 for copper rockfish off the coast of Oregon with maturity reaching the asymptote of 1.0 for larger fish (Figure \ref{fig:maturity}).  
+Maturity-at-length is based upon the work of Hannah [-@hannah_length_2014] who estimated the 50 percent size-at-maturity of 34.8 cm and slope of -0.6 for copper rockfish off the coast of Oregon, with maturity reaching the asymptote of 1.0 for larger fish (Figure \ref{fig:maturity}).  
 
 The fecundity-at-length was based on research from Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for copper rockfish was estimated equal to 3.362e-07$L$^3.68^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
 
@@ -270,26 +279,28 @@ Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-a
 ### Sex Ratio
 
 
-There were limited sex specific observations by length or age across biological data sources. The sex ratio of copper rockfish by length and age across all available data sources off the West Coast are shown in Figures \ref{fig:len-sex-ratio} and \ref{fig:age-sex-ratio}. The sex ratio of young fish was assumed to be 1:1. 
+There were limited sex-specific observations by length or age across biological data sources. The sex ratio of copper rockfish by length and age across all available data sources off the West Coast are shown in Figures \ref{fig:len-sex-ratio} and \ref{fig:age-sex-ratio}. The sex ratio of young fish was assumed to be 1:1. 
 
 <!--chapter:end:22biology.Rmd-->
+
+\clearpage
 
 # Assessment Model
 
 ## Summary of Previous Assessments 
 
 
-Copper rockfish was last assessed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA) a data-moderate approach which incorporated catch and index data with priors on select parameters: natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity. Copper rockfish was assessed as two separated stocks, the area south of Point Conception off the California coast and the area north of Point Conception to the Washington/Canadian border. The 2013 assessment estimated the stock south of Point Conception at 75 percent of unfished spawning biomass and the stock north of Point Conception at 48 percent of unfished spawning biomass. 
+Copper rockfish was last assessed in 2013 [@cope_data-moderate_2013]. The stock was assessed using extended depletion-based stock reduction analysis (XDB-SRA), a data-moderate approach that incorporated catch and index data with priors on select parameters: natural mortality, stock status in a specified year, productivity, and the relative status of maximum productivity. Copper rockfish was assessed as two separated stocks, the area south of Point Conception off the California coast and the area north of Point Conception to the Washington/Canadian border. The 2013 assessment estimated the stock south of Point Conception at 75 percent of unfished spawning biomass and the stock north of Point Conception at 48 percent of unfished spawning biomass. 
 
 ### Bridging Analysis
 
 
-A direct bridging analysis was not conducted because the previous assessment was structured to include the area from north of Point Conception to the Washington/Canadian border. The data types used in the 2013 assessment were catches and indices of abundance.  Matching the 2013 data was not straight forward based aside from the challenges already posed from the alternative model platform (XDB-SRA) and area grouping. First, the 2013 assessment document did not report catches on a state and source level (not atypical for grouped state or area assessment). Secondly, some of the  recreational indices used in 2013 were calculated based on multi-state data. All of these items created significant challenges of how to conduct an effective, logical, and informative bridging analysis for the assessment north of Point Conception.  
+A direct bridging analysis was not conducted because the previous assessment was structured to include the area from north of Point Conception to the Washington/Canadian border. The data types used in the 2013 assessment were catches and indices of abundance.  Matching the 2013 data was not straightforward aside from the challenges already posed from the alternative model platform (XDB-SRA) and area grouping. First, the 2013 assessment document did not report catches on a state and source level (not atypical for grouped state or area assessments). Secondly, some of the  recreational indices used in 2013 were calculated based on multi-state data. All of these items created significant challenges of how to conduct an effective, logical, and informative bridging analysis for the assessment north of Point Conception.  
 
 
 ## Model Structure and Assumptions
 
-Copper rockfish north of Point Conception off the coast of California are assessed using a two-sex model with sex-specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in 1916. Selectivity was specified using the double normal parameterization within Stock Synthesis for both the commercial and recreational fleets. The commercial selectivity applied two time blocks for selectivity: 1916 - 2008 and 2009 - 2020. The commercial selectivity block from 1916 - 2008  was fixed to be asymptotic, while the selectivity block from  2009 - 2020was allowed to be dome-shaped.   The recreational fleet selectivity was constant across the model years, 1916 - 2020, and fixed to be asymptotic, although dome-shape selectivity was explored during model development. Annual recruitment deviations were estimated for all years. 
+Copper rockfish north of Point Conception off the coast of California are assessed using a two-sex model with sex-specific life history parameters.  The model assumed two fleets: 1) commercial and 2) recreational with removals beginning in 1916. Selectivity was specified using the double normal parameterization within Stock Synthesis for both the commercial and recreational fleets. The commercial selectivity applied two time blocks for selectivity: 1916 - 2008 and 2009 - 2020. The commercial selectivity block from 1916 - 2008  was fixed to be asymptotic, while the selectivity block from  2009 - 2020 was allowed to be dome-shaped.   The recreational fleet selectivity was constant across the model years, 1916 - 2020, and fixed to be asymptotic, although dome-shaped selectivity was explored during model development. Annual recruitment deviations were estimated for all years. 
 
 ### Modeling Platform and Structure
 
@@ -299,15 +310,15 @@ The assessment was conducted used Stock Synthesis version 3.30.16 developed by D
 ### Priors
 
 
-Priors were used to determine fixed parameter values for natural mortality and steepness in the base model.  The prior distribution for natural mortality was based on the Hamel [-@hamel_method_2015] meta-analytic approach with  an assumed maximum age of 50 years. The prior assumed a log normal distribution for natural mortality. The log normal prior has a median of 0.108 and a standard error of 0.438. 
+Priors were used to determine fixed parameter values for natural mortality and steepness in the base model.  The prior distribution for natural mortality was based on the Hamel [-@hamel_method_2015] meta-analytic approach with  an assumed maximum age of 50 years. The prior assumed a log normal distribution for natural mortality. The log normal prior has a median of 0.108 yr^-1^ and a standard error of 0.438. 
 
-The prior for steepness assumed a beta distribution with mean of 0.72 and standard error of 0.15. The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absence of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
+The prior for steepness assumed a beta distribution with mean of 0.72 and standard error of 0.15. The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA), which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absence of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
 
 ### Data Weighting
 
 Length composition data for the commercial fishery started with a sample size determined from the equation listed in Sections \ref{commercial-fishery}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
 
-The base  model weighted length data for each fleet using the "Francis method" which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and its associated  standard error, and determines if, across years,  the model is able to adequately match the data. If the model predictions do not adequately match the mean lengths given the associated standard errors, then that data source should be down-weighted (equivalently, the standard errors are increased).  This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting and model results using McAllister-Ianelli Harmonic Mean Weighting [@mcallister_bayesian_1997] and the Dirichlet-Multinomial Weighting [@thorson_model-based_2017].
+The base  model weighted length data for each fleet using the "Francis method" which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and its associated  standard error, and determines if, across years,  the model is able to adequately match the data. If the model predictions do not adequately match the mean lengths given the associated standard errors, then that data source should be down-weighted (equivalently, the standard errors are increased).  This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in results due to weighting using McAllister-Ianelli Harmonic Mean Weighting [@mcallister_bayesian_1997] and the Dirichlet-Multinomial Weighting [@thorson_model-based_2017].
 
 ### Estimated and Fixed Parameters
 
@@ -322,7 +333,7 @@ For the commercial fleet in order to fit a shift in observed lengths, two blocks
 
 ## Model Selection and Evaluation
 
-The base assessment model for copper rockfish was developed to balance parsimony and realism, with the goal of estimating a spawning output trajectory for the population of copper rockfish off the California coast north of Point Conception. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were developed to achieve the final base model.
+The base assessment model for copper rockfish was developed to balance parsimony and realism, with the goal of estimating a spawning output trajectory for the population of copper rockfish off the California coast north of Point Conception. The model contains many assumptions to achieve parsimony and uses many sources of data to estimate reality. A series of investigative model runs was developed to achieve the final base model.
 
 <!--chapter:end:30model.Rmd-->
 
@@ -332,11 +343,11 @@ The base model parameter estimates along with approximate asymptotic standard er
 
 ### Parameter Estimates
 
-Estimated parameter values are provided in Table \ref{tab:params}. The log($R_0$) was estimated at 6.03. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. The commercial selectivity was estimated in two blocks of time; 1916 - 2008 and 2009 - 2020. The block in selectivity was aimed to capture the shift in observations of smaller fish in recent years (Figure \ref{fig:com-len-data}). The early block estimated a gradual slope of increasing selectivity across lengths with selectivity reaching 1.0 at the largest sizes with the parameter hitting the upper bound of 55 cm.  To reduce problems in convergence the final model fixed this parameter at 55 cm, just below the upper bound. In recent years, commercial selectivity shifted left-ward resulting in increased selectivity of smaller fish with peak selectivity occurring at 26.3 cm. The cause of this shift in selectivity is not entirely clear but may be related to management changes shifting effort into shallower depths, the live fish fishery which favors age 3 fish (Dan Platt, personal communication), and or combined with a strong recruitment event entering the fishery which could have resulted in a shift in size targeted by the fishery. 
+Estimated parameter values are provided in Table \ref{tab:params}. The log($R_0$) was estimated at 6.03. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. The commercial selectivity was estimated in two blocks of time; 1916 - 2008 and 2009 - 2020. The block in selectivity was aimed to capture the shift in observations of smaller fish in recent years (Figure \ref{fig:com-len-data}). The early block estimated a gradual slope of increasing selectivity across lengths with selectivity reaching 1.0 at the largest sizes, with the parameter hitting the upper bound of 55 cm.  To reduce problems in convergence the final model fixed this parameter at 55 cm, just below the upper bound. In recent years, commercial selectivity shifted left-ward, resulting in increased selectivity of smaller fish with peak selectivity occurring at 26.3 cm. The cause of this shift in selectivity is not entirely clear but may be related to management changes shifting effort into shallower depths, the live fish fishery which favors age 3 fish (Dan Platt, personal communication), and or combined with a strong recruitment event entering the fishery that could have resulted in a shift in size targeted by the fishery. 
 
 Selectivity in the recreational fishery was assumed constant across the modeled period with maximum selectivity occurring for fish of 32.1 cm and greater. The peak selectivity for both fleets, commercial and recreational fishery, is less than the length-at-50 percent maturity (34.83 cm). 
 
-The estimated annual recruitment and recruitment deviations are shown in  Figures \ref{fig:recruits} and \ref{fig:rec-devs}. Strong recruitments are estimated to have occurred in 2008, 2009, and 2010. While there could have been three above average recruitments occurring in subsequent years, alternatively there may have been a single year with high recruitment that the model is unable to accurately assign to a single year due to the variability in length data. Above average recruitment in 2008 has been estimated in other rockfish assessments off the West Coast [@gertseva_status_2015;@hicks_status_2015;@wetzel_status_2017]. The stock-recruit curve resulting from a value of steepness fixed at 0.72 is shown in Figure \ref{fig:bh-curve}. 
+The estimated annual recruitment and recruitment deviations are shown in  Figures \ref{fig:recruits} and \ref{fig:rec-devs}. The bias adjustment applied to the annual recruimtent deviations across time is shown in Figure \ref{fig:bias-adj}. Strong recruitments are estimated to have occurred in 2008, 2009, and 2010. While there could have been three above average recruitments occurring in subsequent years, alternatively there may have been a single year with high recruitment that the model is unable to accurately assign to a single year due to the variability in length data. Above average recruitment in 2008 has been estimated in other rockfish assessments off the West Coast [@gertseva_status_2015;@hicks_status_2015;@wetzel_status_2017]. The stock-recruit curve resulting from a value of steepness fixed at 0.72 is shown in Figure \ref{fig:bh-curve}. 
 
 ### Fits to the Data
 
@@ -346,7 +357,7 @@ The Pearson residuals for the commercial fishery length data area shown in Figur
 
 The Pearson residuals for the recreational length data are variable by year (Figure \ref{fig:rec-pearson}). Pearson residuals were positive, observations greater than expected, for small fish prior to 1997 and are generally variable showing no clear misfit in the model in recent years. In model development, an additional selectivity block for years prior to 1997 were explored to address the pattern in the Pearson residual. These model explorations did estimate a left-ward shift in selectivity for the recreational fleet by approximately 2-3 cm, but had little impact on the overall model results. In the aims of parsimony and simplicity a single selectivity pattern was assumed in the base model. The mean length by year for the recreational fleet was highly variable across years (Figure \ref{fig:rec-mean-len-fit}). The recreational lengths show a decrease in the mean length observed around 2011, similar to the commercial data.
 
-Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}.  The model fits the aggregated lengths for the recreational fleet length data generally well. The aggregated lengths for the commercial fleet reflected a wide selection across sizes with the model under-predicting the selection for both small and large fish. Multiple sensitivities were conducted to explore alternative parameterization of commercial selectivity. 
+Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}.  The model fits the aggregated lengths for the recreational fleet length data generally well. The aggregated lengths for the commercial fleet reflected a wide selection across sizes, with the model under-predicting the selection for both small and large fish. Multiple sensitivities were conducted to explore alternative parameterization of commercial selectivity. 
 
 ### Population Trajectory
 
@@ -361,12 +372,12 @@ The model estimates that the spawning output relative the unfished equilibrium s
 
 ### Convergence
 
-Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 78 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was conducted without attempting to estimate a Hessian. 
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 78 out of 100 runs returning to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. The model did not experience convergence issues when provided reasonable starting values. Through the jittering done as explained and likelihood profiles, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability, although much of the early model investigation was conducted without attempting to estimate a Hessian. 
 
 
 ### Sensitivity Analyses
 
-A number of sensitivity analyses were conducted.  The majority of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
+Several sensitivity analyses were conducted.  The majority of the sensitivities conducted was a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
 
 \begin{enumerate}
    
@@ -378,7 +389,7 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
   \item Estimate $L_{\infty}$ for both sexes.
 
-  \item Estimate the coefficient of variation for older fish for both sexes.
+  \item Estimate the coefficient of variation of length-at-age for older fish for both sexes.
 
   \item Estimate natural mortality for females only.
 
@@ -390,40 +401,40 @@ A number of sensitivity analyses were conducted.  The majority of the sensitivit
 
   \item Add selectivity block for the recreational fleet for 1916 - 1997.
 
-  \item Add the onboard Commercial Passenger Fishing Vessel (CPFV) index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimated added variance to the index of abundance.
+  \item Add the onboard Commercial Passenger Fishing Vessel (CPFV) index of abundance from northern California used in the 2013 assessment. Sensitivity was allowed to estimate added variance to the index of abundance.
 
-  \item Add additional early CPFV lengths collected during onboard sampling (referred to as the Deb Wilson-Vanderberg survey) that were not included in the base model (data not received prior to the data deadline).
+  \item Add additional early CPFV lengths collected during onboard sampling (referred to as the Deb Wilson-Vanderberg survey) that were not included in the base model due to not being received until after the assessment review.
 
   \item Include the CPFV lengths prior the previous sensitivity and include additional flexibility in selectivity for both the commercial and recreational fishery allowing for selectivity time blocks that would allow dome-shaped selectivity (if estimated): 1916-2000, 2001-2002, 2003-2007, 2008-2016, and 2017-2020. The time blocks for selectivity were designed to capture changes in percentage of area open to fishing.  
 
 \end{enumerate}
 
-Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities} and \ref{tab:sensitivities-1}. Plots of the estimated time series of spawning output and relative spawning output are shown in Figures \ref{fig:sens-ssb-1} - \ref{fig:sens-depl-2}. The majority of sensitivities estimated the final stock status within the precautionary zone, between 25 and 40 percent of unfished spawning output, or just abot the management target of 40 percent. Assuming deterministic recruitment, annual recruitment from the stock recruitment curve, estimated a more pessimistic final stock status with the final stock status below the management threshold of 25 percent of unfished.  The sensitivity that estimated female natural mortality estimated a higher unfished spawning output but a similar final stock size, relative to the base model resulting in a final stock status below the management threshold. 
+Likelihood values and estimates of key parameters from each sensitivity are available in Tables \ref{tab:sensitivities} and \ref{tab:sensitivities-2}. Plots of the estimated time series of spawning output and relative spawning output are shown in Figures \ref{fig:sens-ssb-1} - \ref{fig:sens-depl-2}. The majority of sensitivities estimated the final stock status within the precautionary zone, between 25 and 40 percent of unfished spawning output, or just about the management target of 40 percent. Assuming deterministic recruitment, annual recruitment from the stock recruitment curve, estimated a more pessimistic final stock status with the final stock status below the management threshold of 25 percent of unfished.  The sensitivity that estimated female natural mortality estimated a higher unfished spawning output but a similar final stock size, relative to the base model, resulting in a final stock status below the management threshold. 
 
-The sensitivities that examined alternative parameterization of the commercial selectivity, asymptotic or spline selectivity, estimated similar initial stock size but lower stock size and status in 2021 relative to the base model. Fixing the commercial selectivity to be asymptotic and a single selectivity curve resulted in a less depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The estimates from this sensitivity was primarily driven by the model estimating a selectivity curve that was between the selectivities by time block within the base model. Given the magnitude of difference in final estimates relative to the base model, additional explorations were conducted. Typically, sensitivity runs assume the same data weighting applied in the base model which allows for direct comparison on the negative log-likelihood across models. Updating the data weighting to this sensitivity resulted in a model that was similar to the base model ( Figure \ref{fig:sens-depl-2}).  
+The sensitivities that examined alternative parameterization of the commercial selectivity, asymptotic or spline selectivity, estimated similar initial stock size but lower stock size and status in 2021 relative to the base model. Fixing the commercial selectivity to be asymptotic and a single selectivity curve resulted in a less depleted stock relative to the base model (Figure \ref{fig:sens-depl-2}). The estimates from this sensitivity were primarily driven by the model estimating a selectivity curve that was between the selectivities by time block within the base model. Given the magnitude of difference in final estimates relative to the base model, additional explorations were conducted. Typically, sensitivity runs assume the same data weighting applied in the base model that allows for direct comparison on the negative log-likelihood across models. Updating the data weighting to this sensitivity resulted in a model that was similar to the base model (Figure \ref{fig:sens-depl-2}).  
 
-The sensitivity which used the onboard CPFV index of abundance resulted in a slightly higher estimated spawning output and fraction unfished relative to the base model (Figure \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The sensitivity was allowed to estimate additional added variance for the input standard deviation for the index time series which is typical practice in West Coast groundfish stock assessments. The estimated added variance for this index of abundance was relatively high, with 0.17 added. 
+The sensitivity that used the onboard CPFV index of abundance resulted in a slightly higher estimated spawning output and fraction unfished relative to the base model (Figures \ref{fig:sens-ssb-2} and \ref{fig:sens-depl-2}). The sensitivity was allowed to estimate additional added variance for the input standard deviation for the index time series, which is typical practice in West Coast groundfish stock assessments. The estimated added variance for this index of abundance was relatively high, with 0.17 added. 
 
 
 ### Likelihood Profiles
 
-Likelihood profiles were conducted for log($R_0$), steepness ($h$), female $L_{\infty}$, female natural mortality ($M$) values, female coefficient of variation for older fish ($\text{CV}_2$), and female growth coefficient $k$ separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value.
+Likelihood profiles were constructed for log($R_0$), steepness ($h$), female $L_{\infty}$, female natural mortality ($M$) values, female coefficient of variation for older fish ($\text{CV}_2$), and female growth coefficient $k$ separately. These likelihood profiles were constructed by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value.
 
-The log($R_0$) negative log-likelihood was minimized at approximately log($R_0$) of 6.03 (Figure \ref{fig:r0-profile}). The likelihood component driving the estimate of the log($R_0$) was attributed to the recruitment deviations in the base model with the length data having little to no influence on the estimate.  However, length data are the only data in the base model and those data are driving the estimate of annual recruitment deviations. Conducting a profile across log($R_0$) with recruitment deviations not estimated in the base model results in a profile where all influence on the estimated parameter is attributed to the length data supporting a similar parameter estimate for log($R_0$).  This confirms that length data are the key source of information for the estimate of log($R_0$) in the base model. Assuming higher of lower values of $R_0$ result in large fluctuations in the scale of the stock and final stock status (Figure \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
+The log($R_0$) negative log-likelihood was minimized at approximately log($R_0$) of 6.03 (Figure \ref{fig:r0-profile}). The likelihood component driving the estimate of the log($R_0$) was attributed to the recruitment deviations in the base model, with the length data having little to no influence on the estimate.  However, length data are the only data in the base model and those data are driving the estimate of annual recruitment deviations. Conducting a profile across log($R_0$) with recruitment deviations not estimated in the base model results in a profile where all influence on the estimated parameter is attributed to the length data supporting a similar parameter estimate for log($R_0$).  This confirms that the length data are the key source of information for the estimate of log($R_0$) in the base model. Assuming higher or lower values of $R_0$ result in large fluctuations in the scale of the stock and final stock status (Figures \ref{fig:r0-ssb} and \ref{fig:r0-depl}). 
 
-For steepness, values from approximately 0.60 to 0.80 were supported by the negative log-likelihood (Figure \ref{fig:h-profile}).  The main source of informing the likelihood across parameter values were the recreational length data.  Assuming higher or lower steepness values had a large impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between 0 - 1.0+. Values of steepness of 0.60 and 0.80, with similar support by the data, resulted in relative stock status that was either well below the minimum threshold or a bit above the target stock status (Figure \ref{fig:h-depl}).
+For steepness, values from approximately 0.60 to 0.80 were supported by the negative log-likelihood (Figure \ref{fig:h-profile}).  The main source of informing the likelihood across parameter values were the recreational length data.  Assuming higher or lower steepness values had a large impact on the unfished and spawning output estimated (Figure \ref{fig:h-ssb}). The estimated relative final stock status ranged between 0 - 1.0+. Values of steepness of 0.60 and 0.80, have similar support by the data, resulted in relative stock status that was either well below the minimum threshold or a bit above the target stock status (Figure \ref{fig:h-depl}).
 
-The negative log-likelihood profile across female natural mortality supported values below 0.115 yr^-1^ which includes the fixed value in the base model 0.108 (Figure \ref{fig:m-profile}). The range of value explored in the profile resulted in a large change in the unfished stock size and a range of final stock status between 10 - 80 percent of unfished (Figure \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
+The negative log-likelihood profile across female natural mortality supported values below 0.115 yr^-1^, which includes the fixed value in the base model 0.108 yr^-1^ (Figure \ref{fig:m-profile}). The range of value explored in the profile resulted in a large change in the unfished stock size and a range of final stock status between 10 - 80 percent of unfished (Figures \ref{fig:m-ssb} and  \ref{fig:m-depl}). 
 
-A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}). The negative log-likelihood showed support for values between approximately 45.5 - 49 cm. The $L_{\infty}$ value for female fish in the model was fixed at 48.43 based on external model estimates using length-at-age data collected off the Oregon and Washington coast. The stock scale and status was quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figure \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
+A profile across a range of female $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}). The negative log-likelihood showed support for values between approximately 45.5 - 49 cm. The $L_{\infty}$ value for female fish in the model was fixed at 48.43 cm based on external model estimates using length-at-age data collected off the Oregon and Washington coast. The stock scale and status was quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale and status (Figures \ref{fig:linf-ssb} and \ref{fig:linf-depl}).
 
-A profile across a range of female $k$ showed support for values from 0.18 - 0.25 (Figure \ref{fig:k-profile}). The $k$ value for female fish in the model was fixed at 0.206. The stock scale and status increased under lower $k$ values decreased in under higher $k$ value (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
+A profile across a range of female $k$ showed support for values from 0.18 - 0.25 yr^-1^ (Figure \ref{fig:k-profile}). The $k$ value for female fish in the model was fixed at 0.206. The stock scale and status increased under lower $k$ values decreased in under higher $k$ value (Figure \ref{fig:k-ssb} and \ref{fig:k-depl}).
 
-The profile across a range of coefficient of variation ($\text{CV}_2$) for older females supported $\text{CV}_2$ values ranging between 0.05 - 0.085 (Figure \ref{fig:cv-profile}). Assuming lower or higher $\text{CV}_2$ values had little impact on the unfished spawning output (Figure \ref{fig:cv-ssb}). However, the estimated final spawning output and fraction unfished was more optimistic if lower $\text{CV}_2$ values were assumed (Figure \ref{fig:cv-ssb} and \ref{fig:cv-depl}).
+The profile across a range of coefficient of variation ($\text{CV}_2$) for older females supported $\text{CV}_2$ values ranging between 0.05 - 0.085 (Figure \ref{fig:cv-profile}). Assuming lower or higher $\text{CV}_2$ values had little impact on the unfished spawning output (Figure \ref{fig:cv-ssb}). However, the estimated final spawning output and fraction unfished was more optimistic if lower $\text{CV}_2$ values were assumed (Figures \ref{fig:cv-ssb} and \ref{fig:cv-depl}).
 
 ### Length-Based Spawner-per-Recruit Analysis
 
-An exploratory length-based spawner-per-recruit (LB-SPR) analysis using the approach developed by Hordyk et al. [-@hordyk_novel_2015] was conducted. This approach assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) effort based on the observed recreational lengths. This analysis indicated the copper rockfish were 50 percent selected around 25 - 30 cm  with full selection typically between 35 - 40 cm  (excluding 2017, Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.10 - 0.30 from 2012 - 2019 (lower values of SPR indicate higher exploitation levels). This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. Examining the length data by year in isolation, assuming deterministic recruitment, indicating that SPR by year has been lower (and thus the fishing impact has been higher) than the proxy rockfish SPR target (0.50) with 50 percent selectivity occurring before the length of 50 percent maturity.
+An exploratory length-based spawner-per-recruit (LB-SPR) analysis using the approach developed by Hordyk et al. [-@hordyk_novel_2015] was conducted. This approach assumes asymptotic selectivity and deterministic recruitment to produce independent estimates by year of selectivity and spawner-per-recruit (SPR) based on the observed recreational lengths. This analysis indicated the copper rockfish were 50 percent selected around 25 - 30 cm  with full selection typically between 35 - 40 cm  (excluding 2017, Figure \ref{fig:lbspr}). The median estimates of SPR by year ranged between 0.10 - 0.30 from 2012 - 2019 (lower values of SPR indicate higher exploitation levels). This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. Examining the length data by year in isolation, assuming deterministic recruitment, indicating that SPR by year has been lower (and thus the fishing impact has been higher) than the proxy rockfish SPR target (0.50) with 50 percent selectivity occurring before the length of 50 percent maturity.
 
 ### Retrospective Analysis
 
@@ -433,7 +444,7 @@ A ten-year retrospective analysis was conducted by peeling back a year of data f
 ### Comparison with Other West Coast Stocks
 
 
-Copper rockfish is assessed as four distinct stocks off the U.S. west coast: south of Point Conception in California; north of Point Conception in California; Oregon; and Washington. The area north of Point Conception off the coast of California was estimated to have the largest unfished spawning output of copper rockfish off the West Coast. The stocks off of the Oregon and Washington coast are smaller in size compared to the California stocks with the stock off the coast of Washington estimated to have the smallest unfished spawning output.  Comparison of the estimated spawning output trajectories for the California stocks are shown in Figure \ref{fig:ssb-ca-compare} with Oregon and Washington shown in Figure \ref{fig:ssb-orwa-compare}.  The fraction unfished across all West Coast stocks are shown in Figure \ref{fig:depl-compare}. The California stocks are estimated to be the most depleted with the stock south of Point Conception estimated below the management threshold of 25 percent of unfished and the stock north of Point Conception estimated to be in the precautionary zone (less that the management target of 40 percent but above the management threshold).  The stock off the coast of Washington is estimated to be just above the management target and the Oregon stock well above the target. 
+Copper rockfish is assessed as four distinct stocks off the U.S. west coast: south of Point Conception in California; north of Point Conception in California; Oregon; and Washington. The area north of Point Conception off the coast of California was estimated to have the largest unfished spawning output of copper rockfish off the West Coast. The stocks off of the Oregon and Washington coast are smaller in size compared to the California stocks, with the stock off the coast of Washington estimated to have the smallest unfished spawning output.  Comparison of the estimated spawning output trajectories for the California stocks are shown in Figure \ref{fig:ssb-ca-compare} with Oregon and Washington shown in Figure \ref{fig:ssb-orwa-compare}.  The fraction unfished across all West Coast stocks shown in Figure \ref{fig:depl-compare}. The California stocks are estimated to be the most depleted, with the stock south of Point Conception estimated below the management threshold of 25 percent of unfished and the stock north of Point Conception estimated to be in the precautionary zone (less than the management target of 40 percent but above the management threshold).  The stock off the coast of Washington is estimated to be just above the management target and the Oregon stock well above the target. 
 
 <!--chapter:end:34diagnostics.Rmd-->
 
@@ -441,21 +452,27 @@ Copper rockfish is assessed as four distinct stocks off the U.S. west coast: sou
 
 ## Reference Points
 
-Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). The estimated sustainable total yields were 106.19 mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($\text{SB}_{40\%}$) was 185.52 million eggs. 
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). The estimated sustainable total yield was 106.19 mt when using an $\text{SPR}_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($\text{SB}_{40\%}$) was 166.33 million eggs. 
 
-The estimated fraction unfished in 2021 of 39.3  is just below the rockfish relative biomass management target of 40 percent (Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, was above the harvest rate limit ($\text{SPR}_{50\%}$) between the early 1970s and late-2000s and has been both above and below the target over the final 10 years of the model (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). In recent years the stock status has been below the management target with the fishing intensity above and below the target in different years (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
+The estimated fraction unfished in 2021 of 39.3 percent is just below the rockfish relative biomass management target of 40 percent (Figure \ref{fig:depl}). The fishing intensity, $1-\text{SPR}$, was above the harvest rate limit ($\text{SPR}_{50\%}$) between the early 1970s and late-2000s and has been both above and below the target over the final 10 years of the model (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). In recent years the stock status has been below the management target with the fishing intensity above and below the target in different years (Figure \ref{fig:phase}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
 
 
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying with $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). Since the stock is estimated to be below the management target of 40 percent the buffer value in Table \ref{tab:project} reflects both the 40-10 harvest control rule adjustment and the time-varying scientific uncertainty buffer.
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying $\sigma$ with $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). Since the stock is estimated to be below the management target of 40 percent the buffer value in Table \ref{tab:project} reflects both the 40-10 harvest control rule adjustment and the time-varying scientific uncertainty buffer.
 
 The area assumed in this assessment does not align with the PMFC management regions that define copper rockfish ACL allocation, north and south of 40$^\circ$ 10' Lat. N. To determine the amount of the 2021 and 2021 ACL for the California portion of the stock north of Point Conception the total ACL that would be allocated to the state of California was determined by summing the S. 40$^\circ$ 10' Lat. N. ACL and the percent of the N. 40$^\circ$ 10' Lat. N. allocated to California (25 percent, PFMC Groundfish Management team personal communication). Once the total ACLs for California were determined the portion of the ACL allocated to the area north of Point Conception was based on the percentage of total removals in each area of California (north and south of Point Conception) from 2017 - 2019.  
 
-The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 ($\sigma$ = 0.3012 ) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.098 and 0.123^-y^.  
+The axes of uncertainty in the decision table is based on the uncertainty around the spawning biomass in 2021 ($\sigma$ = 0.301 ) via natural mortality parameter. The $\sigma$ value was used to identify the 12.5 and 87.5 percentiles of the asymptotic standard deviation for the current year, 2021, spawning biomass from the base model to identify the low and high states of nature (i.e., 1.15 standard deviations corresponding to the 12.5 and 87.5 percentiles). Once the 2021 spawning biomass for the low and high states of nature were identified a search across natural mortality values were done to attain the current year spawning biomass values. The natural mortality values that corresponded with the lower and upper percentiles were 0.098 and 0.123 yr^-1^.  
 
 Across the low and high states of nature and across alternative future harvest scenarios the fraction of unfished ranges between 0.31 - 0.60 by the end of the 10 year projection period (Table \ref{tab:dec-tab}). The fraction unfished across the state of natures assuming the full ABC removals all increase over the projection period from the fraction unfished in 2023.
+
+
+## Summary of Copper Rockfish in California Waters
+
+
+Copper rockfish off the coast of California was assessed as two separate sub-stocks split at Point Conception. However, the stock status for management decisions was based on combined estimates of stock size and status from both of the California area assessments. The combined stock status in 2021 of copper rockfish in California was 31.7 percent. The spawning output by area and summed across California along with the relative spawning outputs for each area are provided in Table \ref{tab:ca-ssb-status}.  
 
 
 ## Evaluation of Scientific Uncertainty
@@ -467,15 +484,17 @@ The estimated uncertainty in the base model around the 2021 spawning output is $
 
 The ability to estimate additional process and biological parameters for copper rockfish was limited by data. Collecting the following data would be beneficial to future assessments of the stock:
 
-\begin{itemize}
+\begin{enumerate}
 
-	\item Both the recreational and commercial length data indicated that selection of copper rockfish occurs at sizes that were below the length at 50 percent maturity assumed in the base model. Developing area specific estimates of the length- or age-at-maturity of copper rockfish in California waters north of Point Conception would provide additional understanding of the potential impact of size selectivity by each fleet.
+	\item The recreational and commercial length data indicated that selection of copper rockfish occurs at sizes that were below the length at 50 percent maturity assumed in the base model. Developing area-specific estimates of the length- or age-at-maturity of copper rockfish in California waters north of Point Conception would provide additional understanding of the potential impact of size selectivity by each fleet.
 
 	\item Length samples could not be divided between live versus dead copper rockfish for the commercial fishery data. This was due to issues with the California data in PacFIN (i.e., condition code not available). The ability to examine sample sizes and lengths from each type of landing would allow for future assessments to better account for the range of commercial fishing behavior.
 
-	\item Otoliths should be or continue to be collected from both the commercial and recreational fisheries. Additional age data from both fishery-dependent and -independent sources would provide insight of area-specific growth of copper rockfish.  These data would support future assessments and would also allow for assessments to better capture uncertainty through the estimation of growth parameters within the model. 
+	\item Otoliths should be or continue to be collected from the commercial and recreational fisheries. Additional age data from both fishery-dependent and -independent sources would provide insight of area-specific growth of copper rockfish.  These data would support future assessments and would also allow for assessments to better capture uncertainty through the estimation of growth parameters within the model. Following the review of the base model during the June 2021 Groundfish Subcommittee meeting of the Scientific and Statistical Committee (GFSC-SSC) otoliths collected north of Point Conception in California from the following sources were provided for ageing: CDFW Commercial colletions (N = 102), California Collaborative Fisheries Research Program (N = 54), and Southwest Fisheries Science Center Research Survey (N = 423). These otoliths were ages and the creation of area-specific growth curve was attempted. Unfortunately, the sampling coverage across ages and sizes was inadequate for the development of an area specific growth curve, emphasizing the continued need for otolith collect in the area.
 
-\end{itemize}
+	\item California Department of Fish and Wildlife provided additional length observation data that was not available for use in the base models reviewed in the June 2021 Groundfish Subcommittee meeting of the Scientific and Statistical Committee (GFSC-SSC).  These data were collected from the recreational fishery commercial passenger fishing vessels (CPFV; aka 'party' and 'charter') between 1987 - 1998 and included a total of 6,347 additional length observations. A model sensitivity was performed looking at the inclusion of these data which showed that they only had a minimal impact on the base model. However, these data should be provided and included in future assessments of copper rockfish.  
+
+\end{enumerate}
 
 <!--chapter:end:40management.Rmd-->
 
@@ -528,12 +547,12 @@ All of the data-moderate assessment assessments this year were greatly benefited
 \begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}}
-\caption{(\#tab:ofl)The complex level OFL and ACL for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL and ACL contributions, the total ACL allocated to California, and the total removals from north of Point Conception.}\\
+\caption{(\#tab:ofl)The complex level OFL (mt) and ACL (mt) for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL (mt) and ACL (mt) contributions, the total ACL (mt) allocated to California, and the total removals (mt) from north of Point Conception.}\\
 \toprule
 Year & Complex OFL - S. & Complex ACL - S. & OFL - S.  & ACL - S. & Complex OFL - N. & Complex ACL - N. & OFL - N. & CA ACL - N. & CA ACL Total & N. CA Removals\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:ofl)The complex level OFL and ACL for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL and ACL contributions, the total ACL allocated to California, and the total removals from north of Point Conception. \textit{(continued)}}\\
+\caption[]{(\#tab:ofl)The complex level OFL (mt) and ACL (mt) for Nearshore Rockfish north and south of 40.10 Latitude N., the copper rockfish OFL (mt) and ACL (mt) contributions, the total ACL (mt) allocated to California, and the total removals (mt) from north of Point Conception. \textit{(continued)}}\\
 \toprule
 Year & Complex OFL - S. & Complex ACL - S. & OFL - S.  & ACL - S. & Complex OFL - N. & Complex ACL - N. & OFL - N. & CA ACL - N. & CA ACL Total & N. CA Removals\\
 \midrule
@@ -855,7 +874,7 @@ Size DblN end logit CA N Commercial(1) BLK1repl 1916 & 10.000 & -4 & (-10, 10) &
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
-\include{tex_tables/e_ReferencePoints_ES.tex}
+\include{tex_tables/e_ReferencePoints_ES.tex} 
 
 
 <!-- ======================================================= -->
@@ -882,12 +901,12 @@ Size DblN end logit CA N Commercial(1) BLK1repl 1916 & 10.000 & -4 & (-10, 10) &
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
-\caption{(\#tab:dw)Data weights applied by each alternative data weighting methods.}\\
+\caption{(\#tab:dw)Data weights applied by each alternative data weighting method.}\\
 \toprule
 Method & Commercial Lengths & Recreational Lengths\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:dw)Data weights applied by each alternative data weighting methods. \textit{(continued)}}\\
+\caption[]{(\#tab:dw)Data weights applied by each alternative data weighting method. \textit{(continued)}}\\
 \toprule
 Method & Commercial Lengths & Recreational Lengths\\
 \midrule
@@ -914,12 +933,12 @@ Dirichlet Multinomial & 0.5810 & 0.4020\\*
 \begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10}\\
+\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL (mt) values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10}\\
 \toprule
 Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & Total CA ACL & Assumed Removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10 \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL (mt) values, estimated spawning output, and fraction unfished. The OFL S. 40.10 and ACL S. 40.10 for 2021 and 2022 reflect adopted management limits for the area south of 40.10 Latitude N. The OFL N. 40.10 is the year specific total OFL for 2021 and 2021 and the CA ACL N. 40.10 is the California specific allocation of the total ACL N. 40.10 \textit{(continued)}}\\
 \toprule
 Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & Total CA ACL & Assumed Removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
@@ -951,6 +970,139 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 
 \clearpage
 
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}}
+\caption{(\#tab:ca-ssb-status)Spawning output (SO) south and north of Point Conception in California, total spawning output across California, relative spawning output (Rel. SO) north and south of Point Conception, and relative spawning output across California.}\\
+\toprule
+Year & SO-North & SO-South & SO-CA & Rel. SO-North & Rel. SO-South & Rel. SO-CA\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:ca-ssb-status)Spawning output (SO) south and north of Point Conception in California, total spawning output across California, relative spawning output (Rel. SO) north and south of Point Conception, and relative spawning output across California. \textit{(continued)}}\\
+\toprule
+Year & SO-North & SO-South & SO-CA & Rel. SO-North & Rel. SO-South & Rel. SO-CA\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1914 & 415.81 & 233.04 & 648.86 & 1.000 & 1.000 & 1.000\\
+1915 & 415.81 & 233.04 & 648.86 & 1.000 & 1.000 & 1.000\\
+1916 & 415.81 & 233.04 & 648.86 & 1.000 & 1.000 & 1.000\\
+1917 & 415.38 & 233.03 & 648.41 & 0.999 & 1.000 & 0.999\\
+1918 & 414.73 & 233.00 & 647.74 & 0.997 & 1.000 & 0.998\\
+1919 & 413.98 & 232.98 & 646.97 & 0.996 & 1.000 & 0.997\\
+1920 & 413.57 & 232.97 & 646.54 & 0.995 & 1.000 & 0.996\\
+1921 & 413.20 & 232.96 & 646.16 & 0.994 & 1.000 & 0.996\\
+1922 & 412.99 & 232.95 & 645.94 & 0.993 & 1.000 & 0.996\\
+1923 & 412.91 & 232.94 & 645.85 & 0.993 & 1.000 & 0.995\\
+1924 & 412.85 & 232.93 & 645.78 & 0.993 & 1.000 & 0.995\\
+1925 & 412.97 & 232.92 & 645.89 & 0.993 & 0.999 & 0.995\\
+1926 & 412.98 & 232.90 & 645.88 & 0.993 & 0.999 & 0.995\\
+1927 & 412.90 & 232.88 & 645.78 & 0.993 & 0.999 & 0.995\\
+1928 & 412.99 & 232.86 & 645.86 & 0.993 & 0.999 & 0.995\\
+1929 & 412.94 & 232.85 & 645.79 & 0.993 & 0.999 & 0.995\\
+1930 & 412.80 & 232.83 & 645.63 & 0.993 & 0.999 & 0.995\\
+1931 & 412.38 & 232.81 & 645.20 & 0.992 & 0.999 & 0.994\\
+1932 & 411.77 & 232.79 & 644.57 & 0.990 & 0.999 & 0.993\\
+1933 & 411.15 & 232.77 & 643.92 & 0.989 & 0.999 & 0.992\\
+1934 & 410.55 & 232.76 & 643.31 & 0.987 & 0.999 & 0.991\\
+1935 & 410.02 & 232.74 & 642.76 & 0.986 & 0.999 & 0.991\\
+1936 & 409.20 & 232.68 & 641.88 & 0.984 & 0.998 & 0.989\\
+1937 & 408.38 & 232.65 & 641.02 & 0.982 & 0.998 & 0.988\\
+1938 & 407.35 & 232.52 & 639.88 & 0.980 & 0.998 & 0.986\\
+1939 & 406.51 & 232.46 & 638.97 & 0.978 & 0.998 & 0.985\\
+1940 & 405.99 & 232.42 & 638.41 & 0.976 & 0.997 & 0.984\\
+1941 & 405.06 & 232.38 & 637.44 & 0.974 & 0.997 & 0.982\\
+1942 & 404.32 & 232.35 & 636.67 & 0.972 & 0.997 & 0.981\\
+1943 & 404.83 & 232.36 & 637.19 & 0.974 & 0.997 & 0.982\\
+1944 & 405.35 & 232.37 & 637.72 & 0.975 & 0.997 & 0.983\\
+1945 & 405.50 & 232.40 & 637.89 & 0.975 & 0.997 & 0.983\\
+1946 & 404.16 & 232.42 & 636.58 & 0.972 & 0.997 & 0.981\\
+1947 & 402.10 & 232.44 & 634.53 & 0.967 & 0.997 & 0.978\\
+1948 & 402.37 & 232.39 & 634.76 & 0.968 & 0.997 & 0.978\\
+1949 & 401.30 & 232.24 & 633.54 & 0.965 & 0.997 & 0.976\\
+1950 & 400.14 & 232.01 & 632.15 & 0.962 & 0.996 & 0.974\\
+1951 & 398.57 & 231.68 & 630.25 & 0.959 & 0.994 & 0.971\\
+1952 & 395.58 & 231.04 & 626.62 & 0.951 & 0.991 & 0.966\\
+1953 & 393.78 & 230.55 & 624.34 & 0.947 & 0.989 & 0.962\\
+1954 & 393.19 & 230.11 & 623.30 & 0.946 & 0.987 & 0.961\\
+1955 & 391.72 & 229.22 & 620.94 & 0.942 & 0.984 & 0.957\\
+1956 & 389.95 & 227.43 & 617.38 & 0.938 & 0.976 & 0.951\\
+1957 & 387.63 & 225.39 & 613.02 & 0.932 & 0.967 & 0.945\\
+1958 & 385.83 & 224.09 & 609.92 & 0.928 & 0.962 & 0.940\\
+1959 & 379.98 & 222.85 & 602.83 & 0.914 & 0.956 & 0.929\\
+1960 & 376.56 & 222.23 & 598.79 & 0.906 & 0.954 & 0.923\\
+1961 & 374.91 & 221.65 & 596.57 & 0.902 & 0.951 & 0.919\\
+1962 & 375.64 & 220.89 & 596.52 & 0.903 & 0.948 & 0.919\\
+1963 & 375.56 & 220.53 & 596.09 & 0.903 & 0.946 & 0.919\\
+1964 & 374.29 & 220.21 & 594.50 & 0.900 & 0.945 & 0.916\\
+1965 & 374.38 & 219.45 & 593.83 & 0.900 & 0.942 & 0.915\\
+1966 & 371.29 & 218.10 & 589.39 & 0.893 & 0.936 & 0.908\\
+1967 & 366.95 & 213.92 & 580.87 & 0.882 & 0.918 & 0.895\\
+1968 & 362.38 & 208.73 & 571.11 & 0.872 & 0.896 & 0.880\\
+1969 & 357.66 & 202.44 & 560.10 & 0.860 & 0.869 & 0.863\\
+1970 & 352.64 & 197.30 & 549.94 & 0.848 & 0.847 & 0.848\\
+1971 & 344.71 & 189.91 & 534.62 & 0.829 & 0.815 & 0.824\\
+1972 & 338.84 & 182.81 & 521.65 & 0.815 & 0.784 & 0.804\\
+1973 & 328.96 & 173.21 & 502.17 & 0.791 & 0.743 & 0.774\\
+1974 & 316.36 & 161.58 & 477.94 & 0.761 & 0.693 & 0.737\\
+1975 & 301.24 & 147.14 & 448.38 & 0.724 & 0.631 & 0.691\\
+1976 & 285.72 & 132.18 & 417.90 & 0.687 & 0.567 & 0.644\\
+1977 & 265.76 & 119.95 & 385.70 & 0.639 & 0.515 & 0.594\\
+1978 & 242.71 & 109.12 & 351.84 & 0.584 & 0.468 & 0.542\\
+1979 & 220.21 & 99.11 & 319.32 & 0.530 & 0.425 & 0.492\\
+1980 & 195.23 & 85.44 & 280.68 & 0.470 & 0.367 & 0.433\\
+1981 & 168.51 & 72.17 & 240.68 & 0.405 & 0.310 & 0.371\\
+1982 & 128.65 & 65.18 & 193.83 & 0.309 & 0.280 & 0.299\\
+1983 & 104.02 & 52.56 & 156.58 & 0.250 & 0.226 & 0.241\\
+1984 & 87.13 & 46.53 & 133.66 & 0.210 & 0.200 & 0.206\\
+1985 & 72.65 & 40.60 & 113.25 & 0.175 & 0.174 & 0.175\\
+1986 & 56.82 & 33.06 & 89.88 & 0.137 & 0.142 & 0.139\\
+1987 & 45.88 & 26.58 & 72.46 & 0.110 & 0.114 & 0.112\\
+1988 & 41.70 & 27.31 & 69.01 & 0.100 & 0.117 & 0.106\\
+1989 & 37.85 & 26.31 & 64.15 & 0.091 & 0.113 & 0.099\\
+1990 & 34.82 & 25.95 & 60.77 & 0.084 & 0.111 & 0.094\\
+1991 & 32.15 & 26.30 & 58.45 & 0.077 & 0.113 & 0.090\\
+1992 & 28.39 & 26.79 & 55.18 & 0.068 & 0.115 & 0.085\\
+1993 & 22.16 & 28.53 & 50.69 & 0.053 & 0.122 & 0.078\\
+1994 & 16.05 & 31.21 & 47.26 & 0.039 & 0.134 & 0.073\\
+1995 & 15.60 & 30.65 & 46.25 & 0.038 & 0.132 & 0.071\\
+1996 & 16.79 & 30.29 & 47.08 & 0.040 & 0.130 & 0.073\\
+1997 & 16.41 & 25.95 & 42.37 & 0.039 & 0.111 & 0.065\\
+1998 & 15.44 & 25.45 & 40.89 & 0.037 & 0.109 & 0.063\\
+1999 & 16.75 & 24.76 & 41.51 & 0.040 & 0.106 & 0.064\\
+2000 & 18.93 & 24.98 & 43.90 & 0.046 & 0.107 & 0.068\\
+2001 & 21.74 & 26.83 & 48.57 & 0.052 & 0.115 & 0.075\\
+2002 & 24.84 & 29.53 & 54.38 & 0.060 & 0.127 & 0.084\\
+2003 & 28.64 & 33.08 & 61.72 & 0.069 & 0.142 & 0.095\\
+2004 & 32.70 & 36.82 & 69.52 & 0.079 & 0.158 & 0.107\\
+2005 & 37.57 & 40.76 & 78.33 & 0.090 & 0.175 & 0.121\\
+2006 & 41.04 & 43.68 & 84.72 & 0.099 & 0.187 & 0.131\\
+2007 & 44.00 & 47.92 & 91.92 & 0.106 & 0.206 & 0.142\\
+2008 & 46.33 & 50.77 & 97.10 & 0.111 & 0.218 & 0.150\\
+2009 & 49.58 & 54.01 & 103.59 & 0.119 & 0.232 & 0.160\\
+2010 & 51.80 & 57.50 & 109.30 & 0.125 & 0.247 & 0.168\\
+2011 & 55.04 & 61.25 & 116.29 & 0.132 & 0.263 & 0.179\\
+2012 & 60.66 & 63.22 & 123.88 & 0.146 & 0.271 & 0.191\\
+2013 & 70.63 & 64.35 & 134.98 & 0.170 & 0.276 & 0.208\\
+2014 & 88.01 & 62.52 & 150.53 & 0.212 & 0.268 & 0.232\\
+2015 & 109.29 & 61.70 & 170.99 & 0.263 & 0.265 & 0.264\\
+2016 & 127.02 & 58.89 & 185.91 & 0.305 & 0.253 & 0.287\\
+2017 & 141.90 & 54.21 & 196.11 & 0.341 & 0.233 & 0.302\\
+2018 & 147.97 & 50.17 & 198.14 & 0.356 & 0.215 & 0.305\\
+2019 & 154.78 & 44.70 & 199.48 & 0.372 & 0.192 & 0.307\\
+2020 & 158.56 & 40.81 & 199.37 & 0.381 & 0.175 & 0.307\\
+2021 & 163.51 & 42.28 & 205.79 & 0.393 & 0.181 & 0.317\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+\clearpage
+
 <!--chapter:end:52tables.Rmd-->
 
 \clearpage
@@ -962,6 +1114,14 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 
 
 ![Catches by fleet used in the base model.\label{fig:catch}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/catch2 landings stacked.png){width=100% height=100% alt="."}
+
+
+<!-- ====================================================================== -->  
+<!-- ******************           Map             ************************* --> 
+<!-- ====================================================================== -->  
+
+
+![Map of management area and assessments areas for copper rockfish with the assessment area north of Point Conception shown in orange.\label{fig:map}](C:/Assessments/2021/copper_rockfish_2021/write_up/general_text/map.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== --> 
 <!-- ******************* Data Used in the Model *************************** --> 
@@ -978,7 +1138,7 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 ![Length composition data from the commercial fleet.\label{fig:com-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
-![Mean length for commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_data_weighting_TA1.8_CA_N_Commercial.png){width=100% height=100% alt="."}
+![Mean length for the commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_data_weighting_TA1.8_CA_N_Commercial.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- **************** Recreational Length Samples    ********************** --> 
@@ -1002,11 +1162,11 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 
 
 
-![Observed sex specific length-at-age by data source with the estimate length-at-age curve.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_north_Age_by_Sex_Source.png){width=100% height=100% alt="."}
+![Observed sex-specific length-at-age by data source with the estimate length-at-age curve.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/doc_north_Age_by_Sex_Source.png){width=100% height=100% alt="."}
 
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/bio1_sizeatage.png){width=100% height=100% alt="."}
+![Length at age in the start of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/bio1_sizeatage.png){width=100% height=100% alt="."}
 
 \clearpage
 
@@ -1021,10 +1181,10 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 \clearpage
 
 
-![Fraction female by length across all available data sources.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="."}
+![Fraction female by length across all available data sources where the size of red circles are based on the number of observations by length where larger circles indicate more observations.\label{fig:len-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Length_fraction_female.png){width=100% height=100% alt="."}
 
 
-![Fraction female by age across all available data sources.\label{fig:age-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png){width=100% height=100% alt="."}
+![Fraction female by age across all available data sources where the size of red circles are based on the number of observations by age where larger circles indicate more observations.\label{fig:age-sex-ratio}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots/Age_fraction_female.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1060,13 +1220,13 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 
 
 
-![Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:com-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="."}
+![Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and the open bubbles are negative residuals (observed < expected).\label{fig:com-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
 ![Mean length for commercial lengths with 95 percent confidence intervals based on current samples sizes.\label{fig:com-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_data_weighting_TA1.8_CA_N_Commercial.png){width=100% height=100% alt="."}
 
 
-![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_residsflt2mkt0_page3.png){width=100% height=100% alt="."}
+![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and the open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_residsflt2mkt0_page3.png){width=100% height=100% alt="."}
 
 
 ![Mean length for recreational lengths with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_data_weighting_TA1.8_CA_N_Recreational.png){width=100% height=100% alt="."}
@@ -1110,13 +1270,13 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 <!-- ====================================================================== -->
 
 
-![Change in the negative log-likelihood across a range of log(R0) values.\label{fig:r0-profile}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="."}
+![Change in the negative log-likelihood across a range of log(R~0~) values.\label{fig:r0-profile}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of log(R0) values.\label{fig:r0-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
+![Change in the estimate of spawning output across a range of log(R~0~) values.\label{fig:r0-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of log(R0) values.\label{fig:r0-depl}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
+![Change in the estimate of fraction unfished across a range of log(R~0~) values.\label{fig:r0-depl}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
 ![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="."}
@@ -1179,10 +1339,10 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 <!-- ====================================================================== -->
 
 
-![Change in the estimate of spawning output when the most recent 10 years of data area removed sequentially.\label{fig:retro-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
+![Change in the estimate of spawning output when the most recent 10 years of data are removed sequentially.\label{fig:retro-ssb}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished when the most recent 10 years of data area removed sequentially.\label{fig:retro-depl}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
+![Change in the estimate of fraction unfished when the most recent 10 years of data are removed sequentially.\label{fig:retro-depl}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 
 ![The change in estimated recruitment deviations by year as additional years of data are removed during a retrospective run.\label{fig:retro-squid}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base_retro/Squid_RecDevs.png){width=100% height=100% alt="."}
@@ -1215,7 +1375,7 @@ Year & OFL - S. 40.10 & ACL - S. 40.10 & OFL - N. 40.10 & CA ACL - N. 40.10 & To
 ![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="."}
 
 
-![Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year. Lines through the final point show the 95 percent intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent region which accounts for the estimated correlations between the biomass ratio and SPR ratio.\label{fig:phase}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/SPR4_phase.png){width=100% height=100% alt="."}
+![Phase plot of the relative biomass (also referred to as fraction unfished) versus the SPR ratio where each point represents the biomass ratio at the start of the year and the relative fishing intensity in that same year.\label{fig:phase}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/SPR4_phase.png){width=100% height=100% alt="."}
 
 
 ![Equilibrium yield curve for the base case model. Values are based on the 2020
@@ -1227,6 +1387,38 @@ fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Asses
 
 # Appendix
 
+
+## Detailed Fit to Length Composition Data{#append-fit} 
+
+
+
+![Length comps, whole catch, CA_N_Commercial (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="."}
+
+![Length comps, whole catch, CA_N_Commercial (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="."}
+
+![Length comps, whole catch, CA_N_Recreational (plot 1 of 3).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt2mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page1.png){width=100% height=100% alt="."}
+
+![Length comps, whole catch, CA_N_Recreational (plot 2 of 3).\label{fig:comp_lenfit_flt2mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page2.png){width=100% height=100% alt="."}
+
+![Length comps, whole catch, CA_N_Recreational (plot 3 of 3).\label{fig:comp_lenfit_flt2mkt0_page3}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page3.png){width=100% height=100% alt="."}
+
+\newpage
+
+## Implied Fit to Commercial 'Ghost' Fleet Length Data 
+
+The 'ghost' fleet data consist of commercial length samples collected prior to 1999 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
+
+
+
+![Ghost length comps, whole catch, CA_N_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_gstlenfit_flt1mkt0}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_gstlenfit_flt1mkt0.png){width=100% height=100% alt="."}
+
+
+## Allocation of Yield Among Federal Management Areas
+
+The 2021 northern California base model for copper rockfish represents U.S. waters between 34$^\circ$ 27' N. lat. and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes copper rockfish, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yield estimates from the California base model must be divided between the norther and southern management areas in order to determine the contribution of copper rockfish to the nearshore rockfish overfishing limit (OFL). 
+
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Unfortunately neither of these estimates were available for copper rockfish to inform allocations by area.  In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 3.9 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this the recommend allocations of the OFLs from the northern California model 3.9 percent should be allocated to the north nearshore rockfish complex with 96.1 percent to the southern complex.      
+
 ## Summary of California Management Measures{#ca-man}
 
 Information on changes to California management measures across time can be found in the separate file "California Nearshore Regulation History-Data Moderate Accompanying Material.pdf".
@@ -1234,7 +1426,7 @@ Information on changes to California management measures across time can be foun
 ## Percent of Habitat Area Closed to Fishing for Groundfish in the Rockfish Conservation Areas, Cowcod Conservation Areas, and Marine Protected Areas in California from 2001-2021
 
 
-At present, stock assessments reliant on fishery dependent data only represent the areas open to fishing, unless there is a fishery independent data source providing information on the relative abundance and length composition in closed areas.  A network of marine protected areas (MPAs) was established between 2003 to 2012 through a regional siting process.  The length composition and relative abundance inside and outside MPAs in part results from the presence of MPAs prohibiting take of groundfish established prior to expansion of the current network, duration of existence of new areas, degree of effort prior to protection and criteria for selection focusing on high productivity reefs.  These areas are established in perpetuity and will provide substantial protections to nearshore fish stocks for the foreseeable future. 
+At present, stock assessments reliant on fishery-dependent data only represent the areas open to fishing, unless there is a fishery-independent data source providing information on the relative abundance and length composition in closed areas.  A network of marine protected areas (MPAs) was established between 2003 to 2012 through a regional siting process.  The length composition and relative abundance inside and outside MPAs in part results from the presence of MPAs prohibiting take of groundfish established prior to expansion of the current network, duration of existence of new areas, degree of effort prior to protection and criteria for selection focusing on high productivity reefs.  These areas are established in perpetuity and will provide substantial protections to nearshore fish stocks for the foreseeable future. 
 
 In addition to MPAs, extensive Rockfish Conservation Areas (RCAs) of varying depths over time and space, as well as the two cowcod conservation areas (CCAs) encompassing 4200 square miles of water area since 2001, were established to facilitate rebuilding of overfished species.   While the depth restrictions in these closed areas can change or be eliminated, the areas closed become refugia that reduce fishing mortality, allowing accumulation of biomass within them.  There has long been interest in quantifying the area of reef habitat for each assessed species that resides in protected areas, but until very recently, there was insufficient data on the distribution of rocky reef habitat.  This analysis provides the percentage of habitat area for copper and quillback rockfish closed to fishing in MPAs, RCAs and CCAs where the take of groundfish was prohibited in each year from 2001 to 2021.  
 
@@ -1246,7 +1438,7 @@ A predictive substrate layer that identifies hard and soft substrate was used to
 
 Data from the CSMP is known to have nearshore data gaps referred to as the white zone.  Contributors from The University of California Santa Cruz, California Ocean Science Trust, and California Department of Fish and Wildlife (CDFW) conducted a 30 m resolution interpolation analysis to estimate hard and soft substrate within the white zone.  The interpolation analysis utilized data from the CSMP and National Oceanic and the National Oceanic and Atmospheric Administration Environmental Sensitivity Index (ESI).  Accuracy of the interpolation is estimated to be best where the white zone bands are narrowest and worst where the white zone bands are widest.  In addition, metadata indicates the interpolation is questionable at scales finer than 100 m.
 
-Substrate data developed for an Essential Fish Habitat Review was incorporated into this analysis for seafloor occurring outside of California State Waters (3 nautical miles).  This dataset was generated by Joe Bizarro of the National Marine Fisheries Service, Southwest Fisheries Science Center in Santa Cruz and was created by combining multiple sources of bathymetric data with varying resolutions including multibeam sonar, sidescan sonar, sediment grabs, core samples seismic reflection profiles, still photos and video.  This habitat data is subject to georeferencing errors and data resolution errors.  Currently this is the best available data that represents hard and soft substrate types offshore for the areas outside of California State waters.  
+Substrate data developed for an Essential Fish Habitat Review was incorporated into this analysis for seafloor occurring outside of California State Waters (3 nautical miles).  This dataset was generated by Joe Bizarro of the National Marine Fisheries Service, Southwest Fisheries Science Center in Santa Cruz and was created by combining multiple sources of bathymetric data with varying resolutions including multibeam sonar, sidescan sonar, sediment grabs, core samples seismic reflection profiles, still photos and video.  This habitat data are subject to georeferencing errors and data resolution errors.  Currently, this is the best available data that represents hard and soft substrate types offshore for the areas outside of California State waters.  
 
 
 #### Boundaries of the CCAs, RCAs and MPAs 
@@ -1255,11 +1447,11 @@ Regulation histories for each type of closure were converted to Boolean fields w
 
 #### Delineating Habitat in Restricted Areas and Open to Fishing
 
-The depth range of habitat for copper and quillback rockfish was between shore to 100 m, covering the primary depth distribution of both stocks observed in the CDFW ROV survey (Budrick, Ryley and Prall 2020) or noted in Love et al. (2002). The latitudinal range was set from the California/Mexican border to the California/Oregon border (42$^\circ$ N. lat.), which was stratified north and south Point Conception (34$^\circ$ 27' N. lat.).  Quillback rockfish are relatively rare south of Point Conception, thus only estimates for the area north of Point Conception are pertinent to this stock, while copper rockfish are found in both areas. 
+The depth range of habitat for copper and quillback rockfish was between shore to 100 m, covering the primary depth distribution of both stocks observed in the CDFW ROV survey [@budrick_methods_2019] or noted in Love et al. [-@love_rockfishes_2002]. The latitudinal range was set from the California/Mexican border to the California/Oregon border (42$^\circ$ N. lat.), which was stratified north and south Point Conception (34$^\circ$ 27' N. lat.).  Quillback rockfish are relatively rare south of Point Conception, thus only estimates for the area north of Point Conception are pertinent to this stock, while copper rockfish are found in both areas. 
  
 The distribution and area of rocky reef habitat within a species range was delineated in ArcGIS Pro (2.6) by extracting specific values from a 10 m bathymetric raster based on species depth and latitudinal ranges.  The resulting raster layer was converted into a shapefile and merged with a coastal boundary of California to account for gaps in the bathymetric raster.  Hard habitat within the species range was identified and isolated using the intersect tool to create species range shapefile.  This process was repeated to identify overlapping coverage between the species range and hard substrate, as well as intersecting the species range with a combination of different types of regulatory boundaries. 
 
-The area of the resulting shapefiles were calculated in GIS and exported into tables using Python script.  The combination of area closures in a given year were overlayed on the habitat maps, with the area in MPAs and CCAs extracted first, then the habitat in the remaining RCAs estimated.  The residual habitat still open to fishing after accounting for the closed areas was then estimated.  The area of rocky reef habitat closed to fishing within a species range was converted to a percentage of the total habitat. This process for identifying overlapping boundaries and calculating areas were scripted in Python to reduce the possibility of human error.  
+The areas of the resulting shapefiles were calculated in GIS and exported into tables using Python script.  The combination of area closures in a given year were overlayed on the habitat maps, with the area in MPAs and CCAs extracted first, then the habitat in the remaining RCAs estimated.  The residual habitat still open to fishing after accounting for the closed areas was then estimated.  The area of rocky reef habitat closed to fishing within a species range was converted to a percentage of the total habitat. This process for identifying overlapping boundaries and calculating areas were scripted in Python to reduce the possibility of human error.  
 
 
 #### Examination of bottom type coverage relative to habitat
@@ -1475,32 +1667,6 @@ Total & 401535 & 209 & -\\*
 ![Length comp data, whole catch, CA_N_Recreational (plot 2 of 3).\label{fig:comp_lendat_flt2mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_flt2mkt0_page2.png){width=100% height=100% alt="."}
 
 ![Length comp data, whole catch, CA_N_Recreational (plot 3 of 3).\label{fig:comp_lendat_flt2mkt0_page3}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lendat_flt2mkt0_page3.png){width=100% height=100% alt="."}
-
-\newpage
-
-## Detailed Fit to Length Composition Data{#append-fit} 
-
-
-
-![Length comps, whole catch, CA_N_Commercial (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="."}
-
-![Length comps, whole catch, CA_N_Commercial (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="."}
-
-![Length comps, whole catch, CA_N_Recreational (plot 1 of 3).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt2mkt0_page1}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page1.png){width=100% height=100% alt="."}
-
-![Length comps, whole catch, CA_N_Recreational (plot 2 of 3).\label{fig:comp_lenfit_flt2mkt0_page2}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page2.png){width=100% height=100% alt="."}
-
-![Length comps, whole catch, CA_N_Recreational (plot 3 of 3).\label{fig:comp_lenfit_flt2mkt0_page3}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_lenfit_flt2mkt0_page3.png){width=100% height=100% alt="."}
-
-\newpage
-
-## Implied Fit to Commercial 'Ghost' Fleet Length Data 
-
-The 'ghost' fleet data consist of commercial length samples collected prior to 1999 which were not used in the base model due to low sample sizes which resulted in noisy length distributions.  
-
-
-
-![Ghost length comps, whole catch, CA_N_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_gstlenfit_flt1mkt0}](C:/Assessments/2021/copper_rockfish_2021/models/ca_n_pt_c/10.3_base/plots/comp_gstlenfit_flt1mkt0.png){width=100% height=100% alt="."}
 
 <!--chapter:end:54appendix.Rmd-->
 
